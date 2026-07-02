@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Skúška 25.6.2026 &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Hľadať" href="../../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../../copyright.html" />
+    <link rel="next" title="Copyright" href="../../copyright.html" />
+    <link rel="prev" title="2. Skúška 10.6.2026" href="sk2026b.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.html">9. Backtracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.html">10. Backtracking na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.html">11. Ďalšie algoritmy na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp12.html">12. Týždenný projekt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="sk2026b.html" title="Previous Chapter: 2. Skúška 10.6.2026"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2. Skúška 10.6.2026</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../copyright.html" title="Next Chapter: Copyright"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Copyright &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="skuska-25-6-2026">
+<h1>3. Skúška 25.6.2026<a class="headerlink" href="sk2026c.html#skuska-25-6-2026" title="Link to this heading">¶</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># skuska variant C</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 25.6.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code> ani <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
+<li><p>nemeň mená už zadaných atribútov (metód a premenných)</p></li>
+<li><p>do existujúcej triedy môžeš pridávať vlastné atribúty a metódy (okrem typu <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> a <code class="docutils literal notranslate"><span class="pre">dict</span></code>)</p></li>
+<li><p>pri testovaní riešenia sa bude kontrolovať aj štruktúra vytvoreného grafu</p></li>
+<li><p>môžeš si stiahnuť <a class="reference external" href="../../_static/file/2sk_3.zip">2sk_3.zip</a> s kostrou programu a testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré používa testovač.</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Podmorská výskumná stanica sa skladá z viacerých modulov, ktoré sú nejako pospájané prechodovými tunelmi. Každý takýto modul má zásoby kyslíka a potravín len na niekoľko dní prežitia a preto si výskumníci musia dobre zvážiť, v akom poradí budú tieto moduly obývať. Predpokladáme, že každý modul, v ktorom výskumníci bývali, sa po ich odchode automaticky uzamkne a nedá sa už do neho znovu vojsť - toto platí pre všetky moduly okrem štartového, ktorý bude slúžiť ako únikový pre ukončenie celej expedície a cez neho sa dostanú opäť na povrch.</p>
+<p>Úlohou bude pre zadaný štartový modul navrhnúť také poradie modulov, v ktorých budú postupne výskumníci prebývať, ktoré im zabezpečí čo najdlhšie trvajúcu podmorskú expedíciu. Zrejme prvý a posledný modul v tomto poradí bude rovnaký a teda štartový.</p>
+<p>V súbore máme informácie o moduloch a prechodových tuneloch. Meno každého modulu začína jedným alebo viac písmenami a je ukončené celým číslom, ktoré pre tento modul vyjadruje počet dní na prežitie. Napríklad, <code class="docutils literal notranslate"><span class="pre">abc42</span></code> označuje meno modulu, v ktorom sa dá prežiť 42 dní. Všetky moduly majú rôzne mená. V súbore sú informácie v tvare dvojíc mien modulov, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">abc42</span><span class="o">-</span><span class="n">abc11</span>
+<span class="n">xy37</span><span class="o">-</span><span class="n">abc11</span>
+<span class="n">a42</span><span class="o">-</span><span class="n">abc42</span>
+</pre></div>
+</div>
+<p>Zadefinuj metódy triedy <code class="docutils literal notranslate"><span class="pre">PodmorskaStanica</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">PodmorskaStanica</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mena</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modul</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zablokuj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">moduly</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modul</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Metódy:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(meno_suboru)</span></code> prečíta zadaný textový súbor a vytvorí reprezentáciu neorientovaného neohodnoteného grafu pomocou <strong>tabuľky susedností</strong> (atribút <code class="docutils literal notranslate"><span class="pre">tab</span></code> bude dvojrozmerný zoznam hodnôt <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code>), pričom poradie vrcholov v tomto grafe bude uložené v atribúte <code class="docutils literal notranslate"><span class="pre">mena</span></code> (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>); okrem týchto dvoch atribútov nepoužívaj žiadne ďalšie štruktúrované atribúty (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>) - povolené sú len pomocné atribúty typu množina, resp. lokálne premenné ľubovoľných typov</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start(modul)</span></code> nájde cyklus v grafe (začína aj končí v zadanom module), ktorý umožní čo najdlhšie prebývanie v moduloch (maximálny súčet dní)</p>
+<ul>
+<li><p>metóda vráti dvojicu: počet dní na prebývanie v moduloch a cyklus ako n-tica mien modulov (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</p></li>
+<li><p>ak je takýchto cyklov viac, metóda vráti ľubovoľný z nich</p></li>
+<li><p>ak bol štartový modul zrušený, metóda vráti dvojicu <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">())</span></code></p></li>
+<li><p>ak je v grafe tento štartový vrchol izolovaný, metóda okrem počtu dní vráti <code class="docutils literal notranslate"><span class="pre">(modul,)</span></code></p></li>
+<li><p>napríklad, aj takýto cyklus môže byť korektným riešením: <code class="docutils literal notranslate"><span class="pre">(modul,</span> <span class="pre">modul1,</span> <span class="pre">modul)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zablokuj(*moduly)</span></code> nejako si označí vrcholy, ktoré by sa nemali používať, lebo sa zatopili vodou</p>
+<ul>
+<li><p>toto zablokovanie bude fungovať len pre najbližšie volanie metódy <code class="docutils literal notranslate"><span class="pre">start()</span></code> a hneď potom sa tieto moduly odblokujú</p></li>
+<li><p>metóda vráti počet nezablokovaných modulov</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> vráti číselnú informáciu o počte dní pre tento modul</p>
+<ul>
+<li><p>napríklad, pre <code class="docutils literal notranslate"><span class="pre">abc42</span></code> vráti celé číslo <code class="docutils literal notranslate"><span class="pre">42</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Testovač môže spúšťať metódu <code class="docutils literal notranslate"><span class="pre">start()</span></code> viackrát s rôznymi štartovými modulmi, pripadne s rôzne zablokovanými modulmi.</p>
+<p>Napríklad, pre takéto zadanie grafu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a12</span><span class="o">-</span><span class="n">b15</span>
+<span class="n">b15</span><span class="o">-</span><span class="n">d18</span>
+<span class="n">c23</span><span class="o">-</span><span class="n">b15</span>
+<span class="n">d18</span><span class="o">-</span><span class="n">c23</span>
+<span class="n">d18</span><span class="o">-</span><span class="n">e15</span>
+<span class="n">e15</span><span class="o">-</span><span class="n">a12</span>
+</pre></div>
+</div>
+<p>takýto test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">PodmorskaStanica</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;e15&#39;</span><span class="p">)][</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)]</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;e15&#39;</span><span class="p">)][</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;c23&#39;</span><span class="p">)]</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="p">[</span><span class="s1">&#39;c23&#39;</span><span class="p">]</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;c23&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">; </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;c23&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">; </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">; </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;b15&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">; </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;b15&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;e15&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">; </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">; </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vypíše, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mena</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;d18&#39;</span><span class="p">,</span> <span class="s1">&#39;c23&#39;</span><span class="p">,</span> <span class="s1">&#39;b15&#39;</span><span class="p">,</span> <span class="s1">&#39;e15&#39;</span><span class="p">,</span> <span class="s1">&#39;a12&#39;</span><span class="p">]</span>
+<span class="n">st</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;e15&#39;</span><span class="p">)][</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">st</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;e15&#39;</span><span class="p">)][</span><span class="n">st</span><span class="o">.</span><span class="n">mena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;c23&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">st</span><span class="p">[</span><span class="s1">&#39;c23&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">83</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">,</span> <span class="s1">&#39;e15&#39;</span><span class="p">,</span> <span class="s1">&#39;d18&#39;</span><span class="p">,</span> <span class="s1">&#39;c23&#39;</span><span class="p">,</span> <span class="s1">&#39;b15&#39;</span><span class="p">,</span> <span class="s1">&#39;a12&#39;</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;c23&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">,</span> <span class="s1">&#39;b15&#39;</span><span class="p">,</span> <span class="s1">&#39;d18&#39;</span><span class="p">,</span> <span class="s1">&#39;e15&#39;</span><span class="p">,</span> <span class="s1">&#39;a12&#39;</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;c23&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">,</span> <span class="s1">&#39;e15&#39;</span><span class="p">,</span> <span class="s1">&#39;a12&#39;</span><span class="p">,</span> <span class="s1">&#39;b15&#39;</span><span class="p">,</span> <span class="s1">&#39;d18&#39;</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">56</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">,</span> <span class="s1">&#39;b15&#39;</span><span class="p">,</span> <span class="s1">&#39;c23&#39;</span><span class="p">,</span> <span class="s1">&#39;d18&#39;</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;b15&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">,</span> <span class="s1">&#39;c23&#39;</span><span class="p">,</span> <span class="s1">&#39;d18&#39;</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;b15&#39;</span><span class="p">,</span> <span class="s1">&#39;e15&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;a12&#39;</span><span class="p">,))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">zablokuj</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">st</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;d18&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">())</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="sk2026c.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 26. jún. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

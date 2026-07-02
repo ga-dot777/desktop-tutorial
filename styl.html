@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python štýl pre zápis programov &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Hľadať" href="search.html" />
+    <link rel="copyright" title="Autorské právo" href="copyright.html" />
+    <link rel="next" title="Semestrálny projekt v zimnom semestri" href="1/projekt.html" />
+    <link rel="prev" title="21. Animované obrázky" href="1/21.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2/07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="1/21.html" title="Previous Chapter: 21. Animované obrázky"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 21. Animované obrázky</span>
+    </a>
+  </li>
+  <li>
+    <a href="1/projekt.html" title="Next Chapter: Semestrálny projekt v zimnom semestri"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Semestrálny p... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="python-styl-pre-zapis-programov">
+<h1>Python štýl pre zápis programov<a class="headerlink" href="styl.html#python-styl-pre-zapis-programov" title="Link to this heading">¶</a></h1>
+<p>Detailnejšie na stránke: <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><strong>dĺžka riadkov je maximálne 79 znakov</strong></p>
+<ul>
+<li><p>dlhšie riadky treba rozdeliť do viacerých</p></li>
+<li><p>ak sa dá, môžu sa niektoré výrazy uzavrieť do zátvoriek, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">príliš_dlhý_test</span><span class="p">,</span>
+      <span class="n">ktorý</span> <span class="n">takto</span> <span class="n">môže</span> <span class="n">prechádzať</span>
+      <span class="n">aj</span> <span class="n">cez</span> <span class="n">viac</span> <span class="n">riadkov</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;niečo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>parametre funkcií, alebo napríklad aj zoznamy môžu prechádzať aj cez viac riadkov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">funkcia</span><span class="p">(</span><span class="n">prvy_parameter</span><span class="p">,</span>
+        <span class="n">druhy_parameter</span><span class="p">,</span>
+        <span class="n">treti_parameter</span><span class="p">)</span>
+<span class="n">zoznam</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+         <span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><strong>príkaz import</strong></p>
+<ul>
+<li><p>príkazy <code class="docutils literal notranslate"><span class="pre">import</span></code> musia byť všetky úplne na začiatku súboru</p></li>
+<li><p>každý <code class="docutils literal notranslate"><span class="pre">import</span></code> na samostatnom riadku</p></li>
+<li><p>nepoužívať <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modul</span> <span class="pre">import</span> <span class="pre">*</span></code> pre importovanie všetkého, namiesto toho môžeš vymenovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">radians</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>prázdne riadky</strong></p>
+<ul class="simple">
+<li><p>oddeľovanie navzájom funkcií, resp. metód</p></li>
+<li><p>oddeľovanie definícií tried</p></li>
+<li><p>možno aj logické časti vo vnútri funkcií</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>program je vždy uložený v kódovaní UTF-8</strong></p>
+<ul class="simple">
+<li><p>na identifikátory nepoužívať iné písmená ako anglickú abecedu (bez diakritiky)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p><strong>medzery</strong></p>
+<ul>
+<li><p>nevkladať za ľavú a pred pravú zátvorku</p></li>
+<li><p>nevkladať medzi meno funkcie a ľavú okrúhlu zátvorku, resp. zoznam a hranatú zátvorku</p></li>
+<li><p>nevkladať pred čiarku a dvojbodku</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">funk</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">z</span> <span class="p">[</span> <span class="mi">2</span> <span class="p">]</span> <span class="p">)</span>
+  <span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">funk</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+  <span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+</pre></div>
+</div>
+</li>
+<li><p>dvojbodka v rezoch môže mať medzeru pred ˙˙:˙˙ a potom musí byť aj za:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="n">lower</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">:</span><span class="n">horny</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="mi">9</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span><span class="mi">9</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">9</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="n">dolny</span> <span class="p">:</span> <span class="p">:</span> <span class="n">horny</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[</span> <span class="p">:</span> <span class="n">horny</span><span class="p">]</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="n">lower</span><span class="o">+</span><span class="n">pocet</span> <span class="p">:</span> <span class="n">horny</span><span class="o">+</span><span class="n">pocet</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="n">lower</span> <span class="o">+</span> <span class="n">pocet</span> <span class="p">:</span> <span class="n">horny</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[</span><span class="n">dolny</span><span class="p">::</span><span class="n">horny</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">dolny</span> <span class="p">::</span> <span class="n">horny</span><span class="p">]</span>
+  <span class="n">zoz</span><span class="p">[:</span><span class="n">horny</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>tieto operátory musia mať medzeru pred aj za:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+=</span><span class="p">,</span> <span class="o">-=</span><span class="p">,</span> <span class="o">*=</span><span class="p">,</span> <span class="o">...</span>
+<span class="o">==</span><span class="p">,</span> <span class="o">!=</span><span class="p">,</span> <span class="o">&lt;</span><span class="p">,</span> <span class="o">&lt;=</span><span class="p">,</span> <span class="o">&gt;</span><span class="p">,</span> <span class="o">&gt;=</span>
+<span class="ow">in</span><span class="p">,</span> <span class="ow">not</span> <span class="ow">in</span><span class="p">,</span> <span class="ow">is</span><span class="p">,</span> <span class="ow">is</span> <span class="ow">not</span>
+<span class="ow">and</span><span class="p">,</span> <span class="ow">or</span><span class="p">,</span> <span class="ow">not</span>
+</pre></div>
+</div>
+</li>
+<li><p>znak priradenia <code class="docutils literal notranslate"><span class="pre">=</span></code> mimo pomenovaného parametra musí mať medzeru pred aj za</p></li>
+<li><p>pri pomenovaných parametroch sa medzery nevkladajú:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nieco&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="n">x</span><span class="o">=</span><span class="mi">77</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nieco&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">77</span>
+</pre></div>
+</div>
+</li>
+<li><p>operácie sa väčšinou oddeľujú od operandov medzerami, výnimkou sú výrazy, v ktorých sú operácie s rôznymi prioritami a potrebujeme zvýrazniť ten podvýraz, ktorý sa bude vyhodnocovať skôr:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+  <span class="n">pocet</span> <span class="o">+=</span><span class="mi">1</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="n">vzd2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="n">vzd2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><strong>pomenovávanie</strong></p>
+<ul>
+<li><p>mená tried vždy začínajú veľkým písmenom, nepoužívajú sa podčiarkovníky, ale na zvýraznenie čitateľnosti sa ďalšie slová môžu začínať veľkým písmenom, napríklad</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="k">class</span><span class="w"> </span><span class="nc">Velke_cisla</span><span class="p">:</span> <span class="k">pass</span>
+  <span class="k">class</span><span class="w"> </span><span class="nc">student_Bez_Ubytovania</span><span class="p">:</span> <span class="k">pass</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="k">class</span><span class="w"> </span><span class="nc">VelkeCisla</span><span class="p">:</span> <span class="k">pass</span>
+  <span class="k">class</span><span class="w"> </span><span class="nc">StudentBezUbytovania</span><span class="p">:</span> <span class="k">pass</span>
+</pre></div>
+</div>
+</li>
+<li><p>mená funkcií, metód, premenných a parametrov obsahujú len malé písmená, číslice a podčiarkovníky na oddelenie slov pre čitateľnosť, podčiarkovník na začiatku alebo na konci mena má často v Pythone iný význam (budeme ich používať len v tých špeciálnych prípadoch), napríklad</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="n">pocetCervenych</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">KopiaSposunom</span><span class="p">(</span><span class="n">Param1</span><span class="p">,</span> <span class="n">_param2</span><span class="p">,</span> <span class="n">param_3_</span><span class="p">):</span> <span class="k">pass</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="n">pocet_cervenych</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">kopia_s_posunom</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">,</span> <span class="n">param_3</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
+</div>
+</li>
+<li><p>mená magických metód (aj premenných) začínajú aj končia dvoma podčiarkovníkmi, nebudeme ich používať na iné účely</p></li>
+<li><p>meno atribútu (premennej alebo metódy), ktoré začína jedným podčiarkovníkom vyjadruje, že toto meno nie je verejné a nemalo by sa používať mimo metód samotnej triedy</p></li>
+<li><p>prvý parameter v metódach má vždy meno <code class="docutils literal notranslate"><span class="pre">self</span></code></p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p><strong>ďalšie rady</strong></p>
+<ul>
+<li><p>porovnávanie na rovnosť, nerovnosť s hodnotou <code class="docutils literal notranslate"><span class="pre">None</span></code> vždy pomocou <code class="docutils literal notranslate"><span class="pre">is</span></code> alebo <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">is</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">vysl</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+  <span class="k">while</span> <span class="ow">not</span> <span class="n">podm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+  <span class="n">test</span> <span class="o">=</span> <span class="n">res</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">vysl</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+  <span class="k">while</span> <span class="n">podm</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+  <span class="n">test</span> <span class="o">=</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p>neporovnávať logickú hodnotu na <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">vysledok</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span> <span class="o">...</span>
+  <span class="k">if</span> <span class="n">vysledok</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span> <span class="o">...</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">vysledok</span><span class="p">:</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>na formátovanie znakového reťazca používať <code class="docutils literal notranslate"><span class="pre">f'...{}...'</span></code> alebo <code class="docutils literal notranslate"><span class="pre">'...{}...'.format(...)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vysledok = (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;vysledok = (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vysledok = (</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>nepoužívať žiadne globálne premenné v definícií tried - všetko treba riešiť parametrami a atribútmi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="p">:</span>
+      <span class="k">def</span><span class="w"> </span><span class="nf">metoda</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="p">:</span>
+      <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+      <span class="k">def</span><span class="w"> </span><span class="nf">metoda</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="n">Test</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>globálne premenné vo funkciách používať veľmi obozretne, vyhýbať sa <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+<li><p>náhradné hodnoty pomenovaných parametrov nikdy (sú výnimky) nedávať mutable typov (zoznam, slovník, množina), napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nie</span><span class="p">:</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">funkcia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">zoz</span><span class="o">=</span><span class="p">[]):</span>
+      <span class="n">zoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+      <span class="o">...</span>
+<span class="n">Ano</span><span class="p">:</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">funkcia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">zoz</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">zoz</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+          <span class="n">zoz</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="n">zoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+      <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="styl.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

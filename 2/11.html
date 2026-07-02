@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>11. Ďalšie algoritmy na grafoch &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="Priebeh zimného semestra" href="../1/pravidla.html" />
+    <link rel="prev" title="10. Backtracking na grafoch" href="10.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Backtracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Backtracking na grafoch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="11.html#">11. Ďalšie algoritmy na grafoch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="10.html" title="Previous Chapter: 10. Backtracking na grafoch"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 10. Backtrack...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../1/pravidla.html" title="Next Chapter: Priebeh zimného semestra"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Priebeh zimné... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="dalsie-algoritmy-na-grafoch">
+<h1>11. Ďalšie algoritmy na grafoch<a class="headerlink" href="11.html#dalsie-algoritmy-na-grafoch" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="11.html#dijkstrov-algoritmus" id="id3">Dijkstrov algoritmus</a></p></li>
+<li><p><a class="reference internal" href="11.html#union-find-problem" id="id4">Union-Find problém</a></p>
+<ul>
+<li><p><a class="reference internal" href="11.html#trivialne-riesenie" id="id5">Triviálne riešenie</a></p></li>
+<li><p><a class="reference internal" href="11.html#riesenie-so-spajanymi-zoznamami" id="id6">Riešenie so spájanými zoznamami</a></p></li>
+<li><p><a class="reference internal" href="11.html#riesenie-stromami" id="id7">Riešenie stromami</a></p></li>
+<li><p><a class="reference internal" href="11.html#ine-vyuzitie-union-find" id="id8">Iné využitie union-find</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="11.html#cvicenie" id="id9">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="11.html#tyzdenny-projekt" id="id10">11. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<p class="rubric">Reprezentácie grafov</p>
+<p>Už poznáme väčšie množstvo rôznych reprezentácií. Tu sa pozrieme na konkrétne štyri:</p>
+<ol class="arabic simple">
+<li><p><strong>zoznam hrán</strong> (edge list)</p>
+<ul class="simple">
+<li><p>všetky hrany sú sústredené do jedného zoznamu (môže byť aj spájaný zoznam) pričom nie sú usporiadané v žiadnom poradí</p></li>
+<li><p>v tomto zozname sú buď priamo dvojice (usporiadané alebo neusporiadané) vrcholov alebo hrán, ktoré sú objektmi s atribútmi začiatok a koniec hrany</p></li>
+<li><p>ak je graf ohodnotený, tento zoznam pri každej hrane obsahuje aj jej váhu</p></li>
+<li><p>reprezentácia si ešte pamätá aj zoznam všetkých vrcholov</p></li>
+</ul>
+</li>
+<li><p><strong>zoznam susedov</strong> (adjacency list)</p>
+<ul class="simple">
+<li><p>pre každý vrchol sa udržuje zoznam (môže byť aj spájaný zoznam) všetkých susediacich vrcholov</p></li>
+<li><p>v neorientovanom grafe sa každá hrana musí nachádzať v oboch zoznamoch pre oba vrcholy</p></li>
+<li><p>aby boli všetky operácie čo najefektívnejšie, zvykne sa zoznam realizovať dvojsmerným spájaným zoznamom: vyhodenie konkrétnej hrany (<code class="docutils literal notranslate"><span class="pre">odstran_hranu()</span></code>) má potom časovú zložitosť <strong>O(1)</strong>, inak bude mať táto operácia zložitosť <strong>O(d)</strong></p></li>
+</ul>
+</li>
+<li><p><strong>asociatívne pole susedov</strong> (adjacency map)</p>
+<ul class="simple">
+<li><p>veľmi podobná realizácia <strong>zoznamu susedov</strong>: namiesto zoznamu použijeme asociatívne pole</p></li>
+<li><p>vďaka tomu má operácia vyhľadania hrany (<code class="docutils literal notranslate"><span class="pre">je_hrana()</span></code>) zložitosť len <strong>O(1)</strong></p></li>
+<li><p>zrejme kľúčom v týchto asociatívnych poliach susedov bude druhý vrchol, tento by ale mal byť <strong>hashovateľný</strong></p></li>
+</ul>
+</li>
+<li><p><strong>matica susedností</strong> (adjacency matrix)</p>
+<ul class="simple">
+<li><p>každý riadok matice (i-ty) obsahuje informácie o susedoch i-teho vrcholu, teda j-ty stĺpec označuje hranu medzi i-tym a j-tym vrcholom, napríklad hodnoty <code class="docutils literal notranslate"><span class="pre">False</span></code>/<code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">0</span></code>/<code class="docutils literal notranslate"><span class="pre">1</span></code> označujú: neexistuje hrana/hrana existuje, resp. pre ohodnotené grafy priamo táto matica označuje váhu konkrétnej hrany (resp. nejaká hodnota označuje neexistenciu hrany, napríklad <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>pre <strong>riedke</strong> grafy, v ktorých má každý vrchol malý počet hrán (susedov) je toto veľmi neefektívna reprezentácia, lebo väčšina matice (možno 90%) obsahuje informáciu o neexistencii príslušnej hrany</p></li>
+<li><p>zrejme matica pre neorientovaný graf je symetrická</p></li>
+</ul>
+</li>
+</ol>
+<p>Ak by sme definovali abstraktnú triedu <strong>graf</strong> pravdepodobne by obsahovala tieto metódy:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Tabuľka zložitostí metód</span><a class="headerlink" href="11.html#id2" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 17.8%" />
+<col style="width: 6.8%" />
+<col style="width: 6.8%" />
+<col style="width: 6.8%" />
+<col style="width: 6.8%" />
+<col style="width: 54.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><em>metóda</em></p></th>
+<th class="head"><p>graf1</p></th>
+<th class="head"><p>graf2</p></th>
+<th class="head"><p>graf3</p></th>
+<th class="head"><p>graf4</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pocet_vrcholov()</span></code></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pocet_hran()</span></code></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td><p><strong>O(n**2)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vrcholy()</span></code></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hrany()</span></code></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(n**2)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">je_hrana(u,</span> <span class="pre">v)</span></code></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(d)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stupen(v)</span></code></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">susediace(v)</span></code></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(d)</strong></p></td>
+<td><p><strong>O(d)</strong></p></td>
+<td><p><strong>O(n)</strong></p></td>
+<td><p><em>všetky susediace vrcholy</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vloz_vrchol(x)</span></code></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(n**2)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">odstran_vrchol(v)</span></code></p></td>
+<td><p><strong>O(m)</strong></p></td>
+<td><p><strong>O(d)</strong></p></td>
+<td><p><strong>O(d)</strong></p></td>
+<td><p><strong>O(n**2)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vloz_hranu(u,</span> <span class="pre">v,</span> <span class="pre">x)</span></code></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">odstran_hranu(e)</span></code></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td><p><strong>O(1)</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><em>pamäť</em></p></td>
+<td><p><strong>O(n+m)</strong></p></td>
+<td><p><strong>O(n+m)</strong></p></td>
+<td><p><strong>O(n+m)</strong></p></td>
+<td><p><strong>O(n**2)</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>V tejto tabuľke je okrem zložitostí operácií pre tieto 4 reprezentácie aj ich pamäťová zložitosť. Jednotlivé premenné tu majú tento význam:</p>
+<ul class="simple">
+<li><p><strong>n</strong> počet vrcholov</p></li>
+<li><p><strong>m</strong> počet hrán</p></li>
+<li><p><strong>d</strong> stupeň vrcholu (pre riedke grafy sa blíži k <strong>O(1)</strong>, pre husté k <strong>O(n)</strong>)</p></li>
+</ul>
+<p class="h3 rubric">Algoritmy prehľadávania grafu</p>
+<p>Už sme sa zoznámili s týmito troma základnými algoritmami:</p>
+<ol class="arabic simple">
+<li><p>prehľadávanie do hĺbky (depth-first search - DFS)</p></li>
+<li><p>prehľadávanie do šírky (breadth-first search - BFS)</p></li>
+<li><p>prehľadávanie do hĺbky s návratom (backtracking)</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h4 rubric">Prehľadávanie do hĺbky</p>
+<p>pseudokód:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prehladavanie</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+    <span class="n">označ</span> <span class="n">ako</span> <span class="n">navštívený</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v2</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+<span class="hll">            <span class="n">rekurzívne</span> <span class="n">volaj</span> <span class="n">prehladavanie</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>alebo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prehladavanie</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v2</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+            <span class="n">označ</span> <span class="n">ako</span> <span class="n">navštívená</span> <span class="n">hrana</span> <span class="n">z</span> <span class="n">v1</span> <span class="n">do</span> <span class="n">v2</span>
+<span class="hll">            <span class="n">rekurzívne</span> <span class="n">volaj</span> <span class="n">prehladavanie</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Zložitosť algoritmu lineárne závisí od počtu vrcholov a počtu hrán, t.j. <strong>O(m + n)</strong></p>
+<p>Algoritmus sa využije hlavne na zisťovanie:</p>
+<ul class="simple">
+<li><p>počtu komponentov, všetkých komponentov, maximálneho komponentu</p></li>
+<li><p>či je graf súvislý</p></li>
+<li><p>či sú dva vrcholy v tom istom komponente</p></li>
+<li><p>nájdenie ľubovoľnej cesty medzi dvoma vrcholmi</p></li>
+</ul>
+<p class="h4 rubric">Prehľadávanie do šírky</p>
+<p>pseudokód:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">prehladavanie</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+</span>    <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">v1</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+            <span class="n">označ</span> <span class="n">ako</span> <span class="n">navštívený</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">v2</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>alebo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">prehladavanie</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+</span>    <span class="n">uroven</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">uroven</span><span class="p">:</span>
+        <span class="n">dalsia_uroven</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">v1</span> <span class="ow">in</span> <span class="n">uroven</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v1</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+                <span class="n">označ</span> <span class="n">ako</span> <span class="n">navštívený</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">v2</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+                        <span class="n">dalsia_uroven</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+        <span class="n">uroven</span> <span class="o">=</span> <span class="n">dalsia_uroven</span>
+</pre></div>
+</div>
+<p>Zložitosť algoritmu lineárne závisí od počtu vrcholov a počtu hrán, t.j. <strong>O(m + n)</strong></p>
+<p>Algoritmus sa využije hlavne na zisťovanie:</p>
+<ul class="simple">
+<li><p>to isté ako prehľadávanie do hĺbky</p></li>
+<li><p>vzdialenosť dvoch vrcholov, nájdenie najkratšej cesty medzi dvoma vrcholmi - len pre neohodnotené grafy</p></li>
+</ul>
+<p class="h4 rubric">Backtracking</p>
+<p>Je to hrubá sila - väčšinou <strong>O(2**n)</strong>. Dajú sa riešiť ľubovoľné problémy aj na ohodnotených grafoch.</p>
+<p>pseudokód:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">prehladavanie</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+</span>    <span class="n">označ</span> <span class="n">ako</span> <span class="n">navštívený</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nájdené</span> <span class="n">riešenie</span><span class="p">:</span>
+        <span class="n">spracuj</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">v2</span> <span class="n">je</span> <span class="n">ešte</span> <span class="n">nenavštívený</span><span class="p">:</span>
+<span class="hll">                <span class="n">rekurzívne</span> <span class="n">volaj</span> <span class="n">prehladavanie</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+</span>    <span class="n">odznač</span> <span class="n">ako</span> <span class="n">navštívený</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="dijkstrov-algoritmus">
+<h2><a class="toc-backref" href="11.html#id3" role="doc-backlink">Dijkstrov algoritmus</a><a class="headerlink" href="11.html#dijkstrov-algoritmus" title="Link to this heading">¶</a></h2>
+<p>Základný <a class="reference external" href="https://sk.wikipedia.org/wiki/Dijkstrov_algoritmus">algoritmus hľadania najkratšej cesty</a> v ohodnotenom grafe. Zložitosť algoritmu je <strong>O(n**2)</strong> (závisí od efektívnosti prioritného frontu). Všimnite si, že sa veľmi podobá na algoritmus do šírky, len si pritom zisťuje najkratšie cesty k navštíveným vrcholom. Pseudokód:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">prehladavanie</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+</span>    <span class="c1"># v zozname D sú momentálne vzdialenosti od v1</span>
+    <span class="n">D</span><span class="p">[</span><span class="n">všetky</span> <span class="n">vrcholy</span><span class="p">]</span> <span class="o">=</span> <span class="n">inf</span>      <span class="c1"># nekonečno</span>
+    <span class="n">D</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">prioritný</span> <span class="n">front</span> <span class="n">všetkých</span> <span class="n">vrcholov</span> <span class="n">podľa</span> <span class="n">kľúčov</span> <span class="n">D</span>
+    <span class="n">spracovane</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">v1</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span>
+        <span class="n">pridaj</span> <span class="n">v1</span> <span class="n">k</span> <span class="n">spracovanym</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="n">este</span> <span class="n">nespracovany</span><span class="p">:</span>           <span class="c1"># ešte je vo fronte</span>
+                <span class="k">if</span> <span class="n">D</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span> <span class="o">+</span> <span class="n">vaha</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+                    <span class="n">D</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span> <span class="o">+</span> <span class="n">vaha</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+                    <span class="n">zmeň</span> <span class="n">kľúč</span> <span class="n">D</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="n">v</span> <span class="n">queue</span> <span class="n">pre</span> <span class="n">vrchol</span> <span class="n">v</span>
+
+    <span class="k">return</span> <span class="n">D</span>     <span class="c1"># zoznam vzdialeností všetkých vrcholov od v1</span>
+</pre></div>
+</div>
+<p>Tento algoritmus nenájde konkrétnu najkratšiu cestu, ale zostaví zoznam <code class="docutils literal notranslate"><span class="pre">D</span></code> najkratších vzdialeností (súčet váh) od konkrétneho štartového vrcholu <code class="docutils literal notranslate"><span class="pre">v1</span></code>. Z tohto zoznamu sa ale veľmi jednoducho dá zostaviť najkratšia cesta zo štartu <code class="docutils literal notranslate"><span class="pre">v1</span></code> do ľubovoľného iného vrcholu <code class="docutils literal notranslate"><span class="pre">v2</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cesta</span> <span class="o">=</span> <span class="p">[</span><span class="n">v2</span><span class="p">]</span>
+<span class="k">while</span> <span class="n">v1</span> <span class="o">!=</span> <span class="n">v2</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span>  <span class="n">susediace_vrcholy</span><span class="p">(</span><span class="n">v2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">D</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="n">vaha</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span><span class="p">[</span><span class="n">v2</span><span class="p">]:</span>
+            <span class="k">break</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">cesta</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dijkstrov algoritmus by si mohol pre každý vrchol niekde pamätať svojho predchodcu, t.j. vrchol, z ktorého sa ku nemu prišlo. Trochu by to zjednodušilo konštruovanie cesty.</p>
+<p>Pozrime si priebeh algoritmu na tomto jednoduchom grafe:</p>
+<a class="reference internal image-reference" href="../_images/211_01.png"><img alt="../_images/211_01.png" class="align-center" height="196" src="../_images/211_01.png" width="346" />
+</a>
+<p>Na začiatku algoritmu prioritný front vyzerá takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>queue = (0, &#39;A&#39;) (∞, &#39;B&#39;) (∞, &#39;C&#39;) (∞, &#39;D&#39;) (∞, &#39;E&#39;) (∞, &#39;F&#39;) (∞, &#39;G&#39;)
+</pre></div>
+</div>
+<p>minimálmu hodnotu má vrchol <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, z frontu túto dvojicu vyhodíme (<code class="docutils literal notranslate"><span class="pre">remove_min()</span></code>) a jeho susedom (<code class="docutils literal notranslate"><span class="pre">'B'</span></code> a <code class="docutils literal notranslate"><span class="pre">'C'</span></code>) vypočítame hodnoty <code class="docutils literal notranslate"><span class="pre">D</span></code> a zaradíme ich do frontu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>queue = (2, &#39;C&#39;) (3, &#39;B&#39;) (∞, &#39;D&#39;) (∞, &#39;E&#39;) (∞, &#39;F&#39;) (∞, &#39;G&#39;)
+</pre></div>
+</div>
+<p>teraz má minimálnu hodnotu vrchol <code class="docutils literal notranslate"><span class="pre">'C'</span></code> (vyhodíme ho z frontu) a vypočítame nové hodnoty pre susedov <code class="docutils literal notranslate"><span class="pre">'D'</span></code> a <code class="docutils literal notranslate"><span class="pre">'F'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>queue = (3, &#39;B&#39;) (5, &#39;D&#39;) (10, &#39;F&#39;) (∞, &#39;E&#39;) (∞, &#39;G&#39;)
+</pre></div>
+</div>
+<p>minimálna hodnota je <code class="docutils literal notranslate"><span class="pre">'B'</span></code>, vypočítame susedov <code class="docutils literal notranslate"><span class="pre">'E'</span></code> a <code class="docutils literal notranslate"><span class="pre">'D'</span></code> (<code class="docutils literal notranslate"><span class="pre">'D'</span></code> sme opravili hodnotu z <code class="docutils literal notranslate"><span class="pre">5</span></code> na <code class="docutils literal notranslate"><span class="pre">4</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>queue = (4, &#39;D&#39;) (6, &#39;E&#39;) (10, &#39;F&#39;) (∞, &#39;G&#39;)
+</pre></div>
+</div>
+<p>minimálna hodnota je <code class="docutils literal notranslate"><span class="pre">'D'</span></code>, vypočítame susedov <code class="docutils literal notranslate"><span class="pre">'E'</span></code> a <code class="docutils literal notranslate"><span class="pre">'F'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>queue = (6, &#39;E&#39;) (9, &#39;F&#39;) (∞, &#39;G&#39;)
+</pre></div>
+</div>
+<p>minimálna hodnota je <code class="docutils literal notranslate"><span class="pre">'E'</span></code>, vypočítame susedov <code class="docutils literal notranslate"><span class="pre">'F'</span></code> a <code class="docutils literal notranslate"><span class="pre">'G'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">queue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>minimálna hodnota je <code class="docutils literal notranslate"><span class="pre">'F'</span></code>, vypočítame suseda <code class="docutils literal notranslate"><span class="pre">'G'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">queue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vrchol <code class="docutils literal notranslate"><span class="pre">'G'</span></code> už nemá nespracovaných susedov, takže algoritmus končí.</p>
+<p>V zozname <code class="docutils literal notranslate"><span class="pre">D</span></code>, v ktorom sme počítali vzialenosti od vrcholu <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, je postupne pre každý vrchol:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vzdialenosť z <code class="docutils literal notranslate"><span class="pre">'A'</span></code> do <code class="docutils literal notranslate"><span class="pre">'G'</span></code> je <strong>10</strong>. Keď teraz spustíme vykreslenie cesty, dostávame:</p>
+<a class="reference internal image-reference" href="../_images/211_02.png"><img alt="../_images/211_02.png" class="align-center" height="204" src="../_images/211_02.png" width="347" />
+</a>
+<p>Túto istú tabuľku by sme vedeli využiť, napríklad, aj pre najkratšiu cestu do <code class="docutils literal notranslate"><span class="pre">'F'</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/211_03.png"><img alt="../_images/211_03.png" class="align-center" height="203" src="../_images/211_03.png" width="350" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="union-find-problem">
+<h2><a class="toc-backref" href="11.html#id4" role="doc-backlink">Union-Find problém</a><a class="headerlink" href="11.html#union-find-problem" title="Link to this heading">¶</a></h2>
+<p>motivácia:</p>
+<ul class="simple">
+<li><p>tajná služba sa snaží odhaliť identitu agentov</p></li>
+<li><p>každý agent má niekoľko svojich mien (zrejme pre každé má aj svoj pas)</p></li>
+<li><p>tajná služba by chcela mať systém, pomocou ktorého by vedela rýchlo zistiť, či dve rôzne mená patria jednému agentovi (napríklad <code class="docutils literal notranslate"><span class="pre">'James</span> <span class="pre">Bond'</span></code> a <code class="docutils literal notranslate"><span class="pre">'007'</span></code>)</p></li>
+<li><p>zrejme takýto systém sa dá reprezentovať ako graf, v ktorom vrcholmi sú rôzne mená agentov a hranami vyjadrujeme, že dve mená patria jednému agentovi</p></li>
+</ul>
+<p>V takomto systéme práve komponenty grafu vyjadrujú vzťah medzi agentom a jeho rôznymi menami. Takže tajná služba chce rýchlo vedieť zistiť, či sa dve mená nachádzajú v tom istom komponente.</p>
+<p>Už vieme zostaviť jednoduché algoritmy, ktoré pomocou prehľadávania <strong>do_hĺbky</strong> alebo <strong>do_šírky</strong> zostroja množiny vrcholov pre jednotlivé komponenty. Najväčší problém ale nastáva, keď sa tajná služba dozvie nový vzťah medzi dvoma menami (novú hranu grafu) a bude treba znovu prepočítať všetky komponenty, pritom by možno stačilo s existujúcimi komponentmi niečo urobiť. (Hoci, ak to potrebujeme zistiť len raz na začiatku bez ďalších pridávaní hrán, algoritmus do_hĺbky/do_šírky je dostatočne efektívny.)</p>
+<p>Tento problém sa nazýva <strong>union-find</strong>, resp. sústava disjunktných množín (<a class="reference external" href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">disjoint set</a>):</p>
+<ul class="simple">
+<li><p>máme niekoľko disjunktných množín</p></li>
+<li><p>chceme vedieť rýchlo nájsť, v ktorej množine sa nachádza nejaký prvok (v ktorom komponente sa nachádza nejaký vrchol): operácia <strong>find</strong></p></li>
+<li><p>a tiež chceme raz začas dve množiny spojiť do jednej (pridali sme novú hranu, musíme spojiť dva komponenty do jedného): operácia <strong>union</strong></p></li>
+</ul>
+<p>Ako reprezentovať takúto dátovú štruktúru (zrejme ju bude využívať, napríklad, náš graf mien agentov), aby tieto operácie boli čo najefektívnejšie. Tieto disjunktné množiny by ste nemali pliesť so štandardným pythonovským typom <code class="docutils literal notranslate"><span class="pre">set</span></code>, preto sa niekedy používa aj terminológia disjunktné skupiny (group).</p>
+<p>Aby sme vedeli manipulovať s takýmito množinami, každá bude mať svojho reprezentanta (jeden konkrétny prvok zo skupiny) - niekedy sa mu hovorí aj líder (leader).</p>
+<p>Základné operácie tejto dátovej štruktúry:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make_set(x)</span></code> - vytvorí novú jednoprvkovú množinu pre objekt <code class="docutils literal notranslate"><span class="pre">x</span></code></p>
+<ul>
+<li><p>zrejme samotný prvok je aj reprezentantom tejto množiny</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">union(p,</span> <span class="pre">q)</span></code> - spojí dve množiny, ktoré obsahujú dané dva prvky, do jednej</p>
+<ul>
+<li><p>väčšinou sa reprezentant jednej z týchto množín stáva reprezentantom aj ich zjednotenia</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find(p)</span></code> - vráti reprezentanta množiny, v ktorej sa daný prvok nachádza</p></li>
+</ul>
+<section id="trivialne-riesenie">
+<h3><a class="toc-backref" href="11.html#id5" role="doc-backlink">Triviálne riešenie</a><a class="headerlink" href="11.html#trivialne-riesenie" title="Link to this heading">¶</a></h3>
+<p>Predpokladajme, že každý prvok má informáciu o reprezentantovi množiny, do ktorej patrí. Napríklad, ak sme mali graf definovaný ako zoznam vrcholov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rep</span> <span class="o">=</span> <span class="bp">self</span>               <span class="c1"># reprezentant</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Pri vytvorení vrcholu sme mu automaticky pridelili reprezentanta (samého seba). Operácia <code class="docutils literal notranslate"><span class="pre">find(p)</span></code> potom vráti túto hodnotu. Zložitosť tejto operácie je <strong>O(1)</strong>. Operácia <code class="docutils literal notranslate"><span class="pre">union(p,</span> <span class="pre">q)</span></code> najprv zistí reprezentantov oboch prvkov (pomocou <code class="docutils literal notranslate"><span class="pre">find()</span></code>) a ak sú rôzni, bude treba všetky výskyty druhého reprezentanta v zozname všetkých prvkov (<code class="docutils literal notranslate"><span class="pre">self.vrcholy</span></code>) zmeniť na hodnoty prvého reprezentanta, teda schematicky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">r1</span> <span class="o">!=</span> <span class="n">r2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">rep</span> <span class="o">==</span> <span class="n">r2</span><span class="p">:</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">rep</span> <span class="o">=</span> <span class="n">r1</span>
+</pre></div>
+</div>
+<p>Zrejme zložitosť tejto operácie je <strong>O(n)</strong> pre <strong>n</strong> počet prvkov (napríklad, vrcholov grafu).</p>
+<p>Vo všeobecnosti toto riešenie znamená pomocnú tabuľku veľkosti <strong>n</strong>, v ktorej i-ty prvok tabuľky zodpovedá reprezentantovi i-teho prvku. Operácia <code class="docutils literal notranslate"><span class="pre">find()</span></code> iba siahne do tabuľky na príslušné miesto (teda <strong>O(1)</strong>) a operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> bude možno musieť prejsť celú tabuľku a niektorým prvkom zmeniť hodnotu (zložitosť je teda <strong>O(n)</strong>).</p>
+<p>Ak by sme zapísali túto reprezentáciu do tabuľky (do zoznamu), v ktorej i-ty prvok označuje reprezentanta, tak pre izolované vrcholy tabuľka vyzerá takto:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>2</strong></p></td>
+<td><p><strong>3</strong></p></td>
+<td><p><strong>4</strong></p></td>
+<td><p><strong>5</strong></p></td>
+<td><p><strong>6</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>8</strong></p></td>
+<td><p><strong>9</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Každý prvok je sám pre seba reprezentantom. Ak budeme teraz zjednocovať niektoré množiny, začnú sa prerábať reprezentanti pre jednotlivé prvky, napríklad, po operácii <code class="docutils literal notranslate"><span class="pre">union(1,</span> <span class="pre">3)</span></code> všetky prvky s reprezentantom <strong>3</strong> sa prerobia na <strong>1</strong>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>2</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>4</strong></p></td>
+<td><p><strong>5</strong></p></td>
+<td><p><strong>6</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>8</strong></p></td>
+<td><p><strong>9</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Momentálne máme už len 9 disjunktných množín, pričom jedna z nich má 2 prvky.</p>
+<p>Po ďalších niekoľkých volaniach: <code class="docutils literal notranslate"><span class="pre">union(2,</span> <span class="pre">4)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(7,</span> <span class="pre">6)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(8,</span> <span class="pre">9)</span></code>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>2</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>2</strong></p></td>
+<td><p><strong>5</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>8</strong></p></td>
+<td><p><strong>8</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Teraz máme už len 6 množín: dve sú 1 prvkové a štyri dvojprvkové.</p>
+<p>Ďalšie dve volania <code class="docutils literal notranslate"><span class="pre">union(3,</span> <span class="pre">4)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(7,</span> <span class="pre">8)</span></code> zlúčia ďalšie množiny:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>5</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Prvé volanie <code class="docutils literal notranslate"><span class="pre">union(3,</span> <span class="pre">4)</span></code> najprv zistilo reprezentantov prvkov <strong>3</strong> a <strong>4</strong>, to sú hodnoty <strong>1</strong> a <strong>2</strong> a preto prvky s hodnotami <strong>2</strong> sa nahradili <strong>1</strong>.</p>
+<p>Ďalšie volanie <code class="docutils literal notranslate"><span class="pre">union(6,</span> <span class="pre">4)</span></code> zlúči množiny s reprezentantmi <strong>7</strong> (pre prvok <strong>6</strong>) a <strong>1</strong> (pre prvok <strong>4</strong>), teda nahradia <strong>1</strong> hodnotami <strong>7</strong>, vznikne tým jedna 8 prvková množina. Ak by sme ešte zavolali <code class="docutils literal notranslate"><span class="pre">union(1,</span> <span class="pre">9)</span></code>, neudeje sa nič, lebo oba prvky majú teraz rovnakého reprezentanta:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 4.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>5</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Vidíme, že tu teraz máme 3 disjunktné množiny a vieme veľmi rýchlo zistiť, či sa ľubovoľné dva prvky <code class="docutils literal notranslate"><span class="pre">x</span></code> a <code class="docutils literal notranslate"><span class="pre">y</span></code> nachádzajú v tej istej množine: stačí otestovať</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tab</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">tab</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Zrejme operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> tu má časovú zložitosť <strong>O(n)</strong>, keďže kvôli prečíslovaniu reprezentantov, musíme prejsť celú tabuľku. Ak by sme volali <code class="docutils literal notranslate"><span class="pre">union()</span></code> len pre prvky, ktoré sú v rôznych množinách, tak po <strong>n-1</strong> volaniach by sme dostali jedinú množinu, ktorá by obsahovala všetky prvky.</p>
+</section>
+<section id="riesenie-so-spajanymi-zoznamami">
+<h3><a class="toc-backref" href="11.html#id6" role="doc-backlink">Riešenie so spájanými zoznamami</a><a class="headerlink" href="11.html#riesenie-so-spajanymi-zoznamami" title="Link to this heading">¶</a></h3>
+<p>Aby sme v predchádzajúcom tabuľkovom riešení nemuseli pri <code class="docutils literal notranslate"><span class="pre">union()</span></code> zakaždým prechádzať celý zoznam, pre každý komponent si vytvoríme <strong>spájaný zoznam</strong> tých prvkov, ktoré do neho patria. Okrem toho si uložíme aj veľkosť tohto komponentu. Operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> bude teraz prechádzať a modifikovať len prvky menšieho komponentu. Potom ešte tieto dva spájané zoznamy zreťazí a nastaví si novú veľkosť komponentu.</p>
+<p>V najhoršom prípade je operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> opäť <strong>O(n)</strong>, ale pre každý prvok platí, že jeho hodnota reprezentanta sa zmení iba vtedy, keď sa nachádza v menšom (alebo rovnako veľkom) komponente. Lenže toto sa môže stať maximálne <strong>log n</strong> krát, preto <strong>n</strong> operácií <code class="docutils literal notranslate"><span class="pre">union()</span></code> bude trvať <strong>O(n log n)</strong> a preto <strong>priemerná</strong> zložitosť jednej operácie <code class="docutils literal notranslate"><span class="pre">union()</span></code> je <strong>O(log n)</strong>.</p>
+<p>V našom príklade s komponentmi grafu, by sme to mohli zapísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rep</span> <span class="o">=</span> <span class="bp">self</span>               <span class="c1"># reprezentant</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>              <span class="c1"># nasledovník v komponente</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">1</span>                 <span class="c1"># počet prvkov v komponente</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Asi bude najvhodnejšie, keď reprezentantom bude prvý prvok komponentu, teda spájaného zoznamu. Potom schematicky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+</span>    <span class="n">r1</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">r1</span> <span class="o">!=</span> <span class="n">r2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">r1</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;</span> <span class="n">r2</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="c1"># všetkým prvkom v zozname r1 zmen reprezentanta na r2</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">last</span> <span class="o">=</span> <span class="n">r1</span>
+            <span class="k">while</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">rep</span> <span class="o">=</span> <span class="n">r2</span>
+                <span class="n">last</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">next</span>
+            <span class="c1"># zreťaz oba zoznamy</span>
+            <span class="n">last</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">r2</span><span class="o">.</span><span class="n">next</span>
+            <span class="n">r2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">r1</span>
+            <span class="c1"># zvýš počet</span>
+            <span class="n">r2</span><span class="o">.</span><span class="n">size</span> <span class="o">+=</span> <span class="n">r1</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># všetkým prvkom v zozname r2 zmen reprezentanta na r1</span>
+            <span class="o">...</span>
+            <span class="c1"># zreťaz oba zoznamy</span>
+            <span class="o">...</span>
+            <span class="c1"># zvýš počet</span>
+            <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="riesenie-stromami">
+<h3><a class="toc-backref" href="11.html#id7" role="doc-backlink">Riešenie stromami</a><a class="headerlink" href="11.html#riesenie-stromami" title="Link to this heading">¶</a></h3>
+<p>Predchádzajúce riešenie pomocou spájaných zoznamov ešte trochu vylepšíme. Aby sme nemuseli pri operácii <code class="docutils literal notranslate"><span class="pre">union()</span></code> prechádzať veľkú časť prvkov (všetky v nejakom komponente), nebudeme z nich vytvárať spájané zoznamy, ale orientované stromy: každý prvok si bude namiesto nasledovníka (<code class="docutils literal notranslate"><span class="pre">next</span></code>) pamätať svojho rodiča v strome (teda <code class="docutils literal notranslate"><span class="pre">parent</span></code>), pričom koreň bude obsahovať referenciu na samého seba. Každý prvok sa teda nachádza v nejakom strome (komponent, teda disjunktná množina), pričom do koreňa (to bude reprezentantom množiny) sa vieme dostať veľmi jednoducho sledovaním smerníka <code class="docutils literal notranslate"><span class="pre">parent</span></code>.</p>
+<p>Aby sa nám čo najlepšie robila operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> (budeme zlučovať dva stromy do jedného), pre každý komponent si budeme uchovávať (atribút <code class="docutils literal notranslate"><span class="pre">rank</span></code>) aj jeho výšku (najdlhšia cesta smerom k listom). Pri inicializácii nastavíme <code class="docutils literal notranslate"><span class="pre">parent</span></code> na seba samého (<code class="docutils literal notranslate"><span class="pre">self</span></code>) a <code class="docutils literal notranslate"><span class="pre">rank</span></code> na 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span>            <span class="c1"># predchodca v strome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rank</span> <span class="o">=</span> <span class="mi">0</span>                 <span class="c1"># výška stromu</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Operácia <code class="docutils literal notranslate"><span class="pre">find()</span></code> schematicky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">p</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">return</span> <span class="n">p</span>
+</pre></div>
+</div>
+<p>Takto sa dostane do koreňa stromu, čo je reprezentantom celej množiny (komponentu). Operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> zistí, ktorý z komponentov má menší <code class="docutils literal notranslate"><span class="pre">rank</span></code> (výšku stromu) a ten potom pripojí ako ďalšieho syna ku koreňu väčšieho stromu. Keďže výška nového stromu sa pritom nezmení, netreba meniť ani hodnotu <code class="docutils literal notranslate"><span class="pre">rank</span></code>. Ak mali oba stromy rovnaký <code class="docutils literal notranslate"><span class="pre">rank</span></code>, tak pripojením jedného stromu ako syna k druhému sa o 1 zväčší jeho <code class="docutils literal notranslate"><span class="pre">rank</span></code>. Schematicky zapíšeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+</span>    <span class="n">r1</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">r1</span> <span class="o">!=</span> <span class="n">r2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">r1</span><span class="o">.</span><span class="n">rank</span> <span class="o">&gt;</span> <span class="n">r2</span><span class="o">.</span><span class="n">rank</span><span class="p">:</span>
+            <span class="n">r2</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">r1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r1</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">r2</span>
+            <span class="k">if</span> <span class="n">r1</span><span class="o">.</span><span class="n">rank</span> <span class="o">==</span> <span class="n">r2</span><span class="o">.</span><span class="n">rank</span><span class="p">:</span>
+                <span class="n">r2</span><span class="o">.</span><span class="n">rank</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Časová zložitosť operácie <code class="docutils literal notranslate"><span class="pre">find(p)</span></code> závisí od výšky stromu, ktorý sa takto prechádza, čo je <code class="docutils literal notranslate"><span class="pre">rank</span></code> reprezentanta, teda koreňa stromu. Operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> urobí najprv 2 volania <code class="docutils literal notranslate"><span class="pre">find()</span></code> a potom len príkazy <strong>O(1)</strong>. Teda obe operácia <code class="docutils literal notranslate"><span class="pre">union()</span></code> aj <code class="docutils literal notranslate"><span class="pre">find()</span></code> majú rovnakú zložitosť. Keďže strom výšky <strong>k</strong> mohol vzniknúť len spojením (<code class="docutils literal notranslate"><span class="pre">union()</span></code>) dvoch stromov výšky <strong>k-1</strong>, každý strom s koreňom <code class="docutils literal notranslate"><span class="pre">rank</span></code> rovný <strong>k</strong> má aspoň <strong>2**k</strong> prvkov a preto takýto strom s <strong>n</strong> vrcholmi má výšku (<code class="docutils literal notranslate"><span class="pre">rank</span></code>) maximálne <strong>log n</strong>. Teda zložitosť oboch operácií je <strong>O(log n)</strong>.</p>
+<p>Existujú ešte ďalšie verzie a vylepšenia tejto dátovej štruktúry, my sa nimi v tomto predmete zaoberať nebudeme.</p>
+<p>Príklad, ktorý sme robili pri tabuľkovej reprezentácii disjunktných množín, môžeme zopakovať aj pre stromčeky. Začnime s 10 jednoprvkovými množinami:</p>
+<a class="reference internal image-reference" href="../_images/211_1.png"><img alt="../_images/211_1.png" class="align-center" height="42" src="../_images/211_1.png" width="297" />
+</a>
+<p>Najprv spojíme <code class="docutils literal notranslate"><span class="pre">union(1,</span> <span class="pre">3)</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/211_2.png"><img alt="../_images/211_2.png" class="align-center" height="66" src="../_images/211_2.png" width="266" />
+</a>
+<p>Teraz postupne <code class="docutils literal notranslate"><span class="pre">union(2,</span> <span class="pre">4)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(7,</span> <span class="pre">6)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(8,</span> <span class="pre">9)</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/211_3.png"><img alt="../_images/211_3.png" class="align-center" height="74" src="../_images/211_3.png" width="182" />
+</a>
+<p>Potom <code class="docutils literal notranslate"><span class="pre">union(3,</span> <span class="pre">4)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(7,</span> <span class="pre">8)</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/211_4.png"><img alt="../_images/211_4.png" class="align-center" height="97" src="../_images/211_4.png" width="150" />
+</a>
+<p>Na záver <code class="docutils literal notranslate"><span class="pre">union(6,</span> <span class="pre">4)</span></code>, <code class="docutils literal notranslate"><span class="pre">union(1,</span> <span class="pre">9)</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/211_5.png"><img alt="../_images/211_5.png" class="align-center" height="130" src="../_images/211_5.png" width="142" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="ine-vyuzitie-union-find">
+<h3><a class="toc-backref" href="11.html#id8" role="doc-backlink">Iné využitie union-find</a><a class="headerlink" href="11.html#ine-vyuzitie-union-find" title="Link to this heading">¶</a></h3>
+<p>Dátová štruktúra <strong>disjoint set</strong> sa používa nielen na udržiavanie množín vrcholov jednotlivých komponentov grafu, ale má využitie, napríklad pre</p>
+<ul class="simple">
+<li><p>zisťovanie, či je <strong>v grafe cyklus</strong>:</p>
+<ul>
+<li><p>postupne konštruujeme najprv z jednoprvkových množín (pre každý vrchol jedna), skladáme väčšie (prechádzame všetky hrany a pre každú spojíme dve zodpovedajúce množiny)</p></li>
+<li><p>ak zistíme, že oba vrcholy danej hrany sa už nachádzajú v jednom komponente, znamená to, že v grafe je cyklus</p></li>
+</ul>
+</li>
+<li><p>vytváranie <strong>minimálnej kostry grafu</strong> pomocou <a class="reference external" href="https://sk.wikipedia.org/wiki/Kruskalov_algoritmus">Kruskalovho algoritmu</a> (budeme vytvárať takú množinu hrán, ktorých súčet ohodnotení je minimálny):</p>
+<ol class="arabic simple">
+<li><p>každý vrchol grafu vytvoríme ako samostatnú množinu (<code class="docutils literal notranslate"><span class="pre">make_set(v)</span></code>)</p></li>
+<li><p>vytvoríme prioritný front všetkých hrán, pričom kľúčmi budú ohodnotenia hrán (váhy)</p></li>
+<li><p>kým vo výslednej množine nie je <strong>n-1</strong> hrán, opakuje:</p>
+<ul>
+<li><p>vyberie z prioritného frontu hranu s najmenšou váhou (<code class="docutils literal notranslate"><span class="pre">remove_min()</span></code>) -&gt; (v1, v2)</p></li>
+<li><p>ak tieto vrcholy ešte nie sú v tej istej disjunktnej množine (teda <code class="docutils literal notranslate"><span class="pre">find(v1)!=find(v2)</span></code>), tak ich zjednotí pomocou <code class="docutils literal notranslate"><span class="pre">union(v1,</span> <span class="pre">v2)</span></code> a pridaj do výslednej množiny hrán</p></li>
+</ul>
+</li>
+<li><p>výsledná množina hrán je hľadaná minimálna kostra grafu</p></li>
+</ol>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="11.html#id9" role="doc-backlink">Cvičenie</a><a class="headerlink" href="11.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na úlohový server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 11. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 5.5.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Trieda Graf</p>
+<p>Toto je verzia triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code>, ktorá je vychádza z kódu z predchádzajúcej prednášky o backtrackingu na grafoch. Využi tento kód pri prvých úlohách cvičenia:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">620</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">620</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">meno</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">meno</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">vaha</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span><span class="p">[</span><span class="n">v2</span><span class="p">]</span> <span class="o">=</span> <span class="n">vaha</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">zafarbi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">farba</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+
+        <span class="c1">#-----------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dd</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># mierka</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">dd</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="mi">20</span><span class="p">,</span> <span class="n">dd</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">20</span>
+                <span class="n">v1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v2</span> <span class="o">:=</span> <span class="n">v1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+                    <span class="n">vaha</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v2</span> <span class="o">:=</span> <span class="n">v1</span><span class="o">-</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+                    <span class="n">vaha</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">kresli_hranu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="n">vrchol</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Button-1&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">udalost_klik</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">klik</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">meno</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">meno</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">meno</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">vaha</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">((</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">y1</span><span class="o">+</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">[</span><span class="n">j</span><span class="p">],</span>
+                                <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 12 bold&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zafarbi_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">farba</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">udalost_klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vrchol</span><span class="o">.</span><span class="n">xy</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">vrchol</span><span class="o">.</span><span class="n">zafarbi</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vrchol</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dijkstra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+                <span class="k">return</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dijkstra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">):</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>           <span class="c1"># nekonečno</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cesta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Dijkstrov algoritmus</p>
+<ol class="arabic simple">
+<li><p>Do triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code> doprogramuj dijkstrov algoritmus z prednášky (metódu <code class="docutils literal notranslate"><span class="pre">dijkstra(v1)</span></code>), ktorá vráti zoznam vzdialeností <code class="docutils literal notranslate"><span class="pre">d</span></code> od štartového vrcholu <code class="docutils literal notranslate"><span class="pre">v1</span></code> do všetkých ďalších.</p>
+<ul class="simple">
+<li><p>môžeš použiť premennú <code class="docutils literal notranslate"><span class="pre">inf</span></code> (s hodnotou <code class="docutils literal notranslate"><span class="pre">float('inf')</span></code>), ktorá v Pythone reprezentuje nekonečno - vyskúšaj jednoduchú aritmetiku s touto hodnotou (porovnanie čísla s <code class="docutils literal notranslate"><span class="pre">inf</span></code>, pripočítanie/odpočítanie od <code class="docutils literal notranslate"><span class="pre">inf</span></code>, …)</p></li>
+<li><p>prioritný front vrcholov nemusíš programovať ako optimálnu dátovú štruktúru - stačí použiť obyčajný zoznam dvojíc <code class="docutils literal notranslate"><span class="pre">(d[vrchol],</span> <span class="pre">vrchol)</span></code>, ktorý buď budeš udržiavať utriedený, alebo v ňom zakaždým budeš hľadať minimálny prvok</p></li>
+<li><p>vyskúšaj spustiť túto metódu s rôznymi štartovými vrcholmi a výsledky skontroluj</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Do triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code> doprogramuj metódu <code class="docutils literal notranslate"><span class="pre">cesta(v1,</span> <span class="pre">v2,</span> <span class="pre">d)</span></code>, ktorá pre zoznam vzdialeností <code class="docutils literal notranslate"><span class="pre">d</span></code> z dijkstrovho algoritmu dokáže zrekonštruovať cestu od štartu <code class="docutils literal notranslate"><span class="pre">v1</span></code> do cieľa <code class="docutils literal notranslate"><span class="pre">v2</span></code>.</p>
+<ul class="simple">
+<li><p>ak máš daný aktuálny zoznam <code class="docutils literal notranslate"><span class="pre">d</span></code>, môžeš začať odkonca: pre cieľový vrchol nájdeš jeho predchodcu na trase (je to vrchol, ktorého vzdialenosť od štartu sa líši od cieľového presne o hodnotu na hrane)</p></li>
+<li><p>metóda by mala túto cestu vykresliť (metóda <code class="docutils literal notranslate"><span class="pre">zafarbi_hranu()</span></code> prefarbí konkrétnu hranu grafu)</p></li>
+<li><p>metódu otestuj aj pre väčší graf, napríklad <code class="docutils literal notranslate"><span class="pre">graf</span> <span class="pre">=</span> <span class="pre">Graf(7)</span></code></p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Preprogramuj metódu <code class="docutils literal notranslate"><span class="pre">dijsktra(v1,</span> <span class="pre">v2)</span></code> tak, aby namiesto lokálnej premennej <code class="docutils literal notranslate"><span class="pre">d</span></code> so zoznamom vzdialeností od <code class="docutils literal notranslate"><span class="pre">v1</span></code>, sa použil atribút <code class="docutils literal notranslate"><span class="pre">d</span></code> v každom vrchole grafu (v podtriede <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>). Podobne, namiesto lokálnej premennej <code class="docutils literal notranslate"><span class="pre">visited</span></code>, v ktorej sa asi evidovali už spracované vrcholy, do každého vrcholu vlož atribút <code class="docutils literal notranslate"><span class="pre">vis</span></code>, v ktorom sa bude uchovávať <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code>. Algoritmus <code class="docutils literal notranslate"><span class="pre">dijkstra</span></code> nebude používať ani žiadny prioritný front (ani pomocný zoznam), ale bude prechádzať všetky vrcholy a kontrolovať atribúty <code class="docutils literal notranslate"><span class="pre">d</span></code> a <code class="docutils literal notranslate"><span class="pre">vis</span></code>. Táto metóda na koniec vykreslí nájdenú najkratšiu cestu do vrcholu <code class="docutils literal notranslate"><span class="pre">v2</span></code> (namiesto metódy <code class="docutils literal notranslate"><span class="pre">cesta</span></code>).</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Union-find</p>
+<ol class="arabic" start="4">
+<li><p>Postupne ručne odtrasuj všetky 3 reprezentácie operácií <code class="docutils literal notranslate"><span class="pre">union()</span></code> a <code class="docutils literal notranslate"><span class="pre">find()</span></code> (podobne, ako je to ukázané v prednáške) na 12 prvkovom zozname celočíselných hodnôt <code class="docutils literal notranslate"><span class="pre">range(12)</span></code> a volaním <code class="docutils literal notranslate"><span class="pre">union()</span></code> pre dvojice</p>
+<ul class="simple">
+<li><p>(0, 11), (1, 10), (2, 9), (3, 8), (4, 7)</p></li>
+<li><p>(0, 7), (8, 1), (5, 9), (2, 6)</p></li>
+<li><p>(11, 3), (2, 4)</p></li>
+</ul>
+<p>Riešenie tejto úlohy nemusíš odovzdávať.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Operácie <code class="docutils literal notranslate"><span class="pre">union()</span></code> a <code class="docutils literal notranslate"><span class="pre">find()</span></code> realizuj stromčekovou reprezentáciou z prednášky, v ktorej si každý vrchol pamätá svoj <code class="docutils literal notranslate"><span class="pre">rank</span></code>.  Skontroluj na údajoch z úlohy (4). Definuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>Uprav reprezentáciu stromčekmi z úlohy (5) tak, že sa pritom nepoužije <code class="docutils literal notranslate"><span class="pre">rank</span></code> (t.j. bez <code class="docutils literal notranslate"><span class="pre">rank</span></code>: rozhoduje sa náhodne s pravdepodobnosťou <code class="docutils literal notranslate"><span class="pre">1/2</span></code>). Otestuj podobne ako v úlohe (5). Definuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Zapíš funkciu, ktorá pomocou realizácie z (5) zistí počet disjunktných množín (komponentov grafu) len na základe informácií v tejto reprezentácií.</p>
+<ul class="simple">
+<li><p>pravdepodobne budeš prechádzať zoznam prvkov a nejako si pri tom budeš evidovať rôzne množiny</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="11.html#id10" role="doc-backlink">11. Týždenný projekt</a><a class="headerlink" href="11.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 11. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 21.5.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Dijkstrov algoritmus pre graf pomocou zoznamu hrán</p>
+<p>Naprogramuj metódy triedy <code class="docutils literal notranslate"><span class="pre">Graph</span></code> (neorientovaný ohodnotený graf) pre reprezentáciu pomocou <strong>zoznamu hrán</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inf</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Vertex</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Edge</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>    <span class="c1"># start a end sú typu Vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graph</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">incident_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dijkstra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex1</span><span class="p">,</span> <span class="n">vertex2</span><span class="p">):</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+<p>Dátová štruktúra <code class="docutils literal notranslate"><span class="pre">Graph</span></code> bude využívať triedy <code class="docutils literal notranslate"><span class="pre">Vertex</span></code> (pre vrcholy) a <code class="docutils literal notranslate"><span class="pre">Edge</span></code> (pre hrany). Atribút <code class="docutils literal notranslate"><span class="pre">vertices</span></code> bude obsahovať zoznam všetkých vrcholov grafu (inštancie <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>), atribút <code class="docutils literal notranslate"><span class="pre">edges</span></code> bude obsahovať všetky hrany grafu (inštancie <code class="docutils literal notranslate"><span class="pre">Edge</span></code>), keďže graf je neorientovaný, každá hrana bude v tomto zozname dvakrát (pre oba smery). Nepoužívaj žiadne ďalšie atribúty.</p>
+<p>Metóda</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> prečíta textový súbor a vytvorí z neho neorientovaný graf. Každý riadok súboru popisuje jednu hranu: mená dvoch vrcholov a celočíselnú váhu (hodnotu na hrane)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_vertex</span></code> vráti inštanciu <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>: ak už existuje vrchol s týmto menom v zozname <code class="docutils literal notranslate"><span class="pre">vertices</span></code> vráti tento objekt, inak vyrobí nový a pridá ho do zoznamu <code class="docutils literal notranslate"><span class="pre">vertices</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">insert_edge</span></code> vloží do <code class="docutils literal notranslate"><span class="pre">edges</span></code> novú hranu - vloží oba smery (parametrami sú dva reťazce a celé číslo)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">incident_edges</span></code> vráti generátor so všetkými hranami (inštancie <code class="docutils literal notranslate"><span class="pre">Edge</span></code>), ktoré vychádzajú z daného vrcholu (typu <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>)</p></li>
+</ul>
+<p>Teraz doprogramuj <strong>dijkstrov algoritmus</strong> z prednášky (metódu <code class="docutils literal notranslate"><span class="pre">dijkstra(vertex)</span></code> s parametrom typu <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>),pritom</p>
+<ul class="simple">
+<li><p>namiesto zoznamu <code class="docutils literal notranslate"><span class="pre">D</span></code> s vypočítanými vzdialenosťami použi atribút <code class="docutils literal notranslate"><span class="pre">d</span></code> v každom vrchole</p></li>
+<li><p>prioritný front vrcholov nemusíš programovať ako optimálnu dátovú štruktúru - stačí použiť obyčajný zoznam dvojíc <code class="docutils literal notranslate"><span class="pre">(d[vrchol],</span> <span class="pre">vrchol)</span></code>, ktorý bude treba udržiavať utriedený</p></li>
+<li><p>metóda nebude vracať žiadnu hodnotu</p></li>
+</ul>
+<p>Ďalej doprogramuj metódu <code class="docutils literal notranslate"><span class="pre">get_path(vertex1,</span> <span class="pre">vertex2)</span></code>, ktorá pre vypočítané vzdialeností (atribút <code class="docutils literal notranslate"><span class="pre">d</span></code> vo vrcholoch) z dijkstrovho algoritmu dokáže zrekonštruovať cestu od štartu <code class="docutils literal notranslate"><span class="pre">vertex1</span></code> do cieľa <code class="docutils literal notranslate"><span class="pre">vertex2</span></code>:</p>
+<ul class="simple">
+<li><p>začni od konca: pre cieľový vrchol nájdi jeho predchodcu na trase (je to vrchol, ktorého vzdialenosť od štartu sa líši od cieľového presne o hodnotu na hrane)</p></li>
+<li><p>metóda by mala túto cestu vrátiť ako postupnosť (<code class="docutils literal notranslate"><span class="pre">list</span></code>) vrcholov (inštancií <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>), alebo vráti <code class="docutils literal notranslate"><span class="pre">None</span></code>, ak cesta neexistuje</p></li>
+</ul>
+<p>Do triedy <code class="docutils literal notranslate"><span class="pre">Graph</span></code> môžeš pridať ďalšie pomocné metódy. Triedy <code class="docutils literal notranslate"><span class="pre">Vertex</span></code> a <code class="docutils literal notranslate"><span class="pre">Edge</span></code> nemeň.</p>
+<p>Napríklad, pre <code class="docutils literal notranslate"><span class="pre">subor1.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="mi">8</span> <span class="mi">6</span>
+<span class="mi">0</span> <span class="mi">3</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">6</span>
+<span class="mi">4</span> <span class="mi">7</span> <span class="mi">1</span>
+<span class="mi">4</span> <span class="mi">5</span> <span class="mi">1</span>
+<span class="mi">6</span> <span class="mi">7</span> <span class="mi">1</span>
+<span class="mi">3</span> <span class="mi">6</span> <span class="mi">2</span>
+<span class="mi">2</span> <span class="mi">5</span> <span class="mi">6</span>
+<span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>
+<span class="mi">1</span> <span class="mi">4</span> <span class="mi">6</span>
+<span class="mi">5</span> <span class="mi">8</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>svoj program môžeš testovať, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">dijkstra</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">path</span><span class="p">))</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">path</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Výpis potom bude:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">8</span>
+<span class="mi">0</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">4</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/2tp11.zip">2tp11.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="11.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 26. máj. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>18. Triedenia I. &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="19. Úvod do analýzy algoritmov" href="19.html" />
+    <link rel="prev" title="17. Vyhľadávanie" href="17.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="18.html#">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="17.html" title="Previous Chapter: 17. Vyhľadávanie"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 17. Vyhľadávanie</span>
+    </a>
+  </li>
+  <li>
+    <a href="19.html" title="Next Chapter: 19. Úvod do analýzy algoritmov"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">19. Úvod do a... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="triedenia-i">
+<h1>18. Triedenia I.<a class="headerlink" href="18.html#triedenia-i" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="18.html#bubble-min-a-insert-sort" id="id1">Bubble, min a insert sort</a></p>
+<ul>
+<li><p><a class="reference internal" href="18.html#bubble-sort" id="id2">Bubble_sort</a></p></li>
+<li><p><a class="reference internal" href="18.html#min-sort" id="id3">Min sort</a></p></li>
+<li><p><a class="reference internal" href="18.html#insert-sort" id="id4">Insert sort</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="18.html#vizualizacia-triedenia" id="id5">Vizualizácia triedenia</a></p>
+<ul>
+<li><p><a class="reference internal" href="18.html#vizualizacia-v-grafickom-rezime" id="id6">Vizualizácia v grafickom režime</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="18.html#quick-sort" id="id7">Quick sort</a></p></li>
+<li><p><a class="reference internal" href="18.html#cvicenie" id="id8">Cvičenie</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Triedením rozumieme taký algoritmus, ktorý <strong>usporiada</strong> vstupnú postupnosť prvkov (napríklad zoznam, n-ticu, spájaný zoznam, …) tak, aby ich <strong>poradie</strong> zodpovedalo nejakému usporiadaniu, napríklad <strong>vzostupne</strong> alebo <strong>zostupne</strong>. Prvky, ktoré takto usporadúvame, sa môžu skladať z viacerých zložiek (častí alebo atribútov), pričom len nejaká ich časť slúži na porovnávanie usporiadania - časti prvku, podľa ktorého usporadúvame, hovoríme <strong>kľúč</strong>.</p>
+<p>Mnohé z týchto triediacich algoritmov sú <strong>in-place</strong> (triedenie na mieste), čo znamená, že výsledná usporiadaná postupnosť sa nachádza na tom istom mieste ako bola vstupná. Takýmto triedením je aj pythonovská metóda <code class="docutils literal notranslate"><span class="pre">sort()</span></code> pre typ zoznam (<code class="docutils literal notranslate"><span class="pre">list</span></code>), napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [3, 5, 7, 7, 9, 10, 16]</span>
+</span></pre></div>
+</div>
+<p>Iný typ triediacich algoritmov vstupnú postupnosť nemení, ale vytvorí novú usporiadanú postupnosť (najčastejšie ako zoznam, t.j. typ <code class="docutils literal notranslate"><span class="pre">list</span></code>), ktorá obsahuje tie isté prvky, ako boli na vstupe, ale v správnom poradí. Napríklad aj štandardná pythonovská funkcia <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> pracuje na tomto princípe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ntica</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ntica</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [3, 5, 7, 7, 9, 10, 16]</span>
+</span></pre></div>
+</div>
+<p>V ďalších častiach ukážeme niekoľko najznámejších jednoduchých <a class="reference external" href="https://en.wikipedia.org/wiki/Sorting_algorithm">triediacich algoritmov</a>. Zameriame sa len na <strong>in-place</strong> triedenia, t.j. také, ktoré triedia <code class="docutils literal notranslate"><span class="pre">n</span></code>-prvkový zoznam (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>) a výsledok usporiadania bude na pôvodnom mieste.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="bubble-min-a-insert-sort">
+<h2><a class="toc-backref" href="18.html#id1" role="doc-backlink">Bubble, min a insert sort</a><a class="headerlink" href="18.html#bubble-min-a-insert-sort" title="Link to this heading">¶</a></h2>
+<p><strong>Predstavme si takýto problém:</strong></p>
+<p>Na stole máme v rade rozložených <code class="docutils literal notranslate"><span class="pre">n</span></code> kariet s nejakými číslami (napríklad od <code class="docutils literal notranslate"><span class="pre">1</span></code> do <code class="docutils literal notranslate"><span class="pre">n</span></code>). Karty sú zamiešané a otočené tak, že nevidíme ich čísla. Karty treba usporiadať podľa čísel od najmenšieho po najväčšie. Pre preusporiadavanie môžeme použiť jedinú operáciu:</p>
+<ul class="simple">
+<li><p>vyberieme nejaké dve karty a otočíme ich číslom nahor (podobne ako v hre Pexeso)</p></li>
+<li><p>porovnáme tieto dve hodnoty a rozhodneme sa, či ich navzájom vymeníme</p></li>
+<li><p>opäť otočíme karty číslom nadol</p></li>
+</ul>
+<p>Toto môžeme opakovať ľubovoľný počet krát, ale asi najvhodnejšie by bolo, keby sme to urobili čo na najmenší počet takýchto operácií.</p>
+<p>Presne takto to „vidí“ aj triediaci algoritmus: máme k dispozícii nejaký zoznam čísel a my ich teraz pomocou vzájomného porovnávania a prípadných výmen musíme preusporiadať tak, aby boli na záver v rastúcom poradí.</p>
+<p>Najjednoduchší algoritmus, ktorým dokážeme usporiadať prvky n-prvkového zoznamu bude postupovať takto:</p>
+<ul class="simple">
+<li><p>postupne bude porovnávať dvojice prvkov susedných prvkov: <code class="docutils literal notranslate"><span class="pre">0</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">3</span></code>, … <code class="docutils literal notranslate"><span class="pre">n-3</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">n-2</span></code>, <code class="docutils literal notranslate"><span class="pre">n-2</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">n-1</span></code></p></li>
+<li><p>pre každú porovnávanú dvojicu, keď zistí že pravý prvok (druhý z dvojice) je menší ako ľavý (t.j. <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty je väčší ako <code class="docutils literal notranslate"><span class="pre">i+1</span></code>-ty), tieto dva prvky navzájom vymení</p></li>
+<li><p>tento proces ešte neusporiada celý zoznam, treba ho opakovať n-krát</p></li>
+</ul>
+<p><strong>Ukážme to na takomto príklade:</strong></p>
+<p>Máme zoznam s týmito číslami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul>
+<li><p>keďže karty sú otočené číslom nadol, vidíme len:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>otočíme prvé dve karty a porovnáme ich:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="mi">9</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>keďže prvý prvok nie je väčší ako druhý, nerobíme nič, len otočíme karty späť a pokračujeme na ďalších dvoch kartách:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="mi">9</span> <span class="mi">5</span> <span class="n">X</span> <span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>druhá karta z dvojice je menšia ako prvá, preto ich vymeníme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="mi">5</span> <span class="mi">9</span> <span class="n">X</span> <span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>otočíme a pokračujeme s ďalšou dvojicou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="mi">9</span> <span class="mi">8</span> <span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>opäť ich vymeníme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="mi">8</span> <span class="mi">9</span> <span class="n">X</span>
+</pre></div>
+</div>
+</li>
+<li><p>a pokračujeme na ďalšej dvojici:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="mi">9</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li><p>aj tieto dve musíme navzájom vymeniť</p></li>
+</ul>
+<p>Týmto končí prvý prechod algoritmu a keby sme sa teraz pozreli na momentálny obsah zoznamu, videli by sme</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span>
+</pre></div>
+</div>
+<p>Tento proces bude treba ešte niekoľkokrát zopakovať.</p>
+<ul>
+<li><p>postupne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+<span class="mi">7</span> <span class="mi">5</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+<span class="mi">5</span> <span class="mi">7</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>   <span class="o">&lt;--</span> <span class="n">výmena</span>
+<span class="n">X</span> <span class="mi">7</span> <span class="mi">8</span> <span class="n">X</span> <span class="n">X</span>
+<span class="n">X</span> <span class="n">X</span> <span class="mi">8</span> <span class="mi">2</span> <span class="n">X</span>
+<span class="n">X</span> <span class="n">X</span> <span class="mi">2</span> <span class="mi">8</span> <span class="n">X</span>   <span class="o">&lt;--</span> <span class="n">výmena</span>
+<span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="mi">8</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Teraz zoznam obsahuje postupne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span>
+</pre></div>
+</div>
+<p>Ďalší prechod algoritmu</p>
+<ul>
+<li><p>postupne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+<span class="mi">5</span> <span class="mi">7</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+<span class="n">X</span> <span class="mi">7</span> <span class="mi">2</span> <span class="n">X</span> <span class="n">X</span>
+<span class="n">X</span> <span class="mi">2</span> <span class="mi">7</span> <span class="n">X</span> <span class="n">X</span>   <span class="o">&lt;--</span> <span class="n">výmena</span>
+<span class="n">X</span> <span class="n">X</span> <span class="mi">7</span> <span class="mi">8</span> <span class="n">X</span>
+<span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="mi">8</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>V zozname teraz máme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="mi">2</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</pre></div>
+</div>
+<p>Ešte jeden prechod</p>
+<ul>
+<li><p>postupne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+<span class="mi">5</span> <span class="mi">2</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>
+<span class="mi">2</span> <span class="mi">5</span> <span class="n">X</span> <span class="n">X</span> <span class="n">X</span>   <span class="o">&lt;--</span> <span class="n">výmena</span>
+<span class="n">X</span> <span class="mi">5</span> <span class="mi">7</span> <span class="n">X</span> <span class="n">X</span>
+<span class="n">X</span> <span class="n">X</span> <span class="mi">7</span> <span class="mi">8</span> <span class="n">X</span>
+<span class="n">X</span> <span class="n">X</span> <span class="n">X</span> <span class="mi">8</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>A konečne dostávame utriedený zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span>
+</pre></div>
+</div>
+<p>Pozrime, ako vyzerá zoznam na začiatku a potom aj na konci každého prechodu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span>
+<span class="o">-------------</span>
+<span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span>   <span class="o">&lt;--</span> <span class="mi">9</span> <span class="n">je</span> <span class="n">na</span> <span class="n">svojom</span> <span class="n">mieste</span>
+<span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span>   <span class="o">&lt;--</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span> <span class="n">sú</span> <span class="n">na</span> <span class="n">svojom</span> <span class="n">mieste</span>
+<span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span>   <span class="o">&lt;--</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span> <span class="n">sú</span> <span class="n">na</span> <span class="n">svojom</span> <span class="n">mieste</span>
+<span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span>   <span class="o">&lt;--</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span> <span class="n">sú</span> <span class="n">na</span> <span class="n">svojom</span> <span class="n">mieste</span>
+</pre></div>
+</div>
+<p>Všimnite si, po každom prechode „precestuje“ ďalší najväčší prvok na svoje miesto: najprv <code class="docutils literal notranslate"><span class="pre">9</span></code>, potom <code class="docutils literal notranslate"><span class="pre">8</span></code>, potom <code class="docutils literal notranslate"><span class="pre">7</span></code>, atď. Hovoríme, že každým prechodom sa nejaké prvky presúvajú na koniec (veľké bublinky) a nejaké (malé bublinky) sa presunú smerom k začiatku. Hovoríme tomu <strong>bublinkové triedenie</strong>, lebo malé bublinky klesajú na začiatok a veľké stúpajú na koniec (ako bublinky v pohári vody).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="bubble-sort">
+<h3><a class="toc-backref" href="18.html#id2" role="doc-backlink">Bubble_sort</a><a class="headerlink" href="18.html#bubble-sort" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Bubble_sort">Bublinkové triedenie</a> postupne prechádza celý zoznam a porovnáva všetky vedľa seba ležiace dvojice prvkov: ak je prvý z nich väčší ako druhý, treba ich navzájom vymeniť. Tento postup sa opakuje dovtedy, kým nezostane celý zoznam utriedený, teda maximálne <code class="docutils literal notranslate"><span class="pre">n</span></code>-krát.</p>
+<p>Zapíšme tento algoritmus, ale najprv si pripravíme pomocnú funkciu <code class="docutils literal notranslate"><span class="pre">vymen()</span></code>, pomocou ktorej budeme vymieňať prvky zoznamu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všimnite si, že táto funkcia nevracia žiadnu hodnotu (teda vracia <code class="docutils literal notranslate"><span class="pre">None</span></code>) ani nič nevypisuje. Funkcia len modifikuje vstupný zoznam, ktorý dostala ako parameter.</p>
+<p>Otestujme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bubble_sort</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zz</span>
+<span class="hll"><span class="go">    [3, 5, 7, 7, 9, 10, 16]</span>
+</span></pre></div>
+</div>
+<p>Skúsme si priebeh algoritmu vizualizovať tak, že vo vnútornom cykle ešte pred porovnaním vypíšeme obsah zoznamu a vyznačíme, ktoré dva prvky sa porovnávajú:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">[:</span><span class="n">j</span><span class="p">],</span> <span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="o">*</span><span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">:])</span>   <span class="c1"># pridali sme výpis</span>
+</span>            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Po spustení rovnakého testu dostaneme dosť dlhý výpis, ale jeho začiatok je takýto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">7</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">7</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">7</span> <span class="mi">3</span> <span class="mi">7</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">7</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span>
+<span class="mi">7</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">16</span>
+<span class="mi">3</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">16</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">16</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="mi">7</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span> <span class="mi">16</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">5</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="mi">16</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">9</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">9</span> <span class="mi">10</span> <span class="mi">16</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Z tohto výpisu vidíme, že po prvom prechode algoritmu (po prvých šiestich riadkoch) sa maximálny prvok <code class="docutils literal notranslate"><span class="pre">16</span></code> dostáva na koniec zoznamu, teda na svoje cieľové miesto. Každý ďalší prechod porovnáva všetky susediace dvojice prvkov, teda bude zakaždým porovnávať aj predposledný s posledným - čo je zrejme zbytočné. Totiž po každom prechode sa dostáva na svoje miesto ďalší a ďalší prvok od konca, nielen posledný prvok po prvom prechode. Z tohto dôvodu sa zvykne vnútorný cyklus zakaždým skrátiť o jeden prvok od konca. Vhodnejším zápisom by bolo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+<span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">):</span>         <span class="c1"># skracujeme vnútorný cyklus zakaždým o 1</span>
+</span>            <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">[:</span><span class="n">j</span><span class="p">],</span> <span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="o">*</span><span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">:])</span>   <span class="c1"># pridali sme výpis</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Na otestovanie bublinkového triedenia môžeme použiť, napríklad generátor náhodných čísel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+<span class="n">zoz1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>          <span class="c1"># kontrolne utriedený zoznam</span>
+<span class="n">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>            <span class="c1"># bublinkové triedenie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zoz</span> <span class="o">==</span> <span class="n">zoz1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento program najprv vygeneruje 5000-prvkový zoznam náhodných čísel od 0 do 99. Potom do <code class="docutils literal notranslate"><span class="pre">zoz1</span></code> priradí jeho usporiadanú kópiu, ktorú sme vytvorili pomocou štandardnej funkcie <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>. Ďalej usporiada náš zoznam pomocou algoritmu <code class="docutils literal notranslate"><span class="pre">bubble_sort()</span></code> (zrejme sme vyhodili kontrolný výpis) a na záver vypíše, či sú tieto dva zoznamy rovnaké. Zrejme, ak je naše bublinkové triedenie správne, program by mal vypísať <code class="docutils literal notranslate"><span class="pre">True</span></code>. Tento test môže bežať aj niekoľko sekúnd.</p>
+<p>Ďalšie triedenie, tzv. <strong>min sort</strong>, funguje veľmi podobne, ako bublinkové triedenie.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="min-sort">
+<h3><a class="toc-backref" href="18.html#id3" role="doc-backlink">Min sort</a><a class="headerlink" href="18.html#min-sort" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Selection_sort">Triedenie s výberom minimálneho prvku</a> (hovorí sa mu aj <strong>selection sort</strong>) pracuje na tomto princípe:</p>
+<ul class="simple">
+<li><p>v prvom prechode algoritmu presťahuje minimálny prvok na prvú pozíciu v zozname</p></li>
+<li><p>v každom ďalšom <code class="docutils literal notranslate"><span class="pre">i</span></code>-tom prechode presťahuje <code class="docutils literal notranslate"><span class="pre">i</span></code>-tu najmenšiu hodnotu na <code class="docutils literal notranslate"><span class="pre">i</span></code>-tu pozíciu - zrejme hľadá túto najmenšiu hodnotu od <code class="docutils literal notranslate"><span class="pre">i</span></code>-tej pozície zoznamu až do konca</p></li>
+<li><p>keď toto zopakuje <code class="docutils literal notranslate"><span class="pre">n</span></code>-krát, dostane usporiadaný celý zoznam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>-ty minimálny prvok bude hľadať a presťahovávať nasledovným postupom:</p>
+<ul>
+<li><p>porovná dvojice prvkov <code class="docutils literal notranslate"><span class="pre">i</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">3</span></code>, … <code class="docutils literal notranslate"><span class="pre">i</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">n-2</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code> &lt;=&gt; <code class="docutils literal notranslate"><span class="pre">n-1</span></code></p></li>
+<li><p>pre každú porovnávanú dvojicu (porovnáva <code class="docutils literal notranslate"><span class="pre">zoz[i]</span></code> a <code class="docutils literal notranslate"><span class="pre">zoz[j]</span></code>), keď zistí že <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty prvok je väčší ako ten druhý (t.j. <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty je väčší ako <code class="docutils literal notranslate"><span class="pre">j</span></code>-ty), tieto dva prvky navzájom vymení</p></li>
+</ul>
+</li>
+</ul>
+<p>Zapíšme tento algoritmu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všimnite si, ako sa táto verzia veľmi podobá na bublinkové triedenie. Môžeme aj sem pridať kontrolný výpis podobne, ako sme to robili v bublinkovom triedení. Teraz výpis vložíme až za vnútorný cyklus, ktorý hľadá a presťahuje <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty minimálny prvok na svoje miesto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="p">[</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="o">*</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-----------------&#39;</span><span class="p">)</span>
+<span class="n">min_sort</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;výsledok =&#39;</span><span class="p">,</span> <span class="n">zz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V kontrolnom výpise môžete vidieť prvok zoznamu, ktorý sa práve zaradil ako <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty minimálny:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="mi">16</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="o">-----------------</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="mi">16</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="mi">16</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">7</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">5</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="mi">16</span> <span class="mi">9</span> <span class="mi">7</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="mi">16</span> <span class="mi">9</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">7</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="mi">16</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">9</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="mi">16</span>
+<span class="n">výsledok</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Každý ďalší riadok kontrolného výpisu ukazuje obsah zoznamu po jednom prechode vonkajšieho cyklu, t.j. po zaradení <code class="docutils literal notranslate"><span class="pre">i</span></code>-teho najmenšieho na správne miesto: v prvom riadku výpisu je zoznam ešte netriedený, v druhom je jeho obsah po zaradení prvého minima na svoje miesto (číslo <code class="docutils literal notranslate"><span class="pre">3</span></code>), v ďalšom riadku je zaradené už aj druhé číslo <code class="docutils literal notranslate"><span class="pre">5</span></code>, atď. V poslednom riadku výpisu je utriedený celý zoznam.</p>
+<p>Rovnaký test s náhodným zoznamom, ako sme robili s bublinkovým triedením, môžeme spustiť aj pre <strong>min-sort</strong> (zrejme sme opäť vyhodili kontrolný výpis):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+<span class="n">zoz1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="n">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zoz</span> <span class="o">==</span> <span class="n">zoz1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="insert-sort">
+<h3><a class="toc-backref" href="18.html#id4" role="doc-backlink">Insert sort</a><a class="headerlink" href="18.html#insert-sort" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/insertion_sort">Triedenie vkladaním</a> pracuje na takomto princípe:</p>
+<ul class="simple">
+<li><p>predpokladajme, že istá časť zoznamu od začiatku je už utriedená</p></li>
+<li><p>počas triedenia sa najbližší ešte neutriedený prvok zaradí do utriedenej časti na svoje miesto a tým sa tento utriedený úsek predĺži o 1</p></li>
+</ul>
+<p>Zapíšme algoritmus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Ako to funguje:</p>
+<ul class="simple">
+<li><p>v premennej <code class="docutils literal notranslate"><span class="pre">i</span></code> je hranica medzi utriedenou a neutriedenou časťou zoznamu</p>
+<ul>
+<li><p>pri štarte predpokladáme, že prvý prvok je už jednoprvková utriedená časť a preto začíname od indexu 1 (teda druhým prvkom zoznamu)</p></li>
+</ul>
+</li>
+<li><p>vo vnútornom while-cykle je v premennej <code class="docutils literal notranslate"><span class="pre">j</span></code> index zaraďovaného prvku do utriedenej časti (úsek zoznamu <code class="docutils literal notranslate"><span class="pre">zoz[0:i]</span></code>)</p></li>
+<li><p>kým je predchádzajúci prvok pred <code class="docutils literal notranslate"><span class="pre">j</span></code>-tym väčší ako zaraďovaný (<code class="docutils literal notranslate"><span class="pre">zoz[j]</span></code>), tento zaraďovaný ho predbehne (vymení ich navzájom) a zmenší <code class="docutils literal notranslate"><span class="pre">j</span></code> o 1</p></li>
+</ul>
+<p>Aby sme lepšie pochopili, ako to funguje, môžeme vložiť kontrolné výpisy a otestovať to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">insert_sort</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;výsledok =&#39;</span><span class="p">,</span> <span class="n">zz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>dostávame tento výpis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">|</span> <span class="mi">16</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">7</span> <span class="mi">16</span> <span class="o">|</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="mi">16</span> <span class="o">|</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">16</span> <span class="o">|</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">16</span> <span class="o">|</span> <span class="mi">5</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">16</span> <span class="o">|</span> <span class="mi">10</span>
+<span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">10</span> <span class="mi">16</span> <span class="o">|</span>
+<span class="n">výsledok</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Znak <code class="docutils literal notranslate"><span class="pre">'|'</span></code> slúži na oddelenie utriedenej a ešte neutriedenej časti zoznamu.</p>
+<p>Aj pre toto triedenie môžeme spustiť test s 5000-prvkovým náhodným zoznamom (zrejme sme opäť vyhodili kontrolné výpisy):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+<span class="n">zoz1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="n">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zoz</span> <span class="o">==</span> <span class="n">zoz1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="vizualizacia-triedenia">
+<h2><a class="toc-backref" href="18.html#id5" role="doc-backlink">Vizualizácia triedenia</a><a class="headerlink" href="18.html#vizualizacia-triedenia" title="Link to this heading">¶</a></h2>
+<p>Rôznych algoritmov triedenia je dosť veľa, ale na základe kontrolných výpisov obsahu zoznamu sa zriedkavo dá zistiť, ako to funguje naozaj. Teraz ukážeme, ako využiť Python na vizualizáciu algoritmov, ktoré modifikujú nejaký zoznam. Zostavíme triedu, pomocou ktorej budeme môcť sledovať, čo sa deje s nejakým zoznamom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vizualizuj</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">hodnota</span>
+</pre></div>
+</div>
+<p>Táto nová trieda <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code> bude sledovať všetky základné operácie so zoznamom:</p>
+<ul class="simple">
+<li><p>ak máme nejaký zoznam, napríklad <code class="docutils literal notranslate"><span class="pre">zoz</span> <span class="pre">=</span> <span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">5]</span></code> a zabalíme ho triedou <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">Vizualizuj(zoz)</span></code>, potom operácie indexovania <code class="docutils literal notranslate"><span class="pre">z[]</span></code> automaticky zavolajú metódy <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code> a <code class="docutils literal notranslate"><span class="pre">__setitem__()</span></code></p></li>
+<li><p>do metódy <code class="docutils literal notranslate"><span class="pre">__setitem__()</span></code> môžeme pridať nejaký výpis, napríklad <code class="docutils literal notranslate"><span class="pre">print(f'zoz[{index}]</span> <span class="pre">=</span> <span class="pre">{hodnota}')</span></code></p></li>
+<li><p>teraz môžeme zavolať ľubovoľný algoritmus, ktorý manipuluje so zoznamom a my mu namiesto neho podstrčíme inštanciu triedy <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code> (hovoríme tomu <strong>wrap</strong>)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vizualizuj</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;povodny zoznam =&#39;</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;zoz[</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">] = </span><span class="si">{</span><span class="n">hodnota</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+<span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">min_sort</span><span class="p">(</span><span class="n">Vizualizuj</span><span class="p">(</span><span class="n">zz</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;výsledok =&#39;</span><span class="p">,</span> <span class="n">zz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všimnite si, že algoritmus <code class="docutils literal notranslate"><span class="pre">min_sort</span></code> netriedi obyčajný zoznam, ale zoznam, ktorý je obalený (teda <strong>wrap</strong>) triedou <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code>. Vďaka tomu, hoci neobsahuje žiadne kontrolné výpisy, dostávame informácie o všetkých priradeniach do prvkov zoznamu. Okrem toho, už pri inicializácii, vypisujeme pôvodný zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">povodny</span> <span class="n">zoznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">zoz</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">zoz</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">zoz</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">zoz</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">výsledok</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Takto by sme vedeli otestovať ľubovoľný algoritmus, v ktorom modifikujeme prvky nejakého zoznamu, napríklad aj <code class="docutils literal notranslate"><span class="pre">bubble_sort</span></code> alebo <code class="docutils literal notranslate"><span class="pre">insert_sort</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="vizualizacia-v-grafickom-rezime">
+<h3><a class="toc-backref" href="18.html#id6" role="doc-backlink">Vizualizácia v grafickom režime</a><a class="headerlink" href="18.html#vizualizacia-v-grafickom-rezime" title="Link to this heading">¶</a></h3>
+<p>Často sa používajú iné zobrazovania momentálneho obsahu zoznamu, napríklad grafické zobrazovanie, v ktorom sú rôzne veľké hodnoty zobrazené rôznou dĺžkou úsečiek. Napríklad, takto by sme mohli zobraziť nejaký 100-prvkový neutriedený zoznam:</p>
+<a class="reference internal image-reference" href="../_images/118_1.png"><img alt="../_images/118_1.png" class="align-center" height="112" src="../_images/118_1.png" width="152" />
+</a>
+<p>Tento 100-prvkový zoznam je v grafickej ploche zobrazený takto: každý prvok zodpovedá úsečke, ktorej dĺžka zodpovedá príslušnej hodnote v zozname. Uvedomte si, že keby sme takto zobrazili vzostupne usporiadaný zoznam, úsečky by mali tvoriť takúto rastúcu postupnosť:</p>
+<a class="reference internal image-reference" href="../_images/118_3.png"><img alt="../_images/118_3.png" class="align-center" height="112" src="../_images/118_3.png" width="152" />
+</a>
+<p>Počas práce algoritmu by sa pri každej výmene dvoch prvkov zoznamu mohli vymeniť aj nakreslené úsečky - zrejme namiesto fyzického vymieňania úsečiek im len zmeníme dĺžky podľa aktuálneho obsahu príslušných prvkov zoznamu.</p>
+<p>Trieda <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code> preto musí zabezpečiť:</p>
+<ul class="simple">
+<li><p>pri inicializácii inštancie v metóde <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> sa okrem zapamätania samotného zoznamu v atribúte <code class="docutils literal notranslate"><span class="pre">self.zoz</span></code> vykreslí celý zoznam do grafickej plochy ako postupnosť úsečiek</p>
+<ul>
+<li><p>zrejme najprv vytvorí grafickú plochu (<code class="docutils literal notranslate"><span class="pre">canvas</span></code>)</p></li>
+<li><p>identifikačné čísla nakreslených čiar uloží do zoznamu <code class="docutils literal notranslate"><span class="pre">self.id</span></code>, aby ich mohol neskôr meniť (v príkaze <code class="docutils literal notranslate"><span class="pre">canvas.coords</span></code>)</p></li>
+</ul>
+</li>
+<li><p>pri zmene hodnoty prvku zoznamu <code class="docutils literal notranslate"><span class="pre">zoz[index]</span></code> metóda <code class="docutils literal notranslate"><span class="pre">__setitem__()</span></code> zrealizuje túto zmenu v zozname a tiež zmení dĺžku príslušnej úsečky</p>
+<ul>
+<li><p>využije identifikačné číslo úsečky v zozname <code class="docutils literal notranslate"><span class="pre">self.id</span></code></p></li>
+</ul>
+</li>
+<li><p>pri zisťovaní hodnoty prvku zoznamu <code class="docutils literal notranslate"><span class="pre">zoz[index]</span></code> metóda <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code> vráti príslušnú hodnotu zo svojho atribútu</p></li>
+<li><p>pri zisťovaní dĺžky <code class="docutils literal notranslate"><span class="pre">len(zoz)</span></code> metóda <code class="docutils literal notranslate"><span class="pre">__len__()</span></code> vráti aktuálnu dĺžku zoznamu</p></li>
+</ul>
+<p>Trieda <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code> teraz kreslí čiary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Vizualizuj</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="mi">800</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">600</span><span class="o">-</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">index</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">600</span><span class="o">-</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Teraz už môžeme otestovať ľubovoľné triedenie aj s vizualizáciou úsečkami. Vyskúšajme náhodný 100-prvkový zoznam a jeho utriedenie pomocou algoritmu <code class="docutils literal notranslate"><span class="pre">bubble_sort</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">bubble_sort</span><span class="p">(</span><span class="n">Vizualizuj</span><span class="p">(</span><span class="n">zz</span><span class="p">))</span>
+<span class="c1"># tkinter.mainloop()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Môžete postupne vidieť najprv náhodne vygenerovaný zoznam, potom priebežný stav počas triedenia (na konci zoznamu sa ukladajú maximálne prvky) a na záver utriedený zoznam:</p>
+<a class="reference internal image-reference" href="../_images/118_1.png"><img alt="../_images/118_1.png" height="112" src="../_images/118_1.png" width="152" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_2.png"><img alt="../_images/118_2.png" height="112" src="../_images/118_2.png" width="152" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_3.png"><img alt="../_images/118_3.png" height="112" src="../_images/118_3.png" width="152" />
+</a>
+<p>Otestujte takto aj <code class="docutils literal notranslate"><span class="pre">min_sort()</span></code> aj <code class="docutils literal notranslate"><span class="pre">insert_sort</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="quick-sort">
+<h2><a class="toc-backref" href="18.html#id7" role="doc-backlink">Quick sort</a><a class="headerlink" href="18.html#quick-sort" title="Link to this heading">¶</a></h2>
+<p>Je to najznámejší <a class="reference external" href="http://en.wikipedia.org/wiki/Quicksort">algoritmus rýchleho triedenia</a>, ktorý v roku 1959 vymyslel <a class="reference external" href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a> (ako 25-ročný).</p>
+<p>Algoritmus využíva <strong>rekurziu</strong>. Popíšme zjednodušený princíp:</p>
+<ul class="simple">
+<li><p>najprv zvolíme ľubovoľný prvok zoznamu ako tzv. <strong>pivot</strong> (pre jednoduchosť zvolíme prvý prvok zoznamu)</p></li>
+<li><p>ďalej všetky zvyšné prvky rozdelíme na tri kopy: na prvky, ktoré sú menšie ako <strong>pivot</strong>, na prvky, ktoré sa rovnajú <strong>pivot</strong> a na všetky zvyšné</p></li>
+<li><p>teraz rovnakým algoritmom (t.j. rekurzívnym volaním) utriedime dve kopy: kopu menších a kopu väčších a takto utriedené časti (spolu s kopou rovnakých) nakoniec spojíme do výsledného utriedeného zoznamu</p></li>
+</ul>
+<p>Prvá verzia tohoto triedenia je rekurzívna funkcia, ktorá nemodifikuje svoj parameter, len vráti novo vytvorený zoznam, ktorý už teraz bude utriedený (zrejme tento algoritmus nie je <strong>in-place</strong>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quick_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">zoz</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mensie</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">rovne</span> <span class="o">=</span>  <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">vacsie</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">mensie</span><span class="p">)</span> <span class="o">+</span> <span class="n">rovne</span> <span class="o">+</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">vacsie</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Takéto riešenie <strong>nemôžeme vizualizovať</strong> v grafickej ploche našou triedou <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code>, keďže výsledok sa postupne zlepuje z veľkého množstva malých kúskov pomocných zoznamov (my vieme vizualizovať len zmeny v pôvodnom zozname). Jedine, čo môžeme otestovať je vyskúšať triedenie aj väčšieho zoznamu, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+<span class="n">zoz1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="n">zoz2</span> <span class="o">=</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zoz1</span> <span class="o">==</span> <span class="n">zoz2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funguje správne. Môžete vyskúšať, napríklad aj <code class="docutils literal notranslate"><span class="pre">500000</span></code>-prvkový náhodný zoznam - aj tento by sa mal utriediť veľmi rýchlo.</p>
+<p>Ďalej sa zameriame na verziu, ktorá <strong>nebude</strong> používať pomocné zoznamy, ale <code class="docutils literal notranslate"><span class="pre">quick_sort()</span></code> prebehne v samotnom zozname (bude <strong>in-place</strong>):</p>
+<ul class="simple">
+<li><p>na začiatku sa samotný zoznam (jeho časť od indexu <code class="docutils literal notranslate"><span class="pre">z</span></code> do indexu <code class="docutils literal notranslate"><span class="pre">k</span></code>) rozdelí na dve časti:</p></li>
+<li><p>zvolí sa tzv. <strong>pivot</strong> (napríklad prvý prvok zoznamu) a zvyšné prvky sa postupne rozdelia do ľavej časti zoznamu (pred <strong>pivot</strong>) a pravej (za <strong>pivot</strong>) podľa toho či sú menšie alebo väčšie ako <strong>pivot</strong></p></li>
+<li><p>v premennej <code class="docutils literal notranslate"><span class="pre">index</span></code> je pozícia <strong>pivot</strong> v takto upravenom zozname (ešte neutriedenom) - uvedomte si, že <strong>pivot</strong> je už na svojom mieste (podobne ako boli minimálne prvky v <code class="docutils literal notranslate"><span class="pre">min_sort()</span></code> a maximálne prvky v <code class="docutils literal notranslate"><span class="pre">bubble_sort()</span></code>)</p></li>
+<li><p>ďalej nasleduje rekurzívne volanie pre ľavú časť zoznamu pred <strong>pivot</strong> a pre pravú časť zoznamu za <strong>pivot</strong></p></li>
+</ul>
+<p>Táto druhá verzia je teda už <strong>in-place</strong>, t.j. nevytvára sa nový zoznam, ale triedi sa priamo ten zoznam, ktorý je parametrom funkcie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quick_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quick</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+            <span class="c1"># rozdelenie na dve časti</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">z</span>
+            <span class="n">pivot</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+                    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+            <span class="c1"># v index je teraz pozícia pivota</span>
+            <span class="n">quick</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">quick</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+    <span class="n">quick</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otestujte to pomocou vizualizácie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">600</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">800</span><span class="p">)]</span>
+<span class="n">quick_sort</span><span class="p">(</span><span class="n">Vizualizuj</span><span class="p">(</span><span class="n">zz</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Môžete postupne vidieť, ako sa najprv náhodne vygenerovaný zoznam rozdelil podľa pivota na menšie a väčšie prvky, potom sa takto rekurzívne rozdelil aj prvý úsek a na poslednom zábere je už polovica zoznamu utriedená a triedi sa zvyšok zoznamu:</p>
+<a class="reference internal image-reference" href="../_images/118_4.png"><img alt="../_images/118_4.png" height="112" src="../_images/118_4.png" width="162" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_5.png"><img alt="../_images/118_5.png" height="112" src="../_images/118_5.png" width="162" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_6.png"><img alt="../_images/118_6.png" height="112" src="../_images/118_6.png" width="162" />
+</a>
+<p>Niekedy sa triedenia zvyknú vizualizovať nie pomocou úsečiek ale len pomocou jedného koncového bodu úsečky - takto na začiatku vidíme náhodne rozhádzané bodky, ktoré sa postupne zoskupujú. Opravíme triedu <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vizualizuj</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="mi">800</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">600</span><span class="o">-</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">601</span><span class="o">-</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">index</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">600</span><span class="o">-</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="mi">601</span><span class="o">-</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Po spustení vizualizácie vidíme:</p>
+<a class="reference internal image-reference" href="../_images/118_7.png"><img alt="../_images/118_7.png" height="112" src="../_images/118_7.png" width="169" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_8.png"><img alt="../_images/118_8.png" height="112" src="../_images/118_8.png" width="169" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_9.png"><img alt="../_images/118_9.png" height="112" src="../_images/118_9.png" width="169" />
+</a>
+<a class="reference internal image-reference" href="../_images/118_10.png"><img alt="../_images/118_10.png" height="112" src="../_images/118_10.png" width="169" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Štandardné triedenie v Pythone</p>
+<p>štandardná funkcia <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> triedi, napríklad</p>
+<ul class="simple">
+<li><p>postupnosť čísel, reťazcov</p></li>
+<li><p>znakový reťazec</p></li>
+<li><p>postupnosť n-tíc, napríklad postupnosť súradníc</p></li>
+<li><p>postupnosť dvojíc (kľúč, hodnota), ktorá vznikne z asociatívneho poľa pomocou <code class="docutils literal notranslate"><span class="pre">slovnik.items()</span></code></p></li>
+</ul>
+<p>Výsledkom je vždy zoznam (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>). Ak pri volaní uvedieme ďalší parameter <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code>, zoznam sa utriedi zostupne od najväčších hodnôt po najmenšie.</p>
+<p>Pozrime túto ukážku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zz</span>
+<span class="hll"><span class="go">    [1372, 6518, 7580, 9941, 9518, 3211, 8428, 7624, 35, 9341, 572, 6218, 3819, 8943, 8527]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+<span class="hll"><span class="go">    [35, 572, 1372, 3211, 3819, 6218, 6518, 7580, 7624, 8428, 8527, 8943, 9341, 9518, 9941]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="hll"><span class="go">    [9941, 9518, 9341, 8943, 8527, 8428, 7624, 7580, 6518, 6218, 3819, 3211, 1372, 572, 35]</span>
+</span></pre></div>
+</div>
+<p>Vidíme vzostupne aj zostupne utriedený náhodne vygenerovaný zoznam. Ak by sme dostali úlohu tento zoznam utriediť len podľa posledných dvoch cifier každého čísla, bolo by to ťažšie. Vyrobme si pomocnú funkciu a nový zoznam, ktorý obsahuje len tieto posledné cifry:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">posledne2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="go">        return x % 100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz1</span> <span class="o">=</span> <span class="p">[</span><span class="n">posledne2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz1</span>
+<span class="hll"><span class="go">    [72, 18, 80, 41, 18, 11, 28, 24, 35, 41, 72, 18, 19, 43, 27]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+<span class="hll"><span class="go">    [11, 18, 18, 18, 19, 24, 27, 28, 35, 41, 41, 43, 72, 72, 80]</span>
+</span></pre></div>
+</div>
+<p>Ak chceme teraz vrátiť pôvodné čísla k týmto dvom posledným cifrám, musíme si ich pamätať, najlepšie vo dvojici spolu s poslednými 2 ciframi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz1</span> <span class="o">=</span> <span class="p">[(</span><span class="n">posledne2</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz1</span>
+<span class="hll"><span class="go">    [(72, 1372), (18, 6518), (80, 7580), (41, 9941), (18, 9518), (11, 3211), (28, 8428),</span>
+</span><span class="hll"><span class="go">     (24, 7624), (35, 35), (41, 9341), (72, 572), (18, 6218), (19, 3819), (43, 8943), (27, 8527)]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz2</span>
+<span class="hll"><span class="go">    [(11, 3211), (18, 6218), (18, 6518), (18, 9518), (19, 3819), (24, 7624), (27, 8527),</span>
+</span><span class="hll"><span class="go">     (28, 8428), (35, 35), (41, 9341), (41, 9941), (43, 8943), (72, 572), (72, 1372), (80, 7580)]</span>
+</span></pre></div>
+</div>
+<p>Už je to skoro hotové: z týchto utriedených dvojíc zoberieme len pôvodné čísla, t.j. zoberieme druhé prvky dvojíc:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">zoz2</span><span class="p">]</span>
+<span class="hll"><span class="go">    [3211, 6218, 6518, 9518, 3819, 7624, 8527, 8428, 35, 9341, 9941, 8943, 572, 1372, 7580]</span>
+</span></pre></div>
+</div>
+<p>A máme naozaj to, čo sme na začiatku očakávali: utriedený pôvodný zoznam, ale triedime len podľa posledných dvoch cifier čísel v zozname.</p>
+<p>Štandardná funkcia <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> má okrem parametra <code class="docutils literal notranslate"><span class="pre">reverse</span></code> ešte jeden, ktorý slúži práve na toto: zadáme funkciu, ktorá určí, ako sa bude triedenie pri porovnávaní pozerať na každý prvok zoznamu - podľa tohto sa pôvodný zoznam bude triediť. Takže, komplikovaný postup s vytváraním dvojíc môžeme zjednodušiť použitím parametra <code class="docutils literal notranslate"><span class="pre">key</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">posledne2</span><span class="p">)</span>
+<span class="hll"><span class="go">    [3211, 6518, 9518, 6218, 3819, 7624, 8527, 8428, 35, 9941, 9341, 8943, 1372, 572, 7580]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">100</span><span class="p">)</span>
+<span class="hll"><span class="go">    [3211, 6518, 9518, 6218, 3819, 7624, 8527, 8428, 35, 9941, 9341, 8943, 1372, 572, 7580]</span>
+</span></pre></div>
+</div>
+<p>Vidíme, že tu môžeme použiť aj konštrukciu <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Takže, keď zadáme parameter <code class="docutils literal notranslate"><span class="pre">key</span></code>, tak triedenie nebude porovnávať prvky zoznamu, ale prerobené prvky zoznamu zadanou funkciou, napríklad <code class="docutils literal notranslate"><span class="pre">posledne2</span></code>.</p>
+<p>Zamyslite sa, v akom poradí sa teraz utriedi tento istý zoznam:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="hll"><span class="go">    [1372, 3211, 35, 3819, 572, 6218, 6518, 7580, 7624, 8428, 8527, 8943, 9341, 9518, 9941]</span>
+</span></pre></div>
+</div>
+<p>Zhrňme použitie štandardnej funkcie <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>:</p>
+<aside class="topic">
+<p class="topic-title">štandardná funkcia <code class="docutils literal notranslate"><span class="pre">sorted()</span></code></p>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> z prvkov ľubovoľnej postupnosti (napríklad zoznam, n-tica, reťazec, súbor, …) vytvorí zoznam (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>) týchto hodnôt vo vzostupne usporiadanom poradí. Funkcia môže mať ešte tieto dva nepovinné parametre:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> spôsobí usporiadanie prvkov vo vzostupnom poradí (od najväčšieho po najmenšie)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key=funkcia</span></code>, kde <code class="docutils literal notranslate"><span class="pre">funkcia</span></code> je buď meno existujúcej funkcie alebo <code class="docutils literal notranslate"><span class="pre">lambda</span></code> konštrukcia - táto funkcia musí byť definovaná pre <strong>jeden parameter</strong> - potom vzájomné porovnávanie dvoch prvkov pri usporadúvaní bude používať práve túto funkciu</p></li>
+</ul>
+<p>Je dôležité, aby sa všetky triedené prvky dali navzájom porovnávať, napríklad nemôžeme usporiadať zoznam, ktorý obsahuje čísla aj reťazce. Môžeme ich pomocou parametra <code class="docutils literal notranslate"><span class="pre">key</span></code> previesť na také hodnoty, ktoré porovnávať vieme.</p>
+</aside>
+<p>Nasledujúce ukážky ilustrujú najmä použitie parametra <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
+<ul>
+<li><p>usporiadanie množiny mien (čo sú reťazce v tvare meno priezvisko) najprv podľa priezvisk, a ak sú dve priezviská rovnaké, tak podľa mien:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Janko Hrasko&#39;</span><span class="p">,</span> <span class="s1">&#39;Eugen Suchon&#39;</span><span class="p">,</span> <span class="s1">&#39;Ludovit Stur&#39;</span><span class="p">,</span> <span class="s1">&#39;Andrej Sladkovic&#39;</span><span class="p">,</span> <span class="s1">&#39;Janko Stur&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="hll"><span class="go">    [&#39;Andrej Sladkovic&#39;, &#39;Eugen Suchon&#39;, &#39;Janko Hrasko&#39;, &#39;Janko Stur&#39;, &#39;Ludovit Stur&#39;]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="hll"><span class="go">    [&#39;Janko Hrasko&#39;, &#39;Andrej Sladkovic&#39;, &#39;Janko Stur&#39;, &#39;Ludovit Stur&#39;, &#39;Eugen Suchon&#39;]</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>usporiadanie telefónneho zoznamu podľa telefónnych čísel, keďže zoznam je tu definovaný ako asociatívne pole, vytvoríme z neho najprv zoznam dvojíc (kľúč, hodnota):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Betka&#39;</span><span class="p">:</span><span class="mi">737373</span><span class="p">,</span> <span class="s1">&#39;Dusan&#39;</span><span class="p">:</span><span class="mi">555444</span><span class="p">,</span> <span class="s1">&#39;Anka&#39;</span><span class="p">:</span> <span class="mi">363636</span><span class="p">,</span> <span class="s1">&#39;Egon&#39;</span><span class="p">:</span><span class="mi">210210</span><span class="p">,</span>
+<span class="hll"><span class="go">    &#39;Cyril&#39;: 911111, &#39;Gaba&#39;:123456, &#39;Fero&#39;:288288}</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">tel</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="hll"><span class="go">    [(&#39;Anka&#39;, 363636), (&#39;Betka&#39;, 737373), (&#39;Cyril&#39;, 911111), (&#39;Dusan&#39;, 555444),</span>
+</span><span class="hll"><span class="go">     (&#39;Egon&#39;, 210210), (&#39;Fero&#39;, 288288), (&#39;Gaba&#39;, 123456)]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">tel</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="hll"><span class="go">    [(&#39;Gaba&#39;, 123456), (&#39;Egon&#39;, 210210), (&#39;Fero&#39;, 288288), (&#39;Anka&#39;, 363636),</span>
+</span><span class="hll"><span class="go">     (&#39;Dusan&#39;, 555444), (&#39;Betka&#39;, 737373), (&#39;Cyril&#39;, 911111)]</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>usporiadanie zoznamu reťazcov bez ohľadu na malé a veľké písmená:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Prvy&#39;</span><span class="p">,</span> <span class="s1">&#39;DRUHY&#39;</span><span class="p">,</span> <span class="s1">&#39;druha&#39;</span><span class="p">,</span> <span class="s1">&#39;pRva&#39;</span><span class="p">,</span> <span class="s1">&#39;PRVE&#39;</span><span class="p">,</span> <span class="s1">&#39;druhI&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    [&#39;DRUHY&#39;, &#39;PRVE&#39;, &#39;Prvy&#39;, &#39;druhI&#39;, &#39;druha&#39;, &#39;pRva&#39;]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="hll"><span class="go">    [&#39;druha&#39;, &#39;druhI&#39;, &#39;DRUHY&#39;, &#39;pRva&#39;, &#39;PRVE&#39;, &#39;Prvy&#39;]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="hll"><span class="go">    [&#39;druha&#39;, &#39;druhI&#39;, &#39;DRUHY&#39;, &#39;pRva&#39;, &#39;PRVE&#39;, &#39;Prvy&#39;]</span>
+</span></pre></div>
+</div>
+<p>všimnite si dva spôsoby použitia metódy <code class="docutils literal notranslate"><span class="pre">lower()</span></code></p>
+</li>
+<li><p>usporiadanie zoznamu bodov v rovine (zoznam dvojíc <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>) podľa toho, ako sú vzdialené od bodu <code class="docutils literal notranslate"><span class="pre">(0</span> <span class="pre">0)</span></code>; predpokladáme, že máme danú funkciu <code class="docutils literal notranslate"><span class="pre">vzd(x,</span> <span class="pre">y)</span></code>, ktorá vypočíta vzdialenosť bodu od počiatku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">vzd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="go">        return (x**2 + y**2)**.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="p">[(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">body</span>
+<span class="hll"><span class="go">    [(-1, 5), (2, 3), (-1, 0), (-1, -2), (0, 1), (-4, 4), (-4, 4), (5, -1), (5, -2), (-5, 0)]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">vzd</span><span class="p">(</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+<span class="hll"><span class="go">    [(-1, 0), (0, 1), (-1, -2), (2, 3), (-5, 0), (-1, 5), (5, -1), (5, -2), (-4, 4), (-4, 4)]</span>
+</span></pre></div>
+</div>
+<p>všimnite si, že tu sme nemohli priamo zapísať <code class="docutils literal notranslate"><span class="pre">key=vzd</span></code>, lebo táto funkcia očakáva 2 parametre a my máme triediť dvojice</p>
+</li>
+<li><p>v danom slove usporiadať znaky podľa abecedy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">slovo</span> <span class="o">=</span> <span class="s1">&#39;krasokorculovanie&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">slovo</span><span class="p">))</span>
+<span class="hll"><span class="go">    &#39;aaceikklnooorrsuv&#39;</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>v zozname sa vyskytujú reťazce aj čísla, treba to nejako usporiadať:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="mf">2.71</span><span class="p">,</span> <span class="s1">&#39;ghi&#39;</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="s1">&#39;jkl&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    TypeError: unorderable types: float() &lt; str()</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="hll"><span class="go">    [2.71, 22, 3.14, 333, &#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;, &#39;jkl&#39;]</span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="18.html#id8" role="doc-backlink">Cvičenie</a><a class="headerlink" href="18.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong> okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 18. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 2.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdaných riešeniach nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Ručne bez počítača zisti, čo sa bude vypisovať (funkcia <code class="docutils literal notranslate"><span class="pre">vymen(zoz,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> vymení obsahy <code class="docutils literal notranslate"><span class="pre">i</span></code>-teho a <code class="docutils literal notranslate"><span class="pre">j</span></code>-teho prvku daného zoznamu <code class="docutils literal notranslate"><span class="pre">zoz</span></code>):</p>
+<p><strong>bublinkové triedenie</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>
+</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">bubble_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>triedenie s výberom minimálneho prvku</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>
+</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">min_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>triedenie vkladaním</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>
+</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">insert_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Otestuj rôzne triediace algoritmy (<code class="docutils literal notranslate"><span class="pre">bubble_sort</span></code>, <code class="docutils literal notranslate"><span class="pre">min_sort</span></code> a <code class="docutils literal notranslate"><span class="pre">insert_sort</span></code>) ručným zadávaním dvoch prvkov a prípadnou ich výmenou. Použi aplikáciu, v ktorej sa najprv vygeneruje náhodný <code class="docutils literal notranslate"><span class="pre">8</span></code>-prvkový zoznam čísel. Potom sa očakáva zadávanie dvojíc kartičiek, ktoré môžeš navzájom vymeniť. Program beží v grafickom režime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Karta</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">vys</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">vys</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;consolas 30 bold&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id3</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">vys</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="n">sir</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="n">vys</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id3</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">klik</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ev</span><span class="o">.</span><span class="n">y</span><span class="p">):</span>
+            <span class="n">k</span><span class="o">.</span><span class="n">zmen</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="o">.</span><span class="n">b</span><span class="p">:</span>
+                <span class="n">sel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sel</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="k">return</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rob</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sel</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">sel</span>
+        <span class="k">if</span> <span class="n">k1</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">k2</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+            <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k1</span>
+        <span class="k">if</span> <span class="n">k1</span><span class="o">.</span><span class="n">h</span> <span class="o">&gt;</span> <span class="n">k2</span><span class="o">.</span><span class="n">h</span><span class="p">:</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">dx</span> <span class="o">=</span> <span class="n">k2</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="n">k1</span><span class="o">.</span><span class="n">x</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id1</span><span class="p">,</span> <span class="n">dx</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="n">dx</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id1</span><span class="p">,</span> <span class="o">-</span><span class="n">dx</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="o">-</span><span class="n">dx</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">k1</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">k2</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">k2</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">k1</span><span class="o">.</span><span class="n">h</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">k1</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">k2</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id1</span><span class="p">,</span> <span class="o">-</span><span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="o">-</span><span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id1</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">id3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">id3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">sel</span><span class="p">:</span>
+        <span class="n">k</span><span class="o">.</span><span class="n">zmen</span><span class="p">()</span>
+    <span class="n">sel</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vsetky</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">b</span><span class="p">:</span>
+            <span class="n">k</span><span class="o">.</span><span class="n">zmen</span><span class="p">()</span>
+            <span class="n">sel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">nahodne</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">:</span>
+        <span class="n">k</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">id2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">k</span><span class="o">.</span><span class="n">h</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">70</span>
+<span class="n">zoz</span><span class="p">,</span> <span class="n">sel</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">490</span><span class="o">-</span><span class="n">sir</span><span class="p">,</span> <span class="n">sir</span><span class="o">+</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">vys</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">490</span><span class="o">-</span><span class="n">sir</span><span class="p">,</span> <span class="n">sir</span><span class="o">+</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">zoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Karta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">)))</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-1&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-3&gt;&#39;</span><span class="p">,</span> <span class="n">rob</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">vsetky</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">nahodne</span><span class="p">)</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento program ti namieša <strong>8</strong> kartičiek s náhodnými číslami. Klikaním ich otáčaš, pravým klikom 2 otočené navzájom vymeníš (len ak je prvá väčšia ako druhá). Kláves <code class="docutils literal notranslate"><span class="pre">n</span></code> pripraví novú sadu náhodných čísel.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Táto verzia triedenia vkladaním v niektorých situáciách vypíše momentálny obsah celého zoznamu. Ručne odtrasuj tento algoritmus a vypíš tieto kontrolné výpisy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_sort1</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">j</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+<span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>
+</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">insert_sort1</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Nasledovná verzia triedenia vsúvaním <code class="docutils literal notranslate"><span class="pre">insert_sort2()</span></code> namiesto priraďovania do prvkov zoznamu používa metódy <code class="docutils literal notranslate"><span class="pre">pop()</span></code> a <code class="docutils literal notranslate"><span class="pre">insert()</span></code>. Vlož do tejto funkcie kontrolné výpisy tak, ako sa to robilo na prednáške, a skontroluj jej spôsob triedenia:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_sort2</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+<span class="hll">        <span class="n">prvok</span> <span class="o">=</span> <span class="n">zoz</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span>        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">prvok</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="hll">        <span class="n">zoz</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">prvok</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Zamysli sa, prečo pre túto verziu nebude fungovať vizualizácia pomocou <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code>.</p>
+<p>Odmeraj rýchlosť tohto triedenia v porovnaní s verziou z prednášky, vlož sem meranie času:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+<span class="n">zoz1</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[:]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="n">prvy_cas</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">insert_sort2</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+<span class="n">druhy_cas</span> <span class="o">=</span> <span class="o">...</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zoz</span> <span class="o">==</span> <span class="n">zoz1</span><span class="p">,</span> <span class="n">prvy_cas</span><span class="p">,</span> <span class="n">druhy_cas</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Ručne bez počítača odkrokuj <code class="docutils literal notranslate"><span class="pre">quick_sort()</span></code> z prednášky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quick_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quick</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+            <span class="c1"># rozdelenie na dve casti</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">z</span>
+            <span class="n">pivot</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">z</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+                    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+            <span class="c1"># v index je teraz pozicia pivota</span>
+<span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>                         <span class="c1"># &lt;== vypis</span>
+</span>            <span class="n">quick</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">quick</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>                                 <span class="c1"># &lt;== vypis</span>
+</span>    <span class="n">quick</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">quick_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Program vypíše 6 riadkov čísel, pričom posledné dva sú rovnaké.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Do všetkých funkcií <code class="docutils literal notranslate"><span class="pre">bubble_sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">min_sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert_sort()</span></code> a <code class="docutils literal notranslate"><span class="pre">quick_sort()</span></code> z prednášky dorob návratovú hodnotu, ktorou bude dvojica (počet porovnaní, počet výmen). Teda každá z funkcií vráti dve čísla: celkový počet porovnaní medzi prvkami zoznamu a celkový počet volaní funkcie <code class="docutils literal notranslate"><span class="pre">vymen()</span></code>. Otestuj, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz0</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">sort</span> <span class="ow">in</span> <span class="n">bubble_sort</span><span class="p">,</span> <span class="n">min_sort</span><span class="p">,</span> <span class="n">insert_sort</span><span class="p">,</span> <span class="n">quick_sort</span><span class="p">:</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zoz0</span><span class="p">)</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">pp</span><span class="p">,</span> <span class="n">pv</span> <span class="o">=</span> <span class="n">sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">cas</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">cas</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mal by si dostať štyri riadky výpisu - v každom je dvojica celých čísel a jedno desatinné číslo - zamysli sa, čo by si mohol z týchto čísel usúdiť.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Zisti, čo budú vypisovať predchádzajúce tri triedenia, ak vstupný zoznam bude utriedený vzostupne:</p>
+<p><strong>bublinkové triedenie</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">bubble_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>triedenie s výberom minimálneho prvku</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">min_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>triedenie vkladaním</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">insert_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Spojazdni vizualizáciu testov a otestuj, ako bude prebiehať triedenie 300-prvkového náhodného zoznamu pomocou <code class="docutils literal notranslate"><span class="pre">bubble_sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">min_sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert_sort()</span></code> aj, <code class="docutils literal notranslate"><span class="pre">quick_sort()</span></code>.</p>
+<p>Našli sme aj takéto verzie prvých troch triedení, ktoré sú tiež funkčné, ale väčšinou rýchlejšie ako pôvodné funkcie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">m</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">j</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">:</span>
+                <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+</pre></div>
+</div>
+<p>Poštuduj tieto zápisy a odhadni, prečo sú naozaj rýchlejšie. Skontroluj, či fungujú aj pomocou <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zisti(postupnost,</span> <span class="pre">vzost=True)</span></code>, ktorá zistí (vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code>), či je zadaná postupnosť hodnôt usporiadaná vzostupne. Vstupnú postupnosť <strong>neukladaj</strong> do žiadneho pomocného zoznamu. Parameter <code class="docutils literal notranslate"><span class="pre">vzost</span></code> s hodnotou <code class="docutils literal notranslate"><span class="pre">False</span></code> označuje, že kontroluješ, či je postupnosť usporiadaná zostupne. Vzostupné usporiadanie označuje, že pre žiadne dva susedné prvky postupnosti nie je prvý z nich väčší ako druhý. Malo by to fungovať, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zisti</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zisti</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zisti</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="kc">False</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Pri riešení tejto úlohy nepouži žiadne triedenie, ani štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">sorted</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p>Otestuj algoritmus <code class="docutils literal notranslate"><span class="pre">bubble_sort()</span></code> pre triedenie znakových reťazcov, ktoré sa skladajú z dvoch slov. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Juraj Hrasko&#39;</span><span class="p">,</span> <span class="s1">&#39;Peter Botafogo&#39;</span><span class="p">,</span> <span class="s1">&#39;Juraj Janosik&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Sangala&#39;</span><span class="p">,</span> <span class="s1">&#39;Janko Hrasko&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bubble_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vytvor novu verziu tohto triedenia, ktoré usporiada takéto dvojslovné reťazce podľa druhého slova:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort2</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+      <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Juraj Hrasko&#39;</span><span class="p">,</span> <span class="s1">&#39;Peter Botafogo&#39;</span><span class="p">,</span> <span class="s1">&#39;Juraj Janosik&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Sangala&#39;</span><span class="p">,</span> <span class="s1">&#39;Janko Hrasko&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bubble_sort2</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">Peter Botafogo</span>
+<span class="go">Janko Hrasko</span>
+<span class="go">Juraj Hrasko</span>
+<span class="go">Juraj Janosik</span>
+<span class="go">Adam Sangala</span>
+</pre></div>
+</div>
+<p>Snaž sa v tejto novej verzii triedenia nepoužívať žiaden pomocný zoznam.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Zapíš verziu <code class="docutils literal notranslate"><span class="pre">min_sort_rev(zoz)</span></code>, ktorá na princípe triedenia s výberom minimálneho prvku utriedi vstupný zoznam v opačnom poradí (od najväčšieho po najmenší). Otestuj, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+<span class="n">szz</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">min_sort_rev</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zz</span> <span class="o">==</span> <span class="n">szz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otestuj túto funkciu aj pomocou <code class="docutils literal notranslate"><span class="pre">Vizualizuj</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p>Zapíš tri funkcie <code class="docutils literal notranslate"><span class="pre">utried1(veta)</span></code>, <code class="docutils literal notranslate"><span class="pre">utried2(veta)</span></code> a <code class="docutils literal notranslate"><span class="pre">utried3(veta)</span></code>, ktoré nejako usporiadajú slová v danej vete. Využi štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> a prípadne aj parametre <code class="docutils literal notranslate"><span class="pre">reverse</span></code> a <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">utried1()</span></code> usporiada slová vo vete podľa abecedy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utried2()</span></code> usporiada slová vo vete podľa abecedy ale zostupne</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utried3()</span></code> usporiada slová vo vete podľa dĺžky slov (najprv najkratšie) a až keď sú rovnako dlhé podľa abecedy</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">utried1</span><span class="p">(</span><span class="n">veta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">utried2</span><span class="p">(</span><span class="n">veta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">utried3</span><span class="p">(</span><span class="n">veta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">utried1</span><span class="p">(</span><span class="s1">&#39;kohutik jaraby nechod do zahrady&#39;</span><span class="p">)</span>
+<span class="go">&#39;do jaraby kohutik nechod zahrady&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utried2</span><span class="p">(</span><span class="s1">&#39;kohutik jaraby nechod do zahrady&#39;</span><span class="p">)</span>
+<span class="go">&#39;zahrady nechod kohutik jaraby do&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utried3</span><span class="p">(</span><span class="s1">&#39;jano ide z blavy do brna&#39;</span><span class="p">)</span>
+<span class="go">&#39;z do ide brna jano blavy&#39;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="13">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">najcastejsie()</span></code>, ktorá z nejakého textu (znakový reťazec s medzerami a koncami riadkov <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>) vypíše 10 najčastejšie sa vyskytujúcich slov spolu aj s ich počtami výskytov (použi, napríklad súbor <a class="reference external" href="../_static/text/dobs.txt">dobs.txt</a>). Otestuj, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">najcastejsie</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;dobs.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="go">a 1032</span>
+<span class="go">sa 703</span>
+<span class="go">na 436</span>
+<span class="go">ale 238</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="18.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

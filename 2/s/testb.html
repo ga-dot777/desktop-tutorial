@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Záverečný test - variant B &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Hľadať" href="../../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../../copyright.html" />
+    <link rel="next" title="Copyright" href="../../copyright.html" />
+    <link rel="prev" title="Záverečný test - variant A" href="testa.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.html">9. Backtracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.html">10. Backtracking na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.html">11. Ďalšie algoritmy na grafoch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="testa.html" title="Previous Chapter: Záverečný test - variant A"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Záverečný tes...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../copyright.html" title="Next Chapter: Copyright"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Copyright &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="zaverecny-test-variant-b">
+<h1>Záverečný test - variant B<a class="headerlink" href="testb.html#zaverecny-test-variant-b" title="Link to this heading">¶</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># zaverecny test variant B</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 18.5.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code> ani <code class="docutils literal notranslate"><span class="pre">sorted</span></code></p></li>
+<li><p>svojim funkciám (oproti zadaniu) môžeš zmeniť mená parametrov, môžeš si zadefinovať pomocné funkcie</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Napíš funkciu, ktorá vráti postupnosť (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) všetkých rôznych podmnožín vstupnej postupnosti prvkov (čísla, reťazce, n-tice). Napríklad, volanie <code class="docutils literal notranslate"><span class="pre">vsetky(['a',</span> <span class="pre">7,</span> <span class="pre">'a'])</span></code> vráti <code class="docutils literal notranslate"><span class="pre">(set(),</span> <span class="pre">{'a'},</span> <span class="pre">{'a',</span> <span class="pre">7},</span> <span class="pre">{7})</span></code> (množiny sú v ľubovoľnom poradí).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vsetky</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Napíš funkciu, ktorá zistí, či zadaný zoznam hodnôt spĺňa kritériá <strong>haldy</strong>, v ktorej v koreni je maximálna hodnota a v potomkoch sú menšie alebo rovné prvky. Funkcia vráti množinu všetkých dvojíc hodnôt v halde (rodič, potomok), pre ktoré je porušené pravidlo haldy. Zrejme, pre korektnú haldu funkcia vráti prázdnu množinu.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kontrola</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Pre danú postupnosť slov, napíš funkciu, ktorá vráti počet vrcholov v strome <strong>Trie</strong> (prefixový strom). Funkcia pre prázdnu vstupnú postupnosť slov vráti hodnotu <code class="docutils literal notranslate"><span class="pre">1</span></code>, nakoľko sa vytvoril len jeden vrchol pre koreň stromu.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">velkost</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Pre takúto reprezentáciu všeobecného stromu napíš funkciu, ktorá zistí stupeň stromu. Stupeň vrcholu je počet jeho potomkov. Stupeň stromu je maximálny stupeň zo všetkých jeho vrcholov.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="p">[]</span>       <span class="c1"># zoznam potomkov</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">deg</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Pre danú neprázdnu postupnosť celých čísel, napíš funkciu, ktorá vrati <strong>generátor</strong> všetkých listov <strong>binárneho vyhľadávacieho stromu</strong>. Tento strom sa vytvoril zo zadanej vstupnej postupnosti (v strome budú len rôzne hodnoty). Vygenerované hodnoty listov stromu môžu byť v ľubovoľnom poradí.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generuj</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>V premennej <code class="docutils literal notranslate"><span class="pre">zoznam</span></code> máme 16-prvkový zoznam celých čísel alebo reťazcov, ktorý triedime vzostupne pomocou <strong>triedenia zlučovaním</strong> (merge-sort) nerekurzívnym algoritmom zdola nahor. Tento algoritmus v niekoľkých prechodoch (zakaždým s väčším krokom) preusporiadava prvky tohto poľa. Okrem toho, že táto funkcia usporiada vstupný zoznam (in-place algoritmom, teda na mieste), funkcia pomocou <strong>generátora</strong> postupne vráti pôvodný zoznam:</p>
+<ul class="simple">
+<li><p>v prvom prechode postupne „zlúči“ prvky <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> a <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code> a <code class="docutils literal notranslate"><span class="pre">5</span></code>, …</p></li>
+<li><p>v druhom prechode „zlúči“ dvojprvkové úseky <code class="docutils literal notranslate"><span class="pre">0..1</span></code> a <code class="docutils literal notranslate"><span class="pre">2..3</span></code>, <code class="docutils literal notranslate"><span class="pre">4..5</span></code> a <code class="docutils literal notranslate"><span class="pre">6..7</span></code>, <code class="docutils literal notranslate"><span class="pre">8..9</span></code> a <code class="docutils literal notranslate"><span class="pre">10..11</span></code>, …</p></li>
+<li><p>v treťom prechode bude zlučovať štvorprvkové úseky <code class="docutils literal notranslate"><span class="pre">0..3</span></code> a <code class="docutils literal notranslate"><span class="pre">4..7</span></code>, <code class="docutils literal notranslate"><span class="pre">8..11</span></code> a <code class="docutils literal notranslate"><span class="pre">12..15</span></code></p></li>
+<li><p>v štvrtom prechode zlúči už len dva osemprvkové úseky <code class="docutils literal notranslate"><span class="pre">0..7</span></code> a <code class="docutils literal notranslate"><span class="pre">8..15</span></code></p></li>
+<li><p>keďže takýchto prechodov je vo všeobecnosti približne <code class="docutils literal notranslate"><span class="pre">log2(n)</span></code>, po štvrtom prechode by mal byť zoznam utriedený</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">triedenie</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">yield</span> <span class="n">zoznam</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="testb.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 18. máj. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

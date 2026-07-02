@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10. Dvojrozmerné tabuľky &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="11. Slovníky a množiny" href="11.html" />
+    <link rel="prev" title="9. Rekurzia" href="09.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="10.html#">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="09.html" title="Previous Chapter: 9. Rekurzia"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 9. Rekurzia</span>
+    </a>
+  </li>
+  <li>
+    <a href="11.html" title="Next Chapter: 11. Slovníky a množiny"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">11. Slovníky ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="dvojrozmerne-tabulky">
+<h1>10. Dvojrozmerné tabuľky<a class="headerlink" href="10.html#dvojrozmerne-tabulky" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="10.html#vytvaranie-dvojrozmernych-tabuliek" id="id2">Vytváranie dvojrozmerných tabuliek</a></p>
+<ul>
+<li><p><a class="reference internal" href="10.html#tabulky-s-rozne-dlhymi-riadkami" id="id3">Tabuľky s rôzne dlhými riadkami</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="10.html#hra-life" id="id4">Hra LIFE</a></p></li>
+<li><p><a class="reference internal" href="10.html#cvicenie" id="id5">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="10.html#tyzdenny-projekt" id="id6">5. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pythonovský zoznam <code class="docutils literal notranslate"><span class="pre">list</span></code> (blízky jednorozmerným poliam v iných programovacích jazykoch) slúži hlavne na uchovávanie nejakej postupnosti alebo skupiny údajov. V takejto štruktúre sa dajú uchovávať aj dvojrozmerné tabuľky ako zoznam zoznamov (opäť je to analógia k dvojrozmerným poliam). Dvojrozmerné údaje sa často vyskytujú, napríklad ako rôzne hracie plochy (štvorčekový papier pre piškvorky, šachovnica pre doskové hry, rôzne typy labyrintov), ale napríklad aj rastrové obrázky sú často uchovávané v dvojrozmernej tabuľke. Aj v matematike sa niekedy pracuje s dvojrozmernými tabuľkami čísel (tzv. matice).</p>
+<p>Už vieme, že prvkami zoznamu môžu byť opäť postupnosti (zoznamy alebo n-tice). Práve táto vlastnosť nám poslúži pri reprezentácii dvojrozmerných tabuliek. Napríklad, takúto tabuľku (matematickú maticu 3x3):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span>
+<span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</pre></div>
+</div>
+<p>môžeme v Pythone zapísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Zoznam <code class="docutils literal notranslate"><span class="pre">m</span></code> má tri prvky: sú to tri riadky (zoznamy čísel - teda jednorozmerné polia). Našou prvou úlohou bude vypísať takýto zoznam do riadkov. Ale takýto jednoduchý výpis sa nám nie vždy bude hodiť:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span>
+<span class="hll"><span class="go">    [1, 2, 3]</span>
+</span><span class="hll"><span class="go">    [4, 5, 6]</span>
+</span><span class="hll"><span class="go">    [7, 8, 9]</span>
+</span></pre></div>
+</div>
+<p>Častejšie to budeme robiť dvoma vnorenými cyklami. Zadefinujme funkciu <code class="docutils literal notranslate"><span class="pre">vypis()</span></code> s jedným parametrom dvojrozmernou tabuľkou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">riadok</span><span class="p">:</span>
+</span>            <span class="nb">print</span><span class="p">(</span><span class="n">prvok</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To isté vieme zapísať aj pomocou indexovania:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)):</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+</span>            <span class="nb">print</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Obe tieto funkcie sú veľmi častými šablónami pri práci s dvojrozmernými tabuľkami. Teraz výpis tabuľky vyzerá takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="hll"><span class="go">    1 2 3</span>
+</span><span class="hll"><span class="go">    4 5 6</span>
+</span><span class="hll"><span class="go">    7 8 9</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="vytvaranie-dvojrozmernych-tabuliek">
+<h2><a class="toc-backref" href="10.html#id2" role="doc-backlink">Vytváranie dvojrozmerných tabuliek</a><a class="headerlink" href="10.html#vytvaranie-dvojrozmernych-tabuliek" title="Link to this heading">¶</a></h2>
+<p>Pozrime, ako môžeme vytvárať nové dvojrozmerné tabuľky. Okrem priameho priradenia, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>ich môžeme poskladať z jednotlivých riadkov, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">riadok1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">riadok2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">riadok3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matica</span> <span class="o">=</span> <span class="p">[</span><span class="n">riadok1</span><span class="p">,</span> <span class="n">riadok2</span><span class="p">,</span> <span class="n">riadok3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Častejšie to ale bude pomocou nejakých cyklov. Závisí to od toho, či sa vo výslednej tabuľke niečo opakuje. Vytvorme dvojrozmernú tabuľku veľkosti 3x3, ktorá obsahuje samé <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">matica</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matica</span>
+<span class="hll"><span class="go">    [[0, 0, 0], [0, 0, 0], [0, 0, 0]]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">matica</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 0 0</span>
+</span><span class="hll"><span class="go">    0 0 0</span>
+</span><span class="hll"><span class="go">    0 0 0</span>
+</span></pre></div>
+</div>
+<p>Využili sme tu štandardný spôsob vytvárania jednorozmerného zoznamu pomocou metódy <code class="docutils literal notranslate"><span class="pre">append()</span></code>. Hoci my už poznáme generátorovú notáciu (list compresension) a vieme túto maticu vytvoriť aj takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matica</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>V ďalších riešeniach budeme niekedy ukazovať riešenia bez generátorovej notácie, ale aj pomocou nej.</p>
+<p>Obsah ľubovoľného prvku matice môžeme zmeniť obyčajným priradením:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matica</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">matica</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 9 0</span>
+</span><span class="hll"><span class="go">    0 0 1</span>
+</span><span class="hll"><span class="go">    0 0 0</span>
+</span></pre></div>
+</div>
+<p>Prvý index v <code class="docutils literal notranslate"><span class="pre">[]</span></code> zátvorkách väčšinou bude pre nás označovať poradové číslo riadka, v druhých zátvorkách je poradové číslo stĺpca. Už sme si zvykli, že riadky aj stĺpce sú číslované od 0.</p>
+<p>Keďže pri definovaní matice sa zdá, že sa 3-krát opakuje to isté, zapíšeme to pomocou viacnásobného zreťazenia (operácia <code class="docutils literal notranslate"><span class="pre">*</span></code>) zoznamov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Opäť sa potvrdzuje, že je to veľmi nesprávny spôsob vytvárania prvkov zoznamu: zápis <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code> označuje <strong>referenciu</strong> na trojprvkový zoznam, potom <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0]]*3</span></code> rozkopíruje túto jednu referenciu trikrát. Teda vytvorili sme zoznam, ktorý trikrát obsahuje referenciu na ten istý riadok. Presvedčíme sa o tom priradením do niektorých prvkov takéhoto zoznamu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matica1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">matica1</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 9 1</span>
+</span><span class="hll"><span class="go">    0 9 1</span>
+</span><span class="hll"><span class="go">    0 9 1</span>
+</span></pre></div>
+</div>
+<p>Uvedomte si, že zápis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>v skutočnosti znamená:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">riadok</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matica1</span> <span class="o">=</span> <span class="p">[</span><span class="n">riadok</span><span class="p">,</span> <span class="n">riadok</span><span class="p">,</span> <span class="n">riadok</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Zapamätajte si! Dvojrozmerné štruktúry <strong>nikdy</strong> nevytvárame tak, že viacnásobne zreťazujeme (násobíme) jeden riadok viackrát. Pritom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matica2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>je už v poriadku, lebo v tomto zozname sme vytvorili tri rôzne riadky.</p>
+<p>Niekedy sa na vytvorenie „prázdnej“ dvojrozmernej tabuľky definuje funkcia:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob</span><span class="p">(</span><span class="n">pocet_riadkov</span><span class="p">,</span> <span class="n">pocet_stlpcov</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="hll">    <span class="n">vysl</span> <span class="o">=</span> <span class="p">[]</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pocet_riadkov</span><span class="p">):</span>
+<span class="hll">        <span class="n">vysl</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">hodnota</span><span class="p">]</span> <span class="o">*</span> <span class="n">pocet_stlpcov</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>alebo pomocou generátorovej notácie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob</span><span class="p">(</span><span class="n">pocet_riadkov</span><span class="p">,</span> <span class="n">pocet_stlpcov</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">hodnota</span><span class="p">]</span> <span class="o">*</span> <span class="n">pocet_stlpcov</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pocet_riadkov</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Otestujme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 0 0 0 0</span>
+</span><span class="hll"><span class="go">    0 0 0 0 0</span>
+</span><span class="hll"><span class="go">    0 0 0 0 0</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="hll"><span class="go">    * * * * * *</span>
+</span><span class="hll"><span class="go">    * * * * * *</span>
+</span></pre></div>
+</div>
+<p>Iný tvar zápisu tejto funkcie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob</span><span class="p">(</span><span class="n">pocet_riadkov</span><span class="p">,</span> <span class="n">pocet_stlpcov</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="hll">    <span class="n">vysl</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">pocet_riadkov</span>         <span class="c1"># None alebo ľubovoľná iná hodnota</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pocet_riadkov</span><span class="p">):</span>
+<span class="hll">        <span class="n">vysl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">hodnota</span><span class="p">]</span> <span class="o">*</span> <span class="n">pocet_stlpcov</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Je na programátorovi, ktorú formu zápisu tejto funkcie použije.</p>
+<p>Niekedy potrebujeme do takto pripravenej tabuľky priradiť nejaké hodnoty, napríklad postupným zvyšovaním nejakého počítadla:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ocisluj</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="n">poc</span> <span class="o">=</span> <span class="mi">0</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+<span class="hll">            <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">poc</span>
+</span><span class="hll">            <span class="n">poc</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></pre></div>
+</div>
+<p>Všimnite si, že táto funkcia vychádza z druhej funkcie (šablóny) pre vypisovanie dvojrozmernej tabuľky: namiesto výpisu prvku (<code class="docutils literal notranslate"><span class="pre">print()</span></code>) sme do neho niečo priradili. Táto funkcia <code class="docutils literal notranslate"><span class="pre">ocisluj()</span></code> nič nevypisuje ani nevracia žiadnu hodnotu „len“ modifikuje obsah tabuľky, ktorá je parametrom tejto funkcie.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ocisluj</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 1 2 3 4</span>
+</span><span class="hll"><span class="go">    5 6 7 8 9</span>
+</span><span class="hll"><span class="go">    10 11 12 13 14</span>
+</span></pre></div>
+</div>
+<p>Funkciu <code class="docutils literal notranslate"><span class="pre">ocisluj</span></code> môžeme zapísať aj takto jednoduchšie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ocisluj</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">poc</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="hll">    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)):</span>
+</span><span class="hll">            <span class="n">riadok</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">poc</span>
+</span>            <span class="n">poc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<h3 class="rubric">Zobrazenie obsahu dvojrozmernej tabuľky v grafickej ploche</h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Zapíšme takúto funkciu na výpis obsahu dvojrozmernej tabuľky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli_text</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="hll">    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">riadok</span><span class="p">):</span>
+</span>            <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">prvok</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">ocisluj</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">kresli_text</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dostávame takýto výpis:</p>
+<a class="reference internal image-reference" href="../_images/110_01.png"><img alt="../_images/110_01.png" class="align-center" height="134" src="../_images/110_01.png" width="191" />
+</a>
+<p>Zaujímavejší výstup v grafickej ploche dostaneme, keď namiesto čísel budeme vykresľovať farebné štvorčeky. Predpokladajme, že čísla v tabuľke sú len z nejakého malého intervalu, napríklad sú to čísla z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;0,</span> <span class="pre">3&gt;</span></code>, potom môžeme každú hodnotu v tabuľke zakresliť jednou zo štyroch farieb, napríklad 0 = <code class="docutils literal notranslate"><span class="pre">'white'</span></code>, 1 = <code class="docutils literal notranslate"><span class="pre">'black'</span></code>, 2 = <code class="docutils literal notranslate"><span class="pre">'red'</span></code>, 3 = <code class="docutils literal notranslate"><span class="pre">'blue'</span></code>. Pre istotu pri priradení farby pre každý štvorček vypočítame zvyšok po delení počtom farieb, teda číslom <code class="docutils literal notranslate"><span class="pre">4</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<span class="hll">    <span class="n">farby</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</span>    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">riadok</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">s</span><span class="o">*</span><span class="n">d</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">d</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="hll">            <span class="n">farba</span> <span class="o">=</span> <span class="n">farby</span><span class="p">[</span><span class="n">prvok</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">farby</span><span class="p">)]</span>
+</span>            <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span>
+                                    <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;light gray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Keď teraz vykreslíme obsah tabuľky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">ocisluj</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dostávame takýto výpis:</p>
+<a class="reference internal image-reference" href="../_images/110_02.png"><img alt="../_images/110_02.png" class="align-center" height="134" src="../_images/110_02.png" width="191" />
+</a>
+<p>Aby sme takýto výpis mohli zavolať viackrát za sebou a zakaždým sa zobrazil aktuálny obsah tabuľky, trochu vylepšíme funkciu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">farby</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">)):</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</span>    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">riadok</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">5</span>
+            <span class="n">farba</span> <span class="o">=</span> <span class="n">farby</span><span class="p">[</span><span class="n">prvok</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">farby</span><span class="p">)]</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span>
+                                    <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;light gray&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)):</span>
+            <span class="n">riadok</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmeň&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">zmen</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">ocisluj</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Najprv sa vykreslí predchádzajúci obrázok a po zatlačení tlačidla sa obrázok prekreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_03.png"><img alt="../_images/110_03.png" class="align-center" height="130" src="../_images/110_03.png" width="191" />
+</a>
+<p>Všimnite si, že lokálnu premennú <code class="docutils literal notranslate"><span class="pre">farby</span></code> sme presunuli medzi parametre. Vďaka tomuto, budeme môcť túto funkciu zavolať aj takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Ďalším testom najprv vytvoríme tabuľku veľkosti 11x11 s hodnotou <code class="docutils literal notranslate"><span class="pre">0</span></code> (zobrazila by sa ako biela tabuľka). Potom vyrobíme červený rámik, t.j. po obvode zapíšeme hodnoty <code class="docutils literal notranslate"><span class="pre">2</span></code> a na záver na obe uhlopriečky zapíšeme hodnoty <code class="docutils literal notranslate"><span class="pre">3</span></code>, t.j. po vykreslení budú modré:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="hll">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class="hll">    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Nakreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_04.png"><img alt="../_images/110_04.png" class="align-center" height="134" src="../_images/110_04.png" width="191" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<h3 class="rubric">Niekoľko príkladov práce s dvojrozmernými tabuľkami</h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>zvýšime obsah všetkých prvkov o 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zvys_o_1</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)):</span>
+            <span class="n">riadok</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Zrejme všetky prvky tejto tabuľky musia byť nejaké čísla, inak by funkcia spadla na chybe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zvys_o_1</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="hll"><span class="go">    [[6, 7, 8], [1, 1, 1], [-2, -1, 0]]</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>podobný cieľ má aj druhá funkcia: hoci nemení samotnú tabuľku, vytvorí novú, ktorej prvky sú o jedna väčšie ako v pôvodnej tabuľke:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">o_1_viac</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="n">nova_tab</span> <span class="o">=</span> <span class="p">[]</span>
+</span>    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+<span class="hll">        <span class="n">novy_riadok</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span>
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)):</span>
+            <span class="n">novy_riadok</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">riadok</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="hll">        <span class="n">nova_tab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">novy_riadok</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="n">nova_tab</span>
+</pre></div>
+</div>
+<p>To isté trochu inak:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">o_1_viac</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="n">nova_tab</span> <span class="o">=</span> <span class="p">[]</span>
+</span>    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+<span class="hll">        <span class="n">novy_riadok</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span>          <span class="c1"># kópia pôvodného riadka</span>
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">novy_riadok</span><span class="p">)):</span>
+            <span class="n">novy_riadok</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="hll">        <span class="n">nova_tab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">novy_riadok</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="n">nova_tab</span>
+</pre></div>
+</div>
+<p>alebo generátorovou notáciou (najelegantnejšie):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">o_1_viac</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">prvok</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">riadok</span><span class="p">]</span> <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>kópia dvojrozmernej tabuľky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kopia</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="n">nova_tab</span> <span class="o">=</span> <span class="p">[]</span>
+</span>    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+<span class="hll">        <span class="n">nova_tab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">riadok</span><span class="p">))</span>
+</span>    <span class="k">return</span> <span class="n">nova_tab</span>
+</pre></div>
+</div>
+<p>alebo generátorovou notáciou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kopia</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span> <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>číslovanie prvkov tabuľky inak ako to robila funkcia <code class="docutils literal notranslate"><span class="pre">cisluj()</span></code>: nie po riadkoch ale po stĺpcoch. Predpokladáme, že všetky riadky sú rovnako dlhé:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ocisluj_po_stlpcoch</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="hll">    <span class="n">poc</span> <span class="o">=</span> <span class="mi">0</span>
+</span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)):</span>
+<span class="hll">            <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">poc</span>
+</span><span class="hll">            <span class="n">poc</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></pre></div>
+</div>
+<p>Všimnite si, že táto funkcia má oproti pôvodnému <code class="docutils literal notranslate"><span class="pre">ocisluj()</span></code> vymenené dva riadky for-cyklov.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ocisluj_po_stlpcoch</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 3 6 9 12</span>
+</span><span class="hll"><span class="go">    1 4 7 10 13</span>
+</span><span class="hll"><span class="go">    2 5 8 11 14</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>spočítame počet výskytov nejakej hodnoty:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">riadok</span><span class="p">:</span>
+<span class="hll">            <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+</span><span class="hll">                <span class="n">vysl</span> <span class="o">+=</span> <span class="mi">1</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Ak využijeme generátorovú notáciu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prvok</span> <span class="o">==</span> <span class="n">hodnota</span> <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">riadok</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Využili sme tu prvú verziu funkcie (šablóny) pre výpis dvojrozmernej tabuľky. Ak si ale pripomenieme, že niečo podobné robí štandardná metóda <code class="docutils literal notranslate"><span class="pre">count()</span></code>, ale táto funguje len pre jednorozmerné zoznamy, môžeme našu funkciu vylepšiť:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+<span class="hll">        <span class="n">vysl</span> <span class="o">+=</span> <span class="n">riadok</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>alebo využijeme generátorovú notáciu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">riadok</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span> <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="hll"><span class="go">    5</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="hll"><span class="go">    1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="hll"><span class="go">    0</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>funkcia zistí, či je nejaká matica (dvojrozmerný zoznam) symetrická, t. j. či sú prvky pod a nad hlavnou uhlopriečkou rovnaké, čo znamená, že má platiť <code class="docutils literal notranslate"><span class="pre">matica[i][j]</span> <span class="pre">==</span> <span class="pre">matica[j][i]</span></code> pre každé <code class="docutils literal notranslate"><span class="pre">i</span></code> a <code class="docutils literal notranslate"><span class="pre">j</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">symetricka</span><span class="p">(</span><span class="n">matica</span><span class="p">):</span>
+<span class="hll">    <span class="n">vysl</span> <span class="o">=</span> <span class="kc">True</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matica</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matica</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">matica</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">matica</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
+<span class="hll">                <span class="n">vysl</span> <span class="o">=</span> <span class="kc">False</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Hoci je toto riešenie korektné, má niekoľko nedostatkov:</p>
+<ul class="simple">
+<li><p>funkcia zbytočne testuje každú dvojicu prvkov <code class="docutils literal notranslate"><span class="pre">matica[i][j]</span></code> a <code class="docutils literal notranslate"><span class="pre">matica[j][i]</span></code> dvakrát, napríklad či <code class="docutils literal notranslate"><span class="pre">matica[0][2]</span> <span class="pre">==</span> <span class="pre">matica[2][0]</span></code> aj <code class="docutils literal notranslate"><span class="pre">matica[2][0]</span> <span class="pre">==</span> <span class="pre">matica[0][2]</span></code>, tiež zrejme netreba kontrolovať prvky na hlavnej uhlopriečke, či <code class="docutils literal notranslate"><span class="pre">matica[i][i]</span> <span class="pre">==</span> <span class="pre">matica[i][i]</span></code></p></li>
+<li><p>keď sa vo vnútornom cykle zistí, že sme našli dvojicu <code class="docutils literal notranslate"><span class="pre">matica[i][j]</span></code> a <code class="docutils literal notranslate"><span class="pre">matica[j][i]</span></code>, ktoré sú navzájom rôzne, hoci sa zapamätá, že výsledok funkcie bude <code class="docutils literal notranslate"><span class="pre">False</span></code>, ďalej sa pokračuje prehľadávať zvyšok matice - toto je zrejme zbytočné, lebo výsledok je už známy - asi by sme mali vyskočiť z týchto cyklov; POZOR! príkaz <code class="docutils literal notranslate"><span class="pre">break</span></code> ale neurobí to, čo by sa nám tu hodilo:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">symetricka</span><span class="p">(</span><span class="n">matica</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matica</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matica</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">matica</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">matica</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">vysl</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="hll">                <span class="k">break</span>                     <span class="c1"># vyskočí z cyklu</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Takéto vyskočenie z cyklu nám veľmi nepomôže, lebo vyskakuje sa len z vnútorného a ďalej sa pokračuje vo vonkajšom. Našťastie my tu nepotrebujeme vyskakovať z cyklu, ale môžeme priamo ukončiť celú funkciu aj s návratovou hodnotou <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Prepíšme funkciu tak, aby zbytočne dvakrát nekontrolovala každú dvojicu prvkov a aby sa korektne ukončila, keď nájde nerovnakú dvojicu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">symetricka</span><span class="p">(</span><span class="n">matica</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">matica</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">matica</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">matica</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
+<span class="hll">                <span class="k">return</span> <span class="kc">False</span>
+</span><span class="hll">    <span class="k">return</span> <span class="kc">True</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>funkcia vráti pozíciu prvého výskytu nejakej hodnoty, teda dvojicu <code class="docutils literal notranslate"><span class="pre">(riadok,</span> <span class="pre">stĺpec)</span></code>. Keďže budeme potrebovať poznať indexy konkrétnych prvkov zoznamu, použijeme šablónu s indexmi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+<span class="hll">                <span class="k">return</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span>
+</span></pre></div>
+</div>
+<p>Funkcia skončí, keď nájde prvý výskyt hľadanej hodnoty (prechádza po riadkoch zľava doprava):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="hll"><span class="go">    (1, 2)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Na tomto poslednom príklade vidíme, že naša funkcia <code class="docutils literal notranslate"><span class="pre">index()</span></code> v nejakom prípade nevrátila „nič“. My už vieme, že vrátila špeciálnu hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code>, ktorá sa ale v príkazovom režime nevypíše. Ak by sme výsledok volania funkcie vypísali príkazom <code class="docutils literal notranslate"><span class="pre">print()</span></code>, dozvieme sa:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+<aside class="topic">
+<p class="topic-title">hodnota <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p>Táto špeciálna hodnota je výsledkom všetkých funkcií, ktoré nevracajú žiadnu hodnotu pomocou <code class="docutils literal notranslate"><span class="pre">return</span></code>. To znamená, že každá funkcia ukončená bez <code class="docutils literal notranslate"><span class="pre">return</span></code> v skutočnosti vracia <code class="docutils literal notranslate"><span class="pre">None</span></code> ako keby posledným príkazom funkcie bol:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Túto hodnotu môžeme často využívať v situáciách, keď chceme nejako oznámiť, že napríklad výsledok hľadania bol neúspešný. Tak ako to bolo v prípade našej funkcie <code class="docutils literal notranslate"><span class="pre">index()</span></code>, ktorá v prípade, že sa v tabuľke hľadaná hodnota nenašla, vrátila <code class="docutils literal notranslate"><span class="pre">None</span></code>. Je zvykom takýto výsledok testovať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vysledok</span> <span class="o">=</span> <span class="n">index</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">vysledok</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nenasiel&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">riadok</span><span class="p">,</span> <span class="n">stlpec</span> <span class="o">=</span> <span class="n">vysledok</span>
+</pre></div>
+</div>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="tabulky-s-rozne-dlhymi-riadkami">
+<h3><a class="toc-backref" href="10.html#id3" role="doc-backlink">Tabuľky s rôzne dlhými riadkami</a><a class="headerlink" href="10.html#tabulky-s-rozne-dlhymi-riadkami" title="Link to this heading">¶</a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Doteraz sme predpokladali, že všetky riadky dvojrozmernej štruktúry majú rovnakú dĺžku. Niekedy sa ale stretáme so situáciou, keď riadky budú rôzne dlhé. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pt</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+<span class="hll"><span class="go">    1</span>
+</span><span class="hll"><span class="go">    1 1</span>
+</span><span class="hll"><span class="go">    1 2 1</span>
+</span><span class="hll"><span class="go">    1 3 3 1</span>
+</span><span class="hll"><span class="go">    1 4 6 4 1</span>
+</span><span class="hll"><span class="go">    1 5 10 10 5 1</span>
+</span></pre></div>
+</div>
+<p>Tento zoznam obsahuje prvých niekoľko riadkov Pascalovho trojuholníka. Našťastie funkciu <code class="docutils literal notranslate"><span class="pre">vypis()</span></code> (obe verzie) sme napísali tak, že správne vypíšu aj zoznamy s rôzne dlhými riadkami.</p>
+<p>Niektoré tabuľky nemusia mať takto pravidelný tvar, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">delitele</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">280</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">delitele</span><span class="p">)</span>
+<span class="hll"><span class="go">    6 2 3</span>
+</span><span class="hll"><span class="go">    13 13</span>
+</span><span class="hll"><span class="go">    280 2 2 2 5 7</span>
+</span><span class="hll"><span class="go">    1</span>
+</span></pre></div>
+</div>
+<p>Zoznam <code class="docutils literal notranslate"><span class="pre">delitele</span></code> má v každom riadku rozklad nejakého čísla (prvý prvok) na prvočinitele (súčin zvyšných prvkov).</p>
+<p>Preto už pri zostavovaní funkcií musíme niekedy myslieť na to, že parametrom môže byť aj zoznam s rôznou dĺžkou riadkov. Zapíšme funkciu, ktorá nám vráti zoznam všetkých dĺžok riadkov danej dvojrozmernej štruktúry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dlzky</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="n">vysl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>alebo pomocou generátorovej notácie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dlzky</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span> <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Pre naše dva príklady zoznamov dostávame:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dlzky</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+<span class="hll"><span class="go">    [1, 2, 3, 4, 5, 6]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">dlzky</span><span class="p">(</span><span class="n">delitele</span><span class="p">)</span>
+<span class="hll"><span class="go">    [3, 2, 6, 1]</span>
+</span></pre></div>
+</div>
+<p>Podobným spôsobom môžeme generovať nové dvojrozmerné štruktúry s rôznou dĺžkou riadkov, pre ktoré poznáme práve len tieto dĺžky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob_d</span><span class="p">(</span><span class="n">dlzky</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">dlzka</span> <span class="ow">in</span> <span class="n">dlzky</span><span class="p">:</span>
+<span class="hll">        <span class="n">vysl</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">hodnota</span><span class="p">]</span> <span class="o">*</span> <span class="n">dlzka</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>alebo pomocou generátorovej notácie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob_d</span><span class="p">(</span><span class="n">dlzky</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">hodnota</span><span class="p">]</span> <span class="o">*</span> <span class="n">dlzka</span> <span class="k">for</span> <span class="n">dlzka</span> <span class="ow">in</span> <span class="n">dlzky</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">vyrob_d</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span>
+<span class="hll"><span class="go">    [[0, 0, 0], [], [0]]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">vyrob_d</span><span class="p">(</span><span class="n">dlzky</span><span class="p">(</span><span class="n">delitele</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+<span class="hll"><span class="go">    1 1 1</span>
+</span><span class="hll"><span class="go">    1 1</span>
+</span><span class="hll"><span class="go">    1 1 1 1 1 1</span>
+</span><span class="hll"><span class="go">    1</span>
+</span></pre></div>
+</div>
+<p>Zamyslite sa, ako budú vyzerať tieto zoznamy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m3</span> <span class="o">=</span> <span class="n">vyrob_d</span><span class="p">([</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m4</span> <span class="o">=</span> <span class="n">vyrob_d</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m5</span> <span class="o">=</span> <span class="n">vyrob_d</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Ukážme, ako vyzerá dvojrozmerná tabuľka s rôzne dlhými riadkami v grafickej ploche. Najprv vygenerujeme náhodný obsah tabuľky a potom každý riadok skrátime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>               <span class="c1"># každý i-ty riadok sa skráti na i+1 prvkov</span>
+    <span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmeň&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">zmen</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>                           <span class="c1"># tabuľka n x n samých 0</span>
+<span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">riadok</span><span class="p">)):</span>
+        <span class="n">riadok</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># všetky prvky sú náhodné z &lt;0, 2&gt;</span>
+<span class="c1"># t = [[random.randint(0, 2) for i in range(n)] for j in range(n)]]</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Najprv bude:</p>
+<a class="reference internal image-reference" href="../_images/110_05.png"><img alt="../_images/110_05.png" class="align-center" height="134" src="../_images/110_05.png" width="191" />
+</a>
+<p>po zatlačení tlačidla:</p>
+<a class="reference internal image-reference" href="../_images/110_06.png"><img alt="../_images/110_06.png" class="align-center" height="134" src="../_images/110_06.png" width="191" />
+</a>
+<p>Hoci, keby sme riadky tabuľky skracovali namiesto pôvodného cyklu takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Mohli by sme dostať takéto zobrazenie (niektoré riadky tabuľky môžu byť teraz prázdne):</p>
+<a class="reference internal image-reference" href="../_images/110_07.png"><img alt="../_images/110_07.png" class="align-center" height="134" src="../_images/110_07.png" width="191" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="hra-life">
+<h2><a class="toc-backref" href="10.html#id4" role="doc-backlink">Hra LIFE</a><a class="headerlink" href="10.html#hra-life" title="Link to this heading">¶</a></h2>
+<p>Informácie k tejto informatickej simulačnej hre nájdete na <a class="reference external" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">wikipedii</a></p>
+<p>Pravidlá:</p>
+<ul class="simple">
+<li><p>v nekonečnej štvorcovej sieti žijú bunky, ktoré sa rôzne rozmnožujú, resp. umierajú</p></li>
+<li><p>v každom políčku siete je buď živá bunka, alebo je políčko prázdne (budeme označovať ako <strong>1</strong> a <strong>0</strong>)</p></li>
+<li><p>každé políčko má 8 susedov (vodorovne, zvislo aj po uhlopriečke)</p></li>
+<li><p>v každej generácii sa s každým jedným políčkom urobí:</p>
+<ul>
+<li><p>ak je na políčku bunka a má práve 2 alebo 3 susedov, tak táto bunka prežije aj do ďalšej generácie</p></li>
+<li><p>ak je na políčku bunka a má buď 0 alebo 1 suseda, alebo viac ako 3 susedov, tak bunka na tomto políčku do ďalšej generácie neprežije (umiera)</p></li>
+<li><p>ak má prázdne políčko presne na troch susediacich políčkach živé bunky, tak sa tu v ďalšej generácii narodí nová bunka</p></li>
+</ul>
+</li>
+</ul>
+<p>Štvorcovú sieť s <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">1</span></code> budeme ukladať v dvojrozmernej tabuľke veľkosti <code class="docutils literal notranslate"><span class="pre">n</span></code> x <code class="docutils literal notranslate"><span class="pre">n</span></code>. V tejto tabuľke je momentálna generácia bunkových živočíchov. Na to, aby sme vyrobili novú generáciu, si pripravíme pomocnú tabuľku rovnakej veľkosti a do nej budeme postupne zapisovať bunky novej generácie. Keď už bude celá táto pomocná tabuľka hotová, prekopírujeme ju do pôvodnej tabuľky. Dvojrozmernú tabuľku budeme vykresľovať do grafickej plochy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">inic</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="p">[[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="c1">##    vysl[5][2] = vysl[5][3] = vysl[5][4] = vysl[4][4] = vysl[3][3] = 1</span>
+<span class="c1">##    vysl[6][47] = vysl[6][46] = vysl[6][45] = vysl[5][45] = vysl[4][46] = 1</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</span>    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">riadok</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">5</span>
+            <span class="n">farba</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)[</span><span class="n">prvok</span><span class="p">]</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">nova_generacia</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<span class="hll">    <span class="n">nova</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">))]</span>
+</span>    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">ps</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="o">+</span>             <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">ps</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">ps</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">s</span><span class="p">]:</span>
+                <span class="n">nova</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="hll">    <span class="k">return</span> <span class="n">nova</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">410</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">410</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">plocha</span> <span class="o">=</span> <span class="n">inic</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">plocha</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+<span class="hll">    <span class="n">plocha</span> <span class="o">=</span> <span class="n">nova_generacia</span><span class="p">(</span><span class="n">plocha</span><span class="p">)</span>
+</span>    <span class="n">kresli</span><span class="p">(</span><span class="n">plocha</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Na tejto sérii obrázkov môžete sledovať, ako sa s nejakej náhodnej pozície postupne generujú ďalšie generácie:</p>
+<a class="reference internal image-reference" href="../_images/110_12.png"><img alt="../_images/110_12.png" height="99" src="../_images/110_12.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_13.png"><img alt="../_images/110_13.png" height="99" src="../_images/110_13.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_14.png"><img alt="../_images/110_14.png" height="99" src="../_images/110_14.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_15.png"><img alt="../_images/110_15.png" height="99" src="../_images/110_15.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_16.png"><img alt="../_images/110_16.png" height="99" src="../_images/110_16.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_17.png"><img alt="../_images/110_17.png" height="99" src="../_images/110_17.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_18.png"><img alt="../_images/110_18.png" height="99" src="../_images/110_18.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_19.png"><img alt="../_images/110_19.png" height="99" src="../_images/110_19.png" width="84" />
+</a>
+<p>Namiesto náhodného obsahu môžeme v <code class="docutils literal notranslate"><span class="pre">inic()</span></code> vytvoriť prázdnu (vynulovanú) sieť, do ktorej priradíme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vysl</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">vysl</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">vysl</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">vysl</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">vysl</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Dostávame takýto klzák (glider), ktorý sa pohybuje po ploche nejakým smerom:</p>
+<a class="reference internal image-reference" href="../_images/110_20.png"><img alt="../_images/110_20.png" height="99" src="../_images/110_20.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_21.png"><img alt="../_images/110_21.png" height="99" src="../_images/110_21.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_22.png"><img alt="../_images/110_22.png" height="99" src="../_images/110_22.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_23.png"><img alt="../_images/110_23.png" height="99" src="../_images/110_23.png" width="84" />
+</a>
+<a class="reference internal image-reference" href="../_images/110_24.png"><img alt="../_images/110_24.png" height="99" src="../_images/110_24.png" width="84" />
+</a>
+<p>Všimnite si, že po 4 generáciách má rovnaký tvar, ale je posunutý o 1 políčko dole a vpravo.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="10.html#id5" role="doc-backlink">Cvičenie</a><a class="headerlink" href="10.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server bude testovať úlohy označené <kbd class="kbd docutils literal notranslate">odovzdaj</kbd></p></li>
+<li><p>snaž sa vyriešiť čo najviac úloh aj takých, ktoré netestuje testovač</p></li>
+<li><p>niektoré úlohy sú uvedené aj s riešením (sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd>), tie neodovzdávaj - sú určené na štúdium a inšpiráciu</p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 23.10.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z doterajších prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>)</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Modifikuj funkciu <code class="docutils literal notranslate"><span class="pre">vypis(tab,</span> <span class="pre">sirka=4)</span></code>, ktorá vypisuje dvojrozmernú tabuľku do riadkov, pričom každý prvok je formátovaný na zadanú šírku, napríklad pre <code class="docutils literal notranslate"><span class="pre">sirka=5</span></code> takto <code class="docutils literal notranslate"><span class="pre">f'{repr(prvok):&gt;5}'</span></code> (alebo <code class="docutils literal notranslate"><span class="pre">f'{repr(prvok):&gt;{sirka}}'</span></code>). Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="hll"><span class="go">        1     6  3.14</span>
+</span><span class="hll"><span class="go">      0.5   1.5   2.5</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">]])</span>
+<span class="hll"><span class="go">       1    2    3</span>
+</span><span class="hll"><span class="go">    None None</span>
+</span><span class="hll"><span class="go">     &#39;4&#39;  &#39;5&#39;  &#39;6&#39;</span>
+</span><span class="hll"><span class="go">    &#39;Python&#39;  3.9</span>
+</span></pre></div>
+</div>
+<p>Funkciu teraz vylepši takto: <code class="docutils literal notranslate"><span class="pre">vypis(tab,</span> <span class="pre">sirka=None)</span></code>, kde parameter <code class="docutils literal notranslate"><span class="pre">sirka</span></code> s hodnotou <code class="docutils literal notranslate"><span class="pre">None</span></code> znamená, že sa najprv zistí šírka „najširšieho“ prvku v tabuľke (teda pomocou <code class="docutils literal notranslate"><span class="pre">len(repr(prvok))</span></code>) a táto hodnota sa nastaví ako šírka výpisu. Pre nastavenú číselnú hodnotu šírky sa to bude správať rovnako ako v predchádzajúca verzia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="hll"><span class="go">    1 2</span>
+</span><span class="hll"><span class="go">    3 4 5 6</span>
+</span><span class="hll"><span class="go">    7 8 9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">555</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="hll"><span class="go">      1   2</span>
+</span><span class="hll"><span class="go">      3   4 555   6</span>
+</span><span class="hll"><span class="go">      7   8   9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">]],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="hll"><span class="go">    1 2</span>
+</span><span class="hll"><span class="go">    3 &#39;4&#39; 5 6</span>
+</span><span class="hll"><span class="go">    7 8 -9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">]])</span>
+<span class="hll"><span class="go">           1        2        3</span>
+</span><span class="hll"><span class="go">        None     None</span>
+</span><span class="hll"><span class="go">         &#39;4&#39;      &#39;5&#39;      &#39;6&#39;</span>
+</span><span class="hll"><span class="go">    &#39;Python&#39;      3.9</span>
+</span></pre></div>
+</div>
+<p>Pri riešení tejto úlohy skús čo najviac využiť generátorovú notáciu.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Zadefinuj funkcie <code class="docutils literal notranslate"><span class="pre">max2(tab)</span></code>, <code class="docutils literal notranslate"><span class="pre">min2(tab)</span></code>, <code class="docutils literal notranslate"><span class="pre">sum2(tab)</span></code> a <code class="docutils literal notranslate"><span class="pre">len2(tab)</span></code>, ktoré zistia (vrátia pomocou <code class="docutils literal notranslate"><span class="pre">return</span></code>) najväčší prvok, najmenší prvok a súčet všetkých prvkov dvojrozmernej tabuľke <strong>čísel</strong> (bez prázdnych riadkov) a tiež počet prvkov tabuľky (teraz môže obsahovať prvky rôznych typov a aj prázdne riadky). Využi štandardné funkcie <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> a <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Všetky tieto funkcie zadefinuj pomocou generátorovej notácie, teda by mali byť v tvare:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">max2</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="hll"><span class="go">    6</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">min2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="hll"><span class="go">    0.5</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">sum2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="hll"><span class="go">    14.64</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max2</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="hll"><span class="go">    -1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">min2</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="hll"><span class="go">    -4</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">len2</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="hll"><span class="go">    6</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zoznam_suctov(tab)</span></code> počíta súčty prvkov v jednotlivých riadkoch dvojrozmernej tabuľky a ukladá ich do výsledného zoznamu. Táto funkcia by mala fungovať nielen pre číselné hodnoty, ale pre ľubovoľný typ, v ktorom funguje operácia <code class="docutils literal notranslate"><span class="pre">+</span></code>. Pre prázdny riadok tabuľky, funkcia spočíta <code class="docutils literal notranslate"><span class="pre">None</span></code>. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suc</span> <span class="o">=</span> <span class="n">zoznam_suctov</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">suc</span>
+<span class="hll"><span class="go">    [6, 4, None, 11]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam_suctov</span><span class="p">([[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,)]])</span>
+<span class="hll"><span class="go">    [&#39;1x2&#39;, None, 11, 7.1, (5, 6, 7)]</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">preklop(tab)</span></code>, ktorá vyrobí novú dvojrozmernú tabuľku, v ktorej bude pôvodná tabuľka preklopená okolo hlavnej uhlopriečky (vymenené riadky a stĺpce). Predpokladaj, že všetky riadky majú rovnakú dĺžku. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">preklop</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="hll"><span class="go">     1  5  3</span>
+</span><span class="hll"><span class="go">     2  6  4</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="hll"><span class="go">     1  2</span>
+</span><span class="hll"><span class="go">     5  6</span>
+</span><span class="hll"><span class="go">     3  4</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Zadefinuj funkciu <code class="docutils literal notranslate"><span class="pre">ocisluj2(tab,</span> <span class="pre">start=0)</span></code>, ktorá zmení všetky prvky dvojrozmernej tabuľky tak, že ich postupne prechádza po stĺpcoch a čísluje ich celými číslami od <code class="docutils literal notranslate"><span class="pre">start</span></code>. Riadky tabuľky nemusia mať rovnakú dĺžku. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ocisluj2</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
+<span class="hll"><span class="go">     0  4  7</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">     1  5  8 10</span>
+</span><span class="hll"><span class="go">     2</span>
+</span><span class="hll"><span class="go">     3  6  9 11 12</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Zadefinuj funkciu <code class="docutils literal notranslate"><span class="pre">pascalov_trojuholnik(n)</span></code>, ktorá vygeneruje prvých <code class="docutils literal notranslate"><span class="pre">n</span></code> riadkov pascalovho trojuholníka a uloží ich do dvojrozmernej tabuľky. Pri vytváraní každého nasledovného riadka tabuľky využi predchádzajúci riadok (každý prvok v tomto novom riadku - okrem prvého a posledného - je súčtom dvoch susedných v predchádzajúcom riadku). Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pt</span> <span class="o">=</span> <span class="n">pascalov_trojuholnik</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+<span class="hll"><span class="go">     1</span>
+</span><span class="hll"><span class="go">     1  1</span>
+</span><span class="hll"><span class="go">     1  2  1</span>
+</span><span class="hll"><span class="go">     1  3  3  1</span>
+</span><span class="hll"><span class="go">     1  4  6  4  1</span>
+</span><span class="hll"><span class="go">     1  5 10 10  5  1</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Textový súbor v každom riadku obsahuje niekoľko slov, oddelených medzerou (riadok môže byť aj prázdny). Napíš funkciu <code class="docutils literal notranslate"><span class="pre">citaj(meno_suboru)</span></code>, ktorá prečíta tento súbor a vyrobí z neho dvojrozmernú tabuľku slov: každý riadok tabuľky zodpovedá jednému riadku súboru. Napríklad, ak súbor <code class="docutils literal notranslate"><span class="pre">'text.txt'</span></code> obsahuje:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Anička dušička
+kde si bola
+keď si si čižmičky
+zarosila
+</pre></div>
+</div>
+<p>potom</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">citaj</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="hll"><span class="go">    [[&#39;Anička&#39;, &#39;dušička&#39;], [&#39;kde&#39;, &#39;si&#39;, &#39;bola&#39;], [&#39;keď&#39;, &#39;si&#39;, &#39;si&#39;, &#39;čižmičky&#39;], [&#39;zarosila&#39;]]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">      &#39;Anička&#39;  &#39;dušička&#39;</span>
+</span><span class="hll"><span class="go">         &#39;kde&#39;       &#39;si&#39;     &#39;bola&#39;</span>
+</span><span class="hll"><span class="go">         &#39;keď&#39;       &#39;si&#39;       &#39;si&#39; &#39;čižmičky&#39;</span>
+</span><span class="hll"><span class="go">    &#39;zarosila&#39;</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Funkcia <code class="docutils literal notranslate"><span class="pre">zapis(tab,</span> <span class="pre">meno_suboru)</span></code> je opačná k funkcii <code class="docutils literal notranslate"><span class="pre">citaj</span></code> v predchádzajúcej úlohe: zapíše danú dvojrozmernú tabuľku slov do súboru. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Anička&#39;</span><span class="p">,</span> <span class="s1">&#39;dušička&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="s1">&#39;bola&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;keď&#39;</span><span class="p">,</span> <span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="s1">&#39;čižmičky&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;zarosila&#39;</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zapis</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;text1.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vytvorí rovnaký súbor ako bol <code class="docutils literal notranslate"><span class="pre">'text.txt'</span></code>.</p>
+<p>Uvedom si, že ak by vstupná dvojrozmerná tabuľka obsahovala čísla, táto funkcia vytvorí korektný súbor čísel, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zapis</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span> <span class="p">[</span><span class="mi">345</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="s1">&#39;cisla.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vytvorí súbor <code class="docutils literal notranslate"><span class="pre">'cisla.txt'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">11</span> <span class="mi">21</span>
+<span class="mi">345</span>
+<span class="o">-</span><span class="mi">5</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Funkcia <code class="docutils literal notranslate"><span class="pre">citaj_cisla(meno_suboru)</span></code> bude podobná funkcii <code class="docutils literal notranslate"><span class="pre">citaj(meno_suboru)</span></code> z (8) úlohy, len táto predpokladá, že vstupný súbor obsahuje len celé čísla. Funkcia vráti dvojrozmernú tabuľku čísel. Napríklad, pre textový súbor <code class="docutils literal notranslate"><span class="pre">'cisla.txt'</span></code> z (9) úlohy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">citaj_cisla</span><span class="p">(</span><span class="s1">&#39;cisla.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span>
+<span class="hll"><span class="go">    [[1, 11, 21], [345], [-5, 10]]</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Z prednášky uprav funkciu <code class="docutils literal notranslate"><span class="pre">kresli</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">farby</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">)):</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">riadok</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">5</span>
+            <span class="n">farba</span> <span class="o">=</span> <span class="n">farby</span><span class="p">[</span><span class="n">prvok</span><span class="p">]</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span>
+                                    <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;light gray&#39;</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>tak, aby sa prvky tabuľky, ktoré majú hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code>, nekreslili (ostalo po nich prázdne miesto). Teraz vytvor dvojrozmernú tabuľku <code class="docutils literal notranslate"><span class="pre">p</span></code> (všetky riadky majú rovnakú dĺžku <code class="docutils literal notranslate"><span class="pre">5</span></code>), po vykreslení ktorej dostávaš takýto obrázok:</p>
+<a class="reference internal image-reference" href="../_images/110_c01.png"><img alt="../_images/110_c01.png" class="align-center" height="115" src="../_images/110_c01.png" width="100" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zrkadlo(obr)</span></code>, ktorá z dvojrozmernej tabuľky <code class="docutils literal notranslate"><span class="pre">obr</span></code> vyrobí novú tak, že každému riadku pridá <code class="docutils literal notranslate"><span class="pre">None</span></code> a zrkadlový obsah riadka. Napríklad pre obrázok z (11) úlohy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">zrkadlo</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>nakreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_c02.png"><img alt="../_images/110_c02.png" class="align-center" height="118" src="../_images/110_c02.png" width="138" />
+</a>
+<p>a potom aj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">zrkadlo</span><span class="p">(</span><span class="n">zrkadlo</span><span class="p">(</span><span class="n">p</span><span class="p">)),</span> <span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>nakreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_c03.png"><img alt="../_images/110_c03.png" class="align-center" height="116" src="../_images/110_c03.png" width="186" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zvacsi(obr)</span></code>, ktorá z dvojrozmernej tabuľky <code class="docutils literal notranslate"><span class="pre">obr</span></code> vyrobí novú tak, že sa dvojnásobne zväčší: nová tabuľka má dvojnásobný počet riadkov aj stĺpcov a každý pôvodný prvok tu teraz bude 4-krát. Funkcia nezmení pôvodnú tabuľku <code class="docutils literal notranslate"><span class="pre">obr</span></code>. Napríklad pre obrázok z (11) úlohy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">zvacsi</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>nakreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_c04.png"><img alt="../_images/110_c04.png" class="align-center" height="126" src="../_images/110_c04.png" width="98" />
+</a>
+<p>a potom aj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">zvacsi</span><span class="p">(</span><span class="n">zvacsi</span><span class="p">(</span><span class="n">p</span><span class="p">)),</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>nakreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_c05.png"><img alt="../_images/110_c05.png" class="align-center" height="120" src="../_images/110_c05.png" width="103" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="13">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">nahrad(obr,</span> <span class="pre">post)</span></code>, ktorá z dvojrozmernej tabuľky <code class="docutils literal notranslate"><span class="pre">obr</span></code> vyrobí novú tak, že zoberie postupnosť dvojíc <code class="docutils literal notranslate"><span class="pre">post</span></code>, každá dvojica obsahuje dve hodnoty (čo nahradiť, čím nahradiť) a postupne všetky prvky pôvodnej tabuľky nahradí podľa tohto zoznamu. Napríklad pre obrázok z (11) úlohy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">nahrad</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">5</span><span class="p">))))</span>
+</pre></div>
+</div>
+<p>nakreslí:</p>
+<a class="reference internal image-reference" href="../_images/110_c06.png"><img alt="../_images/110_c06.png" class="align-center" height="124" src="../_images/110_c06.png" width="114" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="14">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">kruh(tab,</span> <span class="pre">r,</span> <span class="pre">r1,</span> <span class="pre">s1,</span> <span class="pre">hodnota)</span></code>, ktorá bude vypĺňať nejakú oblasť dvojrozmernej tabuľky zadanou hodnotou <code class="docutils literal notranslate"><span class="pre">hodnota</span></code>. Touto oblasťou bude kruh s polomerom <code class="docutils literal notranslate"><span class="pre">r</span></code> a so stredom <code class="docutils literal notranslate"><span class="pre">r1</span></code>, <code class="docutils literal notranslate"><span class="pre">s1</span></code> (riadok, stĺpec). Funkcia by mohla fungovať tak, že postupne skontroluje všetky prvky tabuľky, či ich „vzdialenosť“ od stredu je menšia alebo rovná <code class="docutils literal notranslate"><span class="pre">r</span></code> a vtedy im zmení hodnoty. Funkcia nič nevracia ani nevypisuje. Funkcia modifikuje obsah tabuľky. Napríklad po nakreslení štyroch kruhov v tabuľke 50x50:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kruh</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">kruh</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">kruh</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">kruh</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>môžeš dostať:</p>
+<a class="reference internal image-reference" href="../_images/110_c07.png"><img alt="../_images/110_c07.png" class="align-center" height="130" src="../_images/110_c07.png" width="130" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="15">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">do_radu(tab)</span></code>, ktorá vráti vytvorenú jednorozmernú tabuľku (zoznam <code class="docutils literal notranslate"><span class="pre">list</span></code>) z riadkov dvojrozmernej tabuľky <code class="docutils literal notranslate"><span class="pre">tab</span></code>.  Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tab1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">do_radu</span><span class="p">(</span><span class="n">tab1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span>
+<span class="hll"><span class="go">    [1, 2, 3, 4, 5, 6, 7]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">do_radu</span><span class="p">([[</span><span class="s1">&#39;prvy&#39;</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="s1">&#39;druhy&#39;</span><span class="p">,</span> <span class="s1">&#39;treti&#39;</span><span class="p">]])</span>
+<span class="hll"><span class="go">    [&#39;prvy&#39;, &#39;druhy&#39;, &#39;treti&#39;]</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="16">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">do_dvojrozmernej(postupnost,</span> <span class="pre">sirka)</span></code>, ktorá bude v istom zmysle fungovať naopak ako funkcia <code class="docutils literal notranslate"><span class="pre">do_radu</span></code> z predchádzajúceho príkladu: funkcia dostáva postupnosť nejakých hodnôt (napríklad jednorozmerný zoznam) a vyrobí z nej dvojrozmernú tabuľku, v ktorej okrem posledného riadku majú všetky zadanú šírku. Posledný riadok môže byť kratší. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">do_dvojrozmernej</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="hll"><span class="go">       0    1    2</span>
+</span><span class="hll"><span class="go">       3    4    5</span>
+</span><span class="hll"><span class="go">       6    7    8</span>
+</span><span class="hll"><span class="go">       9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">do_dvojrozmernej</span><span class="p">(</span><span class="n">do_radu</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="hll"><span class="go">       0    1    2    3    4</span>
+</span><span class="hll"><span class="go">       5    6    7    8    9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">do_dvojrozmernej</span><span class="p">(</span><span class="s1">&#39;programovanie&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="hll"><span class="go">     &#39;p&#39;  &#39;r&#39;  &#39;o&#39;  &#39;g&#39;  &#39;r&#39;</span>
+</span><span class="hll"><span class="go">     &#39;a&#39;  &#39;m&#39;  &#39;o&#39;  &#39;v&#39;  &#39;a&#39;</span>
+</span><span class="hll"><span class="go">     &#39;n&#39;  &#39;i&#39;  &#39;e&#39;</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="10.html#id6" role="doc-backlink">5. Týždenný projekt</a><a class="headerlink" href="10.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a> najneskôr 14.novembra do 18:00.</p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 30.10.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z doterajších prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>), môžeš už používať aj asociatívne polia</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>L-systém (<a class="reference external" href="https://en.wikipedia.org/wiki/L-system">Lindenmayerov systém</a>) bol vyvinutý pre modelovanie rastu rastlín. L-systém popisuje pravidlá pre vývoj rastliny, ktoré sa opakovane aplikujú na vznikajúci model. Tieto pravidlá môžu, napríklad popisovať, za akých podmienok sa výhonok rastliny rozdvojí, či má vzniknúť list alebo či má čásť rastliny uhynúť. Výsledný model sa môže vykresliť ako obrázok pomocou korytnačej grafiky. L-systémy sa tiež dajú použiť na generovanie rôznych kriviek a fraktálov.</p>
+<p>Ústredným konceptom L-systémov je prepisovanie. Funguje to tak, že sa počiatočný stav (reťazec znakov, tzv. axióma alebo iniciátor) rekurzívne nahradzuje pomocou prepisovacích pravidiel. Toto sa aplikuje paralelne a teda sa súčasne nahrádzajú všetky písmená v danom reťazci.</p>
+<p>Ukážme to na príklade. Nech počiatočným stavom je písmeno <code class="docutils literal notranslate"><span class="pre">'F'</span></code>. Budeme mať jediné prepisovacie pravidlo <code class="docutils literal notranslate"><span class="pre">'F</span> <span class="pre">-&gt;</span> <span class="pre">F-F++F-F'</span></code>, ktoré označuje, že každé písmeno <code class="docutils literal notranslate"><span class="pre">'F'</span></code> v momentálnom reťazci (budeme mu hovoriť „slovo“) sa v jednom kroku nahradí reťazcom <code class="docutils literal notranslate"><span class="pre">'F-F++F-F'</span></code>. Pozrime sa, ako postupne z počiatočného slova <code class="docutils literal notranslate"><span class="pre">'F'</span></code> budú vznikať nové slová:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">:</span> <span class="n">F</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">-</span><span class="n">F</span><span class="o">++</span><span class="n">F</span><span class="o">-</span><span class="n">F</span>
+</pre></div>
+</div>
+<p>Takto by sme mohli pokračovať a stále by vznikal dlhší a dlhší reťazec (zrejme v každom ďalšom kroku je počet písmen <code class="docutils literal notranslate"><span class="pre">'F'</span></code> štyrikrát väčší).</p>
+<p>Takto generované reťazce začnú byť pre nás zaujímavé, keď ich budeme vykresľovať pomocou korytnačej grafiky. Zvolíme si taktúto interpretáciu písmen v reťazci:</p>
+<ul class="simple">
+<li><p>písmeno <code class="docutils literal notranslate"><span class="pre">'F'</span></code> (ale aj písmeno <code class="docutils literal notranslate"><span class="pre">'G'</span></code>) zodpovedá korytnačiemu <strong>forward</strong> a teda príkazu <code class="docutils literal notranslate"><span class="pre">t.fd(dlzka)</span></code></p></li>
+<li><p>znak <code class="docutils literal notranslate"><span class="pre">'-'</span></code> zodpovedá korytnačiemu <strong>left</strong> a teda príkazu <code class="docutils literal notranslate"><span class="pre">t.lt(uhol)</span></code></p></li>
+<li><p>znak <code class="docutils literal notranslate"><span class="pre">'+'</span></code> zodpovedá korytnačiemu <strong>right</strong> a teda príkazu <code class="docutils literal notranslate"><span class="pre">t.rt(uhol)</span></code></p></li>
+</ul>
+<p>Ešte sa treba dohodnúť na <code class="docutils literal notranslate"><span class="pre">dlzka</span></code> a <code class="docutils literal notranslate"><span class="pre">uhol</span></code>, aby sme to mohli kresliť. Každý L-systém bude mať definovanú vlastnú dĺžku kroku a aj uhol otočenia. Ak si v tomto príklade zvolíme <code class="docutils literal notranslate"><span class="pre">dlzka=20</span></code> a <code class="docutils literal notranslate"><span class="pre">uhol=60</span></code>, tak po prvom kroku (<code class="docutils literal notranslate"><span class="pre">'F-F++F-F'</span></code>) dostávame postupnosť príkazov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span> <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Niektorí z vás v tomto spoznávajú prvú úroveň krivky „snehová vločka“ (teda Kochova krivka). Keby sme takto zobrazili druhý krok L-systému, dostali by sme druhú úroveň „snehovej vločky“. My už vieme, že aby to bola kompletná snehová vločka, túto krivku treba trikrát opakovať a zakaždým sa otočiť o 120 stupňov vpravo. Toto vieme jednoducho zabezpečiť tak, že zmeníme počiatočné slovo (axiómu) na <code class="docutils literal notranslate"><span class="pre">F++F++F</span></code>. Teraz by sme naozaj dostali kompletnú snehovú vločku ľubovoľnej úrovne, ktorú si zvolíme. Zrejme bude stačiť nahrádzať všetky výskyty písmena <code class="docutils literal notranslate"><span class="pre">'F'</span></code> pomocou prepisovacieho pravidla požadovaný počet krát.</p>
+<p>Pre niektoré takéto krivky sa nám budú hodiť ešte ďalšie dva príkazy, teda symboly, ktoré sa môžu vyskytnúť v prepisovacích pravidlách:</p>
+<ul class="simple">
+<li><p>znak <code class="docutils literal notranslate"><span class="pre">'['</span></code> bude označovať, že si korytnačka na tomto mieste zapamätá momentálny uhol natočenia (<code class="docutils literal notranslate"><span class="pre">t.heading()</span></code>) a momentálny pozíciu (<code class="docutils literal notranslate"><span class="pre">t.pos()</span></code>) a ďalej normálne pokračuje v ďalších príkazoch</p></li>
+<li><p>znak <code class="docutils literal notranslate"><span class="pre">']'</span></code> bude označovať, že sa korytnačka presunie (so zdvihnutým perom) na zapamätané miesto a nastaví si zapamätaný uhol (zrejem urobí <code class="docutils literal notranslate"><span class="pre">t.teleport(pozícia)</span></code> a <code class="docutils literal notranslate"><span class="pre">t.seth(uhol)</span></code>)</p>
+<ul>
+<li><p>v tomto prípade si takto zapamätané informácie po presunutí zruší</p></li>
+<li><p>musíš si premyslieť situáciu, keď budú tieto hranaté zátvorky navzájom vnorené, napríklad <code class="docutils literal notranslate"><span class="pre">F[-F[+F]]</span></code></p></li>
+<li><p>použi tu novú korytnačiu metódu <code class="docutils literal notranslate"><span class="pre">teleport(pos)</span></code>, pre ktorú funguje aj <code class="docutils literal notranslate"><span class="pre">teleport(x,</span> <span class="pre">y)</span></code>; korytnačka sa presunie na zadanú pozíciu so zdvihnutým perom, podobne ako <code class="docutils literal notranslate"><span class="pre">setpos(...)</span></code>; pozor, táto metóda funguje v pythone až od verzie <strong>3.12</strong>, ak máš staršiu, doinštaluj si aktuálnu verziu pythonu</p></li>
+</ul>
+</li>
+</ul>
+<p>Tvojou úlohou bude naprogramovať tri pythonovské fukcie:</p>
+<ul>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">generuj(axioma,</span> <span class="pre">pravidla,</span> <span class="pre">pocet)</span></code>, ktorá z počiatočného slova (znakový reťazec <code class="docutils literal notranslate"><span class="pre">axioma</span></code>) pomocou prepisovacích pravidiel (zoznam reťazcov v tvare <code class="docutils literal notranslate"><span class="pre">písmeno</span> <span class="pre">-&gt;</span> <span class="pre">postupnosť</span> <span class="pre">znakov</span></code>) vygeneruje reťazec, ktorý vznikne po <code class="docutils literal notranslate"><span class="pre">pocet</span></code> krokoch nahrádzania, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generuj</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;F -&gt; F-F++F-F&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">    &#39;F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">pocet</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">generuj</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;a-&gt;Fb[-a]+a&#39;</span><span class="p">,</span> <span class="s1">&#39;b-&gt;Fb&#39;</span><span class="p">),</span> <span class="n">pocet</span><span class="p">)))</span>
+<span class="go">    0 &#39;a&#39;</span>
+<span class="go">    1 &#39;Fb[-a]+a&#39;</span>
+<span class="go">    2 &#39;FFb[-Fb[-a]+a]+Fb[-a]+a&#39;</span>
+<span class="go">    3 &#39;FFFb[-FFb[-Fb[-a]+a]+Fb[-a]+a]+FFb[-Fb[-a]+a]+Fb[-a]+a&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>funkcia vráti (<code class="docutils literal notranslate"><span class="pre">return</span></code>) znakový reťazec a nič nevypisuje</p></li>
+<li><p>medzery v reťazcoch môžeš ignorovať, môžu tam byť len kvôli čitateľnosti</p></li>
+<li><p>v druhej ukážke vidíš viac pravidiel a používajú hranaté zátvorky</p></li>
+</ul>
+</li>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">priprav(retazec,</span> <span class="pre">dlzka,</span> <span class="pre">uhol)</span></code> spracuje zadaný reťazec, ktorý vznikol z funkcie <code class="docutils literal notranslate"><span class="pre">generuj()</span></code>, funkcia vráti postupnosť korytnačích príkazov ako jeden reťazec v takomto tvare:</p>
+<ul class="simple">
+<li><p>namiesto <code class="docutils literal notranslate"><span class="pre">t.fd(číslo)</span></code> vráti <code class="docutils literal notranslate"><span class="pre">'fčíslo'</span></code>, napríklad <code class="docutils literal notranslate"><span class="pre">'f20'</span></code></p></li>
+<li><p>namiesto <code class="docutils literal notranslate"><span class="pre">t.lt(číslo)</span></code> vráti <code class="docutils literal notranslate"><span class="pre">'lčíslo'</span></code>, napríklad <code class="docutils literal notranslate"><span class="pre">'l60'</span></code></p></li>
+<li><p>namiesto <code class="docutils literal notranslate"><span class="pre">t.rt(číslo)</span></code> vráti <code class="docutils literal notranslate"><span class="pre">'rčíslo'</span></code>, napríklad <code class="docutils literal notranslate"><span class="pre">'r60'</span></code></p></li>
+<li><p>namiesto <code class="docutils literal notranslate"><span class="pre">t.teleport(číslo,</span> <span class="pre">číslo)</span></code> vráti <code class="docutils literal notranslate"><span class="pre">'tčíslo,číslo'</span></code>, napríklad <code class="docutils literal notranslate"><span class="pre">'t50,30'</span></code></p></li>
+<li><p>namiesto <code class="docutils literal notranslate"><span class="pre">t.seth(číslo)</span></code> vráti <code class="docutils literal notranslate"><span class="pre">'hčíslo'</span></code>, napríklad <code class="docutils literal notranslate"><span class="pre">'h180'</span></code></p></li>
+</ul>
+<p>v tejto funkcii môžeš použiť modul <code class="docutils literal notranslate"><span class="pre">math</span></code> (tu ešte nepoužívaj modul <code class="docutils literal notranslate"><span class="pre">turtle</span></code>)</p>
+<p>parametrami pre <code class="docutils literal notranslate"><span class="pre">t.teleport(...)</span></code> a <code class="docutils literal notranslate"><span class="pre">t.seth(...)</span></code> môžu byť aj desatinné čísla, zaokrúhli ich na 2 desatinné miesta</p>
+<p>napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">priprav</span><span class="p">(</span><span class="s1">&#39;FFb[-Fb[-a]+a]+Fb[-a]+a&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="go">    &#39;f50f50l45f50l45h45t135.36,35.36r45h0t100,0r45f50l45h315t135.36,-35.36r45&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">kresli(retazec)</span></code> pomocou korytnačej grafiky vykreslí zadaný reťazec, ktorý vznikol z funkcie <code class="docutils literal notranslate"><span class="pre">priprav()</span></code></p>
+<ul class="simple">
+<li><p>až táto funkcia použije príkaz <code class="docutils literal notranslate"><span class="pre">import</span></code> pre modul <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, vytvorí korytnačku a nakreslí obrázok</p></li>
+</ul>
+<p>napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">priprav</span><span class="p">(</span><span class="n">generuj</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a-&gt;Fb[-a]+a&#39;</span><span class="p">,</span> <span class="s1">&#39;b-&gt;Fb&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>nakreslí:</p>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/1tp05_1.png"><img alt="../_images/1tp05_1.png" class="align-center" height="105" src="../_images/1tp05_1.png" width="113" />
+</a>
+<p>Testovač bude volať tieto tri funkcie s rôznymi L-systémami. Aby si zbytočne nepomýlil testovač, používaj len korytnačie príkazy uvedené pri funkcii <code class="docutils literal notranslate"><span class="pre">priprav()</span></code>. Niektoré ďalšie buď testovač ignoruje, alebo vyhlási chybu.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="10.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

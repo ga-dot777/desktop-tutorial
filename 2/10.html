@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10. Backtracking na grafoch &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="11. Ďalšie algoritmy na grafoch" href="11.html" />
+    <link rel="prev" title="9. Backtracking" href="09.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Backtracking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="10.html#">10. Backtracking na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Ďalšie algoritmy na grafoch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="09.html" title="Previous Chapter: 9. Backtracking"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 9. Backtracking</span>
+    </a>
+  </li>
+  <li>
+    <a href="11.html" title="Next Chapter: 11. Ďalšie algoritmy na grafoch"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">11. Ďalšie al... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="backtracking-na-grafoch">
+<h1>10. Backtracking na grafoch<a class="headerlink" href="10.html#backtracking-na-grafoch" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="10.html#hodnota-cesty" id="id2">Hodnota cesty</a></p></li>
+<li><p><a class="reference internal" href="10.html#zapamatanie-celej-cesty" id="id3">Zapamätanie celej cesty</a></p></li>
+<li><p><a class="reference internal" href="10.html#hladanie-cyklov-v-grafe" id="id4">Hľadanie cyklov v grafe</a></p></li>
+<li><p><a class="reference internal" href="10.html#cvicenie" id="id5">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="10.html#tyzdenny-projekt" id="id6">10. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<p>Využijeme mierne upravenú triedu <code class="docutils literal notranslate"><span class="pre">Graf</span></code> z prednášky <a class="reference internal" href="08.html"><span class="doc">8. Algoritmy prehľadávania grafu</span></a>, v ktorom sme upravili:</p>
+<ul class="simple">
+<li><p>graf je ohodnotený, t.j. pre každú hranu si uchovávame jej váhu (zvolili sme vzdialenosť vrcholov v rovine)</p>
+<ul>
+<li><p>namiesto zoznamu množín susedností graf reprezentujeme ako zoznam vrcholov, v ktorom si každý vrchol pamätá susedov v asociatívnom poli (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) s hodnotami váha hrany</p></li>
+</ul>
+</li>
+<li><p>generovanie pozícií vrcholov: náhodne sme ich trochu poposúvali</p></li>
+<li><p>pridali sme metódu <code class="docutils literal notranslate"><span class="pre">udalost_klik()</span></code>, ktorá nielen zafarbuje kliknuté vrcholy, ale si ich aj pamätá v zozname <code class="docutils literal notranslate"><span class="pre">self.klik</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">620</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">620</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">meno</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">meno</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">vaha</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span><span class="p">[</span><span class="n">v2</span><span class="p">]</span> <span class="o">=</span> <span class="n">vaha</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">zafarbi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">farba</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+
+        <span class="c1">#-----------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">d</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+                <span class="n">v1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v2</span> <span class="o">:=</span> <span class="n">v1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+                    <span class="n">vaha</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">.5</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v2</span> <span class="o">:=</span> <span class="n">v1</span><span class="o">-</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+                    <span class="n">vaha</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">.5</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">kresli_hranu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="n">vrchol</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Button-1&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">udalost_klik</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">klik</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">meno</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">meno</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">meno</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">vaha</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vaha</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zafarbi_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">farba</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">udalost_klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vrchol</span><span class="o">.</span><span class="n">xy</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">vrchol</span><span class="o">.</span><span class="n">zafarbi</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vrchol</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+                <span class="k">return</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">meno</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">sus</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graf</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Základná schéma backtrackingu</p>
+<p>Pripomeňme si, na čo vieme použiť prehľadávanie do hĺbky a do šírky:</p>
+<ul class="simple">
+<li><p>algoritmus <strong>do hĺbky</strong> využijeme hlavne na zistenie príslušnosti vrcholov do komponentov</p></li>
+<li><p>algoritmus <strong>do šírky</strong> slúži na nájdenie vzdialenosti (najkratšej cesty) dvoch vrcholov</p>
+<ul>
+<li><p>takáto dĺžka cesty neberie do úvahy váhu na hranách, ale len počet vrcholov na ceste</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Prehľadávanie s návratom</strong></p>
+<ul class="simple">
+<li><p>pracuje na princípe prechádzania (generovania) všetkých možných ciest v grafe, ktoré vychádzajú z nejakého vrcholu</p></li>
+<li><p>pri tomto generovaní, môžeme zisťovať rôzne parametre týchto vygenerovaných ciest, napríklad súčet váh na hranách cesty, alebo, či cesta prešla cez nejaký konkrétny vrchol a pod.</p></li>
+<li><p>uvedomte si, že takéto prehľadávanie (spomínali sme to ako <em>hrubá sila</em>, <em>brute force</em>) bude pre väčšie grafy časovo veľmi náročné, keďže vygenerovaných ciest môže byť obrovské množstvo</p></li>
+<li><p>často závisí od detailov v nejakom teste, ako rýchlo takéto prehľadávanie nájde riešenie (hovoríme tomu, že využijeme nejakú <strong>heuristiku</strong>)</p></li>
+<li><p>vo vyšších ročníkoch sa zoznámite s algoritmami, ktoré vedia riešiť niektoré z našich úloh aj bez <em>hrubej sily</em></p></li>
+</ul>
+<p>Základnú schému backtrackingu, môžeme pre graf upraviť, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="o">...</span> <span class="c1"># spracuj riešenie</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="c1"># vizualizuj prechádzanú hranu</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+                    <span class="c1"># zruš vizualizovanie prechádzanej hrany</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>podobne ako pri prechádzaní grafu do hĺbky, aj tu musíme mať nejakú štruktúru <code class="docutils literal notranslate"><span class="pre">visited</span></code>, aby sme neprechádzali cez nejaký vrchol viackrát</p></li>
+<li><p>parameter <code class="docutils literal notranslate"><span class="pre">v1</span></code> označuje práve prechádzaný vrchol, <code class="docutils literal notranslate"><span class="pre">v2</span></code> cieľový vrchol, do ktorého sa snažíme dostať</p></li>
+<li><p>tento algoritmus naozaj nájde všetky možné cesty z vrcholu <code class="docutils literal notranslate"><span class="pre">v1</span></code> do <code class="docutils literal notranslate"><span class="pre">v2</span></code>, pričom pri spracovaní riešenia môžeme tieto nájdené cesty nejako pretriediť a vybrať si len tú najvhodnejšiu</p></li>
+</ul>
+<p>Môžeme to otestovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">48</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">graf</span><span class="o">.</span><span class="n">pocet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ale dozvieme sa len počet nájdených riešení (počet možných ciest z vrcholu 0 do vrcholu 48).</p>
+<p>Vytvorme takýto program:</p>
+<ul class="simple">
+<li><p>backtracking sa automaticky naštartuje po kliknutí na dva (rôzne) vrcholy</p></li>
+<li><p>samotný algoritmus bude každú prechádzanú hranu prefarbovať a na malú chvíľu pritom spomalí výpočet</p></li>
+<li><p>konkrétne nasledovný program bude počítať počet rôznych ciest a tento počet na záver vypíše</p></li>
+</ul>
+<p>Upravíme aj metódu <code class="docutils literal notranslate"><span class="pre">udalost_klik()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">udalost_klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vrchol</span><span class="o">.</span><span class="n">xy</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">vrchol</span><span class="o">.</span><span class="n">zafarbi</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vrchol</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>           <span class="c1"># &lt;=== po druhom kliknutí</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span>
+                <span class="k">return</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+        <span class="c1"># keď skončí backtracking</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pocet</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1"># spracuj riešenie</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nasiel som cestu&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="c1"># vizualizuj prechádzanú hranu</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+                    <span class="c1"># zruš vizualizovanie prechádzanej hrany</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>volanie <code class="docutils literal notranslate"><span class="pre">self.canvas.after(100)</span></code> označuje, že tu program zastane na 100 ms, tento riadok môžeme vyhodiť, aby bolo hľadanie ciest rýchlejšie</p></li>
+</ul>
+<p>V niektorých situáciách sa nám môže hodiť, keď po nájdení prvého riešenia, zastavíme beh backtrackingu ale tak, aby táto cesta ostala nakreslená:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>           <span class="c1"># aby sa ďalej nevnáral do rekurzie</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>          <span class="c1"># spracuj riešenie</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nasiel som cestu&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="c1"># vizualizuj prechádzanú hranu</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>               <span class="c1"># aby sa nezrušilo zafarbenie hrán</span>
+                        <span class="k">return</span>
+
+                    <span class="c1"># zruš vizualizovanie prechádzanej hrany</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Častejšie ale budeme prechádzať všetky vygenerované cesty a hľadať medzi nimi jednu s nejakou vlastnosťou, napríklad cestu s najmenším ohodnotením: ak je na hranách, napríklad cena, tak hľadáme najlacnejšiu cestu. Zrejme je rozdiel medzi najkratšou cestou (s najmenej prechádzanými vrcholmi) a najlacnejšou cestou.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="hodnota-cesty">
+<h2><a class="toc-backref" href="10.html#id2" role="doc-backlink">Hodnota cesty</a><a class="headerlink" href="10.html#hodnota-cesty" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pri generovaní cesty budeme evidovať aj jej hodnotu (ako súčet ohodnotení hrán). Najprv to ukážeme pomocou atribútu <code class="docutils literal notranslate"><span class="pre">hodnota</span></code> v triede <code class="docutils literal notranslate"><span class="pre">Graf</span></code>, ktorý sa pri prechode hranou zvyšuje a pri návrate znižuje:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hodnota</span> <span class="o">=</span> <span class="mi">0</span>               <span class="c1"># hodnota celej cesty</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pocet</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cesta s hodnotou&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">hodnota</span> <span class="o">+=</span> <span class="n">h</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                    <span class="c1">#self.canvas.after(100)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">hodnota</span> <span class="o">-=</span> <span class="n">h</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hodnotu cesty môžeme vytvárať aj v parametri funkcie <code class="docutils literal notranslate"><span class="pre">backtracking()</span></code>. Na začiatku je hodnota cesty 0, vždy keď algoritmus prejde po nejakej hrane, tak sa táto hodnota zvýši. Keď cesta dorazí do cieľa (do vrcholu <code class="docutils literal notranslate"><span class="pre">v2</span></code>), zistí sa, či táto nová vygenerovaná cesta je lepšia (napríklad menšia ako doterajšie minimum, alebo väčšia ako doterajšie maximum) ako doteraz uchovávané hodnoty v premenných <code class="docutils literal notranslate"><span class="pre">self.min</span></code> a <code class="docutils literal notranslate"><span class="pre">self.max</span></code>. Všimnite si, že takto uchovávanú hodnotu v parametri nemusíme pri návrate z rekurzie znižovať, ako sme to robili v predchádzajúcej verzii:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pocet</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="n">hodnota</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                    <span class="c1">#self.canvas.after(100)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zapamatanie-celej-cesty">
+<h2><a class="toc-backref" href="10.html#id3" role="doc-backlink">Zapamätanie celej cesty</a><a class="headerlink" href="10.html#zapamatanie-celej-cesty" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Doterajšie verzie algoritmu generovali všetky cesty, ale si ich nikde neuchovávali. Využijeme pomocný zoznam (premenná <code class="docutils literal notranslate"><span class="pre">self.cesta</span></code>), do ktorého budeme ukladať momentálnu cestu. Tiež si ju uložíme do premennej <code class="docutils literal notranslate"><span class="pre">self.najcesta</span></code>, keď vyhovuje nejakej podmienke. Po skončení algoritmu <code class="docutils literal notranslate"><span class="pre">backtracking</span></code> túto cestu vypíšeme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pocet</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="n">hodnota</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="p">[:]</span>             <span class="c1"># zapamätáme kópiu cesty</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="c1">#self.zafarbi_hranu(v1, v, &#39;red&#39;)</span>
+                    <span class="c1">#self.canvas.update()</span>
+                    <span class="c1">#self.canvas.after(100)</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+
+                    <span class="c1">#self.zafarbi_hranu(v1, v)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>pri uchovávaní si najlepšej cesty musíme urobiť kópiu z premennej <code class="docutils literal notranslate"><span class="pre">self.cesta</span></code>, lebo nestačí urobiť len obyčajné priradenie, ktoré by priradilo len referenciu na premennú</p></li>
+<li><p>aby sme algoritmus urýchlili, odstránili sme aj vykresľovanie hrán</p></li>
+</ul>
+<p>Tento algoritmus nájde najlepšiu cestu, ale ju nevykreslí, len vypíše čísla vrcholov. Ďalšia verzia programu vykresľuje najlepšiu cestu - teraz hľadáme cestu nie s najmenšou hodnotou, ale s najväčšou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="n">hodnota</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">hodnota</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="p">[:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesta</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>možno vám napadlo, že keď si pamätáme cestu, nepotrebujeme udržiavať množinu <code class="docutils literal notranslate"><span class="pre">self.visited</span></code>, veď <code class="docutils literal notranslate"><span class="pre">self.cesta</span></code> obsahuje tie isté vrcholy - je to pravda, len hľadanie vrcholu v množine (typ <code class="docutils literal notranslate"><span class="pre">set</span></code>) je pre veľa prvkov rýchlejšie ako v zozname (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>) a takýto program sa môže pre niekoho zdať menej čitateľný</p></li>
+<li><p>podobne ako sme namiesto atribútu <code class="docutils literal notranslate"><span class="pre">self.hodnota</span></code> pridali nový parameter <code class="docutils literal notranslate"><span class="pre">hodnota</span></code> do metódy <code class="docutils literal notranslate"><span class="pre">backtracking()</span></code>, môžeme pridať aj parameter <code class="docutils literal notranslate"><span class="pre">cesta</span></code>, v ktorom sa vytvára momentálna postupnosť prechádzaných vrcholov</p></li>
+</ul>
+<p>Hľadanie najkratšej cesty môžeme teraz zapísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">v1</span><span class="p">])</span>        <span class="c1"># vo vytváranej ceste je už prvý vrchol</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">naj</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">,</span> <span class="n">cesta</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="o">&gt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="o">=</span> <span class="n">hodnota</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="n">cesta</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cesta</span><span class="p">:</span>                <span class="c1"># kontrolujeme cestu namiesto visited</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">cesta</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="hladanie-cyklov-v-grafe">
+<h2><a class="toc-backref" href="10.html#id4" role="doc-backlink">Hľadanie cyklov v grafe</a><a class="headerlink" href="10.html#hladanie-cyklov-v-grafe" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Backtracking môžeme využiť aj na generovanie všetkých cyklov, t.j. takých ciest, v ktorých je posledný vrchol ten istý ako prvý. Využijeme poslednú verziu backtrackingu, v ktorej sme pridali parameter <code class="docutils literal notranslate"><span class="pre">cesta</span></code>. Pritom zmien v programe pre hľadanie cyklu (hľadáme cyklus s maximálnou hodnotou) je veľmi málo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">udalost_klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vrchol</span><span class="o">.</span><span class="n">xy</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">vrchol</span><span class="o">.</span><span class="n">zafarbi</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">vrchol</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+                <span class="k">return</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">):</span>                      <span class="c1"># metóda má iba jeden parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>      <span class="c1"># backtracking štartujeme s prázdnou cestou</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">naj</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">,</span> <span class="n">cesta</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cesta</span> <span class="o">!=</span> <span class="p">[]</span> <span class="ow">and</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cesta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">):</span>   <span class="c1"># hľadáhame maximum</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">naj</span> <span class="o">=</span> <span class="n">hodnota</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">]</span> <span class="o">+</span> <span class="n">cesta</span>    <span class="c1"># k nájdenému riešeniu pridáme na začiatok štartový vrchol</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cesta</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">cesta</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Zmenili sme:</p>
+<ul class="simple">
+<li><p>zjednodušili sme metódu <code class="docutils literal notranslate"><span class="pre">udalost_klik()</span></code>, lebo nepotrebujeme ukladať viac kliknutých vrcholov a metódu <code class="docutils literal notranslate"><span class="pre">start()</span></code> voláme len s jedným parametrom: začiatkom cyklu, čo je zároveň aj koncom cyklu</p></li>
+<li><p>v metóde <code class="docutils literal notranslate"><span class="pre">start()</span></code> sme zmenili naštartovanie backtrackingu: posielame ako začiatok aj koniec cesty ten istý vrchol a tiež prvý vrchol nevkladáme do vytváranej cesty (parameter <code class="docutils literal notranslate"><span class="pre">cesta</span></code>), aby sme ho tam mohli vložiť aj druhýkrát</p></li>
+<li><p>úvodný test v metóde <code class="docutils literal notranslate"><span class="pre">backtracking()</span></code> kontroluje nielen to, či sme už v cieli (teda <code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">==</span> <span class="pre">v2</span></code>), ale aj dĺžku vytvoreného cyklu, ktorá by mala mať aspoň 2 rôzne hrany, t.j. aspoň 3 vrcholy</p></li>
+<li><p>v metóde <code class="docutils literal notranslate"><span class="pre">backtracking()</span></code>, keď nájdeme nejaké vyhovujúce riešenie, ktoré je lepšie ako doteraz nájdené najlepšie (v atribúte <code class="docutils literal notranslate"><span class="pre">self.najcesta</span></code>), pridáme k nemu na začiatok štartový vrchol, lebo ten sme úmyselne do cesty nezaradili</p></li>
+</ul>
+<p>Malým zjednodušením tohto riešenie vieme hľadať najdlhší (alebo aj najkratší) cyklus na počet prejdených vrcholov a to bez ohľadu na hodnoty na hranách:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="p">[])</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nenasiel ziadnu cestu&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zafarbi_hranu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">cesta</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cesta</span> <span class="o">!=</span> <span class="p">[]</span> <span class="ow">and</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cesta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">cesta</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">najcesta</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">]</span> <span class="o">+</span> <span class="n">cesta</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cesta</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">cesta</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>V prípade, že takýto cyklus prejde cez všetky vrcholy, hovoríme mu <strong>Hamiltonovská kružnica</strong> (v skutočnosti je Hamiltonovská kružnica podgrafom, ktorý obsahuje všetky vrcholy grafu a len hrany, ktoré sú z tohto cyklu).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="10.html#id5" role="doc-backlink">Cvičenie</a><a class="headerlink" href="10.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na úlohový server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 28.4.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno</p>
+</li>
+</ul>
+</li>
+<li><p>študent piateho ročníka Samuel Ješík, ktorý finišuje svoju diplomovú prácu, vás prosí, vyplniť dotazník k používaniu umelej inteligencie pri učení sa programovania: <a class="reference external" href="https://davinci.fmph.uniba.sk/~jesik2/dotaznik.html">dotaznik.html</a></p></li>
+<li><p>dotazník je anonymný, vyplňte ho čo najúprimnejšie</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Do triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code> z prednášky aj s backtrackingom dopíš generovanie náhodných hodnôt na hranách grafu z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;1,</span> <span class="pre">4&gt;</span></code>, túto hodnotu vypíš do stredu príslušnej hrany. Uprav tieto metódy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Otestuj, ako teraz funguje hľadanie najkratšej cesty (cesty s najmenším súčtom hodnôt na hranách).</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Do náhodného generovania hrán grafu v inicializácii <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> pridaj generovanie aj šikmých hrán. S nejakou pravdepodobnosťou spojí momentálny vrchol <code class="docutils literal notranslate"><span class="pre">v1</span></code> s vrcholom, ktorý je o riadok aj o stĺpec o 1 menší (zrejme to nerobí v prvom riadku ani stĺpci):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Otestuj, ako teraz funguje hľadanie najkratšej cesty.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Uprav backtracking tak, aby hľadal a vyznačil maximálne dlhú cestu (na počet prejdených vrcholov), ale ak je takých viac vyberie tú z nich, ktorá má minimálny súčet váh. Uprav metódu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">,</span> <span class="n">cesta</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Zmeň metódu <code class="docutils literal notranslate"><span class="pre">backtracking()</span></code> tak, aby po druhom kliknutí na nejaký vrchol (<code class="docutils literal notranslate"><span class="pre">v2</span></code>) našla najkratší (resp. najdlhší) <strong>cyklus</strong>, ktorý začína (a teda aj končí) vo vrchole <code class="docutils literal notranslate"><span class="pre">v1</span></code> a prechádza cez druhý kliknutý vrchol <code class="docutils literal notranslate"><span class="pre">v2</span></code>. Uprav metódy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtracking</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">,</span> <span class="n">cesta</span><span class="p">):</span>   <span class="c1"># v3 je vrchol, cez ktorý prechádza cyklus</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Backtracking generuje všetky cykly z <code class="docutils literal notranslate"><span class="pre">v1</span></code> (do <code class="docutils literal notranslate"><span class="pre">v2</span></code>) a pre každý ešte skontroluje, či prechádza cez <code class="docutils literal notranslate"><span class="pre">v3</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Napíš metódu <code class="docutils literal notranslate"><span class="pre">zisti5()</span></code>, ktorá pomocou backtrackingu zistí, koľko existuje v danom grafe <strong>rôznych</strong> cyklov dĺžky presne 5 (zaujíma nás to, že počet vrcholov v ceste je 5 a nie aké sú váhy na hranách). Zrejme v pôvodnom grafe, v ktorom boli hrany náhodne generované len vodorovne a zvislo, nemôže existovať žiaden cyklus dĺžky 5. Metóda na záver vypíše tento zistený počet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zisti5</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">zisti5</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Zrejme cykly <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">1)</span></code> a <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">5,</span> <span class="pre">4)</span></code> nie sú rôzne.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>Pre danú konštantu <code class="docutils literal notranslate"><span class="pre">D</span></code> a kliknutím na jeden vrchol zafarbi (napríklad žltou farbou) <strong>všetky</strong> také vrcholy, pre ktoré existuje cesta štartujúca zo zadaného (kliknutého) vrcholu a jej hodnota (súčet váh na hranách) je presne <code class="docutils literal notranslate"><span class="pre">D</span></code>. Uprav metódy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">udalost_klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">zafarbi</span><span class="p">(</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Zmeň metódu <code class="docutils literal notranslate"><span class="pre">backtracking()</span></code> tak, aby hľadaná najdlhšia cesta mohla prechádzať cez tie isté vrcholy aj viackrát, len treba strážiť, aby nešla viackrát po tej istej hrane. Uprav metódy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Ohodnotený neorientovaný graf je definovaný v textovom súbore tak, že v každom riadku je popísaná jedna hrana pomocou dvoch čísel vrcholov a váhy (reťazec), napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> 1 2 a
+ 1 4 ma
+ 1 5 a
+ 3 4 m
+ 4 2 am
+ 6 4 a
+ 5 6 u
+ 5 3 am
+ 4 5 em
+
+Zisti, koľko existuje rôznych ciest (cez vrcholy aj hrany môžeme prechádzať ľubovoľný počet krát), ktorých hodnota je reťazec ``&#39;mamamaemuaemamamamu&#39;``. Úlohu rieš prečítaním grafu zo súboru a potom pomocou backtrackingu. Program by mal vypísať všetky cesty ako postupnosti navštívených vrcholov::
+
+ class Graf:
+     def __init__(self, meno_suboru):
+         ...
+
+     def start(self, retazec):
+         ...
+
+     def backtracking(self, ...):
+         ...
+
+ graf = Graf(&#39;subor.txt&#39;)
+ graf.start(&#39;mamamaemuaemamamamu&#39;)
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="10.html#id6" role="doc-backlink">10. Týždenný projekt</a><a class="headerlink" href="10.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 11.5.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code>, <code class="docutils literal notranslate"><span class="pre">global</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code> ani <code class="docutils literal notranslate"><span class="pre">sorted</span></code></p></li>
+<li><p>v module sa môže nachádzať <strong>len jedna definícia triedy</strong> <code class="docutils literal notranslate"><span class="pre">Labyrinth</span></code> s vnorenou triedou <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>, do  triedy <code class="docutils literal notranslate"><span class="pre">Labyrinth</span></code> môžeš pridávať vlastné atribúty a metódy</p></li>
+<li><p>bude sa kontrolovať štruktúra vytvoreného grafu (atribút <code class="docutils literal notranslate"><span class="pre">graph</span></code>) s rôznymi textovými súbormi</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Zadanie skúšky z minulých rokov: labyrint</p>
+<p>Labyrint je štvorcová sieť veľkosti <code class="docutils literal notranslate"><span class="pre">m</span></code> x <code class="docutils literal notranslate"><span class="pre">n</span></code>, pre ktorú sa dozvieme, medzi ktorými políčkami siete sú steny, teda sa tadiaľ nebude dať prechádzať. Na niektorých políčkach sa nachádzajú odmeny (napríklad mince). Úlohou je nájsť najkratšiu cestu zo štartového políčka, ktorá pozbiera všetky odmeny. Treba dať pozor, aby sa na žiadne políčko nestúpilo dvakrát.</p>
+<p>Labyrint reprezentuj ako graf, v ktorom sú políčka labyrintu vrcholy grafu a hrany sú priechody medzi políčkami. Uvedom si, že každý vrchol môže mať maximálne štyroch susedov (nemusí mať žiadneho).</p>
+<p>Labyrint je popísaný v textovom súbore, ktorý má tento tvar:</p>
+<ul class="simple">
+<li><p>prvý riadok obsahuje dve čísla: počet riadkov a počet stĺpcov labyrintu</p></li>
+<li><p>ďalej nasledujú riadky so stenami a odmenami (v ľubovoľnom poradí)</p></li>
+<li><p>ak riadok obsahuje iba 2 čísla, označuje to políčko s odmenou (riadok, stĺpec), riadky aj stĺpce číslujeme od <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>inak riadok obsahuje postupnosť aspoň dvoch políčok (riadok1, stĺpec1, riadok2, stĺpec2, …) - touto postupnosťou definuje nejaké steny v labyrinte: stena je medzi prvým a druhým políčkom, aj druhým a tretím, … atď.</p></li>
+</ul>
+<p>Zadefinuj triedu <code class="docutils literal notranslate"><span class="pre">Labyrinth</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Labyrinth</span><span class="p">:</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vertex</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>  <span class="c1"># riadok, stĺpec</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adjacent</span> <span class="o">=</span> <span class="p">[]</span>            <span class="c1"># zoznam susedov, susedia sú typu Vertex</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">column</span> <span class="o">=</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reward</span> <span class="o">=</span> <span class="kc">False</span>           <span class="c1"># odmena</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">column</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="p">{}</span>        <span class="c1"># slovník vrcholov grafu – obsahuje objekty typu Vertex</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">change_rewards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">seq</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>kde</p>
+<ul class="simple">
+<li><p>vnorená definícia triedy <code class="docutils literal notranslate"><span class="pre">Vertex</span></code> má už zadefinované nejaké metódy aj atribúty – tieto atribúty využi pre reprezentáciu grafu; atribút <code class="docutils literal notranslate"><span class="pre">adjacent</span></code> bude obyčajný zoznam (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>), ktorý bude obsahovať zoznam susediacich vrcholov, teda prvkami tohto zoznamu budú opäť objekty typu <code class="docutils literal notranslate"><span class="pre">Vertex</span></code> (v ľubovoľnom poradí)</p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">__init__(file_name)</span></code></p>
+<ul>
+<li><p>prečíta súbor a vytvorí z neho graf v atribúte <code class="docutils literal notranslate"><span class="pre">graph</span></code>:</p></li>
+<li><p>bude obsahovať všetky vrcholy grafu, teda objekty typu <code class="docutils literal notranslate"><span class="pre">Vertex</span></code></p></li>
+<li><p>bude to asociatívne pole (<code class="docutils literal notranslate"><span class="pre">dict</span></code>), v ktorom kľúčom je poloha políčka (riadok, stĺpec) a príslušnou hodnotou je samotný vrchol</p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">get_vertex(row,</span> <span class="pre">column)</span></code></p>
+<ul>
+<li><p>vráti referenciu (typ <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>) na príslušný vrchol grafu, ktorý reprezentuje zadané políčko</p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">change_rewards(*seq)</span></code></p>
+<ul>
+<li><p>parameter <code class="docutils literal notranslate"><span class="pre">seq</span></code> je postupnosť dvojíc (riadok, stĺpec)</p></li>
+<li><p>metóda zmení na všetkých zadaných políčkach to, či sa na nich nachádza odmena: ak na políčku bola odmena, odstráni ju, inak na políčko umiestni odmenu</p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">start(row,</span> <span class="pre">column)</span></code></p>
+<ul>
+<li><p>pomocou backtrackingu hľadá správnu cestu (<strong>najkratšia</strong> cesta, ktorá prejde cez všetky políčka s odmenami)</p></li>
+<li><p>metóda vráti <strong>generátor</strong> navštívených políčok - teda dvojíc (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) celých čísel (zrejme prvé políčko v tejto postupnosti bude zadaný <code class="docutils literal notranslate"><span class="pre">(row,</span> <span class="pre">column)</span></code>)</p></li>
+<li><p>ak správna cesta existuje, musí končiť na políčku s odmenou</p></li>
+<li><p>ak cesta, ktorá prejde cez všetky políčka s odmenou sa skonštruovať nedá, generátor nevráti nič</p></li>
+<li><p>testovač môže zavolať túto metódu viac krát s rôznymi štartovými políčkami</p></li>
+<li><p>ak existuje viac najkratších ciest, metóda vráti ľubovoľnú z nich</p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad pre takéto zadanie labyrintu:</p>
+<img alt="../_images/210_1.png" src="../_images/210_1.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="mi">2</span>
+<span class="mi">0</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>tento test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">lab</span> <span class="o">=</span> <span class="n">Labyrinth</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">lab</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vrchol:&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;susedia:&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">adjacent</span><span class="p">,</span> <span class="s1">&#39;odmena:&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">reward</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">lab</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vrchol:&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;susedia:&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">adjacent</span><span class="p">,</span> <span class="s1">&#39;odmena:&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">reward</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">lab</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">lab</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">lab</span><span class="o">.</span><span class="n">change_rewards</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">lab</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>vypíše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vrchol</span><span class="p">:</span> <span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="o">&gt;</span> <span class="n">susedia</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">]</span> <span class="n">odmena</span><span class="p">:</span> <span class="kc">False</span>
+<span class="n">vrchol</span><span class="p">:</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">&gt;</span> <span class="n">susedia</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">]</span> <span class="n">odmena</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prvé z riešení nájde túto trasu:</p>
+<img alt="../_images/210_2.png" src="../_images/210_2.png" />
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/2tp10.zip">2tp10.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="10.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 11. máj. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

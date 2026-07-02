@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>17. Vyhľadávanie &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="18. Triedenia I." href="18.html" />
+    <link rel="prev" title="16. Funkcie, Iterátory, generátory" href="16.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="17.html#">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="16.html" title="Previous Chapter: 16. Funkcie, Iterátory, generátory"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 16. Funkcie, ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="18.html" title="Next Chapter: 18. Triedenia I."><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">18. Triedenia I. &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="vyhladavanie">
+<h1>17. Vyhľadávanie<a class="headerlink" href="17.html#vyhladavanie" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="17.html#zistovanie-druhej-odmocniny" id="id2">Zisťovanie druhej odmocniny</a></p>
+<ul>
+<li><p><a class="reference internal" href="17.html#modul-time" id="id3">Modul time</a></p></li>
+<li><p><a class="reference internal" href="17.html#metoda-bisekcie" id="id4">Metóda bisekcie</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="17.html#hladanie-udajov" id="id5">Hľadanie údajov</a></p>
+<ul>
+<li><p><a class="reference internal" href="17.html#binarne-vyhladavanie" id="id6">Binárne vyhľadávanie</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="17.html#asociativne-polia" id="id7">Asociatívne polia</a></p>
+<ul>
+<li><p><a class="reference internal" href="17.html#hasovacia-tabulka" id="id8">Hašovacia tabuľka</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="17.html#cvicenie" id="id9">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="17.html#tyzdenny-projekt" id="id10">10. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="zistovanie-druhej-odmocniny">
+<h2><a class="toc-backref" href="17.html#id2" role="doc-backlink">Zisťovanie druhej odmocniny</a><a class="headerlink" href="17.html#zistovanie-druhej-odmocniny" title="Link to this heading">¶</a></h2>
+<p>Ukážeme, ako zistíme druhú odmocninu čísla aj bez volania funkcie <code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code>, resp. umocňovaním na jednu polovicu <code class="docutils literal notranslate"><span class="pre">x**0.5</span></code>. Prvá idea bude vychádzať z toho, že v cykle budeme postupne hľadať prvé také <code class="docutils literal notranslate"><span class="pre">x</span></code>, pre ktoré <code class="docutils literal notranslate"><span class="pre">x*x</span></code> (t.j. <code class="docutils literal notranslate"><span class="pre">x**2</span></code>) nie je menšie ako zadané <code class="docutils literal notranslate"><span class="pre">cislo</span></code>. Prvá verzia funkcie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odmoc</span><span class="p">(</span><span class="n">cislo</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">cislo</span><span class="p">:</span>
+       <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Takto nájdené riešenie môže byť dosť nepresné, lebo <code class="docutils literal notranslate"><span class="pre">x</span></code> zvyšujeme o 1, takže, napríklad odmocninu z <code class="docutils literal notranslate"><span class="pre">26</span></code> vypočíta ako <code class="docutils literal notranslate"><span class="pre">6</span></code>. Skúsme zjemniť krok, o ktorý sa mení hľadané <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odmoc</span><span class="p">(</span><span class="n">cislo</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">cislo</span><span class="p">:</span>
+       <span class="n">x</span> <span class="o">+=</span> <span class="mf">0.001</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>Teraz dáva program lepšie výsledky, ale pre väčšiu zadanú hodnotu mu to trvá citeľne dlhšie - skúste zadať, napríklad <code class="docutils literal notranslate"><span class="pre">10000000</span></code>. Keďže mu vyšiel výsledok približne <code class="docutils literal notranslate"><span class="pre">3162.278</span></code> a dopracoval sa k nemu postupným pripočítavaním čísla <code class="docutils literal notranslate"><span class="pre">0.001</span></code> k štartovému 1, musel urobiť vyše 3 miliónov pripočítaní a tiež toľkokrát testov vo while-cykle (podmienky <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">cislo</span></code>). Pre toto je takýto algoritmus nepoužiteľne pomalý.</p>
+<section id="modul-time">
+<h3><a class="toc-backref" href="17.html#id3" role="doc-backlink">Modul time</a><a class="headerlink" href="17.html#modul-time" title="Link to this heading">¶</a></h3>
+<p>S týmto modulom sme sa už párkrát stretli na niektorých cvičeniach. Zhrňme pre nás najzaujímavejšie funkcie z tohto modulu:</p>
+<ul>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">time.localtime()</span></code> vráti momentálny dátum a čas v špeciálnom tvare <code class="docutils literal notranslate"><span class="pre">time.struct_time</span></code>, ktorý je vlastne <a class="reference external" href="https://docs.python.org/3/glossary.html#term-named-tuple">pomenovanou n-ticou</a>; s touto štruktúrou môžeme pracovať podobne ako s <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
+<span class="hll"><span class="go">    time.struct_time(tm_year=2019, tm_mon=11, tm_mday=27, tm_hour=8, tm_min=53, tm_sec=53, tm_wday=2, tm_yday=331, tm_isdst=0)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[:</span><span class="mi">3</span><span class="p">]</span>        <span class="c1"># momentálny dátum v tvare (rok, mesiac, deň)</span>
+<span class="hll"><span class="go">    (2019, 11, 27)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>       <span class="c1"># momentálny čas v tvare (hodiny, minúty, sekundy)</span>
+<span class="hll"><span class="go">    (8, 54, 17)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[</span><span class="mi">6</span><span class="p">]</span>         <span class="c1"># momentálny deň v týždni, kde pondelok má hodnotu 0, teda 2 označuje stredu</span>
+<span class="hll"><span class="go">    2</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> vráti momentálny čas a dátum v tvare desatinného čísla (<code class="docutils literal notranslate"><span class="pre">float</span></code>); v skutočnosti je to počet sekúnd, ktoré uplynuli od nejakého konkrétneho času v minulosti (tzv. <a class="reference external" href="https://docs.python.org/3/library/time.html?highlight=time#epoch">epocha</a>); toto číslo vieme spätne previesť na dátum a čas (pomocou <code class="docutils literal notranslate"><span class="pre">time.localtime(číslo)</span></code>) ale najčastejšie sa bude používať pri zisťovaní trvania (behu) nejakého výpočtu, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>         <span class="c1"># zapamätaj si momentálny čas v premennej start</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># nejaký výpočet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">koniec</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>        <span class="c1"># zapamätaj si momentálny čas v premennej koniec</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">koniec</span> <span class="o">-</span> <span class="n">start</span>              <span class="c1"># koľko sekúnd ubehlo medzi týmito dvoma časmi</span>
+<span class="hll"><span class="go">    33.83050608634949</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">start</span><span class="p">)[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>    <span class="c1"># čas start v tvare (hodiny, minúty, sekundy)</span>
+<span class="hll"><span class="go">    (9, 7, 1)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">koniec</span><span class="p">)[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>   <span class="c1"># čas koniec v tvare (hodiny, minúty, sekundy)</span>
+<span class="hll"><span class="go">    (9, 7, 35)</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">time.sleep(sekundy)</span></code> pozdrží výpočet na zadaný počet sekúnd; je to niečo podobné ako <code class="docutils literal notranslate"><span class="pre">canvas.after(milisekundy)</span></code>; napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">();</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">);</span> <span class="n">koniec</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">koniec</span> <span class="o">-</span> <span class="n">start</span>
+<span class="hll"><span class="go">    2.500455379486084</span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">meranie času výpočtu</p>
+<p>Funkciu <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> môžeme využiť na približné odmeranie času nejakého výpočtu. Napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># ... nejaký výpočet</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Okrem merania času môžeme zisťovať, napríklad aj počet prechodov nejakého cyklu. Otestujme teraz funkciu <code class="docutils literal notranslate"><span class="pre">odmoc()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">odmoc</span><span class="p">(</span><span class="n">cislo</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">cislo</span><span class="p">:</span>
+       <span class="n">x</span> <span class="o">+=</span> <span class="mf">0.001</span>
+       <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">pocet</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">pocet</span> <span class="o">=</span> <span class="n">odmoc</span><span class="p">(</span><span class="mi">150000000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">pocet</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Môžete dostať, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">12247.449</span> <span class="mi">12247449</span> <span class="mf">2.569</span>
+</pre></div>
+</div>
+<p>Čo označuje, že odmocnina z <code class="docutils literal notranslate"><span class="pre">150000000</span></code> je približne <code class="docutils literal notranslate"><span class="pre">12247.449</span></code>, while-cyklus bežal <code class="docutils literal notranslate"><span class="pre">12247449</span></code> krát (kontroloval podmienku, pripočítal <code class="docutils literal notranslate"><span class="pre">0.001</span></code> k <code class="docutils literal notranslate"><span class="pre">x</span></code> a zvýšil počítadlo prechodov <code class="docutils literal notranslate"><span class="pre">pocet</span></code>) a trvalo mu to približne <code class="docutils literal notranslate"><span class="pre">2.569</span></code> sekundy.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="metoda-bisekcie">
+<h3><a class="toc-backref" href="17.html#id4" role="doc-backlink">Metóda bisekcie</a><a class="headerlink" href="17.html#metoda-bisekcie" title="Link to this heading">¶</a></h3>
+<p>Využijeme inú ideu:</p>
+<ul class="simple">
+<li><p>zvolíme si interval, v ktorom sa určite bude nachádzať hľadaný výsledok (hľadaná odmocnina), napríklad nech je to interval <code class="docutils literal notranslate"><span class="pre">&lt;1,</span> <span class="pre">cislo&gt;</span></code> (pre čísla väčšie ako 1 je aj odmocnina väčšia ako 1 a určite je menšia ako samotné <code class="docutils literal notranslate"><span class="pre">cislo</span></code>)</p></li>
+<li><p>ako <code class="docutils literal notranslate"><span class="pre">x</span></code> (prvý odhad našej hľadanej odmocniny) zvolíme stred tohto intervalu</p></li>
+<li><p>zistíme, či je druhá mocnina tohto <code class="docutils literal notranslate"><span class="pre">x</span></code> väčšia ako zadané <code class="docutils literal notranslate"><span class="pre">cislo</span></code> alebo menšia</p></li>
+<li><p>ak je väčšia (<code class="docutils literal notranslate"><span class="pre">x</span></code> je už zbytočne veľké), tak upravíme predpokladaný interval, tak že jeho hornú hranicu zmeníme na <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>ak je ale menšia, upravíme dolnú hranicu intervalu na <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>tým sa nám interval zmenšil na polovicu</p></li>
+<li><p>toto celé opakujeme, kým už nie je nájdené <code class="docutils literal notranslate"><span class="pre">x</span></code> dostatočne blízko k hľadanému výsledku, t.j. či sa nelíši od výsledku menej ako zvolený rozdiel (epsilon)</p></li>
+</ul>
+<p>Zapíšme to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odmoc</span><span class="p">(</span><span class="n">cislo</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">):</span>
+    <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">od</span><span class="p">,</span> <span class="n">do</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cislo</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">od</span> <span class="o">+</span> <span class="n">do</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="hll">    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">cislo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
+</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">cislo</span><span class="p">:</span>
+           <span class="n">do</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">od</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">od</span> <span class="o">+</span> <span class="n">do</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">pocet</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">pocet</span> <span class="o">=</span> <span class="n">odmoc</span><span class="p">(</span><span class="mi">150000000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">pocet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Do funkcie sme pridali aj počítadlo prechodov while-cyklu. V tomto prípade nemá zmysel zistovať čas výpočtu tejto funkcie, lebo počet prechodov tohto cyklu je len <code class="docutils literal notranslate"><span class="pre">52</span></code>, čo je výrazné zlepšenie oproti predchádzajúcemu riešeniu, keď prechodov while-cyklom (hoci jednoduchších) bolo vyše 12 miliónov.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="hladanie-udajov">
+<h2><a class="toc-backref" href="17.html#id5" role="doc-backlink">Hľadanie údajov</a><a class="headerlink" href="17.html#hladanie-udajov" title="Link to this heading">¶</a></h2>
+<p>Predpokladáme, že máme telefónny zoznam s <code class="docutils literal notranslate"><span class="pre">1000000</span></code> účastníkmi, teda zoznam dvojíc <code class="docutils literal notranslate"><span class="pre">(meno,</span> <span class="pre">číslo)</span></code>. Ak takýto zoznam nemáme usporiadaný podľa abecedy, keď potrebujeme nájsť nejakého účastnika, musíme prejsť celý zoznam. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zisti</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">meno</span><span class="p">,</span> <span class="n">cislo</span> <span class="ow">in</span> <span class="n">zoznam</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">meno</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cislo</span>
+    <span class="k">return</span> <span class="s1">&#39;nenasiel&#39;</span>
+</pre></div>
+</div>
+<p>Aby sme takýto algoritmus mohli jednoduchšie testovať, budeme hľadať konkrétnu hodnotu v náhodnom zozname celých čísel. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">zisti</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoznam</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">zisti</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="n">cas</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">start</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">cas</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Program teraz vygeneruje zoznam <code class="docutils literal notranslate"><span class="pre">2000</span></code> náhodných čísel z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;0,</span> <span class="pre">1999&gt;</span></code> a potom pre každé číslo z takého intervalu skontroluje, či sa nachádza v takomto náhodnom zozname, t.j. 2000-krát zavolá hľadanie čísla v 2000-prvkovom náhodnom zozname. Tento test spustime viac krát pre rôzne <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">16000</span><span class="p">,</span> <span class="mi">32000</span><span class="p">,</span> <span class="mi">64000</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">zisti</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">cas</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">start</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cas</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Teraz sú tie výsledky zaujímavejšie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2000</span> <span class="mf">0.119</span>
+<span class="mi">4000</span> <span class="mf">0.441</span>
+<span class="mi">8000</span> <span class="mf">1.9</span>
+<span class="mi">16000</span> <span class="mf">7.173</span>
+<span class="mi">32000</span> <span class="mf">28.545</span>
+<span class="mi">64000</span> <span class="mf">113.392</span>
+</pre></div>
+</div>
+<p>Môžeme vidieť, že keď sa zdvojnásobí veľkosť zoznamu a teda aj počet volaní tejto funkcie, tak sa výsledný čas zväčší približne <strong>štyrykrát</strong>. Aj bez skúšania na počítači by sme vedeli určiť približný čas výpočtu, napríklad pre 128000 alebo 256000 prvkové zoznamy. Bolo by to približne <code class="docutils literal notranslate"><span class="pre">450</span></code> a <code class="docutils literal notranslate"><span class="pre">1800</span></code> sekúnd.</p>
+<p>Ak by nejaká telefónna firma používala takýto pomalý program na zisťovanie telefónnych čísel, tak by zákazníci neboli veľmi spokojní. Zrejme múdre programy na prehľadávanie telefónnych zoznamov používajú nejaké lepšie stratégie. V prvom rade sú takéto zoznamy usporiadané podľa mien, vďaka čomu sa bude dať hľadať oveľa rýchlejšie - budeme tomu hovoriť <strong>binárne vyhľadávanie</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="binarne-vyhladavanie">
+<h3><a class="toc-backref" href="17.html#id6" role="doc-backlink">Binárne vyhľadávanie</a><a class="headerlink" href="17.html#binarne-vyhladavanie" title="Link to this heading">¶</a></h3>
+<p>Použijeme podobnú ideu, akou sme na začiatku prednášky riešili úlohu na zisťovanie druhej odmocniny nejakého čísla. V tomto prípade využijeme ten fakt, že v reálnom telefónnom zozname sú všetky mená usporiadané podľa abecedy. Vďaka tomu, ak by sme si vybrali úplne náhodnú pozíciu v takomto zozname, na základe príslušnej hodnoty v tabuľke, sa vieme jednoznačne rozhodnúť, či ďalej budeme pokračovať v hľadaní v časti zoznamu pred touto pozíciou alebo za. Nebudeme ale túto pozíciu voliť náhodne, vyberieme pozíciu v strede zoznamu.</p>
+<p>Ukážme to na príklade: máme telefónny zoznam, ktorý je usporiadaný podľa mien. Pre lepšie znázornenie použijeme len dvojpísmenové mená, napríklad tu je utriedený 13-prvkový zoznam a ideme v ňom hľadať meno <code class="docutils literal notranslate"><span class="pre">'hj'</span></code> (možno Hraško Ján):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 25.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ab</strong></p></td>
+<td><p><strong>ad</strong></p></td>
+<td><p><strong>dd</strong></p></td>
+<td><p><strong>fm</strong></p></td>
+<td><p><strong>hj</strong></p></td>
+<td><p><strong>jj</strong></p></td>
+<td><p><strong>ka</strong></p></td>
+<td><p><strong>kz</strong></p></td>
+<td><p><strong>mo</strong></p></td>
+<td><p><strong>pa</strong></p></td>
+<td><p><strong>rd</strong></p></td>
+<td><p><strong>tz</strong></p></td>
+<td><p><strong>zz</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>zac</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>stred</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>kon</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Označili sme tu začiatok a koniec intervalu zoznamu, v ktorom práve hľadáme: na začiatku je to kompletný zoznam od indexu 0 až po 12. Vypočítame <code class="docutils literal notranslate"><span class="pre">stred</span></code> (ako <code class="docutils literal notranslate"><span class="pre">(zac+kon)//2</span></code>) - to je pozícia, kam sa pozrieme úplne na začiatku. Keďže v strede zoznamu je meno <code class="docutils literal notranslate"><span class="pre">'ka'</span></code>, tak zrejme všetky mená v zozname za týmto stredom sú v abecede vyššie a teda <code class="docutils literal notranslate"><span class="pre">'hj'</span></code> sa medzi nimi určite nenachádza (platí <code class="docutils literal notranslate"><span class="pre">'hj'</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">'ka'</span></code>). Preto odteraz bude stačiť hľadať len v prvej polovici zoznamu teda v intervale od 0 do 5. Opravíme koncovú hranicu intervalu a vypočítame nový <code class="docutils literal notranslate"><span class="pre">stred</span></code>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 25.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ab</strong></p></td>
+<td><p><strong>ad</strong></p></td>
+<td><p><strong>dd</strong></p></td>
+<td><p><strong>fm</strong></p></td>
+<td><p><strong>hj</strong></p></td>
+<td><p><strong>jj</strong></p></td>
+<td><p>ka</p></td>
+<td><p>kz</p></td>
+<td><p>mo</p></td>
+<td><p>pa</p></td>
+<td><p>rd</p></td>
+<td><p>tz</p></td>
+<td><p>zz</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>zac</p></td>
+<td></td>
+<td><p>stred</p></td>
+<td></td>
+<td></td>
+<td><p>kon</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Stredná pozícia v tomto prípade padla na meno <code class="docutils literal notranslate"><span class="pre">'dd'</span></code>. Keďže <code class="docutils literal notranslate"><span class="pre">'hj'</span></code> je v abecede až za <code class="docutils literal notranslate"><span class="pre">'dd'</span></code> (platí <code class="docutils literal notranslate"><span class="pre">'dd'</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">'hj'</span></code>), opäť prepočítame hranice sledovaného intervalu a tiež nový stred:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 25.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ab</p></td>
+<td><p>ad</p></td>
+<td><p>dd</p></td>
+<td><p><strong>fm</strong></p></td>
+<td><p><strong>hj</strong></p></td>
+<td><p><strong>jj</strong></p></td>
+<td><p>ka</p></td>
+<td><p>kz</p></td>
+<td><p>mo</p></td>
+<td><p>pa</p></td>
+<td><p>rd</p></td>
+<td><p>tz</p></td>
+<td><p>zz</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>zac</p></td>
+<td><p>stred</p></td>
+<td><p>kon</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Už pri tomto treťom kroku algoritmu sa nám podarilo objaviť pozíciu hľadaného mena v zozname: <code class="docutils literal notranslate"><span class="pre">stred</span></code> teraz odkazuje presne na naše hľadané slovo.</p>
+<p>Ak by sa hľadané slovo v tomto telefónnom zozname nenachádzalo (napríklad namiesto <code class="docutils literal notranslate"><span class="pre">'hj'</span></code> by sme hľadali <code class="docutils literal notranslate"><span class="pre">'gr'</span></code>), tak by algoritmus pokračoval ďalšími krokmi: opäť porovnáme stredný prvok s našim hľadaným (<code class="docutils literal notranslate"><span class="pre">'gr'</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">'hj'</span></code>) a keďže je v abecede pred ním, zmeníme interval tak, že <code class="docutils literal notranslate"><span class="pre">zac</span></code> == <code class="docutils literal notranslate"><span class="pre">kon</span></code> == <code class="docutils literal notranslate"><span class="pre">stred</span></code>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 5.7%" />
+<col style="width: 25.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ab</p></td>
+<td><p>ad</p></td>
+<td><p>dd</p></td>
+<td><p><strong>fm</strong></p></td>
+<td><p>hj</p></td>
+<td><p>jj</p></td>
+<td><p>ka</p></td>
+<td><p>kz</p></td>
+<td><p>mo</p></td>
+<td><p>pa</p></td>
+<td><p>rd</p></td>
+<td><p>tz</p></td>
+<td><p>zz</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>stred</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>A to je teda už definitívny koniec behu algoritmu (interval je 1-prvkový): keďže tento jediný prvok je rôzny od hľadaného <code class="docutils literal notranslate"><span class="pre">'gr'</span></code>, je nám jasné, že sme skončili so správou „nenašli“.</p>
+<p>Zapíšme tento algoritmus do Pythonu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zisti</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="n">zac</span> <span class="o">=</span> <span class="mi">0</span>                            <span class="c1"># zaciatok intervalu</span>
+    <span class="n">kon</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoznam</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>              <span class="c1"># koniec intervalu</span>
+    <span class="k">while</span> <span class="n">zac</span> <span class="o">&lt;=</span> <span class="n">kon</span><span class="p">:</span>
+<span class="hll">        <span class="n">stred</span> <span class="o">=</span> <span class="p">(</span><span class="n">zac</span> <span class="o">+</span> <span class="n">kon</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>       <span class="c1"># stred intervalu</span>
+</span>        <span class="k">if</span> <span class="n">zoznam</span><span class="p">[</span><span class="n">stred</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">:</span>
+<span class="hll">            <span class="n">zac</span> <span class="o">=</span> <span class="n">stred</span> <span class="o">+</span> <span class="mi">1</span>
+</span>        <span class="k">elif</span> <span class="n">zoznam</span><span class="p">[</span><span class="n">stred</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">hodnota</span><span class="p">:</span>
+<span class="hll">            <span class="n">kon</span> <span class="o">=</span> <span class="n">stred</span> <span class="o">-</span> <span class="mi">1</span>
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Ak by sme teraz spustili rovnaké testy ako pred tým so sekvenčným vyhľadávaním, boli by sme milo prekvapení: čas na hľadanie v 1000-prvkovom zozname a 1000000-prvkovom zozname je skoro stále rovnaký a sú to len tisíciny milisekúnd.</p>
+<p>Predpokladajme, že náš telefónny zoznam má <code class="docutils literal notranslate"><span class="pre">1000000</span></code> účastníkov. Zrejme po prvom prechode while-cyklu sa veľkosť prehľadávaného intervalu zmenší na polovicu, teda <code class="docutils literal notranslate"><span class="pre">500000</span></code>. Keď budeme takto pokračovať, veľkosť intervalu sa bude postupne zmenšovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">na</span> <span class="n">začiatku</span> <span class="mi">1000000</span> <span class="n">účastníkov</span>
+<span class="n">po</span> <span class="mf">1.</span> <span class="n">porovnaní</span><span class="p">:</span> <span class="mi">500000</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">2.</span> <span class="n">porovnaní</span><span class="p">:</span> <span class="mi">250000</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">3.</span> <span class="n">porovnaní</span><span class="p">:</span> <span class="mi">125000</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">4.</span> <span class="n">porovnaní</span><span class="p">:</span>  <span class="mi">62500</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">5.</span> <span class="n">porovnaní</span><span class="p">:</span>  <span class="mi">31250</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">6.</span> <span class="n">porovnaní</span><span class="p">:</span>  <span class="mi">15625</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">7.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">7812</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">8.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">3906</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">9.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">1953</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">10.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">976</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">11.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">488</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">12.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">244</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">13.</span> <span class="n">porovnaní</span><span class="p">:</span>   <span class="mi">122</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">14.</span> <span class="n">porovnaní</span><span class="p">:</span>    <span class="mi">61</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">15.</span> <span class="n">porovnaní</span><span class="p">:</span>    <span class="mi">30</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">16.</span> <span class="n">porovnaní</span><span class="p">:</span>    <span class="mi">15</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">17.</span> <span class="n">porovnaní</span><span class="p">:</span>     <span class="mi">7</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">18.</span> <span class="n">porovnaní</span><span class="p">:</span>     <span class="mi">3</span> <span class="n">úsek</span>
+<span class="n">po</span> <span class="mf">19.</span> <span class="n">porovnaní</span><span class="p">:</span>     <span class="mi">1</span> <span class="n">úsek</span>
+</pre></div>
+</div>
+<p>Vidíme, že maximálne po <code class="docutils literal notranslate"><span class="pre">19</span></code> prechodoch cyklu, funkcia vie zistiť, či sa hľadaná hodnota v zozname nachádza. Zrejme počet cyklov, teda porovnaní s niektorými prvkami zoznamu závisí od počiatočnej veľkosti zoznamu. Môžeme odhadnúť, že je to približne dvojkový logaritmus veľkosti zoznamu.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="asociativne-polia">
+<h2><a class="toc-backref" href="17.html#id7" role="doc-backlink">Asociatívne polia</a><a class="headerlink" href="17.html#asociativne-polia" title="Link to this heading">¶</a></h2>
+<p>S dátovou štruktúrou slovník, resp. asociatívne pole (pythonovský typ <code class="docutils literal notranslate"><span class="pre">dict</span></code>, niekedy sa mu hovorí aj <strong>map</strong>, keďže sa mapujú kľúče na nejaké hodnoty) už máme dlhšie nemalé programátorské skúsenosti:</p>
+<ul>
+<li><p>je podobné obyčajnému zoznamu s tým rozdielom, že indexom nemusia byť len celé čísla od 0 po nejakú konkrétnu hodnotu, ale indexom môže byť skoro hocijaká hodnota, napríklad aj desatinné čísla, reťazce aj n-tice hodnôt, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mf">3.14</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pi&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sto&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>indexy asociatívnych polí nazývame kľúče a máme možnosť získať postupnosť všetkých kľúčov, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>   <span class="c1"># metóda keys() je iterátor</span>
+<span class="go">[3.14, (100, 200), &#39;sto&#39;]</span>
+</pre></div>
+</div>
+</li>
+<li><p>vieme získať aj všetky hodnoty, ktoré sú asociované (namapované) na kľúče, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>   <span class="c1"># metóda values() je iterátor</span>
+<span class="go">[&#39;pi&#39;, &lt;turtle.Turtle object&gt;, 100]</span>
+</pre></div>
+</div>
+</li>
+<li><p>okrem tohoto vieme získať aj všetky dvojice (kľúč, hodnota), z ktorých je asociatívne pole zložené, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>   <span class="c1"># metóda items() je iterátor</span>
+<span class="go">[(3.14, &#39;pi&#39;), ((100, 200), &lt;turtle.Turtle object&gt;), (&#39;sto&#39;, 100)]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Aby sme lepšie pochopili, na akom princípe fungujú asociatívne polia, zadefinujme si vlastnú zjednodušenú verziu len so základnými operáciami:</p>
+<ul class="simple">
+<li><p>zistenie, či sa nejaký kľúč v asociatívnom poli nachádza, napríklad <code class="docutils literal notranslate"><span class="pre">kluc</span> <span class="pre">in</span> <span class="pre">pole</span></code>, zapíšeme magickou metódou <code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">kluc)</span></code></p></li>
+<li><p>zistenie asociovanej hodnoty pre daný kľúč, napríklad <code class="docutils literal notranslate"><span class="pre">pole[kluc]</span></code>, zapíšeme magickou metódou <code class="docutils literal notranslate"><span class="pre">__getitems__(self,</span> <span class="pre">kluc)</span></code></p></li>
+<li><p>priradenie asociovanej hodnoty pre daný kľúč, napríklad <code class="docutils literal notranslate"><span class="pre">pole[kluc]</span> <span class="pre">=</span> <span class="pre">hodnota</span></code>, zapíšeme magickou metódou <code class="docutils literal notranslate"><span class="pre">__setitems__(self,</span> <span class="pre">kluc,</span> <span class="pre">hodnota)</span></code></p></li>
+<li><p>samotné asociatívne pole realizujeme ako zoznam dvojíc <code class="docutils literal notranslate"><span class="pre">(kluc,</span> <span class="pre">hodnota)</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">h</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Môžeme otestovať, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">AsocPole</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prípadne rovnaký test môžeme urobiť aj so štandardným typom <code class="docutils literal notranslate"><span class="pre">dict</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">aa</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aa</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">tab</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">aa</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p>Zrejme to funguje správne, len z predchádzajúcich tém v dnešnej prednáške vieme, že pre veľké asociatívne polia to bude asi nepoužiteľne pomalé. Ak by boli všetky kľúče rovnakého typu, mohli by sme ich utriediť a potom použiť binárne vyhľadávanie, ktoré je už naozaj rýchle. Len si uvedomte, že vkladanie novej dvojice <code class="docutils literal notranslate"><span class="pre">(kluc,</span> <span class="pre">hodnota)</span></code> musí zachovať usporiadanie poľa kľúčov. Je to riešiteľné, ale obmedzenie na kľúče rovnakého typu neumožňuje realizovať kompletnú funkčnosť asociatívneho pola.</p>
+<p>Ďalej ukážeme, ako sú asociatívne polia efektívne realizované nielen v Pythone, ale aj v iných programovacích jazykoch (napríklad Java, C++, C#, Javascript, …).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="hasovacia-tabulka">
+<h3><a class="toc-backref" href="17.html#id8" role="doc-backlink">Hašovacia tabuľka</a><a class="headerlink" href="17.html#hasovacia-tabulka" title="Link to this heading">¶</a></h3>
+<p>V ďalšej časti budeme v niekoľkých krokoch vylepšovať jednu novú ideu, ktorú postupne dotiahneme až do veľmi efektívnej realizácie.</p>
+<p class="h4 rubric">Index ako kľúč</p>
+<p>Začneme s tým, že budeme predpokladať:</p>
+<ul class="simple">
+<li><p>kľúče budú len celé čísla</p></li>
+<li><p>kľúče budú mať hodnoty len z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;0,</span> <span class="pre">max-1&gt;</span></code> (pre dopredu známe <code class="docutils literal notranslate"><span class="pre">max</span></code>, tzv. kapacita tabuľky)</p></li>
+</ul>
+<p>Vďaka tomuto obmedzeniu môžeme výrazne zjednodušiť realizáciu všetkých operácií:</p>
+<ul class="simple">
+<li><p>už na začiatku sa v zozname <code class="docutils literal notranslate"><span class="pre">tab</span></code> vyhradí maximálna kapacita a do každého prvku sa priradí <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">__getitem__(kluc)</span></code></p>
+<ul>
+<li><p>keďže <code class="docutils literal notranslate"><span class="pre">kluc</span></code> je indexom do zoznamu, stačí pozrieť, či tam nie je <code class="docutils literal notranslate"><span class="pre">None</span></code> (vtedy vyvolá výnimku <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>) a vráti hodnotu v tomto prvku</p></li>
+<li><p>zrejme skontroluje aj to, či je kľúč zo správneno intervalu</p></li>
+</ul>
+</li>
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">__setitem__(key,</span> <span class="pre">value)</span></code></p>
+<ul>
+<li><p>ak je <code class="docutils literal notranslate"><span class="pre">kluc</span></code> index zo správneho intervalu, priamo na túto pozíciu priradí novú hodnotu</p></li>
+</ul>
+</li>
+</ul>
+<p>Implementácia:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kapacita</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">kapacita</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">kluc</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">kluc</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">kluc</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">kluc</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">kluc</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span><span class="p">]</span> <span class="o">=</span> <span class="n">hodnota</span>
+</pre></div>
+</div>
+<p>Táto implementácia je neuveriteľne rýchla - žiadna operácia neobsahuje cyklus, ale len test a priradenie.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h4 rubric">Riešenie kolízií</p>
+<p>V ďalšom kroku vylepšovania tejto idey zrušíme predpoklad, vďaka ktorému sme všetky prvky asociatívneho poľa mohli ukladať priamo do jedného veľkého zoznamu, lebo kľúče priamo zodpovedali indexom do tohto zoznamu (od 0 do nejakého max-1). Teraz vyhradíme menší zoznam, ako je rozsah očakávaných kľúčov a pozíciu v zozname (<code class="docutils literal notranslate"><span class="pre">index</span></code>) zistíme tak, že vypočítame zvyšok po delení kľúča veľkosťou zoznamu. Kvôli tomuto sa ale môže stať to, že pre dva rôzne kľúče dostávame rovnaký index do zoznamu. Tomuto hovoríme <strong>kolízia</strong> a musíme to nejako rozumne vyriešiť.</p>
+<p>Naša prvá verzia riešenia kolízií, bude pomocou tzv. <strong>vedierok</strong> (<strong>bucket</strong>): prvkami samotného zoznamu budú namiesto dvojíc (kľúč, hodnota) vedierka, t. j. postupnosti všetkých takých dvojíc (kľúč, hodnota), pre ktoré sa kľúč prepočítal na ten istý index prvku zoznamu (majú rovnaký zvyšok po delení kľúča veľkosťou zoznamu). <strong>Vedierka</strong> môžeme realizovať rôznymi spôsobmi, my na to použijeme pythonovský zoznam (opäť typ <code class="docutils literal notranslate"><span class="pre">list</span></code>) a pridávať nový kľúč budeme vždy na koniec tohto malého zoznamu (vedierka).</p>
+<p>Nová verzia realizácie asociatívneho poľa pomocou vedierok:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kapacita</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">kapacita</span><span class="p">)]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+<span class="hll">        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+</span>        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+<span class="hll">        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+</span>        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">h</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+<span class="hll">        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">kluc</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bucket</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Táto definícia sa veľmi podobá predchádzajúcej realizácii <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code> s tým rozdielom, že zoznam <code class="docutils literal notranslate"><span class="pre">tab</span></code> obsahuje vedierka namiesto samotných dvojíc <code class="docutils literal notranslate"><span class="pre">(kluc,</span> <span class="pre">hodnota)</span></code>. Každé vedierko je na začiatku prázdny zoznam, t. j. <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Každá operácia najprv zistí, s ktorým vedierkom sa bude pracovať a potom túto operáciu urobí práve len s týmto jedným vedierkom. Každé vedierko je teda malé asociatívne pole realizované ako „neutriedený zoznam“. Z toho potom vyplýva, že samotné operácie sú tak rýchle ako sú veľké vedierka. Ak sú vedierka malé, operácie sú veľmi rýchle, ak je niektoré vedierko príliš veľké dosť to zhorší efektívnosť.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h4 rubric">Hašovacia funkcia</p>
+<p>Verzia <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code> má ešte taký malý ale podstatný nedostatok (obmedzenie), že kľúčom musí byť celé číslo. Ak by sme potrebovali, napríklad ukladať kľúče typu znakový reťazec, museli by sme na to zvoliť nejakú rozumnú stratégiu. Zvoľme takýto spôsob prekódovania reťazca na celé číslo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">koduj</span><span class="p">(</span><span class="n">retazec</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">znak</span> <span class="ow">in</span> <span class="n">retazec</span><span class="p">:</span>
+        <span class="n">vysl</span> <span class="o">=</span> <span class="n">vysl</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">znak</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Takáto funkcia naozaj prevedie ľubovoľný reťazec na celé číslo, ale má takúto nie najlepšiu vlastnosť: všetky tieto reťazce <code class="docutils literal notranslate"><span class="pre">'abc'</span></code>, <code class="docutils literal notranslate"><span class="pre">'acb'</span></code>, <code class="docutils literal notranslate"><span class="pre">'bac'</span></code>, <code class="docutils literal notranslate"><span class="pre">'bca'</span></code>, … sa zakódujú rovnakým celým číslom 294. Zrejme tomuto algoritmu nezáleží na poradí znakov v reťazci. Vhodnejšie by bolo, keby funkcia počítala kód napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">koduj</span><span class="p">(</span><span class="n">retazec</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">znak</span> <span class="ow">in</span> <span class="n">retazec</span><span class="p">:</span>
+        <span class="n">vysl</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">vysl</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">znak</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Konštanta 100 sa častejšie nahradí nejakou mocninou 2, napríklad 32. Dokonca malým vylepšením môžeme zabezpečiť, aby funkcia fungovala nielen pre reťazce ale aj pre ľubovoľný iný typ:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">koduj</span><span class="p">(</span><span class="n">kluc</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">znak</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">kluc</span><span class="p">):</span>
+        <span class="n">vysl</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">*</span> <span class="n">vysl</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">znak</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Vďaka takémuto kódovaniu, by sme mohli zabezpečiť, aby asociatívne pole fungovalo naozaj pre ľubovoľný typ kľúča. V našom prípade sa takejto funkcii hovorí <strong>hašovacia</strong> funkcia (hash function). Teda hašovacou funkciou sa nazýva taká funkcia, ktorá z hodnoty (skoro) ľubovoľného typu vyrobí číselný kód, ktorý sa dá použiť na mapovanie kľúčov na indexy tabuľky. Štruktúra, ktorej kľúče mapujeme na indexy tabuľky pomocou hašovacej funkcie, sa nazýva <strong>hašovacia tabuľka</strong> (hash table). Upravme <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code> na hašovaciu tabuľku, pričom namiesto našej funkcie <code class="docutils literal notranslate"><span class="pre">koduj()</span></code> využijeme štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">hash()</span></code>, ktorá robí skoro to isté ale efektívnejšie (funguje len pre immutable typy):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kapacita</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">kapacita</span><span class="p">)]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+<span class="hll">        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+</span>        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+<span class="hll">        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+</span>        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">h</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+<span class="hll">        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bucket</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Zhrňme:</p>
+<ul class="simple">
+<li><p>použili sme tu štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">hash()</span></code>, ktorá ľubovoľný kľúč prevedie na celé číslo</p></li>
+<li><p>aby sme z tohto čísla dostali index do zoznamu, zistíme zvyšok po delení veľkosťou zoznamu <code class="docutils literal notranslate"><span class="pre">tab</span></code> - takto sa dostávame k príslušnému vedierku (bucket)</p></li>
+<li><p>zrejme musíme už na začiatku nejako rozumne odhadnúť veľkosť zoznamu: skúsenosti ukazujú, že by malo byť aspoň dvojnásobne veľké ako sa odhaduje počet kľúčov, inak bude veľmi narastať počet kolízií a budú neúmerne veľké skupiny dvojíc s rovnakým kľúčom (vedierka)</p></li>
+</ul>
+<p>Na otestovanie tejto najnovšej verzie pridame do triedy <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code> pomocnú metódu <code class="docutils literal notranslate"><span class="pre">vypis</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">bucket</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">*</span><span class="n">bucket</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">AsocPole</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">a</span><span class="o">.</span><span class="n">vypis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Môžeme dostať takýto výpis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="mi">11</span> <span class="p">(</span><span class="s1">&#39;16&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="mi">784</span><span class="p">)</span>
+<span class="mi">12</span> <span class="p">(</span><span class="s1">&#39;21&#39;</span><span class="p">,</span> <span class="mi">441</span><span class="p">)</span>
+<span class="mi">13</span> <span class="p">(</span><span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="mi">900</span><span class="p">)</span>
+<span class="mi">14</span> <span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="mi">15</span> <span class="p">(</span><span class="s1">&#39;26&#39;</span><span class="p">,</span> <span class="mi">676</span><span class="p">)</span>
+<span class="mi">16</span> <span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="mi">17</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">,</span> <span class="mi">324</span><span class="p">)</span>
+<span class="mi">19</span> <span class="p">(</span><span class="s1">&#39;23&#39;</span><span class="p">,</span> <span class="mi">529</span><span class="p">)</span>
+<span class="mi">24</span> <span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;13&#39;</span><span class="p">,</span> <span class="mi">169</span><span class="p">)</span>
+<span class="mi">25</span> <span class="p">(</span><span class="s1">&#39;14&#39;</span><span class="p">,</span> <span class="mi">196</span><span class="p">)</span>
+<span class="mi">28</span> <span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="mi">81</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;15&#39;</span><span class="p">,</span> <span class="mi">225</span><span class="p">)</span>
+<span class="mi">30</span> <span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="mi">49</span><span class="p">)</span>
+<span class="mi">31</span> <span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">144</span><span class="p">)</span>
+<span class="mi">35</span> <span class="p">(</span><span class="s1">&#39;24&#39;</span><span class="p">,</span> <span class="mi">576</span><span class="p">)</span>
+<span class="mi">36</span> <span class="p">(</span><span class="s1">&#39;17&#39;</span><span class="p">,</span> <span class="mi">289</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="mi">484</span><span class="p">)</span>
+<span class="mi">38</span> <span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;29&#39;</span><span class="p">,</span> <span class="mi">841</span><span class="p">)</span>
+<span class="mi">41</span> <span class="p">(</span><span class="s1">&#39;27&#39;</span><span class="p">,</span> <span class="mi">729</span><span class="p">)</span>
+<span class="mi">43</span> <span class="p">(</span><span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="mi">45</span> <span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="mi">121</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;19&#39;</span><span class="p">,</span> <span class="mi">361</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;25&#39;</span><span class="p">,</span> <span class="mi">625</span><span class="p">)</span>
+<span class="mi">48</span> <span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pre každý index do zoznamu <code class="docutils literal notranslate"><span class="pre">tab</span></code> vidíme zoznamy vedierok: niektoré sú prázdne, niektoré majú jeden, dva, alebo tri prvky, čo znamená, že vedierka sú malé a hľadať sa v nich bude rýchlo.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h4 rubric">Nafukovanie tabuľky</p>
+<p>Doterajšia realizácia má tú výhodu, že sa ľahko implementuje, ale má aj niekoľko nedostatkov, napríklad:</p>
+<ul class="simple">
+<li><p>má vyššie pamäťové nároky (okrem samotných dvojíc, zoznamu ako hašovacej tabuľky potrebujeme ešte minimálne toľko ďalších štruktúr ako je počet neprázdnych vedierok) - čím viac prvkov je vo vedierkach tým viac je nevyužitého priestoru v samotnej tabuľke (sú prázdne vedierka)</p></li>
+<li><p>ak sa vedierka zaplnia nad nejakú kritickú hranicu (napríklad príde priveľa dvojíc s rovnakým indexom do tabuľky), výrazne sa spomalí celá realizácia asociatívneho poľa - čím viac je prvkov v tabuľke, tým sú všetky operácie s ňou pomalšie</p></li>
+<li><p>ak máme viac kľúčov s veľmi blízkymi hašovacími hodnotami, tak tieto sa zvyknú sústrediť blízko seba (ak robíme len modulo veľkosťou tabuľky)</p></li>
+</ul>
+<p>Toto ideu môžeme trochu vylepšiť, napríklad takto:</p>
+<ul>
+<li><p>na začiatku rezervujeme len <strong>malú tabuľku</strong> vedierok a tento zoznam budeme v niektorých prípadoch nafukovať</p></li>
+<li><p>prázdne vedierko nebudeme uchovávať ako prázdny zoznam <code class="docutils literal notranslate"><span class="pre">[]</span></code> ale ako hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code> (urýchli to zmenu veľkosti <code class="docutils literal notranslate"><span class="pre">resize</span></code>)</p></li>
+<li><p>takže tabuľka <code class="docutils literal notranslate"><span class="pre">tab</span></code> bude mať počiatočnú vyhradenú veľkosť napríklad <code class="docutils literal notranslate"><span class="pre">11</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Nafukovať tabuľku budeme vo funkcii <code class="docutils literal notranslate"><span class="pre">__setitem__()</span></code> vždy vtedy, keď počet prvkov, ktoré sú v nej uložené, presiahne nejakú konkrétnu hranicu. Tu bude dôležitý práve pomer zaplnenia tabuľky (tzv. <strong>load factor</strong>), t.j. pomer počtu zaplnených prvkov k veľkosti celej tabuľky. Nemalo by to presiahnuť hodnotu <strong>1</strong>. V praxi sa ukazuje, že tabuľka má dobrú veľkosť, keď je zaplnená na maximálne 90%. Všimnite si, že vo vyššie uvedenom príklade s hašovacou tabuľkou veľkosti 50, po pridaní posledného kľúča <code class="docutils literal notranslate"><span class="pre">'30'</span></code>, bude load factor <strong>0.6</strong>, čo je menej ako 90%. Inak by bolo treba tabuľku nejako nafukovať.</p>
+<ul>
+<li><p>napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Samotná funkcia <strong>resize</strong> tabuľky:</p>
+<ul class="simple">
+<li><p>do pomocného zoznamu si odložíme momentálny obsah tabuľky (všetky dvojice (kľúč, hodnota))</p></li>
+<li><p>vytvoríme novú prázdnu tabuľku požadovanej veľkosti</p></li>
+<li><p>postupne sem pridáme všetky zapamätané dvojice (kľúč, hodnota)</p></li>
+</ul>
+<p>Kompletná verzia s nafukovaním:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mi">11</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">h</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+<span class="hll">        <span class="n">ix</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+</span>        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bucket</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                    <span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+                    <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+<span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">bucket</span> <span class="o">=</span> <span class="p">[]</span>
+</span>        <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">))</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nova_dlzka</span><span class="p">):</span>
+</span><span class="hll">        <span class="n">old_tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">nova_dlzka</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="n">old_tab</span><span class="p">:</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">bucket</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span class="hll">                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+</span><span class="hll">                    <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">bucket</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">*</span><span class="n">bucket</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otestujte:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">AsocPole</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">a</span><span class="o">.</span><span class="n">vypis</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Stratégia bez vedierok</p>
+<p>Zmeňme stratégiu pri riešení kolízií:</p>
+<ul class="simple">
+<li><p>do tabuľky budeme na vypočítané pozície ukladať priamo dvojicu <code class="docutils literal notranslate"><span class="pre">(kluc,</span> <span class="pre">hodnota)</span></code> - namiesto vedierok (reťaze dvojíc)</p></li>
+<li><p>kým nepríde ku kolízii (máme umiestniť novú dvojicu <code class="docutils literal notranslate"><span class="pre">(kluc,</span> <span class="pre">hodnota)</span></code> na obsadenú pozíciu), je všetko v poriadku</p></li>
+<li><p>ak je teda vypočítaná pozícia už obsadená, treba vybrať nejakú inú, ale tak, aby sme ju pri neskoršom hľadaní našli</p></li>
+<li><p>možností je viac, ale najjednoduchšou je použiť nasledovné políčko v tabuľke, resp. postupne hľadať najbližšie voľné</p></li>
+<li><p>tomuto hovoríme <strong>otvorené adresovanie</strong>, tieto dva pojmy sú synonymá, lebo:</p>
+<ul>
+<li><p><strong>otvorené adresovanie</strong> (open addressing) označuje, že vypočítaná adresa (pomocou <code class="docutils literal notranslate"><span class="pre">hash()</span></code>) ešte nie je konečná, ale od tejto adresy sa bude hľadať konečná pozícia, bude to fungovať len v uzavretom hašovaní</p></li>
+<li><p><strong>uzavreté hašovanie</strong> (closed hashing) označuje, že vkladať sa bude iba niekam do tejto jednej tabuľky a nikam inam, dá sa to docieliť len otvoreným adresovaním</p></li>
+</ul>
+</li>
+</ul>
+<p>Keďže pri kolízii hľadáme najbližšie voľné políčko v tabuľke, budeme tomu hovoriť <strong>linear probing</strong>, t.j. lineárne pokusy. Výpočet indexu by sme mohli zapísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kde <code class="docutils literal notranslate"><span class="pre">i</span></code> je i-ty pokus o nájdenie voľného miesta, teda na začiatku 0, potom 1, …</p>
+<p>Hľadanie skutočnej pozície kľúča bude teraz trochu komplikovanejšie (zapíšeme to do pomocnej funkcie <code class="docutils literal notranslate"><span class="pre">find(kluc)</span></code>):</p>
+<ul class="simple">
+<li><p>podľa kľúča zistíme, na akom indexe by sa mal nachádzať (funkcia <code class="docutils literal notranslate"><span class="pre">hash(kluc)</span></code>)</p></li>
+<li><p>ak je to prázdne políčko tabuľky, znamená to, že sme nenašli a vrátime hodnotu <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>ak je to nejaká dvojica <code class="docutils literal notranslate"><span class="pre">(kluc1,</span> <span class="pre">hodnota1)</span></code>, porovnáme <code class="docutils literal notranslate"><span class="pre">kluc1</span></code> s hľadaným <code class="docutils literal notranslate"><span class="pre">kluc</span></code>, ak to sedí, vrátime <code class="docutils literal notranslate"><span class="pre">True</span></code> a nájdený index</p></li>
+<li><p>inak zvýšime index o 1 (prípadne urobíme modulo veľkosť tabuľky) a pokračujeme v hľadaní</p></li>
+</ul>
+<p>Ak nie je tabuľka úplne zaplnená, určite skončíme buď na <code class="docutils literal notranslate"><span class="pre">None</span></code> alebo na políčku s hľadaným kľúčom. Podobne ako pri hašovaní s vedierkami, aj teraz musíme zabezpečiť, aby boli v tabuľke voľné miesta. V tomto prípade sú voľné miesta ešte dôležitejšie, lebo nám robia zarážky pri hľadaní. Preto <strong>load factor</strong> by mal byť výrazne menší ako <code class="docutils literal notranslate"><span class="pre">1</span></code>, odporúča sa medzi <code class="docutils literal notranslate"><span class="pre">0.5</span></code> a <code class="docutils literal notranslate"><span class="pre">0.8</span></code>. Napríklad, rôzne implementácie hašovacích tabuliek v rôznych programovacích jazykoch používajú rôzne hodnoty, napríklad v Jave je to <code class="docutils literal notranslate"><span class="pre">75%</span></code>, v Pythone <code class="docutils literal notranslate"><span class="pre">66%</span></code>.</p>
+<p>Kompletný listing pre <strong>hešovanie bez vedierok</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mi">11</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">_find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+</span><span class="hll"><span class="w">        </span><span class="sd">&#39;&#39;&#39;vráti dvojicu</span>
+</span><span class="hll"><span class="sd">            (True, index) - ak nájde kľúč</span>
+</span><span class="hll"><span class="sd">            (False, prvý voľný) - ak nenájde kľúč</span>
+</span><span class="hll"><span class="sd">        &#39;&#39;&#39;</span>
+</span><span class="hll">        <span class="n">ix</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">av</span> <span class="o">=</span> <span class="kc">None</span>                <span class="c1"># prvý voľný</span>
+</span><span class="hll">        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">prvok</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">prvok</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span class="hll">                <span class="k">if</span> <span class="n">av</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span class="hll">                    <span class="n">av</span> <span class="o">=</span> <span class="n">ix</span>
+</span><span class="hll">                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">av</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">prvok</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+</span><span class="hll">                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ix</span>
+</span><span class="hll">            <span class="n">ix</span> <span class="o">=</span> <span class="p">(</span><span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find</span><span class="p">(</span><span class="n">kluc</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="n">nasiel</span><span class="p">,</span> <span class="n">ix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nasiel</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">ix</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="n">nasiel</span><span class="p">,</span> <span class="n">ix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find</span><span class="p">(</span><span class="n">kluc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nasiel</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.66</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nova_dlzka</span><span class="p">):</span>
+        <span class="n">old_tab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">nova_dlzka</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">old_tab</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">prvok</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">prvok</span>
+                <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">prvok</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">prvok</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Resize</strong> tabuľky robíme vždy vtedy, keď počet prvkov tabuľke presiahne 66% veľkosti celej tabuľky.</p>
+<p>Otestovanie môžete urobiť rovnaké, ako v predchádzajúcej realizácii:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">AsocPole</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">a</span><span class="o">.</span><span class="n">vypis</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Python využíva asociatívne polia aj na vnútornú reprezentáciu menných priestorov (name space) - t.j. každý objekt, každé volanie funkcie (metódy) vytvára nové a nové menné priestory - sem si ukladá mená atribútov, lokálnych premenných a pod. Preto musí byť realizácia asociatívnych polí v Pythone veľmi rýchla a vysoko spoľahlivá.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="17.html#id9" role="doc-backlink">Cvičenie</a><a class="headerlink" href="17.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich všetky</p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 17. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 25.11.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdaných riešeniach nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">rozhadz(post)</span></code>, ktorá vráti pomiešaný zoznam prvkov vstupnej postupnosti. Funkcia by mala pracovať takto:</p>
+<ul class="simple">
+<li><p>vstupnú postupnosť prerobí na zoznam</p></li>
+<li><p>v cykle vyberie z tohto zoznamu náhodný prvok (<code class="docutils literal notranslate"><span class="pre">pop(index)</span></code>) a zaradí ho na koniec výsledného zoznamu (<code class="docutils literal notranslate"><span class="pre">append()</span></code>)</p></li>
+<li><p>toto opakuje, kým nebude tento zoznam prázdny</p></li>
+</ul>
+<p>Otestuj, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rozhadz</span><span class="p">(</span><span class="s1">&#39;abcdefghujkl&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    [&#39;d&#39;, &#39;k&#39;, &#39;f&#39;, &#39;l&#39;, &#39;c&#39;, &#39;h&#39;, &#39;u&#39;, &#39;g&#39;, &#39;j&#39;, &#39;a&#39;, &#39;e&#39;, &#39;b&#39;]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">rozhadz</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="hll"><span class="go">    [26, 29, 11, 23, 10, 12, 13, 21, 20, 27, 17, 16, 19, 22, 24, 15, 28, 18, 14, 25]</span>
+</span></pre></div>
+</div>
+<p>Teraz napíš testovaciu funkciu <code class="docutils literal notranslate"><span class="pre">test(n)</span></code>, ktorá odmeria čas v sekundách trvania tejto funkcie <code class="docutils literal notranslate"><span class="pre">rozhadz(range(n))</span></code>. Funkcia vráti tento čas zaokrúhlený na 3 desatinné miesta, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="hll"><span class="go">    0.002</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="hll"><span class="go">    0.027</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="hll"><span class="go">    1.122</span>
+</span></pre></div>
+</div>
+<p>Zrejme na tvojom počítači dostaneš iné časy. Z modulu <code class="docutils literal notranslate"><span class="pre">random</span></code> použi len funkciu <code class="docutils literal notranslate"><span class="pre">randrange</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Dvojkový logaritmus môžeme počítať pomocou funkcie <code class="docutils literal notranslate"><span class="pre">math.log2(cislo)</span></code>, ale vieme na to použiť aj algoritmus z prednášky, ktorý delením intervalu na polovice počítal druhú odmocninu. Napíš funkciu <code class="docutils literal notranslate"><span class="pre">log2(cislo,</span> <span class="pre">eps=0.001)</span></code>, ktorý to s nejakou presnosťou (parameter <code class="docutils literal notranslate"><span class="pre">eps</span></code>) vypočíta takýmto algoritmom. Napríklad po spustení:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="hll"><span class="go">    9.965784382075071</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="hll"><span class="go">    9.965784284662087</span>
+</span></pre></div>
+</div>
+<p>Otestuj pre rôzne hodnoty presnosti: <code class="docutils literal notranslate"><span class="pre">0.1</span></code>, <code class="docutils literal notranslate"><span class="pre">0.01</span></code>, <code class="docutils literal notranslate"><span class="pre">0.001</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0001</span></code>, <code class="docutils literal notranslate"><span class="pre">0.00001</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Aby sme mohli použiť binárne vyhľadávanie na nejakom zozname, tento musí byť utriedený (napríklad pomocou <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>). Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vloz(zoznam,</span> <span class="pre">hodnota)</span></code>, ktorá do utriedeného zoznamu na správne miesto vloží zadanú hodnotu tak, aby tento zoznam ostal utriedený. Na zistenie miesta, kam vložiť túto hodnotu použi binárne vyhľadávanie a hodnotu vložíš len vtedy, keď sa v zozname ešte nenachádza. Môžeš využiť metódu <code class="docutils literal notranslate"><span class="pre">zoznam.insert(index,</span> <span class="pre">hodnota)</span></code>.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Najjednoduchšia verzia asociatívneho poľa v prednáške:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AsocPole</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">h</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">kluc</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kluc</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Pomocou tejto implementácie slovníka napíš program, ktorý zo súboru <a class="reference external" href="../_static/text/skladatelia.txt">skladatelia.txt</a> zistí v ktorom roku sa narodilo najviac hudobných skladatelov. Zrejme najprv do slovníka <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code> pre každý rok priradíš množinu všetkých skladatelľov s týmto rokom a potom pomocou štandardnej funkcie <code class="docutils literal notranslate"><span class="pre">max</span></code> vypíšeš rok s najväčšou množinou. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">AsocPole</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">...</span>
+    <span class="o">...</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">tab</span><span class="p">,</span> <span class="o">...</span><span class="p">))</span>   <span class="c1"># použi lambdu</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Do verzie <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code>, ktorá je v predchádzajúcej úlohe, pridaj magickú metódu <code class="docutils literal notranslate"><span class="pre">__delitem__(self,</span> <span class="pre">kluc)</span></code>. Táto metóda by mala realizovať vyhodenie prvku (dvojice <code class="docutils literal notranslate"><span class="pre">(kluc,</span> <span class="pre">hodnota)</span></code>). V Pythone to otestuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">AsocPole</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span> <span class="n">vytvor</span> <span class="n">slovník</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="s1">&#39;23&#39;</span><span class="p">]</span>         <span class="c1"># zavolá sa a.__delitem__(&#39;23&#39;)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Otestuj poslednú verziu <code class="docutils literal notranslate"><span class="pre">AsocPole</span></code> z prednášky (obsahuje metódu <code class="docutils literal notranslate"><span class="pre">_find</span></code>) tak, že vytvoríš frekvenčnú tabuľku zo všetkých slov v súbore <a class="reference external" href="../_static/text/twain.txt">twain.txt</a>. Z tohto asociatívneho poľa zisti 10 najčastejšách slov. Keďže v tejto implementácii asociatívneho poľa nemáš zadefinovanú metódu <code class="docutils literal notranslate"><span class="pre">items()</span></code>, tak ju dodefinuj a potom pomocou <code class="docutils literal notranslate"><span class="pre">sorted(a.items(),</span> <span class="pre">...)[:10]</span></code> vypíšeš 10 najčastejších slov aj s ich počtami výskytov. Okrem toho zisti aktuálny <strong>load factor</strong>, t.j. pomer počtu zaplnených prvkov k veľkosti celej tabuľky.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="17.html#id10" role="doc-backlink">10. Týždenný projekt</a><a class="headerlink" href="17.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a> najneskôr 14.decembra do 18:00.</p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 30.11.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Veľký štvorec môžeme rozdeliť na 4 kvadranty takto:</p>
+<a class="reference internal image-reference" href="../_images/1tp10_01.png"><img alt="../_images/1tp10_01.png" class="align-center" height="128" src="../_images/1tp10_01.png" width="128" />
+</a>
+<p>Úplne rovnako môžeme každý kvadrant rozdeliť na menšie kvadranty, napríklad 2. kvadrant takto:</p>
+<a class="reference internal image-reference" href="../_images/1tp10_02.png"><img alt="../_images/1tp10_02.png" class="align-center" height="128" src="../_images/1tp10_02.png" width="128" />
+</a>
+<p>Môžeš vidieť, že tieto menšie kvadranty v <code class="docutils literal notranslate"><span class="pre">2</span></code> sú očíslované ako <code class="docutils literal notranslate"><span class="pre">21</span></code>, <code class="docutils literal notranslate"><span class="pre">22</span></code>, <code class="docutils literal notranslate"><span class="pre">23</span></code>, <code class="docutils literal notranslate"><span class="pre">24</span></code>. Ľubovoľný kvadrant môžeš rozdeliť na 4 menšie. Napríklad, rozdelením kvadrantu <code class="docutils literal notranslate"><span class="pre">23</span></code> dostaneš:</p>
+<a class="reference internal image-reference" href="../_images/1tp10_03.png"><img alt="../_images/1tp10_03.png" class="align-center" height="128" src="../_images/1tp10_03.png" width="128" />
+</a>
+<p>Takýmto delením môžeš ísť do nejakej danej hĺbky <code class="docutils literal notranslate"><span class="pre">n</span></code>, kým neprídeš na elementárny štvorček, ktorý sa už deliť nedá. Napríklad, hĺbka <code class="docutils literal notranslate"><span class="pre">n=1</span></code> znamená, že plocha sa skladá z 2x2 elementárnych štvorčekov a deliť ju môžeš maximálne raz na 4 základné kvadranty. Hĺbka <code class="docutils literal notranslate"><span class="pre">n=4</span></code> označuje 16x16 elementárnych štvorčekov, ktorú môžeš deliť maximálne 4-krát. Potom, napríklad kvadrant <code class="docutils literal notranslate"><span class="pre">2</span></code> je veľký 8x8 elementárnych štvorčekov, kvadrant <code class="docutils literal notranslate"><span class="pre">23</span></code> zaberá 4x4 štvorčekov, kvadrant <code class="docutils literal notranslate"><span class="pre">234</span></code> zaberá 2x2 štvorčeky a zrejme <code class="docutils literal notranslate"><span class="pre">2343</span></code> už len jeden. Teda pre dané <code class="docutils literal notranslate"><span class="pre">n</span></code> poradové číslo kvadrantu má zmysel s maximálnym počtom cifier <code class="docutils literal notranslate"><span class="pre">n</span></code>. Čím má číselné označenie kvadrantu menej cifier, tým je kvadrant väčší (napríklad 0-ciferné číslo kvadrantu označuje celý štvorec). Ak je počet cifier kvadrantu väčší ako <code class="docutils literal notranslate"><span class="pre">n</span></code>, jeho veľkosť je zrejme <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Napíš pythonovský modul, ktorý bude obsahovať jedinú triedu <code class="docutils literal notranslate"><span class="pre">Stvorce</span></code> a žiadne iné globálne premenné:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Stvorce</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">urob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zhusti</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Metódy majú fungovať takto:</p>
+<ul>
+<li><p>inicializácia <code class="docutils literal notranslate"><span class="pre">__init__(n)</span></code></p>
+<ul class="simple">
+<li><p>ak je parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> celé číslo, toto vyjadruje hĺbku tabuľky</p></li>
+<li><p>metóda vyhradí takú dvojrozmernú tabuľku, aby sa dali deliť kvadranty do hĺbky <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p>každý elementárny štvorček môže obsahovať <code class="docutils literal notranslate"><span class="pre">0</span></code> alebo <code class="docutils literal notranslate"><span class="pre">1</span></code>, pri inicializácii budú všade <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>ak je parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> postupnosť celých čísel, tak popisuje celú tabuľku v rovnakom formáte, ako je výsledok metódy <code class="docutils literal notranslate"><span class="pre">zhusti()</span></code></p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">urob(index)</span></code></p>
+<ul class="simple">
+<li><p>dostáva číslo kvadrantu ako znakový reťazec (môže byť aj prázdny) a pre zadaný kvadrant vyznačí všetky elementárne štvorčeky tak, že hodnoty <code class="docutils literal notranslate"><span class="pre">0</span></code> nahradí <code class="docutils literal notranslate"><span class="pre">1</span></code> a hodnoty <code class="docutils literal notranslate"><span class="pre">1</span></code> nahradí <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>ak parameter <code class="docutils literal notranslate"><span class="pre">index</span></code> nie je znakový reťazec, ale nejaká postupnosť znakových reťazcov, metóda postupne spracuje všetky tieto reťazce</p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">pocet()</span></code></p>
+<ul class="simple">
+<li><p>vráti dvojicu celých čísel: počet núl a počet jednotiek v celej dvojrozmernej tabuľke</p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code></p>
+<ul class="simple">
+<li><p>vráti momentálny obsah dvojrozmernej tabuľky ako viacriadkový znakový reťazec, pričom namiesto <code class="docutils literal notranslate"><span class="pre">0</span></code> použije znak <code class="docutils literal notranslate"><span class="pre">'-'</span></code> a namiesto <code class="docutils literal notranslate"><span class="pre">1</span></code> znak <code class="docutils literal notranslate"><span class="pre">'X'</span></code></p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">zhusti()</span></code></p>
+<ul>
+<li><p>vráti postupnosť celých čísel, ktorá popisuje momentálny stav tabuľky</p></li>
+<li><p>prvým prvkom postupnosti je hĺbka tabuľky</p></li>
+<li><p>za tým nasledujú dĺžky úsekov s <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">1</span></code>, napríklad, ak tabuľka vyzerá takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">----</span>
+<span class="o">--</span><span class="n">XX</span>
+<span class="n">XX</span><span class="o">--</span>
+<span class="n">XX</span><span class="o">--</span>
+</pre></div>
+</div>
+<p>tak výsledok bude postupnosť:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>      <span class="c1"># prvá 2 je hĺbka tabuľky</span>
+</pre></div>
+</div>
+</li>
+<li><p>všimni si, že súčet všetkých prvkov tejto postupnosti (okrem prvého) je počet prvkov celej tabuľky</p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">stv</span> <span class="o">=</span> <span class="n">Stvorce</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">pocet</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">zhusti</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">stv</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">urob</span><span class="p">(</span><span class="s1">&#39;23&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">stv</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">pocet</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">zhusti</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">urob</span><span class="p">((</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="p">))</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">stv</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">pocet</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stv</span><span class="o">.</span><span class="n">zhusti</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vypíše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stv</span><span class="o">.</span><span class="n">pocet</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">zhusti</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="o">----</span>
+<span class="o">----</span>
+<span class="o">----</span>
+<span class="o">----</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">urob</span><span class="p">(</span><span class="s1">&#39;23&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="o">----</span>
+<span class="o">--</span><span class="n">X</span><span class="o">-</span>
+<span class="o">----</span>
+<span class="o">----</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">pocet</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">zhusti</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">urob</span><span class="p">((</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">))</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="o">--</span><span class="n">XX</span>
+<span class="o">---</span><span class="n">X</span>
+<span class="n">XX</span><span class="o">--</span>
+<span class="n">XX</span><span class="o">--</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">pocet</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">stv</span><span class="o">.</span><span class="n">zhusti</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pre inšpiráciu môžeš otestovať tieto postupnosti indexov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;131&#39;</span><span class="p">,</span> <span class="s1">&#39;1314&#39;</span><span class="p">,</span> <span class="s1">&#39;143&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;1233&#39;</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;1243&#39;</span><span class="p">,</span> <span class="s1">&#39;1244&#39;</span><span class="p">,</span> <span class="s1">&#39;23&#39;</span><span class="p">,</span> <span class="s1">&#39;234&#39;</span><span class="p">,</span>
+<span class="s1">&#39;2133&#39;</span><span class="p">,</span> <span class="s1">&#39;2134&#39;</span><span class="p">,</span> <span class="s1">&#39;2143&#39;</span><span class="p">,</span> <span class="s1">&#39;2144&#39;</span><span class="p">,</span> <span class="s1">&#39;24&#39;</span><span class="p">,</span> <span class="s1">&#39;242&#39;</span><span class="p">,</span> <span class="s1">&#39;2423&#39;</span><span class="p">,</span> <span class="s1">&#39;31&#39;</span><span class="p">,</span> <span class="s1">&#39;313&#39;</span><span class="p">,</span> <span class="s1">&#39;3132&#39;</span><span class="p">,</span> <span class="s1">&#39;32&#39;</span><span class="p">,</span> <span class="s1">&#39;324&#39;</span><span class="p">,</span>
+<span class="s1">&#39;3232&#39;</span><span class="p">,</span> <span class="s1">&#39;3411&#39;</span><span class="p">,</span> <span class="s1">&#39;3412&#39;</span><span class="p">,</span> <span class="s1">&#39;3421&#39;</span><span class="p">,</span> <span class="s1">&#39;3422&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;44&#39;</span><span class="p">,</span> <span class="s1">&#39;424&#39;</span><span class="p">,</span> <span class="s1">&#39;4241&#39;</span><span class="p">,</span> <span class="s1">&#39;413&#39;</span><span class="p">,</span> <span class="s1">&#39;4141&#39;</span><span class="p">,</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span>
+<span class="s1">&#39;4311&#39;</span><span class="p">,</span> <span class="s1">&#39;4312&#39;</span><span class="p">,</span> <span class="s1">&#39;4321&#39;</span><span class="p">,</span> <span class="s1">&#39;4322&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------
+----------------
+----------------
+----XXXXXXXX----
+--XXXXXXXXXXXX--
+-XXXXXXXXXXXXXX-
+XXXX--XXXX--XXXX
+XXXX--XXXX--XXXX
+XXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXX
+-XXXX------XXXX-
+--XXXX----XXXX--
+----XXXXXXXX----
+----------------
+----------------
+----------------
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;14&#39;</span><span class="p">,</span> <span class="s1">&#39;141&#39;</span><span class="p">,</span><span class="s1">&#39;1412&#39;</span><span class="p">,</span><span class="s1">&#39;1431&#39;</span><span class="p">,</span><span class="s1">&#39;124&#39;</span><span class="p">,</span> <span class="s1">&#39;1241&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;21&#39;</span><span class="p">,</span> <span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;24&#39;</span><span class="p">,</span> <span class="s1">&#39;213&#39;</span><span class="p">,</span> <span class="s1">&#39;2113&#39;</span><span class="p">,</span>
+<span class="s1">&#39;2143&#39;</span><span class="p">,</span> <span class="s1">&#39;2324&#39;</span><span class="p">,</span> <span class="s1">&#39;2433&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;31&#39;</span><span class="p">,</span> <span class="s1">&#39;3142&#39;</span><span class="p">,</span> <span class="s1">&#39;3211&#39;</span><span class="p">,</span> <span class="s1">&#39;343&#39;</span><span class="p">,</span> <span class="s1">&#39;3441&#39;</span><span class="p">,</span> <span class="s1">&#39;3443&#39;</span><span class="p">,</span> <span class="s1">&#39;33&#39;</span><span class="p">,</span>
+<span class="s1">&#39;332&#39;</span><span class="p">,</span> <span class="s1">&#39;3321&#39;</span><span class="p">,</span> <span class="s1">&#39;41&#39;</span><span class="p">,</span> <span class="s1">&#39;4213&#39;</span><span class="p">,</span> <span class="s1">&#39;4231&#39;</span><span class="p">,</span> <span class="s1">&#39;4232&#39;</span><span class="p">,</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span> <span class="s1">&#39;434&#39;</span><span class="p">,</span> <span class="s1">&#39;441&#39;</span><span class="p">,</span> <span class="s1">&#39;4423&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------
+--------X-------
+-------XXX------
+------XXXXX-----
+-----XXXXXXX----
+------XXXXX-----
+-----XXXXXXX----
+----XXXXXXXXX---
+-----XXXXXXX----
+----XXXXXXXXX---
+---XXXXXXXXXXX--
+----XXXXXXXX----
+---XXXXXXXXXXX--
+--XXXXXXXXXXXXX-
+-------XXX------
+-------XXX------
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;23224&#39;</span><span class="p">,</span> <span class="s1">&#39;2411&#39;</span><span class="p">,</span> <span class="s1">&#39;24123&#39;</span><span class="p">,</span> <span class="s1">&#39;24131&#39;</span><span class="p">,</span> <span class="s1">&#39;24132&#39;</span><span class="p">,</span> <span class="s1">&#39;2422&#39;</span><span class="p">,</span> <span class="s1">&#39;24223&#39;</span><span class="p">,</span> <span class="s1">&#39;2444&#39;</span><span class="p">,</span> <span class="s1">&#39;24441&#39;</span><span class="p">,</span>
+<span class="s1">&#39;212&#39;</span><span class="p">,</span> <span class="s1">&#39;21412&#39;</span><span class="p">,</span> <span class="s1">&#39;21421&#39;</span><span class="p">,</span> <span class="s1">&#39;21422&#39;</span><span class="p">,</span> <span class="s1">&#39;211&#39;</span><span class="p">,</span> <span class="s1">&#39;2113&#39;</span><span class="p">,</span> <span class="s1">&#39;21132&#39;</span><span class="p">,</span> <span class="s1">&#39;21143&#39;</span><span class="p">,</span> <span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;2233&#39;</span><span class="p">,</span>
+<span class="s1">&#39;2234&#39;</span><span class="p">,</span> <span class="s1">&#39;22342&#39;</span><span class="p">,</span> <span class="s1">&#39;14&#39;</span><span class="p">,</span> <span class="s1">&#39;14111&#39;</span><span class="p">,</span> <span class="s1">&#39;14113&#39;</span><span class="p">,</span> <span class="s1">&#39;1433&#39;</span><span class="p">,</span> <span class="s1">&#39;14332&#39;</span><span class="p">,</span> <span class="s1">&#39;132&#39;</span><span class="p">,</span> <span class="s1">&#39;1322&#39;</span><span class="p">,</span> <span class="s1">&#39;13223&#39;</span><span class="p">,</span>
+<span class="s1">&#39;134&#39;</span><span class="p">,</span> <span class="s1">&#39;1344&#39;</span><span class="p">,</span> <span class="s1">&#39;13441&#39;</span><span class="p">,</span> <span class="s1">&#39;1312&#39;</span><span class="p">,</span> <span class="s1">&#39;13142&#39;</span><span class="p">,</span> <span class="s1">&#39;13144&#39;</span><span class="p">,</span> <span class="s1">&#39;13322&#39;</span><span class="p">,</span> <span class="s1">&#39;13324&#39;</span><span class="p">,</span> <span class="s1">&#39;1334&#39;</span><span class="p">,</span> <span class="s1">&#39;1134&#39;</span><span class="p">,</span>
+<span class="s1">&#39;11341&#39;</span><span class="p">,</span> <span class="s1">&#39;11333&#39;</span><span class="p">,</span> <span class="s1">&#39;11334&#39;</span><span class="p">,</span> <span class="s1">&#39;11433&#39;</span><span class="p">,</span> <span class="s1">&#39;1224&#39;</span><span class="p">,</span> <span class="s1">&#39;12243&#39;</span><span class="p">,</span> <span class="s1">&#39;12344&#39;</span><span class="p">,</span> <span class="s1">&#39;124&#39;</span><span class="p">,</span> <span class="s1">&#39;1241&#39;</span><span class="p">,</span> <span class="s1">&#39;12421&#39;</span><span class="p">,</span>
+<span class="s1">&#39;12423&#39;</span><span class="p">,</span> <span class="s1">&#39;12431&#39;</span><span class="p">,</span> <span class="s1">&#39;3112&#39;</span><span class="p">,</span> <span class="s1">&#39;31123&#39;</span><span class="p">,</span> <span class="s1">&#39;31111&#39;</span><span class="p">,</span> <span class="s1">&#39;31112&#39;</span><span class="p">,</span> <span class="s1">&#39;31211&#39;</span><span class="p">,</span> <span class="s1">&#39;32122&#39;</span><span class="p">,</span> <span class="s1">&#39;322&#39;</span><span class="p">,</span> <span class="s1">&#39;3223&#39;</span><span class="p">,</span>
+<span class="s1">&#39;32213&#39;</span><span class="p">,</span> <span class="s1">&#39;3224&#39;</span><span class="p">,</span> <span class="s1">&#39;32242&#39;</span><span class="p">,</span> <span class="s1">&#39;411&#39;</span><span class="p">,</span> <span class="s1">&#39;412&#39;</span><span class="p">,</span> <span class="s1">&#39;4124&#39;</span><span class="p">,</span> <span class="s1">&#39;41241&#39;</span><span class="p">,</span> <span class="s1">&#39;41234&#39;</span><span class="p">,</span> <span class="s1">&#39;4211&#39;</span><span class="p">,</span> <span class="s1">&#39;42121&#39;</span><span class="p">,</span>
+<span class="s1">&#39;42122&#39;</span><span class="p">,</span> <span class="s1">&#39;42211&#39;</span><span class="p">,</span> <span class="s1">&#39;4131&#39;</span><span class="p">,</span> <span class="s1">&#39;413114&#39;</span><span class="p">,</span> <span class="s1">&#39;41321&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------
+--------------------------------
+--------------XXX---------------
+---------------XXXX-------------
+---------------XXXXXX-----------
+---------------XXXXXXXXX--------
+---X---------XXXXXXXXXXXXXX-----
+XXXXX------XXXXXXXXXXXXXXXXX----
+--XXXX---XXXXXXXXXXXXXXX--XXXX--
+--XXXXX--XXXXXXXXXXXXXX----XXXX-
+---XXXXXXXXXXXXXXXXXXXXX--XXXXXX
+---XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+---XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+---XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+--XXXXX--XXXXXXXXXXXXXXXXXXXXXX-
+--XXXX----XXXXXXXXXXXXXXXXXXXX--
+XXXXX------XXXXXXXXXXXXXXXXXX---
+---X---------XXXXXXXXXXXXX------
+---------------XXXXXXXX---------
+----------------XXXXX-----------
+----------------XXX-------------
+----------------XX--------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="17.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

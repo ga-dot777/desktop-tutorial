@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Priebežný test - Variant C &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Hľadať" href="../../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../../copyright.html" />
+    <link rel="next" title="2. Priebežný test - variant A" href="test2a.html" />
+    <link rel="prev" title="1. Priebežný test - Variant B" href="test1b.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="test1b.html" title="Previous Chapter: 1. Priebežný test - Variant B"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 1. Priebežný ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="test2a.html" title="Next Chapter: 2. Priebežný test - variant A"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2. Priebežný ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="priebezny-test-variant-c">
+<h1>1. Priebežný test - Variant C<a class="headerlink" href="test1c.html#priebezny-test-variant-c" title="Link to this heading">¶</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. test variant C</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 10.11.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z prvých jedenástich prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">class</span></code>)</p></li>
+<li><p>svojim funkciám (oproti zadaniu) môžeš zmeniť mená parametrov, môžeš si zadefinovať pomocné funkcie</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">dvoj_slova(meno_suboru)</span></code>, ktorá z daného súboru slov zistí počet výskytov všetkých dvojíc za sebou idúcich slov, napríklad, pre slová <code class="docutils literal notranslate"><span class="pre">'mama</span> <span class="pre">ma</span> <span class="pre">emu</span> <span class="pre">a</span> <span class="pre">ema'</span></code> bude akceptovať tieto štyri dvojice <code class="docutils literal notranslate"><span class="pre">'mama</span> <span class="pre">ma'</span></code>, <code class="docutils literal notranslate"><span class="pre">'ma</span> <span class="pre">emu'</span></code>, <code class="docutils literal notranslate"><span class="pre">'emu</span> <span class="pre">a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'a</span> <span class="pre">ema'</span></code>. Funkcia najprv vytvorí frekvenčnú tabuľku takýchto dvojíc slov ako slovník. Potom z tohto slovníka vytvorí nový slovník, v ktorom pre každý počet výskytov (bude to kľúč v novom slovníku) asociuje množinu všetkých dvojíc s týmto počtom výskytov. Do výsledného asociatívneho poľa nezaraďuj kľúč <code class="docutils literal notranslate"><span class="pre">1</span></code>. Napríklad, pre súbor, ktorý obsahuje len tieto slová: <code class="docutils literal notranslate"><span class="pre">mama</span> <span class="pre">ma</span> <span class="pre">mamu</span> <span class="pre">a</span> <span class="pre">emu</span> <span class="pre">a</span> <span class="pre">ema</span> <span class="pre">ma</span> <span class="pre">mamu</span> <span class="pre">a</span> <span class="pre">ema</span> <span class="pre">ma</span> <span class="pre">emu</span> <span class="pre">a</span> <span class="pre">ema</span></code>, funkcia vráti:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;mamu a&#39;</span><span class="p">,</span> <span class="s1">&#39;ma mamu&#39;</span><span class="p">,</span> <span class="s1">&#39;emu a&#39;</span><span class="p">,</span> <span class="s1">&#39;ema ma&#39;</span><span class="p">},</span> <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a ema&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Niektoré postupnosti nezáporných celých čísel <code class="docutils literal notranslate"><span class="pre">(p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4,</span> <span class="pre">...)</span></code> vieme zakódovať do jedného celého čísla tak, že prvky postupnosti budú exponentmi pri súčine prvočísel, teda <code class="docutils literal notranslate"><span class="pre">2**p1</span> <span class="pre">*</span> <span class="pre">3**p2</span> <span class="pre">*</span> <span class="pre">5**p3</span> <span class="pre">*</span> <span class="pre">7**p4</span> <span class="pre">*</span> <span class="pre">...</span></code>. Ak predpokladáme, že táto vstupná postupnosť nemá na konci nuly, tak by sa dala jednoznačne spätne aj rozkódovať.</p>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">odkoduj(cislo)</span></code>, ktorá dostáva nejaké celé číslo a vráti zodpovedajúcu postupnosť celých čísel v tvare <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. Ak taká postupnosť neexistuje, vráti <code class="docutils literal notranslate"><span class="pre">None</span></code>. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">odkoduj</span><span class="p">(</span><span class="mi">2200</span><span class="p">)</span>       <span class="c1"># 2**3 * 5**2 * 11**1</span>
+<span class="hll"><span class="go">    (3, 0, 2, 0, 1)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">odkoduj</span><span class="p">(</span><span class="mi">533871</span><span class="p">)</span>     <span class="c1"># 3**5 * 13**3</span>
+<span class="hll"><span class="go">    (0, 5, 0, 0, 0, 3)</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyhodnot(retazec)</span></code>, ktorá dostane znakový reťazec s celými alebo desatinnými číslami, medzi ktorými môžu byť znamienka <code class="docutils literal notranslate"><span class="pre">'+'</span></code>, <code class="docutils literal notranslate"><span class="pre">'-'</span></code>, <code class="docutils literal notranslate"><span class="pre">'*'</span></code> alebo <code class="docutils literal notranslate"><span class="pre">'/'</span></code>. Funkcia vyhodnocuje tento výraz zľava doprava (bez ohľadu na priority operácií) a vráti hodnotu takéhoto aritmetického výrazu. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;3+4*5&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    35</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;0.31*1000+4/100&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    3.14</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;25-3/7&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    3.142857142857143</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">novy_zip(postupnosti)</span></code>, ktorá dostane ako parametre postupnosť niekoľkých iterovateľných postupností. Ak týchto postupností je <code class="docutils literal notranslate"><span class="pre">n</span></code>, funkcia z nich vytvorí jednu postupnosť <code class="docutils literal notranslate"><span class="pre">n</span></code>-tíc. V nej sa budú nachádzať prvky prvej, druhej, atď. vstupných postupností. Ak sú niektorá z týchto postupností kratšia ako ostatné, tak chýbajúce prvky z týchto kratších postupností sa nahradia hodnotou <code class="docutils literal notranslate"><span class="pre">None</span></code>. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">novy_zip</span><span class="p">((</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>
+<span class="hll"><span class="go">    ((&#39;p&#39;, 3), (&#39;y&#39;, 10), (&#39;t&#39;, 17), (&#39;h&#39;, 24), (&#39;o&#39;, None), (&#39;n&#39;, None))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">novy_zip</span><span class="p">((</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))))</span>
+<span class="hll"><span class="go">    ((&#39;p&#39;, 3, (1, 1)), (&#39;y&#39;, 7, (2, 4)), (&#39;t&#39;, 11, (3, 9)), (&#39;h&#39;, 15, (4, 16)), (&#39;o&#39;, 19, None),</span>
+</span><span class="hll"><span class="go">     (&#39;n&#39;, 23, None), (None, 27, None))</span>
+</span></pre></div>
+</div>
+<p>Pri riešení nepoužívaj štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">zip</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Rekurzívnu funkciu pre „kochovu krivku“ sme kreslili pomocou korytnačky takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">vlocka</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Táto krivka sa skladá z úsečiek dĺžky <code class="docutils literal notranslate"><span class="pre">s</span></code>, pričom všetky sa kreslia pod uhlom, ktorý je nejakým násobkom <code class="docutils literal notranslate"><span class="pre">60</span></code> stupňov, teda korytnačka prejde túto vzdialenosť buď pod uhlom <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">60</span></code>, <code class="docutils literal notranslate"><span class="pre">120</span></code>, <code class="docutils literal notranslate"><span class="pre">180</span></code>, <code class="docutils literal notranslate"><span class="pre">240</span></code>, <code class="docutils literal notranslate"><span class="pre">300</span></code>. Prepíš túto funkcii tak, aby už nič nekreslila, ale vrátila šesticu čísel, ktoré vyjadrujú celkové súčty úsečiek podľa šiestich rôznych smerov. Napríklad, prvé číslo v štvorici môže vyjadrovať súčet všetkých úsečiek, ktoré sa kreslia smerom na východ. Týchto šesť hodnôt môžeš vo výsledku uviesť v ľubovoľnom poradí. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vlocka</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="hll"><span class="go">    (700, 560, 290, 160, 290, 560)</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="test1c.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

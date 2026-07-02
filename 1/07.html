@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7. Udalosti v grafickej aplikácii &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="8. Korytnačky (turtle)" href="08.html" />
+    <link rel="prev" title="6. Znakové reťazce a súbory" href="06.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="07.html#">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="06.html" title="Previous Chapter: 6. Znakové reťazce a súbory"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 6. Znakové re...</span>
+    </a>
+  </li>
+  <li>
+    <a href="08.html" title="Next Chapter: 8. Korytnačky (turtle)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">8. Korytnačky... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="udalosti-v-grafickej-aplikacii">
+<h1>7. Udalosti v grafickej aplikácii<a class="headerlink" href="07.html#udalosti-v-grafickej-aplikacii" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="07.html#udalosti-od-tlacidla" id="id1">Udalosti od tlačidla</a></p></li>
+<li><p><a class="reference internal" href="07.html#klikanie-a-tahanie-mysou" id="id2">Klikanie a ťahanie myšou</a></p>
+<ul>
+<li><p><a class="reference internal" href="07.html#klikanie-mysou" id="id3">Klikanie myšou</a></p></li>
+<li><p><a class="reference internal" href="07.html#tahanie-mysou" id="id4">Ťahanie myšou</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="07.html#udalosti-od-klavesnice" id="id5">Udalosti od klávesnice</a></p></li>
+<li><p><a class="reference internal" href="07.html#casovac" id="id6">Časovač</a></p>
+<ul>
+<li><p><a class="reference internal" href="07.html#zastavovanie-casovaca" id="id7">Zastavovanie časovača</a></p></li>
+<li><p><a class="reference internal" href="07.html#aplikacia-s-autickami" id="id8">Aplikácia s autíčkami</a></p></li>
+<li><p><a class="reference internal" href="07.html#zhrnutie-udalosti-od-mysi" id="id9">Zhrnutie udalostí od myši</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="07.html#cvicenie" id="id10">Cvičenie</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Naučíme sa v našich programoch využívať tzv. <strong>udalosti</strong>, ktoré vznikajú v bežiacej grafickej aplikácii, buď aktivitami používateľa (klikanie na tlačidlá, klikanie a ťahanie myšou v grafickej ploche, stláčanie klávesov), alebo operačného systému (tikanie časovača). Na úvod si pripomeňme, čo už vieme o grafickej ploche. Pomocou metód grafickej plochy <code class="docutils literal notranslate"><span class="pre">Canvas</span></code> (definovanej v module <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>) kreslíme grafické objekty:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.create_line()</span></code> - kreslí úsečku alebo krivku z nadväzujúcich úsečiek</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.create_oval()</span></code> - kreslí elipsu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.create_rectangle()</span></code> - kreslí obdĺžnik</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.create_text()</span></code> - vypíše text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.create_polygon()</span></code> - kreslí vyfarbený útvar zadaný bodmi na obvode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.create_image()</span></code> - kreslí obrázok (prečítaný zo súboru .gif alebo .png)</p></li>
+</ul>
+<p>Ďalšie pomocné metódy manipulujú s už nakreslenými objektmi:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.delete()</span></code> - zruší objekt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.move()</span></code> - posunie objekt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.coords()</span></code> - zmení súradnice objektu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.itemconfig()</span></code> - zmení ďalšie parametre objektu (napríklad farba, hrúbka, text, obrázok, …)</p></li>
+</ul>
+<p>Ďalšie metódy umožňujú postupne zobrazovať vytváranú kresbu:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.update()</span></code> - zobrazí nové zmeny v grafickej ploche</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas.after()</span></code> - pozdrží beh programu o zadaný počet milisekúnd</p></li>
+</ul>
+<p>Widget (súčiastka, ovládací prvok) <code class="docutils literal notranslate"><span class="pre">canvas</span></code> nie je jediným komponentom, ktorý sa môže nachádzať v grafickej aplikácii. Rôznych komponentov rôznych typov je viac, napríklad niektoré z nich:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Canvas</span></code> - grafická plocha, do ktorej môžeme ukladať (kresliť) grafické objekty</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Button</span></code> - tlačidlo, ktoré keď zatlačíme, spustí nejakú akciu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Entry</span></code> - vstupný riadok, do ktorého môže požívateľ zadať nejaký reťazec</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Label</span></code> - text, ktorý zobrazuje nejakú správu alebo informáciu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scale</span></code> - posúvač, ktorým môžeme zadávať číselné hodnoty</p></li>
+</ul>
+<p>Takýchto komponentov môže byť v jednej aplikácii aj viac rovnakého typu. Ukážeme si to na widgete <code class="docutils literal notranslate"><span class="pre">Button</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="udalosti-od-tlacidla">
+<h2><a class="toc-backref" href="07.html#id1" role="doc-backlink">Udalosti od tlačidla</a><a class="headerlink" href="07.html#udalosti-od-tlacidla" title="Link to this heading">¶</a></h2>
+<p>Začneme s takouto jednoduchou aplikáciou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">():</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;PYTHON&#39;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 20&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">vypis</span><span class="p">()</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento program dokáže jedinú vec: 10-krát vypísať na náhodné pozície text <code class="docutils literal notranslate"><span class="pre">'PYTHON'</span></code>. Keď to skončí, aplikácia ďalej beží, ale nič rozumné nerobí. Asi by bola užitočnejšia, keby sme po jej spustení, mohli, napríklad stláčaním tlačidla, túto funkciu <code class="docutils literal notranslate"><span class="pre">vypis()</span></code> vyvolávať ľubovoľný počet krát.</p>
+<p>V tomto programe vidíme vytvorenie komponentu <code class="docutils literal notranslate"><span class="pre">canvas</span></code> pomocou priradenia <code class="docutils literal notranslate"><span class="pre">tkinter.Canvas()</span></code> a potom volaním metódy <code class="docutils literal notranslate"><span class="pre">pack()</span></code> túto grafickú plochu zobrazíme v okne. Presne rovnako vytvoríme aj komponent tlačidlo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tlacidlo</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">()</span>
+<span class="n">tlacidlo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Keby sme teraz tento program spustili, vytvorilo by sa veľmi úzke tlačidlo bez popisu, pravdepodobne pod grafickou plochou. Preto do príkazu na vytvorenie tlačidla pridáme aj text, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tlacidlo</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Vypíš text&#39;</span><span class="p">)</span>
+<span class="n">tlacidlo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teraz tlačidlo vyzerá rozumnejšie, ale po jeho zatlačení nerobí nič, teda nespúšťa žiadnu akciu (nespracováva udalosť od zatlačenia tlačidla). Toto sa robí takto jednoducho:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tlacidlo</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Výpíš text&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">akcia</span><span class="p">)</span>
+<span class="n">tlacidlo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>kde ako akciu uvedieme <strong>referenciu</strong> na nejakú pythonovskú funkciu (bez parametrov) - táto ale už v tomto čase musí byť definovaná. Preto často všetky funkcie definujeme už pred príkazmi hlavného programu. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">():</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;PYTHON&#39;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 20&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">tlacidlo</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Vypíš text&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">vypis</span><span class="p">)</span>
+</span><span class="hll"><span class="n">tlacidlo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span>
+<span class="c1">#for i in range(10):</span>
+<span class="c1">#    vypis()</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento program po každom zatlačení tlačidla vypíše na náhodnú pozíciu jeden text <code class="docutils literal notranslate"><span class="pre">'PYTHON'</span></code>. Hovoríme, že tento program reaguje na stláčanie tlačidla (reaguje na nejakú udalosť).</p>
+<aside class="topic">
+<p class="topic-title">Udalosť</p>
+<p>Udalosťou (<strong>event</strong>) voláme akciu, ktorá vznikne mimo behu programu a program môže na túto situáciu reagovať. Najčastejšie sú to udalosti od pohybu a klikania myši, od stláčania klávesov, od časovača (vnútorných hodín OS), od rôznych ďalších súčiastok (widgetov) v grafickej aplikácii, … V našom programe potom môžeme nastaviť, čo sa má udiať pri ktorej udalosti. Tomuto sa zvykne hovoriť <strong>udalosťami riadené programovanie</strong> (event-driven programming). Hovoríme tomu <strong>ovládač udalosti</strong> (<strong>event handler</strong>), čo je najčastejšie funkcia v našej aplikácii a má na starosti spracovávanie príslušnej udalostí.</p>
+<p>Pre niektoré grafické komponenty (napríklad <code class="docutils literal notranslate"><span class="pre">Button</span></code> a <code class="docutils literal notranslate"><span class="pre">Scale</span></code>) definujeme túto akciu pomenovaným parametrom <code class="docutils literal notranslate"><span class="pre">command=akcia</span></code>.</p>
+<p>V grafickej ploche <code class="docutils literal notranslate"><span class="pre">Canvas</span></code> sa na to používa iný mechanizmus: ak budeme potrebovať v našom programe spracovávať udalosť kliknutie myšou do plochy, napíšeme ovládač udalosti (obyčajnú pythonovskú funkciu) a systému oznámime, aby ju zavolal vždy, keď vznikne táto udalosť. Takémuto nastaveniu (event handler) funkcie k nejakej udalosti budeme hovoriť <strong>zviazanie</strong> (<strong>binding</strong>).</p>
+</aside>
+<p>Pokračujme v aplikácii s tlačidlom. Pridáme aj druhé tlačidlo (zmaže plochu) a vstupný riadok (nový komponent <code class="docutils literal notranslate"><span class="pre">Entry</span></code>), ktorým určíme aký text sa má vypísať:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">():</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;PYTHON&#39;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 20&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">zmaz</span><span class="p">():</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Vypíš text&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">vypis</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span><span class="hll"><span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmaž plochu&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">zmaz</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span>
+<span class="hll"><span class="n">vstup</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span><span class="hll"><span class="n">vstup</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Všimnite si, že obe tlačidla sme vytvorili v skrátenej forme: keďže nebudeme potrebovať premenné, ktoré ich sprístupňujú, hneď po vytvorení (<code class="docutils literal notranslate"><span class="pre">tkinter.Button(...)</span></code>) zavoláme metódu <code class="docutils literal notranslate"><span class="pre">pack()</span></code>.</p>
+<p>Okrem týchto tlačidiel sme pridali nový komponent (hovoríme tomu aj <strong>widget</strong>) <code class="docutils literal notranslate"><span class="pre">Entry</span></code>, ktorý umožní počas behu aplikácie zadávať nejaké texty - zatiaľ tento program takto zadané texty nijako nespracováva. Tento program stále vypisuje <code class="docutils literal notranslate"><span class="pre">'PYTHON'</span></code>.</p>
+<p>Využijeme mechanizmus, pomocou ktorého zistíme momentálny obsah widgetu <code class="docutils literal notranslate"><span class="pre">vstup</span></code> - volanie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vstup</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>vráti znakový reťazec so zadaným textom. Doplníme to do funkcie <code class="docutils literal notranslate"><span class="pre">vypis()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">():</span>
+<span class="hll">    <span class="n">text</span> <span class="o">=</span> <span class="n">vstup</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>    <span class="c1">#&#39;PYTHON&#39;</span>
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 20&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otestujte zadávaním rôznych reťazcov.</p>
+<p>Záverečný projekt ilustruje použitie aj ďalších widgetov:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+<span class="hll">                       <span class="n">text</span><span class="o">=</span><span class="n">vstup</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>
+</span><span class="hll">                       <span class="n">font</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;arial </span><span class="si">{</span><span class="n">velkost</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span class="hll">                       <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zmaz</span><span class="p">():</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</span><span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Vypíš text&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">vypis</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmaž plochu&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">zmaz</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zadaj text:&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span><span class="n">vstup</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">vstup</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zadaj farbu:&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span><span class="n">farba</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">farba</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmeň veľkosť:&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span><span class="hll"><span class="n">velkost</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+</span><span class="hll"><span class="n">velkost</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Všimnite si tieto detaily:</p>
+<ul class="simple">
+<li><p>vďaka <code class="docutils literal notranslate"><span class="pre">canvas.pack(side='left')</span></code> budú všetky ďalšie widgety umiestnené napravo od grafickej plochy</p></li>
+<li><p>pomocou <code class="docutils literal notranslate"><span class="pre">tkinter.Label(text='Zadaj</span> <span class="pre">text:').pack()</span></code> vypíšeme zadaný text</p></li>
+<li><p>zápis <code class="docutils literal notranslate"><span class="pre">tkinter.Scale(orient='horizontal',</span> <span class="pre">from_=10,</span> <span class="pre">to=40,</span> <span class="pre">length=75)</span></code> definuje posúvač - vďaka nemu sa dajú zvoliť čísla z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;10,</span> <span class="pre">40&gt;</span></code> - momentálnu hodnotu posúvača zistíme pomocou <code class="docutils literal notranslate"><span class="pre">velkost.get()</span></code></p></li>
+</ul>
+<p class="h3 rubric">Udalosti od myši</p>
+<p>Naučíme sa, ako v našich grafických programoch reagovať na udalosti od myši a klávesnice.</p>
+<p>Aby grafická plocha reagovala na klikania myšou, musíme ju zviazať (<strong>bind</strong>) s príslušnou udalosťou (<strong>event</strong>).</p>
+<aside class="topic">
+<p class="topic-title">metóda <code class="docutils literal notranslate"><span class="pre">bind()</span></code></p>
+<p>Táto metóda grafickej plochy slúži na zviazanie niektorej konkrétnej udalosti s nejakou funkciou, ktorá sa bude v programe starať o spracovanie tejto udalosti (event handler). Jej formát je:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">meno_udalosti</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>kde <code class="docutils literal notranslate"><span class="pre">meno_udalosti</span></code> je znakový reťazec s popisom udalosti (napríklad pre kliknutie tlačidlom myši) a <code class="docutils literal notranslate"><span class="pre">funkcia</span></code> je <strong>referencia na funkciu</strong>, ktorá by sa mala spustiť pri vzniku tejto udalosti. Táto funkcia, musí byť definovaná s práve jedným parametrom, v ktorom nám systém prezradí detaily vzniknutej udalosti.</p>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="klikanie-a-tahanie-mysou">
+<h2><a class="toc-backref" href="07.html#id2" role="doc-backlink">Klikanie a ťahanie myšou</a><a class="headerlink" href="07.html#klikanie-a-tahanie-mysou" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Postupne ukážeme tieto tri „myšacie“ udalosti:</p>
+<ul class="simple">
+<li><p><strong>kliknutie</strong> (zatlačenie tlačidla myši) - reťazec <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress&gt;'</span></code></p></li>
+<li><p><strong>ťahanie</strong> (posúvanie myšou so zatlačeným tlačidlom alebo bez zatlačeného tlačidla) - reťazec <code class="docutils literal notranslate"><span class="pre">'&lt;Motion&gt;'</span></code></p></li>
+<li><p><strong>pustenie myši</strong> - reťazec <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonRelease&gt;'</span></code></p></li>
+</ul>
+<section id="klikanie-mysou">
+<h3><a class="toc-backref" href="07.html#id3" role="doc-backlink">Klikanie myšou</a><a class="headerlink" href="07.html#klikanie-mysou" title="Link to this heading">¶</a></h3>
+<p>Kliknutie myšou do grafickej plochy vyvolá udalosť s menom <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress&gt;'</span></code>. Ukážme ako vyzerá samotné zviazanie funkcie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="nb">print</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Druhý parameter metódy <code class="docutils literal notranslate"><span class="pre">bind()</span></code> musí byť <strong>referencia na funkciu</strong>, ale nie na hocijakú. Musí to byť funkcia, ktorá má jeden parameter. Tu sme použili štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">print</span></code> a keďže do <code class="docutils literal notranslate"><span class="pre">bind()</span></code> treba poslať referenciu na túto funkciu, nesmieme za identifikátor <code class="docutils literal notranslate"><span class="pre">print</span></code> písať zátvorky <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<p>Keď teraz tento malý testovací program spustíte, objaví sa prázdne grafické okno a program čaká, čo sa bude diať. Keďže sme grafickej ploche udalosť kliknutie myšou <strong>zviazali</strong> s funkciou <code class="docutils literal notranslate"><span class="pre">print()</span></code>, každé kliknutie do plochy automaticky vyvolá práve túto funkciu. Teda, pri klikaní dostávame takýto výpis (pri každom kliknutí do plochy sa vypíše jeden riadok):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ButtonPress</span> <span class="n">event</span> <span class="n">state</span><span class="o">=</span><span class="n">Mod1</span> <span class="n">num</span><span class="o">=</span><span class="mi">1</span> <span class="n">x</span><span class="o">=</span><span class="mi">194</span> <span class="n">y</span><span class="o">=</span><span class="mi">117</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ButtonPress</span> <span class="n">event</span> <span class="n">state</span><span class="o">=</span><span class="n">Mod1</span> <span class="n">num</span><span class="o">=</span><span class="mi">1</span> <span class="n">x</span><span class="o">=</span><span class="mi">194</span> <span class="n">y</span><span class="o">=</span><span class="mi">173</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ButtonPress</span> <span class="n">event</span> <span class="n">state</span><span class="o">=</span><span class="n">Mod1</span> <span class="n">num</span><span class="o">=</span><span class="mi">2</span> <span class="n">x</span><span class="o">=</span><span class="mi">328</span> <span class="n">y</span><span class="o">=</span><span class="mi">31</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ButtonPress</span> <span class="n">event</span> <span class="n">state</span><span class="o">=</span><span class="n">Mod1</span> <span class="n">num</span><span class="o">=</span><span class="mi">3</span> <span class="n">x</span><span class="o">=</span><span class="mi">17</span> <span class="n">y</span><span class="o">=</span><span class="mi">9</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Zviazanie udalosti s nejakou funkciou teda znamená, že každé vyvolanie udalosti (kliknutie tlačidlom myši do grafickej plochy) automaticky zavolá zviazanú funkciu. To, čo nám pritom vypisuje <code class="docutils literal notranslate"><span class="pre">print()</span></code>, je ten jeden parameter, ktorý <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> posiela pri každom jeho zavolaní.</p>
+<p>Vytvorme si teraz vlastnú funkciu, ktorú zviažeme s udalosťou kliknutia:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;klik&#39;</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Vytvorili sme funkciu <code class="docutils literal notranslate"><span class="pre">klik()</span></code>, ktorá sa bude automaticky volať pri každom kliknutí do plochy. Nezabudli sme do hlavičky funkcie pridať jeden formálny parameter, inak by Python pri vzniku udalosti protestoval, že našu funkciu <code class="docutils literal notranslate"><span class="pre">klik()</span></code> chcel zavolať s jedným parametrom a my sme ho nezadeklarovali. Ak by sme tento program spustili, pri každom kliknutí do plochy by sa do textovej plochy shellu mal vypísať text <code class="docutils literal notranslate"><span class="pre">'klik'</span></code>.</p>
+<p>Teraz k samotnému parametru v našej funkcii <code class="docutils literal notranslate"><span class="pre">klik()</span></code>: tento parameter slúži na to, aby nám <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> mohol nejakým spôsobom posielať informácie o detailoch udalosti. My vieme, že funkcia <code class="docutils literal notranslate"><span class="pre">klik()</span></code> sa zavolá vždy, keď sa niekam klikne, ale nevieme, kde presne do plochy sa kliklo. Práve na toto slúži tento parameter: z neho vieme vytiahnuť, napríklad x-ovú a y-ovú súradnicu kliknutého miesta. V nasledovnom príklade vidíme, ako sa to robí. Ešte sme tento <code class="docutils literal notranslate"><span class="pre">parameter</span></code> premenovali na <code class="docutils literal notranslate"><span class="pre">event</span></code> (t.j. „udalosť“ po anglicky), aby sme lepšie rozlíšili to, že s týmto parametrom prišla udalosť. Preto tieto súradnice získame ako <code class="docutils literal notranslate"><span class="pre">event.x</span></code> a <code class="docutils literal notranslate"><span class="pre">event.y</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;klik&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>V tomto programe sa pri každom kliknutí vypíšu do shellu aj súradnice kliknutého miesta.</p>
+<p>V ďalšom príklade ukážeme, ako využijeme súradnice kliknutého bodu v ploche:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teraz sa pri kliknutí nakreslí červený kruh a využijú sa pritom súradnice kliknutého miesta: stred kruhu je kliknuté miesto. Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_01.png"><img alt="../_images/107_01.png" class="align-center" height="201" src="../_images/107_01.png" width="286" />
+</a>
+<p>Akcia, ktorá sa vykoná pri kliknutí môže byť aj takto veľmi jednoduchá - spájanie kliknutého bodu s nejakým bodom grafickej plochy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_02.png"><img alt="../_images/107_02.png" class="align-center" height="201" src="../_images/107_02.png" width="286" />
+</a>
+<p>Ale môžu sa nakresliť aj komplexnejšie kresby, napríklad 10 sústredných farebných kruhov:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+</span><span class="hll">    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">):</span>
+</span><span class="hll">        <span class="n">farba</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;#</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">256</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="si">:</span><span class="s1">06x</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_03.png"><img alt="../_images/107_03.png" class="align-center" height="201" src="../_images/107_03.png" width="286" />
+</a>
+<p>Vráťme sa k príkladu, v ktorom sme kreslili malé krúžky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Do tohto programu chceme pridať takéto správanie: tieto kliknuté body (červené krúžky) sa budú postupne spájať úsečkami (zrejme sa bude úsečka kresliť až od druhého kliknutia). Pridáme dve globálne premenné <code class="docutils literal notranslate"><span class="pre">xx</span></code> a <code class="docutils literal notranslate"><span class="pre">yy</span></code>, v ktorých si budeme pamätať predchádzajúci kliknutý bod. Pred prvým kliknutím sme do <code class="docutils literal notranslate"><span class="pre">xx</span></code> priradili <code class="docutils literal notranslate"><span class="pre">None</span></code>, čo bude označovať, že predchádzajúci vrchol ešte nebol kliknutý:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="n">xx</span> <span class="o">=</span> <span class="n">yy</span> <span class="o">=</span> <span class="kc">None</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="k">if</span> <span class="n">xx</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+</span>        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="hll">    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Žiaľ to nefunguje: po spustení a kliknutí sa dozvieme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">File</span> <span class="o">...</span><span class="p">,</span> <span class="n">line</span> <span class="mi">8</span><span class="p">,</span> <span class="ow">in</span> <span class="n">klik</span>
+    <span class="k">if</span> <span class="n">xx</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">UnboundLocalError</span><span class="p">:</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;xx&#39;</span> <span class="n">referenced</span> <span class="n">before</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<p>Problémom sú tu <strong>globálne premenné</strong>. Používať globálne premenné vo vnútri funkcii môžeme, len dovtedy, kým ich <strong>nemeníme</strong>. Priraďovací príkaz vo funkcii totiž znamená, že vytvárame novú <strong>lokálnu premennú</strong> (v mennom priestore funkcie <code class="docutils literal notranslate"><span class="pre">klik()</span></code>). Takže Python to v tejto funkcii pochopil takto: do premenných <code class="docutils literal notranslate"><span class="pre">xx</span></code> a <code class="docutils literal notranslate"><span class="pre">yy</span></code> sa vo vnútri funkcie priraďuje nejaká hodnota, takže obe sú lokálne premenné. Keď ale príde vykonávanie funkcie na podmienený príkaz <code class="docutils literal notranslate"><span class="pre">if</span>&#160; <span class="pre">xx</span> <span class="pre">!=</span> <span class="pre">None:</span></code>, Python už vie, že <code class="docutils literal notranslate"><span class="pre">xx</span></code> je lokálna premenná, ktorá nemá zatiaľ priradenú žiadnu hodnotu. A preto nám oznámil túto chybovú správu: <code class="docutils literal notranslate"><span class="pre">UnboundLocalError:</span> <span class="pre">local</span> <span class="pre">variable</span> <span class="pre">'xx'</span> <span class="pre">referenced</span> <span class="pre">before</span> <span class="pre">assignment</span></code> (chceme používať lokálnu premennú ‚xx‘ skôr ako sme do nej niečo priradili).</p>
+<p>Takže s globálnymi premennými vo funkcii sa bude musieť pracovať nejako inak. Zrejme, kým do takejto premennej nepotrebujeme vo funkcii nič priradzovať, iba ju používať, problémy nie sú. Problém nastáva vtedy, keď chceme (pomocou priraďovacieho príkazu) meniť obsah globálnej premennej.</p>
+<p>Toto nám pomôže vyriešiť nový príkaz <code class="docutils literal notranslate"><span class="pre">global</span></code>:</p>
+<aside class="topic">
+<p class="topic-title">príkaz <code class="docutils literal notranslate"><span class="pre">global</span></code></p>
+<p>príkaz má tvar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">premenná</span>
+<span class="k">global</span> <span class="n">premenná</span><span class="p">,</span> <span class="n">premenná</span><span class="p">,</span> <span class="n">premenná</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Príkaz sa používa vo funkcii vtedy, keď v nej chceme pracovať s globálnou premennou (alebo aj s viac premennými), ale nechceme, aby ju Python vytvoril aj v lokálnom mennom priestore, ale ponechal len v globálnom.</p>
+</aside>
+<p>Po doplnení tohto príkazu do predchádzajúceho príkladu všetko funguje tak, ako má:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="n">xx</span> <span class="o">=</span> <span class="n">yy</span> <span class="o">=</span> <span class="kc">None</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="hll">    <span class="k">global</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span>
+</span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xx</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="hll">    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Po spustení dostávame takýto obrázok:</p>
+<a class="reference internal image-reference" href="../_images/107_04.png"><img alt="../_images/107_04.png" class="align-center" height="201" src="../_images/107_04.png" width="286" />
+</a>
+<div class="admonition danger">
+<p class="admonition-title">Nebezpečné</p>
+<p>Príkaz <strong>global</strong> umožňuje modifikovať globálne premenné vo funkciách, teda vlastne robiť tzv. <strong>vedľajší účinok</strong> (<em>side effect</em>) na globálnych premenných. Toto je ale veľmi <strong>nesprávny spôsob programovania</strong> (<em>bad programming practice</em>) a väčšinou svedčí o programátorovi začiatočníkovi, amatérovi.</p>
+<p>Aj testovač domácich zadaní a riešení skúšok väčšinou tento príkaz vo vašich projektoch zakazuje.</p>
+</div>
+<p>Kým sa nenaučíme, ako to obísť, budeme to používať, ale veľmi opatrne. Neskôr to využijeme veľmi výnimočne, najmä pri ladení. Správne sa takéto problémy riešia definovaním vlastných tried a použitím atribútov tried.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="tahanie-mysou">
+<h3><a class="toc-backref" href="07.html#id4" role="doc-backlink">Ťahanie myšou</a><a class="headerlink" href="07.html#tahanie-mysou" title="Link to this heading">¶</a></h3>
+<p>Obsluha udalosti ťahanie myšou (pohyb myši <strong>bez zatlačeného</strong> alebo <strong>so zatlačeným</strong> tlačidlom) je veľmi podobná klikaniu. Udalosť má meno <code class="docutils literal notranslate"><span class="pre">'&lt;Motion&gt;'</span></code>. Pozrime, čo sa zmení, keď kliknutie <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress&gt;'</span></code> nahradíme ťahaním <code class="docutils literal notranslate"><span class="pre">'&lt;Motion&gt;'</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>      <span class="c1"># &#39;&lt;Motion&gt;&#39; namiesto &#39;&lt;ButtonPress&gt;&#39;</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Funguje to veľmi dobre: pri ťahaní sa na pozícii myši kreslia červené kruhy. Pri pomalom ťahaní sú kruhy nakreslené veľmi nahusto.</p>
+<a class="reference internal image-reference" href="../_images/107_05.png"><img alt="../_images/107_05.png" class="align-center" height="201" src="../_images/107_05.png" width="286" />
+</a>
+<p>Ak vo funkcii <code class="docutils literal notranslate"><span class="pre">tahaj</span></code> pri ťahaní myšou zakaždým zmažeme grafickú plochu (zrušíme všetky nakreslené objekty), v ploche zostanú nakreslené len objekty, ktoré sa kreslili až po tomto zmazaní. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento program nakreslí červený krúžok, ktorý bude „prilepený“ na kurzor myši. Vyskúšajte namiesto krúžku vypisovať text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Často budeme v našich programoch spracovávať obe udalosti: kliknutie aj ťahanie. Niekedy sa o to bude starať tá istá funkcia, inokedy budú rôzne a preto je dobre ich pomenovať zodpovedajúcimi názvami, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pri posúvaní myši sa kreslia malé modré kruhy, pri kliknutí sa nakreslí jeden väčší červený kruh:</p>
+<a class="reference internal image-reference" href="../_images/107_06.png"><img alt="../_images/107_06.png" class="align-center" height="201" src="../_images/107_06.png" width="286" />
+</a>
+<p>Všimnite si, že ťahanie (kreslenie modrých kruhov) funguje aj so zatlačeným tlačidlom myši.</p>
+<p>Veľmi často budeme potrebovať, aby sa funkcia na ťahanie (event handler <code class="docutils literal notranslate"><span class="pre">tahaj</span></code>) zavolala len v prípade, že je súčasne s ťahaním zatlačené aj tlačidlo myši. Vtedy do mena udalosti <code class="docutils literal notranslate"><span class="pre">'&lt;Motion&gt;'</span></code> na začiatok pripíšeme <code class="docutils literal notranslate"><span class="pre">B1-</span></code>, čo bude označovať, že funkcia <code class="docutils literal notranslate"><span class="pre">tahaj</span></code> si bude všímať len ťahania so zatlačeným ľavým tlačidlom myši (<code class="docutils literal notranslate"><span class="pre">B1</span></code> je pre ľavé tlačidlo myši a <code class="docutils literal notranslate"><span class="pre">B3</span></code> pre pravé). Otestujte, ako sa bude predchádzajúci program správať, keď namiesto <code class="docutils literal notranslate"><span class="pre">canvas.bind('&lt;Motion&gt;',</span> <span class="pre">tahaj)</span></code> zapíšeme <code class="docutils literal notranslate"><span class="pre">canvas.bind('&lt;B1-Motion&gt;',</span> <span class="pre">tahaj)</span></code>. Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_07.png"><img alt="../_images/107_07.png" class="align-center" height="201" src="../_images/107_07.png" width="286" />
+</a>
+<p>Na podobnom princípe môžeme upraviť aj kreslenie lúčov z bodu <code class="docutils literal notranslate"><span class="pre">(100,</span> <span class="pre">200)</span></code> do momentálnej pozície myši:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pri posúvaní myši alebo ťahaní sa nakreslia čierne úsečky, pri každom kliknutí sa nakreslí červená úsečka:</p>
+<a class="reference internal image-reference" href="../_images/107_08.png"><img alt="../_images/107_08.png" class="align-center" height="201" src="../_images/107_08.png" width="286" />
+</a>
+<p>Alebo malou zmenou kliknutím definujeme pozíciu (globálny bod <code class="docutils literal notranslate"><span class="pre">(xx,</span> <span class="pre">yy)</span></code>), z ktorého sa budú kresliť lúče:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="k">global</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span>
+</span><span class="hll">    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span>
+</span>
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Všimnite si, že sme tu použili <code class="docutils literal notranslate"><span class="pre">'&lt;B1-Motion&gt;'</span></code>. Zamyslite sa, prečo by tu pri <code class="docutils literal notranslate"><span class="pre">'&lt;Motion&gt;'</span></code> bez <code class="docutils literal notranslate"><span class="pre">B1-</span></code> vznikla chyba. Po spustení dostávame takúto kresbu:</p>
+<a class="reference internal image-reference" href="../_images/107_09.png"><img alt="../_images/107_09.png" class="align-center" height="201" src="../_images/107_09.png" width="286" />
+</a>
+<p>Ďalej nadviažeme na program, v ktorom sme postupne spájali kliknuté body. Pri tomto programe sme využili nový príkaz <code class="docutils literal notranslate"><span class="pre">global</span></code>, aby sme sa dostali ku globálnym premenným. Tento nie najvhodnejší príkaz môžeme obísť, keď využijeme meniteľný (<strong>mutable</strong>) typ zoznam.</p>
+<p>Budeme ťahať (ťahaním myši so zatlačeným tlačidlom) jednu dlhú lomenú čiaru, pričom si budeme ukladať súradnice prijaté z udalosti do zoznamu čísel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="n">zoznam</span> <span class="o">=</span> <span class="p">[]</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="hll">    <span class="n">zoznam</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="hll">    <span class="n">zoznam</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">])</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">ciara</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">ciara</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Všimnite si, že v týchto dvoch funkciách používame 3 globálne premenné (okrem funkcií):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas</span></code> - referencia na grafickú plochu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ciara</span></code> - identifikátor objektu čiara, potrebujeme ho pre neskoršie menenie postupnosti súradníc príkazom <code class="docutils literal notranslate"><span class="pre">coords()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zoznam</span></code> - zoznam súradníc je meniteľný objekt, teda môžeme meniť obsah zoznamu bez toho, aby sme do premennej <code class="docutils literal notranslate"><span class="pre">zoznam</span></code> priraďovali; v našich funkciách buď priraďujeme do rezu alebo voláme metódu <code class="docutils literal notranslate"><span class="pre">extend()</span></code> (táto prilepí nejakú postupnosť na koniec zoznamu)</p>
+<ul>
+<li><p>aj modifikovanie zoznamu vo funkcii, v ktorej tento zoznam nie je parametrom funkcie, nie je najvhodnejším spôsobom programovania; aj v tomto prípade je to nevhodný <strong>vedľajší účinok</strong> podobne ako príkaz <code class="docutils literal notranslate"><span class="pre">global</span></code>, zatiaľ to inak robiť nevieme, tak je to dočasne akceptovateľné</p></li>
+</ul>
+</li>
+</ul>
+<p>Ťahanie čiary v predchádzajúcom príklade žiaľ kreslí jedinú čiaru: každé ďalšie kliknutie a ťahanie začne kresliť novú čiaru, pričom stará čiara zmizne. Vyriešime to tak, že nová lomená čiara vznikne až pri kliknutí a ťahaním myši sa táto čiara stále predlžuje. Stará čiara pritom ostane bez zmeny:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="n">zoznam</span> <span class="o">=</span> <span class="p">[]</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="hll">    <span class="k">global</span> <span class="n">ciara</span>
+</span><span class="hll">    <span class="n">zoznam</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+</span><span class="hll">    <span class="n">ciara</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="hll">    <span class="n">zoznam</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">])</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">ciara</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Poexperimentujeme:</p>
+<a class="reference internal image-reference" href="../_images/107_10.png"><img alt="../_images/107_10.png" class="align-center" height="201" src="../_images/107_10.png" width="286" />
+</a>
+<p>Malou zmenou dosiahneme veľmi zaujímavý efekt. Vyskúšajte a poštudujte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">zoznam</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="hll">    <span class="k">global</span> <span class="n">poly</span>
+</span>    <span class="n">zoznam</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+    <span class="n">farba</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;#</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">256</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="si">:</span><span class="s1">06x</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="hll">    <span class="n">poly</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_polygon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tahaj</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">zoznam</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">])</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="n">tahaj</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/107_11.png"><img alt="../_images/107_11.png" class="align-center" height="201" src="../_images/107_11.png" width="286" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="udalosti-od-klavesnice">
+<h2><a class="toc-backref" href="07.html#id5" role="doc-backlink">Udalosti od klávesnice</a><a class="headerlink" href="07.html#udalosti-od-klavesnice" title="Link to this heading">¶</a></h2>
+<p>Aj každé zatlačenie nejakého klávesu na klávesnici môže vyvolať udalosť. Základnou univerzálnou udalosťou je <code class="docutils literal notranslate"><span class="pre">'&lt;KeyPress&gt;'</span></code>, ktorá sa vyvolá pri každom zatlačení nejakého klávesu. Môžeme otestovať:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">keysym</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;KeyPress&gt;&#39;</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Všimnite si, že sme museli zapísať <code class="docutils literal notranslate"><span class="pre">bind_all()</span></code> namiesto <code class="docutils literal notranslate"><span class="pre">bind()</span></code>. Každé zatlačenie nejakého klávesu vypíše jeho reťazcovú reprezentáciu, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+<span class="n">Shift_L</span>
+<span class="n">A</span>
+<span class="n">Left</span>
+<span class="n">Right</span>
+<span class="n">Up</span>
+<span class="n">Down</span>
+<span class="n">Next</span>
+<span class="n">Escape</span>
+<span class="n">Return</span>
+<span class="n">F1</span>
+</pre></div>
+</div>
+<p>Pritom každý jeden kláves môže vyvolať aj samostatnú udalosť. Ako meno udalosti treba uviesť meno klávesu (jeho reťazcovú reprezentáciu) v tvare <code class="docutils literal notranslate"><span class="pre">'&lt;KeyPress-...&gt;'</span></code> alebo len ako <code class="docutils literal notranslate"><span class="pre">'&lt;...&gt;'</span></code> (bez mena udalosti <code class="docutils literal notranslate"><span class="pre">KeyPress</span></code>) alebo väčšinou bude fungovať len samostatný znak, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">test_vlavo</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;šípka vľavo&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">test_a</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stlačil si kláves a&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">test_F1</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F1&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">test_a</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;Left&gt;&#39;</span><span class="p">,</span> <span class="n">test_vlavo</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;KeyPress-F1&gt;&#39;</span><span class="p">,</span> <span class="n">test_F1</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento program reaguje len na stláčanie klávesu <kbd class="kbd docutils literal notranslate">a</kbd>, šípky vľavo a klávesu <kbd class="kbd docutils literal notranslate">F1</kbd>. Všetky ostatné klávesy ignoruje.</p>
+<p>Často sa samostatné udalosti pre jednotlivé šípky použijú podobne, ako v tomto príklade:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span>
+<span class="n">zoznam</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
+    <span class="n">zoznam</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">ciara</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">udalost_vlavo</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">kresli</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">udalost_vpravo</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">kresli</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">udalost_hore</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">kresli</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">udalost_dolu</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">kresli</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">ciara</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>        <span class="c1"># zatiaľ prázdna čiara</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;Left&gt;&#39;</span><span class="p">,</span> <span class="n">udalost_vlavo</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;Right&gt;&#39;</span><span class="p">,</span> <span class="n">udalost_vpravo</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;Up&gt;&#39;</span><span class="p">,</span> <span class="n">udalost_hore</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;Down&gt;&#39;</span><span class="p">,</span> <span class="n">udalost_dolu</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Kreslenie pomocou tohto programu môže pripomínať detskú hračku „magnetická tabuľka“:</p>
+<a class="reference internal image-reference" href="../_images/107_12.png"><img alt="../_images/107_12.png" class="align-center" height="201" src="../_images/107_12.png" width="286" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="casovac">
+<h2><a class="toc-backref" href="07.html#id6" role="doc-backlink">Časovač</a><a class="headerlink" href="07.html#casovac" title="Link to this heading">¶</a></h2>
+<p>Pripomeňme si, ako sme sa doteraz naučili v grafickej ploche kresliť krúžky na náhodné pozície s nejakým časovým pozdržaním (napríklad 100 ms):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">():</span>
+<span class="hll">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">kresli</span><span class="p">()</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hotovo&#39;</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Použili sme tu <strong>nekonečný cyklus</strong> a preto sa príkaz <code class="docutils literal notranslate"><span class="pre">print('hotovo')</span></code> za volaním <code class="docutils literal notranslate"><span class="pre">kresli()</span></code> s nekonečným while-cyklom už nikdy nevykoná.</p>
+<p>Metóda grafickej plochy <code class="docutils literal notranslate"><span class="pre">after()</span></code>, ktorá pozdrží výpočet o nejaký počet milisekúnd, je oveľa všestrannejšia: môžeme pomocou nej štartovať, tzv. <strong>časovač</strong>:</p>
+<aside class="topic">
+<p class="topic-title">metóda <code class="docutils literal notranslate"><span class="pre">after()</span></code></p>
+<p>Metóda <code class="docutils literal notranslate"><span class="pre">after()</span></code> grafickej plochy môže mať jeden z týchto tvarov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="n">milisekundy</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="n">milisekundy</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prvý parameter <code class="docutils literal notranslate"><span class="pre">milisekundy</span></code> už poznáme: výpočet sa pozdrží o príslušný počet milisekúnd. Lenže, ak je metóda zavolaná aj s druhým parametrom <code class="docutils literal notranslate"><span class="pre">funkcia</span></code>, výpočet sa v skutočnosti nepozdrží, ale pozdrží sa vyvolanie zadanej funkcie (parameter <code class="docutils literal notranslate"><span class="pre">funkcia</span></code> musí byť <strong>referencia na funkciu</strong>, teda väčšinou bez okrúhlych zátvoriek). Táto vyvolaná funkcia musí byť definovaná bez parametrov.</p>
+<p>S týmto druhým parametrom metóda <code class="docutils literal notranslate"><span class="pre">after()</span></code> <strong>naplánuje</strong> (niekedy do budúcnosti) spustenie nejakej funkcie a pritom výpočet pokračuje normálne ďalej na ďalšom príkaze za <code class="docutils literal notranslate"><span class="pre">after()</span></code> (bez pozdržania).</p>
+<p>Tomuto mechanizmu hovoríme <strong>časovač</strong> (naplánovanie spustenia nejakej akcie), po anglicky <strong>timer</strong>. Najčastejšie sa používa takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">casovac</span><span class="p">():</span>
+    <span class="c1"># príkazy</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="n">cas</span><span class="p">,</span> <span class="n">casovac</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V tomto prípade funkcia naplánuje spustenie samej seba po nejakom čase. Môžete si to predstaviť tak, že v počítači tikajú nejaké hodiny s udanou frekvenciou v milisekundách a pri každom tiknutí sa vykonajú príkazy v tele funkcie.</p>
+</aside>
+<p>Najprv jednoduchý test:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="n">ddef</span> <span class="n">casovac</span><span class="p">():</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tik&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">casovac</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="n">casovac</span><span class="p">()</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Časovač každú sekundu vypíše do textovej plochy reťazec <code class="docutils literal notranslate"><span class="pre">'tik'</span></code>.</p>
+<p>Predchádzajúci program s náhodnými červenými krúžkami teraz prepíšeme s použitím časovača (<code class="docutils literal notranslate"><span class="pre">canvas.update()</span></code> treba z funkcie časovača vyhodiť):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">():</span>
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="c1">#canvas.update()               # v časovači by sa nemalo volať</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">kresli</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="n">kresli</span><span class="p">()</span>             <span class="c1"># naštartovanie časovača</span>
+</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hotovo&#39;</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Po spustení funkcie <code class="docutils literal notranslate"><span class="pre">kresli()</span></code> (tá nakreslí jeden kruh a zavolá <code class="docutils literal notranslate"><span class="pre">after()</span></code>, t. j. naplánuje ďalšie kreslenie) sa pokračuje ďalším príkazom, t. j. vypíše sa <code class="docutils literal notranslate"><span class="pre">print('hotovo')</span></code>. Sem by sme mohli zapísať ďalšie pythonovské príkazy.</p>
+<p>V nasledovnom príklade sme pridali zviazanie s klávesom <kbd class="kbd docutils literal notranslate">Enter</kbd>, pomocou ktorého sa zmaže celá grafická plocha (pomocou <code class="docutils literal notranslate"><span class="pre">canvas.delete('all')</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">kresli</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">zmaz</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">kresli</span><span class="p">()</span>             <span class="c1"># naštartovanie časovača</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind_all</span><span class="p">(</span><span class="s1">&#39;&lt;Return&gt;&#39;</span><span class="p">,</span> <span class="n">zmaz</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Keďže počas behu časovača môže program vykonávať ďalšie akcie, môže spustiť hoci aj ďalší časovač. Zapíšme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">():</span>
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">kresli</span><span class="p">)</span>
+</span>
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">kresli1</span><span class="p">():</span>
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">kresli1</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="n">kresli</span><span class="p">()</span>
+</span><span class="hll"><span class="n">kresli1</span><span class="p">()</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Program teraz spustí oba časovače: kreslia sa červené krúžky a modré štvorčeky. Keďže druhý časovač má svoj interval <code class="docutils literal notranslate"><span class="pre">300</span></code> milisekúnd, teda „tiká“ 3-krát pomalšie ako prvý, kreslí 3-krát menej modrých štvorčekov ako prvý časovač červených krúžkov, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_13.png"><img alt="../_images/107_13.png" class="align-center" height="201" src="../_images/107_13.png" width="286" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="zastavovanie-casovaca">
+<h3><a class="toc-backref" href="07.html#id7" role="doc-backlink">Zastavovanie časovača</a><a class="headerlink" href="07.html#zastavovanie-casovaca" title="Link to this heading">¶</a></h3>
+<p>Na zastavenie časovača nemáme žiaden príkaz. Časovač môžeme zastaviť len tak, že on sám v svojom tele na konci nezavolá metódu <code class="docutils literal notranslate"><span class="pre">canvas.after()</span></code> a tým aj skončí. Upravíme predchádzajúci príklad tak, že zadefinujme dve globálne premenné, ktoré budú slúžiť pre oba časovače na zastavovanie. Aby sme mohli tieto časovače zastavovať, resp. opäť rozbiehať, pridáme dve funkcie na spracovanie udalosti od dvoch tlačidiel. Každá z týchto funkcií sa bude starať o svoj časovač:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="hll"><span class="n">bezi</span> <span class="o">=</span> <span class="n">bezi1</span> <span class="o">=</span> <span class="kc">True</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="k">if</span> <span class="n">bezi</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">kresli</span><span class="p">)</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">370</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="hll">    <span class="k">if</span> <span class="n">bezi1</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">kresli1</span><span class="p">)</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prvy</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">bezi</span>
+<span class="hll">    <span class="n">bezi</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">bezi</span>
+</span>    <span class="k">if</span> <span class="n">bezi</span><span class="p">:</span>
+        <span class="n">kresli</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">druhy</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">bezi1</span>
+<span class="hll">    <span class="n">bezi1</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">bezi1</span>
+</span>    <span class="k">if</span> <span class="n">bezi1</span><span class="p">:</span>
+        <span class="n">kresli1</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">zmaz</span><span class="p">():</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Prvý proces&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">prvy</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Druhý proces&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">druhy</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmaž plochu&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">zmaz</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">kresli</span><span class="p">()</span>
+<span class="n">kresli1</span><span class="p">()</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teraz bežia oba časovače, ale stačí stláčať tlačidlá a časovače sa budú zastavovať alebo opäť spúšťať.</p>
+<p>Ďalšie widgety môžeme využiť aj na iné účely: môžeme nimi meniť „parametre“ bežiacich príkazov. Napríklad farbu krúžkov, ale aj interval tikania časovača, teda zrýchľovať alebo spomaľovať bežiace časovače.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="aplikacia-s-autickami">
+<h3><a class="toc-backref" href="07.html#id8" role="doc-backlink">Aplikácia s autíčkami</a><a class="headerlink" href="07.html#aplikacia-s-autickami" title="Link to this heading">¶</a></h3>
+<p>Ďalšia ukážka bude hýbať dvoma obrázkami autíčok (napríklad <a class="reference external" href="https://python.input.sk/_images/auto1.png">auto1.png</a> a <a class="reference external" href="https://python.input.sk/_images/auto2.png">auto2.png</a>) rôznou rýchlosťou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">():</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">pohyb</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">obr_auto1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto1.png&#39;</span><span class="p">)</span>
+<span class="n">obr_auto2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto2.png&#39;</span><span class="p">)</span>
+
+<span class="n">auto1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto1</span><span class="p">)</span>
+<span class="n">auto2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto2</span><span class="p">)</span>
+
+<span class="hll"><span class="n">pohyb</span><span class="p">()</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Program rozbehne dve autíčka proti sebe, ale nekontroluje, či sa zrazia:</p>
+<a class="reference internal image-reference" href="../_images/107_14.png"><img alt="../_images/107_14.png" class="align-center" height="201" src="../_images/107_14.png" width="453" />
+</a>
+<p>Aby sa autá nerozbehli už pri štarte programu, ale až po kliknutí na tlačidlo <code class="docutils literal notranslate"><span class="pre">'Štart'</span></code>, zapíšeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">():</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">pohyb</span><span class="p">()</span>
+</span>
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">():</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">pohyb</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">obr_auto1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto1.png&#39;</span><span class="p">)</span>
+<span class="n">obr_auto2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto2.png&#39;</span><span class="p">)</span>
+
+<span class="n">auto1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto1</span><span class="p">)</span>
+<span class="n">auto2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto2</span><span class="p">)</span>
+
+<span class="hll"><span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Štart&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teraz chceme pridať kontrolu, či sa už obe autá zrazili. Ak by sme zastavili časovač (museli by sme doprogramovať), mohli by sme vypísať informácie o polohe oboch áut. Keďže si nikde neuchovávame ich momentálnu pozíciu, využijeme metódu <code class="docutils literal notranslate"><span class="pre">coords()</span></code>, ktorá okrem zmeny súradníc grafického objektu, dokáže zistiť momentálne jeho súradnice. Napríklad, by sme mohli dostať takéto výpisy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;auto1 =&#39;</span><span class="p">,</span> <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;auto2 =&#39;</span><span class="p">,</span> <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto2</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">auto1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">164.0</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">]</span>
+<span class="n">auto2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">395.0</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Vidíme, že táto funkcia nám vracia polohu autíčka (súradnice stredu obrázka), preto môžeme zastaviť časovač testovaním x-ových súradníc autíčok:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">():</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+    <span class="n">pohyb</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">():</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="hll">    <span class="n">x_auto1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">    <span class="n">x_auto2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">    <span class="k">if</span> <span class="n">x_auto1</span> <span class="o">&gt;</span> <span class="n">x_auto2</span> <span class="o">-</span> <span class="mi">140</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;BUM&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 40 bold&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">pohyb</span><span class="p">)</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">obr_auto1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto1.png&#39;</span><span class="p">)</span>
+
+<span class="n">obr_auto2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto2.png&#39;</span><span class="p">)</span>
+
+<span class="n">auto1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto1</span><span class="p">)</span>
+<span class="n">auto2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto2</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Štart&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pri stretnutí autíčok dostávame:</p>
+<a class="reference internal image-reference" href="../_images/107_15.png"><img alt="../_images/107_15.png" class="align-center" height="201" src="../_images/107_15.png" width="453" />
+</a>
+<p>Hoci tento program funguje dobre, má niekoľko malých nedostatkov:</p>
+<ul class="simple">
+<li><p>ak počas pohybu autíčok (beží časovač <code class="docutils literal notranslate"><span class="pre">pohyb()</span></code>) znovu klikneme na tlačidlo (vyvoláme udalosť <code class="docutils literal notranslate"><span class="pre">start()</span></code>), autíčka skočia do svojich štartových pozícií a znovu sa vyvolá časovač <code class="docutils literal notranslate"><span class="pre">pohyb()</span></code>; teraz to ale vyzerá, že autíčka idú dvojnásobnou rýchlosťou - totiž teraz bežia naraz dva časovače <code class="docutils literal notranslate"><span class="pre">pohyb()</span></code> aj <code class="docutils literal notranslate"><span class="pre">pohyb()</span></code>, ktoré oba pohnú oboma autíčkami - hoci je to zaujímavé, budeme sa snažiť tomuto zabrániť</p></li>
+<li><p>ak autíčka do seba nabúrajú, vypíše sa text <code class="docutils literal notranslate"><span class="pre">'BUM'</span></code>, ktorý tam bude svietiť aj po opätovnom naštartovaní autíčok</p></li>
+</ul>
+<p>Vylepšíme funkciu <code class="docutils literal notranslate"><span class="pre">start()</span></code> takto:</p>
+<ul class="simple">
+<li><p>keďže táto štartuje časovač <code class="docutils literal notranslate"><span class="pre">pohyb()</span></code>, zablokujeme opätovné kliknutie tým, že zablokujeme (prevedieme ho do stavu <strong>disable</strong>) tlačidlo s udalosťou <code class="docutils literal notranslate"><span class="pre">start()</span></code></p></li>
+<li><p>ak svieti text <code class="docutils literal notranslate"><span class="pre">'BUM'</span></code>, tak ho vymažeme</p></li>
+</ul>
+<p>V časovači (vo funkcii) <code class="docutils literal notranslate"><span class="pre">pohyb()</span></code> pri výpise správy <code class="docutils literal notranslate"><span class="pre">'BUM'</span></code>, keďže zastavujeme časovač, opätovne obnovíme zablokované tlačidlo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">():</span>
+<span class="hll">    <span class="n">tlacidlo</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;disable&#39;</span>              <span class="c1"># zablokuje tlačidlo</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">pohyb</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">text</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">auto2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">x_auto1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_auto2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">auto2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">x_auto1</span> <span class="o">&gt;</span> <span class="n">x_auto2</span> <span class="o">-</span> <span class="mi">140</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;BUM&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;arial 40 bold&#39;</span><span class="p">)</span>
+<span class="hll">        <span class="n">tlacidlo</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;normal&#39;</span>              <span class="c1"># odblokuje tlačidlo</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">pohyb</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">obr_auto1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto1.png&#39;</span><span class="p">)</span>
+<span class="n">obr_auto2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;auto2.png&#39;</span><span class="p">)</span>
+
+<span class="n">auto1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto1</span><span class="p">)</span>
+<span class="n">auto2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr_auto2</span><span class="p">)</span>
+
+<span class="n">tlacidlo</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Štart&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
+<span class="n">tlacidlo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zhrnutie-udalosti-od-mysi">
+<h3><a class="toc-backref" href="07.html#id9" role="doc-backlink">Zhrnutie udalostí od myši</a><a class="headerlink" href="07.html#zhrnutie-udalosti-od-mysi" title="Link to this heading">¶</a></h3>
+<p>Udalosť <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress&gt;'</span></code> reprezentuje kliknutie ľubovoľným tlačidlom myši. Väčšinou má každá myš tri tlačidlá: ľavé, stredné a pravé. Priamo v názve udalosti môžeme určiť, aby sa udalosť vyvolala len pri konkrétnom tlačidle. Vtedy bude názov udalosti takýto:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress-1&gt;'</span></code> pre zatlačenie ľavého tlačidla</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress-2&gt;'</span></code> pre zatlačenie stredného tlačidla</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress-3&gt;'</span></code> pre zatlačenie pravého tlačidla</p></li>
+</ul>
+<p>Môžeme zapísať napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik_lavy</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Arial 30&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik_stredny</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Arial 30&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik_pravy</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Arial 30&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-1&gt;&#39;</span><span class="p">,</span> <span class="n">klik_lavy</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-2&gt;&#39;</span><span class="p">,</span> <span class="n">klik_stredny</span><span class="p">)</span>
+</span><span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-3&gt;&#39;</span><span class="p">,</span> <span class="n">klik_pravy</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Každá funkcia sa stará o kliknutie svojho tlačidla. V parametri <code class="docutils literal notranslate"><span class="pre">event</span></code> okrem súradníc <code class="docutils literal notranslate"><span class="pre">event.x</span></code> a <code class="docutils literal notranslate"><span class="pre">event.y</span></code> dostávame aj poradové číslo tlačidla <code class="docutils literal notranslate"><span class="pre">event.num</span></code>, ktorým sme práve klikli. Predchádzajúci program môžeme zapísať aj takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">farba</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">][</span><span class="n">event</span><span class="o">.</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;Arial 30&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">)</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Je to na programátorovi, ktorú z týchto možností preferuje.</p>
+<p>Meno udalosti <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress-1&gt;'</span></code> existuje aj v skrátenej forme a to buď <code class="docutils literal notranslate"><span class="pre">'&lt;Button-1&gt;'</span></code> alebo dokonca <code class="docutils literal notranslate"><span class="pre">'&lt;1&gt;'</span></code> (zrejme to funguje aj s <code class="docutils literal notranslate"><span class="pre">2</span></code> aj <code class="docutils literal notranslate"><span class="pre">3</span></code>). Opäť je na programátorovi, ktorý zápis preferuje a pritom neznižuje čitateľnosť kódu.</p>
+<p>Už poznáme meno udalosti pre ťahanie myši <code class="docutils literal notranslate"><span class="pre">'&lt;Motion&gt;'</span></code>. Táto pomenovaná udalosť zavolá príslušnú funkciu so zatlačeným aj bez zatlačeného tlačidla. Poznáme aj variant mena udalosti <code class="docutils literal notranslate"><span class="pre">'&lt;B1-Motion&gt;'</span></code>, vďaka čomu spracovávame len ťahanie so zatlačeným ľavým tlačidlom myši. Podobne ako pri klikaní môžeme špecifikovať zatlačené tlačidlo číslom od 1 do 3, bude to fungovať aj pri ťahaní, preto:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;B1-Motion&gt;'</span></code> ťahanie so zatlačeným ľavým tlačidlom</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;B2-Motion&gt;'</span></code> ťahanie so zatlačeným stredným tlačidlom</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;B3-Motion&gt;'</span></code> ťahanie so zatlačeným pravým tlačidlom</p></li>
+</ul>
+<p>Neskôr uvidíme využitie udalosti aj od pustenia tlačidla myši <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonRelease&gt;'</span></code>. Aj táto udalosť funguje pre varianty s konkrétnym tlačidlom myši, napríklad <code class="docutils literal notranslate"><span class="pre">'&lt;ButtonRelease-1&gt;'</span></code> spracováva len pustenie ľavého tlačidla myši.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="07.html#id10" role="doc-backlink">Cvičenie</a><a class="headerlink" href="07.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server grafické ulohy nebude testovať, preto ich odovzdaj čo najviac, aspoň <strong>8</strong></p></li>
+<li><p>niektoré úlohy sú uvedené aj s riešením a prípadne komentárom (sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd>), tie neodovzdávaj - sú určené na štúdium a inšpiráciu</p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 14.10.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z doterajších prednášok</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Napíš program, ktorý zabezpečí ťahanie myši: pri ťahaní so zatlačeným ľavým tlačidlom sa kreslia vodorovné úsečky (z kliknutej pozície úsečka dĺžky 100). Pravým klikom sa obrazovka zmaže. V programe zabezpeč zviazanie týchto dvoch ovládačov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="n">kresli</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-3&gt;&#39;</span><span class="p">,</span> <span class="n">zmaz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Po spustení a ťahaní môžeš dostať, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_c01.png"><img alt="../_images/107_c01.png" class="align-center" height="134" src="../_images/107_c01.png" width="190" />
+</a>
+<p>Na zmazávanie obrazovky teraz nahraď klikanie pravým tlačidlom novým widgetom <code class="docutils literal notranslate"><span class="pre">Button</span></code>. Uvedom si, že funkcia, ktorá obsluhuje udalosť od tlačidla musí byť bez parametrov. Tlačidlo vytvoríš, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Zmaž&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">zmaz</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Program počas ťahania myši zabezpečí kreslenie žltých krúžkov, prvý s polomerom <code class="docutils literal notranslate"><span class="pre">1</span></code>, každý ďalší je o <code class="docutils literal notranslate"><span class="pre">0.1</span></code> väčší. Tlačidlom <code class="docutils literal notranslate"><span class="pre">'Zmaž'</span></code> sa obrazovka zmaže a nastaví sa kreslenie od najmenšieho krúžku (s polomerom <code class="docutils literal notranslate"><span class="pre">1</span></code>). V programe zabezpeč zviazanie ovládača a tlačidla:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="n">kresli</span><span class="p">)</span>
+<span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Po spustení a ťahaní môžeš dostať, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_c02.png"><img alt="../_images/107_c02.png" class="align-center" height="134" src="../_images/107_c02.png" width="190" />
+</a>
+<p>Teraz pridaj ďalšie tlačidlo (napríklad s textom <code class="docutils literal notranslate"><span class="pre">'Zmeň</span> <span class="pre">farbu'</span></code>), ktorým sa zmení farba krúžkov na nejakú náhodnú - od tohto momentu budú všetky nasledovné krúžky zafarbené touto novou farbou.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Program zabezpečí klikanie myšou: prvé kliknutie si zapamätá súradnice, druhé kliknutie nakreslí obdĺžnik (<code class="docutils literal notranslate"><span class="pre">create_rectangle</span></code>), v ktorom jeden vrchol je zapamätaný a druhý vrchol je práve kliknutý. Obdĺžnik je zafarbený náhodnou farbou. Toto sa opakuje pri ďalších klikaniach.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-1&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_c03.png"><img alt="../_images/107_c03.png" class="align-center" height="134" src="../_images/107_c03.png" width="190" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Podobne ako v (3) úlohe: ale pri každom kliknutí sa na danej pozícii nakreslí <code class="docutils literal notranslate"><span class="pre">'+'</span></code> (<code class="docutils literal notranslate"><span class="pre">create_text</span></code>), pritom pri prvých dvoch kliknutiach sa tieto body zapamätajú. Tretie z týchto troch kliknutí nakreslí náhodne zafarbený trojuholník (<code class="docutils literal notranslate"><span class="pre">create_polygon</span></code>). Zoznam zapamätaných bodov má momentálne 3 vrcholy. Teraz sa z tohto zapamätaného zoznamu vyhodí prvý prvok a pokračuje sa ďalej s dvomi vrcholmi: ďalšie kliknutie pridá do zoznamu 3. vrchol, nakreslí trojuholník a prvý vrchol sa opäť vyhodí. Môžeš dostať, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_c04.png"><img alt="../_images/107_c04.png" class="align-center" height="134" src="../_images/107_c04.png" width="190" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Podobne ako v (4) úlohe: klikanie do plochy kreslí <code class="docutils literal notranslate"><span class="pre">'+'</span></code> a zapamätáva tieto body. Ak mám aspoň 3 zapamätané body a pritom prvý a posledný majú vzdialenosť menšiu ako 5, ukončí sa zapamätávanie bodov, nakreslí sa z nich náhodne zafarbený polygón a všetko sa začne od začiatku. Môžeš dostať, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/107_c05.png"><img alt="../_images/107_c05.png" class="align-center" height="134" src="../_images/107_c05.png" width="190" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Vylepši riešenie (5) úlohy: pri kreslení polygónu sa automaticky všetky <code class="docutils literal notranslate"><span class="pre">'+'</span></code> z plochy vymažú (<code class="docutils literal notranslate"><span class="pre">canvas.delete(...)</span></code>). Každému nakreslenému <code class="docutils literal notranslate"><span class="pre">'+'</span></code> môžeš pridať rovnaký <code class="docutils literal notranslate"><span class="pre">tag</span></code> a potom ich naraz zrušíš. Pozri, napríklad <a class="reference external" href="03.html#zrusenie-nakresleneho-utvaru">3. prednášku</a>.</p>
+<p>Okrem vymazávania značiek <code class="docutils literal notranslate"><span class="pre">'+'</span></code> pridaj aj tri tlačidlá:</p>
+<ul class="simple">
+<li><p>s textom <code class="docutils literal notranslate"><span class="pre">'Zmaž'</span></code> zmaže obrazovku, pritom zruší aj zapamätané body doteraz vytváraného polygónu</p></li>
+<li><p>s textom <code class="docutils literal notranslate"><span class="pre">'Zmeň</span> <span class="pre">farbu'</span></code> zmení farbu naposledy nakresleného polygónu na nejakú inú náhodnú</p></li>
+<li><p>s textom <code class="docutils literal notranslate"><span class="pre">'Späť'</span></code> zmaže naposledy nakreslený polygón (takto sa postupne dajú vymazať všetky polygóny)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Najprv zadefinuj štyri premenné (napríklad <code class="docutils literal notranslate"><span class="pre">x1,</span> <span class="pre">y1,</span> <span class="pre">x2,</span> <span class="pre">y2</span> <span class="pre">=</span> <span class="pre">100,</span> <span class="pre">50,</span> <span class="pre">200,</span> <span class="pre">100</span></code>) a pomocou nich nakresli farebný obdĺžnik. Potom program pri každom kliknutí, ale len do vnútra obdĺžnika, mu zmení farbu výplne. Každé kliknutie do vnútra obdĺžnika cyklicky strieda jednu zo 4 farieb, napríklad <code class="docutils literal notranslate"><span class="pre">farby</span> <span class="pre">=</span> <span class="pre">['blue',</span> <span class="pre">'red',</span> <span class="pre">'green',</span> <span class="pre">'yellow']</span></code>. Nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Napíš program, ktorý pri každom kliknutí do grafickej plochy vypíše na toto miesto poradové číslo kliknutia, teda postupne čísla 1, 2, 3, 4, … Nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code> (môžeš využiť globálnu premennú, ktorá je typu zoznam).</p>
+<p>Ďalej pridaj dve tlačidlá:</p>
+<ul class="simple">
+<li><p>s textom <code class="docutils literal notranslate"><span class="pre">'Zmaž'</span></code> zmaže obrazovku, ďalšie klikania pôjdu znovu od 1</p></li>
+<li><p>s textom <code class="docutils literal notranslate"><span class="pre">'Nakresli</span> <span class="pre">čiaru'</span></code> spojí jednou čiarou všetky doteraz naklikané čísla (použi jedno volanie <code class="docutils literal notranslate"><span class="pre">create_line</span></code>)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Predstav si, že celá grafická plocha je štvorcová sieť, ktorej štvorčeky majú veľkosť 50x50. Napíš program, ktorý pri každom kliknutí do grafickej plochy nakreslí náhodne zafarbený príslušný štvorček tejto siete (pomocou <code class="docutils literal notranslate"><span class="pre">create_rectangle()</span></code>). Nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>. Pravdepodobne na zistenie štvorčeka siete využiješ niečo ako <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//</span> <span class="pre">50</span></code> a <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">//</span> <span class="pre">50</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Najprv nakresli kruh so stredom (<code class="docutils literal notranslate"><span class="pre">x0</span></code>, <code class="docutils literal notranslate"><span class="pre">y0</span></code>) a polomerom <code class="docutils literal notranslate"><span class="pre">r</span></code> (napríklad pre <code class="docutils literal notranslate"><span class="pre">r,</span> <span class="pre">x0,</span> <span class="pre">y0</span> <span class="pre">=</span> <span class="pre">120,</span> <span class="pre">150,</span> <span class="pre">130</span></code>). Potom každé kliknutie do vnútra kruhu zmení farbu výplne na odtieň šedej - čím bližšie do stredu tým tmavšie (v strede kruhu čierne), ku okraju svetlejšie (na obvode biele). Zrejme pri kliknutí vypočítaš vzdialenosť od stredu kruhu a toto číslo potom prepočítaš na celé číslo od <code class="docutils literal notranslate"><span class="pre">0</span></code> do <code class="docutils literal notranslate"><span class="pre">255</span></code> (napríklad <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">int(255</span> <span class="pre">*</span> <span class="pre">vzd</span> <span class="pre">/</span> <span class="pre">r)</span></code>). Z tohto čísla vyrobíš šedý odtieň pre farbu kruhu (zrejme <code class="docutils literal notranslate"><span class="pre">rgb(f,</span> <span class="pre">f,</span> <span class="pre">f)</span></code>). Nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>. Popri klikaniu zabezpeč, aby fungovalo aj ťahanie myšou.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš program, ktorý bude robiť efekt spreja: ťahanie myšou so zatlačeným ľavým tlačidlom nakreslí 20 farebných bodiek (farba podľa globálnej premennej, napríklad <code class="docutils literal notranslate"><span class="pre">farba</span> <span class="pre">=</span> <span class="pre">'blue'</span></code>) na náhodných pozíciách. Tieto náhodné bodky budú mať od kliknutého miesta takúto vzdialenosť: x-ová súradnica bude z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;x-30,</span> <span class="pre">x+30&gt;</span></code> a y-ová z <code class="docutils literal notranslate"><span class="pre">&lt;y-30,</span> <span class="pre">y+30&gt;</span></code>. Najlepšie je ich kresliť ako kruhy s polomerom <code class="docutils literal notranslate"><span class="pre">2</span></code> bez obrysu (<code class="docutils literal notranslate"><span class="pre">width=0</span></code>).</p>
+<p>Do programu pridaj aj spracovanie tlačidla <code class="docutils literal notranslate"><span class="pre">'Zmeň</span> <span class="pre">farbu'</span></code>: vtedy sa nastaví premenná <code class="docutils literal notranslate"><span class="pre">farba</span></code> na náhodnú farbu. Vďaka tomuto každé ďalšie ťahanie myšou bude sprejovať už touto novou farbou. Okrem tlačidla pridaj aj widget <code class="docutils literal notranslate"><span class="pre">Label</span></code>, ktorý bude zobrazovať aktuálne nastavenú farbu spreja, napríklad v tvare: <code class="docutils literal notranslate"><span class="pre">'farba:</span> <span class="pre">#456789'</span></code>. Môžeš použiť napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vypis</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;farba: blue&#39;</span><span class="p">)</span>
+<span class="n">vypis</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>a pre zmenu textu v tomto widgete:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vypis</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;novy text&#39;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p>Gumená úsečka: kliknutie naštartuje vytváranie úsečky (program si bude pamätať dva vrcholy úsečky - na začiatku prvý aj druhý bod úsečky bude samotný kliknutý bod, teda veľkosť nakreslenej úsečky je 0). Ťahaním sa aktualizuje jej druhý bod (na zmenu doteraz nakreslenej úsečky použi metódu <code class="docutils literal notranslate"><span class="pre">canvas.coords()</span></code>). Každé ďalšie kliknutie a ťahanie vytvára ďalšiu úsečku.</p>
+<p>Teraz pridaj widget posúvač <code class="docutils literal notranslate"><span class="pre">Scale</span></code>, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hrubka</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">hrubka</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>pomocou ktorého sa bude dať nastavovať hrúbka kreslených úsečiek. Pri vytváraní novej úsečky zistíš momentálne nastavenú hrúbku pomocou <code class="docutils literal notranslate"><span class="pre">hrubka.get()</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="13">
+<li><p>Gumený obdĺžnik: kliknutie naštartuje vytváranie obdĺžnika (jeden vrchol je kliknutý bod a veľkosť je zatiaľ 0x0), ťahanie aktualizuje jeho veľkosť, t.j. protiľahlý vrchol.</p>
+<ul class="simple">
+<li><p>prvé kliknutie nastaví náhodnú farbu výplne tohto obdĺžnika, ťahaním meníš jeho veľkosť</p></li>
+<li><p>každé ďalšie kliknutie a ťahanie vytvára ďalší obdĺžnik</p></li>
+<li><p>otestuj tento program s „gumenou elipsou“:- namiesto <code class="docutils literal notranslate"><span class="pre">create_rectangle()</span></code> daj <code class="docutils literal notranslate"><span class="pre">create_oval()</span></code></p></li>
+</ul>
+<p>Teraz pridaj nové tlačidlo s textom <code class="docutils literal notranslate"><span class="pre">'Undo'</span></code>, ktoré zmaže posledne nakreslený obdĺžnik. Opätovným stláčaním tohto tlačidla sa budú postupne zmazávať aj pred tým nakreslené obdĺžniky.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="14">
+<li><p>V ploche sa nachádza jeden červený štvorček veľkosti 50x50. Keď klikneme do jeho vnútra (počíta sa aj obvod), môžeme ho ťahať, teda posúvať po ploche pomocou pohybov myši (inak ťahanie s kliknutím mimo štvorček nerobí nič).</p>
+<ul class="simple">
+<li><p>daj pozor, aby aj malé posunutie myši počas ťahania neurobilo jeho neúmerne veľký skok (môžeme ho chytiť a ťahať napríklad aj za ľubovoľný jeho vrchol)</p></li>
+<li><p>pri kliknutí do vnútra štvorčeka si môžeš niekde zapamätať posunutie kliknutého bodu od ľavého horného rohu štvorčeka a toto posunutie využiješ pri prekreslení štvorčeka na nových pozíciách (pomocou <code class="docutils literal notranslate"><span class="pre">canvas.coords()</span></code> alebo <code class="docutils literal notranslate"><span class="pre">canvas.move()</span></code>)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="15">
+<li><p>Riešenie predchádzajúcej (14) úlohy uprav tak, aby fungoval aj pre 2 rôzne veľké štvorce: jeden červený veľkosti 50x50, druhý modrý veľkosti 100x100. Vedel by si tento program upraviť tak, aby fungoval pre ľubovoľný počet rôzne veľkých štvorcov (alebo aj obdĺžnikov) v ploche?</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="16">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Stláčaním malých a veľkých písmen abecedy (bez diakritiky) sa tieto vypisujú nejakým väčším fontom vedľa seba (Napríklad <code class="docutils literal notranslate"><span class="pre">'arial</span> <span class="pre">30'</span></code>). Využi jeden grafický objekt pre text (<code class="docutils literal notranslate"><span class="pre">create_text</span></code>) a tomuto budeš pri stláčaní písmen pridávať vypisovaný text (pomocou <code class="docutils literal notranslate"><span class="pre">canvas.itemconfig()</span></code>). Program by mal akceptovať aj stláčanie medzery a <kbd class="kbd docutils literal notranslate">Enter</kbd> (do textu vloží <code class="docutils literal notranslate"><span class="pre">'\n'</span></code> alebo <code class="docutils literal notranslate"><span class="pre">'\r'</span></code>). Použi metódu <code class="docutils literal notranslate"><span class="pre">bind_all('&lt;KeyPress&gt;',</span> <span class="pre">...)</span></code> pričom vo viazanej funkcii pracuj s hodnotou <code class="docutils literal notranslate"><span class="pre">event.char</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="17">
+<li><p>Do grafickej plochy nakresli kružnicu (napríklad pre <code class="docutils literal notranslate"><span class="pre">r,</span> <span class="pre">x0,</span> <span class="pre">y0</span> <span class="pre">=</span> <span class="pre">100,</span> <span class="pre">150,</span> <span class="pre">120</span></code>). Potom naprogramuj časovač, ktorý bude rovnomerne posúvať červenú bodku (kruh s polomerom 5) na obvode tejto kružnice (po každom tiknutí časovača posunie jeho pozíciu na kružnici o uhol <code class="docutils literal notranslate"><span class="pre">10</span></code> stupňov). Posúvanie kruhu budeš robiť pomocou <code class="docutils literal notranslate"><span class="pre">canvas.coords()</span></code>.</p>
+<p>Teraz do aplikácie pridaj nový posúvač <code class="docutils literal notranslate"><span class="pre">Scale</span></code>, pomocou ktorého sa bude dať riadiť rýchlosť tikania časovača, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">cas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Zrejme samotná funkcia časovača nastaví svoj čas v <code class="docutils literal notranslate"><span class="pre">after()</span></code> pomocou <code class="docutils literal notranslate"><span class="pre">cas.get()</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="18">
+<li><p>Do riešenia predchádzajúcej (17) úlohy pridaj ďalší pohybujúci sa modrý kruh, ktorého uhol posunu bude iný, napríklad <code class="docutils literal notranslate"><span class="pre">15</span></code> stupňov.</p>
+<ul class="simple">
+<li><p>experimentuj s rôznymi rýchlosťami pohybu oboch kruhov po kružnici (prípadne sa jeden z nich pohybuje opačným smerom)</p></li>
+<li><p>na obsluhu pohybu oboch kruhov použi jediný časovač</p></li>
+</ul>
+<p>Teraz pridaj dve tlačidlá: s textom <code class="docutils literal notranslate"><span class="pre">'Červený'</span></code> a <code class="docutils literal notranslate"><span class="pre">'Modrý'</span></code> - každé z nich bude zastavovať, resp. spúšťať pohyb kruhu svojej farby.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="19">
+<li><p>Nechaj bežať na obrazovke veľké digitálne hodiny: čas je zobrazený v tvare <code class="docutils literal notranslate"><span class="pre">'9:22:34.5'</span></code> a mení sa každú 0.1 sekundy. Použi jeden textový objekt (<code class="docutils literal notranslate"><span class="pre">create_text()</span></code>), ktorému pomocou <code class="docutils literal notranslate"><span class="pre">itemconfig()</span></code> meníš zobrazovanú hodnotu.</p>
+<ul class="simple">
+<li><p>pri štarte programu môžeš využiť <code class="docutils literal notranslate"><span class="pre">h,</span> <span class="pre">m,</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">time.localtime()[3:6]</span></code> z modulu <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">time</span></code></p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="20">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Naprogramuj takúto hru na postreh:</p>
+<ul class="simple">
+<li><p>každých <code class="docutils literal notranslate"><span class="pre">interval</span></code> milisekúnd sa farebný kruh s polomerom <code class="docutils literal notranslate"><span class="pre">r</span></code> presunie na náhodnú pozíciu v ploche</p></li>
+<li><p>keď klikneme do plochy a trafíme do vnútra kruhu, ku nášmu skóre sa pripočíta 10</p></li>
+<li><p>keď klikneme do plochy, ale netrafíme do kruhu, skóre sa zníži o 1</p></li>
+<li><p>aktuálne skóre sa vypisuje pomocou widgetu <code class="docutils literal notranslate"><span class="pre">Label</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interval</span></code> a <code class="docutils literal notranslate"><span class="pre">r</span></code> sú nejaké globálne premenné, napríklad s hodnotami <code class="docutils literal notranslate"><span class="pre">1000</span></code> a <code class="docutils literal notranslate"><span class="pre">20</span></code>; po niekoľkých klikaniach sa tieto hodnoty môžu automaticky meniť - aj tieto hodnoty môžeš zobrazovať pomocou nejakých widgetov <code class="docutils literal notranslate"><span class="pre">Label</span></code> alebo <code class="docutils literal notranslate"><span class="pre">Entry</span></code> (vtedy ich aj môžeš meniť)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="21">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Na mieste kliknutia myšou sa nakreslí kruh s polomerom 50 a s náhodnou farbou výplne, ďalších 50 tiknutí časovača sa jej polomer zmenšuje o <code class="docutils literal notranslate"><span class="pre">1</span></code> s časovým intervalom <code class="docutils literal notranslate"><span class="pre">0.1</span></code> sekundy. Keď bude polomer <code class="docutils literal notranslate"><span class="pre">0</span></code>, časovač túto kružnicu (grafický objekt kruh) zruší. Zabezpeč, aby aj viac kliknutí tesne za sebou na rôzne miesta plochy vytvorilo viac kruhov a aby sa všetky postupne zmenšovali o <code class="docutils literal notranslate"><span class="pre">1</span></code> - každý svojou rýchlosťou.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="07.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

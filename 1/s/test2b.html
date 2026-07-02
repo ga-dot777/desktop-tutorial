@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Priebežný test - variant B &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Hľadať" href="../../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../../copyright.html" />
+    <link rel="next" title="1. Skúška 21.1.2026 - Cubilus Game" href="sk2026a.html" />
+    <link rel="prev" title="2. Priebežný test - variant A" href="test2a.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="test2a.html" title="Previous Chapter: 2. Priebežný test - variant A"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2. Priebežný ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="sk2026a.html" title="Next Chapter: 1. Skúška 21.1.2026 - Cubilus Game"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">1. Skúška 21.... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="priebezny-test-variant-b">
+<h1>2. Priebežný test - variant B<a class="headerlink" href="test2b.html#priebezny-test-variant-b" title="Link to this heading">¶</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. test variant B</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 15.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code> ani <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
+<li><p>svojim funkciám (oproti zadaniu) môžeš zmeniť mená parametrov, môžeš si zadefinovať pomocné funkcie</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Prvé štyri riadky Pascalovho trojuholnika zvykneme vypisovať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="mi">1</span>
+    <span class="mi">1</span>   <span class="mi">1</span>
+  <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">1</span>
+<span class="mi">1</span>   <span class="mi">3</span>   <span class="mi">3</span>   <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">riadok(n)</span></code>, ktorá vráti <code class="docutils literal notranslate"><span class="pre">n</span></code> -tý riadok (číslujeme od 0) tohto trojuholníka. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">riadok</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="hll"><span class="go">    [1, 3, 3, 1]</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>V textovom súbore sú slová oddelené medzerami, prípadne koncami riadkov. Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyber(meno_suboru)</span></code>, ktorá prečíta takýto súbor a vráti n-ticu (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) všetkých čísel a logických konštánt <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code>. Do n-tice ich zaraď presne v tom poradí, ako sú v súbore. Napríklad, ak by súbor obsahoval iba:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">abc</span> <span class="mi">3</span><span class="n">x</span> <span class="mf">4.7</span> <span class="p">(</span><span class="mi">75</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<p>funkcia by vrátila:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">4.7</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Dodefinuj metódy triedy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Cislo</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>tak, aby fungovalo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Cislo</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>     <span class="c1"># parametrom je kladné číslo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span>
+<span class="hll"><span class="go">    456</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">daj</span><span class="p">()</span>            <span class="c1"># pôvodná hodnota</span>
+<span class="hll"><span class="go">    456</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">daj</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>           <span class="c1"># nultá cifra od konca</span>
+<span class="hll"><span class="go">    6</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">daj</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>           <span class="c1"># druhá cifra od konca</span>
+<span class="hll"><span class="go">    4</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">daj</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>           <span class="c1"># vráti None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">daj</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="hll"><span class="go">    6</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">dalsi</span><span class="p">()</span>          <span class="c1"># predchádzajúca cifra</span>
+<span class="hll"><span class="go">    5</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">dalsi</span><span class="p">()</span>          <span class="c1"># predchádzajúca cifra</span>
+<span class="hll"><span class="go">    4</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">dalsi</span><span class="p">()</span>          <span class="c1"># vráti None</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Vygeneruj všetky výrazy s tromi celočíselnými operandami v tvare <code class="docutils literal notranslate"><span class="pre">'a</span> <span class="pre">#</span> <span class="pre">b</span> <span class="pre">#</span> <span class="pre">c'</span></code>, kde <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code> sú zo zadanej postupnosti hodnôt a operácie <code class="docutils literal notranslate"><span class="pre">#</span></code> sú buď <code class="docutils literal notranslate"><span class="pre">+</span></code> alebo <code class="docutils literal notranslate"><span class="pre">-</span></code>, napríklad <code class="docutils literal notranslate"><span class="pre">'3</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">1'</span></code> alebo <code class="docutils literal notranslate"><span class="pre">'7</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">3'</span></code>. Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vypocty(*hodnoty)</span></code>, ktorá vráti množinu reťazcov: každý reťazec obsahuje výraz, ale bez medzier, ku torému je prilepené <code class="docutils literal notranslate"><span class="pre">'='</span></code> a hodnota tohto výrazu, napríklad v tvare <code class="docutils literal notranslate"><span class="pre">'3+2-1=4'</span></code>. Ak postupnosť hodnôt obsahuje len jednu hodnotu, výsledok bude takýto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypocty</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="hll"><span class="go">    {&#39;3-3-3=-3&#39;, &#39;3+3-3=3&#39;, &#39;3+3+3=9&#39;, &#39;3-3+3=3&#39;}</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pocitaj(*post)</span></code> s nepárnym počtom parametrov: každý parameter na nepárnom mieste je celé číslo, každý párny parameter je celočíselná funkcia (jej referencia) definovaná s dvoma parametrami. Funkcia postupne vyhodnotí takto zadanú postupnosť: postupne zoberie najprv prvé tri hodnoty (teda <code class="docutils literal notranslate"><span class="pre">číslo</span></code>, <code class="docutils literal notranslate"><span class="pre">funkcia</span></code>, <code class="docutils literal notranslate"><span class="pre">číslo</span></code>), vypočíta ich hodnotu (volaním <code class="docutils literal notranslate"><span class="pre">funkcia(číslo,</span> <span class="pre">číslo)</span></code>) a ďalej pokračuje s touto vypočítanou hodnotou a ďalšími dvoma parametrami, … Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocitaj</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="hll"><span class="go">    7</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocitaj</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="hll"><span class="go">    9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocitaj</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__add__</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="hll"><span class="go">    14</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>Zadefinuj takúto mapovaciu funkciu <code class="docutils literal notranslate"><span class="pre">map_2(funkcia,</span> <span class="pre">postupnost)</span></code>, ktorá aplikuje danú funkciu (prvý parameter) na všetky prvky nejakej postupnosti a z výsledkov poskladá nový zoznam. Ak je niektorý prvok v postupnosti zoznam alebo n-tica, aplikuje toto mapovanie aj na jeho prvky. Zrejme aj tieto podzoznamy môžu obsahovať ďalšie podzoznamy, na ktoré bude treba aplikovať danú funkciu. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">map_2</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="p">[[[(</span><span class="s1">&#39;37&#39;</span><span class="p">,)]]])</span>
+<span class="hll"><span class="go">    [[[[37]]]]</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Preprogramuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+        <span class="n">rob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">.5</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+            <span class="n">rob</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">.6</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+            <span class="n">rob</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">.7</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>tak, aby funkcia <code class="docutils literal notranslate"><span class="pre">rob</span></code>, ale bez kreslenia, vygenerovala (pomocou <code class="docutils literal notranslate"><span class="pre">yield</span></code>) postupnosť súradníc (teda <code class="docutils literal notranslate"><span class="pre">tuple</span></code> dvoch čísel) stredov malých kružníc. Napríklad, volanie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">rob</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>by malo vrátiť zoznam dvojíc všetkých súradníc v správnom poradí.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="test2b.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

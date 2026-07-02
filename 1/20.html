@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>20. Práca s obrázkami &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css%3Fv=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css%3Fv=56584217.css" />
+    <script src="../_static/documentation_options.js%3Fv=4bff82a8"></script>
+    <script src="../_static/doctools.js%3Fv=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js%3Fv=6ffebe34"></script>
+    <script src="../_static/translations.js%3Fv=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="21. Animované obrázky" href="21.html" />
+    <link rel="prev" title="19. Úvod do analýzy algoritmov" href="19.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="20.html#">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="19.html" title="Previous Chapter: 19. Úvod do analýzy algoritmov"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 19. Úvod do a...</span>
+    </a>
+  </li>
+  <li>
+    <a href="21.html" title="Next Chapter: 21. Animované obrázky"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">21. Animované obrázky &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="praca-s-obrazkami">
+<h1>20. Práca s obrázkami<a class="headerlink" href="20.html#praca-s-obrazkami" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="20.html#python-imaging-library" id="id2">Python Imaging Library</a></p>
+<ul>
+<li><p><a class="reference internal" href="20.html#vytvorenie-obrazkoveho-objektu" id="id3">Vytvorenie obrázkového objektu</a></p></li>
+<li><p><a class="reference internal" href="20.html#ulozenie-obrazka-do-suboru" id="id4">Uloženie obrázka do súboru</a></p></li>
+<li><p><a class="reference internal" href="20.html#zmena-velkosti-obrazka" id="id5">Zmena veľkosti obrázka</a></p></li>
+<li><p><a class="reference internal" href="20.html#otacanie-a-preklapanie" id="id6">Otáčanie a preklápanie</a></p></li>
+<li><p><a class="reference internal" href="20.html#oblast-v-obrazku" id="id7">Oblasť v obrázku</a></p></li>
+<li><p><a class="reference internal" href="20.html#vkladanie-do-obrazka" id="id8">Vkladanie do obrázka</a></p></li>
+<li><p><a class="reference internal" href="20.html#priesvitnost" id="id9">Priesvitnosť</a></p></li>
+<li><p><a class="reference internal" href="20.html#praca-s-jednotlivymi-pixelmi" id="id10">Práca s jednotlivými pixelmi</a></p></li>
+<li><p><a class="reference internal" href="20.html#rozoberanie-animovanych-gif" id="id11">Rozoberanie animovaných gif</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="20.html#pil-a-tkinter" id="id12">PIL a tkinter</a></p>
+<ul>
+<li><p><a class="reference internal" href="20.html#imagetk" id="id13">ImageTk</a></p></li>
+<li><p><a class="reference internal" href="20.html#otacanie-obrazka-animacia" id="id14">Otáčanie obrázka, animácia</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="20.html#cvicenie" id="id15">Cvičenie</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pripomeňme, ako sme doteraz pracovali s obrázkami v grafickej ploche pomocou <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>. Najprv sme si vytvorili grafický objekt a ten sme potom umiestnili niekam do grafickej plochy, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+<span class="n">obr_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Takýto obrázok môžeme po ploche posúvať, vymazať, resp. vymeniť za iný, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">obr_id</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">obr1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;java.png&#39;</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">obr_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">obr1</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">obr_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nič viac sa s obrázkami v <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> robiť nedá. Ak budeme chcieť vykresľované obrázky nejako meniť, môžeme na to využiť knižničný modul <strong>PIL</strong>, t.j. <strong>Python Imaging Library</strong>. Napríklad, chceme zobrazený obrázok v grafickej ploche otočiť na mieste, alebo aj trochu zmenšiť. Zoberieme pôvodný súbor s obrázkom, prečítame si ho do pamäti, tu ho otočíme, zmenšíme a prípadne ešte nejako inak upravíme a takýto zmenený obrázok buď uložíme do (iného) súboru, z ktorého ho prečíta <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> (pomocou <code class="docutils literal notranslate"><span class="pre">PhotoImage</span></code>), alebo, uvidíme neskôr, priamo tento obrázok prenesieme do <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> bez toho aby sme ho museli ukladať do súboru.</p>
+<p>Takže <strong>Python Imaging Library</strong> slúži na prípravu alebo úpravu obrázkových súborov, ktoré potom môžeme využiť, napríklad v programoch pre <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="python-imaging-library">
+<h2><a class="toc-backref" href="20.html#id2" role="doc-backlink">Python Imaging Library</a><a class="headerlink" href="20.html#python-imaging-library" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Aby ste mohli pracovať s knižnicou <strong>PIL</strong> (Python Imaging Library), musíte mať nainštalovaný modul <strong>Pillow</strong>, keďže nie je súčasťou štandardnej inštalácie Pythonu. Základné informácie o inštalácii nájdete na stránke <a class="reference external" href="https://pillow.readthedocs.io/en/stable/installation/index.html">Inštalácia Pillow</a>. Pod operačným systémom Windows (podobne aj v iných OS) treba v príkazovom okne <code class="docutils literal notranslate"><span class="pre">cmd</span></code> alebo v nejakom termináli spustiť príkaz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pillow</span>
+</pre></div>
+</div>
+<p>Je možné, že bude od vás požadovať administrátorské práva, resp. spustiť <code class="docutils literal notranslate"><span class="pre">cmd</span></code> ako správca.</p>
+<p>Po úspešnej inštalácii budete musieť vo svojich programoch, ktoré chcú pracovať s touto knižnicou, zadávať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+<p>Teraz je Python pripravený pracovať s obrázkovými objektmi. Základné informácie o tomto module môžete nájsť na webe <a class="reference external" href="https://pillow.readthedocs.io/en/stable/handbook/index.html">Pillow</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="vytvorenie-obrazkoveho-objektu">
+<h3><a class="toc-backref" href="20.html#id3" role="doc-backlink">Vytvorenie obrázkového objektu</a><a class="headerlink" href="20.html#vytvorenie-obrazkoveho-objektu" title="Link to this heading">¶</a></h3>
+<p>Knižnica <code class="docutils literal notranslate"><span class="pre">Image</span></code> umožňuje pracovať s rastrovými obrázkami priamo v pamäti. Obrázkové objekty (inštancie triedy <code class="docutils literal notranslate"><span class="pre">Image.Image</span></code>) sa vytvárajú buď prečítaním obrázkového súboru, alebo vytvorením nového obrázka (jednofarebný obdĺžnik), alebo ako výsledok niektorých operácií s nejakými už existujúcimi obrázkami.</p>
+<p>Obrázkový objekt vytvoríme prečítaním obrázkového súboru z disku pomocou príkazu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;meno súboru&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Obrázkový súbor môže byť skoro ľubovoľného grafického typu, napríklad <strong>png</strong>, <strong>bmp</strong>, <strong>jpg</strong>, <strong>gif</strong>, … Aby príkaz <code class="docutils literal notranslate"><span class="pre">Image.open()</span></code> mal šancu nájsť tento súbor, buď sa bude nachádzať v tom istom priečinku na disku ako náš program, alebo mu zadáme relatívnu alebo absolútnu cestu, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiger.bmp&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr2</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;obrazky/slon.jpg&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr3</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;d:/user/data/python.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Na testovanie niektorých príkladov v prednáške, môžete využiť obrázky z priečinku obrázkov <a class="reference external" href="../_static/file/obrazky.zip">obrazky.zip</a>.</p>
+<p>Po prečítaní súboru z daného obrázkového objektu môžeme zistiť niektoré jeho parametre, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span>
+<span class="hll"><span class="go">    &lt;PIL.BmpImagePlugin.BmpImageFile image mode=RGB size=384x256 at 0x2C4F710&gt;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">size</span>
+<span class="hll"><span class="go">    (384, 256)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">width</span>
+<span class="hll"><span class="go">    384</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">height</span>
+<span class="hll"><span class="go">    256</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">mode</span>
+<span class="hll"><span class="go">    &#39;RGB&#39;</span>
+</span></pre></div>
+</div>
+<p>Obrázky môžu byť uložené v niekoľkých rôznych <strong>módoch</strong>: pre nás budú zaujímavé len dva z nich <code class="docutils literal notranslate"><span class="pre">'RGB'</span></code> a  <code class="docutils literal notranslate"><span class="pre">'RGBA'</span></code> pre „obyčajné“ <strong>rgb</strong> (poznáme to ako 3 celé čísla z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;0,</span> <span class="pre">255&gt;</span></code> pre zložky <strong>red</strong>, <strong>green</strong>, <strong>blue</strong>) a <strong>rgb</strong>, ktoré si pamätá aj priesvitnosť, tzv. <strong>alfa-kanál</strong>, teda <strong>rgba</strong> (budú to štyri čísla pre <strong>red</strong>, <strong>green</strong>, <strong>blue</strong> a <strong>alfa-kanál</strong>). <strong>RGBA</strong> uvidíme neskôr.</p>
+<p>Veľmi často používaným príkazom tri testovaní a ladení bude:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>ktorý zobrazí momentálny obsah nami pripravovaného obrázka v nejakom externom programe - toto závisí od nastavení vo vašom operačnom systéme. Samotný <strong>PIL</strong> obrázky zobrazovať nevie, vie ich prečítať zo súboru, resp. zapísať do súboru, prípadne ich nejako meniť. Aby sme ich nemuseli pri ladení stále ukladať do súboru a ten si potom prezerať v nejakom štandardnom prezerači obrázkov, <strong>PIL</strong> za nás tento prezerač spustí aj s pripraveným obrázkom.</p>
+<p>Obrázkový objekt môžeme vytvoriť aj pomocou funkcie <code class="docutils literal notranslate"><span class="pre">new()</span></code>, ktorej zadáme „mód“ (t.j. <code class="docutils literal notranslate"><span class="pre">'RGB'</span></code> alebo  <code class="docutils literal notranslate"><span class="pre">'RGBA'</span></code>), veľkosť obrázka v pixeloch ako dvojicu <code class="docutils literal notranslate"><span class="pre">(šírka,</span> <span class="pre">výška)</span></code> a prípadne farbu, ktorou sa tento obrázok zafarbí (inak by bol čierny):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr4</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="s1">&#39;pink&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vytvorí nový objekt <code class="docutils literal notranslate"><span class="pre">obr4</span></code> - obrázok veľkosti 300x200 pixelov (šírka 300, výška 200), ktorý bude celý ružový. Zrejme tento objekt je zatiaľ iba v pamäti a nie je v žiadnom súbore.</p>
+<p>Ako farbu pixelov tu môžeme okrem mena farby uviesť aj reťazec známy z <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>, ktorý obsahuje cifry v 16-ovej sústave, napríklad <code class="docutils literal notranslate"><span class="pre">'#12a4ff'</span></code>, alebo trojicu <strong>rgb</strong> (teda <code class="docutils literal notranslate"><span class="pre">tuple</span></code>) v tvare, napríklad <code class="docutils literal notranslate"><span class="pre">(120,</span> <span class="pre">198,</span> <span class="pre">255)</span></code>. Neskôr tu uvidíme aj štvoricu pre <strong>rgba</strong>.</p>
+<p>Ak by sme chceli vytvoriť nový obrázok rovnakej veľkosti akú má niektorý už existujúci objekt, môžeme využiť jeho atribút <code class="docutils literal notranslate"><span class="pre">size</span></code>, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr4</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="n">obr1</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s1">&#39;#ffffff&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vytvorí obrázkový objekt veľkosti 384x256 (teda rovnaká veľkosť ako <code class="docutils literal notranslate"><span class="pre">obr1</span></code>), pričom všetky jeho pixely budú biele.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="ulozenie-obrazka-do-suboru">
+<h3><a class="toc-backref" href="20.html#id4" role="doc-backlink">Uloženie obrázka do súboru</a><a class="headerlink" href="20.html#ulozenie-obrazka-do-suboru" title="Link to this heading">¶</a></h3>
+<p>Metóda <code class="docutils literal notranslate"><span class="pre">save('meno</span> <span class="pre">súboru')</span></code> uloží obrázok do súboru s ľubovoľnou príponou. Takto môžeme veľmi ľahko zmeniť grafický formát obrázku. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;tiger.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr4</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;temp/prazdny.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Obrázok <code class="docutils literal notranslate"><span class="pre">obr1</span></code>, ktorý mal pôvodne bitmapový formát (prípona <code class="docutils literal notranslate"><span class="pre">.bmp</span></code>) sa zapísal do <code class="docutils literal notranslate"><span class="pre">.png</span></code> súboru. Obrázok <code class="docutils literal notranslate"><span class="pre">obr4</span></code>, ktorý sme vytvorili pomocou metódy <code class="docutils literal notranslate"><span class="pre">new</span></code> sme zapísali do <code class="docutils literal notranslate"><span class="pre">.jpg</span></code> súboru.</p>
+<p>Uvedomte si, že ak nejaký obrázok chceme len prečítať a hneď ho zapísať do súboru (možno s inou príponou), môžeme to priamo zapísať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;obrazok.jpg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;obrazok.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Na disku sa teraz vytvorila kópia pôvodného obrázka v súbore s novou príponou (v novom formáte).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zmena-velkosti-obrazka">
+<h3><a class="toc-backref" href="20.html#id5" role="doc-backlink">Zmena veľkosti obrázka</a><a class="headerlink" href="20.html#zmena-velkosti-obrazka" title="Link to this heading">¶</a></h3>
+<p>Obrázku vieme zmeniť veľkosť, pričom ho takto roztiahneme, resp. stlačíme tak, aby sa zmestil do nových rozmerov. Zapíšeme to, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr2</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">nova_sirka</span><span class="p">,</span> <span class="n">nova_vyska</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Vytvorí sa nový obrázok so zadanými rozmermi, pôvodný ostáva bez zmeny. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr3</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">obr1</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">obr1</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">obr1</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">obr1</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Obrázok <code class="docutils literal notranslate"><span class="pre">obr3</span></code> má trojnásobné rozmery pôvodného obrázka, pričom <code class="docutils literal notranslate"><span class="pre">obr1</span></code> sa potom zmenší na polovičné rozmery. Napríklad, ak máme takýto obrázok <code class="docutils literal notranslate"><span class="pre">'prasiatko.png'</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/120_4.png"><img alt="../_images/120_4.png" class="align-center" height="132" src="../_images/120_4.png" width="202" />
+</a>
+<p>keď mu zmeníme veľkosť bez zachovania pomeru strán:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>dostávame:</p>
+<a class="reference internal image-reference" href="../_images/120_5.png"><img alt="../_images/120_5.png" class="align-center" height="50" src="../_images/120_5.png" width="150" />
+</a>
+<p>ale zmenšenie oboch strán na tretinu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sirka</span><span class="p">,</span> <span class="n">vyska</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">size</span>
+<span class="n">obr3</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">sirka</span> <span class="o">//</span> <span class="mi">3</span><span class="p">,</span> <span class="n">vyska</span> <span class="o">//</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>vyzerá takto:</p>
+<a class="reference internal image-reference" href="../_images/120_6.png"><img alt="../_images/120_6.png" class="align-center" height="44" src="../_images/120_6.png" width="68" />
+</a>
+<p>Uvedomte si, že zmenšovaním obrázka sa nejaká informácia stráca, takže, keď mu po zmenšení vrátime pôvodnú veľkosť:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr4</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">sirka</span> <span class="o">//</span> <span class="mi">10</span><span class="p">,</span> <span class="n">vyska</span> <span class="o">//</span> <span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">sirka</span><span class="p">,</span> <span class="n">vyska</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>dostávame takto pokazený obrázok:</p>
+<a class="reference internal image-reference" href="../_images/120_7.png"><img alt="../_images/120_7.png" class="align-center" height="132" src="../_images/120_7.png" width="202" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="otacanie-a-preklapanie">
+<h3><a class="toc-backref" href="20.html#id6" role="doc-backlink">Otáčanie a preklápanie</a><a class="headerlink" href="20.html#otacanie-a-preklapanie" title="Link to this heading">¶</a></h3>
+<p>Obrázok môžeme otáčať, resp. preklápať pomocou metódy <code class="docutils literal notranslate"><span class="pre">transpose()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">Transpose</span><span class="o">.</span><span class="n">FLIP_LEFT_RIGHT</span><span class="p">)</span>     <span class="c1"># preklopí vodorovne</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">Transpose</span><span class="o">.</span><span class="n">FLIP_TOP_BOTTOM</span><span class="p">)</span>     <span class="c1"># preklopí zvislo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">Transpose</span><span class="o">.</span><span class="n">ROTATE_90</span><span class="p">)</span>           <span class="c1"># otočí o 90 stupňov</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">Transpose</span><span class="o">.</span><span class="n">ROTATE_180</span><span class="p">)</span>          <span class="c1"># otočí o 180 stupňov</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">Transpose</span><span class="o">.</span><span class="n">ROTATE_270</span><span class="p">)</span>          <span class="c1"># otočí o 270 stupňov</span>
+</pre></div>
+</div>
+<p>Zrejme sa pri tomto môžu niekedy zmeniť rozmery výsledného obrázka. Pôvodný obrázok zostáva bez zmeny. Vyskúšajte tieto operácie s nejakým konkrétnym obrázkom. Hodnotami konštánt <code class="docutils literal notranslate"><span class="pre">Image.Transpose.FLIP_LEFT_RIGHT</span></code>, <code class="docutils literal notranslate"><span class="pre">Image.Transpose.FLIP_TOP_BOTTOM</span></code>, <code class="docutils literal notranslate"><span class="pre">Image.Transpose.ROTATE_90</span></code>, … sú čísla <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, … Teda, namiesto zápisu <code class="docutils literal notranslate"><span class="pre">obr1.transpose(Image.Transpose.ROTATE_90)</span></code> môžeme zapísať <code class="docutils literal notranslate"><span class="pre">obr1.transpose(2)</span></code>.</p>
+<p>Obrázky môžeme otáčať nielen o pravouhlé uhly <code class="docutils literal notranslate"><span class="pre">90</span></code>, <code class="docutils literal notranslate"><span class="pre">180</span></code> a <code class="docutils literal notranslate"><span class="pre">270</span></code>, ale aj o ľubovoľný iný uhol, pomocou metódy <code class="docutils literal notranslate"><span class="pre">rotate</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">uhol</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uhol zadávame v stupňoch v protismere otáčania hodinových ručičiek. Ak otočíme obrázok prasiatka <code class="docutils literal notranslate"><span class="pre">obr1</span></code> napríklad o 30 stupňov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr5</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>dostávame:</p>
+<a class="reference internal image-reference" href="../_images/120_8.png"><img alt="../_images/120_8.png" class="align-center" height="132" src="../_images/120_8.png" width="202" />
+</a>
+<p>Výsledný obrázok bude mať pôvodné rozmery <code class="docutils literal notranslate"><span class="pre">obr1</span></code>, teda nejaké otočené časti sa pritom stratia a ešte pribudnú aj nejaké čierne oblasti. Ak ale zadáme <code class="docutils literal notranslate"><span class="pre">rotate</span></code> s ďalším pomenovaným parametrom <code class="docutils literal notranslate"><span class="pre">expand</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr6</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>výsledný obrázok sa zväčší tak, aby sa teraz do neho zmestil celý otočený pôvodný obrázok. Teraz je ešte lepšie vidieť nové čierne oblasti:</p>
+<a class="reference internal image-reference" href="../_images/120_9.png"><img alt="../_images/120_9.png" class="align-center" height="216" src="../_images/120_9.png" width="242" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="oblast-v-obrazku">
+<h3><a class="toc-backref" href="20.html#id7" role="doc-backlink">Oblasť v obrázku</a><a class="headerlink" href="20.html#oblast-v-obrazku" title="Link to this heading">¶</a></h3>
+<p>Aby sme mohli pracovať s operáciami, ktoré manipulujú nie s celým obrázkom, ale len s jeho časťou, musíme sa naučiť, ako <strong>PIL</strong> rozumie pojmu <strong>oblasť</strong>. Oblasť definujeme ako štvoricu (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) štyroch celých čísel <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">x+šírka,</span> <span class="pre">y+výška)</span></code>, kde <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> je poloha ľavého horného pixelu oblasti (riadky aj stĺpce indexujeme od 0) a <code class="docutils literal notranslate"><span class="pre">šírka</span></code> a <code class="docutils literal notranslate"><span class="pre">výška</span></code> sú rozmery oblasti v pixeloch, t.j. počet stĺpcov a riadkov pixelov. Potom zápisy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oblast1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">obr1</span><span class="o">.</span><span class="n">size</span>
+<span class="n">oblast2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">140</span>
+<span class="n">sirka</span><span class="p">,</span> <span class="n">vyska</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">size</span>
+<span class="n">oblast3</span> <span class="o">=</span> <span class="p">(</span><span class="n">sirka</span><span class="o">//</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">sirka</span><span class="o">//</span><span class="mi">3</span><span class="p">,</span> <span class="n">vyska</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>definujú tri oblasti: <code class="docutils literal notranslate"><span class="pre">oblast1</span></code> popisuje kompletnú veľkosť obrázka <code class="docutils literal notranslate"><span class="pre">obr1</span></code>; <code class="docutils literal notranslate"><span class="pre">oblast2</span></code> popisuje oblasť, ktorej ľavý horný roh je v <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">10)</span></code> a jeho veľkosť je <code class="docutils literal notranslate"><span class="pre">200</span></code> x <code class="docutils literal notranslate"><span class="pre">130</span></code> pixelov; tretia premenná <code class="docutils literal notranslate"><span class="pre">oblast3</span></code> popisuje takúto oblasť: ak by sme <code class="docutils literal notranslate"><span class="pre">obr1</span></code> rozrezali na tri rovnaké zvislé časti a každú z nich by sme ešte rozdelili vodorovne na polovicu, tak oblasť popisuje hornú polovicu zo strednej zvislej časti.</p>
+<p>Oblasť využijeme v operácii <code class="docutils literal notranslate"><span class="pre">crop</span></code>, pomocou ktorej z obrázka odkopírujeme zadaný obdĺžnikový výsek. Táto operácia nemodifikuje pôvodný obrázok, ale vytvorí nový ďalší obrázok zadaných rozmerov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">novy_obr</span> <span class="o">=</span> <span class="n">povodny_obr</span><span class="o">.</span><span class="n">crop</span><span class="p">(</span><span class="n">oblasť</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Touto metódou vzniká nový obrázok zadaných rozmerov (podľa oblasti) s vykopírovaným obsahom. Pôvodný obrázok ostáva bez zmeny. Ak je časť oblasti mimo pôvodného obrázka, v novom obrázku tu budú doplnené čierne (resp. pre <strong>rgba</strong> priesvitné) pixely.</p>
+<p>Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1a</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="mi">60</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr1a</span><span class="o">.</span><span class="n">size</span>
+<span class="hll"><span class="go">    (160, 150)</span>
+</span></pre></div>
+</div>
+<p>Ak vieme pozíciu <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> ľavého horného pixelu oblasti a jej šírku <code class="docutils literal notranslate"><span class="pre">sir</span></code> a výšku <code class="docutils literal notranslate"><span class="pre">vys</span></code>, môžeme kopírovanie zapísať aj takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">150</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr1a</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">vys</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Pomocou metódy <code class="docutils literal notranslate"><span class="pre">crop()</span></code> sme vytvorili nový obrázkový objekt <code class="docutils literal notranslate"><span class="pre">obr1a</span></code>. Na nasledovnom obrázku vidíme pôvodný obrázok aj nový s kópiou jeho časti (oblasti):</p>
+<a class="reference internal image-reference" href="../_images/120_1.png"><img alt="../_images/120_1.png" class="align-center" height="128" src="../_images/120_1.png" width="384" />
+</a>
+<p>Nasledovný úsek programu, rozstrihá nejaký obrázok na rovnako veľké časti:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiger.bmp&#39;</span><span class="p">)</span>
+<span class="n">sirka</span><span class="p">,</span> <span class="n">vyska</span> <span class="o">=</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">70</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr1</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">vyska</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr1</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sirka</span><span class="p">):</span>
+        <span class="n">obr1</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sirka</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">vyska</span><span class="p">))</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tiger</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Tieto rozstrihané kúsky sa postupne uložia do obrázkových súborov s menami <code class="docutils literal notranslate"><span class="pre">'tiger0.png'</span></code>,  <code class="docutils literal notranslate"><span class="pre">'tiger1.png'</span></code>,  <code class="docutils literal notranslate"><span class="pre">'tiger2.png'</span></code>, … Zrejme záleží od veľkosti pôvodného obrázka <code class="docutils literal notranslate"><span class="pre">obr1</span></code>. Ak boli jeho rozmery, napríklad 384x256, tak sa vytvorí 3x4 menších obrázkov (veľkosti 150x70) a niektoré z nich, ktoré pretŕčajú z pôvodného obrázka, budú doplnené čiernymi oblasťami.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="vkladanie-do-obrazka">
+<h3><a class="toc-backref" href="20.html#id8" role="doc-backlink">Vkladanie do obrázka</a><a class="headerlink" href="20.html#vkladanie-do-obrazka" title="Link to this heading">¶</a></h3>
+<p>Niekedy môže vzniknúť situácia, keď potrebujeme do jedného obrázka na nejaké jeho miesto vložiť iný obrázok, resp. viacero obrázkov zložiť dokopy do jedného. Na to slúži metóda <code class="docutils literal notranslate"><span class="pre">paste</span></code>, pomocou ktorej sa vloží obrázok na nejaké miesto iného obrázka (akoby sme opečiatkovali jeden obrázok do druhého):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Tento príkaz <strong>modifikuje</strong> pôvodný obsah obrázka <code class="docutils literal notranslate"><span class="pre">obr1</span></code>. Obrázok <code class="docutils literal notranslate"><span class="pre">obr2</span></code> sa „opečiatkuje“ do <code class="docutils literal notranslate"><span class="pre">obr1</span></code>, pričom druhý parameter určí pozíciu <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> v <code class="docutils literal notranslate"><span class="pre">obr1</span></code>, kam sa umiestni <code class="docutils literal notranslate"><span class="pre">obr2</span></code>, t.j. jeho ľavý horný pixel. Uvedomte si, že táto metóda nevracia žiadnu hodnotu (teda vráti <code class="docutils literal notranslate"><span class="pre">None</span></code>) a preto nemá zmysel jej výsledok priraďovať do nejakej premennej.</p>
+<p>Ukážme si <code class="docutils literal notranslate"><span class="pre">paste</span></code> na príklade. Na obrázok prasiatka chceme vložiť malý obrázok mašle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;masla.png&#39;</span><span class="p">)</span>
+<span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Dostávame takto zmenený <code class="docutils literal notranslate"><span class="pre">obr1</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/120_16.png"><img alt="../_images/120_16.png" class="align-center" height="132" src="../_images/120_16.png" width="202" />
+</a>
+<p>Hoci má mašľa niektoré časti škaredo začiernené (asi mali byť priesvitné), môžeme vidieť princíp, ako to funguje.</p>
+<p>Ešte ukážme, ako zlepiť dva obrázky tesne vedľa seba. Predpokladáme, že sú rovnako vysoké (majú rovnaký <code class="docutils literal notranslate"><span class="pre">height</span></code>). Pre jednoduchosť druhý obrázok vytvoríme z prvého len preklopením vo vodorovnom smere. Samotné zlepenie vyrobíme do <code class="docutils literal notranslate"><span class="pre">obr3</span></code> tak, že ho najprv vyrobíme prázdny (so šírkou, ktorá je súčtom šírok oboch obrázkov) a potom ich prekopírujeme na správne pozície:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">Transpose</span><span class="o">.</span><span class="n">FLIP_LEFT_RIGHT</span><span class="p">)</span>
+<span class="n">obr3</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">obr1</span><span class="o">.</span><span class="n">width</span><span class="o">+</span><span class="n">obr2</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">obr1</span><span class="o">.</span><span class="n">height</span><span class="p">))</span>
+<span class="n">obr3</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">obr3</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr1</span><span class="p">,</span> <span class="p">(</span><span class="n">obr1</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Dostávame takto vytvorený <code class="docutils literal notranslate"><span class="pre">obr3</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/120_19.png"><img alt="../_images/120_19.png" class="align-center" height="132" src="../_images/120_19.png" width="405" />
+</a>
+<p>Metóda <code class="docutils literal notranslate"><span class="pre">paste()</span></code> má aj iné využitie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">farba</span><span class="p">,</span> <span class="n">oblasť</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V tomto prípade je <code class="docutils literal notranslate"><span class="pre">farba</span></code> nejakou farbou a táto sa vyleje do špecifikovanej oblasti (nakreslí zafarbený obdĺžnik). Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Dostávame takto zmenený <code class="docutils literal notranslate"><span class="pre">obr1</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/120_17.png"><img alt="../_images/120_17.png" class="align-center" height="132" src="../_images/120_17.png" width="202" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="priesvitnost">
+<h3><a class="toc-backref" href="20.html#id9" role="doc-backlink">Priesvitnosť</a><a class="headerlink" href="20.html#priesvitnost" title="Link to this heading">¶</a></h3>
+<p>Už sme spomínali, že niektoré obrázky môžu byť v móde <code class="docutils literal notranslate"><span class="pre">'RGBA'</span></code>, čo znamená, že každý pixel si okrem farby (trojice čísel) pamätá ešte tzv. <strong>alfa-kanál</strong>, čo je tiež celé číslo z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;0,</span> <span class="pre">255&gt;</span></code>. Tento štvrtý bajt nesie informáciu o tom, či je daný pixel priesvitný alebo nepriesvitný, resp. nakoľko je priesvitný. Hodnota <code class="docutils literal notranslate"><span class="pre">255</span></code> označuje úplne <strong>nepriesvitný</strong> pixel, teda vidíme len danú farbu pixela. Hodnota <code class="docutils literal notranslate"><span class="pre">0</span></code> označuje úplne <strong>priesvitný</strong> pixel a vtedy z farby nevidíme nič (na farbe <strong>rgb</strong> nezáleží), vidíme len to, čo sa nachádza na obrázku pod ním. Hodnoty medzi tým označujú mieru priesvitnosti.</p>
+<p>Keď sme si doteraz pozerali obrázky, ktoré mali nejaké časti priesvitné, tak sme najčastejšie namiesto toho videli čierne zafarbené oblasti. Podobne, keď sme takéto obrázky pečiatkovali (<code class="docutils literal notranslate"><span class="pre">paste</span></code>) do nejakých iných, namiesto priesvitných sme dostali čierne pixely. Operácie <code class="docutils literal notranslate"><span class="pre">crop()</span></code> aj <code class="docutils literal notranslate"><span class="pre">rotate()</span></code> môžu vytvoriť priesvitné pixely za hranicou pôvodných obrázkov. Operácia <code class="docutils literal notranslate"><span class="pre">paste()</span></code> ale zatiaľ správne nezlučuje priesvitné pixely s pôvodným obrázkom, tak ako by sme očakávali. Na to musíme použiť ďalšiu verziu volania metódy <code class="docutils literal notranslate"><span class="pre">paste</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="n">kam</span><span class="p">,</span> <span class="n">obr2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V tomto prípade predpokladáme, že <code class="docutils literal notranslate"><span class="pre">obr2</span></code> je v móde <strong>rgba</strong> a teda obsahuje pre každý pixel aj <strong>alfa-kanál</strong> (inak by tento príkaz spadol na chybe). Keďže obrázok mašle je v móde <strong>rgba</strong>, môžeme prasiatku vložiť mašľu správnym spôsobom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;masla.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">obr2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obr2</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">obr2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všimnite si, že sme mašľu najprv dvojnásobne zväčšili (s využitím generátorovej notácie) a potom sme dostali takýto <code class="docutils literal notranslate"><span class="pre">obr1</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/120_18.png"><img alt="../_images/120_18.png" class="align-center" height="132" src="../_images/120_18.png" width="202" />
+</a>
+<section id="poznamky">
+<h4>Poznámky<a class="headerlink" href="20.html#poznamky" title="Link to this heading">¶</a></h4>
+<p>Keďže príkaz <code class="docutils literal notranslate"><span class="pre">obr.paste(...)</span></code> modifikuje pôvodný obrázok, niekedy môžeme využiť príkaz <code class="docutils literal notranslate"><span class="pre">copy</span></code> na vytvorenie kópie pôvodného obrázka ešte pred volaním <code class="docutils literal notranslate"><span class="pre">paste</span></code>, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;masla.png&#39;</span><span class="p">)</span>
+<span class="n">obr3</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">obr3</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">obr2</span><span class="p">)</span>
+<span class="c1"># obr1 ostal teraz nezmenený</span>
+</pre></div>
+</div>
+<p>Príkazy <code class="docutils literal notranslate"><span class="pre">obr.crop(...)</span></code> a <code class="docutils literal notranslate"><span class="pre">obr.rotate(...)</span></code> môžu za istých okolností vytvoriť nové čierne časti (pre <code class="docutils literal notranslate"><span class="pre">'RGB'</span></code>), resp. priesvitné (pre <code class="docutils literal notranslate"><span class="pre">'RGBA'</span></code>). Ak bol pôvodný obrázok typu <code class="docutils literal notranslate"><span class="pre">'RGB'</span></code> a otočíme ho, takto vzniknutý obrázok nevložíme pomocou <code class="docutils literal notranslate"><span class="pre">paste()</span></code> s tretím parametrom. Tu nám môže pomôcť konverzný príkaz <code class="docutils literal notranslate"><span class="pre">convert</span></code>, pomocou ktorého môžeme obrázok previesť na správny typ. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;prasiatko.png&#39;</span><span class="p">)</span>
+<span class="n">obr2</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;macka.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">obr1</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">obr2</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">obr2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="praca-s-jednotlivymi-pixelmi">
+<h3><a class="toc-backref" href="20.html#id10" role="doc-backlink">Práca s jednotlivými pixelmi</a><a class="headerlink" href="20.html#praca-s-jednotlivymi-pixelmi" title="Link to this heading">¶</a></h3>
+<p>Metóda <code class="docutils literal notranslate"><span class="pre">getpixel()</span></code> vráti farbu konkrétneho pixelu, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="mi">108</span><span class="p">,</span> <span class="mi">154</span><span class="p">))</span>
+<span class="hll"><span class="go">    (228, 187, 122)</span>
+</span></pre></div>
+</div>
+<p>Metóda <code class="docutils literal notranslate"><span class="pre">putpixel()</span></code> zmení konkrétny pixel v obrázku. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="mi">108</span><span class="p">,</span> <span class="mi">154</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Zafarbí daný pixel na červeno. V tomto prípade musí byť farba zadaná ako trojica (resp. pre <strong>rgba</strong> ako štvorica) čísel od 0 do 255. Ak v obrázku prasiatka zafarbíme v nejakej oblasti 500 náhodných bodiek:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+    <span class="n">farba</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">obr1</span><span class="o">.</span><span class="n">putpixel</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">farba</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vyzerá to nejako takto:</p>
+<a class="reference internal image-reference" href="../_images/120_10.png"><img alt="../_images/120_10.png" class="align-center" height="132" src="../_images/120_10.png" width="202" />
+</a>
+<p>Nasledovný zápis (generátorová notácia) zistí <strong>množinu</strong> všetkých farieb v obrázku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mn</span> <span class="o">=</span> <span class="p">{</span><span class="n">obr1</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">obr1</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">obr1</span><span class="o">.</span><span class="n">height</span><span class="p">)}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span>
+<span class="hll"><span class="go">    17653</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="rozoberanie-animovanych-gif">
+<h3><a class="toc-backref" href="20.html#id11" role="doc-backlink">Rozoberanie animovaných gif</a><a class="headerlink" href="20.html#rozoberanie-animovanych-gif" title="Link to this heading">¶</a></h3>
+<p>Animovaný <strong>gif</strong> súbor sa skladá zo série za sebou idúcich obrázkov. Načítanie takéhoto súboru pomocou <code class="docutils literal notranslate"><span class="pre">Image.open()</span></code> nám automaticky sprístupní prvú fázu (má poradové číslo 0). Ak potrebujeme pracovať s <code class="docutils literal notranslate"><span class="pre">i</span></code>-tou fázou animácie (<code class="docutils literal notranslate"><span class="pre">i</span></code>-tym obrázkom série), použijeme metódu <code class="docutils literal notranslate"><span class="pre">obr.seek(i)</span></code>.</p>
+<p>Nasledujúca časť programu otvorí obrázkový súbor s animáciou napríklad <code class="docutils literal notranslate"><span class="pre">'vtak.gif'</span></code>, ktorý sa skladá z neznámeho počtu obrázkov. Postupne všetky tieto fázy uloží do samostatných obrázkových súborov vo formáte <code class="docutils literal notranslate"><span class="pre">'png'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gif</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;vtak.gif&#39;</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">gif</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;vtak/vtak</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">gif</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<p>Pre tento súbor <code class="docutils literal notranslate"><span class="pre">'vtak.gif'</span></code> s animovaným obrázkom:</p>
+<a class="reference internal image-reference" href="../_images/120_12.gif"><img alt="../_images/120_12.gif" class="align-center" height="48" src="../_images/120_12.gif" width="40" />
+</a>
+<p>dostaneme v priečinku <code class="docutils literal notranslate"><span class="pre">vtak</span></code> túto postupnosť súborov:</p>
+<a class="reference internal image-reference" href="../_images/120_13.png"><img alt="../_images/120_13.png" class="align-center" height="41" src="../_images/120_13.png" width="280" />
+</a>
+<p>Táto verzia rozoberania obrázkov vo formáte <strong>gif</strong> má tú výhodu, že nespadne ani pri iných formátoch obrázka. Napríklad, by sa korektne takto spracoval aj <strong>png</strong> obrázok: cyklus by prešiel iba raz a skončil. Vieme to zapísať aj inak, ale fungovať to bude iba pre <strong>gif</strong> (pre iné formáty to môže spadnúť):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gif</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;vtak.gif&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gif</span><span class="o">.</span><span class="n">n_frames</span><span class="p">):</span>
+    <span class="n">gif</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">gif</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;vtak/vtak</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="pil-a-tkinter">
+<h2><a class="toc-backref" href="20.html#id12" role="doc-backlink">PIL a tkinter</a><a class="headerlink" href="20.html#pil-a-tkinter" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>PIL</strong> vie spolupracovať aj s <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>, takže pripravený obrázok nemusíme uložiť do súboru, ktorý potom pomocou <code class="docutils literal notranslate"><span class="pre">PhotoImage</span></code> načítame do <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> (je to dosť pomalé a programy by to zdržovalo) - ale priamo z <strong>PIL</strong> prekonvertujeme obrázok do <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>.</p>
+<p>Pripomeňme si, ako sme kreslili obrázky v <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">tk_img</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tk_img</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zvolili sme si obrázok <a class="reference external" href="https://python.input.sk/_static/pyton.png">pyton.png</a>, ktorý má niektoré časti priesvitné.</p>
+<p>Je veľmi dôležité si uvedomiť, že <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> si príkazom <code class="docutils literal notranslate"><span class="pre">create_image()</span></code> zapamätá referenciu na tento obrázok, ale Pythonu o tom „nedá vedieť“. Lenže Python je priveľmi usilovný v upratovaní nepoužívanej pamäti a ak premennej <code class="docutils literal notranslate"><span class="pre">tk_img</span></code> zmeníme obsah, alebo ju zrušíme, Python z pamäte obrázok vyhodí, lebo za každú cenu chce upratať nepotrebné informácie. Môžete vyskúšať po spustení predchádzajúceho kódu zmeniť obsah premennej:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tk_img</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Väčšinou obrázok zmizne okamžite, niekedy treba ešte niečo nakresliť a až potom sa obrázok stratí, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tk_img</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Podobný efekt dosiahneme aj vtedy, keď tento program zapíšeme bez pomocnej premennej <code class="docutils literal notranslate"><span class="pre">tk_img</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">))</span>
+</span></pre></div>
+</div>
+<p>Python aj v tomto prípade obrázok najprv prečíta vo formáte <code class="docutils literal notranslate"><span class="pre">tkinter.PhotoImage()</span></code>, pošle ho ako skutočný parameter do <code class="docutils literal notranslate"><span class="pre">create_image()</span></code>, lenže, keďže naňho nikto neodkazuje (žiadna premenná neobsahuje referenciu), obrázok okamžite uvoľní. Z tohto dôvodu tento program nezobrazí žiaden obrázok.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="imagetk">
+<h3><a class="toc-backref" href="20.html#id13" role="doc-backlink">ImageTk</a><a class="headerlink" href="20.html#imagetk" title="Link to this heading">¶</a></h3>
+<p>Obrázky vieme načítať a vykresliť aj v <code class="docutils literal notranslate"><span class="pre">PIL.Image</span></code>, ale tieto dva formáty sú navzájom nekompatibilné. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+<span class="n">obr1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ak budeme chcieť obrázky vytvorené alebo prečítané v <code class="docutils literal notranslate"><span class="pre">PIL</span></code> neskôr v grafickej ploche vykresľovať a potom ich aj pomocou <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> meniť a posúvať, budeme musieť použiť nejakú konverziu z <code class="docutils literal notranslate"><span class="pre">PIL</span></code> do <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>. V tomto prípade využijeme z knižnice <code class="docutils literal notranslate"><span class="pre">PIL</span></code> ďalší podmodul <code class="docutils literal notranslate"><span class="pre">ImageTk</span></code>. Môžeme to zapísať takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">tk_img</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr1</span><span class="p">)</span>       <span class="c1"># konverzia z PIL.Image do tkinter</span>
+</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tk_img</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">PhotoImage()</span></code> z knižnice <code class="docutils literal notranslate"><span class="pre">ImageTk</span></code> má jeden parameter typu obrázok z <code class="docutils literal notranslate"><span class="pre">Image</span></code> a prerobí ho na obrázkový objekt pre <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>. Tento objekt môžeme ešte pred prekonvertovaní pre <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> upraviť najrozličnejšími obrázkovými metódami, s ktorými sme sa práve naučili pracovať. Môžeme napríklad zapísať:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="hll"><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">obr2</span> <span class="o">=</span> <span class="n">obr1</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span class="hll"><span class="n">tk_img</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr2</span><span class="p">)</span>
+</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tk_img</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Často uvidíte aj veľmi kompaktný zápis, napríklad takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">tk_img</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="otacanie-obrazka-animacia">
+<h3><a class="toc-backref" href="20.html#id14" role="doc-backlink">Otáčanie obrázka, animácia</a><a class="headerlink" href="20.html#otacanie-obrazka-animacia" title="Link to this heading">¶</a></h3>
+<p>Využime tento kompaktný zápis na pomalé otáčanie celého obrázka:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tk_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>     <span class="c1"># zatiaľ prázdny obrázok</span>
+
+<span class="n">uhol</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">    <span class="n">tk_img</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">uhol</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tk_img</span><span class="p">)</span>
+    <span class="n">uhol</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všimnite si, že v tomto nekonečnom cykle stále čítame a otáčame ten istý súbor, pričom súbor by sme mohli prečítať len raz a potom ho už len otáčame:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tk_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="hll"><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+</span><span class="n">uhol</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">    <span class="n">tk_img</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr1</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">uhol</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tk_img</span><span class="p">)</span>
+    <span class="n">uhol</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V tomto nekonečnom cykle sa po 36 prechodoch znovu opakujú tie isté obrázky. Môžeme to prepísať tak, že tieto obrázky vypočítame len raz ešte pred samotným cyklom a uložíme ich do zoznamu. V cykle sa už budeme len odvolávať na prvky tohto zoznamu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tk_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="hll"><span class="n">obr1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr1</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">uhol</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">for</span> <span class="n">uhol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento malý testovací program by mohol fungovať aj pre inú postupnosť obrázkov. Do podadresára <code class="docutils literal notranslate"><span class="pre">vtak</span></code> uložíme týchto <a class="reference external" href="https://python.input.sk/_static/vtak.zip">8 obrázkových súborov</a> (vyrobili sme ich z animovaného gifu):</p>
+<a class="reference internal image-reference" href="../_images/120_13.png"><img alt="../_images/120_13.png" class="align-center" height="41" src="../_images/120_13.png" width="280" />
+</a>
+<p>Tieto súbory prečítame a uložíme do zoznamu a otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="c1"># moduly Image ani ImageTk tu nepotrebujeme</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tk_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="hll"><span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;vtak/vtak</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Túto úlohu vieme vyriešiť aj priamo so súborom animovaný gif:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="n">zoz</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class="hll"><span class="n">gif</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;vtak.gif&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gif</span><span class="o">.</span><span class="n">n_frames</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">gif</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">zoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">gif</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">))</span>
+</span>
+<span class="n">tk_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="20.html#id15" role="doc-backlink">Cvičenie</a><a class="headerlink" href="20.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>aspoň 10</strong> okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 20. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 9.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdaných riešeniach nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pre niektoré úlohy budeš potrebovať súbory z priečinku obrázkov <a class="reference external" href="../_static/file/obrazky.zip">obrazky.zip</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">novy(sirka,</span> <span class="pre">vyska)</span></code>, ktorý vytvorí nový obrázkový objekt zadanej veľkosti <code class="docutils literal notranslate"><span class="pre">(sirka,</span> <span class="pre">vyska)</span></code>, ktorý je modrý. Funkcia vráti tento objekt ako svoj výsledok. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">novy</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    <span class="c1"># zobrazí modrý obdĺžnik 200x100</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Doplň do funkcie z predchádzajúcej úlohy ďalší parameter <code class="docutils literal notranslate"><span class="pre">novy(sirka,</span> <span class="pre">vyska,</span> <span class="pre">meno_suboru=None)</span></code>. Ak je tento tretí parameter pri volaní zadaný, funkcia okrem návratovej hodnoty tento obrázok aj uloží do súboru s daným menom. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span> <span class="o">=</span> <span class="n">novy</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;modry.png&#39;</span><span class="p">)</span>     <span class="c1"># vytvorí súbor modry.png</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">ramik(meno_suboru,</span> <span class="pre">sirka)</span></code>, ktorý prečíta zadaný obrázkový súbor (napríklad <code class="docutils literal notranslate"><span class="pre">'tiger.png'</span></code>) a vyrobí z neho nový, ktorý bude mať modrý rámik danej šírky. Funkcia vráti tento nový obrázok ako svoj výsledok. Zrejme funkcia najprv vyrobí nový prázdny modrý obrázok, ktorý bude o zadanú šírku zo všetkých strán väčší ako načítaný obrázok. Potom do tohto prázdneho obrázka opečiatkuje prečítaný obrázok. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ramik</span><span class="p">(</span><span class="s1">&#39;tiger.png&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c2.png"><img alt="../_images/120_c2.png" class="align-center" height="148" src="../_images/120_c2.png" width="212" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zaramuj(meno_suboru)</span></code>, ktorá obrázok z daného súboru vloží do obrázka <code class="docutils literal notranslate"><span class="pre">'ram.png'</span></code>. Ak bude vkladaný obrázok väčší ako biele vnútro rámu, tak ho oreže na danú veľkosť (môžeš počítať s tým, že vnútro rámu má veľkosť <code class="docutils literal notranslate"><span class="pre">212x321</span></code>). Funkcia ako svoj výsledok vráti zarámovaný obrázok. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zaramuj</span><span class="p">(</span><span class="s1">&#39;tiger2.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c3.png"><img alt="../_images/120_c3.png" class="align-center" height="218" src="../_images/120_c3.png" width="163" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">kopia(obrazok)</span></code>, ktorá vyrobí kópiu pôvodného obrázka, ale tak, že ho kopíruje po jednom pixeli. Zrejme si najprv vytvoríš prázdny obrázok rovnakých rozmerov a sem budeš kopírovať pixely (pomocou <code class="docutils literal notranslate"><span class="pre">getpixel()</span></code> a <code class="docutils literal notranslate"><span class="pre">putpixel()</span></code>). Funkcia vráti tento nový obrázok ako svoj výsledok. Teraz prečítaj nejaký malý obrázok zo súboru a vyrob z neho pomocou <code class="docutils literal notranslate"><span class="pre">kopia()</span></code> kópiu (pre veľké obrázky to môže dosť dlho trvať).  Výsledok ulož do súboru a skontroluj. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kopia</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiger.png&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">prevrat(obrazok)</span></code>, ktorá vyrobí <strong>prevrátenú</strong> kópiu pôvodného obrázka (obrázok je hore nohami), ale ho kopíruje po jednom pixeli. Funkcia vráti tento nový obrázok ako svoj výsledok. Teraz prečítaj nejaký malý obrázok zo súboru a vyrob z neho nový pomocou <code class="docutils literal notranslate"><span class="pre">prevrat()</span></code>.  Výsledok ulož do súboru a skontroluj. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prevrat</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;macka.png&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c16.png"><img alt="../_images/120_c16.png" class="align-center" height="186" src="../_images/120_c16.png" width="150" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">sedy(obrazok)</span></code>, ktorá vyrobí <strong>čierno-bielu</strong> kópiu pôvodného obrázka (vypočítaš priemer zložiek <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">g,</span> <span class="pre">b)</span></code>, napríklad je to hodnota <code class="docutils literal notranslate"><span class="pre">p</span></code>, potom z toho vznikne nová farba <code class="docutils literal notranslate"><span class="pre">(p,</span> <span class="pre">p,</span> <span class="pre">p)</span></code>). Funkcia vráti tento nový obrázok ako svoj výsledok. Teraz prečítaj nejaký malý obrázok zo súboru a vyrob z neho čiernobiely pomocou <code class="docutils literal notranslate"><span class="pre">sedy()</span></code>.  Výsledok ulož do súboru a skontroluj. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sedy</span><span class="p">(</span><span class="n">obr1</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">stvorce(m,</span> <span class="pre">n)</span></code>, ktorá vytvorí obrázok skladajúci sa z <code class="docutils literal notranslate"><span class="pre">m</span></code> x <code class="docutils literal notranslate"><span class="pre">n</span></code> štvorcov veľkosti <code class="docutils literal notranslate"><span class="pre">100x100</span></code> (<code class="docutils literal notranslate"><span class="pre">m</span></code> radov, v každom po <code class="docutils literal notranslate"><span class="pre">n</span></code> štvorcov). Tieto štvorce budú zafarbené náhodnými farbami. Obrázok potom uloží do súboru <code class="docutils literal notranslate"><span class="pre">'stvorce.png'</span></code>. Zrejme každé zavolanie tejto funkcie vyrobí iný obsah súboru (skontroluj). Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stvorce</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1"># vytvorí obrázok veľkosti 400x300</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c1.png"><img alt="../_images/120_c1.png" class="align-center" height="150" src="../_images/120_c1.png" width="200" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">styrikrat(obr)</span></code>, ktorá dostane obrázkový objekt a vyrobí z neho novy: tento bude mať rovnaké rozmery ako pôvodný obrázok, ale bude štyrikrát obsahovať pôvodný obrázok zmenšený na polovicu. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;macka.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span> <span class="o">=</span> <span class="n">styrikrat</span><span class="p">(</span><span class="n">obr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">styrikrat</span><span class="p">(</span><span class="n">obr1</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c4.png"><img alt="../_images/120_c4.png" height="186" src="../_images/120_c4.png" width="150" />
+</a>
+<img alt="../_images/120_c0.png" src="../_images/120_c0.png" />
+<a class="reference internal image-reference" href="../_images/120_c5.png"><img alt="../_images/120_c5.png" height="186" src="../_images/120_c5.png" width="150" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p>Obrázok <code class="docutils literal notranslate"><span class="pre">'papagaj.png'</span></code> niekto rozstrihal na štyri časti a nejako ich navzájom pomiešal. Prečítaj tento obrázok a vyrob z neho súbor <code class="docutils literal notranslate"><span class="pre">'papagaj1.png'</span></code>, v ktorom budú všetky časti na svojom mieste.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;papagaj.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">novy</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">novy</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c6.png"><img alt="../_images/120_c6.png" height="90" src="../_images/120_c6.png" width="90" />
+</a>
+<img alt="../_images/120_c0.png" src="../_images/120_c0.png" />
+<a class="reference internal image-reference" href="../_images/120_c7.png"><img alt="../_images/120_c7.png" height="90" src="../_images/120_c7.png" width="90" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Napíš pythonovský skript, ktorý prečíta obrázok <code class="docutils literal notranslate"><span class="pre">'prasiatko0.png'</span></code> a priesvitné časti nahradí červenou farbou. Výsledný obrázok uloží do súboru <code class="docutils literal notranslate"><span class="pre">'prasiatko1.png'</span></code>. Skús pomocou jedného for-cyklu vytvoriť aspoň 5 obrázkových súborov (<code class="docutils literal notranslate"><span class="pre">'prasiatko1.png'</span></code>, <code class="docutils literal notranslate"><span class="pre">'prasiatko2.png'</span></code>, <code class="docutils literal notranslate"><span class="pre">'prasiatko3.png'</span></code>, …), pričom každý z nich bude mať priesvitné časti nahradené nejakými inými farbami (napríklad <code class="docutils literal notranslate"><span class="pre">'red'</span></code>, <code class="docutils literal notranslate"><span class="pre">'blue'</span></code>, <code class="docutils literal notranslate"><span class="pre">'green'</span></code>, …)</p>
+<a class="reference internal image-reference" href="../_images/120_c8.png"><img alt="../_images/120_c8.png" height="79" src="../_images/120_c8.png" width="122" />
+</a>
+<a class="reference internal image-reference" href="../_images/120_c9.png"><img alt="../_images/120_c9.png" height="79" src="../_images/120_c9.png" width="122" />
+</a>
+<a class="reference internal image-reference" href="../_images/120_c10.png"><img alt="../_images/120_c10.png" height="79" src="../_images/120_c10.png" width="122" />
+</a>
+<a class="reference internal image-reference" href="../_images/120_c11.png"><img alt="../_images/120_c11.png" height="79" src="../_images/120_c11.png" width="122" />
+</a>
+<a class="reference internal image-reference" href="../_images/120_c12.png"><img alt="../_images/120_c12.png" height="79" src="../_images/120_c12.png" width="122" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vymen(obrázok)</span></code>, ktorá navzájom v obrázku vymení jeho ľavú a pravú polovicu. Funkcia nemodifikuje pôvodný obrázok, ale vráti nový s vymenenými polovicami. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vymen</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiger.png&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c13.png"><img alt="../_images/120_c13.png" class="align-center" height="128" src="../_images/120_c13.png" width="192" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="13">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vycentruj(obr,</span> <span class="pre">sirka,</span> <span class="pre">vyska)</span></code>, ktorá z daného obrázka vytvorí nový s rozmermi <code class="docutils literal notranslate"><span class="pre">(sirka,</span> <span class="pre">vyska)</span></code>. V tomto novom obrázku sa bude v jeho strede nachádzať zadaný obrázok (zvyšok bude priesvitný). Ak by sa tam nevošiel (je príliš veľký), tak z neho bude vidieť len zodpovedajúcu časť z jeho stredu. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiger.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vycentruj</span><span class="p">(</span><span class="n">obr</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vycentruj</span><span class="p">(</span><span class="n">obr</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/120_c14.png"><img alt="../_images/120_c14.png" height="250" src="../_images/120_c14.png" width="250" />
+</a>
+<img alt="../_images/120_c0.png" src="../_images/120_c0.png" />
+<a class="reference internal image-reference" href="../_images/120_c15.png"><img alt="../_images/120_c15.png" height="100" src="../_images/120_c15.png" width="75" />
+</a>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="14">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">strihaj(obr,</span> <span class="pre">n)</span></code>, ktorá rozstrihá zadaný obrázok na <code class="docutils literal notranslate"><span class="pre">n</span></code> rovnako-širokých častí (po stĺpcoch) a všetky takto rozstrihané časti vráti ako zoznam obrázkov. Na otestovanie môžeš použiť obrázkové súbory <code class="docutils literal notranslate"><span class="pre">'pismena.png'</span></code> a <code class="docutils literal notranslate"><span class="pre">'cislice.png'</span></code> s 26, resp. 10 obrázkami.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="15">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zlep(zoz)</span></code>, ktorá zlepí vedľa seba obrázky zadané v zozname <code class="docutils literal notranslate"><span class="pre">zoz</span></code> (napríklad sú výsledkom <code class="docutils literal notranslate"><span class="pre">strihaj()</span></code>). Predpokladáme, že všetky obrázky v <code class="docutils literal notranslate"><span class="pre">zoz</span></code> sú rovnako veľké. Výsledný obrázok vráti ako výsledok funkcie. Otestuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zlep</span><span class="p">(</span><span class="n">strihaj</span><span class="p">(</span><span class="n">obr1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="16">
+<li><p>Pre dva obrázkové súbory <code class="docutils literal notranslate"><span class="pre">'pismena.png'</span></code> a <code class="docutils literal notranslate"><span class="pre">'cislice.png'</span></code> napíš funkcie:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">velky_text(text)</span></code> - vytvorí jeden obrázok z písmen v danom texte (iné znaky ignoruje), t.j. text rozoberie na písmená a výsledný obrázok poskladá zo zodpovedajúcich obrázkov v rozstrihanom súbore <code class="docutils literal notranslate"><span class="pre">'pismena.png'</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">velke_cislo(cislo)</span></code> - podobná ako <code class="docutils literal notranslate"><span class="pre">velky_text</span></code> - dané číslo rozloží na cifry a poskladá z nich jeden obrázok zlepením obrázkov cifier zo súboru <code class="docutils literal notranslate"><span class="pre">'cislice.png'</span></code></p></li>
+</ul>
+<p>Zrejme v oboch prípadoch využiješ funkcie <code class="docutils literal notranslate"><span class="pre">strihaj</span></code> a <code class="docutils literal notranslate"><span class="pre">zlep</span></code>. Otestuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">velky_text</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">velke_cislo</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="17">
+<li><p>Vylepši funkciu <code class="docutils literal notranslate"><span class="pre">zlep(zoz)</span></code> tak, aby fungovala správne aj pre obrázky v zozname, ktoré nie sú rovnako veľké. Funkcia si najprv vypočíta maximálnu šírku aj výšku, aby mohla jednotlivé obrázky rozložiť vo výslednom obrázku rovnomerne. Výsledný obrázok bude mať tie časti, ktoré nie sú pokryté obrázkom, priesvitné. Dávaj pozor na to, že príkaz <code class="docutils literal notranslate"><span class="pre">obr.paste</span></code> musíš zavolať inak pre obrázky s priesvitnosťou (<code class="docutils literal notranslate"><span class="pre">obr.mode</span> <span class="pre">==</span> <span class="pre">'RGBA'</span></code>) a v inom prípade.</p>
+<p>Malo by korektne fungovať aj opätovné rozstrihanie takto zlepeného obrázka. Napríklad, pre rôzne veľké obrázky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obr1</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr2</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obr3</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="n">zlep</span><span class="p">([</span><span class="n">obr1</span><span class="p">,</span> <span class="n">obr2</span><span class="p">,</span> <span class="n">obr3</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zoznam <code class="docutils literal notranslate"><span class="pre">zoz</span></code> teraz obsahuje tri rovnako veľké obrázky, v ktorých sú pôvodné obrázky (<code class="docutils literal notranslate"><span class="pre">obr1</span></code>, <code class="docutils literal notranslate"><span class="pre">obr2</span></code> a <code class="docutils literal notranslate"><span class="pre">obr3</span></code>) vycentrované.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="18">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">otacaj(obr,</span> <span class="pre">n)</span></code>, ktorá vytvorí <code class="docutils literal notranslate"><span class="pre">n</span></code>-prvkový zoznam obrázkov. Každý vznikne otočením pôvodného obrázka o nejaký uhol tak, že tieto otáčania budú rovnomerne všetkými smermi (napríklad pre <code class="docutils literal notranslate"><span class="pre">n=5</span></code> budú tieto uhly <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">72</span></code>, <code class="docutils literal notranslate"><span class="pre">144</span></code>, …). Dbaj na to, aby sa pri otáčaní nestratili žiadne časti obrázka (<code class="docutils literal notranslate"><span class="pre">expand=True</span></code>) a oblasti, ktoré otáčaním pribudnú boli priesvitné. Výsledný zoznam vráti ako výsledok funkcie. Otestuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zlep2</span><span class="p">(</span><span class="n">otacaj</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">),</span> <span class="mi">6</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zlep2</span><span class="p">(</span><span class="n">otacaj</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;tiger.bmp&#39;</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zlep2</span><span class="p">(</span><span class="n">otacaj</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;vtak.gif&#39;</span><span class="p">),</span> <span class="mi">15</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="19">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">strihaj_gif(obr)</span></code>, ktorá vráti zoznam obrázkov - fáz animácií. Predpokladáme, že <code class="docutils literal notranslate"><span class="pre">obr</span></code> je vo formáte <code class="docutils literal notranslate"><span class="pre">gif</span></code>. Dbaj na to, aby sa zachovala priesvitnosť jednotlivých fáz. Otestuj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zlep</span><span class="p">(</span><span class="n">strihaj_gif</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;potvorka.gif&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zlep</span><span class="p">(</span><span class="n">strihaj_gif</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;vtak.gif&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zlep</span><span class="p">(</span><span class="n">strihaj_gif</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;kraca.gif&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="20">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zapis(zoz,</span> <span class="pre">meno,</span> <span class="pre">pripona)</span></code>, ktorá v parametri <code class="docutils literal notranslate"><span class="pre">zoz</span></code> dostáva postupnosť obrázkov a všetky tieto obrázky uloží do súborov s menami ‚meno0.pripona‘, ‚meno1.pripona‘, ‚meno2.pripona‘, … Otestuj napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zapis</span><span class="p">(</span><span class="n">strihaj_gif</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;vtak.gif&#39;</span><span class="p">)),</span> <span class="s1">&#39;temp/vtak&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V priečinku <code class="docutils literal notranslate"><span class="pre">temp</span></code> by malo vzniknúť 8 obrázkových súborov s menami <code class="docutils literal notranslate"><span class="pre">vtak0.png</span></code>, <code class="docutils literal notranslate"><span class="pre">vtak1.png</span></code>, <code class="docutils literal notranslate"><span class="pre">vtak2.png</span></code>, … Môžeš predpokladať, že priečinok <code class="docutils literal notranslate"><span class="pre">temp</span></code> už existoval predtým. Ak by si chcel takýto priečinok vytvárať vo funkcii, môžeš použiť:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="20.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
