@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9. Rekurzia &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="10. Dvojrozmerné tabuľky" href="10.html" />
+    <link rel="prev" title="8. Korytnačky (turtle)" href="08.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="09.html#">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="08.html" title="Previous Chapter: 8. Korytnačky (turtle)"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 8. Korytnačky...</span>
+    </a>
+  </li>
+  <li>
+    <a href="10.html" title="Next Chapter: 10. Dvojrozmerné tabuľky"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">10. Dvojrozme... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="rekurzia">
+<h1>9. Rekurzia<a class="headerlink" href="09.html#rekurzia" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="09.html#prava-rekurzia" id="id3">Pravá rekurzia</a></p>
+<ul>
+<li><p><a class="reference internal" href="09.html#faktorial" id="id4">Faktoriál</a></p></li>
+<li><p><a class="reference internal" href="09.html#otocenie-retazca" id="id5">Otočenie reťazca</a></p></li>
+<li><p><a class="reference internal" href="09.html#binomicke-koeficienty" id="id6">Binomické koeficienty</a></p></li>
+<li><p><a class="reference internal" href="09.html#fibonacciho-cisla" id="id7">Fibonacciho čísla</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="09.html#binarne-stromy" id="id8">Binárne stromy</a></p>
+<ul>
+<li><p><a class="reference internal" href="09.html#dalsie-rekurzivne-obrazky" id="id9">Ďalšie rekurzívne obrázky</a></p></li>
+<li><p><a class="reference internal" href="09.html#sierpinskeho-trojuholnik" id="id10">Sierpińského trojuholník</a></p></li>
+<li><p><a class="reference internal" href="09.html#snehova-vlocka" id="id11">Snehová vločka</a></p></li>
+<li><p><a class="reference internal" href="09.html#dalsie-fraktalove-krivky" id="id12">Ďalšie fraktálové krivky</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="09.html#cvicenie" id="id13">Cvičenie</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Už vieme, že opakovať nejaký výpočet môžeme pomocou cyklov, napríklad pomocou for-cyklu alebo while-cyklu. Ďalším spôsobom je <strong>rekurzia</strong>, pri ktorej sa nejaký výpočet opakuje len pomocou volaní podprogramu. Keď budeme chcieť opakovať nejaký výpočet pomocou rekurzie, budeme na to musieť:</p>
+<ul class="simple">
+<li><p>zadefinovať funkciu, pričom v tele tejto funkcie bude výpočet, ktorý chceme opakovať</p></li>
+<li><p>potom samotné opakovanie sa bude realizovať volaním funkcie - najčastejšie samej seba.</p></li>
+</ul>
+<p>Uvidíme, že <strong>rekurzívna</strong> funkcia by mala nejako zabezpečiť, aby takéto opakovanie nebolo nekonečné.</p>
+<p><strong>Rekurzia</strong> sa bude často používať aj na riešenie úloh, ktoré vieme rozložiť na menšie časti a niektoré z týchto (už menších) častí riešime opäť zavolaním samotnej funkcie. Keďže toto druhé (tzv. rekurzívne) volanie už rieši menšiu úlohu, ako bola pôvodná, je šanca, že sa takéto riešenie priblížilo k očakávanému výsledku. Toto je ale už náročnejší pohľad na rekurziu, k nemu sa dopracujeme až po získaní mnohých skúseností.</p>
+<p>Aby sme mali šancu lepšie porozumieť mechanizmu rekurzie, pripomeňme si <strong>mechanizmus volania funkcií</strong>, ktorý sme zaviedli na  predchádzajúcich prednáškach:</p>
+<ul class="simple">
+<li><p><strong>zapamätá sa</strong> návratová adresa</p></li>
+<li><p><strong>vytvorí sa</strong> nový menný priestor funkcie</p>
+<ul>
+<li><p>v ňom sa vytvárajú lokálne premenné aj parametre</p></li>
+</ul>
+</li>
+<li><p><strong>vykoná sa</strong> telo funkcie</p></li>
+<li><p>po skončení vykonania tela funkcie <strong>sa zruší</strong> menný priestor (aj so všetkými premennými)</p></li>
+<li><p>vykonávanie programu <strong>sa vráti</strong> na návratovú adresu</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Nekonečná rekurzia</p>
+<p>Rekurzia v programovaní teda znamená, že funkcia najčastejšie zavolá samú seba, t.j. že funkcia je definovaná pomocou samej seba. Na prvej ukážke vidíme rekurzívnu funkciu, ktorá nerobí nič iné, len volá samú seba:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">xy</span><span class="p">():</span>
+    <span class="n">xy</span><span class="p">()</span>
+
+<span class="n">xy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Takéto volanie po krátkom čase skončí chybovou správou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+  <span class="p">[</span><span class="n">Previous</span> <span class="n">line</span> <span class="n">repeated</span> <span class="mi">1022</span> <span class="n">more</span> <span class="n">times</span><span class="p">]</span>
+<span class="ne">RecursionError</span><span class="p">:</span> <span class="n">maximum</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="n">exceeded</span>
+</pre></div>
+</div>
+<p>To, že funkcia naozaj volala samú seba, môžeme vidieť, keď popri rekurzívnom volaní urobíme nejakú akciu, napríklad budeme zvyšovať nejakú globálnu premennú:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">xy</span><span class="p">():</span>
+<span class="hll">    <span class="k">global</span> <span class="n">pocet</span>
+</span>    <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">xy</span><span class="p">()</span>
+
+<span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xy</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll">    <span class="o">...</span>
+</span><span class="hll">    <span class="ne">RecursionError</span><span class="p">:</span> <span class="n">maximum</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="n">exceeded</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">pocet</span>
+<span class="hll">    <span class="mi">1025</span>
+</span></pre></div>
+</div>
+<p>V tomto prípade program opäť spadne, hoci môžeme vidieť, že sa naozaj zvyšovalo počítadlo. Treba si uvedomiť, že každé zvýšenie počítadla znamená rekurzívne volanie a teda vidíme, že ich bolo vyše tisíc. My už vieme, že každé volanie funkcie (bez ohľadu na to, či je rekurzívna alebo nie) spôsobí, že Python si niekde zapamätá nielen <strong>návratovú adresu</strong>, aby po skončení funkcie vedel, kam sa má vrátiť, ale aj <strong>menný priestor</strong> tejto funkcie. Python má na tieto účely rezervu okolo 1000 vnorených volaní. Ak toto presiahneme, tak sa dozvieme správu <code class="docutils literal notranslate"><span class="pre">RecursionError:</span> <span class="pre">maximum</span> <span class="pre">recursion</span> <span class="pre">depth</span> <span class="pre">exceeded</span></code> (hĺbka rekurzívnych volaní presiahla nastavené maximum).</p>
+<p>Teraz vyskúšajme rekurzívny program s korytnačkou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">xy</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span>    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">    <span class="n">xy</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">)</span>
+</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="hll"><span class="n">xy</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Po spustení program niečo kreslí, ale aj tak veľmi rýchlo spadne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="ne">RecursionError</span><span class="p">:</span> <span class="n">maximum</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="n">exceeded</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Odkrokujme si to:</p>
+<ul class="simple">
+<li><p>v poslednom riadku programu je volanie funkcie <code class="docutils literal notranslate"><span class="pre">xy(1)</span></code> =&gt; vytvorí sa parameter <code class="docutils literal notranslate"><span class="pre">d</span></code> (čo je vlastne lokálna premenná), ktorej hodnota je <code class="docutils literal notranslate"><span class="pre">1</span></code>,</p></li>
+<li><p>v tele funkcie <code class="docutils literal notranslate"><span class="pre">xy</span></code> sa nakreslí čiara dĺžky <code class="docutils literal notranslate"><span class="pre">d</span></code> a korytnačka sa otočí vľavo o 60 stupňov,</p></li>
+<li><p>znovu sa volá funkcia <code class="docutils literal notranslate"><span class="pre">xy(d</span> <span class="pre">+</span> <span class="pre">0.3)</span></code>, ale s novou hodnotou parametra <code class="docutils literal notranslate"><span class="pre">d</span></code>  na <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">+</span> <span class="pre">0.3</span></code>, t.j. vytvorí sa nová lokálna premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> (v novom mennom priestore) s hodnotou <code class="docutils literal notranslate"><span class="pre">1.3</span></code>,</p></li>
+<li><p>toto sa robí donekonečna - našťastie to časom spadne na preplnení pythonovskej pamäte pre volania funkcií</p></li>
+</ul>
+<p>Informácie o mennom priestore a aj návratovej adrese si Python ukladá v špeciálnej údajovej štruktúre <strong>zásobník</strong>.</p>
+<aside class="topic">
+<p class="topic-title">Zásobník (stack)</p>
+<p>je údajová štruktúra, ktorá má tieto vlastnosti:</p>
+<ul class="simple">
+<li><p>nové prvky pridávame na vrch (napríklad na vrch kopy tanierov, resp. na koniec radu čakajúcich)</p></li>
+<li><p>keď potrebujeme zo zásobníka získať nejaký prvok, vždy ho odoberáme z vrchu (odoberáme naposledy položený tanier, resp. posledný v rade čakajúcich)</p></li>
+</ul>
+<p>Odborne sa tomu hovorí <strong>LIFO</strong> (last in first out), teda posledný prišiel, ale ako prvý odišiel - bol obslúžený (zrejme, keby to bol rad napríklad v obchode, tak by sme ho považovali za <strong>nespravodlivý rad</strong>).</p>
+<p>Zásobník sa používa na uchovávanie menných priestorov: každé ďalšie volanie funkcie, vytvorí nový menný priestor, ktorý sa uloží na koniec doteraz vytvorených menných priestorov. Keď ale príde ukončenie volania funkcie, z tohto zásobníka sa odstráni naposledy pridávaný menný priestor (hoci sme ho zaradili ako posledný, vybrali sme ho ako prvý, t.j. <strong>LIFO</strong>).</p>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Chvostová rekurzia (nepravá rekurzia)</p>
+<p>Aby sme nevytvárali nikdy nekončiace programy, t.j. nekonečnú rekurziu (ktorá aj tak veľmi rýchlo spadne), niekde do tela rekurzívnej funkcie musíme vložiť test, ktorý zabezpečí, že rekurzia predsa len skončí. Keďže rekurzia vlastne slúži na opakovanie výpočtu, budeme musieť nastaviť, kedy (v akých prípadoch) toto opakovanie, teda rekurzívne volanie, končí. Na začiatok funkcie umiestnime podmienený príkaz <code class="docutils literal notranslate"><span class="pre">if</span></code>, ktorý otestuje, či už nenastal taký <strong>prípad</strong>, že netreba opakovať výpočet aj s rekurzívnym volaním. <strong>V tomto prípade</strong> by možno stačilo vykonať len nejaké „nerekurzívne“ príkazy a skončiť. Zrejme, keď tento test neprejde (nenastal tento špeciálny prípad), vykoná sa pôvodný výpočet a celé sa to opakuje (vďaka rekurzívnemu volaniu).</p>
+<p>Takýto špeciálny prípad, keď už nebude potrebné rekurzívne volanie, budeme volať <strong>triviálnym prípadom</strong> („base case“). Môžeme si to predstaviť aj takto: rekurzívna funkcia rieši nejaký komplexný problém a pri jeho riešení volá samu seba (rekurzívne volanie, „recursive case“) väčšinou s nejakými pozmenenými údajmi. V niektorých prípadoch ale rekurzívne volanie na riešenie problému nepotrebujeme, ale vieme to vyriešiť „triviálne“ aj bez nej (riešenie takejto úlohy je už „triviálne“). V takto riešených úlohách vidíme, že sa funkcia skladá z dvoch častí:</p>
+<ul>
+<li><p>pri splnení nejakej podmienky, sa vykonajú príkazy bez rekurzívneho volania (triviálny prípad),</p></li>
+<li><p>inak sa vykonajú príkazy, ktoré v sebe obsahujú rekurzívne volanie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzivna_funkcia</span><span class="p">(</span><span class="n">parametre</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">podmienka</span><span class="p">:</span>
+<span class="hll">        <span class="n">triviálny_prípad</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="o">...</span>
+<span class="hll">        <span class="n">rekurzivna_funkcia</span><span class="p">(</span><span class="n">nové_parametre</span><span class="p">)</span>      <span class="c1"># rekurzívne volanie</span>
+</span>        <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Zrejme, toto má šancu fungovať len vtedy, keď po nejakom čase naozaj nastane podmienka triviálneho prípadu (podmienka, ktorá ukončí opakovanie), napríklad, keď sa budú meniť parametre rekurzívneho volania takým spôsobom, že sa k triviálnemu prípadu (k podmienke) nejako blížime.</p>
+<p>V nasledujúcej ukážke môžete vidieť, že rekurzívna špirála sa kreslí tak, že sa najprv nakreslí úsečka dĺžky <code class="docutils literal notranslate"><span class="pre">d</span></code>, korytnačka sa otočí o 60 stupňov vľavo a dokreslí sa špirála s väčšími hodnotami. Toto celé skončí vtedy, keby sme chceli nakresliť špirálu väčšiu ako 100 - takáto špirála sa už nenakreslí. Akciou triviálneho prípadu je tu príkaz <code class="docutils literal notranslate"><span class="pre">pass</span></code> (príkaz označuje <em>nerob nič</em>), t.j. žiadna akcia pre príliš veľké špirály:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">spir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="hll">        <span class="k">pass</span>     <span class="c1"># nerob nič</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">        <span class="n">spir</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="hll"><span class="n">spir</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_01.png"><img alt="../_images/109_01.png" class="align-center" height="162" src="../_images/109_01.png" width="210" />
+</a>
+<p>Ručne odkrokujme volanie funkcie <code class="docutils literal notranslate"><span class="pre">spir(92)</span></code>, pritom si zaznačíme, čo sa deje na zásobníku:</p>
+<ul class="simple">
+<li><p>pre volanie <code class="docutils literal notranslate"><span class="pre">spir(92)</span></code>: na zásobníku vznikne nová lokálna premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 92 … korytnačka nakreslí čiaru, otočí sa a volá <code class="docutils literal notranslate"><span class="pre">spir()</span></code> s parametrom 95,</p></li>
+<li><p>pre volanie <code class="docutils literal notranslate"><span class="pre">spir(95)</span></code>: na zásobníku vznikne nová lokálna premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 95 … korytnačka nakreslí čiaru, otočí sa a volá <code class="docutils literal notranslate"><span class="pre">spir()</span></code> s parametrom 98,</p></li>
+<li><p>pre volanie <code class="docutils literal notranslate"><span class="pre">spir(98)</span></code>: na zásobníku vznikne nová lokálna premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 98 … korytnačka nakreslí čiaru, otočí sa a volá <code class="docutils literal notranslate"><span class="pre">spir()</span></code> s parametrom 101,</p></li>
+<li><p>pre volanie <code class="docutils literal notranslate"><span class="pre">spir(101)</span></code>: na zásobníku vznikne nová lokálna premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 101 … korytnačka už nič nekreslí ani sa nič nevolá … funkcia <code class="docutils literal notranslate"><span class="pre">spir()</span></code> končí, t.j.</p>
+<ul>
+<li><p>zabudnú sa všetky lokálne premenné na tejto úrovni, t.j. premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 101 a riadenie sa vráti za posledné volanie funkcie <code class="docutils literal notranslate"><span class="pre">spir()</span></code> - tá ale končí, t.j.</p></li>
+<li><p>zabudnú sa všetky lokálne premenné na tejto úrovni, t.j. premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 98 a riadenie sa vráti za posledné volanie funkcie <code class="docutils literal notranslate"><span class="pre">spir()</span></code> - tá ale končí, t.j.</p></li>
+<li><p>zabudnú sa všetky lokálne premenné na tejto úrovni, t.j. premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 95 a riadenie sa vráti za posledné volanie funkcie <code class="docutils literal notranslate"><span class="pre">spir()</span></code> - tá ale končí, t.j.</p></li>
+<li><p>zabudnú sa všetky lokálne premenné na tejto úrovni, t.j. premenná <code class="docutils literal notranslate"><span class="pre">d</span></code> s hodnotou 92 a riadenie sa vráti za posledné volanie funkcie <code class="docutils literal notranslate"><span class="pre">spir()</span></code> - teda za posledný riadok programu (za riadok <code class="docutils literal notranslate"><span class="pre">spir(92)</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<p>Toto nám potvrdia aj kontrolné výpisy vo funkcii:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">spir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;volanie spir(</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</span>    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">pass</span>     <span class="c1"># nerob nič</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;... trivialny pripad - nerobim nic&#39;</span><span class="p">)</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;... rekurzivne volam spir(</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</span>        <span class="n">spir</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;... navrat z volania spir(</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</span>
+<span class="n">spir</span><span class="p">(</span><span class="mi">92</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>volanie spir(92)
+... rekurzivne volam spir(95)
+volanie spir(95)
+... rekurzivne volam spir(98)
+volanie spir(98)
+... rekurzivne volam spir(101)
+volanie spir(101)
+... trivialny pripad - nerobim nic
+... navrat z volania spir(101)
+... navrat z volania spir(98)
+... navrat z volania spir(95)
+</pre></div>
+</div>
+<p>Nakoľko rekurzívne volanie funkcie je iba na jednom mieste, za ktorým už nenasledujú ďalšie príkazy funkcie, toto rekurzívne volanie sa dá ľahko prepísať cyklom <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">spir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Rekurzii, v ktorej za rekurzívnym volaním nie sú ďalšie príkazy, hovoríme <strong>chvostová rekurzia</strong> (najčastejšie jediné rekurzívne volanie je posledným príkazom funkcie). Takáto rekurzia sa dá prepísať na nerekurzívnu funkciu, napríklad pomocou while-cyklu.</p>
+<p>Rekurziu môžeme používať nielen pri kreslení pomocou korytnačky, ale napríklad aj pri výpisoch pomocou <code class="docutils literal notranslate"><span class="pre">print()</span></code>. V nasledujúcom príklade vypisujeme vedľa seba čísla <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, <code class="docutils literal notranslate"><span class="pre">n-2</span></code>, …, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">pass</span>               <span class="c1"># nerob nič, len skonči</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="hll">        <span class="n">vypis</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>       <span class="c1"># rekurzívne volanie</span>
+</span></pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="hll"><span class="go">    20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1,</span>
+</span></pre></div>
+</div>
+<p>Zrejme by to bolo veľmi jednoduché prepísať bez použitia rekurzie, napríklad pomocou while-cyklu (alebo for-cyklu). Poexperimentujme, a vymeňme dva riadky: vypisovanie <code class="docutils literal notranslate"><span class="pre">print()</span></code> s rekurzívnym volaním <code class="docutils literal notranslate"><span class="pre">vypis()</span></code>. Po spustení vidíte, že aj táto nová rekurzívna funkcia sa dá prepísať len pomocou while-cyklu (resp. for-cyklu), ale jej činnosť už nemusí byť pre každého na prvý pohľad až tak jasná - odtrasujte túto zmenenú verziu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">pass</span>      <span class="c1"># nerob nič, len skonči</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">vypis</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="hll"><span class="go">    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,</span>
+</span></pre></div>
+</div>
+<p>Táto funkcia chce vypísať prvých <code class="docutils literal notranslate"><span class="pre">n</span></code> čísel. Aby to urobila, najprv vypíše prvých <code class="docutils literal notranslate"><span class="pre">n-1</span></code> čísel (volanie <code class="docutils literal notranslate"><span class="pre">vypis(n-1)</span></code>) a až potom číslo <code class="docutils literal notranslate"><span class="pre">n</span></code> (posledný príkaz <code class="docutils literal notranslate"><span class="pre">print(n,</span> <span class="pre">end=',</span> <span class="pre">')</span></code>).</p>
+<p>Uvedomte si, že túto rekurzívnu funkciu môžeme zapísať aj takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>      <span class="c1"># nerob nič, len skonči</span>
+<span class="hll">    <span class="n">vypis</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>alebo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">        <span class="n">vypis</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Lenže v týchto zápisoch nie je <strong>triviálny prípad</strong> až tak čitateľný. Preto, kým si na rekurziu nezvykneme a nestane sa pre nás úplne prirodzeným spôsobom riešenia úloh, budeme radšej zvýrazňovať takýto triviálny prípad ako jednu vetvu príkazu <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="prava-rekurzia">
+<h2><a class="toc-backref" href="09.html#id3" role="doc-backlink">Pravá rekurzia</a><a class="headerlink" href="09.html#prava-rekurzia" title="Link to this heading">¶</a></h2>
+<p>Rekurzie, ktoré už nie sú obyčajné chvostové, sú na pochopenie trochu zložitejšie. Pozrime takéto kreslenie špirály:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">spir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="hll">        <span class="n">t</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>     <span class="c1"># a skonči</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="hll">        <span class="n">spir</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">spir</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nejaké príkazy sú pred aj za rekurzívnym volaním. Aby sme to lepšie rozlíšili, triviálny prípad nastaví inú farbu pera:</p>
+<a class="reference internal image-reference" href="../_images/109_02.png"><img alt="../_images/109_02.png" class="align-center" height="151" src="../_images/109_02.png" width="213" />
+</a>
+<p>Aj takéto rekurzívne volanie sa dá prepísať pomocou dvoch cyklov:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">spir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="hll">    <span class="k">while</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>    <span class="c1"># čo sa deje pred rekurzívnym volaním</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="mi">3</span>
+        <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>  <span class="c1"># triviálny prípad</span>
+<span class="hll">    <span class="k">while</span> <span class="n">pocet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># čo sa deje po vynáraní z rekurzie</span>
+</span>        <span class="n">d</span> <span class="o">-=</span> <span class="mi">3</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">pocet</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Aj v ďalších príkladoch môžete vidieť pravú rekurziu. Napríklad vylepšená funkcia <code class="docutils literal notranslate"><span class="pre">vypis</span></code> vypisuje postupnosť čísel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">pass</span>                 <span class="c1"># skonči</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="hll">        <span class="n">vypis</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+
+<span class="n">vypis</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>Keď ako triviálny prípad pridáme výpis hviezdičiek, toto sa vypíše niekde medzi postupnosť čísel. Viete, kde sa vypíšu tieto hviezdičky?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;***&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>         <span class="c1"># a skonči</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="hll">        <span class="n">vypis</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+
+<span class="n">vypis</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V ďalších príkladoch s korytnačkou využívame veľmi užitočnú funkciu <code class="docutils literal notranslate"><span class="pre">poly</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">poly</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="n">dlzka</span><span class="p">,</span> <span class="n">uhol</span><span class="p">):</span>
+</span>    <span class="k">while</span> <span class="n">pocet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">dlzka</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol</span><span class="p">)</span>
+        <span class="n">pocet</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Ktorú môžeme cvične prerobiť na rekurzívnu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">poly</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="n">dlzka</span><span class="p">,</span> <span class="n">uhol</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">pocet</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">pass</span>          <span class="c1"># nič nerob len skonči</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">dlzka</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol</span><span class="p">)</span>
+<span class="hll">        <span class="n">poly</span><span class="p">(</span><span class="n">pocet</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dlzka</span><span class="p">,</span> <span class="n">uhol</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>čo môžeme zapísať aj takto (porovnajte tento zápis s verziou s while-cyklom):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">poly</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="n">dlzka</span><span class="p">,</span> <span class="n">uhol</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">pocet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">dlzka</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol</span><span class="p">)</span>
+<span class="hll">        <span class="n">poly</span><span class="p">(</span><span class="n">pocet</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dlzka</span><span class="p">,</span> <span class="n">uhol</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Zistite, čo kreslia funkcie <code class="docutils literal notranslate"><span class="pre">stvorec</span></code> a <code class="docutils literal notranslate"><span class="pre">stvorec1</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">stvorec</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">pass</span>          <span class="c1"># nič nerob len skonči</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">poly</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="hll">        <span class="n">stvorec</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+</span>
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">stvorec1</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>       <span class="c1"># a skonči</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">poly</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="hll">        <span class="n">stvorec1</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+</span>        <span class="n">poly</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všetky tieto príklady s pravou rekurziou by ste mali vedieť jednoducho prepísať bez rekurzie pomocou niekoľkých cyklov.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="faktorial">
+<h3><a class="toc-backref" href="09.html#id4" role="doc-backlink">Faktoriál</a><a class="headerlink" href="09.html#faktorial" title="Link to this heading">¶</a></h3>
+<p>V nasledujúcom príklade počítame <strong>faktoriál</strong> prirodzeného čísla <code class="docutils literal notranslate"><span class="pre">n</span></code>. Matematici ho niekedy definujú takto:</p>
+<ul class="simple">
+<li><p>buď je to <code class="docutils literal notranslate"><span class="pre">1</span></code> pre <code class="docutils literal notranslate"><span class="pre">n=0</span></code></p></li>
+<li><p>alebo <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">(n-1)</span> <span class="pre">*</span> <span class="pre">(n-2)</span> <span class="pre">*</span> <span class="pre">...</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">1</span></code> pre <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">1</span></code></p></li>
+</ul>
+<p>Tu vidíme zapísaný obyčajný cyklus.</p>
+<p>Inokedy ale matematici zadefinujú faktoriál <code class="docutils literal notranslate"><span class="pre">n!</span></code> takto:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n!</span> <span class="pre">=</span> <span class="pre">1</span></code> pre <code class="docutils literal notranslate"><span class="pre">n=0</span></code> (už vieme, že je to triviálny prípad)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n!</span> <span class="pre">=</span> <span class="pre">(n-1)!</span> <span class="pre">*</span> <span class="pre">n</span></code> (vidíme rekurzívne volanie)</p></li>
+</ul>
+<p>Prepíšme to rekurzívnou funkciou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">faktorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+<span class="hll">    <span class="k">return</span> <span class="n">faktorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+</span></pre></div>
+</div>
+<p>Triviálnym prípadom je tu úloha, ako vyriešiť <code class="docutils literal notranslate"><span class="pre">0!</span></code>. Toto vieme vyriešiť aj bez rekurzie, lebo je to 1. Ostatné prípady sú už rekurzívne: na to, aby sme vyriešili zložitejší problém (<code class="docutils literal notranslate"><span class="pre">n</span></code> faktoriál), najprv vypočítame jednoduchší (<code class="docutils literal notranslate"><span class="pre">n-1</span></code> faktoriál) - zrejme pomocou rekurzie - a z neho skombinujeme (násobením) požadovaný výsledok. Hoci toto riešenie nie je chvostová rekurzia (po rekurzívnom volaní <code class="docutils literal notranslate"><span class="pre">faktorial</span></code> sa musí ešte násobiť), vieme ho jednoducho prepísať pomocou cyklu. Niekedy sa môžete stretnúť s rekurzívnou verziou faktoriálu, v ktorej je viac ako jeden triviálny prípad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">faktorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="hll">    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">return</span> <span class="mi">1</span>
+</span><span class="hll">    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">return</span> <span class="mi">1</span>
+</span>    <span class="k">return</span> <span class="n">faktorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>čo sa zvykne zapisovať aj takto zjednodušene:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">faktorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="hll">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">return</span> <span class="mi">1</span>
+</span>    <span class="k">return</span> <span class="n">faktorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>Zrejme táto verzia pokrýva aj záporné <code class="docutils literal notranslate"><span class="pre">n</span></code>. Zamyslite sa, ako sa budú správať predchádzajúce verzie so záporným <code class="docutils literal notranslate"><span class="pre">n</span></code>, napríklad pre <code class="docutils literal notranslate"><span class="pre">faktorial(-2)</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="otocenie-retazca">
+<h3><a class="toc-backref" href="09.html#id5" role="doc-backlink">Otočenie reťazca</a><a class="headerlink" href="09.html#otocenie-retazca" title="Link to this heading">¶</a></h3>
+<p>Pozrime ďalšiu jednoduchú rekurzívnu funkciu, ktorá otočí znakový reťazec (zrejme to vieme urobiť aj jednoduchšie pomocou <code class="docutils literal notranslate"><span class="pre">retazec[::-1]</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">retazec</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">retazec</span>
+<span class="hll">    <span class="k">return</span> <span class="n">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="n">retazec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span> <span class="o">*</span> <span class="mi">110</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Táto funkcia pracuje na tomto princípe:</p>
+<ul class="simple">
+<li><p>krátky reťazec (prázdny alebo jednoznakový) sa otáča jednoducho: netreba robiť nič, lebo on je zároveň aj otočeným reťazcom, zrejme výsledkom funkcie je samotný reťazec</p></li>
+<li><p>dlhšie reťazce otáčame tak, že z neho najprv odtrhneme prvý znak, potom otočíme zvyšok reťazca (to je už kratší reťazec ako pôvodný) a k nemu na koniec prilepíme odtrhnutý prvý znak</p></li>
+</ul>
+<p>Toto funguje dobre, ale veľmi rýchlo narazíme na limity rekurzie: dlhší reťazec ako 1000 znakov už táto rekurzia nezvládne.</p>
+<p>Vylepšime tento algoritmus takto:</p>
+<ul>
+<li><p>reťazec budeme skracovať o prvý aj posledný znak, takýto skrátený reťazec rekurzívne otočíme a tieto dva znaky opäť k reťazcu prilepíme, ale v opačnom poradí: na začiatok posledný znak a na koniec prvý:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">retazec</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">retazec</span>
+<span class="hll">    <span class="k">return</span> <span class="n">retazec</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">retazec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span> <span class="o">*</span> <span class="mi">110</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span> <span class="o">*</span> <span class="mi">220</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Táto funkcia už pracuje pre približne 1000-znakový reťazec správne, ale opäť nefunguje pre reťazce dlhšie ako 2000.</p>
+<p>Ďalšie vylepšenie tohto algoritmu už nie je také zrejmé:</p>
+<ul>
+<li><p>reťazec rozdelíme na dve polovice (pritom pre nepárnu dĺžku jedna z polovíc môže byť o 1 kratšia ako druhá)</p></li>
+<li><p>každú polovicu samostatne otočíme</p></li>
+<li><p>tieto dve otočené polovice opäť zlepíme dokopy, ale v opačnom poradí: najprv pôjde druhá polovica a za ňou prvá</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">retazec</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">retazec</span>
+<span class="hll">    <span class="n">stred</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">retazec</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span><span class="hll">    <span class="n">prva</span> <span class="o">=</span> <span class="n">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">[:</span><span class="n">stred</span><span class="p">])</span>
+</span>    <span class="n">druha</span> <span class="o">=</span> <span class="n">otoc</span><span class="p">(</span><span class="n">retazec</span><span class="p">[</span><span class="n">stred</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="n">druha</span> <span class="o">+</span> <span class="n">prva</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span> <span class="o">*</span> <span class="mi">110</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otoc</span><span class="p">(</span><span class="s1">&#39;Bratislava&#39;</span> <span class="o">*</span> <span class="mi">220</span><span class="p">))</span>
+<span class="n">povodny</span> <span class="o">=</span> <span class="s1">&#39;Bratislava&#39;</span> <span class="o">*</span> <span class="mi">100000</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">otoc</span><span class="p">(</span><span class="n">povodny</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">r</span> <span class="o">==</span> <span class="n">povodny</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Zdá sa, že tento algoritmus už nemá problém s obmedzením na hĺbku vnorenia rekurzie. Zvládol aj 1000000-znakový reťazec.</p>
+<p>Vidíme, že pri rozmýšľaní nad rekurzívnym riešením problému je veľmi dôležité správne rozdeliť <strong>veľký</strong> problém na jeden alebo aj viac menších, tie rekurzívne vyriešiť a potom to správne spojiť do jedného výsledku (informatici tomu hovoria <em>rozdeľuj a panuj</em>). Pri takomto rozhodovaní funguje matematická intuícia a tiež nemalá programátorská skúsenosť. Hoci nie vždy to ide tak elegantne, ako pri otáčaní reťazca.</p>
+<p>Uvedomte si, že toto posledné rekurzívne riešenie prepíšeme na while-cykly len s veľkou programátorskou námahou.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="binomicke-koeficienty">
+<h3><a class="toc-backref" href="09.html#id6" role="doc-backlink">Binomické koeficienty</a><a class="headerlink" href="09.html#binomicke-koeficienty" title="Link to this heading">¶</a></h3>
+<p>Ďalší príklad ilustruje využitie rekurzie pri výpočte binomických koeficientov. Vieme, že <strong>binomické koeficienty</strong> sa dajú vypočítať pomocou matematického vzorca:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bin(n, k) = n! / (k! * (n-k)!)
+</pre></div>
+</div>
+<p>Teda výpočtom nejakých troch faktoriálov a potom ich delením. Pre veľké <code class="docutils literal notranslate"><span class="pre">n</span></code> to môžu byť dosť veľké čísla, napríklad <code class="docutils literal notranslate"><span class="pre">bin(1000,</span> <span class="pre">1)</span></code> potrebuje vypočítať <code class="docutils literal notranslate"><span class="pre">1000!</span></code> a tiež <code class="docutils literal notranslate"><span class="pre">999!</span></code>, čo sú dosť veľké čísla, ale ich vydelením dostávame výsledok len <code class="docutils literal notranslate"><span class="pre">1000</span></code>. Takýto postup počítať binomické koeficienty pomocou faktoriálov asi nie je najvhodnejší.</p>
+<p>Tieto koeficienty ale vieme zobraziť aj pomocou <strong>Pascalovho trojuholníka</strong>, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="mi">1</span>
+        <span class="mi">1</span>   <span class="mi">1</span>
+      <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">1</span>
+    <span class="mi">1</span>   <span class="mi">3</span>   <span class="mi">3</span>   <span class="mi">1</span>
+  <span class="mi">1</span>   <span class="mi">4</span>   <span class="mi">6</span>   <span class="mi">4</span>   <span class="mi">1</span>
+<span class="mi">1</span>   <span class="mi">5</span>  <span class="mi">10</span>  <span class="mi">10</span>   <span class="mi">5</span>   <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Každý prvok v tomto trojuholníku zodpovedá <code class="docutils literal notranslate"><span class="pre">bin(n,</span> <span class="pre">k)</span></code>, kde <code class="docutils literal notranslate"><span class="pre">n</span></code> je riadok tabuľky a <code class="docutils literal notranslate"><span class="pre">k</span></code> je stĺpec. Pre túto tabuľku poznáme aj takýto vzťah:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>t.j. každé číslo je súčtom dvoch čísel v riadku nad sebou, pričom na kraji tabuľky sú <code class="docutils literal notranslate"><span class="pre">1</span></code>. To je predsa krásna rekurzia, v ktorej kraj tabuľky je triviálny prípad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">bin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+<span class="hll">    <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>po spustení:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">3</span> <span class="mi">3</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">4</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">5</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Všimnite si, že v tomto algoritme nie je žiadne násobenie iba sčitovanie a ak by sme aj toto sčitovanie previedli na zreťazovanie reťazcov, videli by sme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">bin_retazec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;1&#39;</span>
+<span class="hll">    <span class="k">return</span> <span class="n">bin_retazec</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="n">bin_retazec</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">bin_retazec</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Rekurzívny algoritmus pre výpočet binárnych koeficientov by mohol využívať vlastne len pripočítavanie jednotky.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="fibonacciho-cisla">
+<h3><a class="toc-backref" href="09.html#id7" role="doc-backlink">Fibonacciho čísla</a><a class="headerlink" href="09.html#fibonacciho-cisla" title="Link to this heading">¶</a></h3>
+<p>Na podobnom princípe, ako napríklad výpočet faktoriálu, funguje aj <strong>fibonacciho postupnosť</strong> čísel: postupnosť začína dvomi členmi <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1</span></code>. Každý ďalší člen sa vypočíta ako súčet dvoch predchádzajúcich, teda:</p>
+<ul class="simple">
+<li><p>triviálny prípad: <code class="docutils literal notranslate"><span class="pre">fibonacci(0)</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
+<li><p>triviálny prípad: <code class="docutils literal notranslate"><span class="pre">fibonacci(1)</span> <span class="pre">=</span> <span class="pre">1</span></code></p></li>
+<li><p>rekurzívny popis: <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span> <span class="pre">=</span> <span class="pre">fibonacci(n-1)</span> <span class="pre">+</span> <span class="pre">fibonacci(n-2)</span></code></p></li>
+</ul>
+<p>Zapíšeme to v Pythone:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+<span class="hll">    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,</span>
+</span></pre></div>
+</div>
+<p>Tento rekurzívny algoritmus je ale <strong>veľmi</strong> neefektívny, napríklad <code class="docutils literal notranslate"><span class="pre">fibonacci(100)</span></code> asi nevypočítate ani na najrýchlejšom počítači.</p>
+<p>V čom je tu problém? Veď nerekurzívne je to veľmi jednoduché, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">fibonacci(100) =&#39;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span>
+<span class="n">fibonacci</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">=</span> <span class="mi">354224848179261915075</span>
+</pre></div>
+</div>
+<p>Pridajme do rekurzívnej verzie funkcie <code class="docutils literal notranslate"><span class="pre">fibonacci()</span></code> globálne počítadlo, ktoré bude počítať počet zavolaní tejto funkcie (nie je to počet rekurzívnych vnorení):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="hll">    <span class="k">global</span> <span class="n">pocet</span>
+</span><span class="hll">    <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fibonacci(15) =&#39;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet volani funkcie =&#39;</span><span class="p">,</span> <span class="n">pocet</span><span class="p">)</span>
+<span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fibonacci(16) =&#39;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet volani funkcie =&#39;</span><span class="p">,</span> <span class="n">pocet</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">=</span> <span class="mi">610</span>
+<span class="n">pocet</span> <span class="n">volani</span> <span class="n">funkcie</span> <span class="o">=</span> <span class="mi">1973</span>
+<span class="n">fibonacci</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">=</span> <span class="mi">987</span>
+<span class="n">pocet</span> <span class="n">volani</span> <span class="n">funkcie</span> <span class="o">=</span> <span class="mi">3193</span>
+</pre></div>
+</div>
+<p>Vidíme, že tento počet volaní veľmi rýchlo rastie a je určite väčší ako samotné fibonacciho číslo. Preto aj <code class="docutils literal notranslate"><span class="pre">fibonacci(100)</span></code> by trvalo veľmi dlho (vyše <strong>354224848179261915075</strong> volaní funkcie).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="binarne-stromy">
+<h2><a class="toc-backref" href="09.html#id8" role="doc-backlink">Binárne stromy</a><a class="headerlink" href="09.html#binarne-stromy" title="Link to this heading">¶</a></h2>
+<p>Medzi informatikmi sú veľmi populárne binárne stromy. Rekurzívne kresby binárnych stromov sa najlepšie kreslia pomocou grafického pera korytnačky. Aby sa nám lepšie o binárnych stromoch rozprávalo, zavedieme pojem <strong>úroveň</strong> stromu, t.j. číslo <code class="docutils literal notranslate"><span class="pre">n</span></code>, pre ktoré platí:</p>
+<ul class="simple">
+<li><p>ak je úroveň stromu <code class="docutils literal notranslate"><span class="pre">n</span></code> = 0, nakreslí sa len čiara nejakej dĺžky (kmeň stromu)</p></li>
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">n</span></code> &gt;= 1, sa najprv nakreslí čiara, potom sa na jej konci nakreslí najprv <strong>vľavo</strong> celý binárny strom úrovne <code class="docutils literal notranslate"><span class="pre">(n-1)</span></code> a potom <strong>vpravo</strong> opäť binárny strom úrovne <code class="docutils literal notranslate"><span class="pre">(n-1)</span></code> (hovoríme im podstromy) - po nakreslení týchto podstromov sa ešte vráti späť po prvej nakreslenej čiare</p></li>
+<li><p>po skončení kreslenia stromu ľubovoľnej úrovne sa korytnačka nachádza na mieste, kde začala kresliť</p></li>
+<li><p>ľavé aj pravé podstromy môžu mať buď rovnako veľké konáre ako kmeň stromu, alebo sa môžu v nižších úrovniach (teda v podstromoch) zmenšovať</p></li>
+</ul>
+<p><strong>Úroveň</strong> stromu nám hovorí o počte rekurzívnych vnorení pri kreslení stromu (podobne budeme neskôr definovať aj iné rekurzívne obrázky a často budeme pritom používať pojem úroveň).</p>
+<p>Najprv ukážeme binárny strom, ktorý má vo všetkých úrovniach rovnako veľké podstromy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>        <span class="c1"># triviálny prípad</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>        <span class="c1"># natoč sa na kreslenie ľavého podstromu</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1"># nakresli ľavý podstrom (n-1). úrovne</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>        <span class="c1"># natoč sa na kreslenie pravého podstromu</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1"># nakresli pravý podstrom (n-1). úrovne</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>        <span class="c1"># natoč sa do pôvodného smeru</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>        <span class="c1"># vráť sa na pôvodné miesto</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_03.png"><img alt="../_images/109_03.png" class="align-center" height="154" src="../_images/109_03.png" width="212" />
+</a>
+<p>Binárne stromy môžeme rôzne vylepšovať, napríklad vetvy stromu sa vo vyšších úrovniach môžu rôzne skracovať, uhol o ktorý je natočený ľavý a pravý podstrom môže byť tiež rôzny. V tomto riešení si všimnite, kde je skrytý triviálny prípad rekurzie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+</span>    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_04.png"><img alt="../_images/109_04.png" class="align-center" height="152" src="../_images/109_04.png" width="213" />
+</a>
+<p>Algoritmus binárneho stromu môžeme zapísať aj bez parametra <code class="docutils literal notranslate"><span class="pre">n</span></code>, ktorý určuje úroveň stromu. V tomto prípade rekurzia končí, keď sú kreslené úsečky príliš malé:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span>    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ak využijeme náhodný generátor, môžeme vytvárať stromy, ktoré budú navzájom rôzne:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">uhol1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">uhol2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol1</span><span class="p">)</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="n">uhol1</span> <span class="o">+</span> <span class="n">uhol2</span><span class="p">)</span>
+<span class="hll">        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol2</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;maroon&#39;</span><span class="p">)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_05.png"><img alt="../_images/109_05.png" class="align-center" height="182" src="../_images/109_05.png" width="212" />
+</a>
+<p>V tomto riešení si všimnite, kde sme zmenili hrúbku pera, aby sa strom kreslil rôzne hrubý v rôznych úrovniach. Tiež sa tu na posledných „konároch“ nakreslili zelené listy - pridali sme ich v triviálnom prípade. Využili sme tu korytnačiu metódu <code class="docutils literal notranslate"><span class="pre">t.dot(veľkosť,</span> <span class="pre">farba)</span></code>, ktorá na pozícii korytnačky nakreslí bodku danej veľkosti a farby.</p>
+<p>Každé spustenie tohto programu nakreslí trochu iný strom. Môžeme vytvoriť celú alej stromov, v ktorej bude každý strom trochu iný:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">uhol1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+        <span class="n">uhol2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol1</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="n">uhol1</span> <span class="o">+</span> <span class="n">uhol2</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">uhol2</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;maroon&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pu</span><span class="p">()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">setpos</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pd</span><span class="p">()</span>
+<span class="hll">    <span class="n">strom</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_06.png"><img alt="../_images/109_06.png" class="align-center" height="154" src="../_images/109_06.png" width="342" />
+</a>
+<p>V nasledujúcom riešení vzniká zaujímavý efekt tým, že v triviálnom prípade urobí korytnačka malý úkrok vpravo a teda sa nevracia po tých istých čiarach a preto sa ani nevráti presne na to isté miesto, kde štartovala kresliť (pod)strom. Táto „chybička“ sa stále zväčšuje a zväčšuje, až pri nakreslení kmeňa stromu je už dosť veľká:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="hll">        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.67</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.67</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_07.png"><img alt="../_images/109_07.png" class="align-center" height="194" src="../_images/109_07.png" width="228" />
+</a>
+<p>Binárny strom sa dá nakresliť viacerými spôsobmi aj nerekurzívne. V jednom z nich využijeme zoznam korytnačiek, pričom každá z nich po nakreslení jednej úsečky „narodí“ na svojej pozícii ďalšiu korytnačku (vytvorí svoju kópiu), pričom ju ešte trochu otočí. Idea algoritmu je takáto:</p>
+<ul>
+<li><p>prvá korytnačka nakreslí kmeň stromu - prvú úsečku dĺžky <code class="docutils literal notranslate"><span class="pre">d</span></code></p></li>
+<li><p>na jeho konci (na momentálnej pozícii tejto korytnačky) sa vyrobí jedna nová korytnačka, s novým relatívnym natočením o 40 stupňov vľavo (pripravuje sa, že bude kresliť ľavý podstrom) a sama sa otočí o 50 stupňov vpravo (pripravuje sa, že bude kresliť pravý podstrom)</p></li>
+<li><p>dĺžka <code class="docutils literal notranslate"><span class="pre">d</span></code> sa zníži napríklad na <code class="docutils literal notranslate"><span class="pre">d</span></code> * 0.6</p></li>
+<li><p>všetky korytnačky teraz prejdú v svojom smere dĺžku <code class="docutils literal notranslate"><span class="pre">d</span></code> (nakreslia úsečku dĺžky <code class="docutils literal notranslate"><span class="pre">d</span></code>) a opäť sa na ich koncových pozíciách vytvoria nové korytnačky otočené o 40 a samé sa otočia o 50 stupňov, a <code class="docutils literal notranslate"><span class="pre">d</span></code> sa opäť zníži</p></li>
+<li><p>toto sa opakuje <code class="docutils literal notranslate"><span class="pre">n</span></code> krát a takto sa nakreslí kompletný strom</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">nova</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">heading</span><span class="p">):</span>
+</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="c1">#t.speed(0)</span>
+    <span class="c1">#t.ht()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pu</span><span class="p">()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">setpos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">seth</span><span class="p">(</span><span class="n">heading</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pd</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="hll">    <span class="n">zoznam</span> <span class="o">=</span> <span class="p">[</span><span class="n">nova</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">300</span><span class="p">],</span> <span class="mi">90</span><span class="p">)]</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoznam</span><span class="p">)):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">zoznam</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;maroon&#39;</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+<span class="hll">                <span class="n">zoznam</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nova</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">pos</span><span class="p">(),</span> <span class="n">t</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span> <span class="o">+</span> <span class="mi">40</span><span class="p">))</span>
+</span>                <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">d</span> <span class="o">*=</span> <span class="mf">0.6</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet korytnaciek =&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoznam</span><span class="p">))</span>
+
+<span class="c1"># turtle.delay(0)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/109_08.png"><img alt="../_images/109_08.png" class="align-center" height="202" src="../_images/109_08.png" width="240" />
+</a>
+<p>Pre korytnačky na poslednej úrovni sa už ďalšie nevytvárajú, ale na ich koncoch sa nakreslí zelená bodka. Program na záver vypíše celkový počet korytnačiek, ktoré sa takto vyrobili (je ich presne toľko, koľko je zelených bodiek ako listov stromu). Všimnite si pomocnú funkciu <code class="docutils literal notranslate"><span class="pre">nova()</span></code>, ktorá vytvorí novú korytnačku a nastaví jej novú pozíciu aj smer natočenia. Funkcia ako výsledok vráti túto novovytvorenú korytnačku. V tomto prípade program vypísal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pocet</span> <span class="n">korytnaciek</span> <span class="o">=</span> <span class="mi">64</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="dalsie-rekurzivne-obrazky">
+<h3><a class="toc-backref" href="09.html#id9" role="doc-backlink">Ďalšie rekurzívne obrázky</a><a class="headerlink" href="09.html#dalsie-rekurzivne-obrazky" title="Link to this heading">¶</a></h3>
+<p>Napíšeme funkciu, ktorá nakreslí obrázok <code class="docutils literal notranslate"><span class="pre">stvorce</span></code> úrovne <code class="docutils literal notranslate"><span class="pre">n</span></code>, veľkosti <code class="docutils literal notranslate"><span class="pre">a</span></code> s týmito vlastnosťami:</p>
+<ul class="simple">
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">n</span></code> = 0  nekreslí nič</p></li>
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">n</span></code> = 1 kreslí štvorec so stranou dĺžky <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">n</span></code> &gt; 1 kreslí štvorec, v ktorom v každom jeho rohu (smerom dnu) je opäť obrázok <code class="docutils literal notranslate"><span class="pre">stvorce</span></code> ale už zmenšený: úrovne <code class="docutils literal notranslate"><span class="pre">n</span></code>-1 a veľkosti <code class="docutils literal notranslate"><span class="pre">a</span></code>/3</p></li>
+</ul>
+<p>Štvorce v každom rohu štvorca:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">stvorce</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="hll">            <span class="n">stvorce</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>            <span class="c1"># skúste: stvorce(n - 1, a * 0.45)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">stvorce</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_09.png"><img alt="../_images/109_09.png" class="align-center" height="202" src="../_images/109_09.png" width="212" />
+</a>
+<p>Uvedomte si, že toto nie je chvostová rekurzia.</p>
+<p>Tesne pred rekurzívnym volaním otočíme korytnačku o 30 stupňov a po návrate z rekurzie týchto 30 stupňov vrátime:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">stvorce</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="hll">            <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span>            <span class="n">stvorce</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="hll">            <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">stvorce</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_10.png"><img alt="../_images/109_10.png" class="align-center" height="224" src="../_images/109_10.png" width="226" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="sierpinskeho-trojuholnik">
+<h3><a class="toc-backref" href="09.html#id10" role="doc-backlink">Sierpińského trojuholník</a><a class="headerlink" href="09.html#sierpinskeho-trojuholnik" title="Link to this heading">¶</a></h3>
+<p>Rekurzívny obrázok na rovnakom princípe ako boli vnorené štvorce ale trojuholníkového tvaru navrhol poľský matematik <a class="reference external" href="https://en.wikipedia.org/wiki/Sierpinski_triangle">Sierpińský</a> ešte v roku 1915:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">trojuholniky</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="hll">            <span class="n">trojuholniky</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="c1">#t.speed(0)</span>
+<span class="n">trojuholniky</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_11.png"><img alt="../_images/109_11.png" class="align-center" height="173" src="../_images/109_11.png" width="214" />
+</a>
+<p>Zaujímavé je to, že táto rekurzívna krivka sa dá nakresliť aj jedným ťahom (po každej čiare sa prejde len raz). Porozmýšľajte ako.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="snehova-vlocka">
+<h3><a class="toc-backref" href="09.html#id11" role="doc-backlink">Snehová vločka</a><a class="headerlink" href="09.html#snehova-vlocka" title="Link to this heading">¶</a></h3>
+<p>Ďalej ukážeme veľmi známu rekurzívnu krivku - snehovú vločku (známu tiež ako <a class="reference external" href="https://en.wikipedia.org/wiki/Koch_snowflake">Kochova krivka</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sneh_vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">sneh_vlocka</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_12.png"><img alt="../_images/109_12.png" class="align-center" height="206" src="../_images/109_12.png" width="214" />
+</a>
+<p>Ak namiesto jedného volania funkcie <code class="docutils literal notranslate"><span class="pre">vlocka()</span></code> zapíšeme nakreslenie aj všetkých predchádzajúcich úrovní krivky, dostávame tiež zaujímavú kresbu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="hll">        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sneh_vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">vlocka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="c1">#t.speed(0)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">sneh_vlocka</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_13.png"><img alt="../_images/109_13.png" class="align-center" height="210" src="../_images/109_13.png" width="212" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="dalsie-fraktalove-krivky">
+<h3><a class="toc-backref" href="09.html#id12" role="doc-backlink">Ďalšie fraktálové krivky</a><a class="headerlink" href="09.html#dalsie-fraktalove-krivky" title="Link to this heading">¶</a></h3>
+<p>Špeciálnou skupinou rekurzívnych kriviek sú fraktály (pozri aj <a class="reference external" href="https://en.wikipedia.org/wiki/Fractal">na wikipédii</a>). Už pred érou počítačov sa s nimi „hrali“ aj významní matematici (niektoré krivky podľa nich dostali aj svoje meno, aj snehová vločka je fraktálom a vymyslel ju švédsky matematik <a class="reference external" href="https://sk.wikipedia.org/wiki/Helge_von_Koch">Koch</a>). Zjednodušene by sme mohli povedať, že fraktál je taká krivka, ktorá sa skladá z viacerých svojich zmenšených kópií. Keby sme sa na nejakú jej časť pozreli lupou, videli by sme opäť skoro tú istú krivku. Napríklad aj binárne stromy a aj snehové vločky sú fraktály.</p>
+<section id="c-krivka">
+<h4>C-krivka<a class="headerlink" href="09.html#c-krivka" title="Link to this heading">¶</a></h4>
+<p>Začneme veľmi jednoduchou, tzv. <a class="reference external" href="https://en.wikipedia.org/wiki/L%C3%A9vy_C_curve">C-krivkou</a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">ckrivka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">ckrivka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="hll">        <span class="n">ckrivka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">ht</span><span class="p">()</span>
+<span class="n">ckrivka</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>    <span class="c1"># skúste aj: ckrivka(13, 2)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_14.png"><img alt="../_images/109_14.png" class="align-center" height="154" src="../_images/109_14.png" width="212" />
+</a>
+</section>
+<section id="dracia-krivka">
+<h4>Dračia krivka<a class="headerlink" href="09.html#dracia-krivka" title="Link to this heading">¶</a></h4>
+<p>C-krivke sa veľmi podobá <a class="reference external" href="https://en.wikipedia.org/wiki/Dragon_curve">Dračia krivka</a>, ktorá sa skladá z dvoch „zrkadlových“ funkcií: <code class="docutils literal notranslate"><span class="pre">ldrak</span></code> a <code class="docutils literal notranslate"><span class="pre">pdrak</span></code>. Všimnite si zaujímavú vlastnosť týchto dvoch rekurzívnych funkcií: prvá rekurzívne volá samu seba ale aj druhú a druhá volá seba aj prvú. Našťastie Python toto zvláda veľmi dobre:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">ldrak</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">ldrak</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="hll">        <span class="n">pdrak</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</span>
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">pdrak</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">ldrak</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="hll">        <span class="n">pdrak</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">ht</span><span class="p">()</span>
+<span class="n">ldrak</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_15.png"><img alt="../_images/109_15.png" class="align-center" height="168" src="../_images/109_15.png" width="227" />
+</a>
+<p>Dračiu krivku môžeme nakresliť aj len jednou funkciou - táto bude mať o jeden parameter <code class="docutils literal notranslate"><span class="pre">u</span></code> viac a to, či je to ľavá alebo pravá verzia funkcie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">drak</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+<span class="hll">        <span class="n">drak</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="hll">        <span class="n">drak</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">ht</span><span class="p">()</span>
+<span class="n">drak</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_16.png"><img alt="../_images/109_16.png" class="align-center" height="216" src="../_images/109_16.png" width="212" />
+</a>
+</section>
+<section id="hilbertova-krivka">
+<h4>Hilbertova krivka<a class="headerlink" href="09.html#hilbertova-krivka" title="Link to this heading">¶</a></h4>
+<p>V literatúre je veľmi známou <a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_curve">Hilbertova krivka</a>, ktorá sa tiež skladá z dvoch zrkadlových častí (ako dračia krivka) a preto ich definujeme jednou funkciou a parametrom <code class="docutils literal notranslate"><span class="pre">u</span></code> (t.j. uhol pre ľavú a pravú verziu):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">hilbert</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="hll">        <span class="n">hilbert</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">u</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="hll">        <span class="n">hilbert</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="hll">        <span class="n">hilbert</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="hll">        <span class="n">hilbert</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">u</span><span class="p">)</span>
+</span>        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">ht</span><span class="p">()</span>
+<span class="n">hilbert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>          <span class="c1"># vyskúšajte: hilbert(7, 2)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/109_17.png"><img alt="../_images/109_17.png" class="align-center" height="160" src="../_images/109_17.png" width="216" />
+</a>
+<p>Ďalšie inšpirácie na rekurzívne krivky môžete nájsť na <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension">wikipédii</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="09.html#id13" role="doc-backlink">Cvičenie</a><a class="headerlink" href="09.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server bude testovať úlohy označené <kbd class="kbd docutils literal notranslate">odovzdaj</kbd></p></li>
+<li><p>snaž sa vyriešiť čo najviac úloh aj takých, ktoré netestuje testovač</p></li>
+<li><p>niektoré úlohy sú uvedené aj s riešením (sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd>), tie neodovzdávaj - sú určené na štúdium a inšpiráciu</p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 9. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 21.10.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z doterajších prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>)</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">tostr(cislo)</span></code>, ktorá pomocou štandardnej funkcie <code class="docutils literal notranslate"><span class="pre">chr()</span></code> (bez konverzie <code class="docutils literal notranslate"><span class="pre">str()</span></code>) prevedie dané nezáporné celé číslo na znakový reťazec. Napíš túto funkciu najprv bez rekurzie pomocou while-cyklu, potom ju prepíš na rekurzívnu funkciu bez cyklu. Triviálnym prípadom by mohlo byť jednociferné celé číslo. Rekurzívny prípad najprv prevedie na reťazec číslo bez poslednej cifry a potom k nemu prireťazí poslednú cifru. Funkcia nič nevypisuje. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tostr</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">    &#39;0&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostr</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="go">    &#39;17&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostr</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span>
+<span class="go">    &#39;987654321&#39;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">toint(retazec)</span></code>, ktorá prevedie daný reťazec na celé číslo. Môžeš predpokladať, že reťazec je neprázdny a obsahuje len desiatkové cifry. Funkcia nebude používať štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">int</span></code> ale len funkciu <code class="docutils literal notranslate"><span class="pre">ord()</span></code>.  Napíš túto funkciu najprv bez rekurzie pomocou while-cyklu, potom ju prepíš na rekurzívnu funkciu bez cyklu. Triviálnym prípadom by mohol byť jednoznakový vstupný reťazec (určite je to cifra). Rekurzívny prípad najprv prevedie celý reťazec ale bez posledného znaku na číslo, toto vynásobí <code class="docutils literal notranslate"><span class="pre">10</span></code> a pripočíta k tomu prevedený posledný znak reťazca. Funkcia nič nevypisuje. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">toint</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+<span class="go">    0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">toint</span><span class="p">(</span><span class="s1">&#39;17&#39;</span><span class="p">)</span>
+<span class="go">    17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">toint</span><span class="p">(</span><span class="s1">&#39;987654321&#39;</span><span class="p">)</span>
+<span class="go">    987654321</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš rekurzívnu funkciu <code class="docutils literal notranslate"><span class="pre">pocet(znak,</span> <span class="pre">retazec)</span></code>, ktorá bez cyklu a reťazcových metód zistí počet výskytov zadaného znaku vo vstupnom reťazci. Otestuj, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;mama ma emu a ema ma mamu&#39;</span><span class="p">)</span>
+<span class="go">    8</span>
+</pre></div>
+</div>
+<p>Teraz vyrieš tento príklad tak, aby fungoval aj pre dlhšie reťazce. Inšpiruj sa funkciou <code class="docutils literal notranslate"><span class="pre">otoc()</span></code> z prednášky. Otestuj, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">100000</span><span class="p">)</span>
+<span class="go">    100000</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">min_max(zoznam)</span></code>, ktorá pre neprázdny <code class="docutils literal notranslate"><span class="pre">zoznam</span></code> vráti (<code class="docutils literal notranslate"><span class="pre">return</span></code>) dvojicu hodnôt (najmenší, najväčší) prvok. Funkcia nepoužíva štandardné funkcie <code class="docutils literal notranslate"><span class="pre">min</span></code> a <code class="docutils literal notranslate"><span class="pre">max</span></code>. Nepoužívaj globálne premenné. Riešenie bez rekurzie by mohlo vyzerať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">min_max</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="n">minz</span> <span class="o">=</span> <span class="n">maxz</span> <span class="o">=</span> <span class="n">zoznam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">zoznam</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">minz</span><span class="p">:</span>
+            <span class="n">minz</span> <span class="o">=</span> <span class="n">p</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">maxz</span><span class="p">:</span>
+            <span class="n">maxz</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="k">return</span> <span class="n">minz</span><span class="p">,</span> <span class="n">maxz</span>
+</pre></div>
+</div>
+<p>Teraz to vyrieš rekurzívne bez cyklov.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Funkciu <code class="docutils literal notranslate"><span class="pre">nsd(a,</span> <span class="pre">b)</span></code> (najväčší spoločný deliteľ) vieme zapísať rekurzívne takto: triviálny prípad je vtedy, keď <code class="docutils literal notranslate"><span class="pre">a==b</span></code>, inak ak <code class="docutils literal notranslate"><span class="pre">a&gt;b</span></code>, tak rekurzívne vypočíta <code class="docutils literal notranslate"><span class="pre">nsd(b,</span> <span class="pre">a)</span></code>, inak rekurzívne zavolá <code class="docutils literal notranslate"><span class="pre">nsd(a,</span> <span class="pre">b-a)</span></code>. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nsd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nsd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nsd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">nsd</span></code> sa dá ale urýchliť tak, že namiesto odčitovania sa nejako využije zvyšok po delení. Oprav túto funkciu.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">sucet(zoznam)</span></code>, ktorá bez cyklov, ale pomocou rekurzie zistí súčet prvkov zoznamu, resp. ľubovoľnej postupnosti celých čísel. Prvkami sú len celé čísla. Otestuj, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sucet</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="hll"><span class="go">    20</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">sucet</span><span class="p">(())</span>
+<span class="hll"><span class="go">    0</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">sucet</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+<span class="hll"><span class="go">    124750</span>
+</span></pre></div>
+</div>
+<p>Rekurzia bude fungovať na takomto princípe:</p>
+<ul class="simple">
+<li><p>triviálny prípad: zoznam je prázdny</p></li>
+<li><p>inak: rekurzívne vypočítaj súčet všetkých prvkov zoznamu okrem prvého a k výsledku pripočítaj prvý prvok:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoznam</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">zoznam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sucet</span><span class="p">(</span><span class="n">zoznam</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+<p>Ak otestujeme <code class="docutils literal notranslate"><span class="pre">sucet(range(2000))</span></code>, spadne to na pretečení rekurzie. Napíš novú verziu tejto rekurzívnej funkcie tak, tak aby fungovalo aj <code class="docutils literal notranslate"><span class="pre">sucet(range(10000))</span></code>. Inšpiruj sa riešením funkcie <code class="docutils literal notranslate"><span class="pre">otoc</span></code> z prednášky:</p>
+<ul class="simple">
+<li><p>triviálny prípad: zoznam je prázdny alebo jednoprvkový</p></li>
+<li><p>inak: zoznam sa rozdelí na dve polovice a rekurzívne sa zistí súčet pre každú polovicu zvlášť</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš rekurzívnu funkciu <code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k)</span></code>, ktorá vypočíta <code class="docutils literal notranslate"><span class="pre">n**k</span></code> pre celé nezáporné <code class="docutils literal notranslate"><span class="pre">k</span></code> len pomocou násobenia:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">0)</span></code> = 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k)</span></code> = <code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k-1)</span> <span class="pre">*</span> <span class="pre">n</span></code></p></li>
+</ul>
+<p>Funkcia, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mocnina</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">mocnina</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mocnina</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">900</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">900</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Keďže nefunguje volanie <code class="docutils literal notranslate"><span class="pre">mocnina(2,</span> <span class="pre">10000)</span></code>, vylepši túto funkcie podľa tohto rekurzívneho predpisu:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">0)</span></code> = 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k)</span></code> = <code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k//2)</span> <span class="pre">**</span> <span class="pre">2</span></code> … pre párne <code class="docutils literal notranslate"><span class="pre">k</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k)</span></code> = <code class="docutils literal notranslate"><span class="pre">mocnina(n,</span> <span class="pre">k-1)</span> <span class="pre">*</span> <span class="pre">n</span></code> … pre nepárne <code class="docutils literal notranslate"><span class="pre">k</span></code></p></li>
+</ul>
+<p>Využíva sa tu umocňovanie na <code class="docutils literal notranslate"><span class="pre">2</span></code>, čo je opäť len násobením dvoch čísel.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p><kbd class="kbd docutils literal notranslate">odovzdaj</kbd> Napíš rekurzívnu funkciu <code class="docutils literal notranslate"><span class="pre">palindrom(retazec)</span></code>, ktorá zistí (vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code>), či je zadaný reťazec <strong>palindróm</strong>, t.j. či sa číta rovnako od začiatku ako od konca. Pri tomto zisťovaní sa nerozlišujú malé a veľké písmená, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">palindrom</span><span class="p">(</span><span class="s1">&#39;JelenoviPivoNelej&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    True</span>
+</span></pre></div>
+</div>
+<p>Rekurzia by mala pracovať na takomto princípe: porovná prvé a posledné písmeno a ak sú zhodné ešte zistí, či aj reťazec bez prvého a posledného písmena je palindróm:</p>
+<ul class="simple">
+<li><p>triviálny prípad: reťazec je prázdny alebo jednoznakový =&gt; <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>inak: musia sa zhodovoť prvý a posledný znak a tiež zvyšok reťazca (okrem prvého a posledného) je palindróm (rekurzívne volanie)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Napíš rekurzívnu funkciu <code class="docutils literal notranslate"><span class="pre">dva_sucty(zoznam)</span></code>, ktorá bez cyklov zistí súčet záporných prvkov zoznamu a súčet kladných prvkov zoznamu (ľubovoľnej postupnosti čísel). Funkcia vráti dvojicu (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) týchto dvoch súčtov. Riešenie si premysli tak, aby funkcia prešla prvkami vstupného zoznamu len raz. Otestuj, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dva_sucty</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="hll"><span class="go">    (-15, 21)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">dva_sucty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="hll"><span class="go">    (-13, 15)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">dva_sucty</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+<span class="hll"><span class="go">    (-4950, 4950)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">dva_sucty</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">1000</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">1000</span><span class="o">+</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
+<span class="hll"><span class="go">    (-1, 1)</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Do funkcie <code class="docutils literal notranslate"><span class="pre">strom</span></code>, pomocou ktorej korytnačka nakreslí binárny strom, dopíš kreslenie farebných bodiek na koncoch všetkých vetvičiek (napríklad pomocou <code class="docutils literal notranslate"><span class="pre">t.dot(10,</span> <span class="pre">farba)</span></code>). Farbu každej bodky postupne (cyklicky) vyberaj zo zoznamu farieb <code class="docutils literal notranslate"><span class="pre">zoznam</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoznam</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">pu</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">pd</span><span class="p">()</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Aby toto fungovalo aj s použitím posúvača (vtedy pri každom posune zmaže doterajšiu kresbu a nakreslí ju s novým parametrom <code class="docutils literal notranslate"><span class="pre">d</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tkinter</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">rob</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>bude treba maximálne urýchliť kreslenie stromu vo funkcii <code class="docutils literal notranslate"><span class="pre">rob</span></code>. Tiež si uvedom, že táto funkcia musí mať jeden formálny parameter, v ktorom nám systém vráti momentálnu hodnotu bežca posúvača (ako reťazec). Na urýchlenie kreslenia stromu môžeš na začiatku funkcie <code class="docutils literal notranslate"><span class="pre">rob</span></code> vložiť <code class="docutils literal notranslate"><span class="pre">turtle.tracer(0)</span></code> a na koniec <code class="docutils literal notranslate"><span class="pre">turtle.tracer(1)</span></code>. Program by mal správne fungovať pre <code class="docutils literal notranslate"><span class="pre">zoznam</span></code> s ľubovoľným počtom farieb.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Funkciu <code class="docutils literal notranslate"><span class="pre">strom</span></code> z predchádzajúcej úlohy uprav takto:</p>
+<ul class="simple">
+<li><p>namiesto farebných bodiek sa na koncoch vetvičiek vytvoria nové korytnačky, ktoré budú mať nastavenú farbu <code class="docutils literal notranslate"><span class="pre">color('green')</span></code></p></li>
+<li><p>všetky tieto nové korytnačky sa uložia do globálneho zoznamu <code class="docutils literal notranslate"><span class="pre">zoznam</span></code></p></li>
+<li><p>strom vykreslí ako <code class="docutils literal notranslate"><span class="pre">strom(150)</span></code></p></li>
+</ul>
+<p>Posúvač z predchádzajúcej úlohy zruš a namiesto neho vytvor nové tlačidlo (<code class="docutils literal notranslate"><span class="pre">tkinter.Button(...)</span></code>) s textom <code class="docutils literal notranslate"><span class="pre">'Otáčaj'</span></code>, ktorý bude otáčať všetky korytnačky v zozname:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">zoznam</span><span class="p">:</span>
+        <span class="n">k</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p>Z prednášky vieme nakresliť <strong>Sierpińského trojuholník</strong> takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">trojuholniky</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+            <span class="n">trojuholniky</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">trojuholniky</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Uprav túto rekurzívnu funkciu tak, aby všetky kreslené trojuholníky v 1. úrovni boli vyfarbené náhodnou farbou. Trojuholníky vo vyšších úrovniach nevyfarbuj. Táto kresba vyzerá ešte lepšie, keď sa bude kresliť so zdvihnutým perom.</p>
+<p>Ďalej pridaj posúvač:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tkinter</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">rob</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>pomocou ktorého sa prekreslia trojuholníky už s novou úrovňou. Realizuj to podobne ako v 6. úlohe, v ktorej si urýchľoval vykresľovanie rekurzívneho obrázka pomocou dvojice <code class="docutils literal notranslate"><span class="pre">turtle.tracer(0)</span></code> a <code class="docutils literal notranslate"><span class="pre">turtle.tracer(1)</span></code>.</p>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c01.png"><img alt="../_images/109_c01.png" height="72" src="../_images/109_c01.png" width="318" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vpisane3(n,</span> <span class="pre">a)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň vnorenia trojuholníkov, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> veľkosť vonkajšieho trojuholníka. Pre <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">0</span></code> funkcia nekreslí nič.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="14">
+<li><p>Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c02.png"><img alt="../_images/109_c02.png" height="74" src="../_images/109_c02.png" width="316" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vpisane4(n,</span> <span class="pre">a)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň vnorenia štvorcov, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> veľkosť vonkajšieho štvorca. Pre <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">0</span></code> funkcia nekreslí nič.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="15">
+<li><p>Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c03.png"><img alt="../_images/109_c03.png" height="88" src="../_images/109_c03.png" width="320" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">kriziky4(n,</span> <span class="pre">a)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň krivky, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> dĺžku ramena kríža. Na všetkých piatich obrázkov je rovnaké <code class="docutils literal notranslate"><span class="pre">a</span></code>. Vnorené krížiky majú tretinovú dĺžku. Pre <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">0</span></code> funkcia nekreslí nič.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="16">
+<li><p>Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c04.png"><img alt="../_images/109_c04.png" height="88" src="../_images/109_c04.png" width="322" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">kriziky(n,</span> <span class="pre">a,</span> <span class="pre">pocet)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň krivky, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> dĺžku ramena kríža. Tretí parameter <code class="docutils literal notranslate"><span class="pre">pocet</span></code> označuje počet ramien kríža - na obrázku je <code class="docutils literal notranslate"><span class="pre">pocet</span> <span class="pre">=</span> <span class="pre">5</span></code>. Predchádzajúca krivka <code class="docutils literal notranslate"><span class="pre">kriziky4</span></code> by sa dala nakresliť aj touto funkciou pre <code class="docutils literal notranslate"><span class="pre">pocet</span> <span class="pre">=</span> <span class="pre">4</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="17">
+<li><p>Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c06.png"><img alt="../_images/109_c06.png" height="70" src="../_images/109_c06.png" width="328" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pyramida(n,</span> <span class="pre">a)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň krivky, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> veľkosť obrázka (dĺžka spodnej hrany). Na všetkých piatich obrázkov je rovnaké <code class="docutils literal notranslate"><span class="pre">a</span></code>. Všimni si, že obrázok pre <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">2</span></code> vznikol tak, že sa štyrikrát nakreslila krivka úrovne <code class="docutils literal notranslate"><span class="pre">n-1</span></code> a korytnačka sa medzi tým otáčala vľavo 90, vpravo 180 a vľavo 90 (na začiatku kresby bola úplne vľavo).</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="18">
+<li><p>Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c07.png"><img alt="../_images/109_c07.png" height="63" src="../_images/109_c07.png" width="338" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pyramida3(n,</span> <span class="pre">a)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň krivky, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> veľkosť obrázka (dĺžka spodnej hrany). Na všetkých piatich obrázkov je rovnaké <code class="docutils literal notranslate"><span class="pre">a</span></code>. Obrázok vznikol rovnako ako v predchádzajúcej úlohe (funkcia <code class="docutils literal notranslate"><span class="pre">pyramida</span></code>), ale medzi kresleniami vnorených menších kriviek sa korytnačka otáčala vľavo 87, vpravo 174 a vľavo 87.</p>
+</li>
+</ol>
+<blockquote>
+<div></div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="19">
+<li><p>Rekurzívna krivka je popísaná takýmto predpisom:</p>
+<a class="reference internal image-reference" href="../_images/109_c05.png"><img alt="../_images/109_c05.png" height="74" src="../_images/109_c05.png" width="331" />
+</a>
+<p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">troj3(n,</span> <span class="pre">a)</span></code>, v ktorej prvý parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> označuje úroveň krivky, druhý parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> veľkosť obrázka (dĺžka spodnej hrany). Na všetkých piatich obrázkov je rovnaké <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="09.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6. Triedenia II. &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="7. Grafy" href="07.html" />
+    <link rel="prev" title="5. Použitie stromov" href="05.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="06.html#">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Algoritmy prehľadávania grafu</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="05.html" title="Previous Chapter: 5. Použitie stromov"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 5. Použitie stromov</span>
+    </a>
+  </li>
+  <li>
+    <a href="07.html" title="Next Chapter: 7. Grafy"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">7. Grafy &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="triedenia-ii">
+<h1>6. Triedenia II.<a class="headerlink" href="06.html#triedenia-ii" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="06.html#merge-sort" id="id4">Merge sort</a></p></li>
+<li><p><a class="reference internal" href="06.html#heap-sort" id="id5">Heap sort</a></p></li>
+<li><p><a class="reference internal" href="06.html#bucket-sort" id="id6">Bucket sort</a></p></li>
+<li><p><a class="reference internal" href="06.html#cvicenie" id="id7">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="06.html#tyzdenny-projekt" id="id8">6. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<p>Čo už vieme: triedením rozumieme taký algoritmus, ktorý <strong>usporiada</strong> vstupnú postupnosť prvkov (napríklad zoznam, n-ticu, spájaný zoznam, …) tak, aby ich <strong>poradie</strong> zodpovedalo nejakému usporiadaniu, napríklad <strong>vzostupne</strong> alebo <strong>zostupne</strong>. Prvky, ktoré takto usporadúvame, sa môžu skladať z viacerých zložiek (častí alebo atribútov), pričom len nejaká ich časť môže slúžiť na porovnávanie usporiadania - časti prvku, podľa ktorého usporadúvame, hovoríme <strong>kľúč</strong>.</p>
+<p>Mnohé z týchto triediacich algoritmov sú <strong>in-place</strong> (triedenie na mieste), čo znamená, že výsledná usporiadaná postupnosť sa nachádza na tom istom mieste ako bola vstupná. Takýmto triedením je aj pythonovská metóda <code class="docutils literal notranslate"><span class="pre">sort()</span></code> pre typ zoznam (<code class="docutils literal notranslate"><span class="pre">list</span></code>).</p>
+<p>Iný typ triediacich algoritmov vstupnú postupnosť nemení, ale vytvorí novú usporiadanú postupnosť (najčastejšie ako zoznam, t.j. typ <code class="docutils literal notranslate"><span class="pre">list</span></code>), ktorá obsahuje tie isté prvky, ako boli na vstupe, ale v správnom poradí. Napríklad, aj štandardná pythonovská funkcia <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> pracuje na tomto princípe.</p>
+<p class="h3 rubric">Najjednoduchšie triedenia, ktoré už poznáme</p>
+<p class="h4 rubric">Bubble_sort</p>
+<p>Algoritmus vymieňa susedné prvky.</p>
+<ul class="simple">
+<li><p>je to <strong>in-place</strong></p></li>
+<li><p>zložitosť: počet porovnaní aj výmen <strong>O(n**2)</strong></p></li>
+<li><p>pamäťová zložitosť <strong>O(1)</strong> (len jednoduché premenné)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Takto zapísaná funkcia <strong>n</strong>-krát prechádza prvky celého zoznamu aj vtedy, keď bol zoznam už utriedeny. Malým vylepšením to urýchlime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">break</span>
+</pre></div>
+</div>
+<p>Zložitosť po vylepšení pre utriedený zoznam je <strong>O(n)</strong></p>
+<p class="h4 rubric">Min_sort (selection_sort)</p>
+<p>Algoritmus hľadá minimálny prvok v ešte neutriedenej postupnosti</p>
+<ul class="simple">
+<li><p>je to <strong>in-place</strong></p></li>
+<li><p>zložitosť: počet porovnaní <strong>O(n**2)</strong></p></li>
+<li><p>zložitosť: počet výmen <strong>O(n)</strong></p></li>
+<li><p>pamäťová zložitosť <strong>O(1)</strong> (len jednoduché premenné)</p></li>
+<li><p>je efektívnejší ako <strong>bubble_sort</strong></p></li>
+</ul>
+<p>Trochu vylepšená verzia:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">min_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">najmensi</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">najmensi</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">najmensi</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">najmensi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Všimnite si, že výmena dvoch prvkov sa robí len po skončení vnútorného cyklu, teda celkový počet výmen je iba <strong>O(n)</strong>.</p>
+<p class="h4 rubric">Insert_sort</p>
+<p>Algoritmus vkladá ďalší prvok na správne miesto medzi už utriedené.</p>
+<ul class="simple">
+<li><p>je to <strong>in-place</strong></p></li>
+<li><p>zložitosť: počet porovnaní aj výmen <strong>O(n**2)</strong></p></li>
+<li><p>pamäťová zložitosť <strong>O(1)</strong> (len jednoduché premenné)</p></li>
+<li><p>je efektívnejší ako <strong>min_sort</strong></p></li>
+<li><p>pre skoro utriedený zoznam je skoro <strong>O(n)</strong></p></li>
+</ul>
+<p>Všimnite si, že táto verzia namiesto výmen dvoch hodnôt používa len priradenia:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">prvok</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">prvok</span><span class="p">:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">zoz</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">prvok</span>
+</pre></div>
+</div>
+<p class="h3 rubric">Quick_sort</p>
+<p>Rekurzívny algoritmus, ktorý pracuje na princípe <strong>rozdeľuj a panuj</strong>:</p>
+<ul class="simple">
+<li><p>zvoľ si nejakú hodnotu (tzv. pivot)</p></li>
+<li><p>rozdeľ prvky zoznamu na menšie ako pivot a väčšie ako pivot</p></li>
+<li><p>obe časti (rekurzívne) utrieď</p></li>
+<li><p>utriedené časti spoj do výsledku (už sú v správnom poradí)</p></li>
+</ul>
+<p>Zoznámili sme sa s dvomi verziami - prvá nie je <strong>in-place</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quick_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">zoz</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mensie</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">rovne</span> <span class="o">=</span>  <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">vacsie</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">mensie</span><span class="p">)</span> <span class="o">+</span> <span class="n">rovne</span> <span class="o">+</span> <span class="n">quick_sort</span><span class="p">(</span><span class="n">vacsie</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ak by sme chceli týmto algoritmom utriediť už utriedený zoznam, funkcia by za pivota vybrala najmenší prvok, zoznam <code class="docutils literal notranslate"><span class="pre">mensie</span></code> by bol prázdny, zoznam <code class="docutils literal notranslate"><span class="pre">rovne</span></code> by obsahoval iba pivot a zoznam <code class="docutils literal notranslate"><span class="pre">vacsie</span></code> by obsahoval vsetky zvysne prvky. Toto by sa opakovalo pri všetkých prechodoch rekurzie, teda <strong>n</strong>-krát a keďže každý prechod konktroluje všetky prvky, najhorší prípad má zložitosť <strong>O(n**2)</strong>. A to ešte nie je to najhoršie: ak by sme chceli utriediť väčší zoznam, napríklad 3000-prvkov, táto funkcia spadne na pretečení rekurzie. Zrejme aj pamäťová zložitosť je väčšia ako pri predchádzajúcich algoritmoch: okrem pomocných zoznamov <code class="docutils literal notranslate"><span class="pre">mensie</span></code>, <code class="docutils literal notranslate"><span class="pre">rovne</span></code> a <code class="docutils literal notranslate"><span class="pre">vacsie</span></code> predpokladá aj systémový zásobník pre rekurziu.</p>
+<p>Druhá verzia quick_sortu je o trochu efektívnejšia (nepoužíva pomocné zoznamy), ale je tiež rekurzívna:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quick_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quick</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+            <span class="c1"># rozdelenie na dve časti</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">z</span>
+            <span class="n">pivot</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">z</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+                    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">vymen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+            <span class="c1"># v index je teraz pozícia pivota</span>
+            <span class="n">quick</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">quick</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+    <span class="n">quick</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pre „dobre“ zvolený zoznam a nie najlepšie vybratý pivot aj táto verzia má najhorší prípad <strong>O(n**2)</strong> a pre väčšie zoznamy spadne na pretečení rekurzie.</p>
+<p class="h4 rubric">Výber pivota</p>
+<p>Už sme videli, že ak je pivotom prvý prvok zoznamu, môže to robiť pre <strong>quick_sort</strong> problém. Úple rovnaký problém by robil aj posledný, resp. stredný prvok zoznamu - vždy dokážeme zvoliť poradie prvkov tak, aby to malo šancu pretiecť rekurziu.</p>
+<p>Preto sa volia iné spôsoby výberu pivota. Pre informatikov je veľmi dôležité správne sa rozhodnúť na výbere pivota. Napríklad sa volia takéto pravidlá pre pivot:</p>
+<ul class="simple">
+<li><p>priemer prvého a posledného prvku zoznamu</p></li>
+<li><p>priemer prvého, stredného a posledného prvku zoznamu</p></li>
+<li><p>úplne náhodný výber pivota (napríklad pomocou <code class="docutils literal notranslate"><span class="pre">random.choice()</span></code>)</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="merge-sort">
+<h2><a class="toc-backref" href="06.html#id4" role="doc-backlink">Merge sort</a><a class="headerlink" href="06.html#merge-sort" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Ďalším rekurzívnym triedením, ktoré je trochu podobné quick_sortu, je triedenie zlučovaním, teda <a class="reference external" href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort</a>. Základný postup algoritmu je:</p>
+<ol class="arabic simple">
+<li><p>ak má zoznam aspoň 2 prvky, rozdeľ ho na dve rovnaké časti (napríklad veľkosti <code class="docutils literal notranslate"><span class="pre">n//2</span></code> a <code class="docutils literal notranslate"><span class="pre">n-n//2</span></code>)</p></li>
+<li><p>rekurzívne zavolaj triedenie zvlášť pre každú z častí - dostaneme 2 utriedené časti celého zoznamu</p></li>
+<li><p>zlúč (merge) obe utriedené časti do výsledného zoznamu</p></li>
+</ol>
+<p>Ideu rozdeľovania zoznamu na polovice vidíme (tzv. merge_sort strom):</p>
+<a class="reference internal image-reference" href="../_images/206_11.png"><img alt="../_images/206_11.png" class="align-center" height="120" src="../_images/206_11.png" width="208" />
+</a>
+<p>Toto bola 1. fáza algoritmu, keď sa zoznam rozdelil na dve polovice a pre každú polovicu sa spustilo rekurzívne volanie, t.j. opäť rozdelenie na polovice. Toto pokračovalo dovtedy, kým bolo čo deliť, teda 1-prvkový zoznam sa už ďalej nedelil.</p>
+<p>Teraz prichádza fáza návratu z rekurzie, keď sa majú dve polovice zoznamu zlúčiť (tzv. merge) do utriedeného celku. Lenže vďaka rekurzii sa najprv budú zlučovať dve najvnorenejšie polovice, t.j. 1-prvkové zoznamy: z nich sa vytvoria utriedené dvojprvkové:</p>
+<a class="reference internal image-reference" href="../_images/206_12.png"><img alt="../_images/206_12.png" class="align-center" height="116" src="../_images/206_12.png" width="207" />
+</a>
+<p>Na tomto obrázku vidíme princíp triedenia a nie skutočný algoritmus, lebo tu sme zrealizovali vynáranie z rekurzie naraz vo všetkých prípadoch, keď boli zoznamy jednoprvkové. Pri ďalšom vynáraní sa z rekurzie opäť prebehne fáza zlučovania, keď sa z utriedených dvojprvkových zoznamov vytvoria štvorprvkové:</p>
+<a class="reference internal image-reference" href="../_images/206_13.png"><img alt="../_images/206_13.png" class="align-center" height="116" src="../_images/206_13.png" width="208" />
+</a>
+<p>Takto to celé pokračuje, až kým sa postupne nezlúčia všetky polovice a teda nedostaneme výsledný utriedený zoznam:</p>
+<a class="reference internal image-reference" href="../_images/206_14.png"><img alt="../_images/206_14.png" class="align-center" height="116" src="../_images/206_14.png" width="206" />
+</a>
+<p>Zapíšeme tento rekurzívny algoritmus ako <strong>in-place</strong> triedenie, t.j. taká funkcia, ktorá modifikuje samotný zoznam a nevracia žiadnu hodnotu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">stred</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="n">zoz1</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[:</span><span class="n">stred</span><span class="p">]</span>
+    <span class="n">zoz2</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">stred</span><span class="p">:]</span>
+<span class="hll">    <span class="n">merge_sort</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">merge_sort</span><span class="p">(</span><span class="n">zoz2</span><span class="p">)</span>
+</span>    <span class="c1"># zlučovanie oboch častí do výsledného zoznamu:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">zoz1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">zoz2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Rýchlosť tohto triedenia je podobná ako quick_sort, pričom rekurzia sa vnára <strong>log n</strong> krát. Všimnite si, že sa tu veľmi intenzívne využívajú pomocné zoznamy - skúste odhadnúť, aká je celková veľkosť všetkých pomocných zoznamov.</p>
+<p>Ak by sme netriedili pythonovský zoznam, ale spájaný zoznam (napríklad s podobnými metódami ako pre <code class="docutils literal notranslate"><span class="pre">SpajanyZoznam</span></code>), mohli by sme výrazne ušetriť pomocnú pamäť: totiž namiesto <code class="docutils literal notranslate"><span class="pre">zoz1</span></code> a <code class="docutils literal notranslate"><span class="pre">zoz2</span></code> , ktoré sú veľké pythonovské zoznamy, môžeme využiť referencie na jednotlivé prvky zoznamu. Teda v prvej fáze algoritmu sa do dvoch referencií priradí prvý a stredný prvok pôvodného zoznamu - na tomto mieste sa zoznam rozdelí na dva. Oba tieto zoznamy sa rekurzívne utriedia a nakoniec sa oba už utriedené zoznamy zlúčia do jedného - pri zlučovaní sa nevytvárajú nové prvky, ale sa iba presmerníkujú existujúce.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="heap-sort">
+<h2><a class="toc-backref" href="06.html#id5" role="doc-backlink">Heap sort</a><a class="headerlink" href="06.html#heap-sort" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Ďalšia verzia triedenia <a class="reference external" href="https://en.wikipedia.org/wiki/Heapsort">Heap sort</a> využíva dátovú štruktúru <strong>halda</strong>, ktorá má veľmi užitočné vlastnosti:</p>
+<aside class="topic">
+<p class="topic-title">halda = heap</p>
+<p>je binárny strom, ktorý musí spĺňať tieto dve podmienky:</p>
+<ul class="simple">
+<li><p><strong>vzťah medzi vrcholmi</strong>: každý vrchol (okrem koreňa) má hodnotu kľúča väčšiu alebo rovnú ako hodnota kľúča v jeho rodičovi (predkovi)</p>
+<ul>
+<li><p>vďaka tejto vlastnosti je v koreni minimálna hodnota kľúča z celého stromu</p></li>
+</ul>
+</li>
+<li><p><strong>tvar stromu</strong>: chceme, aby strom mal minimálnu hĺbku, preto budeme požadovať takúto vlastnosť (skoro) úplného binárneho stromu:</p>
+<ul>
+<li><p>okrem najnižšej úrovne sú všetky úrovne úplné</p></li>
+<li><p>v najnižšej úrovni sú všetky vrcholy umiestňované len zľava</p></li>
+</ul>
+</li>
+<li><p>výška takéhoto binárneho stromu je <strong>log n</strong></p></li>
+</ul>
+</aside>
+<p class="h4 rubric">Halda implementovaná v zozname</p>
+<p>Keďže halda je „skoro“ úplný binárny strom, nemusíme ju realizovať pomocou spájanej štruktúry, ale použijeme pythonovský zoznam <code class="docutils literal notranslate"><span class="pre">zoz</span></code> (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>):</p>
+<ul class="simple">
+<li><p>do zoznamu budeme prvky stromu ukladať po úrovniach:</p>
+<ul>
+<li><p>najprv koreň (do 0. prvku)</p></li>
+<li><p>potom dva vrcholy z ďalšej úrovne (obaja potomkovia koreňa)</p></li>
+<li><p>za tým 4 vrcholy z 2. úrovne (najprv obaja potomkovia ľavého potomka koreňa, potom obaja potomkovia pravého potomka koreňa),</p></li>
+<li><p>…  atď.</p></li>
+<li><p>na koniec všetky zvyšné vrcholy z poslednej (možno neúplnej) úrovne</p></li>
+</ul>
+</li>
+<li><p>hĺbka tohto stromu je <strong>log n</strong></p></li>
+<li><p>pre potomkov a rodiča vrcholu s indexom <code class="docutils literal notranslate"><span class="pre">i</span></code> platí:</p>
+<ul>
+<li><p>rodič (predok) má index <code class="docutils literal notranslate"><span class="pre">(i-1)</span> <span class="pre">//</span> <span class="pre">2</span></code></p></li>
+<li><p>ľavý potomok má index <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p>pravý potomok má index <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">2</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Na takejto dátovej štruktúre si ukážeme dve dôležité operácie:</p>
+<ul class="simple">
+<li><p>vloženie nového prvku do haldy</p></li>
+<li><p>vyhodenie minimálneho prvku, t.j. koreň haldy</p></li>
+</ul>
+<p class="h4 rubric">Operácia vloženie nového prvku</p>
+<ul class="simple">
+<li><p>aby sme zachovali vlastnosť (skoro) úplného binárneho stromu, pridáme vrchol na úplný koniec (za posledný prvok v zozname), teda <code class="docutils literal notranslate"><span class="pre">zoz.append()</span></code></p></li>
+<li><p>asi sme tým pokazili pravidlo medzi vrcholom a jeho rodičom: haldu treba upratať - budeme <strong>prebublávať</strong> v halde od tohto prvku <strong>nahor</strong> smerom ku koreňu:</p>
+<ul>
+<li><p>ak je práve pridaný prvok <code class="docutils literal notranslate"><span class="pre">z[i]</span></code> menší ako jeho rodič <code class="docutils literal notranslate"><span class="pre">z[(i-1)</span> <span class="pre">//</span> <span class="pre">2]</span></code>), vymení ho s rodičom a znovu kontroluje už túto jeho novú pozíciu s novým rodičom</p></li>
+<li><p>toto sa opakuje, kým nenatrafí na menšieho rodiča (teda je to už OK) alebo sa dostane až do koreňa stromu</p></li>
+<li><p>takto sa opraví celá halda</p></li>
+</ul>
+</li>
+</ul>
+<p class="h4 rubric">Operácia vyhodenie minimálneho prvku</p>
+<ul class="simple">
+<li><p>nesmieme naozaj vyhodiť 0. prvok zoznamu (koreň stromu), lebo by sa halda pokazila tak, že jej oprava by bola príliš náročná, namiesto toho:</p></li>
+<li><p>vyhodený koreň nahradíme posledným prvkom v halde (najpravejší v najnižšej úrovni) a haldu (zoznam) pritom o 1 skrátime</p></li>
+<li><p>asi sme tým opäť haldu pokazili - budeme tento prvok kontrolovať s jeho potomkami a vymieňať, t.j. budeme <strong>prebublávať smerom nadol</strong>:</p>
+<ul>
+<li><p>práve presťahovaný 0. prvok zoznamu <code class="docutils literal notranslate"><span class="pre">z[0]</span></code> porovnáme s oboma jeho potomkami (prvky <code class="docutils literal notranslate"><span class="pre">z[2*i</span> <span class="pre">+</span> <span class="pre">1]</span></code> a <code class="docutils literal notranslate"><span class="pre">z[2*i</span> <span class="pre">+</span> <span class="pre">2]</span></code>)</p></li>
+<li><p>ak je jeden z nich menší ako spracovávaný vrchol, tak menší z nich vymeníme so spracovávaným vrcholom a znovu túto novú pozíciu porovnávame s jeho potomkami</p></li>
+<li><p>toto sa opakuje, kým neprídeme do listu stromu (vrchol už nemá ani jedného potomka), alebo obaja potomkovia už nemajú menšiu hodnotu</p></li>
+<li><p>takto sa opraví celá halda</p></li>
+</ul>
+</li>
+</ul>
+<p class="h4 rubric">Triedenie pomocou haldy - heap sort</p>
+<ol class="arabic simple">
+<li><p>vytvor haldu - postupným pridávaním do zoznamu (operácia vlož s prebublávaním nahor)</p></li>
+<li><p>postupne odoberaj minimálny prvok z koreňa haldy (operácia vyhodenie minimálneho s prebublávaním nadol)</p></li>
+<li><p>tieto prvky postupne ukladaj do výsledného zoznamu</p></li>
+</ol>
+<p>Zapíšme <code class="docutils literal notranslate"><span class="pre">heap_sort</span></code> aj s pomocnými funkciami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">heap_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">vloz</span><span class="p">(</span><span class="n">hodnota</span><span class="p">):</span>
+        <span class="c1"># nový prvok pridáme na koniec</span>
+        <span class="n">halda</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="c1"># teraz to prebublá nahor</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">halda</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>                <span class="c1"># kym i nie je koreň</span>
+            <span class="c1"># ak je hodnota &lt; ako rodič: vymeň ich</span>
+            <span class="n">rodic</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">halda</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">halda</span><span class="p">[</span><span class="n">rodic</span><span class="p">]:</span>
+                <span class="n">halda</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">halda</span><span class="p">[</span><span class="n">rodic</span><span class="p">]</span> <span class="o">=</span> <span class="n">halda</span><span class="p">[</span><span class="n">rodic</span><span class="p">],</span> <span class="n">halda</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">rodic</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>    <span class="c1"># hotovo</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">vyhod_min</span><span class="p">():</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">halda</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="c1"># vymeníme posledný s prvým a haldu o posledný skrátime</span>
+        <span class="n">halda</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">halda</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">halda</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">halda</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">vysl</span> <span class="o">=</span> <span class="n">halda</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="c1"># celé je to halda okrem halda[0]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># spracovavany vrchol</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="c1"># nájdem menšieho potomka - ak nie je, break</span>
+            <span class="n">lavy</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">lavy</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">halda</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="n">mensi</span> <span class="o">=</span> <span class="n">lavy</span>
+            <span class="n">pravy</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">pravy</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">halda</span><span class="p">)</span> <span class="ow">and</span> <span class="n">halda</span><span class="p">[</span><span class="n">pravy</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">halda</span><span class="p">[</span><span class="n">lavy</span><span class="p">]:</span>
+                <span class="n">mensi</span> <span class="o">=</span> <span class="n">pravy</span>
+            <span class="c1"># vrchol i vymeníme s menším alebo skončím</span>
+            <span class="k">if</span> <span class="n">halda</span><span class="p">[</span><span class="n">mensi</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">halda</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">halda</span><span class="p">[</span><span class="n">mensi</span><span class="p">],</span> <span class="n">halda</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">halda</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">halda</span><span class="p">[</span><span class="n">mensi</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">mensi</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">vysl</span>
+
+    <span class="n">halda</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">:</span>     <span class="c1"># vyrob haldu</span>
+        <span class="n">vloz</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vyhod_min</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento algoritmus môžeme ešte vylepšiť:</p>
+<ul class="simple">
+<li><p>haldu budeme organizovať opačne: v koreni je maximálny prvok a všetci potomkovia nie sú väčší</p></li>
+<li><p>haldu vytvárame priamo vo vstupnom zozname: (pomocou algoritmu <strong>heapify</strong>)</p>
+<ul>
+<li><p>okrem posledného riadku haldy postupne každý prvok (od konca) prebublá smerom nadol</p></li>
+</ul>
+</li>
+<li><p>maximálny prvok v koreni neodstraňujeme ale presunieme na koniec zoznamu a zapamätáme si jeho nový koniec</p>
+<ul>
+<li><p>namiesto funkcie <code class="docutils literal notranslate"><span class="pre">vyhod_min()</span></code> použijeme pomocnú funkciu <code class="docutils literal notranslate"><span class="pre">nadol()</span></code>, ktorá upraví haldu prebublávaním nadol od <code class="docutils literal notranslate"><span class="pre">i</span></code>-teho prvku v zozname</p></li>
+</ul>
+</li>
+</ul>
+<p>Teraz <code class="docutils literal notranslate"><span class="pre">heap_sort</span></code> môže vyzerať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">heap_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">nadol</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">lavy</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">lavy</span> <span class="o">&gt;=</span> <span class="n">koniec</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="n">vacsi</span> <span class="o">=</span> <span class="n">lavy</span>
+            <span class="n">pravy</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">pravy</span> <span class="o">&lt;</span> <span class="n">koniec</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">pravy</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">lavy</span><span class="p">]:</span>
+                <span class="n">vacsi</span> <span class="o">=</span> <span class="n">pravy</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">vacsi</span><span class="p">]:</span>
+                <span class="n">zoz</span><span class="p">[</span><span class="n">vacsi</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">vacsi</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">vacsi</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span>
+
+    <span class="n">koniec</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">)):</span>   <span class="c1"># heapify</span>
+        <span class="n">nadol</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="c1">#print(&#39;priprav haldu&#39;, *zoz)</span>
+    <span class="k">while</span> <span class="n">koniec</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">koniec</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">koniec</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">koniec</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">nadol</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1">#print(&#39;prechod&#39;, *zoz[:koniec], &#39;|&#39;, *zoz[koniec:])</span>
+</pre></div>
+</div>
+<p>Táto verzia triedenia sa dá aj vizualizovať, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1600</span><span class="p">)]</span>
+<span class="n">heap_sort</span><span class="p">(</span><span class="n">Vizualizuj</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="bucket-sort">
+<h2><a class="toc-backref" href="06.html#id6" role="doc-backlink">Bucket sort</a><a class="headerlink" href="06.html#bucket-sort" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Za istých podmienok, keď poznáme vlastnosti triedených hodnôt, vieme zostrojiť triedenie, ktoré má zložitosť napríklad <strong>O(n)</strong>. Predstavme si situáciu, že o triedených hodnotách (kľúčoch) vieme, že sú to celé čísla z intervalu <code class="docutils literal notranslate"><span class="pre">&lt;0,</span> <span class="pre">K-1&gt;</span></code>, teda <code class="docutils literal notranslate"><span class="pre">K</span></code> rôznych hodnôt. Na utriedenie takého zoznamu použijeme tzv. priehradkové triedenie (bucket sort):</p>
+<ol class="arabic simple">
+<li><p>priprav <code class="docutils literal notranslate"><span class="pre">K</span></code> prázdnych priehradiek (napríklad polia, alebo zoznamy)</p></li>
+<li><p>postupne prejdi všetky prvky vstupného zoznamu a na základe hodnoty (kľúča) ich zaraď na koniec príslušnej priehradky</p></li>
+<li><p>ak treba, ešte uprav (možno nejako usporiadaj) všetky priehradky</p></li>
+<li><p>spoj priehradky do výsledného zoznamu</p></li>
+</ol>
+<p>Ak by sa v 3. kroku tieto priehradky ďalej rekurzívne triedili, mali by sme klasické <strong>rozdeľuj a panuj</strong>.</p>
+<p>Dôležitou vlastnosťou tu je <strong>stabilita triedenia</strong>: ak majú dva prvky <code class="docutils literal notranslate"><span class="pre">zoz[i]</span></code> a <code class="docutils literal notranslate"><span class="pre">zoz[j]</span></code> rovnakú hodnotu (kľúč) a pritom <code class="docutils literal notranslate"><span class="pre">i&lt;j</span></code>, tak v utriedenom výslednom zozname sa bude pôvodná hodnota <code class="docutils literal notranslate"><span class="pre">zoz[i]</span></code> nachádzať pred <code class="docutils literal notranslate"><span class="pre">zoz[j]</span></code>. Niektoré verzie vyššie uvedených triedení boli stabilné (napríklad bubble_sort, insert_sort, ale aj prvý quick_sort, ktorý ešte nebol <strong>in-place</strong>), iné nie sú stabilné (napríklad min_sort).</p>
+<p class="h3 rubric">Radix sort</p>
+<p>Pre bucket sort je stabilita dôležitá napríklad vtedy, keď sa táto idea používa pre tzv. <strong>radix sort</strong>. Toto triedenie pracuje na princípe priehradiek, ale vychádza sa z toho, že triedená hodnota (kľúč) sa skladá z viacerých zložiek, pričom každá z nich má relatívne malý interval hodnôt. Napríklad kľúčom je 6-ciferné číslo (číslo z intervalu 0 a 999999, zložkami sú cifry čísla), kľúčom je znakový reťazec ohraničenej veľkosti (napríklad max. 10 znakov, zložkami sú znaky znakového reťazca), kľúčom je dvojica súradníc, z ktorých každá je z intervalu -100 a 100, atď.</p>
+<ol class="arabic simple">
+<li><p>predpokladáme, že kľúč sa skladá z <code class="docutils literal notranslate"><span class="pre">k</span></code> zložiek (prípadne je doplnený nulovými hodnotami zľava alebo sprava podľa významu)</p></li>
+<li><p>priprav toľko priehradiek, koľko rôznych hodnôt má <code class="docutils literal notranslate"><span class="pre">k</span></code> -ta zložka kľúča (posledná cifra, posledný znak, …)</p></li>
+<li><p>postupne presuň všetky prvky zoznamu do príslušných priečinkov (vždy na koniec momentálneho obsahu) - rozhoduj sa len na základe <code class="docutils literal notranslate"><span class="pre">k</span></code> -tej zložky</p></li>
+<li><p>postupne spoj všetky neprázdne priečinky do jedného celku, prejdi na predposlednú zložku (<code class="docutils literal notranslate"><span class="pre">k=k-1</span></code>) a opakuj od 2. kroku</p></li>
+<li><p>keď prešiel tento postup pre všetky zložky, po poslednom spojení všetkých priečinkom máme utriedený celý zoznam</p></li>
+</ol>
+<p>Jeden prechod tohto algoritmu má zložitosť <strong>O(n)</strong>, lebo každý prvok sa najprv presunie na koniec nejakého priečinka (čo je <strong>O(1)</strong>), to je spolu <strong>O(n)</strong> a potom sa všetky priečinky spoja do jedného celku, čo nebude zložitejšie ako <strong>O(n)</strong>. Keďže sa toto opakuje pre <code class="docutils literal notranslate"><span class="pre">k</span></code> krát pre všetky zložky, celková zložitosť radix sortu je <strong>O(k * n)</strong>, pre malé <code class="docutils literal notranslate"><span class="pre">k</span></code> je to <strong>O(n)</strong></p>
+<p class="h3 rubric">Hľadanie prvku v zozname</p>
+<p>V praxi sa stretáme s úlohami, v ktorých máme nejaký <code class="docutils literal notranslate"><span class="pre">n</span></code> prvkový neutriedený zoznam a my potrebujeme čo najrýchlejšie nájsť v poradí <code class="docutils literal notranslate"><span class="pre">k</span></code> -ty najmenší (alebo najväčší) prvok zoznamu. Pre <code class="docutils literal notranslate"><span class="pre">k=0</span></code> to znamená nájsť minimum, čo vieme urobiť so zložitosťou <strong>O(n)</strong>. Podobne pre <code class="docutils literal notranslate"><span class="pre">k=1</span></code> vieme nájsť druhé minimum na <strong>O(n)</strong>, ale už je to trochu zložitejšie ako prvé minimum. Tiež pre <code class="docutils literal notranslate"><span class="pre">k=n-1</span></code> je nájdenie maxima jednoduchá úloha so zložitosťou <strong>O(n)</strong>. Ale ako je to vo všeobecnosti s nájdením <code class="docutils literal notranslate"><span class="pre">k</span></code> -teho najmenšieho prvku? Ak by sme použili nejaké rýchle triedenie, môžeme zapísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kty_prvok</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zoznam</span><span class="p">)[</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Zrejne takýto algoritmus má už zložitosť <strong>O(n log n)</strong>.</p>
+<p>Dá sa to ale aj rýchlejšie: jedna z možností je využiť ideu rekurzívneho quick sortu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">        <span class="k">return</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">mensie</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>
+<span class="hll">    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">mensie</span><span class="p">):</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">select</span><span class="p">(</span><span class="n">mensie</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span>    <span class="n">rovne</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
+<span class="hll">    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">mensie</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">rovne</span><span class="p">):</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">pivot</span>
+</span>    <span class="n">vacsie</span> <span class="o">=</span> <span class="p">[</span><span class="n">prvok</span> <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span> <span class="k">if</span> <span class="n">prvok</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+<span class="hll">    <span class="k">return</span> <span class="n">select</span><span class="p">(</span><span class="n">vacsie</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">mensie</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">rovne</span><span class="p">))</span>
+</span></pre></div>
+</div>
+<p>Tento algoritmus sa podobne ako quick sort rekurzívne vnára len do jednej z častí (<code class="docutils literal notranslate"><span class="pre">mensie</span></code> alebo <code class="docutils literal notranslate"><span class="pre">vacsie</span></code>), len do tej do ktorej patrí dané <code class="docutils literal notranslate"><span class="pre">k</span></code>. Zložitosť tohto algoritmu môžeme počítať podobne ako pri quick_sorte, kde sme uvažovali s približne polovičným rozdelením zoznamu na dve časti. V prvom prechode treba prejsť všetky prvky zoznamu, aby sme ich rozdelili do príslušných pomocných zoznamov, teda zložitosť je <code class="docutils literal notranslate"><span class="pre">n</span></code>. V druhom rekurzívnom volaní má zoznam približne polovicu, teda <code class="docutils literal notranslate"><span class="pre">n/2</span></code>. V každom ďalšom je to približne polovica z predchádzajúcej dĺžky. Toto skončí buď nájdením prvku (v časti <code class="docutils literal notranslate"><span class="pre">rovne</span></code>) alebo keď má celý zoznam dĺžku 1. Vieme zapísať celkový počet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spolu</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">n</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Z matematiky vieme, že toto sa blíži k <code class="docutils literal notranslate"><span class="pre">2*n</span></code>, teda celková zložitosť algoritmu <code class="docutils literal notranslate"><span class="pre">select()</span></code> je <strong>O(n)</strong>.</p>
+<p class="h3 rubric">python built-in sort</p>
+<p><strong>tim_sort</strong> má zložitosť <strong>O(n log n)</strong>, je in-place</p>
+<p>je hybridný:</p>
+<ul class="simple">
+<li><p>odvodený od merge_sort</p></li>
+<li><p>využíva insert_sort</p></li>
+</ul>
+<p>používajú ho, napríklad, aj:</p>
+<ul class="simple">
+<li><p>Java</p></li>
+<li><p>Android</p></li>
+<li><p>V8 - JavaScript</p></li>
+<li><p>Swift</p></li>
+<li><p>Rust</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="06.html#id7" role="doc-backlink">Cvičenie</a><a class="headerlink" href="06.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na úlohový server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong> okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 24.3.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple">
+<li><p>Naprogramuj algoritmus <strong>quick_sort</strong> tak, aby sa úsek kratší ako nejaké dané <code class="docutils literal notranslate"><span class="pre">X</span></code> triedil už len pomocou <strong>insert_sort</strong> (triviálny prípad rekurzie) - toto tredenie <strong>insert_sort</strong> uprav tak, aby triedilo len zadaný úsek zoznamu (a nie celý zoznam).</p>
+<ul class="simple">
+<li><p>otestuj korektnosť pre rôzne zvolenú veľkosť <code class="docutils literal notranslate"><span class="pre">X</span></code>, napríklad 10, 50, 100, … a to pre ten istý veľký náhodný zoznam</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Zrealizuj algoritmus <strong>quick_sort</strong>, ktorý je <strong>in-place</strong>, a to bez rekurzie pomocou vlastného zásobníka:</p>
+<ul class="simple">
+<li><p>do zásobníka treba ukladať dvojice (začiatok, koniec úseku)</p></li>
+<li><p>algoritmus teda najprv rozhádže prvky zoznamu do dvoch úsekov (menšie ako pivot a väčšie ako pivot), potom hranice oboch týchto úsekov vloží do zásobníka (namiesto rekurzívneho volania) a v cykle vyberie z vrchu zásobníka aktuálne spracovávaný úsek, spracuje ho a prípadne do zásobníka opäť vloží hranice úsekov, …</p></li>
+<li><p>do zásobníka najprv vkladaj väčší z dvoch úsekov na triedenie a potom až menší z nich (zamysli sa prečo)</p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Do algoritmu triedenia <code class="docutils literal notranslate"><span class="pre">merge_sort</span></code> z prednášky sme vložili kontrolné tlače:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">stred</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="n">zoz1</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[:</span><span class="n">stred</span><span class="p">]</span>
+    <span class="n">zoz2</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">stred</span><span class="p">:]</span>
+    <span class="n">merge_sort</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+    <span class="n">merge_sort</span><span class="p">(</span><span class="n">zoz2</span><span class="p">)</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz1</span><span class="p">,</span> <span class="s1">&#39;+++&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">zoz2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; =&gt; &#39;</span><span class="p">)</span>
+</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">zoz1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">zoz2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">zoz</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Najprv ručne pre najaký konkrétny vstupný zoznam zisti, ako bude vyzerať tento kontrolný výpis.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<p>Otestujeme, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zoznam =&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">merge_sort</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>dostaneme výstup:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>zoznam = [8, 13, 7, 10, 5, 15, 12, 17, 9, 14, 4, 11, 18, 16, 6]
+13 +++ 7 =&gt; 7 13
+8 +++ 7 13 =&gt; 7 8 13
+10 +++ 5 =&gt; 5 10
+15 +++ 12 =&gt; 12 15
+5 10 +++ 12 15 =&gt; 5 10 12 15
+7 8 13 +++ 5 10 12 15 =&gt; 5 7 8 10 12 13 15
+17 +++ 9 =&gt; 9 17
+14 +++ 4 =&gt; 4 14
+9 17 +++ 4 14 =&gt; 4 9 14 17
+11 +++ 18 =&gt; 11 18
+16 +++ 6 =&gt; 6 16
+11 18 +++ 6 16 =&gt; 6 11 16 18
+4 9 14 17 +++ 6 11 16 18 =&gt; 4 6 9 11 14 16 17 18
+5 7 8 10 12 13 15 +++ 4 6 9 11 14 16 17 18 =&gt; 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Zapíš rekurzívny <strong>in-place</strong> algoritmus <strong>merge_sort</strong>, ktorý bude triediť prvky spájaného zoznamu. Funkcia by nemala meniť hodnoty vo vrcholoch spájaného zoznamu len bude meniť referencie <code class="docutils literal notranslate"><span class="pre">next</span></code>. Funkcia vráti referenciu na nový začiatok zoznamu. Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="c1"># výpis prvkov zoznamu</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Zapíš nerekurzívny <strong>merge_sort</strong>, ktorý usporiada prvky pythonovského zoznamu (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>) metódou zdola nahor:</p>
+<ul class="simple">
+<li><p>v prvom prechode postupne „zlúči“ prvky 0 a 1, 2 a 3, 4 a 5, …</p></li>
+<li><p>v druhom prechode „zlúči“ dvojprvkové zoznamy 0:1 a 2:3, 4:5 a 6:7, 8:9 a 10:11, …</p></li>
+<li><p>v treťom prechode bude zlučovať štvorprvkové úseky 0:3 a 4:7, 8:11 a 12:15, …</p></li>
+<li><p>zrejme takýchto prechodov bude približne <strong>log(n)</strong></p></li>
+</ul>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">merge_sort</span></code> by mohla vyzerať nejako takto (zrejme je <strong>in-place</strong>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">merge_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="c1"># prvý úsek range(a, b), druhý úsek range(b, c)</span>
+        <span class="o">...</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">merge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="n">k</span>
+</pre></div>
+</div>
+<p>Svoje riešenie otestuj na korektnosť.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Predpokladaj, že na vstupe máme tieto hodnoty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>ručne vytvor z tohto zoznamu <strong>haldu</strong> (postupne pridávaj najprv do prázdneho stromu rovnako ako operácia <code class="docutils literal notranslate"><span class="pre">vloz()</span></code>)</p></li>
+<li><p>ručne z haldy trikrát odstráň minimálny prvok (operácia <code class="docutils literal notranslate"><span class="pre">vyhod_min()</span></code>)</p></li>
+<li><p>priebeh ukladania do haldy (aj vyberania najmenšieho) si môžeš vizualizovať, napríklad aj na stránke <a class="reference external" href="https://www.cs.usfca.edu/~galles/visualization/Heap.html">Heap Visualization</a></p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>halda = 4 5 6 9 7 11 8 17 13 14 10 15 18 16 12
+min = 4
+halda po vyhod_min = 5 7 6 9 10 11 8 17 13 14 12 15 18 16
+min = 5
+halda po vyhod_min = 6 7 8 9 10 11 16 17 13 14 12 15 18
+min = 6
+halda po vyhod_min = 7 9 8 13 10 11 16 17 18 14 12 15
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">kontrola_na_haldu(zoz)</span></code>, ktorá skontroluje, či daný zoznam spĺňa podmienky haldy. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kontrola_na_haldu</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    False</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kontrola_na_haldu</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">rodic</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">rodic</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Jedna z úloh priebežného testu v minulých rokoch sa venovala haldám:</p>
+<p>Z rôznych čísel 1 až 10 vytvor haldu (v koreni s indexom 0. je minimum) v 10-prvkovom zozname tak, aby:</p>
+<ol class="loweralpha simple">
+<li><p>v prvku zoznamu s indexom 4 bola maximálne možná hodnota</p></li>
+<li><p>v prvku zoznamu s indexom 4 bola minimálne možná hodnota</p></li>
+</ol>
+<p></p>
+<p>Pre obe podúlohy zrealizuj aj operáciu <code class="docutils literal notranslate"><span class="pre">vyhod_min()</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<p>Riešení rozloženia haldy je veľa, napríklad:</p>
+<ol class="loweralpha">
+<li><p>maximálna možná hodnota na indexe 4. je <code class="docutils literal notranslate"><span class="pre">9</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">halda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">halda</span> <span class="n">po</span> <span class="n">vyhod_min</span> <span class="o">=</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">7</span> <span class="mi">9</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">10</span> <span class="mi">8</span>
+</pre></div>
+</div>
+</li>
+<li><p>minimálna možná hodnota na indexe 4. je <code class="docutils literal notranslate"><span class="pre">3</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">halda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">halda</span> <span class="n">po</span> <span class="n">vyhod_min</span> <span class="o">=</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">10</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Už poznáme štruktúru <strong>front</strong> (<code class="docutils literal notranslate"><span class="pre">Queue</span></code>), ktorá pomocou metód <code class="docutils literal notranslate"><span class="pre">enqueue</span></code>, <code class="docutils literal notranslate"><span class="pre">dequeue</span></code> a <code class="docutils literal notranslate"><span class="pre">front</span></code> dokáže s touto štruktúrou pracovať. V praxi sa nám môže hodiť <strong>prioritný front</strong>, pomocou ktorého vieme pre každý vložený údaj zadať aj kľúč a ten bude určovať prioritu údaja vo fronte. Štruktúra si bude udržiavať utriedený zoznam dvojíc <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">value)</span></code>, pričom na začiatku je minimálna hodnota kľúča. Zapíš metódy tejto triedy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EmptyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PriorityQueue</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>  <span class="c1"># pridá novú dvojicu</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="c1"># vráti dvojicu s minimálnym kľúčom</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       <span class="c1"># vráti dvojicu s minimálnym kľúčom, dvojicu vyhodí zo zoznamu</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Testovanie by mohlo vyzerať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">_data</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">, </span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">_data</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">, </span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">_data</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>s výpisom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span> <span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">),</span> <span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span> <span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_min</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">),</span> <span class="n">p</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">EmptyError</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EmptyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PriorityQueue</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p>Zrealizuj metódy triedy <code class="docutils literal notranslate"><span class="pre">PriorityQueue</span></code> tak, že atribút <code class="docutils literal notranslate"><span class="pre">_data</span></code> si bude udržiavať dvojice <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">value)</span></code> ako <strong>haldu</strong> a teda operácie <code class="docutils literal notranslate"><span class="pre">add</span></code> a <code class="docutils literal notranslate"><span class="pre">remove_min</span></code> budú vkladať do haldy, resp. vyberať z haldy aj s príslušným upratovaním.</p>
+<p>Svoje riešenie otestuj na korektnosť.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Naprogramuj triedenie <strong>radix_sort</strong>, ktoré bude triediť zoznam celých čísel:</p>
+<ul class="simple">
+<li><p>v prvom prechode sa do 10 priehradok (vedierok) poukladajú všetky čísla podľa poslednej cifry (každé číslo sa do priehradky vkladá na jej koniec)</p></li>
+<li><p>potom sa obsahy priehradok postupne „zhrnú“ do jedného zoznamu, aby sa pokračovalo druhým prechodom</p></li>
+<li><p>v druhom prechode sa do 10 priehradok tieto čísla postupne poukladajú podľa predposlednej (druhej od konca) cifry</p></li>
+<li><p>opäť sa priehradky zhrnú do jedného zoznamu</p></li>
+<li><p>…</p></li>
+<li><p>toto sa opakuje pre ďalšie a ďalšie cifry, až kým sa takto nespracovali aj najväčšie čísla v zozname</p></li>
+</ul>
+<p>Zrejme počet prechodov bude podľa počtu cifier vo vstupnom zozname.</p>
+<p>Riešenie otestuj s nejakým väčším zoznamom aspoň 6-ciferných čísel.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="06.html#id8" role="doc-backlink">6. Týždenný projekt</a><a class="headerlink" href="06.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 10.4.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h4 rubric">Triedenie tree_sort</p>
+<p>Naprogramuj <code class="docutils literal notranslate"><span class="pre">tree_sort</span></code>. Ten funguje tak, že sa najprv vyrobí binárny vyhľadávací strom (<strong>BVS</strong>) a z neho sa pomocou <strong>inorder</strong> získa utriedená postupnosť. Binárny strom BVS sa ale vybuduje trochu inak:</p>
+<ul class="simple">
+<li><p>namiesto reprezentácie vrcholov stromu, v ktorej všetky vrcholy obsahujú atribúty <code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>, okrem zadanej <code class="docutils literal notranslate"><span class="pre">n</span></code>-prvovej postupnosti <code class="docutils literal notranslate"><span class="pre">data</span></code> pre celý strom (typu <code class="docutils literal notranslate"><span class="pre">tuple</span></code>) použijeme len dva <code class="docutils literal notranslate"><span class="pre">n</span></code>-prvkové zoznamy (typu <code class="docutils literal notranslate"><span class="pre">list</span></code>)</p></li>
+<li><p>0-ty prvok postupnosti <code class="docutils literal notranslate"><span class="pre">data</span></code> reprezentuje koreň stromu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>-ty vrchol stromu popisuje <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty prvok vstupu (<code class="docutils literal notranslate"><span class="pre">data[i]</span></code>), pričom ľavý potomok (jeho index) je v <code class="docutils literal notranslate"><span class="pre">left[i]</span></code> a pravý je v <code class="docutils literal notranslate"><span class="pre">right[i]</span></code>, zrejme koreň má ľavého potomka v <code class="docutils literal notranslate"><span class="pre">left[0]</span></code> a pravého v <code class="docutils literal notranslate"><span class="pre">right[0]</span></code></p></li>
+<li><p>ak niektorý potomok pre nejaký vrchol neexistuje, príslušný prvok zoznamu <code class="docutils literal notranslate"><span class="pre">left</span></code>, resp. <code class="docutils literal notranslate"><span class="pre">right</span></code> má hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>na vytvorenie <strong>BVS</strong> využi metódu <code class="docutils literal notranslate"><span class="pre">append(value)</span></code>, ktorá na správne miesto pridá ďalší vrchol</p>
+<ul>
+<li><p>zrejme najprv vloží zadanú hodnotu na koniec postupnosti <code class="docutils literal notranslate"><span class="pre">data</span></code>, rozšíri zoznamy <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code> o hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code> a pridá túto novú hodnotu do BVS, t.j. opraví jeden index v zozname <code class="docutils literal notranslate"><span class="pre">left</span></code> alebo <code class="docutils literal notranslate"><span class="pre">right</span></code></p></li>
+</ul>
+</li>
+<li><p>keďže vo vstupnej postupnosti sa niektorá hodnota môže nachádzať aj viackrát, v strome sa rovnaké prvky vkladajú do pravého podstromu, teda v ľavom podstrome sú všetky prvky menšie, v pravom sú väčšie alebo rovné</p></li>
+</ul>
+<p>Po skonštruovaní stromu metódou <code class="docutils literal notranslate"><span class="pre">append()</span></code>, teda po skonštruovaní dvoch zoznamov <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code>, algoritmus triedenia zavolá metódu <code class="docutils literal notranslate"><span class="pre">inorder()</span></code>, ktorá postupne vygeneruje utriedenú postupnosť prvkov pôvodnej postupnosti. Metóda <code class="docutils literal notranslate"><span class="pre">inorder()</span></code> bude generátor, teda hodnoty v strome bude postupne vracať pomocou <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
+<p>Okrem dvoch pomocných zoznamov <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code> nepoužívaj ďalšie pomocné zoznamy (ani iné štruktúry), hoci v inicializácii triedy <code class="docutils literal notranslate"><span class="pre">Tree</span></code> vytvoríš kópiu pôvodnej postupnosti (ako <code class="docutils literal notranslate"><span class="pre">tuple</span></code>), ktorú zrejme metódy triedy meniť nebudú.</p>
+<p>Použi tieto deklarácie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Tree</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">inorder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">postorder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">leaves</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tree_sort</span><span class="p">(</span><span class="n">post</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Tree</span><span class="p">(</span><span class="n">post</span><span class="p">)</span><span class="o">.</span><span class="n">inorder</span><span class="p">(</span><span class="n">reverse</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>kde</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(post)</span></code> volaním metódy <code class="docutils literal notranslate"><span class="pre">append()</span></code> z danej postupnosti vytvorí <strong>BVS</strong></p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">append(value)</span></code> vloží do stromu prvok s danou hodnotou, teda v skutočnosti bude modifikovať len n-ticu <code class="docutils literal notranslate"><span class="pre">data</span></code> a zoznamy <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code></p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">inorder(reverse,</span> <span class="pre">index)</span></code> vráti inorder-postupnosť prvkov zoznamu ako generátor</p>
+<ul>
+<li><p>parameter <code class="docutils literal notranslate"><span class="pre">reverse</span></code> (rovnako ako pre štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>) označuje, že metóda vygeneruje utriedenú postupnosť v opačnom poradí prvkov</p></li>
+<li><p>parameter <code class="docutils literal notranslate"><span class="pre">index</span></code> označuje, že metóda vygeneruje indexy utriedenej postupnosti do pôvodnej postupnosti <code class="docutils literal notranslate"><span class="pre">data</span></code></p></li>
+</ul>
+</li>
+<li><p>property <code class="docutils literal notranslate"><span class="pre">height</span></code> vráti výšku binárneho stromu</p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">postorder()</span></code> vráti generátor postorder postupnosti hodnôt v strome</p></li>
+<li><p>funkciu <code class="docutils literal notranslate"><span class="pre">tree_sort()</span></code> nemá zmysel modifikovať, lebo spúšťať sa bude táto pôvodná verzia</p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">leaves()</span></code> vráti generátor hodnôt v strome, ktoré sú listami (v ľubovoľnom poradí)</p></li>
+</ul>
+<p>Program môžeš testovať, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">Tree</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="s1">&#39;27 25 34 23 25 31 28 30&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">())</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt;&gt;&gt;&gt;&gt;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">postorder</span><span class="p">())</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">height</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">leaves</span><span class="p">())</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Výpis potom bude:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">())</span> <span class="o">=</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">inorder</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="o">=</span> <span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">postorder</span><span class="p">())</span> <span class="o">=</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">leaves</span><span class="p">())</span> <span class="o">=</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>V tomto prípade pre zoznamy <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code> platí:</p>
+<ul class="simple">
+<li><p>koreň (index 0) s hodnotou 27 má ľavého potomka vrchol 1 (s hodnotou 25) a pravého potomka vrchol 2 (s hodnotou 34)</p></li>
+<li><p>vrchol na indexe 1 s hodnotou 25 má ľavého potomka vrchol 3 (s hodnotou 23) a pravého potomka vrchol 4 (s hodnotou 25)</p></li>
+<li><p>vrchol s indexom 2 (hodnota 34) má iba ľavého potomka vrchol 5 (hodnota 31)</p></li>
+<li><p>vrchol s indexom 3 (hodnota 23) má iba ľavého potomka vrchol 8 (hodnota 21)</p></li>
+<li><p>vrchol s indexom 6 (hodnota 28) má iba pravého potomka vrchol 7 (hodnota 30)</p></li>
+<li><p>…</p></li>
+</ul>
+<p class="h4 rubric">Obmedzenia</p>
+<ul class="simple">
+<li><p>tvoje riešenie odovzdaj v súbore, napríklad <code class="docutils literal notranslate"><span class="pre">riesenie.py</span></code>, pričom sa v ňom bude nachádzať <strong>len jedna definícia triedy</strong> <code class="docutils literal notranslate"><span class="pre">Tree</span></code> a jedna globálna funkcia <code class="docutils literal notranslate"><span class="pre">tree_sort()</span></code></p></li>
+<li><p>okrem atribútov <code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code> a <code class="docutils literal notranslate"><span class="pre">right</span></code> nepoužívaj žiadne ďalšie <strong>atribúty</strong> ani ďalšie pomocné <strong>metódy</strong></p></li>
+<li><p>tvoj program by nemal počas testovania testovačom nič vypisovať (žiadne testovacie <code class="docutils literal notranslate"><span class="pre">print()</span></code>)</p></li>
+</ul>
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/2tp06.zip">2tp06.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="06.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 13. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

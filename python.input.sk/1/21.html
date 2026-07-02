@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>21. Animované obrázky &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="Python štýl pre zápis programov" href="../styl.html" />
+    <link rel="prev" title="20. Práca s obrázkami" href="20.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="21.html#">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="20.html" title="Previous Chapter: 20. Práca s obrázkami"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 20. Práca s obrázkami</span>
+    </a>
+  </li>
+  <li>
+    <a href="../styl.html" title="Next Chapter: Python štýl pre zápis programov"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Python štýl p... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="animovane-obrazky">
+<h1>21. Animované obrázky<a class="headerlink" href="21.html#animovane-obrazky" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="21.html#animovane-objekty" id="id2">Animované objekty</a></p>
+<ul>
+<li><p><a class="reference internal" href="21.html#udalosti" id="id3">Udalosti</a></p></li>
+<li><p><a class="reference internal" href="21.html#trieda-animovana-plocha" id="id4">Trieda animovaná Plocha</a></p></li>
+<li><p><a class="reference internal" href="21.html#obrazok-v-pozadi-grafickej-plochy" id="id5">Obrázok v pozadí grafickej plochy</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="21.html#pohybujuce-sa-obrazky" id="id6">Pohybujúce sa obrázky</a></p>
+<ul>
+<li><p><a class="reference internal" href="21.html#dalsi-animovany-objekt" id="id7">Ďalší animovaný objekt</a></p></li>
+<li><p><a class="reference internal" href="21.html#posuvanie-objektov-mysou" id="id8">Posúvanie objektov myšou</a></p></li>
+<li><p><a class="reference internal" href="21.html#rozna-rychlost-animacii" id="id9">Rôzna rýchlosť animácií</a></p></li>
+<li><p><a class="reference internal" href="21.html#automaticky-pohyb-objektov" id="id10">Automatický pohyb objektov</a></p></li>
+<li><p><a class="reference internal" href="21.html#iny-pohyb-pre-niektory-objekt" id="id11">Iný pohyb pre niektorý objekt</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="21.html#cvicenie" id="id12">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="21.html#tyzdenny-projekt" id="id13">12. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>V priečinku obrázkov <a class="reference external" href="../_static/file/obrazky1.zip">obrazky1.zip</a> máme pripravené obrázky pre dnešnú prednášku, napríklad aj týchto <code class="docutils literal notranslate"><span class="pre">8</span></code> fáz animácií vtáčika v súbore <code class="docutils literal notranslate"><span class="pre">'vtak.png'</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/121_1.png"><img alt="../_images/121_1.png" class="align-center" height="48" src="../_images/121_1.png" width="320" />
+</a>
+<p>Na 20. prednáške sme sa naučili takéto súbory rozstrihať do série obrázkov a potom sme to otestovali nejako takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strihaj</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="hll">    <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span>
+</span>    <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">n</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span>
+<span class="hll">    <span class="k">return</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span><span class="p">)))</span>
+</span>                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sir</span><span class="p">)]</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</span><span class="n">tk_id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">faza</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">faza</span><span class="p">])</span>
+</span>    <span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Použili sme tu funkciu <code class="docutils literal notranslate"><span class="pre">strihaj()</span></code>, ktorá je podobná funkcii z cvičení. V tejto verzii funkcia dostáva meno súboru, ktorý treba rozstrihať a vytvorí zoznam obrázkov ale už prekonvertované do formátu <code class="docutils literal notranslate"><span class="pre">PhotoImage</span></code> pre <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="animovane-objekty">
+<h2><a class="toc-backref" href="21.html#id2" role="doc-backlink">Animované objekty</a><a class="headerlink" href="21.html#animovane-objekty" title="Link to this heading">¶</a></h2>
+<p>Ak by sme chceli mať v ploche naraz tri animované obrázky, mohli by sme to zapísať takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strihaj</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span>
+    <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">n</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span><span class="p">)))</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sir</span><span class="p">)]</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="hll"><span class="n">tk_id1</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+</span><span class="hll"><span class="n">tk_id2</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+</span><span class="hll"><span class="n">tk_id3</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span class="n">faza</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id1</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">faza</span><span class="p">])</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id2</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">faza</span><span class="p">])</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="n">tk_id3</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">zoz</span><span class="p">[</span><span class="n">faza</span><span class="p">])</span>
+</span>    <span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Každý z týchto animovaných obrázkov používa ten istý zoznam obrázkov fáz animácie. Animovaný obrázok teraz zapuzdrime do triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+</span><span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">dalsia_faza</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">strihaj</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span>
+    <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">n</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span><span class="p">)))</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sir</span><span class="p">)]</span>
+
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="hll"><span class="n">a1</span> <span class="o">=</span> <span class="n">Anim</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+</span><span class="hll"><span class="n">a2</span> <span class="o">=</span> <span class="n">Anim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+</span><span class="hll"><span class="n">a3</span> <span class="o">=</span> <span class="n">Anim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+    <span class="n">a2</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bude to fungovať aj vtedy, keď namiesto troch premenných <code class="docutils literal notranslate"><span class="pre">a1</span></code>, <code class="docutils literal notranslate"><span class="pre">a2</span></code>, <code class="docutils literal notranslate"><span class="pre">a3</span></code>, vyrobíme zoznam objektov, napríklad takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">azoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">Anim</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="n">zoz</span><span class="p">),</span>
+</span><span class="hll">        <span class="n">Anim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">zoz</span><span class="p">),</span>
+</span><span class="hll">        <span class="n">Anim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">zoz</span><span class="p">),</span>
+</span><span class="hll">        <span class="n">Anim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)]</span>
+</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">azoz</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zrejme v takomto zozname by teraz mohol byť ľubovoľný počet takýchto objektov.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="udalosti">
+<h3><a class="toc-backref" href="21.html#id3" role="doc-backlink">Udalosti</a><a class="headerlink" href="21.html#udalosti" title="Link to this heading">¶</a></h3>
+<p>Namiesto while-cyklu, v ktorom sa hýbu všetky animované objekty, to môžeme prepísať pomocou časovača:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">azoz</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">timer</span><span class="p">)</span>
+
+<span class="n">timer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teraz by fungovalo aj pridávanie nových objektov počas animovania tých existujúcich. Môžeme v konzole zapísať aj počas behu animácie, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Anim</span><span class="p">(</span><span class="mi">280</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">zoz</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Vďaka tomuto mechanizmu môžeme potupne pridávať nové a nové objekty a tie sa okamžite začnú animovať.</p>
+<p>Teraz zoznam vyprázdnime a nové animované objekty budeme pridávať pri každom kliknutí myšou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">azoz</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">timer</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">))</span>
+</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="hll"><span class="n">azoz</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class="n">timer</span><span class="p">()</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="n">klik</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Takto môžeme vytvoriť ľubovoľný počet animovaných objektov.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="trieda-animovana-plocha">
+<h3><a class="toc-backref" href="21.html#id4" role="doc-backlink">Trieda animovaná Plocha</a><a class="headerlink" href="21.html#trieda-animovana-plocha" title="Link to this heading">¶</a></h3>
+<p>Grafickú aplikáciu spolu s canvasom a udalosťami zapuzdrime do triedy <code class="docutils literal notranslate"><span class="pre">Plocha</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Anim</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+<span class="hll">    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dalsia_faza</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strihaj</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span>
+    <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">n</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span><span class="p">)))</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sir</span><span class="p">)]</span>
+
+<span class="hll"><span class="n">Plocha</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>Keďže <code class="docutils literal notranslate"><span class="pre">canvas</span></code> už nebude globálna premenná, ale je to teraz atribút triedy <code class="docutils literal notranslate"><span class="pre">Plocha</span></code>, priradíme ho aj do <strong>triedneho atribútu</strong> <code class="docutils literal notranslate"><span class="pre">canvas</span></code> triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code>. Teraz sa takto k nemu dostanú aj inštancie triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="obrazok-v-pozadi-grafickej-plochy">
+<h3><a class="toc-backref" href="21.html#id5" role="doc-backlink">Obrázok v pozadí grafickej plochy</a><a class="headerlink" href="21.html#obrazok-v-pozadi-grafickej-plochy" title="Link to this heading">¶</a></h3>
+<p>Našou najbližšou úlohou bude vložiť daný obrázok ako pozadie grafickej plochy. Zatiaľ sme to robili nejako takto:</p>
+<ul class="simple">
+<li><p>zistili sme si veľkosť obrázka (napríklad obrázok v súbore <code class="docutils literal notranslate"><span class="pre">'les.png'</span></code> je veľký <code class="docutils literal notranslate"><span class="pre">1280</span></code> x <code class="docutils literal notranslate"><span class="pre">817</span></code> pixelov)</p></li>
+<li><p>pri vytváraní <code class="docutils literal notranslate"><span class="pre">canvas</span></code> sme toto nastavili ako veľkosť a ako prvé sme potom do plochy vložili pomocou <code class="docutils literal notranslate"><span class="pre">create_image</span></code> tento obrázok</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="mi">1280</span><span class="p">,</span> <span class="mi">817</span>
+</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">sir</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">vys</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">pozadie</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;les.png&#39;</span><span class="p">)</span>
+<span class="hll"><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">vys</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">pozadie</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Keďže <code class="docutils literal notranslate"><span class="pre">create_image(x,</span> <span class="pre">y,</span> <span class="pre">image=obrázok)</span></code> umiesňuje obrázok tak, že <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> je stred obrázka, museli sme najprv prepočítať tieto súradnice na stred grafickej plochy. Pre nás by bolo pohodlnejšie, keby sme mohli určiť, ako sa takýto obrázok umiestni, t.j. ako sa <strong>ukotví</strong> (podobne ako sme ukotvovali texty v <code class="docutils literal notranslate"><span class="pre">create_text</span></code>) v grafickej ploche. Na to slúži pomenovaný parameter <strong>anchor</strong>, v ktorom zadáme ukotvenie <code class="docutils literal notranslate"><span class="pre">'nw'</span></code> (teda na sevorozápadný roh obrázka) a súradnice <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>. Zapíšeme to takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">pozadie</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Radi by sme ale namiesto priradenia <code class="docutils literal notranslate"><span class="pre">sir,</span> <span class="pre">vys</span> <span class="pre">=</span> <span class="pre">1280,</span> <span class="pre">817</span></code> pre konkrétny obrázok pozadia, použili:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pozadie</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;les.png&#39;</span><span class="p">)</span>
+<span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">pozadie</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="n">pozadie</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">sir</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">vys</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">pozadie</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Teda, že najprv prečítame obrázok, zistíme si jeho rozmery a až potom vytvárame grafickú plochu.</p>
+<p>Toto nám spôsobí takúto chybovú správu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>RuntimeError: Too early to create image``.
+</pre></div>
+</div>
+<p>Python nám tu vysvetľuje, že volanie <code class="docutils literal notranslate"><span class="pre">tkinter.PhotoImage(...)</span></code> prišlo skôr, ako sme vytvorili samotnú grafickú aplikáciu (zrejme pomocou <code class="docutils literal notranslate"><span class="pre">tkinter.Canvas(...)</span></code>).</p>
+<p>Našťastie takto zacyklený problém vieme vyriešiť:</p>
+<ul>
+<li><p>volanie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>ktoré vytvára grafickú aplikáciu je len skratkou týchto dvoch príkazov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>kde inštancia <code class="docutils literal notranslate"><span class="pre">win</span></code> reprezentuje samotnú grafickú aplikáciu (okno, window) na začiatku ešte bez canvasu (často sa zvykne tejto inštancii dávať meno <code class="docutils literal notranslate"><span class="pre">root</span></code>)</p></li>
+<li><p>až druhý príkaz <code class="docutils literal notranslate"><span class="pre">tkinter.Canvas(win)</span></code> vytvorí <code class="docutils literal notranslate"><span class="pre">canvas</span></code> a umiestni ho do grafického okna <code class="docutils literal notranslate"><span class="pre">win</span></code> (parameter <code class="docutils literal notranslate"><span class="pre">win</span></code> zapisovať nemusíme, tkinter si ho domyslí)</p></li>
+</ul>
+<p>A to je ten moment, keď môžeme ešte pred vytvorením canvasu prečítať nejaký obrázok zo súboru:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</span><span class="n">pozadie</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;les.png&#39;</span><span class="p">)</span>
+<span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">pozadie</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="n">pozadie</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">sir</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">vys</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">pozadie</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zapamätajme si, že <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> nedovolí čítať obrázky (pomocou <code class="docutils literal notranslate"><span class="pre">tkinter.PhotoImage</span></code>) skôr, ako sa vytvorí okno grafickej aplikácie <code class="docutils literal notranslate"><span class="pre">tkinter.Tk</span></code>.</p>
+<p>Naša aplikácia teraz vyzerá takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_pozadia</span><span class="p">):</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">meno_pozadia</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Anim</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">sir</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">vys</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">)</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span>
+
+    <span class="o">...</span>
+
+<span class="o">...</span>
+
+<span class="hll"><span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</span><span class="hll"><span class="n">Plocha</span><span class="p">(</span><span class="s1">&#39;les.png&#39;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Ďalšou našou úlohou bude pripraviť triedu <code class="docutils literal notranslate"><span class="pre">Plocha</span></code> tak, aby vedela pracovať aj s inými animovanými obrázkami ako <code class="docutils literal notranslate"><span class="pre">'vtak.png'</span></code>. Napríklad v súbore <code class="docutils literal notranslate"><span class="pre">'zajo.png'</span></code> máme týchto 8 fáz animácie:</p>
+<a class="reference internal image-reference" href="../_images/121_2.png"><img alt="../_images/121_2.png" class="align-center" height="64" src="../_images/121_2.png" width="540" />
+</a>
+<p>Teda trieda <code class="docutils literal notranslate"><span class="pre">Plocha</span></code> nebude sama čítať a rozoberať súbor <code class="docutils literal notranslate"><span class="pre">'vtak.png'</span></code>, ale takéto zoznamy animácií pripravíme ešte pred inicializáciou <code class="docutils literal notranslate"><span class="pre">Plocha</span></code> a sem ich pošleme, napríklad v parametri <code class="docutils literal notranslate"><span class="pre">obrazky</span></code>. Vďaka tomuto budeme môcť do plochy poslať ľubovoľný počet zoznamov s animáciami. Upravíme aj výber animácie pri kliknutí:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_pozadia</span><span class="p">,</span> <span class="o">*</span><span class="n">obrazky</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">meno_pozadia</span><span class="p">)</span>
+        <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Anim</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">sir</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">vys</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">obrazky</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>a hlavný program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">Plocha</span><span class="p">(</span><span class="s1">&#39;les.png&#39;</span><span class="p">,</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;zajo.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Táto grafická aplikácia vykreslí do pozadia obrázok lesa a každé kliknutie pridá animovaného vtáčika alebo zajaca.</p>
+<p>Pomocou <code class="docutils literal notranslate"><span class="pre">PIL</span></code> vytvoríme aj ďalšie animácie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;zvieratka v lese&#39;</span><span class="p">)</span>
+<span class="n">zoz1</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">zoz2</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;zajo.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+<span class="n">zoz3</span> <span class="o">=</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">uhol</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">for</span> <span class="n">uhol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;kacicka.png&#39;</span><span class="p">)</span>
+<span class="n">zoz4</span> <span class="o">=</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obr</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+                           <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="p">(</span><span class="mf">.6</span><span class="p">,</span> <span class="mf">.55</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.45</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.35</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.35</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.45</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.55</span><span class="p">)]</span>
+<span class="n">Plocha</span><span class="p">(</span><span class="s1">&#39;les.png&#39;</span><span class="p">,</span> <span class="n">zoz1</span><span class="p">,</span> <span class="n">zoz2</span><span class="p">,</span> <span class="n">zoz3</span><span class="p">,</span> <span class="n">zoz4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Aby sme nemali v našej grafickej aplikácii zbytočne veľa globálnych premenných, zapuzdrime to do triedy <code class="docutils literal notranslate"><span class="pre">Program</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
+<span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+</span>    <span class="o">...</span>
+
+<span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+</span>    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="o">...</span>
+
+<span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="p">:</span>
+</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="hll">        <span class="k">def</span><span class="w"> </span><span class="nf">strihaj</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span>            <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span>
+            <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">n</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span><span class="p">)))</span>
+                        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sir</span><span class="p">)]</span>
+
+        <span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;zvieratka v lese&#39;</span><span class="p">)</span>
+        <span class="n">zoz1</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="n">zoz2</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;zajo.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pyton.png&#39;</span><span class="p">)</span>
+        <span class="n">zoz3</span> <span class="o">=</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">uhol</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">for</span> <span class="n">uhol</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+        <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;kacicka.png&#39;</span><span class="p">)</span>
+        <span class="n">zoz4</span> <span class="o">=</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obr</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+                                   <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="p">(</span><span class="mf">.6</span><span class="p">,</span> <span class="mf">.55</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.45</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.35</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.35</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.45</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.55</span><span class="p">)]</span>
+<span class="hll">        <span class="n">Plocha</span><span class="p">(</span><span class="s1">&#39;les.png&#39;</span><span class="p">,</span> <span class="n">zoz1</span><span class="p">,</span> <span class="n">zoz2</span><span class="p">,</span> <span class="n">zoz3</span><span class="p">,</span> <span class="n">zoz4</span><span class="p">)</span>
+</span>
+<span class="hll"><span class="n">Program</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>Teraz bude grafická aplikácia náhodne vyberať jeden z animovaných obrázkov vtáčika, zajaca, hada a kačičky. V celej aplikácii máme okrem troch tried <code class="docutils literal notranslate"><span class="pre">Plocha</span></code>, <code class="docutils literal notranslate"><span class="pre">Anim</span></code> a <code class="docutils literal notranslate"><span class="pre">Program</span></code> jednu globálnu inštanciu triedy <code class="docutils literal notranslate"><span class="pre">Program</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="pohybujuce-sa-obrazky">
+<h2><a class="toc-backref" href="21.html#id6" role="doc-backlink">Pohybujúce sa obrázky</a><a class="headerlink" href="21.html#pohybujuce-sa-obrazky" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Obrázkom v nejakej väčšej scéne, ktoré sa animujú, hýbu, spolupracujú navzájom, resp. sa dajú modifikovať prostredníctvom myši alebo klávesnice, sa zvykne hovoriť <a class="reference external" href="https://en.wikipedia.org/wiki/Sprite_(computer_graphics)">sprite</a>. V predchádzajúcej časti prednášky sme do grafickej plochy umiestňovali nejaké animované objekty a už toto boli najjednoduchšie verzie sprite (škriatkov).</p>
+<p>V tejto aplikácii sa po každom kliknutí objavil ďalší animovaný obrázok, pričom sa náhodne vyberal z</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zoz1</span></code> - vtáčik mávajúci krídlami</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zoz2</span></code> - skákajúci zajac</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zoz3</span></code> - otáčajúci sa pytón</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zoz4</span></code> - kačička s pulzujúcou veľkosťou</p></li>
+</ul>
+<p>Postupne budeme túto aplikáciu ďalej modifikovať a dopĺňať o ďalšie správanie.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="dalsi-animovany-objekt">
+<h3><a class="toc-backref" href="21.html#id7" role="doc-backlink">Ďalší animovaný objekt</a><a class="headerlink" href="21.html#dalsi-animovany-objekt" title="Link to this heading">¶</a></h3>
+<p>Aplikáciu upravíme tak, aby sa namiesto otáčajúceho sa pytóna a pulzujúcej kačičky objavila krútiaca sa zemeguľa. Využijeme týchto <a class="reference external" href="../_static/file/zemegula.png">21 obrázkov zemegule</a>:</p>
+<a class="reference internal image-reference" href="../_images/121_3.png"><img alt="../_images/121_3.png" class="align-center" height="158" src="../_images/121_3.png" width="396" />
+</a>
+<p>Túto zemeguľu musíme rozstrihať trochu inak ako vtáka a zajaca. Upravíme funkciu <code class="docutils literal notranslate"><span class="pre">strihaj</span></code> a aj inicializáciu triedy <cite>Program`</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">strihaj</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">obr</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span>
+            <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">ps</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="n">pr</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">obr</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sir</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">vys</span><span class="p">)))</span>
+                        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">vys</span><span class="p">)</span>
+                            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obr</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sir</span><span class="p">)]</span>
+
+        <span class="n">win</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;zvieratka v lese&#39;</span><span class="p">)</span>
+        <span class="n">zoz1</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;vtak.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="n">zoz2</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;zajo.png&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="n">zoz3</span> <span class="o">=</span> <span class="n">strihaj</span><span class="p">(</span><span class="s1">&#39;zemegula.png&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">Plocha</span><span class="p">(</span><span class="s1">&#39;les.png&#39;</span><span class="p">,</span> <span class="n">zoz1</span><span class="p">,</span> <span class="n">zoz2</span><span class="p">,</span> <span class="n">zoz3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">strihaj</span></code> teraz zvláda rozstrihať prečítaný obrázkový súbor nielen na rovnaké obrázky v jednom rade, ale aj ak je takýchto radov niekoľko pod sebou: parameter <code class="docutils literal notranslate"><span class="pre">ps</span></code> označuje počet stĺpcov a <code class="docutils literal notranslate"><span class="pre">pr</span></code> počet riadkov s obrázkami.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="posuvanie-objektov-mysou">
+<h3><a class="toc-backref" href="21.html#id8" role="doc-backlink">Posúvanie objektov myšou</a><a class="headerlink" href="21.html#posuvanie-objektov-mysou" title="Link to this heading">¶</a></h3>
+<p>Do triedy <code class="docutils literal notranslate"><span class="pre">Plocha</span></code> pridáme 3 nové udalosti a tiež upravíme klikanie, pomocou ktorého pridávame nové objekty:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress-3&gt;'</span></code> - metóda <code class="docutils literal notranslate"><span class="pre">klik</span></code> pridáva nový objekt (kliknutie pravým tlačidlom myši)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;ButtonPress-1&gt;'</span></code> - metóda <code class="docutils literal notranslate"><span class="pre">mouse_down</span></code> zistí, či sa kliklo do objektu a umožní ďalšie ťahanie</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;B1-Motion&gt;'</span></code> - metóda <code class="docutils literal notranslate"><span class="pre">mouse_move</span></code> robí samotné ťahanie</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'&lt;ButtonRelease-1&gt;'</span></code> - metóda <code class="docutils literal notranslate"><span class="pre">mouse_up</span></code> zruší ťahanie</p></li>
+</ul>
+<p>Všetky tri ťahacie metódy využívajú premennú (atribút) <code class="docutils literal notranslate"><span class="pre">tahany</span></code>, ktorá ma buď hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code> (nič sa neťahá), alebo referenciu na jeden z objektov (inštancie triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code>). Trieda <code class="docutils literal notranslate"><span class="pre">PLocha</span></code> teraz vyzera takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_pozadia</span><span class="p">,</span> <span class="o">*</span><span class="n">obrazky</span><span class="p">):</span>
+        <span class="o">...</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">tahany</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-3&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">klik</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-1&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mouse_down</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;B1-Motion&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mouse_move</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonRelease-1&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mouse_up</span><span class="p">)</span>
+</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">mouse_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="hll">        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="p">):</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">vnutri</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">):</span>
+</span>                <span class="bp">self</span><span class="o">.</span><span class="n">tahany</span> <span class="o">=</span> <span class="n">a</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span>
+                <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tahany</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">mouse_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tahany</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">tahany</span><span class="o">.</span><span class="n">presun</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mouse_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tahany</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Metóda <code class="docutils literal notranslate"><span class="pre">mouse_down</span></code> využíva to, že objektu typu <code class="docutils literal notranslate"><span class="pre">Anim</span></code> sa vieme opýtať, či sme klikli do jeho vnútra <code class="docutils literal notranslate"><span class="pre">vnutri(x,</span> <span class="pre">y)</span></code> a tiež potom pri hýbaní myšou vieme posúvať aj samotný objekt metódou <code class="docutils literal notranslate"><span class="pre">presun(x,</span> <span class="pre">y)</span></code>. Všimnite si pomocné premenné <code class="docutils literal notranslate"><span class="pre">self.dx</span></code> a <code class="docutils literal notranslate"><span class="pre">self.dy</span></code>, v ktorych sa ukladá posun kliknutia od stredu objektu (jeho <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>). Tiež si všimnite, že v metóde <code class="docutils literal notranslate"><span class="pre">mouse_down</span></code> postupne prechádzame všetky animované objekty v <code class="docutils literal notranslate"><span class="pre">azoz</span></code> v opačnom poradí, ako sa vytvorili (použili sme <code class="docutils literal notranslate"><span class="pre">reversed</span></code>), teda skôr sa testujú objekty, ktoré su navrchu (ak sa prekrývajú).</p>
+<p>Do triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code> pridáme dve nové metódy <code class="docutils literal notranslate"><span class="pre">vnutri</span></code> a <code class="docutils literal notranslate"><span class="pre">presun</span></code> a tiež nové premenné <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> a <code class="docutils literal notranslate"><span class="pre">vel</span></code>, ktorá označuje približnú veľkosť objektu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">vel</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">height</span><span class="p">())</span> <span class="o">/</span> <span class="mi">2</span>
+</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dalsia_faza</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">presun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">vnutri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="rozna-rychlost-animacii">
+<h3><a class="toc-backref" href="21.html#id9" role="doc-backlink">Rôzna rýchlosť animácií</a><a class="headerlink" href="21.html#rozna-rychlost-animacii" title="Link to this heading">¶</a></h3>
+<p>V momentálnej verzii aplikácie sa všetky objekty animujú rovnakou rýchlosťou: pri každom tiknutí časovača (po 100 milisekundách) si každý objekt nastaví ďalšiu fázu animácie. Lenže teraz by sme chceli každému animovanému objektu nastaviť jeho individuálnu rýchlosť animácie, teda hodnotu jeho premennej <code class="docutils literal notranslate"><span class="pre">tik</span></code>, ktorá bude označovať jeho rýchlosť v milisekundách. Do inicializácie <code class="docutils literal notranslate"><span class="pre">Anim</span></code> pridáme nový parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">,</span> <span class="n">tik</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tik</span> <span class="o">=</span> <span class="n">tik</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Hodnotou atribútu <code class="docutils literal notranslate"><span class="pre">tik</span></code> by sme radi nastavili jeho individuálny čas zmeny fázy animácie. Toto ale musí zabezpečiť časovač <code class="docutils literal notranslate"><span class="pre">timer</span></code> v triede <code class="docutils literal notranslate"><span class="pre">Plocha</span></code>. Zatiaľ vyzerá takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V časovači sa pravidelne pri každom tiknutí časovača postupne prechádzajú všetky objekty a každému sa nastaví ďalšia fáza. Jedna z možností, ako to vyriešiť, by bola taká, že by sme pre každý objekt pripravili jeho súkromný časovač s jeho vlastnou frekvenciou tikania. Toto by asi fungovalo, len by to priveľmi (a zbytočne) zaťažilo nielen Python ale aj operačný systém. Budeme to riešiť inak: časovač bude hýbať len s tými objektami, ktorým už uplynul ich čas (od poslednej zmeny fázy).</p>
+<p>Každá inštancia triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code> (animovaný objekt) si okrem atribútu <code class="docutils literal notranslate"><span class="pre">tik</span></code> (rýchlosť animácie v milisekundách) bude pamätať aj čas (atribút <code class="docutils literal notranslate"><span class="pre">time</span></code>), kedy by mal časovač prejsť na ďalšiu fázu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">,</span> <span class="n">tik</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tik</span> <span class="o">=</span> <span class="n">tik</span> <span class="o">/</span> <span class="mi">1000</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tik</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Časovač <code class="docutils literal notranslate"><span class="pre">timer()</span></code> bude teraz fungovať takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="hll">        <span class="n">teraz</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span>        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="p">:</span>
+<span class="hll">            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;</span> <span class="n">teraz</span><span class="p">:</span>
+</span>                <span class="n">a</span><span class="o">.</span><span class="n">dalsia_faza</span><span class="p">()</span>
+<span class="hll">                <span class="n">a</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">teraz</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">tik</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Všimnite si, že fázy animácie sa menia len pre objekty, ktorým už uplynul čas. Okrem toho sme im v atribúte <code class="docutils literal notranslate"><span class="pre">time</span></code> naplánovali, kedy má nastať prechod na ďalšiu fázu animácie. Môžeme aj trochu zvýšiť frekvenciu tikania časovača, napríklad na <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+<p>Teraz ešte treba upraviť aj metódu <code class="docutils literal notranslate"><span class="pre">klik</span></code>, aby sme mohli nastaviť rôznu rýchlosť animácií:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">),</span>
+                          <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">300</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Ešte nezabudnite na začiatok aplikácie pridať <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">time</span></code>. Teraz by mohla fungovať aplikácia takto:</p>
+<ul class="simple">
+<li><p>po kliknutí (pravým tlačidlom myši) pridá nový náhodný objekt s náhodnou rýchlosťou animácie</p></li>
+<li><p>ťahaním (ľavým tlačidlom myši) môžeme ľubovoľný animovaný objekt presúvať na nové miesto</p></li>
+<li><p>počas presúvania stále beží jeho animácia</p></li>
+<li><p>ak sa viac animovaných objektov navzájom prekrýva, tak kliknutie a ťahanie nemusí vybrať vrchný objekt, ale náhodný podľa momentálneho stavu <code class="docutils literal notranslate"><span class="pre">azoz</span></code></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="automaticky-pohyb-objektov">
+<h3><a class="toc-backref" href="21.html#id10" role="doc-backlink">Automatický pohyb objektov</a><a class="headerlink" href="21.html#automaticky-pohyb-objektov" title="Link to this heading">¶</a></h3>
+<p>Ďalším krokom pri vylepšovaní aplikácie bude automatický pohyb všetkých animovaných objektov. Pri pohybe objektu v grafickej ploche sa často využíva idea vektora: objekt má určený svoj smer pohybu ako dvojicu čísel <code class="docutils literal notranslate"><span class="pre">(dx,</span> <span class="pre">dy)</span></code>, pričom v každom kroku (časovača) sa zmení poloha objektu v ploche: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">dx</span></code> a <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">dy</span></code>. Asi by sa zišlo strážiť, aby nám objekt neodišiel z plochy preč a už sa nikdy nevrátil späť. Ak si niekde zapamätáme veľkosť grafickej plochy (šírku a výšku), jednoducho sa dá robiť takúto kontrolu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sirka</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">sirka</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">sirka</span>
+</pre></div>
+</div>
+<p>podobne by to bolo aj so súradnicou <code class="docutils literal notranslate"><span class="pre">y</span></code>. V skutočnosti sa to dá skrátiť takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">%</span> <span class="n">sirka</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">)</span> <span class="o">%</span> <span class="n">vyska</span>
+</pre></div>
+</div>
+<p>Vďaka tejto úprave, animovaný objekt pri pohybe z plochy nevypadne, ale objaví sa na opačnom konci a pokračuje v pohybe stále svojim smerom.</p>
+<p>Upravovať budeme najprv metódy triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">,</span> <span class="n">tik</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">tik</span> <span class="o">=</span> <span class="n">tik</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span>
+</span>        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Metódu <code class="docutils literal notranslate"><span class="pre">dalsia_faza</span></code> premenujeme na <code class="docutils literal notranslate"><span class="pre">pohyb</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+<span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">presun</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">sirka</span><span class="p">,</span>
+</span><span class="hll">                        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">vyska</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Zrejme ešte vygenerujeme nejaké <code class="docutils literal notranslate"><span class="pre">dx</span></code> a <code class="docutils literal notranslate"><span class="pre">dy</span></code> pri vytváraní animovaného objektu (pri pravom kliknutí myši do plochy). Asi bude najlepšie, keď vtáčiky budú lietať len smerom zľava doprava, zajačiky budú skákať len sprava doľava a zemegule sa budú hýbať ľubovoľným smerom. Opravíme metódy <code class="docutils literal notranslate"><span class="pre">klik</span></code> a <code class="docutils literal notranslate"><span class="pre">timer</span></code> v triede <code class="docutils literal notranslate"><span class="pre">Plocha</span></code>, v inicializácii pridáme šírku a výšku ako triedne atribúty v <code class="docutils literal notranslate"><span class="pre">Anim</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_pozadia</span><span class="p">,</span> <span class="o">*</span><span class="n">obrazky</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">meno_pozadia</span><span class="p">)</span>
+        <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">pozadie</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+<span class="hll">        <span class="n">Anim</span><span class="o">.</span><span class="n">sirka</span><span class="p">,</span> <span class="n">Anim</span><span class="o">.</span><span class="n">vyska</span> <span class="o">=</span> <span class="n">sir</span><span class="p">,</span> <span class="n">vys</span>
+</span>        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">teraz</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;</span> <span class="n">teraz</span><span class="p">:</span>
+<span class="hll">                <span class="n">a</span><span class="o">.</span><span class="n">pohyb</span><span class="p">()</span>
+</span>                <span class="n">a</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">teraz</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">tik</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="hll">        <span class="n">ix</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span>
+</span><span class="hll">        <span class="k">if</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">a</span> <span class="o">=</span> <span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Teraz otestujte, ako sa animované objekty hneď po vytvorení rozpŕchnu všetkými smermi.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="iny-pohyb-pre-niektory-objekt">
+<h3><a class="toc-backref" href="21.html#id11" role="doc-backlink">Iný pohyb pre niektorý objekt</a><a class="headerlink" href="21.html#iny-pohyb-pre-niektory-objekt" title="Link to this heading">¶</a></h3>
+<p>V momentálnej verzii sa všetky tri typy animovaných objektov správajú na okraji úplne rovnako: keď objekt na nejakej hrane vypadne, objaví sa na opačnom konci plochy.</p>
+<p>Teraz by sme chceli zmeniť správanie animovanej zemegule: keď sa priblíži k okraju plochy, odrazí sa presne tak, ako sa odrážajú gulečníkové gule na biliardovom stole. Teraz sa bude počítať <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> a meniť <code class="docutils literal notranslate"><span class="pre">(dx,</span> <span class="pre">dy)</span></code> takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">&lt;</span> <span class="n">vel</span><span class="p">:</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="n">sirka</span> <span class="o">-</span> <span class="n">vel</span><span class="p">:</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">&lt;</span> <span class="n">vel</span><span class="p">:</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">&gt;</span> <span class="n">vyska</span> <span class="o">-</span> <span class="n">vel</span><span class="p">:</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+</pre></div>
+</div>
+<p>Ďalej si ukážeme dva postupy, ako to môžeme zakomponovať do našej aplikácie. Prvá verzia pridá do triedy <code class="docutils literal notranslate"><span class="pre">Anim</span></code> atribút <code class="docutils literal notranslate"><span class="pre">odraz</span></code>, ktorý, ak bude mať hodnotu <code class="docutils literal notranslate"><span class="pre">True</span></code>, bude sa odrážať od okrajov, hodnota <code class="docutils literal notranslate"><span class="pre">False</span></code> ponechá pôvodné správanie.</p>
+<p>Opravme triedu <code class="docutils literal notranslate"><span class="pre">Anim</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="hll">    <span class="n">odraz</span> <span class="o">=</span> <span class="kc">False</span>
+</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">,</span> <span class="n">tik</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">:</span>
+<span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">odraz</span><span class="p">:</span>
+</span><span class="hll">                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span>
+</span><span class="hll">                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span><span class="hll">                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">sirka</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span>
+</span><span class="hll">                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vyska</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">presun</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span><span class="hll">            <span class="k">else</span><span class="p">:</span>
+</span>                <span class="bp">self</span><span class="o">.</span><span class="n">presun</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">sirka</span><span class="p">,</span>
+                            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">vyska</span><span class="p">)</span>
+
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Ešte musíme opraviť vytvorenie takéhoto animovaného objektu v metóde <code class="docutils literal notranslate"><span class="pre">klik</span></code> v triede <code class="docutils literal notranslate"><span class="pre">Plocha</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">ix</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+<span class="hll">        <span class="k">if</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">a</span><span class="o">.</span><span class="n">odraz</span> <span class="o">=</span> <span class="kc">True</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Teraz by aplikácia mohla fungovať s novým správaním animovanej zemegule.</p>
+<hr class="docutils" />
+<p>To isté môžeme dosiahnuť aj inak: namiesto nového atribútu <code class="docutils literal notranslate"><span class="pre">odraz</span></code> v triede <code class="docutils literal notranslate"><span class="pre">Anim</span></code>, vytvoríme novú odvodenú triedu, v ktorej pozmeníme len metódu <code class="docutils literal notranslate"><span class="pre">pohyb</span></code>. Trieda <code class="docutils literal notranslate"><span class="pre">Anim</span></code> je teraz pôvodná verzia a odvodená trieda bude <code class="docutils literal notranslate"><span class="pre">AnimSOdrazom</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Anim</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zoz</span><span class="p">,</span> <span class="n">tik</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">presun</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">sirka</span><span class="p">,</span>
+                        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">vyska</span><span class="p">)</span>
+
+    <span class="o">...</span>
+
+<span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">AnimSOdrazom</span><span class="p">(</span><span class="n">Anim</span><span class="p">):</span>
+</span><span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">faza</span><span class="p">])</span>
+</span><span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">:</span>
+</span><span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span>
+</span><span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span><span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">sirka</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span>
+</span><span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vyska</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">presun</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Malá oprava ešte aj v metóde <code class="docutils literal notranslate"><span class="pre">klik</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Plocha</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">ix</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="hll">        <span class="k">if</span> <span class="n">ix</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">a</span> <span class="o">=</span> <span class="n">AnimSOdrazom</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+</span><span class="hll">        <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">a</span> <span class="o">=</span> <span class="n">Anim</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">azoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="21.html#id12" role="doc-backlink">Cvičenie</a><a class="headerlink" href="21.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server túto ulohu nebude testovať</p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 21. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 11.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdanom riešení nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Naprogramujte interaktívny <strong>adventný kalendár</strong>. Na pozadí sa zobrazí obrázok <code class="docutils literal notranslate"><span class="pre">'mikulasaspol.jpg'</span></code>. Canvas bude mať rovnaké rozmery ako obrázok. Do mriežky 6x4 vygenerujte 24 okienok adventného kalendára. Na začiatku budú všetky obrázky kalendára zobrazené ako vločky (obrázok <code class="docutils literal notranslate"><span class="pre">'0.gif'</span></code>) aj s príslušným číslom. Čísla (aj s príslušnými obrázkami) budú v mriežke rozmiestnené v náhodnom poradí. Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/121_4.png"><img alt="../_images/121_4.png" class="align-center" height="184" src="../_images/121_4.png" width="301" />
+</a>
+<p>Po kliknutí na ľubovoľné okienko kalendára sa vločka zmení na príslušný obrázok, a ak je to animovaný obrázok, bude sa animovať (striedať fázy animácie). Ak je to len jednofázový obrázok, prirob k nemu ďalších 7 fáz, ktoré vzniknú otáčaním prvej fázy postupne o uhly <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">20,</span> <span class="pre">10,</span> <span class="pre">0,</span> <span class="pre">-10,</span> <span class="pre">-20,</span> <span class="pre">-10)</span></code>. Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/121_5.png"><img alt="../_images/121_5.png" class="align-center" height="184" src="../_images/121_5.png" width="301" />
+</a>
+<p>Ak znovu klikneme na odkryté okienko kalendára, toto okienko sa zatvorí (zobrazí sa vločka aj s príslušným číslom).</p>
+<p>Všetkým animáciám nastav náhodnú rýchlosť animovania od 100 do 500.</p>
+<p>Všetky súbory k projektu si stiahneš z <a class="reference external" href="../_static/file/1cv21.zip">1cv21.zip</a></p>
+<p>Tvoj projekt by mohol mať približne takúto štruktúru:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Karticka</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="p">,</span> <span class="n">tik</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dalsia_faza</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Kalendar</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;ButtonPress-1&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">otoc</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">otoc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="n">Kalendar</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="21.html#id13" role="doc-backlink">12. Týždenný projekt</a><a class="headerlink" href="21.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a> najneskôr 28.decembra do 18:00.</p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 12. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 11.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<h3 class="rubric">Robot Mravec</h3>
+<p>Máme cvičeného malého robota mravca, ktorý sa pohybuje po štvorcovej sieti a pritom vie pred sebou tlačiť malé kocky. Mravec poslúcha na povely <code class="docutils literal notranslate"><span class="pre">'l'</span></code> (vľavo), <code class="docutils literal notranslate"><span class="pre">'p'</span></code> (vpravo), <code class="docutils literal notranslate"><span class="pre">'h'</span></code> (hore), <code class="docutils literal notranslate"><span class="pre">'d'</span></code> (dole), pričom sa v danom smere posunie na susedné políčko štvorcovej siete. Ak sa v danom smere v ploche nachádza kocka, tak ju pred sebou v tomto smere potlačí. Ak je v danom smere tesne za sebou viac kociek, tak ich tlačí všetky. Mravec z plochy nikdy nevyjde, hoci kocky, ktoré pred sebou tlačí, z plochy vypadnúť môžu.</p>
+<p>Na každej kocke je zapísané jedno písmeno. Samotná štvorcová sieť vie indikovať, či sa na niektorých špeciálnych políčkach nachádzajú kocky s písmenami a vie zistiť množinu písmen na týchto kockách.</p>
+<p>Zadanie štvorcovej siete s počiatočným rozložením kociek je v textovom súbore. V prvých riadkoch tohto súboru sa nachádzajú riadky štvorcovej siete (všetky sú rovnako dlhé), pričom špeciálne políčka sú označené znakom <code class="docutils literal notranslate"><span class="pre">'+'</span></code> a zvyšné sú označené znakom <code class="docutils literal notranslate"><span class="pre">'.'</span></code>. Za štvorcovou sieťou je v súbore jeden riadok prázdny a za tým nasleduje postupnosť súradníc kociek s písmenami - v každom ďalšom riadku je trojica: písmeno a dve celé čísla. Táto trojica označuje písmeno na kocke a jej pozíciu v ploche: riadok a stĺpec (číslujeme od 0).</p>
+<p>Naprogramuj triedu <code class="docutils literal notranslate"><span class="pre">Mravec</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Mravec</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">riadok</span><span class="p">,</span> <span class="n">stlpec</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prikazy</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zisti</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>kde</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(meno_suboru)</span></code></p>
+<ul>
+<li><p>prečíta súbor - mravec tam zatiaľ nie je</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start(riadok,</span> <span class="pre">stlpec)</span></code></p>
+<ul>
+<li><p>položí mravca na zadaný riadok a stĺpec</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code></p>
+<ul>
+<li><p>vráti znakovú reprezentáciu plochy</p></li>
+<li><p>pozíciu mravca zapíše znakom <code class="docutils literal notranslate"><span class="pre">'&#64;'</span></code> a špeciálne políčka, na ktorých sa nenachádza ani mravec ani kocka, zapíšeznakom <code class="docutils literal notranslate"><span class="pre">'+'</span></code></p></li>
+<li><p>ostatné políčka zapíše znakmi písmen, resp. znakom <code class="docutils literal notranslate"><span class="pre">'.'</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rob(prikazy)</span></code></p>
+<ul>
+<li><p>dostáva jeden príkaz, alebo postupnosť za sebou nasledujúcich príkazov, pričom príkaz je jedno z písmen <code class="docutils literal notranslate"><span class="pre">'l'</span></code>, <code class="docutils literal notranslate"><span class="pre">'p'</span></code>, <code class="docutils literal notranslate"><span class="pre">'h'</span></code> alebo <code class="docutils literal notranslate"><span class="pre">'d'</span></code></p></li>
+<li><p>mravec sa postupne pohybuje v daných smeroch, pričom pred sebou môže tlačiť kocky</p></li>
+<li><p>príkazy, ktoré sa nedajú vykonať, ignoruje</p></li>
+<li><p>metóda vráti počet vykonaných príkazov</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zisti()</span></code></p>
+<ul>
+<li><p>vráti množinu písmen na špeciálnych políčkach hracej plochy</p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad, pre súbor:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.....
+..+.+
+.++..
+.....
+
+D 2 2
+C 2 1
+A 1 1
+B 1 3
+</pre></div>
+</div>
+<p>takýto test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">Mravec</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">zisti</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">rob</span><span class="p">(</span><span class="s1">&#39;pp&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">zisti</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">rob</span><span class="p">(</span><span class="s1">&#39;dlll&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">zisti</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vypíše:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.....
+.A+B+
+.CD..
+.....
+m.zisti() = {&#39;C&#39;, &#39;D&#39;}
+m.start(1, 0) = None
+m.rob(&#39;pp&#39;) = 2
+.....
+..@AB
+.CD..
+.....
+m.zisti() = {&#39;C&#39;, &#39;D&#39;, &#39;B&#39;}
+m.rob(&#39;dlll&#39;) = 3
+.....
+..+AB
+@++..
+..D..
+m.zisti() = {&#39;B&#39;}
+</pre></div>
+</div>
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/1tp12.zip">1tp12.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="21.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

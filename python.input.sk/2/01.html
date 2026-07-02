@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Spájané štruktúry &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="2. Spájané zoznamy" href="02.html" />
+    <link rel="prev" title="Priebeh letného semestra" href="pravidla.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="01.html#">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="pravidla.html" title="Previous Chapter: Priebeh letného semestra"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Priebeh letné...</span>
+    </a>
+  </li>
+  <li>
+    <a href="02.html" title="Next Chapter: 2. Spájané zoznamy"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2. Spájané zoznamy &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="spajane-struktury">
+<h1>1. Spájané štruktúry<a class="headerlink" href="01.html#spajane-struktury" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="01.html#spajany-zoznam" id="id2">Spájaný zoznam</a></p>
+<ul>
+<li><p><a class="reference internal" href="01.html#reprezentacia-vrcholu" id="id3">Reprezentácia vrcholu</a></p></li>
+<li><p><a class="reference internal" href="01.html#vypis-pomocou-cyklu" id="id4">Výpis pomocou cyklu</a></p></li>
+<li><p><a class="reference internal" href="01.html#vytvorenie-zoznamu-pomocou-cyklu" id="id5">Vytvorenie zoznamu pomocou cyklu</a></p></li>
+<li><p><a class="reference internal" href="01.html#zistenie-poctu-prvkov" id="id6">Zistenie počtu prvkov</a></p></li>
+<li><p><a class="reference internal" href="01.html#hladanie-vrcholu" id="id7">Hľadanie vrcholu</a></p></li>
+<li><p><a class="reference internal" href="01.html#zmena-hodnoty-vo-vrchole" id="id8">Zmena hodnoty vo vrchole</a></p></li>
+<li><p><a class="reference internal" href="01.html#vlozenie-vrcholu-na-koniec-zoznamu" id="id9">Vloženie vrcholu na koniec zoznamu</a></p></li>
+<li><p><a class="reference internal" href="01.html#vlozenie-noveho-vrcholu-do-zoznamu" id="id10">Vloženie nového vrcholu do zoznamu</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="01.html#cvicenie" id="id11">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="01.html#tyzdenny-projekt" id="id12">1. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<p>Doteraz sme pracovali s „predpripravenými“ dátovými štruktúrami jazyka Python (zjednodušene hovoríme, že štruktúra je typ, ktorý môže obsahovať viac prvkov), napríklad</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code> -  zoznam (postupnosť) hodnôt, ktoré sú očíslované indexmi od 0 do počet prvkov-1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> - slovník (asociatívne pole), kde každému prvku zodpovedá kľúč</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code> - množina rôznych hodnôt</p></li>
+</ul>
+<p>Okrem toho už viete konštruovať vlastné dátové typy pomocou definovania tried. Inštancie tried obsahujú atribúty, ktoré sú buď stavovými premennými alebo metódami (napríklad <code class="docutils literal notranslate"><span class="pre">Stack</span></code> alebo <code class="docutils literal notranslate"><span class="pre">Queue</span></code>). Takto vieme vytvárať vlastné typy, pričom využívame štruktúry Pythonu.</p>
+<p class="rubric">Referencie</p>
+<p>Už vieme, že premenné v Pythone (aj atribúty objektov) sú vlastne pomenované <strong>referencie</strong> na nejaké hodnoty, napríklad čísla, reťazce, zoznamy, funkcie, atď. Referencie (kreslili sme ich šípkou) sú niečo ako adresou do pamäte, kde sa príslušná hodnota nachádza. Takýmito referenciami sú aj prvky iných štruktúrovaných typov, napríklad</p>
+<ul class="simple">
+<li><p>zoznam čísel <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">2]</span></code> je v skutočnosti štvorprvkový zoznam referencií na hodnoty <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code> (posledný prvok obsahuje rovnakú referenciu ako druhý prvok zoznamu);</p></li>
+<li><p>slovník (asociatívne pole) uchováva dvojice (kľúč, hodnota) a každá z nich je opäť referenciou na príslušné hodnoty;</p></li>
+<li><p>množina hodnôt sa tiež uchováva ako množina referencií na hodnoty</p></li>
+<li><p>atribúty tried, ktoré sú stavové premenné obsahujú tiež „iba“ referencie na hodnoty.</p></li>
+</ul>
+<p>Naučíme sa využívať referencie (adresy rôznych hodnôt, teda adresy objektov) na vytváranie <strong>spájaných štruktúr</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="spajany-zoznam">
+<h2><a class="toc-backref" href="01.html#id2" role="doc-backlink">Spájaný zoznam</a><a class="headerlink" href="01.html#spajany-zoznam" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Jednosmerný spájaný zoznam (<a class="reference external" href="https://en.wikipedia.org/wiki/Linked_list">singly linked list</a>) je najjednoduchšia spájaná štruktúra, v ktorej každý prvok obsahuje referenciu (adresu, niekedy hovoríme aj <em>link</em>, <em>smerník</em>, <em>pointer</em>) na nasledovný prvok štruktúry. Prvkom štruktúry hovoríme <strong>Vrchol</strong> (alebo niekedy po anglicky <strong>Node</strong>). Spájané štruktúry budú vždy prístupné pomocou premennej, ktorá odkazuje (obsahuje referenciu) na prvý prvok (vrchol) zoznamu. Spájaný zoznam reprezentuje postupnosť nejakých hodnôt a v tejto postupnosti je jeden vrchol posledný, za ktorým už nie je ďalší nasledovný prvok. Tento jeden vrchol si teda namiesto nasledovníka bude pamätať informáciu, že nasledovník už nie je - najčastejšie na to využijeme hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Takúto štruktúru budeme kresliť takto:</p>
+<ul class="simple">
+<li><p>jedna premenná odkazuje (obsahuje referenciu) na prvý prvok (vrchol) zoznamu</p></li>
+<li><p>každý vrchol nakreslíme ako obdĺžnik s dvomi priečinkami: časť s údajom (pomenujeme to ako <code class="docutils literal notranslate"><span class="pre">data</span></code>) a časť s referenciou na nasledovníka (pomenujeme ako <code class="docutils literal notranslate"><span class="pre">next</span></code>)</p></li>
+<li><p>referencie budeme kresliť šípkami, pričom neexistujúcu referenciu (pre nasledovníka posledného vrcholu), t.j. hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code> môžeme značiť prečiarknutím políčka <code class="docutils literal notranslate"><span class="pre">next</span></code>, napríklad takto:</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/201_01.png"><img alt="šesťprvkový spájaný zoznam" height="28" src="../_images/201_01.png" width="302" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="reprezentacia-vrcholu">
+<h3><a class="toc-backref" href="01.html#id3" role="doc-backlink">Reprezentácia vrcholu</a><a class="headerlink" href="01.html#reprezentacia-vrcholu" title="Link to this heading">¶</a></h3>
+<p>Vrchol budeme definovať ako objekt s dvoma premennými <code class="docutils literal notranslate"><span class="pre">data</span></code> a <code class="docutils literal notranslate"><span class="pre">next</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+</pre></div>
+</div>
+<p>Pozrite, čo sa definuje týmto zápisom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vytvorili sme jeden vrchol, resp. jednovrcholový spájaný zoznam. Jeho nasledovníkom je <code class="docutils literal notranslate"><span class="pre">None</span></code>. Na tento vrchol odkazuje premenná <code class="docutils literal notranslate"><span class="pre">v1</span></code>. Jedine, čo zatiaľ môžeme s takýmto vrcholom robiť je to, že si vypíšeme jeho atribúty:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    11</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+<p>Podobne zapíšeme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v3</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Teraz máme vytvorené 3 izolované vrcholy, ktoré sú prístupné pomocou troch premenných <code class="docutils literal notranslate"><span class="pre">v1</span></code>, <code class="docutils literal notranslate"><span class="pre">v2</span></code> a <code class="docutils literal notranslate"><span class="pre">v3</span></code>. Tieto tri vrcholy sa nachádzajú v rôznych častiach pamäti a nie sú nijako prepojené.</p>
+<a class="reference internal image-reference" href="../_images/201_02.png"><img alt="tri izolované vrcholy" height="59" src="../_images/201_02.png" width="143" />
+</a>
+<p>Vytvorme prvé prepojenie: ako nasledovníka <code class="docutils literal notranslate"><span class="pre">v1</span></code> nastavíme vrchol <code class="docutils literal notranslate"><span class="pre">v2</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="hll"><span class="go">    &lt;__main__.Vrchol object at 0x01FAF0D0&gt;</span>
+</span></pre></div>
+</div>
+<p>Vidíme, že nasledovníkom <code class="docutils literal notranslate"><span class="pre">v1</span></code> už nie je <code class="docutils literal notranslate"><span class="pre">None</span></code>, ale nejaký objekt typu <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code> - zrejme je to vrchol <code class="docutils literal notranslate"><span class="pre">v2</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/201_03.png"><img alt="pripojený vrchol v2 k v1" height="58" src="../_images/201_03.png" width="146" />
+</a>
+<p>Môžeme sa pozrieť na údaj nasledovníka <code class="docutils literal notranslate"><span class="pre">v1</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    22</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+<p>Keďže jeho nasledovníkom je <code class="docutils literal notranslate"><span class="pre">None</span></code>, znamená to, že nasledovníka nemá. Premenná <code class="docutils literal notranslate"><span class="pre">v1</span></code> obsahuje referenciu na vrchol, ktorý má jedného nasledovníka, t.j. <code class="docutils literal notranslate"><span class="pre">v1</span></code> odkazuje na <strong>dvojprvkový spájaný zoznam</strong>. Pripojme teraz do tejto postupnosti aj vrchol <code class="docutils literal notranslate"><span class="pre">v3</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v3</span>
+</pre></div>
+</div>
+<p>Takže prvým vrcholom v spájanom zozname je <code class="docutils literal notranslate"><span class="pre">v1</span></code> s hodnotou <code class="docutils literal notranslate"><span class="pre">11</span></code>, jeho nasledovníkom je <code class="docutils literal notranslate"><span class="pre">v2</span></code> s hodnotou <code class="docutils literal notranslate"><span class="pre">22</span></code> a nasledovníkom <code class="docutils literal notranslate"><span class="pre">v2</span></code> je <code class="docutils literal notranslate"><span class="pre">v3</span></code> s hodnotou <code class="docutils literal notranslate"><span class="pre">33</span></code>. Nasledovníkom tretieho vrcholu je stále <code class="docutils literal notranslate"><span class="pre">None</span></code>, teda tento vrchol nemá nasledovníka.</p>
+<a class="reference internal image-reference" href="../_images/201_04.png"><img alt="tri pospájané vrcholy" height="59" src="../_images/201_04.png" width="143" />
+</a>
+<p>Vytvorili sme trojprvkový spájaný zoznam, ktorého vrcholy majú postupne tieto hodnoty:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    11</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    22</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    33</span>
+</span></pre></div>
+</div>
+<p>Vidíte, že pomocou referencie na prvý vrchol sa vieme dostať ku každému vrcholu, len treba dostatočný počet krát zapísať <code class="docutils literal notranslate"><span class="pre">next</span></code>. Premenné <code class="docutils literal notranslate"><span class="pre">v2</span></code> a <code class="docutils literal notranslate"><span class="pre">v3</span></code> teraz už nepotrebujeme a mohli by sme ich hoci aj zrušiť - na vytvorený zoznam to už nemá žiaden vplyv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span>
+</pre></div>
+</div>
+<p>Teraz to v pamäti vyzerá takto:</p>
+<a class="reference internal image-reference" href="../_images/201_05.png"><img alt="obsah pamäti po vyhodení premenných v2 a v3" height="58" src="../_images/201_05.png" width="142" />
+</a>
+<section id="webova-stranka-pythontutor-com">
+<h4>Webová stránka pythontutor.com<a class="headerlink" href="01.html#webova-stranka-pythontutor-com" title="Link to this heading">¶</a></h4>
+<p>Zo zimného semestra poznáme <a class="reference external" href="http://pythontutor.com/visualize.html">http://pythontutor.com/visualize.html</a> - veľmi užitočný nástroj na vizualizáciu pythonovských programov. Vieme, že sem môžeme preniesť skoro ľubovoľný algoritmus, ktorý sme robili doteraz (okrem grafiky) a odkrokovať ho. Môžeme sem preniesť, napríklad tento program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span>
+
+<span class="n">v1</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="n">v2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v3</span>
+<span class="k">del</span> <span class="n">v2</span><span class="p">,</span><span class="n">v3</span>
+</pre></div>
+</div>
+<p>Po spustení vizualizácie môžeme vidieť, že globálna premenná <code class="docutils literal notranslate"><span class="pre">v1</span></code> obsahuje referenciu na inštanciu triedy <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>, v ktorej atribút <code class="docutils literal notranslate"><span class="pre">data</span></code> má hodnotu 11 a atribút <code class="docutils literal notranslate"><span class="pre">next</span></code> je opäť referenciou na ďalšiu inštanciu triedy <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>, atď.</p>
+<p>Tiež tu môžeme vidieť, že globálna premenná <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code> obsahuje referenciu na definíciu triedy <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/201_06.png"><img alt="vizualizácia v pythontutor.com" height="224" src="../_images/201_06.png" width="536" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="spajane-vytvaranie-vrcholov">
+<h4>Spájané vytváranie vrcholov<a class="headerlink" href="01.html#spajane-vytvaranie-vrcholov" title="Link to this heading">¶</a></h4>
+<p>Pozrite tento zápis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_07.png"><img alt="dva izolované vrcholy" height="57" src="../_images/201_07.png" width="101" />
+</a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_08.png"><img alt="spiojené dva vrcholy" height="56" src="../_images/201_08.png" width="104" />
+</a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">b</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_09.png"><img alt="zrušená premenná b" height="56" src="../_images/201_09.png" width="100" />
+</a>
+<p>Vytvorí dvojprvkový zoznam, pričom premenná <code class="docutils literal notranslate"><span class="pre">b</span></code> je len pomocná a hneď po priradení do <code class="docutils literal notranslate"><span class="pre">a.next</span></code> sa aj zruší. To isté môžeme zapísať aj bez nej:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tu si všimnite, že inicializačná metóda (<code class="docutils literal notranslate"><span class="pre">Vrchol.__init__()</span></code>) má druhý parameter, ktorým môžeme definovať hodnotu <code class="docutils literal notranslate"><span class="pre">next</span></code> už pri vytváraní vrcholu. Preto môžeme tieto dve priradenia zlúčiť do jedného:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Hoci teraz je tu malý rozdiel a to v tom, že vrchol <code class="docutils literal notranslate"><span class="pre">Vrchol('b')</span></code> sa vytvorí skôr ako <code class="docutils literal notranslate"><span class="pre">Vrchol('a')</span></code>, čo ale vo väčšine prípadov nevadí. Podobne by sme vedeli jedným priradením vytvoriť nielen dvojprvkový, ale aj viacprvkový zoznam, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">))))))</span>
+</pre></div>
+</div>
+<p>Vytvorí šesťprvkový zoznam, pričom každý prvok obsahuje jedno písmeno z reťazca <code class="docutils literal notranslate"><span class="pre">'Python'</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/201_10.png"><img alt="šesťprvkový zoznam s písmenami Python" height="26" src="../_images/201_10.png" width="306" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="vypis-pomocou-cyklu">
+<h3><a class="toc-backref" href="01.html#id4" role="doc-backlink">Výpis pomocou cyklu</a><a class="headerlink" href="01.html#vypis-pomocou-cyklu" title="Link to this heading">¶</a></h3>
+<p>Predpokladajte, že máme vytvorený nejaký, napríklad štvorprvkový zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">44</span><span class="p">))))</span>
+</pre></div>
+</div>
+<p>V pamäti by sme ho mohli vidieť nejako takto:</p>
+<a class="reference internal image-reference" href="../_images/201_11.png"><img alt="štvorprvkový zoznam" height="27" src="../_images/201_11.png" width="214" />
+</a>
+<p>Teraz treba vypísať všetky jeho hodnoty postupne od prvej po poslednú, môžeme to urobiť, napríklad takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    11</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    22</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    33</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    44</span>
+</span></pre></div>
+</div>
+<p>alebo v jednom riadku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    11 22 33 44</span>
+</span></pre></div>
+</div>
+<p>Zrejme pre zoznam ľubovoľnej dĺžky budeme musieť použiť nejaký cyklus, asi najvhodnejší bude while-cyklus. Keď vypíšeme prvú hodnotu, posunieme premennú <code class="docutils literal notranslate"><span class="pre">v1</span></code> na nasledovníka prvého vrcholu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">v1</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>a môže sa to celé opakovať. Zápis <code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">=</span> <span class="pre">v1.next</span></code> je veľmi dôležitý a budeme ho v súvislosti so spájanými zoznamami používať veľmi často. Označuje, že do premennej <code class="docutils literal notranslate"><span class="pre">v1</span></code> sa namiesto referencie na nejaký vrchol dostáva referencia na jeho nasledovníka:</p>
+<a class="reference internal image-reference" href="../_images/201_12.png"><img alt="posunutie referencie na nasledovníka" height="48" src="../_images/201_12.png" width="214" />
+</a>
+<p>postupne dostávame:</p>
+<a class="reference internal image-reference" href="../_images/201_13.png"><img alt="posunutie referencie na nasledovníka" height="48" src="../_images/201_13.png" width="212" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_14.png"><img alt="posunutie referencie na nasledovníka" height="48" src="../_images/201_14.png" width="214" />
+</a>
+<p>Ak už tento vrchol nasledovníka nemá, do <code class="docutils literal notranslate"><span class="pre">v1</span></code> sa dostane hodnota <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/201_15.png"><img alt="posunutie referencie na nasledovníka" height="48" src="../_images/201_15.png" width="213" />
+</a>
+<p>Preto kompletný výpis hodnôt zoznamu môžeme zapísať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">v1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">v1</span><span class="o">.</span><span class="n">next</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pre názornosť sme tam medzi každé dve vypisované hodnoty pridali reťazec <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">-&gt;</span> <span class="pre">'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span> <span class="o">-&gt;</span> <span class="mi">22</span> <span class="o">-&gt;</span> <span class="mi">33</span> <span class="o">-&gt;</span> <span class="mi">44</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Hoci to vyzerá dobre a dostatočne jednoducho, má to jeden problém: po skončení vypisovania pomocou tohto while-cyklu je v premennej <code class="docutils literal notranslate"><span class="pre">v1</span></code> hodnota <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+<p>Teda výpisom sme si zničili jedinú referenciu na prvý vrchol zoznamu a teda Python pochopil, že so zoznamom už pracovať ďalej nechceme a celú štruktúru z pamäti vyhodil (hovorí sa tomu <em>garbage collection</em>). Môžeme to skontrolovať aj vo vizualizácii <a class="reference external" href="http://pythontutor.com/visualize.html">http://pythontutor.com/visualize.html</a>. Tento príklad ukazuje to, že niekedy si bude potrebné uchovať referenciu na začiatok zoznamu, alebo sa v takomto cykle nebude pracovať priamo s premennou <code class="docutils literal notranslate"><span class="pre">v1</span></code>, ale s jej kópiou, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pom</span> <span class="o">=</span> <span class="n">v1</span>
+<span class="k">while</span> <span class="n">pom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pom</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Po skončení tohto výpisu sa premenná <code class="docutils literal notranslate"><span class="pre">pom</span></code> vynuluje na <code class="docutils literal notranslate"><span class="pre">None</span></code>, ale začiatok zoznamu <code class="docutils literal notranslate"><span class="pre">v1</span></code> ostáva neporušený. Teraz je to už správne a v pamäti to postupne vyzerá takto:</p>
+<a class="reference internal image-reference" href="../_images/201_16.png"><img alt="posunutie na nasledovníka s pomocnou premennou" height="48" src="../_images/201_16.png" width="213" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_17.png"><img alt="posunutie na nasledovníka s pomocnou premennou" height="48" src="../_images/201_17.png" width="214" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_18.png"><img alt="posunutie na nasledovníka s pomocnou premennou" height="48" src="../_images/201_18.png" width="213" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_19.png"><img alt="posunutie na nasledovníka s pomocnou premennou" height="48" src="../_images/201_19.png" width="214" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_20.png"><img alt="posunutie na nasledovníka s pomocnou premennou" height="49" src="../_images/201_20.png" width="212" />
+</a>
+<p>Takýto výpis sa dá zapísať aj do funkcie, pričom tu pomocnú referenciu na začiatok zoznamu zastúpi parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pri volaní funkcie sa do formálneho parametra <code class="docutils literal notranslate"><span class="pre">zoznam</span></code> priradí hodnota skutočného parametra (napríklad obsah premennej <code class="docutils literal notranslate"><span class="pre">v1</span></code>) a teda referencia na začiatok zoznamu sa týmto volaním nepokazí.</p>
+<p>Teraz môžeme volať funkciu na výpis nielen so začiatkom zoznamu ale hoci, napríklad aj od druhého vrcholu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+<span class="hll"><span class="go">    11 -&gt; 22 -&gt; 33 -&gt; 44 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="hll"><span class="go">    22 -&gt; 33 -&gt; 44 -&gt; None</span>
+</span></pre></div>
+</div>
+<p>Vidíte, že referencia na prvý vrchol v spájanom zozname má špeciálny význam a preto sa zvykne označovať nejakým dohodnutým menom, napríklad <code class="docutils literal notranslate"><span class="pre">zoznam</span></code>, <code class="docutils literal notranslate"><span class="pre">zoz</span></code>, <code class="docutils literal notranslate"><span class="pre">zac</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> (ako začiatok zoznamu) alebo niekedy aj po anglicky <code class="docutils literal notranslate"><span class="pre">head</span></code> (hlavička zoznamu).</p>
+<aside class="topic">
+<p class="topic-title">Postupné prechádzanie vrcholov zoznamu</p>
+<p>Spôsob, akým sa prechádzajú všetky vrcholy zoznamu pomocou while-cyklu, bude užitočný aj na riešenie iných úloh. Často sa preto použije práve takáto schéma algoritmu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pom</span> <span class="o">=</span> <span class="n">zoznam</span>
+<span class="k">while</span> <span class="n">pom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># spracuj vrchol s referenciou pom</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="vytvorenie-zoznamu-pomocou-cyklu">
+<h3><a class="toc-backref" href="01.html#id5" role="doc-backlink">Vytvorenie zoznamu pomocou cyklu</a><a class="headerlink" href="01.html#vytvorenie-zoznamu-pomocou-cyklu" title="Link to this heading">¶</a></h3>
+<p>Zoznamy sme doteraz vytvárali sériou priradení a to bez cyklov. Častejšie sa ale budú vytvárať (možno aj dosť dlhé) zoznamy pomocou opakujúcich sa programových konštrukcií. Začneme vytváraním zoznamu pridávaním nového vrcholu na začiatok doterajšieho zoznamu, keďže toto je výrazne jednoduchšie.</p>
+<p>Vytvoríme desaťprvkový zoznam s hodnotami 0, 1, 2, … 9. Začneme s prázdnym zoznamom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_21.png"><img alt="prázdny zoznam" height="20" src="../_images/201_21.png" width="34" />
+</a>
+<p>Vytvoríme prvý vrchol s hodnotou 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_22.png"><img alt="jednoprvkový zoznam" height="47" src="../_images/201_22.png" width="92" />
+</a>
+<p>a dáme ho na začiatok:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">pom</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_23.png"><img alt="jednoprvkový zoznam" height="48" src="../_images/201_23.png" width="94" />
+</a>
+<p>Keby sme to teraz vypísali pomocou funkcie <code class="docutils literal notranslate"><span class="pre">vypis(zoz)</span></code>, dostali by sme: <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code></p>
+<p>Vytvoríme druhý vrchol:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_24.png"><img alt="nový vrchol" height="48" src="../_images/201_24.png" width="93" />
+</a>
+<p>a dáme ho pred doterajší začiatok:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoz</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_25.png"><img alt="pripojí pred doterajší začiatok" height="48" src="../_images/201_25.png" width="133" />
+</a>
+<p>tento nový vrchol je teraz novým začiatkom zoznamu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">pom</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_26.png"><img alt="nový vrchol sa stáva novým začiatkom" height="48" src="../_images/201_26.png" width="134" />
+</a>
+<p>Po výpise by sme dostali: <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-&gt;</span> <span class="pre">0</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code></p>
+<p>Toto môžeme opakovať viackrát pre rôzne hodnoty - zakaždým sa na začiatok doterajšieho zoznamu pridá nový vrchol:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoz</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">pom</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_27.png"><img alt="vyrobí nový vrchol" height="48" src="../_images/201_27.png" width="134" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_28.png"><img alt="pripojí pred doterajší začiatok" height="48" src="../_images/201_28.png" width="173" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_29.png"><img alt="stáva sa novým začiatkom" height="49" src="../_images/201_29.png" width="173" />
+</a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoz</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">pom</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/201_30.png"><img alt="na začiatok pridá nový vrchol" height="48" src="../_images/201_30.png" width="214" />
+</a>
+<p>Takto by sme mohli pokračovať až do 9. Teraz už vidíte, čo sa tu opakuje a čo treba dať do cyklu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz</span> <span class="o">=</span> <span class="kc">None</span>                    <span class="c1"># zatiaľ je to ešte prázdny zoznam</span>
+<span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+    <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoz</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="n">pom</span>
+</pre></div>
+</div>
+<p>Týmto postupom sme dostali 10 prvkový zoznam hodnôt v poradí od 9 do 0</p>
+<a class="reference internal image-reference" href="../_images/201_31.png"><img alt="kompletný zoznam čísel od 9 po 0" height="48" src="../_images/201_31.png" width="454" />
+</a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    9 -&gt; 8 -&gt; 7 -&gt; 6 -&gt; 5 -&gt; 4 -&gt; 3 -&gt; 2 -&gt; 1 -&gt; 0 -&gt; None</span>
+</span></pre></div>
+</div>
+<p>Opäť si všimnime zápis tela cyklu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+<span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoz</span>
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">pom</span>
+</pre></div>
+</div>
+<p>Vytvorí sa tu nový vrchol najprv s danou hodnotou a nasledovníkom <code class="docutils literal notranslate"><span class="pre">None</span></code>. Potom sa tento nasledovník zmení na <code class="docutils literal notranslate"><span class="pre">pom.next</span> <span class="pre">=</span> <span class="pre">zoz</span></code> a na záver sa tento nový vrchol <code class="docutils literal notranslate"><span class="pre">pom</span></code> stáva novým začiatkom zoznamu, t.j. <code class="docutils literal notranslate"><span class="pre">zoz</span> <span class="pre">=</span> <span class="pre">pom</span></code>. Toto isté sa dá zapísať kompaktnejšie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+</pre></div>
+</div>
+<aside class="topic">
+<p class="topic-title">Pridanie nového vrcholu na začiatok zoznamu</p>
+<p>Zapamätajte si, že zápis <code class="docutils literal notranslate"><span class="pre">zoz</span> <span class="pre">=</span> <span class="pre">Vrchol(hodnota,</span> <span class="pre">zoz)</span></code> pre <code class="docutils literal notranslate"><span class="pre">zoz</span></code>, ktorý referencuje na začiatok zoznamu, znamená pridanie nového vrcholu na začiatok zoznamu.</p>
+</aside>
+<p>Takto by sme vedeli vytvoriť ľubovoľné zoznamy. Zapíšme tento algoritmus do funkcie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob</span><span class="p">(</span><span class="n">postupnost</span><span class="p">):</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="n">postupnost</span><span class="p">:</span>
+        <span class="n">zoz</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoz</span>
+</pre></div>
+</div>
+<p>Otestujme, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz1</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+<span class="hll"><span class="go">    999 -&gt; 998 -&gt; ... -&gt; 1 -&gt; 0 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz2</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz2</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;n&#39; -&gt; &#39;o&#39; -&gt; &#39;h&#39; -&gt; &#39;t&#39; -&gt; &#39;y&#39; -&gt; &#39;P&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<p>Vytvorili sa dva zoznamy: prvý s 1000 vrcholmi a druhý so šiestimi vrcholmi s písmenami reťazca <code class="docutils literal notranslate"><span class="pre">'Python'</span></code>. Treba si pri tomto uvedomiť, že takto sa vytvárajú zoznamy s hodnotami v opačnom poradí, ako so do neho vkladali.</p>
+<p>Častejšie budeme potrebovať vyrábať zoznamy, v ktorých budú prvky v tom poradí, v akom sme ich vkladali. Jednoduchým riešením môže byť prevrátenie vstupnej postupnosti pomocou <code class="docutils literal notranslate"><span class="pre">reversed()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyrob1</span><span class="p">(</span><span class="n">postupnost</span><span class="p">):</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">postupnost</span><span class="p">):</span>
+        <span class="n">zoz</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoz</span>
+</pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz2</span> <span class="o">=</span> <span class="n">vyrob1</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz2</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;P&#39; -&gt; &#39;y&#39; -&gt; &#39;t&#39; -&gt; &#39;h&#39; -&gt; &#39;o&#39; -&gt; &#39;n&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<p>Uvedomte si, že nie vždy môžeme takto jednoducho otočiť vstupnú postupnosť, z ktorej sa má vytvoriť spájaný zoznam. Napríklad, ak sú vstupnou postupnosťou riadky otvoreného textového súboru, tak takúto postupnosť takto jednoducho neotočíme.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zistenie-poctu-prvkov">
+<h3><a class="toc-backref" href="01.html#id6" role="doc-backlink">Zistenie počtu prvkov</a><a class="headerlink" href="01.html#zistenie-poctu-prvkov" title="Link to this heading">¶</a></h3>
+<p>Zapíšeme funkciu, ktorá spočíta počet prvkov zoznamu. Bude pracovať na rovnakom princípe ako funkcia <code class="docutils literal notranslate"><span class="pre">vypis()</span></code> len namiesto samotného vypisovania hodnoty funkcia zvýši počítadlo o 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vysl</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Otestujeme, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    6</span>
+</span></pre></div>
+</div>
+<p>Malou úpravou túto funkciu vylepšíme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">hodnota</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="n">vysl</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Táto funkcia dokáže nielen zistiť počet prvkov zoznamu, ale aj počet výskytov nejakej konkrétnej hodnoty. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz1</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;programujem v pythone&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">zoz1</span><span class="p">)</span>
+<span class="hll"><span class="go">    21</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">zoz1</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    2</span>
+</span></pre></div>
+</div>
+<p>Na prednáške <a class="reference internal" href="../1/19.html"><span class="doc">19. Úvod do analýzy algoritmov</span></a> sme sa zoznámili s tým, ako môžeme ohodnotiť niektoré funkcie z pohľadu efektívnosti, teda, či pri väčších dátach pôjdu výrazne pomalšie ako iné algoritmy. Označenie <strong>O(1)</strong> znamená, že funkcia bude bežať rovnako dlho pre veľké dáta ako pre malé - hovoríme tomu konštantná zložitosť. Označenie <strong>O(n)</strong> znamená, že čas behu programu lineárne závisí od veľkosti dát, teda ak zdvojnásobíme veľkosť dát, tak sa zdvojnásobí aj čas trvania algoritmu.</p>
+<p>Naša funkcia <code class="docutils literal notranslate"><span class="pre">pocet</span></code> zrejme závisí od veľkosti dát, teda od dĺžky spájaného zoznamu a keďže je táto závislosť lineárna, označíme jej zložitosť ako <strong>O(n)</strong>, kde <code class="docutils literal notranslate"><span class="pre">n</span></code> je veľkosť dát (dĺžka zoznamu).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="hladanie-vrcholu">
+<h3><a class="toc-backref" href="01.html#id7" role="doc-backlink">Hľadanie vrcholu</a><a class="headerlink" href="01.html#hladanie-vrcholu" title="Link to this heading">¶</a></h3>
+<p>Podobný cyklus, ako sme použili pri výpise a pri zisťovaní počtu prvkov, môžeme použiť pri zisťovaní, či sa daná hodnota nachádza v zozname. Napíšme funkciu, ktorá vráti <code class="docutils literal notranslate"><span class="pre">True</span></code>, ak nájde konkrétnu hodnotu, inak vráti <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zisti</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zisti</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zisti</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    False</span>
+</span></pre></div>
+</div>
+<p>Táto funkcia skončila prechádzanie prvkov zoznamu už pri prvom výskyte hľadanej hodnoty, napriek tomu je zložitosť tejto funkcie <strong>O(n)</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zmena-hodnoty-vo-vrchole">
+<h3><a class="toc-backref" href="01.html#id8" role="doc-backlink">Zmena hodnoty vo vrchole</a><a class="headerlink" href="01.html#zmena-hodnoty-vo-vrchole" title="Link to this heading">¶</a></h3>
+<p>Najprv vytvorme jednoduchú funkciu, ktorá zmení všetky hodnoty v zozname:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoznam</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zmen</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoznam</span><span class="p">)</span>
+<span class="hll"><span class="go">    0 -&gt; 0 -&gt; 0 -&gt; 0 -&gt; 0 -&gt; 0 -&gt; None</span>
+</span></pre></div>
+</div>
+<p>Ak chceme zmeniť len vrcholy, ktoré obsahujú nejakú konkrétnu hodnotu, môžeme to zapísať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">,</span> <span class="n">na_hodnotu</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">na_hodnotu</span>
+            <span class="c1"># return</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>Príkaz <code class="docutils literal notranslate"><span class="pre">return</span></code> v tele cyklu spôsobí ukončenie funkcie už po prvom výskyte hľadanej hodnoty. Inak sa zmenia obsahy všetkých vrcholov s danou hodnotou.</p>
+<p>Otestujeme so zakomentovaným <code class="docutils literal notranslate"><span class="pre">return</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zmen</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    1 -&gt; &#39;xy&#39; -&gt; 3 -&gt; 1 -&gt; &#39;xy&#39; -&gt; 3 -&gt; 1 -&gt; &#39;xy&#39; -&gt; 3 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="vlozenie-vrcholu-na-koniec-zoznamu">
+<h3><a class="toc-backref" href="01.html#id9" role="doc-backlink">Vloženie vrcholu na koniec zoznamu</a><a class="headerlink" href="01.html#vlozenie-vrcholu-na-koniec-zoznamu" title="Link to this heading">¶</a></h3>
+<p>Chceme vyrobiť novú operáciu, ktorá na koniec zoznamu vloží nový vrchol s danou hodnotou. Už vieme, že pridávanie vrcholu na začiatok je takto jednoduché:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz</span> <span class="o">=</span> <span class="o">...</span>       <span class="c1"># zoz je referencia na začiatok zoznamu</span>
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>S pridávaním na koniec to bude zložitejšie: najprv nájdeme posledný vrchol zoznamu a až tomuto vrcholu zmeníme jeho atribút <code class="docutils literal notranslate"><span class="pre">next</span></code>, t.j. až na záver urobíme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">posledny</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hľadanie posledného vrcholu sa bude podobať na postupné prechádzanie všetkých vrcholov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">posledny</span> <span class="o">=</span> <span class="n">zoz</span>                <span class="c1"># posledny je pomocná referencia</span>
+<span class="k">while</span> <span class="n">posledny</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">posledny</span> <span class="o">=</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>Lenže toto nebude fungovať - po skončení while-cyklu nebude v premennej <code class="docutils literal notranslate"><span class="pre">posledny</span></code> referencia na posledný vrchol ale bude tam <code class="docutils literal notranslate"><span class="pre">None</span></code>. Treba to zapísať trochu zložitejšie - while neskončí až vtedy, keď v <code class="docutils literal notranslate"><span class="pre">posledny</span></code> bude <code class="docutils literal notranslate"><span class="pre">None</span></code>, ale keď jeho <code class="docutils literal notranslate"><span class="pre">next</span></code> bude <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">posledny</span> <span class="o">=</span> <span class="n">zoz</span>
+<span class="k">while</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">posledny</span> <span class="o">=</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>Teraz je to už naozaj dobre, ale toto bude fungovať len <strong>pre neprázdny zoznam</strong>. Pre prázdny zoznam hodnota premennej <code class="docutils literal notranslate"><span class="pre">posledny</span></code> bude <code class="docutils literal notranslate"><span class="pre">None</span></code> a preto <code class="docutils literal notranslate"><span class="pre">posledny.next</span></code> spadne na chybe. Tento špeciálny prípad musíme vyriešiť ešte pred cyklom. Teraz môžeme zapísať kompletnú funkciu, ktorá pridá na koniec zoznamu nový vrchol. Táto funkcia bude vracať ako svoj výsledok začiatok takto vytvoreného zoznamu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pridaj_koniec</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zoz</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+    <span class="n">posledny</span> <span class="o">=</span> <span class="n">zoz</span>
+    <span class="k">while</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">posledny</span> <span class="o">=</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">posledny</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoz</span>
+</pre></div>
+</div>
+<p>Keďže funkcia obsahuje while-cyklus a tento závisí od dĺžky zoznamu, zložitosť tejto funkcie je <strong>O(n)</strong>, teda pre veľmi dlhé zoznamy (napríklad milión prvkov) už budeme cítiť čas behu (možno jednu sekundu).</p>
+<p>Môžeme otestovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoznam</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;Python&#39;</span><span class="p">:</span>
+    <span class="n">zoznam</span> <span class="o">=</span> <span class="n">pridaj_koniec</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">zoznam</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mali by sme dostať zoznam so 6 písmenami v správnom poradí. Zapamätajte si:</p>
+<aside class="topic">
+<p class="topic-title">Hľadanie posledného vrcholu zoznamu</p>
+<p>V našich programoch sa môže vyskytnúť aj práca s posledným vrcholom zoznamu. Preto najčastejšie použijeme takýto zápis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">zoz</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;spracuj prípad, keď zoznam je prázdny&#39;&#39;&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">posledny</span> <span class="o">=</span> <span class="n">zoz</span>
+    <span class="k">while</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">posledny</span> <span class="o">=</span> <span class="n">posledny</span><span class="o">.</span><span class="n">next</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;spracuj posledný vrchol&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="vlozenie-noveho-vrcholu-do-zoznamu">
+<h3><a class="toc-backref" href="01.html#id10" role="doc-backlink">Vloženie nového vrcholu do zoznamu</a><a class="headerlink" href="01.html#vlozenie-noveho-vrcholu-do-zoznamu" title="Link to this heading">¶</a></h3>
+<p>Nový vrchol môžeme vložiť buď pred nejaký existujúci alebo za. Jednoduchšie to bude s vkladaním <strong>za</strong> nejaký existujúci. Zapíšme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pridaj_za</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">za_hodnotu</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">!=</span> <span class="n">za_hodnotu</span><span class="p">:</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To isté môžeme zapísať aj takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pridaj_za</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">za_hodnotu</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">za_hodnotu</span><span class="p">:</span>
+            <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>Vkladanie <strong>pred</strong> vrchol bude trochu náročnejšie a bude sa trochu podobať hľadaniu posledného vrcholu v zozname:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pridaj_pred</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">pred_hodnotu</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>                      <span class="c1"># nie je čo robiť</span>
+    <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">pred_hodnotu</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">)</span>   <span class="c1"># pred prvý</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">zoznam</span>
+    <span class="k">while</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">pred_hodnotu</span><span class="p">:</span>
+            <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">zoznam</span>
+</pre></div>
+</div>
+<p>Keďže v tomto prípade sa môže zmeniť začiatok zoznamu, táto funkcia vždy vráti začiatok takéhoto zoznamu.</p>
+<p>Na tomto príklade sa dá ukázať ešte jedno programátorské vylepšenie prechádzania spájaného zoznamu. Okrem pomocnej referencie <code class="docutils literal notranslate"><span class="pre">pom</span></code> budeme mať ešte jednu referenciu <code class="docutils literal notranslate"><span class="pre">pred</span></code> na predchodcu <code class="docutils literal notranslate"><span class="pre">pom</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pridaj_pred</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">pred_hodnotu</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>                       <span class="c1"># nie je čo robiť</span>
+    <span class="n">pred</span><span class="p">,</span> <span class="n">pom</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">zoznam</span>
+    <span class="k">while</span> <span class="n">pom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">pom</span><span class="o">.</span><span class="n">data</span> <span class="o">!=</span> <span class="n">pred_hodnotu</span><span class="p">:</span>
+        <span class="n">pred</span><span class="p">,</span> <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="p">,</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">if</span> <span class="n">pred</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">)</span>  <span class="c1"># pred prvý</span>
+    <span class="k">elif</span> <span class="n">pom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pred</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">pred</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoznam</span>
+</pre></div>
+</div>
+<p>Všimnite si, že vo while-cykle sa paralelne menia obe referencie: <code class="docutils literal notranslate"><span class="pre">pom</span></code> na svojho nasledovníka a <code class="docutils literal notranslate"><span class="pre">pred</span></code> na predchodcu <code class="docutils literal notranslate"><span class="pre">pom</span></code>. Keď while-cyklus skončí a v <code class="docutils literal notranslate"><span class="pre">pred</span></code> je <code class="docutils literal notranslate"><span class="pre">None</span></code>, znamená to, že budeme pracovať s vrcholom, ktorý nemá predchodcu, čo je prvý vrchol v zozname (máme vložiť pred prvý). Ak po skončení while-cyklu je v <code class="docutils literal notranslate"><span class="pre">pom</span></code> hodnota <code class="docutils literal notranslate"><span class="pre">None</span></code>, znamená to, že sme prešli celý spájaný zoznam a nenašli sme vrchol, ktorého hodnota je v parametri <code class="docutils literal notranslate"><span class="pre">pred_hodnotu</span></code>.</p>
+<p>Aj tieto funkcie majú zložitosť <strong>O(n)</strong>, nakoľko čas ich behu (lineárne) závisí od dĺžky zoznamu (hoci pre špecálne prípady, napríklad vkladanie pred/za prvý prvok zoznamu, má zložitosť <strong>O(1)</strong>).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="01.html#id11" role="doc-backlink">Cvičenie</a><a class="headerlink" href="01.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na úlohový server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>aspoň 10</strong> okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 17.2.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdaných riešeniach nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code> ani pomocné lokálne premenné typu <code class="docutils literal notranslate"><span class="pre">list</span></code> (okrem (8) úlohy)</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> <strong>Bez spúšťania na počítači</strong> zisti, čo urobia nasledovné programy. Predpokladaj tieto deklarácie a funkcie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vyrob</span><span class="p">(</span><span class="n">postupnost</span><span class="p">):</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">postupnost</span><span class="p">):</span>
+        <span class="n">zoz</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoz</span>
+</pre></div>
+</div>
+<p>Prvý spájaný zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">v4</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">v3</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v1</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="n">v2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v3</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v4</span>
+<span class="n">zoz</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Druhý spájaný zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">v1</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="n">v1</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="n">v3</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="n">v3</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v2</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Potom to skontroluj v Pythone.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<blockquote>
+<div><p>pre prvý spájaný zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;s&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;o&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;v&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;a&#39;</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>pre druhý spájaný zoznam:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;V&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;I&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;R&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;U&#39;</span> <span class="o">-&gt;</span> <span class="s1">&#39;S&#39;</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Skonštruuj zoznam tak, aby si dostal požadovaný výstup. Najprv bez funkcie <code class="docutils literal notranslate"><span class="pre">vyrob</span></code> a potom pomocou nej:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="hll"><span class="go">    3.14 -&gt; &#39;6.28&#39; -&gt; 9.42 -&gt; None -&gt; 15.7 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;6.28&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mf">9.42</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mf">15.7</span><span class="p">)))))</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">((</span><span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;6.28&#39;</span><span class="p">,</span> <span class="mf">9.42</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">15.7</span><span class="p">))</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Máme daný štvorprvkový zoznam (pri jeho vytváraní využi <code class="docutils literal notranslate"><span class="pre">range</span></code>). Oprav v ňom druhý prvok:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    4 -&gt; 11 -&gt; 18 -&gt; 25 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="o">...</span> <span class="n">oprav</span> <span class="nb">len</span> <span class="mf">2.</span> <span class="n">prvok</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    4 -&gt; (10, 12) -&gt; 18 -&gt; 25 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    4 -&gt; 11 -&gt; 18 -&gt; 25 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    4 -&gt; (10, 12) -&gt; 18 -&gt; 25 -&gt; None</span>
+</span></pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Máme daný spájaný zoznam, ktorý vznikol z vety <code class="docutils literal notranslate"><span class="pre">'strc</span> <span class="pre">prst</span> <span class="pre">skrz</span> <span class="pre">krk'</span></code> a pomocou metódy <code class="docutils literal notranslate"><span class="pre">split</span></code>. Vlož za druhý prvok nový vrchol:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;strc&#39; -&gt; &#39;prst&#39; -&gt; &#39;skrz&#39; -&gt; &#39;krk&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="o">...</span> <span class="n">vlož</span> <span class="n">nový</span> <span class="n">vrchol</span> <span class="n">za</span> <span class="n">druhý</span> <span class="n">prvok</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;strc&#39; -&gt; &#39;prst&#39; -&gt; {1: 2} -&gt; &#39;skrz&#39; -&gt; &#39;krk&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<p>Zapíš to tak, aby vkladanie za druhý prvok fungovalo aj pre ľubovoľný iný aspoň dvojprvkový zoznam.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;strc prst skrz krk&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;strc&#39; -&gt; &#39;prst&#39; -&gt; &#39;skrz&#39; -&gt; &#39;krk&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;strc&#39; -&gt; &#39;prst&#39; -&gt; {1: 2} -&gt; &#39;skrz&#39; -&gt; &#39;krk&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zmen_parne(zoznam,</span> <span class="pre">hodnota=0)</span></code>, ktorá v danom zozname zmení hodnoty len vo vrcholoch s párnou celočíselnou hodnotou na zadanú hodnotu. Funkcia nič nevracia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    5 -&gt; 0 -&gt; 2.12 -&gt; &#39;2&#39; -&gt; 18 -&gt; 4.0 -&gt; 4 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zmen_parne</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    5 -&gt; 42 -&gt; 2.12 -&gt; &#39;2&#39; -&gt; 42 -&gt; 4.0 -&gt; 42 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zmen_parne</span><span class="p">(</span><span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    5 -&gt; 42 -&gt; 2.12 -&gt; &#39;2&#39; -&gt; 0 -&gt; 4.0 -&gt; 0 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zmen_parne</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">hodnota</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pocty(zoznam,</span> <span class="pre">hodnota=0)</span></code>, ktorá vráti dvojicu čísel: počet vrcholov, ktoré sú väčšie ako zadaná <code class="docutils literal notranslate"><span class="pre">hodnota</span></code> a počet vrcholov, ktoré sú menšie ako <code class="docutils literal notranslate"><span class="pre">hodnota</span></code>. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;prvy&#39; -&gt; -7 -&gt; 0.0 -&gt; 2 -&gt; &#39;druhy&#39; -&gt; -3.14 -&gt; [3] -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocty</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    (1, 2)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocty</span><span class="p">(</span><span class="n">zoz</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    (0, 2)</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocty</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">zdvoj(zoznam)</span></code>, ktorá každý prvok zoznamu zdvojnásobí. Toto urobí len vtedy, ak sa to dá (nevznikne chyba), inak tento prvok nezmení a pokračuje na ďalších. Funkcia nič nevracia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    3.14 -&gt; &#39;6.28&#39; -&gt; {1, 2} -&gt; (9, 42) -&gt; None -&gt; [15.7] -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zdvoj</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    6.28 -&gt; &#39;6.286.28&#39; -&gt; {1, 2} -&gt; (9, 42, 9, 42) -&gt; None -&gt; [15.7, 15.7] -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zdvoj</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">*=</span> <span class="mi">2</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">to_str(zoznam)</span></code>, ktorá z daného spájaného zoznamu vráti reťazec. Tento reťazec bude rovnaký, ako by vypísala funkcia <code class="docutils literal notranslate"><span class="pre">výpis</span></code>. Funkcia najprv z jednotlivých prvkov spájaného zoznamu vytvorí pythonovský zoznam (<code class="docutils literal notranslate"><span class="pre">list</span></code>) reťazcov a až na záver z neho pomocou <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">-&gt;</span> <span class="pre">'.join(...)</span></code> vyrobí výsledný reťazec. Otestuj tento nový výpis aj pre dlhý zoznam:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">vyrob</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)))</span>
+<span class="hll"><span class="go">    ...</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">to_str</span><span class="p">(</span><span class="n">vyrob</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))))</span>
+<span class="hll"><span class="go">    ...</span>
+</span></pre></div>
+</div>
+<p>Malo by fungovať aj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">to_str</span><span class="p">(</span><span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)))</span>
+<span class="hll"><span class="go">    &#39;P&#39; -&gt; &#39;y&#39; -&gt; &#39;t&#39; -&gt; &#39;h&#39; -&gt; &#39;o&#39; -&gt; &#39;n&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">to_str</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vysl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">vysl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;None&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39; -&gt; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vysl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Bez spúšťania na počítači zisti, čo urobí:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+<span class="n">v</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v1</span><span class="o">.</span><span class="n">next</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">next</span>
+<span class="n">v</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">v1</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">5</span> <span class="o">-&gt;</span> <span class="mi">9</span> <span class="o">-&gt;</span> <span class="mi">7</span> <span class="o">-&gt;</span> <span class="mi">11</span> <span class="o">-&gt;</span> <span class="mi">13</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Päť priradení vymení navzájom štvrtý a piaty prvok.</p>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyhod_prvy(zoznam)</span></code>. Funkcia vráti pôvodný zoznam bez prvého prvku. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;py&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; &#39;y&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyhod_prvy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;y&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyhod_prvy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyhod_prvy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhod_prvy</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>alebo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhod_prvy</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyhod_druhy(zoznam)</span></code>, ktorá vyhodí druhý prvok spájaného zoznamu. Funkcia nič nevracia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;pyt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; &#39;y&#39; -&gt; &#39;t&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_druhy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; &#39;t&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_druhy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_druhy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhod_druhy</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyhod_za(zoznam,</span> <span class="pre">hodnota)</span></code>, ktorá v danom zozname vyhľadá vrchol s danou hodnotou <code class="docutils literal notranslate"><span class="pre">hodnota</span></code> a vyhodí za ním nasledujúci vrchol. Ak taký vrchol neexistuje, funkcia nerobí nič. Funkcia nič nevracia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="hll"><span class="go">    3 -&gt; 7 -&gt; &#39;a&#39; -&gt; &#39;a&#39; -&gt; 11 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_za</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="hll"><span class="go">    3 -&gt; 7 -&gt; &#39;a&#39; -&gt; 11 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_za</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="hll"><span class="go">    3 -&gt; 7 -&gt; &#39;a&#39; -&gt; 11 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhod_za</span><span class="p">(</span><span class="n">zoznam</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">return</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="13">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyhod_posledny(zoznam)</span></code>. Funkcia vráti pôvodný zoznam bez posledného prvku. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    5 -&gt; 7 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyhod_posledny</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    5 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyhod_posledny</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">vyhod_posledny</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhod_posledny</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>                     <span class="c1"># zložitosť O(n)</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">zoznam</span>
+    <span class="k">while</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">zoznam</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="14">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyhod_kazdy_druhy(zoznam)</span></code>, ktorá zo zoznamu vyhodí každý druhý prvok. Funkcia nič nevracia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;a&#39; -&gt; &#39;b&#39; -&gt; &#39;c&#39; -&gt; &#39;d&#39; -&gt; &#39;e&#39; -&gt; &#39;f&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_kazdy_druhy</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;a&#39; -&gt; &#39;c&#39; -&gt; &#39;e&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vyhod_kazdy_druhy</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;a&#39; -&gt; &#39;e&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhod_kazdy_druhy</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>                     <span class="c1"># zložitosť O(n)</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="15">
+<li><p>Napíš <strong>rekurzívnu</strong> verziu funkcie <code class="docutils literal notranslate"><span class="pre">pocet(zoznam)</span></code>, ktorá vráti počet prvkov zoznamu. Funkcia prejde všetky prvky zoznamu bez použitia cyklu len pomocou rekurzie (uvedom si, čo je triviálny prípad rekurzie). Do definície funkcie nepridávaj ďalšie parametre. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    10</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="hll"><span class="go">    9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="hll"><span class="go">    0</span>
+</span></pre></div>
+</div>
+<p>Zrejme táto funkcia spadne pri väčších zoznamoch.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>                     <span class="c1"># zložitosť O(n)</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="16">
+<li><p>Napíš <strong>rekurzívnu</strong> funkciu <code class="docutils literal notranslate"><span class="pre">sucet(zoznam)</span></code>, ktorá vypočíta súčet prvkov zoznamu (sčituje len číselné hodnoty). Funkcia prejde všetky prvky zoznamu bez použitia cyklu len pomocou rekurzie. Do definície funkcie nepridávaj ďalšie parametre. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    3.14 -&gt; &#39;6.28&#39; -&gt; -1 -&gt; (9, 42) -&gt; None -&gt; [15.7] -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">sucet</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    2.14</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">sucet</span><span class="p">(</span><span class="n">zoz</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+<span class="hll"><span class="go">    -1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">sucet</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="hll"><span class="go">    0</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>                     <span class="c1"># zložitosť O(n)</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="n">sucet</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sucet</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="17">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">spoj(zoz1,</span> <span class="pre">zoz2)</span></code>, ktorá na koniec zoznamu <code class="docutils literal notranslate"><span class="pre">zoz1</span></code> pripojí zoznam <code class="docutils literal notranslate"><span class="pre">zoz2</span></code>. Funkcia ako výsledok vráti začiatok takéhoto nového zoznamu. Nepoužívaj žiadne pomocné zoznamy (napríklad typu <code class="docutils literal notranslate"><span class="pre">list</span></code>). Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z1</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;ABC&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z2</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;prst&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">spoj</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;A&#39; -&gt; &#39;B&#39; -&gt; &#39;C&#39; -&gt; &#39;p&#39; -&gt; &#39;r&#39; -&gt; &#39;s&#39; -&gt; &#39;t&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">spoj</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1234</span><span class="p">)))</span>
+<span class="hll"><span class="go">    1234 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">spoj</span><span class="p">(</span><span class="n">zoz1</span><span class="p">,</span> <span class="n">zoz2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zoz1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">zoz2</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">zoz1</span>
+    <span class="k">while</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zoz2</span>
+    <span class="k">return</span> <span class="n">zoz1</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="18">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">prevratena_kopia(zoznam)</span></code>, ktorá vytvorí a vráti z daného zoznamu nový zoznam. Tento bude mať všetky prvky z pôvodného v opačnom poradí. Pôvodný zoznam musí ostať bez zmeny. Nepoužívaj žiadne pomocné zoznamy (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>). Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z1</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; &#39;y&#39; -&gt; &#39;t&#39; -&gt; &#39;h&#39; -&gt; &#39;o&#39; -&gt; &#39;n&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z2</span> <span class="o">=</span> <span class="n">prevratena_kopia</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;n&#39; -&gt; &#39;o&#39; -&gt; &#39;h&#39; -&gt; &#39;t&#39; -&gt; &#39;y&#39; -&gt; &#39;p&#39; -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;p&#39; -&gt; &#39;y&#39; -&gt; &#39;t&#39; -&gt; &#39;h&#39; -&gt; &#39;o&#39; -&gt; &#39;n&#39; -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prevratena_kopia</span><span class="p">(</span><span class="n">zoznam</span><span class="p">):</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vysl</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">vysl</span><span class="p">)</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="19">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">mapuj(funkcia,</span> <span class="pre">zoznam)</span></code>, ktorá pre každý vrchol v danom zozname spustí zadanú funkciu s parametrom hodnota vo vrchole a ak to nespadne na chybe, zmení hodnotu vrcholu. Funkcia nič nevracia. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapuj</span><span class="p">(</span><span class="nb">abs</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapuj</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    1 -&gt; 4 -&gt; 9 -&gt; 16 -&gt; 25 -&gt; 36 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mapuj</span><span class="p">(</span><span class="n">funkcia</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">zoznam</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">funkcia</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="20">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">filtruj(podmienka,</span> <span class="pre">zoznam)</span></code>, ktorá zo zoznamu vyhodí všetky vrcholy, pre ktoré zavolanie parametra <code class="docutils literal notranslate"><span class="pre">podmienka</span></code> s hodnotou <code class="docutils literal notranslate"><span class="pre">data</span></code> nevráti <code class="docutils literal notranslate"><span class="pre">True</span></code> (alebo spadne na chybe). Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">vyrob</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    5 -&gt; 6 -&gt; 7 -&gt; 8 -&gt; 9 -&gt; 10 -&gt; 11 -&gt; None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoz</span> <span class="o">=</span> <span class="n">filtruj</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">zoz</span><span class="p">)</span>          <span class="c1"># číslo je deliteľné 3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="hll"><span class="go">    6 -&gt; 9 -&gt; None</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filtruj</span><span class="p">(</span><span class="n">podmienka</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">podmienka</span><span class="p">(</span><span class="n">zoznam</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">zoznam</span> <span class="o">=</span> <span class="n">zoznam</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">if</span> <span class="n">zoznam</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">zoznam</span>
+    <span class="k">while</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">podmienka</span><span class="p">(</span><span class="n">pom</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pom</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">zoznam</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="01.html#id12" role="doc-backlink">1. Týždenný projekt</a><a class="headerlink" href="01.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 22.2.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z doterajších prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code>)</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Napíš modul, ktorý bude obsahovať triedu <code class="docutils literal notranslate"><span class="pre">Zoznam</span></code> s týmito metódami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zoznam</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoznam</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pocet_zoznamov</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zoznam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prvky</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">mapuj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hodnota1</span><span class="p">,</span> <span class="n">hodnota2</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Cieľom týchto metód je manipulovať so zadaným pythonovským zoznamom (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>).</p>
+<p>Metódy triedy by mali mať túto funkčnosť (môžeš si dodefinovať aj ďalšie pomocné metódy):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pocet_zoznamov()</span></code> vráti celkový počet zoznamov a podzoznamov, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">pocet_zoznamov</span><span class="p">()</span>
+<span class="hll"><span class="go">    1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Zoznam</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">[]])</span><span class="o">.</span><span class="n">pocet_zoznamov</span><span class="p">()</span>
+<span class="hll"><span class="go">    4</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Zoznam</span><span class="p">([[[]]])</span><span class="o">.</span><span class="n">pocet_zoznamov</span><span class="p">()</span>
+<span class="hll"><span class="go">    3</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>pomocou <strong>property</strong> <code class="docutils literal notranslate"><span class="pre">zoznam</span></code> môžeš zistiť aktuálny stav zadaného zoznamu (niektoré metódy ho totiž môžu meniť), napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [1, &#39;a&#39;, 2]</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>pomocou <strong>property</strong> <code class="docutils literal notranslate"><span class="pre">prvky</span></code> môžeš zistiť sploštený zoznam prvkov daného zoznamu (v tvare n-tice), teda taký, ktorý už neobsahuje žiadne podzoznamy; metóda vráti hodnotu v tvare tuple, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">prvky</span>
+<span class="hll"><span class="go">    (1, &#39;a&#39;, 2)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Zoznam</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">[]])</span><span class="o">.</span><span class="n">prvky</span>
+<span class="hll"><span class="go">    (&#39;x&#39;, 1, 2, 3, &#39;y&#39;)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Zoznam</span><span class="p">([[[]]])</span><span class="o">.</span><span class="n">prvky</span>
+<span class="hll"><span class="go">    ()</span>
+</span></pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mapuj(funkcia)</span></code> všetky prvky zoznamu zmení zadanou funkciou, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">mapuj</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [&#39;1&#39;, &#39;a&#39;, &#39;2&#39;]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">[]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">mapuj</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [&#39;xx&#39;, [2, [4], 6], &#39;yy&#39;, []]</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>pomocou metódy <code class="docutils literal notranslate"><span class="pre">__getitem__(self,</span> <span class="pre">index)</span></code> môžeš indexovať zadaný zoznam: ak je indexom celé číslo, metóda vráti prvok zoznamu s daným indexom, ak je indexom viacprvková n-tica celých čísel, potom pre každé ďalšie číslo v tejto n-tici ďalej indexuje tento prvok (ak je to <code class="docutils literal notranslate"><span class="pre">list</span></code>), ak sa takto nedá indexovať, funkcia nespadne, ale vráti <code class="docutils literal notranslate"><span class="pre">None</span></code>, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">[]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="hll"><span class="go">    &#39;y&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="hll"><span class="go">    [1, [2], 3]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>         <span class="c1"># je to to iste ako z.__getitem__((1, 2))</span>
+<span class="hll"><span class="go">    3</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>pomocou metódy <code class="docutils literal notranslate"><span class="pre">__setitem__(hodnota1,</span> <span class="pre">hodnota2)</span></code> sa nahradia všetky výskyty <code class="docutils literal notranslate"><span class="pre">hodnota1</span></code> hodnotou <code class="docutils literal notranslate"><span class="pre">hodnota2</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">]]],</span> <span class="p">[],</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [&#39;y&#39;, 2, 3, [&#39;y&#39;, 2], 3, [[[&#39;y&#39;]]], [], 2]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>             <span class="c1"># je to to iste ako z.__setitem__([2, 3], &#39;a&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span>
+<span class="hll"><span class="go">    [1, &#39;a&#39;, 4, [&#39;a&#39;, 2], 3]</span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+<p>Keď budeš spúšťať svoje riešenie na počítači, môžeš na koniec pridať testovacie riadky, ktoré ale testovač vidieť nebude a pritom tebe sa spúšťať budú, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">Zoznam</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">]]],</span> <span class="p">[],</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="o">.</span><span class="n">prvky</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="o">.</span><span class="n">pocet_zoznamov</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="o">.</span><span class="n">mapuj</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">z</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2026</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="o">.</span><span class="n">zoznam</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento test by mal vypísať (možno v inom poradí):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>z.zoznam = [1, 2, 3, [1, 2], 3, [[[1]]], [], 2]
+z.prvky = (1, 2, 3, 1, 2, 3, 1, 2)
+z.pocet_zoznamov() = 6
+z[4] = 3
+z[3, 1] = 2
+z.mapuj(str) = None
+z.zoznam = [&#39;1&#39;, 2026, &#39;3&#39;, [&#39;1&#39;, 2026], &#39;3&#39;, [[[&#39;1&#39;]]], [], 2026]
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="01.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

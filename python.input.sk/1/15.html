@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>15. Zásobníky a rady &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="16. Funkcie, Iterátory, generátory" href="16.html" />
+    <link rel="prev" title="14. Polymorfizmus, výnimky" href="14.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="15.html#">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="14.html" title="Previous Chapter: 14. Polymorfizmus, výnimky"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 14. Polymorfi...</span>
+    </a>
+  </li>
+  <li>
+    <a href="16.html" title="Next Chapter: 16. Funkcie, Iterátory, generátory"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">16. Funkcie, ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="zasobniky-a-rady">
+<h1>15. Zásobníky a rady<a class="headerlink" href="15.html#zasobniky-a-rady" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="15.html#zasobnik" id="id2">Zásobník</a></p>
+<ul>
+<li><p><a class="reference internal" href="15.html#aritmeticke-vyrazy" id="id3">Aritmetické výrazy</a></p></li>
+<li><p><a class="reference internal" href="15.html#nahrada-rekurzie" id="id4">Náhrada rekurzie</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="15.html#rad" id="id5">Rad</a></p></li>
+<li><p><a class="reference internal" href="15.html#cvicenie" id="id6">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="15.html#tyzdenny-projekt" id="id7">8. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Zoznámime sa s dvoma novými jednoduchými dátovými štruktúrami, ktoré sú veľmi dôležité pri realizácii mnohých algoritmov.</p>
+<p>Obe tieto dátové štruktúry uchovávajú nejakú skupinu údajov (tzv. kolekciu), pričom si udržujú informáciu o tom, v akom poradí boli tieto údaje vkladané do kolekcie. Pre oba typy dátovej štruktúry sa definujú operácie:</p>
+<ul class="simple">
+<li><p>na vkladanie ďalšieho údaja do štruktúry</p></li>
+<li><p>na vyberanie jedného údaja zo štruktúry</p></li>
+<li><p>zistenie hodnoty údaja, ešte pred jeho vybratím</p></li>
+<li><p>zistenie, či je kolekcia prázdna</p></li>
+</ul>
+<p>Zrejme, ak by sme chceli vybrať údaj z prázdnej kolekcie, spôsobilo by to vyvolanie výnimky „prázdna dátová štruktúra“.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="zasobnik">
+<h2><a class="toc-backref" href="15.html#id2" role="doc-backlink">Zásobník</a><a class="headerlink" href="15.html#zasobnik" title="Link to this heading">¶</a></h2>
+<p>Dátová štruktúra zásobník (budeme používať aj anglické slovo <strong>stack</strong>) je charakteristická tým, že vyberané údaje prichádzajú v opačnom poradí, ako sa do zásobníka vkladali. Môžeme si to predstaviť ako umelohmotnú rúrku, ktorá je na jednom konci uzavretá a do ktorej vkladáme šumivé tablety. Vyberať ich zrejme môžeme len z vrchu, teda najskôr tú, ktorú sme vložili ako poslednú. Tomuto princípu hovoríme <strong>LIFO</strong> z anglického <strong>last-in-first-out</strong>.</p>
+<p>Na operácie, ktoré manipulujú so zásobníkom, využijeme zaužívané anglické slová:</p>
+<ul class="simple">
+<li><p><strong>push</strong> vloží do zásobníka nový údaj - hovoríme, že vkladáme <strong>na vrch</strong> zásobníka</p></li>
+<li><p><strong>pop</strong> vyberie zo zásobníka naposledy vložený údaj - hovoríme, že vyberáme <strong>z vrchu</strong> zásobníka; táto hodnota je potom výsledkom operácie <strong>pop</strong>; ak je ale zásobník prázdny, nie je čo vybrať, operácia vyvolá výnimku <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code></p></li>
+<li><p><strong>top</strong> vráti hodnotu z vrchu zásobníka (naposledy vkladaný údaj), ale zásobník pritom nemení; ak je ale zásobník prázdny, nie je čo vrátiť, operácia vyvolá výnimku <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code></p></li>
+<li><p><strong>is_empty</strong> zistí, či je zásobník prázdny; operácia vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>Prázdny zásobník zvykneme kresliť približne takto:</p>
+<a class="reference internal image-reference" href="../_images/115_1.png"><img alt="../_images/115_1.png" height="73" src="../_images/115_1.png" width="54" />
+</a>
+<p>teda ako zospodu uzavretá rúrka. Vkladať do nej alebo vyberať z nej môžeme len zhora. Ak teraz chceme vložiť do zásobníka nejaké tri hodnoty:</p>
+<a class="reference internal image-reference" href="../_images/115_2.png"><img alt="../_images/115_2.png" height="102" src="../_images/115_2.png" width="128" />
+</a>
+<p>musíme to robiť po jednom:</p>
+<a class="reference internal image-reference" href="../_images/115_3.png"><img alt="../_images/115_3.png" height="86" src="../_images/115_3.png" width="110" />
+</a>
+<p>teraz aj ďalšie dve hodnoty:</p>
+<a class="reference internal image-reference" href="../_images/115_4.png"><img alt="../_images/115_4.png" height="95" src="../_images/115_4.png" width="114" />
+</a>
+<a class="reference internal image-reference" href="../_images/115_5.png"><img alt="../_images/115_5.png" height="91" src="../_images/115_5.png" width="66" />
+</a>
+<p>Ak budeme zo zásobníka vyberať niekoľko hodnôt, opäť to musíme robiť po jednom:</p>
+<a class="reference internal image-reference" href="../_images/115_6.png"><img alt="../_images/115_6.png" height="80" src="../_images/115_6.png" width="56" />
+</a>
+<a class="reference internal image-reference" href="../_images/115_7.png"><img alt="../_images/115_7.png" height="80" src="../_images/115_7.png" width="76" />
+</a>
+<p>Na vrchu zásobníka a teda aj prvé <strong>pop</strong> vytiahne naposledy vloženú hodnotu <code class="docutils literal notranslate"><span class="pre">c</span></code>. Ďalší <strong>pop</strong> vytiahne hodnotu <code class="docutils literal notranslate"><span class="pre">b</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/115_8.png"><img alt="../_images/115_8.png" height="76" src="../_images/115_8.png" width="62" />
+</a>
+<a class="reference internal image-reference" href="../_images/115_9.png"><img alt="../_images/115_9.png" height="73" src="../_images/115_9.png" width="72" />
+</a>
+<p>Zásobník budeme v Pythone realizovať pomocou nejakého už existujúceho typu. Keďže si potrebujeme pamätať poradie vkladaných hodnôt, asi najlepšie sa bude hodiť typ zoznam (<code class="docutils literal notranslate"><span class="pre">list</span></code>). Ak si zvolíme <strong>vrch zásobníka</strong> ako koniec zoznamu, potom môžeme pre operácie:</p>
+<ul class="simple">
+<li><p><strong>push</strong> použiť metódu <code class="docutils literal notranslate"><span class="pre">append()</span></code>, ktorá vkladá novú hodnotu na koniec zoznamu</p></li>
+<li><p><strong>pop</strong> použiť metódu <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, ktorá odoberá posledný prvok zoznamu a vracia jeho hodnotu, hoci budeme musieť zabezpečiť, aby sa namiesto výnimky <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> pre prázdny zoznam vyvolala výnimka <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code></p></li>
+<li><p><strong>top</strong> použiť indexovanie posledného prvku zoznamu, teda s indexom <code class="docutils literal notranslate"><span class="pre">-1</span></code>; aj tu budeme musieť zabezpečiť vyvolanie výnimky <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code></p></li>
+<li><p><strong>is_empty</strong> len odkontrolovať, či je zoznam prázdny</p></li>
+</ul>
+<p>Zapíšme túto realizáciu pomocou zoznamu do definície triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code>. Všimnite si, že sme pridali aj novú definíciu výnimky <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EmptyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Stack</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;inicializuje zoznam&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;na vrch zásobníka vloží novú hodnotu&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;z vrchu zásobníka vyberie hodnotu, alebo vyvolá EmptyError&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span><span class="p">(</span><span class="s1">&#39;prazdny zasobnik&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;z vrchu zásobníka vráti hodnotu, alebo vyvolá EmptyError&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span><span class="p">(</span><span class="s1">&#39;prazdny zasobnik&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;zistí, či je zásobník prázdny&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>V tejto definícii triedy si všimnite, že atribút <code class="docutils literal notranslate"><span class="pre">prvky</span></code> sme zapísali aj s podčiarkovníkom navyše, teda s názvom <code class="docutils literal notranslate"><span class="pre">_prvky</span></code>. Už vieme, že takýmto zápisom zvyknú pythonisti označovať, že práve tento atribút je <strong>súkromný</strong> a mimo metód triedy by sme s týmto atribútom nemali pracovať. Neznamená to, že sa to nedá:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">37</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">_prvky</span>
+<span class="hll"><span class="go">    [37, &#39;x&#39;]</span>
+</span></pre></div>
+</div>
+<p>Hoci takto vidíme prvky <em>súkromného</em> zoznamu nejakej triedy, môžeme to využiť nanajvýš počas ladenia, ale žiadny <em>slušný</em> programátor to v reálnych programoch nepoužije. V niektorých iných programovacích jazykoch existujú zápisy, pomocou ktorých môžeme určiť, či je nejaký atribút naozaj súkromný (zvykne sa to označovať ako <strong>private</strong>). Vtedy sa k týmto atribútom programátor naozaj nijako nedostane, ale Python túto vlastnosť ponechal len na slušnosti a skúsenosti programátora: dobrý programátor sa tým, že je atribút označený ako súkromný, naozaj riadi, ale ak to vo výnimočnej situácii (napríklad pri ladení) bude chcieť použiť, nik mu v tom nebude brániť.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Otestujme zásobník</p>
+<p>Do zásobníka najprv vložíme niekoľko slov a potom ich pomocou <code class="docutils literal notranslate"><span class="pre">pop()</span></code> postupe všetky vyberieme a vypíšeme. V tomto výpise by sa mali všetky prvky vyskytnúť v opačnom poradí, ako boli do zásobníka vkladané.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">slovo</span> <span class="ow">in</span> <span class="s1">&#39;Anicka dusicka kde si bola&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">slovo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;na vrchu zasobnika:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">top</span><span class="p">())</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zasobnik je prazdny:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vyberame:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Na záver tohto testovacieho programu sme vložili ešte jedno zavolanie <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, teda úmyselne sa pokúsime vyberať z prázdneho zásobníka. Dostávame takýto výpis:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>na vrchu zasobnika: bola
+bola
+si
+kde
+dusicka
+Anicka
+zasobnik je prazdny: True
+...
+EmptyError: prazdny zasobnik
+</pre></div>
+</div>
+<p>Ďalší príklad využije zásobník na otestovanie, či prvky nejakej postupnosti tvoria palindróm (dostávame rovnaké poradie prvkov, či postupnosť čítame odpredu alebo odzadu). Použijeme takýto algoritmus: najprv všetky prvky postupnosti zapíšeme do pomocného zásobníka, potom znovu prejdeme všetky prvky postupnosti a každý porovnáme s hodnotou, ktorú vyberieme z vrchu zásobníka. Keďže v zásobníku sú prvky postupnosti uložené tak, že sa vyberajú v opačnom poradí, takéto porovnanie označuje, že porovnávame najprv prvý prvok s posledným, potom druhý prvok s predposledným atď. Zrejme, ak je postupnosť palindróm, všetky tieto testy by mali byť splnené. Program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">palindrom</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">post</span><span class="p">:</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">prvok</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">post</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">!=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">palindrom</span><span class="p">([</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
+<span class="hll"><span class="go">    True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">palindrom</span><span class="p">([</span><span class="s1">&#39;hello&#39;</span><span class="p">])</span>
+<span class="hll"><span class="go">    True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">palindrom</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    False</span>
+</span></pre></div>
+</div>
+<p>Uvedomte si, že pri takomto porovnávaní prvkov, či tvoria palindróm, každú dvojicu prvkov kontrolujeme dvakrát, napríklad prvý a posledný aj posledný a prvý, druhý a predposledný aj predposledný a druhý, atď. Porozmýšľajte, ako by ste vylepšili túto funkciu, aby pomocou zásobníka testovala každú dvojicu prvkov maximálne raz.</p>
+<p>Skôr ako prejdeme na ďalšie príklady so zásobníkom, zamyslime sa nad tým, ako môžeme organizovať definíciu novej triedy, ktorú budeme potrebovať pri riešení našej úlohy. Teda, kde treba umiestniť definíciu triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code> tak, aby sme ju mohli použiť vo funkcii palindróm. Doteraz sme v našich programoch predpokladali, že jej definícia sa v kóde nachádza niekde pred definíciou samotnej funkcie, preto to často vyzeralo takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EmptyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Stack</span><span class="p">:</span>
+    <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">palindrom</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palindrom</span><span class="p">(</span><span class="s1">&#39;tahat&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Keďže je predpoklad, že táto naša nová dátová štruktúra je tak užitočná, že ju využijeme aj v ďalších programoch, uložíme definíciu triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code> (aj s triedou <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code>) do samostatného súboru, tzv. modulu, napríklad s menom <code class="docutils literal notranslate"><span class="pre">struktury.py</span></code>. Do takéhoto modulu môžeme neskôr vkladať aj ďalšie definície našich tried a aj tie potom používať v ďalších programoch. Teraz náš program môžeme zapísať takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stack</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">palindrom</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palindrom</span><span class="p">(</span><span class="s1">&#39;tahat&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>V tomto prípade príkaz <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">struktury</span> <span class="pre">import</span> <span class="pre">Stack</span></code> označuje, že Python na tomto mieste prečíta celý súbor <code class="docutils literal notranslate"><span class="pre">struktury.py</span></code> a do nášho programu vloží definíciu triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code>. Od tohto momentu môžeme používať triedu <code class="docutils literal notranslate"><span class="pre">Stack</span></code> ako keby bola definovaná v našom súbore s programom.</p>
+<p>Niekedy však môžu vzniknúť situácie, keď našu triedu (napríklad triedu <code class="docutils literal notranslate"><span class="pre">Stack</span></code>) chceme použiť len v jednom prípade, napríklad v jednej funkcii <code class="docutils literal notranslate"><span class="pre">palindrom()</span></code> (alebo len v jednej triede) a nechceme, aby táto naša pomocná trieda bola „videná“ aj mimo tejto funkcie. Vtedy môžeme definíciu triedy vnoriť napríklad do funkcie alebo do inej triedy a takto vytvoríme <strong>lokálnu definíciu triedy</strong>. Pozrime sa, ako to môžeme zapísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">palindrom</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+
+    <span class="c1"># vnorená definícia tried EmptyError a Stack</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">EmptyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Stack</span><span class="p">:</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">EmptyError</span><span class="p">(</span><span class="s1">&#39;prazdny zasobnik&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">EmptyError</span><span class="p">(</span><span class="s1">&#39;prazdny zasobnik&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span> <span class="o">==</span> <span class="p">[]</span>
+
+    <span class="c1"># koniec vnorenej definície</span>
+
+    <span class="c1"># tu pokračuje funkcia palindrom</span>
+
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>           <span class="c1"># používanie vnorenej definície</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">post</span><span class="p">:</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">prvok</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">post</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">!=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Toto je zrejme extrémny prípad, v ktorom vnorená definícia je príliš komplexná vzhľadom na telo funkcie, v ktorej sa používa. Neskôr uvidíme situácie, v ktorých bude takýto postup výrazným vylepšením kódu.</p>
+<p>Podobné situácie sa dajú riešiť aj inak: namiesto vnorenej definície triedy a volaní jej príslušných metód, priamo v tele funkcie zapíšeme kód týchto metód a v komentári zaznačíme, že sa vlastne jedná o akcie príslušných metód. Funkciu <code class="docutils literal notranslate"><span class="pre">palindrom()</span></code> by sme mohli zapísať aj takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">palindrom</span><span class="p">(</span><span class="n">post</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>                    <span class="c1"># Stack()</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">post</span><span class="p">:</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prvok</span><span class="p">)</span>       <span class="c1"># push(prvok)</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">post</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">!=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>  <span class="c1"># pop()</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Takýto zápis označuje, že čitateľ tohto programu vie, čo je to <strong>stack</strong> a vie, ako sa s tým pracuje, a teda bude rozumieť princípu fungovania algoritmu.</p>
+<p>Lenže takýto spôsob používania, napríklad štruktúry zásobník, <strong>vo všeobecnosti neodporúčame</strong>, lebo</p>
+<ul class="simple">
+<li><p>pri nahrádzaní volania metódy priamo kódom môžeme do kódu vložiť chyby, ktoré sa môžu ťažko odladiť</p></li>
+<li><p>do funkcie sme vložili kód konkrétnej realizácie zásobníka, ale v skutočnosti môžu byť tieto metódy realizované inak a možno výrazne efektívnejšie - mali by sme namiesto toho radšej používať volania metód (neskôr uvidíme aj inú realizáciu zásobníka)</p></li>
+<li><p>je to zlý obraz o našom spôsobe programovania a naozaj ho použime len pri rýchlom otestovaní nejakého algoritmu, ale nie v odovzdanom kóde</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Počet prvkov v zásobníku</p>
+<p>V ďalšom príklade napíšeme funkciu, ktorá zistí počet prvkov v zásobníku. Zrejme by sa to dalo zapísať takto jednoducho:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_prvkov</span><span class="p">(</span><span class="n">zasobnik</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">zasobnik</span><span class="o">.</span><span class="n">_prvky</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>My už vieme, že autor tejto realizácie dátovej štruktúry <code class="docutils literal notranslate"><span class="pre">Stack</span></code> označil atribút <code class="docutils literal notranslate"><span class="pre">_prvky</span></code> so znakom podčiarkovník a teda nepredpokladá, že by sme si to niekedy dovolili použiť. Preto to vyriešme správne. Najprv nie najlepšia verzia:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_prvkov</span><span class="p">(</span><span class="n">zasobnik</span><span class="p">):</span>
+    <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">zasobnik</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">zasobnik</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">pocet</span>
+</pre></div>
+</div>
+<p>Hoci táto verzia dáva správny výsledok, popri tom nám ale vymaže celý obsah zásobníka. Takéto správanie funkcie sa nám bude hodiť veľmi zriedka. Častejšie budeme očakávať, že sa pôvodný obsah zachová. Niekoho by možno napadlo riešenie, v ktorom si zo zásobníka urobíme kópiu, zistíme koľko má prvkov táto kópia a tým sa nám pôvodný zásobník uchová. Lenže ani táto verzia nemá šancu fungovať správne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_prvkov</span><span class="p">(</span><span class="n">zasobnik</span><span class="p">):</span>
+    <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">kopia</span> <span class="o">=</span> <span class="n">zasobnik</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">kopia</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">kopia</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">pocet</span>
+</pre></div>
+</div>
+<p>Žiaľ, aj táto verzia funkcie vymaže pôvodný zásobník. Priradenie <code class="docutils literal notranslate"><span class="pre">kopia</span> <span class="pre">=</span> <span class="pre">zasobnik</span></code> nevytvorí naozaj kópiu, ale do premennej <code class="docutils literal notranslate"><span class="pre">kopia</span></code> priradí <strong>referenciu na pôvodný zásobník</strong>. A operácia <code class="docutils literal notranslate"><span class="pre">kopia.pop()</span></code> v skutočnosti číta pôvodnú dátovú štruktúru.</p>
+<p>Správne riešenie bude vyžadovať, aby sme celý obsah zásobníka prečítali, niekam si ho popritom ukladali a zároveň počítali počet prvkov. Potom sa všetky prvky presunú späť do pôvodného zásobníka. V nasledovnom riešení sme ako pomocnú štruktúru na uloženie prvkov použili opäť zásobník:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_prvkov</span><span class="p">(</span><span class="n">zasobnik</span><span class="p">):</span>
+    <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">kopia</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>                   <span class="c1"># pomocný zásobník</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">zasobnik</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">kopia</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">zasobnik</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">kopia</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>       <span class="c1"># vráti pôvodný obsah zásobníka</span>
+        <span class="n">zasobnik</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">kopia</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">pocet</span>
+</pre></div>
+</div>
+<p>Uvedomte si, že v premennej <code class="docutils literal notranslate"><span class="pre">kopia</span></code> bude po prvom while-cykle kópia obsahu pôvodného zásobníka, ale prvky v ňom budú v opačnom poradí. Za tým nasledujúci while-cyklus vráti tento obsah späť ale už v správnom poradí.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="aritmeticke-vyrazy">
+<h3><a class="toc-backref" href="15.html#id3" role="doc-backlink">Aritmetické výrazy</a><a class="headerlink" href="15.html#aritmeticke-vyrazy" title="Link to this heading">¶</a></h3>
+<p>Aby sme videli krásu dátovej štruktúry zásobník, ukážeme si jej použitie pri práci s aritmetickými výrazmi. Pritom sa musíme zoznámiť so základnou terminológiou:</p>
+<ul class="simple">
+<li><p>aritmetické výrazy sa skladajú z <strong>operandov</strong> (napríklad čísla a premenné ako <code class="docutils literal notranslate"><span class="pre">127</span></code> a <code class="docutils literal notranslate"><span class="pre">pocet</span></code>) a <strong>operátorov</strong> (napríklad pre operácie súčet <code class="docutils literal notranslate"><span class="pre">+</span></code>, súčin <code class="docutils literal notranslate"><span class="pre">*</span></code>, …)</p></li>
+<li><p>ďalej budeme uvažovať len <strong>s binárnymi operáciami</strong>, pri ktorých každému operátoru prislúchajú práve dva operandy (napríklad <code class="docutils literal notranslate"><span class="pre">pocet</span> <span class="pre">+</span> <span class="pre">1</span></code> alebo <code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">6</span></code>)</p></li>
+<li><p>niektoré operátory majú pri vyhodnocovaní vyššiu <strong>prioritu</strong> (precedenciu) ako iné (napríklad vo výraze <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code> sa najprv vyhodnotí súčin a až potom súčet, lebo operátor <code class="docutils literal notranslate"><span class="pre">*</span></code> má vyššiu prioritu ako <code class="docutils literal notranslate"><span class="pre">+</span></code>)</p>
+<ul>
+<li><p>ak by vás zaujímalo, môžete si pozrieť kompletnú tabuľku <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#operator-precedence">priorít operátorov v Pythone</a></p></li>
+</ul>
+</li>
+<li><p>časti aritmetického výrazu môžeme uzavrieť do okrúhlych zátvoriek a tým zmeníme poradie vyhodnocovania výrazu (napríklad vo výraze <code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span></code> sa najprv vyhodnotí súčet a až jeho výsledok sa vynásobí operandom <code class="docutils literal notranslate"><span class="pre">4</span></code>)</p></li>
+</ul>
+<p>Pravdepodobne ste všetky tieto pojmy už poznali predtým, alebo intuitívne s týmto pracujete už dlhšie.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Infixový zápis</p>
+<p>Najbežnejším zápisom výrazov v matematike je tzv. <a class="reference external" href="https://en.wikipedia.org/wiki/Infix_notation">infixový zápis</a>. Takéto pomenovanie dostal preto, lebo operátor sa nachádza medzi (teda <strong>in</strong>) svojimi operandmi. My sa budeme zaoberať najmä s číselnými výrazmi a preto nás teraz budú zaujímať len operácie s číslami. V nasledovnej tabuľke uvádzame skupiny priorít operátorov, pričom v jednej skupine sú operátory s rovnakou prioritou:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 21.4%" />
+<col style="width: 64.3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(</span></code> <code class="docutils literal notranslate"><span class="pre">)</span></code></p></td>
+<td><p>zátvorky</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td><p>umocňovanie</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code> <code class="docutils literal notranslate"><span class="pre">/</span></code> <code class="docutils literal notranslate"><span class="pre">%</span></code> <code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
+<td><p>násobenie, delenie</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>sčitovanie, odčitovanie</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Najvyššiu prioritu majú zátvorky, potom nasleduje umocňovanie (jediné sa vyhodnocuje sprava doľava, všetky ostatné zľava doprava), nasleduje násobenie a delenie a najnižšiu prioritu majú sčitovanie a odčitovanie.</p>
+<p>Kvôli komplikovaným pravidlám priorít operátorov a tiež zátvorkám, sa takéto aritmetické výrazy vyhodnocujú nejakým programom trochu komplikovanejšie. Skúste sa zamyslieť, ako by ste naprogramovali funkciu, ktorá by vyhodnocovala aritmetické výrazy zadané v znakovom reťazci, napríklad <code class="docutils literal notranslate"><span class="pre">'5+(71-13*4)//(5+22%7)'</span></code>. Nie je to až tak ťažké, existuje na to niekoľko elegantných algoritmov, s ktorými sa zoznámite neskôr. My si ukážeme iné spôsoby zápisov aritmetických výrazov, ktoré sa vyhodnocujú výrazne jednoduchšie a práve pri nich veľmi elegantne využijeme typ <strong>zásobník</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Prefixový zápis</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Polish_notation">Prefixový zápis</a>, niekedy sa mu hovorí <strong>poľský zápis</strong> (na počesť poľského matematika, ktorý zaviedol tento zápis), je charakteristický tým, že operátory sa nezapisujú medzi svoje operandy, ale <strong>pred</strong> operandy. Teda namiesto <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code> zapíšeme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="mi">3</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Funguje to takto aj so zložitejšími výrazmi, napríklad namiesto <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code> zapíšeme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>čo prečítame ako „sčítaj 2 a výsledok súčinu 3 a 4“. Zaujímavo vyzerajú výrazy so zátvorkami, napríklad <code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span></code> v prefixovom zápise vyzerá:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="p">(</span><span class="o">+</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>a označuje „vynásob výsledok súčtu 2 a 3 číslom 4“. Lenže v prefixovom zápise sa <strong>zátvorky nepíšu</strong> a preto bez zátvoriek to vyzerá takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">+</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>a má to úplne rovnaký význam ako predchádzajúci zápis so zátvorkami. Prefix má oproti infixu tieto dve užitočné vlastnosti:</p>
+<ul class="simple">
+<li><p>na vyhodnocovanie výrazu nepotrebujeme poznať prioritu operátorov - všetky operátory majú rovnakú prioritu a výraz sa vyhodnocuje zľava doprava</p></li>
+<li><p>zátvorkovanie výrazu nemá zmysel, lebo ten sa vyhodnocuje jednoznačne</p></li>
+</ul>
+<p>Uvedieme niekoľko príkladov:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21.4%" />
+<col style="width: 21.4%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>infix</p></th>
+<th class="head"><p>prefix</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span> <span class="pre">-</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span> <span class="pre">-</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">(4</span> <span class="pre">-</span> <span class="pre">5)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">(4</span> <span class="pre">-</span> <span class="pre">5)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Všimnite si, že poradie operandov je v infixovom aj prefixovom rovnaké, tieto zápisy sa líšia len umiestnením operátorov.</p>
+<p>Takéto prefixové zápisy sa vyhodnocujú veľmi jednoducho: každý operátor má za sebou dva operandy, pričom každý z nich je buď nejaká hodnota (napríklad číslo) alebo ďalší prefixový zápis. Keď to budeme vyhodnocovať ručne, môžeme si pomôcť zátvorkami, napríklad <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code> ozátvorkujeme takto <code class="docutils literal notranslate"><span class="pre">(-</span> <span class="pre">(+</span> <span class="pre">2</span> <span class="pre">(*</span> <span class="pre">3</span> <span class="pre">4))</span> <span class="pre">5)</span></code> z čoho vidíme, že najprv sa vyhodnotí <code class="docutils literal notranslate"><span class="pre">(*</span> <span class="pre">3</span> <span class="pre">4)</span></code>, výsledok tohto výrazu sa dosadí do súčtu <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">2</span> <span class="pre">12)</span></code> a hodnota tohto výrazu sa vloží do rozdielu <code class="docutils literal notranslate"><span class="pre">(-</span> <span class="pre">14</span> <span class="pre">5)</span></code>, teda výsledkom je <code class="docutils literal notranslate"><span class="pre">9</span></code>. Na vyhodnocovanie prefixových výrazov programom zátvorky potrebovať nebudeme - neskôr uvidíte algoritmus.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Postfixový zápis</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Postfixový zápis</a> niekedy sa mu hovorí <strong>prevrátený poľský zápis</strong>, má podobný princíp ako infix a prefix, len sa líši v umiestnení operátora ku svojim dvom operandom: operátor píšeme <strong>za</strong> svoje operandy. Uvedieme podobné ukážky, ako sme videli pri prefixe a porovnáme ich s týmto prefixom:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21.4%" />
+<col style="width: 21.4%" />
+<col style="width: 21.4%" />
+<col style="width: 35.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>infix</p></th>
+<th class="head"><p>prefix</p></th>
+<th class="head"><p>postfix</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">*</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span> <span class="pre">-</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span> <span class="pre">-</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">(4</span> <span class="pre">-</span> <span class="pre">5)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">+</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">(4</span> <span class="pre">-</span> <span class="pre">5)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">-</span> <span class="pre">*</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Všimnite si, že aj pri postfixe je zachované poradie všetkých operandov, len operátory sa presťahovali na iné pozície. V porovnaní s prefixom sú tieto operátory v opačnom poradí, len sú na iných miestach. Keď sa budete cvičiť v ručnom prevádzaní medzi týmito zápismi, prípadne budete ich ručne vyhodnocovať, niekedy ich pomôže najprv ozátvorkovať, vykonať prevod (alebo vyhodnotenie) do iného zápisu a zbytočné zátvorky vyhodiť.</p>
+<p>Na postfixovom zápise si ukážeme algoritmus vyhodnocovania takýchto aritmetických výrazov. Princíp je nasledovný:</p>
+<ul class="simple">
+<li><p>postupne sa prechádza postfixový výraz zľava doprava</p></li>
+<li><p>keď je v postupnosti operand (najčastejšie celé číslo), vloží sa do zásobníka</p></li>
+<li><p>keď spracovávame operátor, z vrchu zásobníka sa vyberú dve hodnoty a tie sa stanú operandmi spracovávanej operácie: príslušná operácia sa vykoná a jej výsledok sa vloží do zásobníka (namiesto dvoch práve vybraných operandov)</p></li>
+<li><p>keď sme spracovali celý výraz, na vrchu zásobníka ostala jediná hodnota a to je vyhodnotením aritmetického výrazu</p></li>
+</ul>
+<p>Postup najprv ukážeme na konkrétnom príklade s výrazom <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 21.4%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>zásobník</p></th>
+<th class="head"><p>spracovávame</p></th>
+<th class="head"><p>výraz v postfixe</p></th>
+<th class="head"><p>čo robíme</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>na začiatku je zásobník prázdny</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>zoberieme prvý prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3*4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>vykonáme operáciu s dvoma vrchnými prvkami zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">12</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>výsledok vložíme na vrch zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">12</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2+12</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>vykonáme operáciu s dvoma vrchnými prvkami zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">14</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span></code></p></td>
+<td><p>výsledok vložíme na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">14</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">14</span> <span class="pre">5</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">14</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">14-5</span></code></p></td>
+<td></td>
+<td><p>vykonáme operáciu s dvoma vrchnými prvkami zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+<td></td>
+<td></td>
+<td><p>výsledok vložíme na vrch zásobníka = výsledok výrazu</p></td>
+</tr>
+</tbody>
+</table>
+<p>Naprogramujme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">postfix</span><span class="p">(</span><span class="n">vyraz</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">vyraz</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">op2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>             <span class="c1"># môžeme zapísať aj: op2, op1 = s.pop(), s.pop()</span>
+            <span class="n">op1</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">op1</span> <span class="o">//</span> <span class="n">op2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">prvok</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Je veľmi dôležité si pre jednotlivé operácie uvedomiť, v akom poradí vyberáme operandy zo zásobníka. Keďže operácie súčtu a násobenia čísel sú komutatívne, nemusíme sa starať o to, v akom poradí boli operandy v zásobníku. Pri rozdiele a podiele je to už iné: tu musíme presne rozlišovať, ktorý z operandov je na vrchu zásobníka a ktorý je v zásobníku pod ním. Keď vykonávame operáciu rozdiel <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">2</span> <span class="pre">-</span></code>, označuje to, že od prvého operandu odčitujeme druhý. Keďže do zásobníka sa našim algoritmom najprv dostáva prvý operand a až potom druhý a vyberajú sa v opačnom poradí, musíme to zohľadniť aj pri výpočte, preto to zapíšeme ako <code class="docutils literal notranslate"><span class="pre">-s.pop()</span> <span class="pre">+</span> <span class="pre">s.pop()</span></code>. Teda to, čo bolo na vrchu zásobníka dostáva opačné znamienko a odčíta sa od druhého operandu v zásobníku pod ním. Podobne je to aj s podielom (v našom prípade celočíselnom), ale tu sme to kvôli čitateľnosti najprv priradili do dvoch premenných a až potom sme vykonali operáciu delenia.</p>
+<p>Otestujme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">postfix</span><span class="p">(</span><span class="s1">&#39;2 3 4 * + 5 -&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">postfix</span><span class="p">(</span><span class="s1">&#39;2 3 + 4 * 5 -&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    15</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">postfix</span><span class="p">(</span><span class="s1">&#39;2 3 4 5 - * +&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    -1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">postfix</span><span class="p">(</span><span class="s1">&#39;2 3 + 4 5 - *&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    -5</span>
+</span></pre></div>
+</div>
+<p>Pravdepodobne by sme mali do kódu pridať ešte niekoľko testov, aby to nepadalo s nepochopiteľnými hláškami výnimiek pri chybových situáciách. Napríklad</p>
+<ul class="simple">
+<li><p>po skončení for-cyklu v zásobníku nie je nič, alebo je tam viac ako jedna hodnota</p></li>
+<li><p>delenie nulou</p></li>
+<li><p>namiesto očakávaného čísla (príkaz za <code class="docutils literal notranslate"><span class="pre">else</span></code>, v ktorom sa prevádza reťazec na číslo) prišiel chybný reťazec, napríklad pri <code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">7</span> <span class="pre">%</span></code></p></li>
+</ul>
+<p>Program by mohol v takých situáciách buď vyvolať nejakú svoju výnimku (napríklad <code class="docutils literal notranslate"><span class="pre">ExpressionError('delenie</span> <span class="pre">nulou')</span></code>) alebo vrátiť nejakú špeciálnu hodnotu (napríklad znakový reťazec s popisom chyby). Toto budete riešiť na cvičeniach.</p>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">postfix()</span></code> funguje len pre <strong>postfixový zápis</strong> a pre prefix asi rýchlo spadne na chybe. Ak budeme ale v tomto algoritme vstupnú postupnosť prvkov výrazu brať v opačnom poradí od konca, po malej úprave to bude fungovať práve pre <strong>prefixový zápis</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prefix</span><span class="p">(</span><span class="n">vyraz</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">vyraz</span><span class="o">.</span><span class="n">split</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">-</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">prvok</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="o">//</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">prvok</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Všimnite si tieto dôležité zmeny oproti verzii pre postfix:</p>
+<ul class="simple">
+<li><p>aby sme for-cyklom prechádzali prvky vstupnej postupnosti výrazu od konca, použili sme štandardnú funkciu <code class="docutils literal notranslate"><span class="pre">reversed()</span></code> - táto funkcia bude z postupnosti prvkov dávať do for-cyklu prvky od konca; mohli sme to zapísať aj ako <code class="docutils literal notranslate"><span class="pre">vyraz.split()[::-1]</span></code> ale odporúča sa to pomocou <code class="docutils literal notranslate"><span class="pre">reversed()</span></code> lebo toto je čitateľnejšie</p></li>
+<li><p>pre všetky naše operácie je poradie operandov v správnom poradí, teda v zásobníku je najprv prvý operand a pod ním druhý; preto aj vyhodnocovanie operácií je teraz jednoduchšie a čitateľnejšie</p></li>
+</ul>
+<p>Podobne, ako sme odkrokovali vyhodnocovanie postfixového zápisu, zapíšme aj postup pre prefix pre výraz <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 21.4%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>zásobník</p></th>
+<th class="head"><p>spracovávame</p></th>
+<th class="head"><p>výraz v prefixe</p></th>
+<th class="head"><p>čo robíme</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span></code></p></td>
+<td><p>na začiatku je zásobník prázdny</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td><p>zoberieme posledný prvok výrazu</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">4</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">4</span> <span class="pre">3</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">4</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3*4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span></code></p></td>
+<td><p>vykonáme operáciu s dvoma vrchnými prvkami zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">12</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">2</span></code></p></td>
+<td><p>výsledok vložíme na vrch zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">12</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">12</span> <span class="pre">2</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span></code></p></td>
+<td><p>vložíme ho na vrch zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">12</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2+12</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>vykonáme operáciu s dvoma vrchnými prvkami zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">14</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>výsledok vložíme na vrch zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">14</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td></td>
+<td><p>zoberieme ďalší prvok</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">14-5</span></code></p></td>
+<td></td>
+<td><p>vykonáme operáciu s dvoma vrchnými prvkami zásobníka</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+<td></td>
+<td></td>
+<td><p>výsledok vložíme na vrch zásobníka = výsledok výrazu</p></td>
+</tr>
+</tbody>
+</table>
+<p>Funkciu otestujeme na tých istých výrazoch ako predtým, ale v prefixovej verzii zápisu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prefix</span><span class="p">(</span><span class="s1">&#39;- + 2 * 3 4 5&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    9</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">prefix</span><span class="p">(</span><span class="s1">&#39;- * + 2 3 4 5&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    15</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">prefix</span><span class="p">(</span><span class="s1">&#39;+ 2 * 3 - 4 5&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    -1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">prefix</span><span class="p">(</span><span class="s1">&#39;* + 2 3 - 4 5&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    -5</span>
+</span></pre></div>
+</div>
+<p>Môžete vidieť, že takýto algoritmus je dostatočne jednoduchý na to, aby sa rozšíril o ďalšie operácie, napríklad zvyšok po delení <code class="docutils literal notranslate"><span class="pre">%</span></code>, resp. prerobil na čísla s desatinnou čiarkou <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>S infixovým zápisom to nie je až tak jednoduché ako s prefixom alebo postfixom. V rámci domáceho zadania si precvičíte jeden konkrétny nie veľmi náročný algoritmus na prepis aritmetického výrazu v infixovom zápise do prefixového tvaru. Tento už potom dokážete veľmi jednoducho aj vyhodnocovať.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="nahrada-rekurzie">
+<h3><a class="toc-backref" href="15.html#id4" role="doc-backlink">Náhrada rekurzie</a><a class="headerlink" href="15.html#nahrada-rekurzie" title="Link to this heading">¶</a></h3>
+<p>Dátová štruktúra zásobník ma ešte jedno veľmi užitočné využitie: pomocou nej vieme niektoré <strong>rekurzívne funkcie</strong> relatívne jednoducho previesť na nerekurzívny výpočet. Začnime najprv triviálnou verziou rekurzie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+<p>ktorá vypíše prvky zoznamu do jedného riadku, napríklad</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vypis</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
+<span class="hll"><span class="go">    2 3 5 7 11 13 17</span>
+</span></pre></div>
+</div>
+<p>Naše doterajšie skúsenosti s rekurziou nám zrejme rýchlo naznačia, že sa jedná o chvostovú rekurziu, ktorá sa dá bezbolestne prerobiť na while-cyklus. Nezabudneme použiť pomocný zoznam, aby sme nepokazili obsah parametra <code class="docutils literal notranslate"><span class="pre">zoz</span></code> (hoci to isté by sa dalo urobiť aj obyčajným for-cyklom bez pomocného zoznamu):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[:]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">pom</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Takéto nerekurzívne riešenie má oproti rekurzii obrovskú výhodu najmä v tom, že dĺžka zoznamu nie je obmedzená hĺbkou vnorenia rekurzie, čo je okolo 1000. Teda rekurzívna verzia by spadla na pretečení rekurzie už pri viac ako 1000-prvkovom zozname. Pravdepodobne podobným postupom (zatiaľ bez zásobníka) vieme nahradiť rekurziu while-cyklom aj pri trochu komplikovanejších verziách funkcie <code class="docutils literal notranslate"><span class="pre">výpis</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vypis1</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">vypis1</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vypis2</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">vypis2</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zoz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>My sa ale budeme zaoberať takými rekurzívnymi funkciami, na ktoré nám takýto while-cyklus stačiť nebude. V 9. prednáške v zimnom semestri (<a class="reference internal" href="09.html"><span class="doc">9. Rekurzia</span></a>) sme sa prvýkrát zoznámili s tým, že programovacie jazyky na zabezpečenie fungovania volania funkcií a teda aj rekurzie používajú <strong>zásobník</strong>. V Pythone si to najlepšie predstavíme tak, že na vrchu zásobníka sa pri každom volaní funkcie vytvorí menný priestor danej funkcie a v ňom sa budú nachádzať všetky lokálne premenné a teda aj parametre. Zopakujme si tento <strong>mechanizmus volania funkcií</strong>:</p>
+<ul class="simple">
+<li><p>zapamätá sa návratová adresa</p></li>
+<li><p>vytvorí sa nový menný priestor funkcie (v ňom sa vytvárajú lokálne premenné aj parametre)</p></li>
+<li><p>vykoná sa telo funkcie</p></li>
+<li><p>zruší sa menný priestor (aj so všetkými premennými)</p></li>
+<li><p>vykonávanie programu sa vráti na návratovú adresu</p></li>
+</ul>
+<p>Ukážeme, ako si zjednodušíme túto predstavu volania funkcií tak, aby sme vedeli odsimulovať rekurziu len pomocou nejakých cyklov. Skúsme to predviesť na takejto jednoduchej rekurzívnej funkcii:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    <span class="c1"># triviálny prípad</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rekurzia</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">rekurzia</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">rekurzia</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;koniec&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Po spustení:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="mi">1</span> <span class="o">.</span> <span class="mi">2</span> <span class="o">.</span> <span class="mi">1</span> <span class="o">.</span> <span class="mi">3</span> <span class="o">.</span> <span class="mi">1</span> <span class="o">.</span> <span class="mi">2</span> <span class="o">.</span> <span class="mi">1</span> <span class="o">.</span> <span class="n">koniec</span>
+</pre></div>
+</div>
+<p>Menný priestor v tomto prípade tvorí jediná premenná <code class="docutils literal notranslate"><span class="pre">n</span></code>, ktorá má hodnotu 3. Takže na vrchu zásobníka sa vytvorí informácia o tejto premennej, ale okrem toho sa musí pre každé volanie funkcie zabezpečiť „zapamätanie návratovej adresy“. <strong>Návratová adresa</strong> je to miesto v programe, od ktorého sa bude pokračovať po úspešnom ukončení vykonania funkcie. Zaznačme do nášho ukážkového programu všetky návratové miesta:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    <span class="c1"># triviálny prípad</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rekurzia</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>        <span class="c1"># &lt;--- volanie funkcie</span>
+        <span class="c1"># návratové miesto</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">rekurzia</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>        <span class="c1"># &lt;--- volanie funkcie</span>
+        <span class="c1"># návratové miesto</span>
+
+<span class="n">rekurzia</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                    <span class="c1"># &lt;--- volanie funkcie</span>
+<span class="c1"># návratové miesto</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;koniec&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Keďže samotná rekurzia zakaždým <strong>opakuje</strong> nejaké výpočty ale so zmenenými premennými (menným priestorom), nahrádzať ju budeme <strong>while-cyklom</strong> a na zapamätávanie návratových adries a menného priestoru použijeme <strong>zásobník</strong>. V našom jednoduchom príklade si bude treba na zásobníku vedieť zapamätať dve hodnoty: adresu a premennú <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p>Samotnú funkciu <code class="docutils literal notranslate"><span class="pre">rekurzia()</span></code> „rozsekneme“ na časti presne tam, kde sa nachádzajú rekurzívne volania a návratové miesta:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+<span class="c1"># prvá časť</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    <span class="c1"># triviálny prípad</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rekurzia</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>        <span class="c1"># &lt;--- volanie funkcie</span>
+
+<span class="c1"># druhá časť</span>
+        <span class="c1"># návratové miesto</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">rekurzia</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>        <span class="c1"># &lt;--- volanie funkcie</span>
+
+<span class="c1"># tretia časť</span>
+        <span class="c1"># návratové miesto</span>
+</pre></div>
+</div>
+<p>Tieto tri časti sa budú nejako opakovať pomocou nášho nového while-cyklu a pre každú z nich využijeme zásobník s návratovou adresou a premennou <code class="docutils literal notranslate"><span class="pre">n</span></code> (menným priestorom). Ktorá z týchto častí sa bude opakovať, to nám oznámi <strong>adresa</strong> tejto časti a aká bude vtedy hodnota premennej <code class="docutils literal notranslate"><span class="pre">n</span></code> sa tiež dozvieme z vrchu zásobníka.</p>
+<p>V našej funkcii sa nachádzajú dve volania funkcie, ktoré musíme nahradiť týmto novým mechanizmom. Tento zabezpečí, že sa namiesto každého volania urobí niečo so zásobníkom:</p>
+<ol class="arabic simple">
+<li><p>zapamätáme si (operácia <code class="docutils literal notranslate"><span class="pre">push()</span></code>), kam sa bude treba vrátiť a aká bude pritom hodnota <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p>nastavíme skok na úplný začiatok funkcie s novým <code class="docutils literal notranslate"><span class="pre">n</span></code> (zmenšeným o 1) - toto môžeme urobiť takýmto malým vylepšením: na vrch zásobníka vložíme informáciu (operácia <code class="docutils literal notranslate"><span class="pre">push()</span></code>), že chceme pokračovať od <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">prva</span> <span class="pre">cast</span></code> s novým <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+</ol>
+<p>Teda namiesto každého volania <code class="docutils literal notranslate"><span class="pre">rekurzia(n</span> <span class="pre">-</span> <span class="pre">1)</span></code> zapíšeme tieto dve vkladania do zásobníka:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="n">adresa</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>   <span class="c1"># adresa je návratové miesto 2 alebo 3</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>    <span class="c1"># 1 je adresa prvej časti, teda začiatku funkcie</span>
+</pre></div>
+</div>
+<p>Teraz môžeme celú rekurzívnu funkciu prepísať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+<span class="c1"># inicializácia zásobníka</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">adresa</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="c1"># prvá časť</span>
+        <span class="k">if</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    <span class="c1"># triviálny prípad</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># rekurzia(n - 1)      # &lt;--- volanie funkcie</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># druhá časť</span>
+        <span class="k">elif</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="c1"># návratové miesto</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                <span class="c1"># rekurzia(n - 1)      # &lt;--- volanie funkcie</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># tretia časť</span>
+        <span class="k">elif</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="c1"># návratové miesto</span>
+                <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Po otestovaní dostávame ten istý výsledok, ako pôvodná rekurzívna verzia. Odstráňme komentáre a tiež tretiu časť, ktorú ako vidíme, nerobí nič a preto môžeme odstrániť aj <code class="docutils literal notranslate"><span class="pre">stack.push((3,</span> <span class="pre">n))</span></code>, ktorý spôsobuje návrat na tretiu časť po skončení druhej:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">adresa</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    <span class="c1"># triviálny prípad</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                <span class="c1">#stack.push((3, n))</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">rekurzia</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;koniec&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A toto je kompletná nerekurzívna verzia tejto funkcie. Takýto proces <strong>nahrádzania rekurzie</strong> pomocou while-cyklu sa dá zapísať veľa rôznymi spôsobmi, bude to závisieť hlavne od vašich programátorských skúseností. Pozrite si napríklad takýto prepis, ktorý robí presne to isté ako naše predchádzajúce riešenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rekurzia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="n">adresa</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    <span class="c1"># triviálny prípad</span>
+                <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                    <span class="k">break</span>              <span class="c1"># alebo return</span>
+                <span class="n">adresa</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+                <span class="n">adresa</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                <span class="c1"># stack.push((3, n))</span>
+                <span class="n">adresa</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Rekurzívne funkcie, ktoré vracajú nejakú hodnotu, je „odrekurzívňovať“ trochu náročnejšie. Nám by mohlo postačiť také riešenie, v ktorom najprv túto rekurzívnu funkciu prepíšeme na funkciu, ktorá nevracia hodnotu, ale mení nejakú globálnu premennú. Takúto zmenenú rekurzívnu funkciu by sme už mali vedieť nahradiť while-cyklom.</p>
+<p>Rekurziu sme doteraz najviac využívali v korytnačej grafike. Pripomeňme si jednu z najznámejších rekurzívnych funkcií s korytnačou grafikou - kreslenie binárneho stromu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">strom</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Na jej odrekurzívnenie použijeme rovnaký postup, ako pri funkcii <code class="docutils literal notranslate"><span class="pre">rekurzia()</span></code>. „Rozsekneme“ funkciu na časti v tých miestach, kde sa nachádza rekurzívne volanie. Musíme si pritom dať veľký pozor na triviálny prípad, teda čo sa naozaj vykoná v triviálnom prípade (teda, keď neplatí <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+
+<span class="c1"># prvá časť</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>         <span class="c1"># triviálny prípad</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># druhá časť</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+        <span class="n">strom</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+
+<span class="c1"># tretia časť</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zatiaľ je to rekurzívne, ale pripravené na nahradenie while-cyklom so zásobníkom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">strom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">stack</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">adresa</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="c1"># prvá časť</span>
+        <span class="k">if</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>         <span class="c1"># triviálny prípad</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+                <span class="c1">#strom(n - 1, d * 0.7)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">))</span>
+
+    <span class="c1"># druhá časť</span>
+        <span class="k">elif</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+            <span class="c1">#strom(n - 1, d * 0.6)</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">))</span>
+
+    <span class="c1"># tretia časť</span>
+        <span class="k">elif</span> <span class="n">adresa</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">bk</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dostali sme nerekurzívnu verziu kreslenia binárneho stromu. Bude veľmi užitočné, keď si potrénujete takéto nahrádzanie rekurzie, lebo neskoršie témy v tomto semestri budú plné rekurzívnych funkcií, ktoré bude niekedy treba vykonať aj pre veľmi veľký počet rekurzívnych vnorení.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="rad">
+<h2><a class="toc-backref" href="15.html#id5" role="doc-backlink">Rad</a><a class="headerlink" href="15.html#rad" title="Link to this heading">¶</a></h2>
+<p>Dátová štruktúra <strong>rad</strong> (budeme používať aj názvy <strong>front</strong> alebo anglické <strong>queue</strong>, ale určite nie <em>„rada“</em> ani <em>„fronta“</em>) je veľmi podobná dátovej štruktúre zásobník. Na rozdiel od zásobníka ale nevyberá prvky z vrchu (od konca, teda naposledy vložený prvok) ale zo začiatku štruktúry. Tomuto princípu hovoríme <strong>FIFO</strong> z anglického <strong>first-in-first-out</strong>. Na tomto princípe funguje aj náš bežný rad v obchode alebo v jedálni. Keď sa v takomto rade nepredbiehame a obslúžený sme presne v tom poradí, ako sme prišli, hovoríme tomu <strong>spravodlivý rad</strong> (na rozdiel od zásobníka, ktorý je nespravodlivý rad). Počas tohto semestra uvidíme niekoľko veľmi užitočných aplikácií tejto dátovej štruktúry.</p>
+<p>Opäť na operácie, ktoré manipulujú s radom, využijeme zaužívané anglické slová:</p>
+<ul class="simple">
+<li><p><strong>enqueue</strong> vloží na koniec radu nový údaj</p></li>
+<li><p><strong>dequeue</strong> vyberie prvý údaj z radu; táto hodnota je výsledkom operácie; ak je ale rad prázdny, nie je čo vybrať, operácia vyvolá výnimku <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code></p></li>
+<li><p><strong>front</strong> vráti prvý prvok radu, ale rad pritom nemení; ak je ale rad prázdny, nie je čo vrátiť, operácia vyvolá výnimku <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code></p></li>
+<li><p><strong>is_empty</strong> zistí, či je rad prázdny; operácia vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>Rad budeme v Pythone realizovať podobne ako zásobník pomocou typu zoznamu (<code class="docutils literal notranslate"><span class="pre">list</span></code>). Začiatok radu bude zodpovedať prvému prvku zoznamu (prvky[0]) a vkladať budeme na koniec zoznamu, t.j. opäť operáciou <code class="docutils literal notranslate"><span class="pre">append()</span></code>. Túto realizáciu pomocou zoznamu zapíšeme do triedy <code class="docutils literal notranslate"><span class="pre">Queue</span></code> a opäť pridáme aj definíciu výnimky <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EmptyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Queue</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;inicializuje zoznam&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;na koniec radu vloží novú hodnotu&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;zo začiatku radu vyberie prvú hodnotu, alebo vyvolá EmptyError&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span><span class="p">(</span><span class="s1">&#39;prazdny rad&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">front</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;zo začiatku radu vráti prvú hodnotu, alebo vyvolá EmptyError&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">EmptyError</span><span class="p">(</span><span class="s1">&#39;prazdny rad&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;zistí, či je rad prázdny&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prvky</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Ak porovnáte túto realizáciu s definíciou triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, zistíte, že sú medzi nimi minimálne rozdiely. Uvidíte neskôr, že využitie týchto dvoch dátových štruktúr je veľmi rozdielne a často sa využívajú na úplne iné ciele.</p>
+<p>Podobne ako sme definíciu triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code> uložili do súboru <code class="docutils literal notranslate"><span class="pre">struktury.py</span></code>, môžeme sem prekopírovať aj túto definíciu radu. Zrejme triedu <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code> vtedy nemá zmysel kopírovať druhýkrát - jej jedna definícia pokryje obe tieto štruktúry.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Otestujme rad</p>
+<p>Otestujeme rovnakým testom, ako sme to robili so zásobníkom: do radu najprv vložíme niekoľko slov a potom ich pomocou <code class="docutils literal notranslate"><span class="pre">dequeue()</span></code> postupe všetky vyberieme a vypíšeme. V tomto výpise by sa mali všetky prvky vyskytnúť presne v poradí, ako boli vkladané do radu.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+
+<span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">slovo</span> <span class="ow">in</span> <span class="s1">&#39;Anicka dusicka kde si bola&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">slovo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;prvy v rade:&#39;</span><span class="p">,</span> <span class="n">queue</span><span class="o">.</span><span class="n">front</span><span class="p">())</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">queue</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rad je prazdny:&#39;</span><span class="p">,</span> <span class="n">queue</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vyberame:&#39;</span><span class="p">,</span> <span class="n">queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Po spustení vidíme, že to naozaj funguje:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>prvy v rade: Anicka
+Anicka
+dusicka
+kde
+si
+bola
+rad je prazdny: True
+...
+struktury.EmptyError: prazdny rad
+</pre></div>
+</div>
+<p>Ďalší príklad prečíta textový súbor a na jeho koniec vloží celú kópiu samého seba:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">zdvoj_subor</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">):</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">)</span> <span class="k">as</span> <span class="n">subor</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">subor</span><span class="p">:</span>
+            <span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">subor</span><span class="p">:</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">queue</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="n">subor</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+
+<span class="n">zdvoj_subor</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Toto isté by sme vedeli zapísať aj bez použitia radu (napríklad najprv celý súbor prečítať pomocou jediného <code class="docutils literal notranslate"><span class="pre">subor.read()</span></code> a potom ho jedným <code class="docutils literal notranslate"><span class="pre">subor.write()</span></code> celý zapísať), ale príklad ilustruje použitie dátovej štruktúry <code class="docutils literal notranslate"><span class="pre">Queue</span></code>.</p>
+<p>S niektorými operáciami s dátovou štruktúrou rad sa budeme trápiť podobne, ako pri zásobníkoch. Pozrime si riešenie úlohy, v ktorej chceme korektne zistiť počet prvkov v rade. Najprv použijeme rovnakú ideu, akou sme zisťovali počet prvkov v zásobníku. Namiesto pomocného zásobníka pre kópiu pôvodného obsahu využijeme pomocný rad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">rad</span><span class="p">):</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">rad</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">pom</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">rad</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+        <span class="n">vysl</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">pom</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+        <span class="n">rad</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">pom</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Lenže táto úloha sa dá riešiť aj bez pomocnej štruktúry: prvky budeme z pôvodného radu vyberať postupne pomocou <code class="docutils literal notranslate"><span class="pre">dequeue()</span></code> a okamžite ich budeme vracať na jeho koniec. Keď takto prejdeme celý rad (popritom môžeme zisťovať počet týchto prvkov), všetky prvky sú opäť na svojom mieste. Pritom ale musíme vyriešiť jeden nemalý problém: musíme vedieť, kedy skončiť, inak by sme donekonečna prechádzali stále tie isté prvky. Použijeme ideu <strong>zarážky</strong>: skôr ako začneme postupne prechádzať všetky prvky, pridáme na koniec tzv. <strong>zarážku</strong>, t.j. takú hodnotu, pomocou ktorej budeme vedieť, že sme práve prešli všetky prvky radu. Zrejme zarážka by mala byť taká hodnota, ktorá sa určite nikdy neobjaví ako prvok našej štruktúry rad. Začiatočníci ľúbia používať hodnoty ako <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">'###'</span></code> a pod., čo by bolo veľmi zlým riešením. Pythonisti v takých prípadoch odporúčajú špeciálnu hodnotu <code class="docutils literal notranslate"><span class="pre">object()</span></code>, čo je unikátna inštancia <em>prázdnej základnej triedy</em>. Táto konkrétna hodnota sa nikdy nemôže stať prvkom žiadneho radu. Zapíšme vylepšenú verziu funkcie <code class="docutils literal notranslate"><span class="pre">pocet</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">rad</span><span class="p">):</span>
+    <span class="n">zarazka</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+    <span class="n">vysl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">rad</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">zarazka</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">prvok</span> <span class="o">=</span> <span class="n">rad</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">zarazka</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">rad</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">prvok</span><span class="p">)</span>
+        <span class="n">vysl</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">vysl</span>
+</pre></div>
+</div>
+<p>Podobné úlohy budeme riešiť aj na cvičeniach.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="15.html#id6" role="doc-backlink">Cvičenie</a><a class="headerlink" href="15.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich všetky okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 15. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 11.11.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdaných riešeniach používaj len konštrukcie z doterajších prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code>)</p></li>
+</ul>
+<p>Tvoje funkcie by nemali priamo pracovať s atribútom <code class="docutils literal notranslate"><span class="pre">_prvky</span></code> ale mali by využívať len metódy <code class="docutils literal notranslate"><span class="pre">push()</span></code>, <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">top()</span></code>, … Nezabudni, že atribút <code class="docutils literal notranslate"><span class="pre">_prvky</span></code> môžu používať len metódy triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code>.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Do nasledovného programu dopíš chýbajúcu časť <code class="docutils literal notranslate"><span class="pre">...</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>tak, aby sa vypísala takáto postupnosť:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="mi">4</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">8</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Vytvor súbor <code class="docutils literal notranslate"><span class="pre">struktury.py</span></code> a prekopíruj do neho definíciu triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code> z prednášky. V ďalších úlohách budeš používať <code class="docutils literal notranslate"><span class="pre">import</span></code> z tohto súboru. Do inicializácie triedy <code class="docutils literal notranslate"><span class="pre">Stack</span></code> ešte pridaj nepovinný parameter <code class="docutils literal notranslate"><span class="pre">postupnost</span></code>, ktorý označuje postupnosť hodnôt, ktorou sa inicializuje zásobník (použi metódu <code class="docutils literal notranslate"><span class="pre">push()</span></code>). Pridaj ešte novú magickú metódu <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>, ktorá vráti zoznam všetkých prvkov zásobníka tak, že dno je na začiatku a vrch je na konci zoznamu (zásobník sa pritom nezmení). Tento zoznam vráti v tvare <code class="docutils literal notranslate"><span class="pre">'Stack(...prvky...)'</span></code>, kde <code class="docutils literal notranslate"><span class="pre">...prvky...</span></code> sú vypísané ako n-tica (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>). Dopíš:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Stack</span><span class="p">:</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postupnost</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span>        <span class="o">...</span>
+    <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Stack(...)&#39;</span>
+</pre></div>
+</div>
+<p>Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stack</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Stack</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="hll"><span class="go">    Stack((0, 1, 2, 3, 4))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Stack</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    Stack((&#39;P&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Stack</span><span class="p">([</span><span class="mi">123</span><span class="p">])</span>
+<span class="hll"><span class="go">    Stack((123,))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Stack</span><span class="p">()</span>
+<span class="hll"><span class="go">    Stack()</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pocet_cisel(stack)</span></code>, ktorá zistí počet čísel (<code class="docutils literal notranslate"><span class="pre">int</span></code> aj <code class="docutils literal notranslate"><span class="pre">float</span></code>) v danom zásobníku. Po skončení funkcie bude zásobník prázdny. Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet_cisel</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="hll"><span class="go">    2</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+<span class="hll"><span class="go">    True</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">druhy(stack)</span></code>, ktorá zo zásobníka vyberie a vráti druhý prvok od spodu (dna zásobníka). Všetky ostatné prvky nezmení. Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">druhy</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;y&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="hll"><span class="go">    Stack((&#39;p&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;))</span>
+</span></pre></div>
+</div>
+<p>ak sa nedá vykonať, vyvolá <code class="docutils literal notranslate"><span class="pre">EmptyError</span></code>, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">([</span><span class="s1">&#39;python&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">druhy</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="hll"><span class="go">    ...</span>
+</span><span class="hll"><span class="go">    EmptyError</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="hll"><span class="go">    Stack((&#39;python&#39;,))</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">prevrat(stack)</span></code>, ktorá prevráti poradie prvkov v zásobníku (nepracuj s <code class="docutils literal notranslate"><span class="pre">_prvky</span></code>). Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="hll"><span class="go">    Stack((0, 1, 2, 3, 4))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">prevrat</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="hll"><span class="go">    Stack((4, 3, 2, 1, 0))</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Ručne prepíš <strong>infixové</strong> zápisy do <strong>prefixu</strong> aj <strong>postfixu</strong>:</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">*</span> <span class="pre">100</span> <span class="pre">+</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">10</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">*</span> <span class="pre">10</span> <span class="pre">+</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">100</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">'a'</span> <span class="pre">+</span> <span class="pre">'b'</span> <span class="pre">*</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">('a'</span> <span class="pre">+</span> <span class="pre">'b')</span> <span class="pre">*</span> <span class="pre">4</span></code></p></li>
+</ol>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Najpr ručne prerob prvý výraz <strong>a.</strong> na <strong>postfix</strong> a druhý <strong>b.</strong> na <strong>prefix</strong>, potom oba vyhodnoť:</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">8</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">-</span> <span class="pre">14</span> <span class="pre">6</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">8</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">6</span> <span class="pre">7</span> <span class="pre">*</span> <span class="pre">+</span></code></p></li>
+</ol>
+<p>Svoje výsledky porovnaj s vyhodnotením pomocou funkcií <code class="docutils literal notranslate"><span class="pre">postfix()</span></code> a <code class="docutils literal notranslate"><span class="pre">prefix()</span></code></p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Odrekurzívni rekurzívnu krivku <code class="docutils literal notranslate"><span class="pre">ckrivka()</span></code> z 9. prednášky v zimnom semestri:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ckrivka</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ckrivka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">ckrivka</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">ckrivka</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Napíš funkcie <code class="docutils literal notranslate"><span class="pre">push_dno(stack,</span> <span class="pre">hodnota)</span></code>, <code class="docutils literal notranslate"><span class="pre">inc(stack)</span></code> a <code class="docutils literal notranslate"><span class="pre">nechaj_parne(stack)</span></code>. Pri všetkých využiješ pomocný zásobník. Funkcia <code class="docutils literal notranslate"><span class="pre">push_dno(stack,</span> <span class="pre">hodnota)</span></code> vloží na dno zásobníka danú hodnotu, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">push_dno</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="hll"><span class="go">    Stack((&#39;z&#39;, 3, 5, 7, 11))</span>
+</span></pre></div>
+</div>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">inc(stack)</span></code> ku všetkým hodnotám v zásobníku pripočíta (ak sa dá) <code class="docutils literal notranslate"><span class="pre">1</span></code>, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cisla</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisla</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inc</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisla</span>
+<span class="hll"><span class="go">    Stack((2, 3, 5, 7, 11, &#39;a&#39;))</span>
+</span></pre></div>
+</div>
+<p>Funkcia <code class="docutils literal notranslate"><span class="pre">nechaj_parne(stack)</span></code> ponechá v zásobníku len celé čísla, ktoré sú ešte aj párne, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span>
+<span class="hll"><span class="go">    Stack((3, 4, 5, 6, 7, 8, 9, &#39;x&#39;))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">nechaj_parne</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span>
+<span class="hll"><span class="go">    Stack((4, 6, 8))</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Do súboru <code class="docutils literal notranslate"><span class="pre">struktury.py</span></code> pridaj aj definíciu triedy  <code class="docutils literal notranslate"><span class="pre">Queue</span></code> z prednášky. Podobne ako pri <code class="docutils literal notranslate"><span class="pre">Stack</span></code> do <code class="docutils literal notranslate"><span class="pre">__init__</span></code> pridaj nepovinný parameter <code class="docutils literal notranslate"><span class="pre">postupnost</span></code> a dopíš magickú metódu <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Queue</span><span class="p">:</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postupnost</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span>        <span class="o">...</span>
+    <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Queue(...)&#39;</span>
+</pre></div>
+</div>
+<p>Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Queue</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="hll"><span class="go">    Queue((0, 1, 2, 3, 4))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Queue</span><span class="p">([</span><span class="mi">123</span><span class="p">])</span>
+<span class="hll"><span class="go">    Queue((123,))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Queue</span><span class="p">([])</span>
+<span class="hll"><span class="go">    Queue()</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Naprogramuj tieto tri funkcie s parametrom typu <code class="docutils literal notranslate"><span class="pre">Queue</span></code> tak, aby sa nepoškodil obsah radu:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pocet_cisel(rad)</span></code> zistí počet prvkov v rade, ktoré sú <code class="docutils literal notranslate"><span class="pre">int</span></code> alebo <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">druhy(rad)</span></code> vráti hodnotu druhého prvku radu (druhého pridaného prvku)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">posledny(rad)</span></code> vráti hodnotu posledného prvku radu (naposledy pridaného prvku)</p></li>
+</ul>
+<p>Pre tieto funkcie to rieš najprv s pomocným radom (podobne, ako sme to riešili so zásobníkom) a potom aj bez pomocného radu pomocou zarážky (vyberané prvky sa ukladajú na koniec samotného radu). Otestuj:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">struktury</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queue</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="hll"><span class="go">    Queue((&#39;a&#39;, 2.7, &#39;3&#39;, 37))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet_cisel</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="hll"><span class="go">    2</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">druhy</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="hll"><span class="go">    2.7</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">posledny</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="hll"><span class="go">    37</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="hll"><span class="go">    Queue((&#39;a&#39;, 2.7, &#39;3&#39;, 37))</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="15.html#id7" role="doc-backlink">8. Týždenný projekt</a><a class="headerlink" href="15.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a> najneskôr 30.novembra do 18:00.</p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 8. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 16.11.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>používaj len konštrukcie z doterajších prednášok (nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code>)</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Napíš modul, ktorý bude obsahovať triedu <code class="docutils literal notranslate"><span class="pre">AritmetickyVyraz</span></code> s týmito metódami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AritmetickyVyraz</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;...&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">urob_prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vyraz</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;...&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">prirad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prem</span><span class="p">,</span> <span class="n">vyraz</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">vyhodnot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vyraz</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Cieľom týchto metód je udržiavať (v atribúte <code class="docutils literal notranslate"><span class="pre">self.tab</span></code>) tabuľku premenných a ich priradených aritmetických výrazov v tvare prefixovej notácie a tiež vyhodnocovať takéto výrazy, ktoré môžu obsahovať aj premenné. Tieto aritmetické výrazy môžu byť zadané nielen v bežnom infixovom tvare, ale aj v postfixovom alebo prefixovom. Súčasťou riešenia bude teda aj prevod z ľubovoľnej notácie (infix, prefix alebo postfix) do prefixu (metóda <code class="docutils literal notranslate"><span class="pre">urob_prefix()</span></code>).</p>
+<p>Metódy triedy <code class="docutils literal notranslate"><span class="pre">AritmetickyVyraz</span></code> by mali mať túto funkčnosť (môžeš si dodefinovať aj ďalšie pomocné metódy):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">prirad(prem,</span> <span class="pre">vyraz)</span></code> do premennej s menom <code class="docutils literal notranslate"><span class="pre">prem</span></code> priradí <strong>prefixový tvar</strong> výrazu <code class="docutils literal notranslate"><span class="pre">vyraz</span></code>, priradenie znamená, že sa do tabuľky (slovník, t.j. asociatívne pole <code class="docutils literal notranslate"><span class="pre">self.tab</span></code>) pre zadaný reťazec (meno premennej) priradí prekonvertovaný zápis výrazu; oba parametre sú znakové reťazce; funkcia vráti priradenú hodnotu do tabuľky, napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">AritmetickyVyraz</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;123&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39; a+1&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;+ a 1&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;x 0 / &#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;/ x 0&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;res22&#39;</span><span class="p">,</span> <span class="s1">&#39;%*9   9 6&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;% * 9 9 6&#39;</span>
+</span></pre></div>
+</div>
+<p>môžeš predpokladať, že všetky výrazy budú zadané <strong>korektne</strong>, t.j. budú sa dať previesť do prefixového tvaru:</p>
+<ul class="simple">
+<li><p>v uloženom (prekonvertovanom) prefixovom výraze budú operandy aj operátory oddelené práve jednou medzerou</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> vráti reťazec, ktorý obsahuje momentálne obsahy premenných (funkcia nič nevypisuje), predchádzajúce priradenia vytvoria tieto 3 premenné (možno v inom poradí):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="hll"><span class="go">    &#39;a&#39;: &#39;/ x 0&#39;</span>
+</span><span class="hll"><span class="go">    &#39;abc&#39;: &#39;+ a 1&#39;</span>
+</span><span class="hll"><span class="go">    &#39;res22&#39;: &#39;% * 9 9 6&#39;</span>
+</span></pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vyhodnot(vyraz)</span></code>, kde <code class="docutils literal notranslate"><span class="pre">vyraz</span></code> je znakový reťazec, ktorý obsahuje aritmetický výraz v infixovom,  postfixovom, alebo prefixovom zápise; funkcia tento výraz vyhodnotí a vráti <strong>celočíselnú hodnotu</strong> výsledku alebo <code class="docutils literal notranslate"><span class="pre">None</span></code>; funkcia by mala:</p>
+<ul>
+<li><p>ak treba, najprv prevedie výraz do prefixového tvaru</p></li>
+<li><p>takýto prefixový výraz vyhodnotí algoritmom z prednášky, pričom zrejme využije pomocný zásobník</p></li>
+<li><p>pri vyhodnocovaní výrazu premenné (identifikátory) nahradí ich hodnotou, ktorú získa vyhodnotením výrazu z tabuľky premenných (<code class="docutils literal notranslate"><span class="pre">self.tab</span></code>), vtedy funkcia opäť zavolá metódu <code class="docutils literal notranslate"><span class="pre">vyhodnot</span></code></p></li>
+<li><p>výrazy sú celočíselné, teda všetky operácie vracajú celé číslo (operácia <code class="docutils literal notranslate"><span class="pre">'/'</span></code> zodpovedá pythonovskému <code class="docutils literal notranslate"><span class="pre">'//'</span></code>, operácia <code class="docutils literal notranslate"><span class="pre">'%'</span></code> počíta zvyšok po delení); hoci medzi operátormi a operandmi nemusia byť medzery, funkcia aj tak zabezpečí správne rozdelenie výrazu na operátory a operandy (celé čísla a identifikátory premenných rovnako ako sú definované v Pythone)</p></li>
+<li><p>môžeš počítať s tým, že testovač nebude vytvárať situácie, v ktorých by sa metóda <code class="docutils literal notranslate"><span class="pre">vyhodnot</span></code> zarekurzívnila</p></li>
+<li><p>ak pri vyhodnocovaní vznikne nejaká chyba, napríklad delenie nulou alebo neznámy obsah premennej, funkcia vráti <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;x*x&#39;</span><span class="p">)</span>       <span class="c1"># premenná &#39;x&#39; ešte neexistuje</span>
+<span class="hll"><span class="go">    &#39;* x x&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;z+1&#39;</span><span class="p">))</span>
+<span class="hll"><span class="go">    None</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;5-2&#39;</span><span class="p">)</span>
+<span class="hll"><span class="go">    &#39;- 5 2&#39;</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;z+1&#39;</span><span class="p">))</span>
+<span class="hll"><span class="go">    10</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;1/(9-z)&#39;</span><span class="p">))</span>
+<span class="hll"><span class="go">    None</span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">urob_prefix(vyraz)</span></code> vráti znakový reťazec, kde <code class="docutils literal notranslate"><span class="pre">vyraz</span></code> je znakový reťazec s aritmetickým výrazom:</p>
+<ul class="simple">
+<li><p><strong>v prefixovom tvare</strong> - vráti ten istý prefixový výraz, ale operandy a operátory sú oddelené práve jednou medzerou</p></li>
+<li><p><strong>v postfixovom tvare</strong> - vráti ekvivalentný prefixový výraz; môžeš použiť tento algoritmus (veľmi sa podobá algoritmu na vyhodnocovanie postfixu):</p>
+<ol class="arabic simple">
+<li><p>postfixový reťazec (operátory, čísla a premenné) postupne prechádza zľava doprava, pričom sa bude využívať pomocný zásobník</p></li>
+<li><p>ak je prvkom operand (čísla a premenné), vloží ho na vrch zásobníka</p></li>
+<li><p>ak je prvkom operátor (symbol operácie), z vrchu zásobníka vyberie dva operandy a naspäť do zásobníka namiesto nich vloží reťazec, ktorý je zlepením (aj s medzerami): operátor + operand1 + operand2 (treba si dať pozor na poradie operandov)</p></li>
+<li><p>po skončení všetkých prvkov vstupného postfixu v zásobníku ostane jediný reťazec a to je výsledný prefix</p></li>
+</ol>
+</li>
+<li><p><strong>v infixovom tvare</strong> - prevedie tento výraz na prefixový zápis; môžeš použiť tento algoritmus (kde priorita <code class="docutils literal notranslate"><span class="pre">'+'</span></code> a <code class="docutils literal notranslate"><span class="pre">'-'</span></code> je <strong>1</strong>, priorita <code class="docutils literal notranslate"><span class="pre">'*'</span></code>, <code class="docutils literal notranslate"><span class="pre">'/'</span></code> a <code class="docutils literal notranslate"><span class="pre">'%'</span></code> je <strong>2</strong>, priorita <code class="docutils literal notranslate"><span class="pre">')'</span></code> je <strong>0</strong>):</p>
+<ol class="arabic simple">
+<li><p>infixový reťazec (operátory, zátvorky, čísla a premenné) sa bude prechádzať od konca, teda sprava doľava; pripraví sa pomocný zásobník (budú sa do neho vkladať operátory a zátvorky) a zatiaľ prázdny výsledný <strong>prefix</strong></p></li>
+<li><p>ak je prvkom operand (celé číslo alebo premenná), pridá sa do výsledku (do premennej <strong>prefix</strong>)</p></li>
+<li><p>ak je prvkom pravá zátvorka <code class="docutils literal notranslate"><span class="pre">')'</span></code>, vloží (<code class="docutils literal notranslate"><span class="pre">push()</span></code>) sa do zásobníka (keďže sa výraz prechádza od konca, táto zátvorka otvára ozátvorkovaný podvýraz)</p></li>
+<li><p>ak je prvkom ľavá zátvorka <code class="docutils literal notranslate"><span class="pre">'('</span></code> (teda uzatvára podvýraz), zo zásobníka sa vyberú (<code class="docutils literal notranslate"><span class="pre">pop()</span></code>) všetky prvky, až kým nepríde prvá <code class="docutils literal notranslate"><span class="pre">')'</span></code> - všetky tieto prvky (okrem zátvorky) sa pridajú do výsledného <strong>prefixu</strong></p></li>
+<li><p>zrejme ďalej môže byť prvkom len operátor (jeden z <code class="docutils literal notranslate"><span class="pre">'+-*/%'</span></code>), ak je zásobník prázdny, operátor sa dá na vrch zásobníka (<code class="docutils literal notranslate"><span class="pre">push()</span></code>)</p></li>
+<li><p>inak, ak je priorita tohto operátora <strong>menšia</strong> ako operátora na vrchu zásobníka (<code class="docutils literal notranslate"><span class="pre">top()</span></code>):</p>
+<ul>
+<li><p>kým je zásobník neprázdny a operátor na vrchu zásobníka má vyššiu prioritu ako spracovávaný operátor, vyberá z neho (<code class="docutils literal notranslate"><span class="pre">pop()</span></code>) všetky takéto operátory a pridá ich do výsledného <strong>prefixu</strong></p></li>
+<li><p>po skončení cyklu vloží do zásobníka (<code class="docutils literal notranslate"><span class="pre">push()</span></code>) samotný operátor</p></li>
+</ul>
+</li>
+<li><p>inak (na vrchu zásobníka nebol operátor s vyššou prioritou, mal menšiu alebo rovnú) do zásobníka vloží (<code class="docutils literal notranslate"><span class="pre">push()</span></code>) samotný operátor</p></li>
+<li><p>po skončení spracovania vstupného infixu prípadné operátory v zásobníku vyberie a pridá ich do výsledného <strong>prefixu</strong></p></li>
+<li><p>ak sme počas algoritmu vkladali prvky výrazu do výslednej premennej <strong>prefix</strong> vždy na koniec, tento výsledok treba ešte otočiť</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>Prevod z <strong>infixu</strong> do <strong>pretfixu</strong> môžeš vidieť na prevode tohto výrazu <code class="docutils literal notranslate"><span class="pre">'7-y+abc*12/x'</span></code>. Tento výraz najprv rozdelíš na prvky: <code class="docutils literal notranslate"><span class="pre">'7',</span> <span class="pre">'-',</span> <span class="pre">'y',</span> <span class="pre">'+',</span> <span class="pre">'abc',</span> <span class="pre">'*',</span> <span class="pre">'12',</span> <span class="pre">'/',</span> <span class="pre">'x'</span></code> a potom spustíš algoritmus (prvky infixu spracovávaš od konca):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10.8%" />
+<col style="width: 15.4%" />
+<col style="width: 27.7%" />
+<col style="width: 46.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>spracováva</p></th>
+<th class="head"><p>na zásobníku</p></th>
+<th class="head"><p>výsledný prefix</p></th>
+<th class="head"><p>komentár</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td><p>operand do výsledku</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td><p>prázdny zásobník, operátor do zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">12</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span></code></p></td>
+<td><p>operand do výsledku</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span></code></p></td>
+<td><p>operátor nie je menší, do zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">abc</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span> <span class="pre">abc</span></code></p></td>
+<td><p>operand do výsledku</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span> <span class="pre">abc</span> <span class="pre">*</span> <span class="pre">/</span></code></p></td>
+<td><p>operátor je menší, vyprázdni zásobník</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span> <span class="pre">abc</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">y</span></code></p></td>
+<td><p>operand do výsledku</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span> <span class="pre">abc</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">y</span></code></p></td>
+<td><p>operátor nie je menší, do zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span> <span class="pre">abc</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">y</span> <span class="pre">7</span></code></p></td>
+<td><p>operand do výsledku</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">12</span> <span class="pre">abc</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">y</span> <span class="pre">7</span> <span class="pre">-</span> <span class="pre">+</span></code></p></td>
+<td><p>pridá obsah zásobníka</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">7</span> <span class="pre">y</span> <span class="pre">/</span> <span class="pre">*</span> <span class="pre">abc</span> <span class="pre">12</span> <span class="pre">x</span></code></p></td>
+<td><p>otočí výsledok</p></td>
+</tr>
+</tbody>
+</table>
+<p>Na výstupe je teraz <strong>prefixový</strong> zápis výrazu.</p>
+<p class="rubric">Obmedzenia</p>
+<ul class="simple">
+<li><p>atribút <code class="docutils literal notranslate"><span class="pre">tab</span></code> v triede <code class="docutils literal notranslate"><span class="pre">AritmetickyVyraz</span></code> bude obsahovať slovník (asociatívne pole) so všetkými premennými a ich hodnotami (hodnotami premenných budú výrazy v prefixovom tvare)</p></li>
+<li><p>môžeš si dodefinovať vlastné pomocné triedy (napríklad <code class="docutils literal notranslate"><span class="pre">Stack</span></code>) aj pomocné metódy alebo funkcie, ale musia byť vnorené v definícii triedy <code class="docutils literal notranslate"><span class="pre">AritmetickyVyraz</span></code> (v súbore okrem definície <code class="docutils literal notranslate"><span class="pre">AritmetickyVyraz</span></code> nebudú žiadne ďalšie globálne premenné, funkcie ani triedy)</p></li>
+</ul>
+<p class="rubric">Testovanie</p>
+<p>Keď budeš spúšťať svoje riešenie na počítači, môžeš na koniec pridať testovacie riadky, ktoré ale testovač vidieť nebude a pritom tebe sa spúšťať budú, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">AritmetickyVyraz</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">urob_prefix</span><span class="p">(</span><span class="s1">&#39;1 2+&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">urob_prefix</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">urob_prefix</span><span class="p">(</span><span class="s1">&#39;-3*13 b&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;24 j +&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;j&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2 3 4 5 ***&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">prirad</span><span class="p">(</span><span class="s1">&#39;ij&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;i-j&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prem</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">tab</span><span class="p">:</span>
+         <span class="nb">print</span><span class="p">(</span><span class="n">prem</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">vyhodnot</span><span class="p">(</span><span class="n">prem</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento test by mal vypísať (možno v inom poradí):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>v.urob_prefix(&#39;1 2+&#39;) = &#39;+ 1 2&#39;
+v.urob_prefix(&#39;abc&#39;) = &#39;abc&#39;
+v.urob_prefix(&#39;-3*13 b&#39;) = &#39;- 3 * 13 b&#39;
+v.prirad(&#39;i&#39;, &#39;24 j +&#39;) = &#39;+ 24 j&#39;
+v.prirad(&#39;j&#39;, &#39;2 3 4 5 ***&#39;) = &#39;* 2 * 3 * 4 5&#39;
+&#39;i&#39;: &#39;+ 24 j&#39;
+&#39;j&#39;: &#39;* 2 * 3 * 4 5&#39;
+v.prirad(&#39;ij&#39;, &#39;i-j&#39;) = &#39;- i j&#39;
+i = 144
+j = 120
+ij = 24
+&#39;i&#39;: &#39;+ 24 j&#39;
+&#39;j&#39;: &#39;* 2 * 3 * 4 5&#39;
+&#39;ij&#39;: &#39;- i j&#39;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="15.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

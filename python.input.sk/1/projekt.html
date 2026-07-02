@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semestrálny projekt v zimnom semestri &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="1. Priebežný test - Variant A" href="s/test1a.html" />
+    <link rel="prev" title="Python štýl pre zápis programov" href="../styl.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../styl.html" title="Previous Chapter: Python štýl pre zápis programov"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Python štýl p...</span>
+    </a>
+  </li>
+  <li>
+    <a href="s/test1a.html" title="Next Chapter: 1. Priebežný test - Variant A"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">1. Priebežný ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="semestralny-projekt-v-zimnom-semestri">
+<h1>Semestrálny projekt v zimnom semestri<a class="headerlink" href="projekt.html#semestralny-projekt-v-zimnom-semestri" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="zadanie">
+<h2>Zadanie<a class="headerlink" href="projekt.html#zadanie" title="Link to this heading">¶</a></h2>
+<p>Napíš program v Pythone, ktorý umožní jednému alebo viacerým hráčom zahrať sa nejakú „akčnú“ hru (labyrintovú, skákačku, strieľačku, …). Tvoj program vykreslí hraciu plochu (hracia plocha sa môže aj hýbať, posúvať, rolovať), umožní ťah hráčom, prípadne inými vedľajšími postavami, bude riešiť prípadené stretnutia, zásahy, bude pritom kontrolovať prípustnosť ťahov a zároveň bude kontrolovať, či hra neskončila.</p>
+</section>
+<section id="temy">
+<h2>Témy<a class="headerlink" href="projekt.html#temy" title="Link to this heading">¶</a></h2>
+<p>Môžeš sa inšpirovať online hrami na internete, napríklad:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.zahraj.sk/skakacky/">Skákačky 1</a></p></li>
+<li><p><a class="reference external" href="https://www.webgames.sk/nej/online-hry/skakacky/">Skákačky 2</a></p></li>
+<li><p><a class="reference external" href="https://www.superhry.cz/skakacky/">Skákačky 3</a></p></li>
+<li><p><a class="reference external" href="http://www.detskehry.sk/">Skákačky 4</a></p></li>
+<li><p><a class="reference external" href="https://sk.sgames.org/tags/475/">Skákačky 5</a></p></li>
+<li><p><a class="reference external" href="https://www.webgames.sk/online-hry/vse/skakacky/">Skákačky 6</a></p></li>
+<li><p><a class="reference external" href="https://poki.com/sk/platforma">Skákačky 7</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_maze_video_games">List of maze video games</a></p></li>
+<li><p><a class="reference external" href="https://www.onlinehry.sk/hry/8/arkada.htm">Arkádové hry</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pac-Man">Pac-Man</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Slot_Racers">Slot Racers</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Tank_Battalion">Tank Battalion</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Armored_Car">Armored Car</a> (video_game)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ali_Baba_and_40_Thieves">Ali Baba and 40 Thieves</a> (video_game)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dig_Dug">Dig Dug</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mines_of_Minos">Mines of Minos</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Bomberman">Bomberman</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Lady_Bug">Lady Bug</a> (video_game)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mouse_Trap">Mouse Trap</a> (1981_video_game)</p></li>
+</ul>
+<p>Ak chceš mať istotu, že si si vybral/a vhodnú hru, odporúčame skontaktovať sa s cvičiacimi o téme projektu, prípadne so stručným popisom a odkazom na web. Cvičiaci ti dajú informáciu, ak to nie je vhodná téma, alebo majú nejaké otázky.</p>
+<p>Pravidlá vybranej hry si môžeš prispôsobiť alebo aj dosť radikálne zmeniť.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="poziadavky">
+<h2>Požiadavky<a class="headerlink" href="projekt.html#poziadavky" title="Link to this heading">¶</a></h2>
+<p>Tvoj program musí spĺňať nasledovné požiadavky:</p>
+<ul>
+<li><p>program musí byť realizovaný ako inštancia takejto triedy <code class="docutils literal notranslate"><span class="pre">Program</span></code>, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+    <span class="o">...</span>
+
+<span class="n">Program</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>okrem tejto triedy definuj aspoň jednu ďalšiu, napríklad pre:</p>
+<ul class="simple">
+<li><p>pre popis a ovládanie hracej plochy</p></li>
+<li><p>pre popis a funkčnosť nejakého hráča, nepriateľa alebo časti scény, …</p></li>
+</ul>
+</li>
+<li><p>tieto triedy využiješ v hlavnej triede <code class="docutils literal notranslate"><span class="pre">Program</span></code> (pomocné triedy môžeš definovať buď v tom istom module alebo v ďalšom)</p></li>
+<li><p>okrem definícií týchto tried a inštancie triedy <code class="docutils literal notranslate"><span class="pre">Program</span></code>, nepoužívaj <strong>žiadne globálne premenné ani globálne funkcie</strong> (povolené sú len atribúty tried)</p></li>
+<li><p>snaž sa čo najviac dodržiavať pravidlá správneho zápisu pythonovských programov (pozri napríklad <a class="reference internal" href="../styl.html"><span class="doc">Python štýl pre zápis programov</span></a>)</p></li>
+</ul>
+<section id="dalej-musi-platit">
+<h3>Ďalej musí platiť:<a class="headerlink" href="projekt.html#dalej-musi-platit" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>grafika je realizovaná modulom <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>:</p>
+<ul>
+<li><p>na ovládanie hry použi udalosti od klávesnice a od myši (klikanie, ťahanie)</p></li>
+<li><p>využi časovač (pomocou <code class="docutils literal notranslate"><span class="pre">after()</span></code>)</p></li>
+<li><p>aspoň nejaká časť grafiky musí byť realizovaná obrázkami (.png, .gif), pričom musíš simulovať aspoň jednu animáciu (striedanie niekoľkých obrázkov v časovači) počas hry (nestačí, ak je iba na „úvodnej obrazovke“)</p></li>
+<li><p>môžeš využiť aj také funkcie a vlastnosti <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>, ktoré sme sa neučili</p></li>
+<li><p>pre projekt môžeš využiť ľubovoľné súbory s obrázkami z internetu alebo z nejakej hry (ak neplánuješ nejako šíriť túto hru, inak by si mal/a dbať na legálne použitie grafiky)</p></li>
+</ul>
+</li>
+<li><p>program by mal čítať aj zapisovať aspoň jeden textový súbor, napríklad rozohranú hru, úvodné nastavenie, rôzne nastavenia hry, tabuľka najlepších výsledkov a pod. (určite treba zapisovať a čítať viac informácií)</p></li>
+<li><p>bolo by dobre, keby hra umožňovala zahrať sa viac úrovní (levelov)</p></li>
+<li><p>môžeš ešte použiť aj moduly <code class="docutils literal notranslate"><span class="pre">PIL</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">math</span></code> a <code class="docutils literal notranslate"><span class="pre">json</span></code> (prípadne ľubovoľné ďalšie, ktoré sú <strong>súčasťou inštalácie Pythonu</strong>)</p></li>
+</ul>
+<p>Dopredu si dohodni s cvičiacimi, ak by mala tvoja téma problém s niektorou z týchto požiadaviek. Finálny projekt odovzdaj v jednom <strong>zip</strong> súbore spolu so všetkými najmä grafickými súbormi do systému <strong>Vektor</strong> do priečinku <strong>Semestrálny projekt</strong>. Tento zip nesmie presiahnuť <strong>5 MB</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="hodnotenie">
+<h2>Hodnotenie<a class="headerlink" href="projekt.html#hodnotenie" title="Link to this heading">¶</a></h2>
+<p>Projekt budú hodnotiť tvoji cvičiaci, pričom</p>
+<ol class="loweralpha simple">
+<li><p>za splnenie <strong>všetkých požiadaviek</strong> bude základných <strong>5</strong> bodov</p></li>
+<li><p>za umelecký dojem, pohodlné ovládanie, nové zaujímavé prvky, použitie nejakého náročnejšie algoritmu a pod. do <strong>5</strong> bodov - tieto body sa budú pridávať k základným <strong>5</strong> bodom</p></li>
+<li><p>projekt by si mal/a realizovať samostatne, bez cudzej pomoci, samozrejme, že môžeš rôzne problémy konzultovať s vyučujúcimi ale aj so svojimi kolegami</p></li>
+</ol>
+<p>Takto získané body (maximálne <strong>10</strong>) sa pripočítavajú k bodom ku skúške len vtedy, ak ich získaš ešte <strong>pred samotným termínom skúšky</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="projekt.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

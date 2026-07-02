@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. Týždenný projekt &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="Priebeh zimného semestra" href="../1/pravidla.html" />
+    <link rel="prev" title="11. Ďalšie algoritmy na grafoch" href="11.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Backtracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Backtracking na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Ďalšie algoritmy na grafoch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="tp12.html#">12. Týždenný projekt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="11.html" title="Previous Chapter: 11. Ďalšie algoritmy na grafoch"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 11. Ďalšie al...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../1/pravidla.html" title="Next Chapter: Priebeh zimného semestra"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Priebeh zimné... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="tyzdenny-projekt">
+<h1>12. Týždenný projekt<a class="headerlink" href="tp12.html#tyzdenny-projekt" title="Link to this heading">¶</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 12. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 27.5.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Skúška z minulého školského roku - upratovací robot</p>
+<p>Do veľkého skladu kúpili upratovací robot, ktorý je schopný prejsť nejakú zadanú trasu a pri každom kroku vyčistiť plochu veľkosti 1x1. Počas jeho čistiacej trasy nechceme, aby stúpil na už vyčistenú plochu a požadujeme, aby sa na koniec vrátil na svoje štartové pole, kde sa nachádza jeho nabíjacia stanica (zrejme túto štartovaciu plochu nečistí). Ak si predstavíme veľký sklad ako štvorcovú sieť, ktorého políčka sú veľkosti 1x1, robot sa môže presúvať len na susedné políčka, ktoré majú spoločnú jednu stranu. Na niektorých políčkach môžu byť pre robota prekážky a zrejme na tieto vojsť nemôže.</p>
+<p>Napíš program, ktorý pre robota navrhne takú čo najdlhšiu trasu, ktorá začína na vopred zadanom políčku (a teda na ňom aj končí). Celý sklad reprezentuj ako <strong>neorientovaný neohodnotený</strong> graf, v ktorom vrcholmi sú prázdne políčka štvorcovej siete a niektoré vrcholy sú spojené hranami (políčka majú spoločné hrany). Políčka s prekážkami nie sú vrcholmi grafu. Okrem toho môžeme ešte pred hľadaním cesty na niektoré políčka umiestniť dočasné prekážky, ktoré sa pri hľadaní cesty berú do úvahy. Tieto dočasné prekážky môžeme z plochy opäť odstrániť.</p>
+<p>Zadefinujte triedu <code class="docutils literal notranslate"><span class="pre">Sklad</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sklad</span><span class="p">:</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">vrcholy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">prekazka</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>kde</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(meno_suboru)</span></code> - prečíta súbor a vytvorí z neho neorientovaný neohodnotený graf</p>
+<ul>
+<li><p>realizuj ho ako asociatívne pole množín susedov, kde kľúčmi sú všetky vrcholy (dvojice čísel pre riadok a stĺpec) a hodnotami pre tieto vrcholy sú inštancie podtriedy <code class="docutils literal notranslate"><span class="pre">vrchol</span></code>, ktoré obsahujú množiny susediacich vrcholov, t.j. množiny dvojíc čísel pre riadok a stĺpec</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vrcholy()</span></code> -  vráti množinu všetkých vrcholov grafu, t.j. množinu dvojíc (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) čísel pre riadok a stĺpec</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hrana(v1,</span> <span class="pre">v2)</span></code> - zistí, či je hrana medzi vrcholmi grafu <code class="docutils literal notranslate"><span class="pre">v1</span></code> a <code class="docutils literal notranslate"><span class="pre">v2</span></code>, metóda vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1</span></code> a <code class="docutils literal notranslate"><span class="pre">v2</span></code> sú dvojice čísel (riadok, stĺpec)</p></li>
+<li><p>ak jedna z týchto dvojíc nie je vrcholom, metóda vráti <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__getitem__(v1)</span></code> - zistí, či je na danom políčku dočasná prekážka</p>
+<ul>
+<li><p>metóda vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>ak vrchol <code class="docutils literal notranslate"><span class="pre">v1</span></code> neexistuje metóda vráti <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__setitem__(v1,</span> <span class="pre">prekazka)</span></code> - na dané políčko umiestni alebo odstráni dočasnú prekážku (priradí <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<ul>
+<li><p>ak vrchol <code class="docutils literal notranslate"><span class="pre">v1</span></code> neexistuje, metóda nič nepriradí</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start(v1)</span></code> - pomocou backtrackingu nájde všetky maximálne dlhé cesty, ktoré začínajú v zadanom vrchole, prejdú cez maximálny počet vrcholov práve raz a skončia v štartovom vrchole</p>
+<ul>
+<li><p>metóda vráti <strong>generátor</strong> všetkých maximálne dlhých ciest ako n-ticu (typu <code class="docutils literal notranslate"><span class="pre">tuple</span></code>) dvojíc čísel pre riadok a stĺpec</p></li>
+<li><p>takáto cesta musí obsahovať aspoň štyri vrcholy (štartový, nejaké aspoň dva iné a opäť štartový)</p></li>
+<li><p>ak cesta neexistuje, metóda nevráti nič</p></li>
+</ul>
+</li>
+</ul>
+<p>Sklad je zadaný v súbore takto:</p>
+<ul class="simple">
+<li><p>v každom riadku je popísaný jeden riadok štvorcovej siete - všetky riadky sú rovnako dlhé</p></li>
+<li><p>každý znak reprezentuje jedno políčko: ak je to znak bodka <code class="docutils literal notranslate"><span class="pre">'.'</span></code>, označuje to prázdne políčko, inak je to políčko s prekážkou</p></li>
+</ul>
+<p>Napríklad, pre takéto zadanie grafu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">...</span>
+<span class="o">...</span><span class="n">x</span>
+<span class="o">....</span>
+</pre></div>
+</div>
+<p>tento test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">Sklad</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">g</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;g.hrana(</span><span class="si">{</span><span class="n">v1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">v2</span><span class="si">}</span><span class="s1">) =&#39;</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">hrana</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">v1</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;g.start(</span><span class="si">{</span><span class="n">v1</span><span class="si">}</span><span class="s1">) =&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">v1</span><span class="p">)))</span>
+    <span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** na (1, 2) je docasna prekazka ***&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">v1</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;g.start(</span><span class="si">{</span><span class="n">v1</span><span class="si">}</span><span class="s1">) =&#39;</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">v1</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>vypíše, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">()</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+<span class="n">g</span><span class="o">.</span><span class="n">hrana</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">g</span><span class="o">.</span><span class="n">hrana</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">g</span><span class="o">.</span><span class="n">hrana</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">=</span> <span class="p">{((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                   <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))}</span>
+<span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">=</span> <span class="p">{((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                   <span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))}</span>
+<span class="o">***</span> <span class="n">na</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">je</span> <span class="n">docasna</span> <span class="n">prekazka</span> <span class="o">***</span>
+<span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">=</span> <span class="p">{((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                   <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))}</span>
+<span class="n">g</span><span class="o">.</span><span class="n">start</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Mal by si dodržať tieto vlastnosti programu:</p>
+<ul class="simple">
+<li><p>Nemeň mená už zadaných atribútov (metód a premenných).</p></li>
+<li><p>Do existujúcej triedy môžeš pridávať vlastné atribúty a metódy (okrem typu <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>).</p></li>
+<li><p>Pri testovaní riešenia sa bude kontrolovať aj štruktúra vytvoreného grafu.</p></li>
+</ul>
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/2tp12.zip">2tp12.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="tp12.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 27. máj. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

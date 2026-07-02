@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Skúška 21.1.2026 - Cubilus Game &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Hľadať" href="../../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../../copyright.html" />
+    <link rel="next" title="2. Skúška 23.1.2026 - Separovaný zber" href="sk2026b.html" />
+    <link rel="prev" title="2. Priebežný test - variant B" href="test2b.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2/07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="test2b.html" title="Previous Chapter: 2. Priebežný test - variant B"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2. Priebežný ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="sk2026b.html" title="Next Chapter: 2. Skúška 23.1.2026 - Separovaný zber"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2. Skúška 23.... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="skuska-21-1-2026-cubilus-game">
+<h1>1. Skúška 21.1.2026 - Cubilus Game<a class="headerlink" href="sk2026a.html#skuska-21-1-2026-cubilus-game" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Cubilus Game</strong> je <a class="reference external" href="https://www.mathsisfun.com/games/cubilus-game.html">hra pre jedného hráča</a>, ktorého cieľom je presúvať v štvorcovej sieti všetky farebné kvádre tak, aby sa každý kváder dostal na cieľové políčko rovnakej farby. Napríklad (hracia plocha pre <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code> a <code class="docutils literal notranslate"><span class="pre">'subor5.txt'</span></code>:</p>
+<a class="reference internal image-reference" href="../../_images/1sk26a_1.png"><img alt="../../_images/1sk26a_1.png" height="238" src="../../_images/1sk26a_1.png" width="162" />
+</a>
+<a class="reference internal image-reference" href="../../_images/1sk26a_2.png"><img alt="../../_images/1sk26a_2.png" height="265" src="../../_images/1sk26a_2.png" width="292" />
+</a>
+<p>Jednotlivé kvádre môžeme presúvať pomocou šípok, budeme ich označovať písmenami <code class="docutils literal notranslate"><span class="pre">'l'</span></code> vľavo, <code class="docutils literal notranslate"><span class="pre">'p'</span></code> vpravo, <code class="docutils literal notranslate"><span class="pre">'h'</span></code> hore, <code class="docutils literal notranslate"><span class="pre">'d'</span></code> dole tak, že kváder sa po zatlačení šípky presúva daným smerom automaticky - až po prvú prekážku, ktorou je okraj plochy, stena alebo iný kváder. Cieľové políčka nie sú pre pohyb kvádra prekážkou.</p>
+<p>Cieľom programu je odkontrolovať, kam sa hráč po zadanej postupnosti kvádrov a šípok dostane, ktoré kvádre kam presunie a koľko z nich je na cieľových pozíciách rovnakej farby.</p>
+<p>Textový súbor popisuje hraciu plochu ako sériu riadkov plochy. Tieto riadky zodpovedajú riadkom štvorcovej siete (všetky sú rovnako dlhé) pričom obsahujú tieto znaky:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'#'</span></code> sú políčka steny</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'.'</span></code> sú voľné políčka</p></li>
+<li><p>od <code class="docutils literal notranslate"><span class="pre">'A'</span></code> po <code class="docutils literal notranslate"><span class="pre">'Z'</span></code> sú políčka, na ktorých sú kvádre</p></li>
+<li><p>od <code class="docutils literal notranslate"><span class="pre">'a'</span></code> po <code class="docutils literal notranslate"><span class="pre">'z'</span></code> sú cieľové políčka - tieto sú pre kvádre voľné, teda normálne priechodné</p>
+<ul>
+<li><p>každé písmeno reprezentuje jednu farbu: napríklad pre kváder <code class="docutils literal notranslate"><span class="pre">'A'</span></code> bude zodpovedajúcim cieľovým políčkom <code class="docutils literal notranslate"><span class="pre">'a'</span></code></p></li>
+<li><p>kvádrov jednej farby môže byť aj viac a zrejme rovnaký počet bude aj zodpovedajúcich cieľových políčok</p></li>
+</ul>
+</li>
+<li><p>za popisom hracej plochy môžu nasledovať riadky s ďalšími informáciami o kvádroch a cieľových políčkach:</p>
+<ul>
+<li><p>v každom takomto riadku sú dve celé čísla, za ktorými nasleduje jeden znak</p></li>
+<li><p>čísla označujú číslo riadku a číslo stĺpca (číslujeme od <code class="docutils literal notranslate"><span class="pre">0</span></code>) a znak označuje, buď kváder (veľké písmeno), cieľové políčko (malé písmeno) alebo znak <code class="docutils literal notranslate"><span class="pre">'.'</span></code> označuje, že toto políčko už nie je cieľové</p></li>
+</ul>
+</li>
+</ul>
+<p>Môžeš predpokladať, že súbor je zadaný korektne.</p>
+<p>Riešenie zapíš do triedy <code class="docutils literal notranslate"><span class="pre">Cubilus</span></code> s týmito metódami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Cubilus</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pozicia</span><span class="p">,</span> <span class="n">znak</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">ktore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">posun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pozicia</span><span class="p">,</span> <span class="n">prikazy</span><span class="p">):</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>kde</p>
+<ul class="simple">
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">__init__(meno_suboru)</span></code> - prečíta textový súbor celej plochy s kvádrami a cieľovými políčkami</p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">__setitem__(pozicia,</span> <span class="pre">znak)</span></code> - zmení zadané políčko v ploche (<code class="docutils literal notranslate"><span class="pre">pozicia</span></code> je dvojica celých čísel <code class="docutils literal notranslate"><span class="pre">(riadok,</span> <span class="pre">stĺpec)</span></code>), rovnako ako v časti ďalšie informácie vo vstupnom súbore</p></li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> - vráti viacriadkový znakový reťazec, ktorý reprezentuje momentálny stav hracej plochy</p>
+<ul>
+<li><p>zrejme, keď kváder stojí na nejakom cieľovom políčku, tak sa vo výpise zobrazuje len kváder</p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">posun(pozicia,</span> <span class="pre">prikazy)</span></code> - kde parameter <code class="docutils literal notranslate"><span class="pre">pozicia</span></code> označuje kváder (ako dvojicu <code class="docutils literal notranslate"><span class="pre">(riadok,</span> <span class="pre">stĺpec)</span></code>), s ktorým sa bude hýbať a <code class="docutils literal notranslate"><span class="pre">prikazy</span></code> je znakový reťazec s postupnosťou  príkazov, teda stláčaných šípok (označujeme ich znakmi <code class="docutils literal notranslate"><span class="pre">'l'</span></code>, <code class="docutils literal notranslate"><span class="pre">'p'</span></code>, <code class="docutils literal notranslate"><span class="pre">'h'</span></code>, <code class="docutils literal notranslate"><span class="pre">'d'</span></code>) – označený kváder sa v ploche pohybuje podľa takto zadaných príkazov</p>
+<ul>
+<li><p>ak na danej pozícii nie je žiaden kváder, metóda nerobí nič</p></li>
+<li><p>metóda vráti celkový počet prejdených krokov pre všetky príkazy v postupnosti <code class="docutils literal notranslate"><span class="pre">prikazy</span></code></p></li>
+</ul>
+</li>
+<li><p>metóda <code class="docutils literal notranslate"><span class="pre">ktore()</span></code> - vráti zoznam (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>) písmen (v ľubovoľnom poradí), ktoré reprezentujú farebné kvádre, ktoré sú na správnych cieľových políčkach</p>
+<ul>
+<li><p>ak sú v zozname všetky kvádre, metóda namiesto zoznamu písmen vráti reťazec <code class="docutils literal notranslate"><span class="pre">'OK'</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad, pre <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>######
+#AB.D#
+#....#
+#....#
+#....#
+#....#
+#....#
+#ba.d#
+######
+1 3 C
+7 3 c
+</pre></div>
+</div>
+<p>takýto test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Cubilus</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">ktore</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">posun</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;d&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">posun</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;dp&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">ktore</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">posun</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;dld&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">posun</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;dlp&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">ktore</span><span class="p">()</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vypíše:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>######
+#ABCD#
+#....#
+#....#
+#....#
+#....#
+#....#
+#bacd#
+######
+c.ktore() = []
+c.posun((1, 3), &#39;d&#39;) = 6
+c.posun((1, 1), &#39;dp&#39;) = 7
+######
+#.B.D#
+#....#
+#....#
+#....#
+#....#
+#....#
+#bACd#
+######
+c.ktore() = [&#39;C&#39;, &#39;A&#39;]
+c.posun((1, 2), &#39;dld&#39;) = 7
+c.posun((1, 4), &#39;dlp&#39;) = 6
+######
+#....#
+#....#
+#....#
+#....#
+#....#
+#....#
+#BACD#
+######
+c.ktore() = &#39;OK&#39;
+</pre></div>
+</div>
+<p>Môžeš si stiahnuť <a class="reference external" href="../../_static/file/1sk_1.zip">1sk_1.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré používa testovač.</p>
+<p>Tvoj odovzdaný program musí začínať tromi riadkami komentárov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. skuska: cubilus</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 21.1.2026</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="sk2026a.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Binárne stromy &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="4. Trieda BinarnyStrom" href="04.html" />
+    <link rel="prev" title="2. Spájané zoznamy" href="02.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="03.html#">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Grafy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="02.html" title="Previous Chapter: 2. Spájané zoznamy"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 2. Spájané zoznamy</span>
+    </a>
+  </li>
+  <li>
+    <a href="04.html" title="Next Chapter: 4. Trieda BinarnyStrom"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">4. Trieda Bin... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="binarne-stromy">
+<h1>3. Binárne stromy<a class="headerlink" href="03.html#binarne-stromy" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="03.html#vseobecny-strom" id="id2">Všeobecný strom</a></p></li>
+<li><p><a class="reference internal" href="03.html#binarny-strom" id="id3">Binárny strom</a></p>
+<ul>
+<li><p><a class="reference internal" href="03.html#realizacia-spajanou-strukturou" id="id4">Realizácia spájanou štruktúrou</a></p></li>
+<li><p><a class="reference internal" href="03.html#nakreslenie-stromu" id="id5">Nakreslenie stromu</a></p></li>
+<li><p><a class="reference internal" href="03.html#generovanie-nahodneho-stromu" id="id6">Generovanie náhodného stromu</a></p></li>
+<li><p><a class="reference internal" href="03.html#dalsie-rekurzivne-funkcie" id="id7">Ďalšie rekurzívne funkcie</a></p></li>
+<li><p><a class="reference internal" href="03.html#metoda-repr" id="id8">Metóda __repr__</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="03.html#cvicenie" id="id9">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="03.html#tyzdenny-projekt" id="id10">3. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<p>Pripomeňme si, ako sme doteraz pracovali so spájaným zoznamom:</p>
+<ul class="simple">
+<li><p>spájaný zoznam sa skladal z vrcholov, ktoré boli navzájom pospájané smerníkmi (referenciami, pointermi)</p></li>
+<li><p>zoznam bol prístupný cez referenciu na prvý vrchol</p></li>
+<li><p>každý vrchol, okrem posledného mal svojho jediného nasledovníka (atribút <code class="docutils literal notranslate"><span class="pre">next</span></code>)</p></li>
+<li><p>pre dvojsmerný spájaný zoznam každý vrchol okrem prvého mál v zozname svojho predchodcu - už vieme, že keď chceme zrušiť zo zoznamu nejaký vrchol, musíme meniť aj nasledovníka predchodcu …</p></li>
+</ul>
+<p>Používali sme takúto deklaráciu vrcholu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+</pre></div>
+</div>
+<p>Na postupné prechádzanie všetkých vrcholov zoznamu nám stačil takýto jednoduchý while-cyklus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pom</span> <span class="o">=</span> <span class="n">zac</span>               <span class="c1"># začiatok zoznamu</span>
+<span class="k">while</span> <span class="n">pom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pom</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>     <span class="c1"># spracuje vrchol</span>
+    <span class="n">pom</span> <span class="o">=</span> <span class="n">pom</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+<p>Túto schému prechádzania prvkov vieme využiť aj na zisťovanie počtu prvkov, na zisťovanie, či sa nejaká hodnota nachádza v zozname, na vyhadzovanie niektorých existujúcich, resp. pridávanie nových vrcholov.</p>
+<p><strong>Spájané zoznamy</strong> sú najjednoduchším prípadom <strong>spájaných štruktúr</strong>, pre ktoré sú prvky spájané referenciami (smerníkmi).</p>
+<p>Ďalšou spájanou dátovou štruktúrou je <strong>strom</strong> (tree), o ktorej sa zvykne hovoriť, že je to hierarchická dátová štruktúra.</p>
+<p>Kde všade môžeme vidieť stromovú dátovú štruktúru:</p>
+<ul>
+<li><p>rodokmeň, napríklad potomkovia bývalej anglickej kráľovnej Alžbety II:</p>
+<ul>
+<li><p>zo <a class="reference external" href="https://www.entitree.com/sk/Rodokme%C5%88/Q9682?0d0=d&amp;0d1=d&amp;0d2=d&amp;0d3=d&amp;0d0d0=d&amp;0d0d1=d&amp;0d1d0=d&amp;0d1d1=d&amp;0d2d0=d&amp;0d2d1=d">stromu potomkov</a> môžeme zjednodušiť takéto grafické zobrazenie:</p>
+<a class="reference internal image-reference" href="../_images/203_1.png"><img alt="potomkovia bývalej anglickej kráľovnej" height="151" src="../_images/203_1.png" width="361" />
+</a>
+<p>vidíme, že kráľovná má štyroch potomkov (troch synov a jednu dcéru), tieto jej deti majú ďalších potomkov (vnukov aj vnučky) a tiež pravnukov a pravnučky</p>
+</li>
+<li><p>veľmi zaujímavý je aj graf <a class="reference external" href="https://en.wikipedia.org/wiki/Charles_III#Ancestry">predkov súčasného kráľa na wikipédii</a></p>
+<a class="reference internal image-reference" href="../_images/203_2.png"><img alt="predkovia bývalej anglickej kráľovnej" height="362" src="../_images/203_2.png" width="709" />
+</a>
+<p>v tomto grafe má každá osoba (v strede vľavo je bývalá anglická kráľovná Alžbeta II. s číslom <strong>1</strong>) práve dvoch rodičov: otec je horná osoba (s číslom <strong>2</strong>) a matka je dolná osoba (s číslom <strong>3</strong>); osoby s číslami <strong>4</strong> až <strong>7</strong> sú štyria starí rodičia bývalej kráľovnej; osoby s číslami <strong>8</strong> až <strong>15</strong> sú prastarí rodičia; všimnite si, že v každej ďalšej úrovni (v ďalšej generácii) tohto zobrazenia je dvojnásobný počet osôb z predchádzajúcej úrovne (každá osoba má práve dvoch rodičov)</p>
+</li>
+</ul>
+</li>
+<li><p>štruktúra adresárov (priečinkov) na disku: nejaký adresár je domovský a ten môže mať pod sebou niekoľko podadresárov, niektoré z nich môžu opäť obsahovať ďalšie podadresáre, …</p></li>
+<li><p>štruktúra fakulty: <a class="reference external" href="http://fmph.uniba.sk/pracoviska/">naša fakulta</a> sa skladá zo štyroch skupín odborných katedier (matematickej, fyzikálnej, informatickej a didaktickej) a ďalšími pracoviskami, každá sekcia sa skladá z niekoľkých katedier a väčšina katedier sa ešte delí na oddelenia</p></li>
+<li><p>štruktúra učebnice, manuálu: materiály sa skladajú z kapitol, tie z podkapitol a rôznych podčastí</p></li>
+<li><p>hierarchia objektových tried: z bázovej triedy môžeme odvodiť niekoľko ďalších a aj z týchto odvodených tried môžeme vytvárať ďalšie triedy, napríklad v prednáške <a class="reference internal" href="../1/13.html"><span class="doc">13. Triedy a dedičnosť</span></a> sme zo základnej triedy <code class="docutils literal notranslate"><span class="pre">turtle.Turtle</span></code> vytvorili triedu <code class="docutils literal notranslate"><span class="pre">MojaTurtle</span></code> a z nej sme postupne vytvárali triedy <code class="docutils literal notranslate"><span class="pre">MojaTurtle1</span></code>, <code class="docutils literal notranslate"><span class="pre">MojaTurtle2</span></code> a <code class="docutils literal notranslate"><span class="pre">MojaTurtle3</span></code></p></li>
+</ul>
+<p>Aj všetky tieto ďalšie štruktúry by sme vedeli zakresliť do tvaru <strong>stromovej štruktúry</strong>, ktorá má nejaký počiatočný vrchol (napríklad kráľovná, domovský adresár, fakulta, kniha, bázová trieda, …) a z tohto vrcholu vychádzajú ďalšie a ďalšie vrcholy (potomkovia, podadresáre, sekcie, kapitoly, …).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="vseobecny-strom">
+<h2><a class="toc-backref" href="03.html#id2" role="doc-backlink">Všeobecný strom</a><a class="headerlink" href="03.html#vseobecny-strom" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Spájaná dátová štruktúra <strong>strom</strong> je zovšeobecnením spájaného zoznamu:</p>
+<ul class="simple">
+<li><p>skladá sa z množiny vrcholov, v každom vrchole sa nachádza nejaká informácia (napríklad atribút <code class="docutils literal notranslate"><span class="pre">data</span></code>)</p></li>
+<li><p>vrcholy sú navzájom pospájané hranami:</p>
+<ul>
+<li><p>jeden vrchol má špeciálne postavenie: je prvý a od neho sa vieme dostať ku všetkým zvyšným vrcholom</p></li>
+<li><p>každý vrchol okrem prvého má práve jedného <strong>predchodcu</strong></p></li>
+<li><p>každý vrchol môže mať ľubovoľný počet <strong>nasledovníkov</strong> (nie iba jeden, ako to bolo pri spájaných zoznamoch)</p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad, v takomto strome:</p>
+<a class="reference internal image-reference" href="../_images/203_3.png"><img alt="všeobecný strom" height="112" src="../_images/203_3.png" width="260" />
+</a>
+<p>jediný vrchol <code class="docutils literal notranslate"><span class="pre">C</span></code> nemá predchodcu, všetky ostatné vrcholy majú práve jedného predchodcu. Niektoré vrcholy (<code class="docutils literal notranslate"><span class="pre">D</span></code> a <code class="docutils literal notranslate"><span class="pre">L</span></code>) majú len jedného nasledovníka, niektoré (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> a <code class="docutils literal notranslate"><span class="pre">M</span></code>) majú dvoch nasledovníkov, dva vrcholy <code class="docutils literal notranslate"><span class="pre">C</span></code> a <code class="docutils literal notranslate"><span class="pre">F</span></code> majú až troch nasledovníkov. Všetky zvyšné vrcholy nemajú ani jedného nasledovníka.</p>
+<p>Zvykne sa používať takáto terminológia z <strong>botaniky</strong>:</p>
+<ul class="simple">
+<li><p><strong>koreň</strong> (root) je špeciálny prvý vrchol - jediný nemá svojho predchodcu (vrchol <code class="docutils literal notranslate"><span class="pre">C</span></code>)</p></li>
+<li><p><strong>vetva</strong> (branch) je hrana (budeme ju kresliť šípkou) označujúca nasledovníka</p></li>
+<li><p><strong>list</strong> (leaf) označuje vrchol, ktorý už nemá žiadneho nasledovníka (listami tohto stromu sú vrcholy <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code>, <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, <code class="docutils literal notranslate"><span class="pre">J</span></code>, <code class="docutils literal notranslate"><span class="pre">K</span></code>, <code class="docutils literal notranslate"><span class="pre">O</span></code> a <code class="docutils literal notranslate"><span class="pre">P</span></code>)</p></li>
+</ul>
+<p>Okrem botanickej terminológie sa pri stromoch používa aj takáto terminológia <strong>rodinných vzťahov</strong>:</p>
+<ul class="simple">
+<li><p>predchodca každého vrcholu (okrem koreňa) sa nazýva <strong>rodič</strong>, <strong>predok</strong>, niekedy aj <strong>otec</strong> (parent, ancestor)</p></li>
+<li><p>nasledovník vrcholu sa nazýva <strong>potomok</strong> alebo <strong>dieťa</strong>, niekedy aj <strong>syn</strong> (descendant, child)</p></li>
+<li><p>vrcholy, ktoré majú spoločného predchodcu (predka) sa nazývajú <strong>súrodenci</strong> (siblings), napríklad <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">L</span></code> sú súrodenci, ale <code class="docutils literal notranslate"><span class="pre">I</span></code> a <code class="docutils literal notranslate"><span class="pre">M</span></code> súrodencami nie sú</p></li>
+</ul>
+<p>Ďalej sú dôležité ešte aj tieto pojmy:</p>
+<ul class="simple">
+<li><p>okrem listov sa v strome môžu nachádzať aj <strong>vnútorné vrcholy</strong> (interior nodes), to sú tie, ktoré majú aspoň jedného potomka (v našom príklade sú to <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">M</span></code>)</p></li>
+<li><p>medzi dvoma vrcholmi môžeme vytvárať <strong>cesty</strong>, t.j. postupnosti hrán, ktoré spájajú vrcholy - samozrejme, že len v smere od predkov k potomkom (v smere šípok) - <strong>dĺžkou cesty</strong> je počet týchto hrán (medzi rodičom a dieťaťom je cesta dĺžky 1), napríklad cesta <code class="docutils literal notranslate"><span class="pre">C</span></code> - <code class="docutils literal notranslate"><span class="pre">A</span></code> - <code class="docutils literal notranslate"><span class="pre">F</span></code> - <code class="docutils literal notranslate"><span class="pre">G</span></code> má dĺžku <strong>3</strong></p></li>
+<li><p><strong>úroveň</strong>, alebo <strong>hĺbka</strong> vrcholu (level, depth) je dĺžka cesty od koreňa k tomuto vrcholu, teda koreň má hĺbku 0, jeho deti majú hĺbku 1, ich deti (vnuci/vnučky) ležia na úrovni 2, atď. (na 2. úrovni stromu ležia vrcholy <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, <code class="docutils literal notranslate"><span class="pre">K</span></code>, <code class="docutils literal notranslate"><span class="pre">M</span></code>)</p></li>
+<li><p><strong>výška</strong> stromu (height) je maximálna úroveň v strome, t.j. dĺžka najdlhšej cesty od koreňa k listom (strom v našom príklade má výšku <strong>3</strong>)</p></li>
+<li><p><strong>podstrom</strong> (subtree) je časť stromu, ktorá začína v nejakom vrchole a obsahuje <strong>všetkých</strong> jeho potomkov (nielen deti, ale aj ich potomkov, …), napríklad strom s vrcholmi <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">O</span></code>, <code class="docutils literal notranslate"><span class="pre">P</span></code> je podstrom výšky 2 a podstrom s vrcholmi <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code>, <code class="docutils literal notranslate"><span class="pre">H</span></code> má výšku 1</p></li>
+<li><p><strong>šírka</strong> stromu (width) je počet vrcholov v úrovni, v ktorej je najviac vrcholov (strom v našom príklade má šírku <strong>6</strong>)</p></li>
+</ul>
+<p>Niekedy sa všeobecný strom definuje aj takto rekurzívne:</p>
+<ul class="simple">
+<li><p>strom je buď prázdny (neobsahuje žiadny vrchol), alebo</p></li>
+<li><p>obsahuje koreň a množinu podstromov, ktoré vychádzajú z tohto koreňa, pričom každý podstrom je opäť všeobecný strom (ak nie je prázdny, má svoj koreň a aj svoje podstromy)</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="binarny-strom">
+<h2><a class="toc-backref" href="03.html#id3" role="doc-backlink">Binárny strom</a><a class="headerlink" href="03.html#binarny-strom" title="Link to this heading">¶</a></h2>
+<p>má dve extra vlastnosti:</p>
+<ul class="simple">
+<li><p>každý vrchol má <strong>maximálne dvoch potomkov</strong></p></li>
+<li><p>rozlišuje medzi <strong>ľavým a pravým potomkom</strong> - budeme to kresliť buď šípkou šikmo vľavo dole alebo šikmo vpravo dole</p></li>
+</ul>
+<p>Napríklad, takýto binárny strom:</p>
+<a class="reference internal image-reference" href="../_images/203_4.png"><img alt="binárny strom" height="141" src="../_images/203_4.png" width="241" />
+</a>
+<p>Vrchol <code class="docutils literal notranslate"><span class="pre">b</span></code> nemá ľavého potomka, len pravého. Rovnako je na tom aj vrchol <code class="docutils literal notranslate"><span class="pre">e</span></code>. Vrchol <code class="docutils literal notranslate"><span class="pre">f</span></code> má len ľavého potomka a nemá pravého. Všetky ostatné vrcholy sú buď listami (nemajú žiadne deti) alebo majú oboch potomkov, ľavého aj pravého.</p>
+<p>Aj binárny strom môžeme definovať rekurzívne:</p>
+<ul class="simple">
+<li><p>je buď prázdny,</p></li>
+<li><p>alebo sa skladá z koreňa a z dvoch jeho podstromov: z ľavého podstromu a pravého podstromu, tieto sú opäť binárne stromy (môžu byť aj prázdne)</p></li>
+</ul>
+<p>Všetko, čo platí pre všeobecné stromy, platí aj pre binárne, t.j. má koreň, má rodičov a potomkov, má listy aj vnútorné vrcholy, má cesty aj úrovne, hovoríme o hĺbke vrcholov aj výške stromu.</p>
+<p>Zamyslime sa nad maximálnym počtom vrcholov v jednotlivých úrovniach:</p>
+<ul class="simple">
+<li><p>v 0. úrovni môže byť len koreň, teda len <strong>1 vrchol</strong></p></li>
+<li><p>koreň môže mať dvoch potomkov, teda v 1. úrovni môžu byť maximálne <strong>2 vrcholy</strong></p></li>
+<li><p>v 2. úrovni môžu byť len deti predchádzajúcich dvoch vrcholov v 1. úrovni, teda maximálne <strong>4 vrcholy</strong></p></li>
+<li><p>v každej ďalšej úrovni môže byť maximálne dvojnásobok predchádzajúcej, teda v i-tej úrovni môže byť maximálne <strong>2**i</strong> vrcholov</p></li>
+<li><p>strom, ktorý má výšku <strong>h</strong> môže mať maximálne <strong>1 + 2 + 4 + 8 + … + 2**h</strong> vrcholov, teda spolu <strong>2**(h+1)-1</strong> vrcholov</p>
+<ul>
+<li><p>strom s maximálnym počtom vrcholov s výškou <strong>h</strong> sa nazýva <strong>úplný strom</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/203_5.png"><img alt="úplný binárny strom" height="115" src="../_images/203_5.png" width="274" />
+</a>
+<p>Tento strom má výšku <strong>3</strong> a preto počet všetkých vrcholov je <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">8</span> <span class="pre">=</span> <span class="pre">15</span></code>, čo je naozaj <code class="docutils literal notranslate"><span class="pre">2**4-1</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="realizacia-spajanou-strukturou">
+<h3><a class="toc-backref" href="03.html#id4" role="doc-backlink">Realizácia spájanou štruktúrou</a><a class="headerlink" href="03.html#realizacia-spajanou-strukturou" title="Link to this heading">¶</a></h3>
+<p>Binárny strom budeme realizovať podobne ako spájaný zoznam, t.j. najprv definujeme triedu <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>, v ktorej sa definujú atribúty každého prvku binárneho stromu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+</pre></div>
+</div>
+<p>Na rozdiel od spájaného zoznamu, tento vrchol binárneho stromu má namiesto jedného nasledovníka <code class="docutils literal notranslate"><span class="pre">next</span></code> dvoch nasledovníkov: ľavého <code class="docutils literal notranslate"><span class="pre">left</span></code> a pravého <code class="docutils literal notranslate"><span class="pre">right</span></code>. Vytvorme najprv 3 izolované vrcholy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tieto tri vrcholy môžeme chápať ako 3 jednovrcholové stromy. Pomocou priradení môžeme pripojiť stromy <code class="docutils literal notranslate"><span class="pre">b</span></code> a <code class="docutils literal notranslate"><span class="pre">c</span></code> ako ľavý a pravý podstrom vrcholu <code class="docutils literal notranslate"><span class="pre">a</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>Takto vytvorený binárny strom má 3 vrcholy, z toho 2 sú listy a jeden (koreň) je vnútorný. Výška stromu je 1 a šírka 2. V 0. úrovni je jeden vrchol <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, v 1. úrovni je <code class="docutils literal notranslate"><span class="pre">'B'</span></code> a <code class="docutils literal notranslate"><span class="pre">'C'</span></code>.</p>
+<p>Takýto istý strom vieme vytvoriť jediným priradením:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Ak chceme teraz vypísať hodnoty vo vrcholoch tohto stromu, môžeme to urobiť, napríklad takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll"><span class="go">    A B C</span>
+</span></pre></div>
+</div>
+<p>Ak by bol strom trochu komplikovanejší, výpis vrcholov by bolo dobre nejako zautomatizovať. Napríklad, takýto strom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Tento strom so 6 vrcholmi má už výšku 2, pričom v druhej úrovni sú tri vrcholy: <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> a <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="nakreslenie-stromu">
+<h3><a class="toc-backref" href="03.html#id5" role="doc-backlink">Nakreslenie stromu</a><a class="headerlink" href="03.html#nakreslenie-stromu" title="Link to this heading">¶</a></h3>
+<p>Strom nakreslíme rekurzívne. Prvá verzia bez kreslenia čiar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">sir</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="hll">        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Prvým parametrom funkcie je koreň stromu (teda referencia na najvrchnejší vrchol stromu). Druhým parametrom je polovičná šírka grafickej plochy. Ďalšie dva parametre sú súradnicami, kde sa nakreslí koreň stromu. Všimnite si, že v rekurzívnom volaní:</p>
+<ul class="simple">
+<li><p>smerom vľavo budeme vykresľovať ľavý podstrom, preto <code class="docutils literal notranslate"><span class="pre">x</span></code>-ovú súradnicu znížime o polovičnú šírku plochy, <code class="docutils literal notranslate"><span class="pre">y</span></code>-ovú zvýšime o nejakú konštantu, napríklad 40</p></li>
+<li><p>smerom vpravo budeme kresliť pravý podstrom a teda <code class="docutils literal notranslate"><span class="pre">x</span></code>-ovú súradnicu zväčšíme tak, aby bola v polovici šírky oblasti</p></li>
+</ul>
+<p>Môžete to vyskúšať, napríklad pre takýto strom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ak by sme chceli kresliť aj hrany stromu (spojnice medzi vrcholmi), môžeme to zapísať, napríklad takto (táto druhá verzia má ešte chyby):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">sir</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span>    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+<span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+</span>    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+<span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Takéto vykresľovanie stromu má ale tú chybu, že nakreslené hrany (čiary) prechádzajú cez vypísané hodnoty vo vrcholoch. Opravíme to tak, že nakreslenie samotného vrcholu (bude to teraz farebný krúžok s textom) presťahujeme až na koniec funkcie, kreslenie čiar bude naopak ako prvé, aby nakreslené krúžky tieto čiary prekryli:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">sir</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+</span>        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+</span>        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+<span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;consolas 12&#39;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Opäť otestujte aj túto vylepšenú verziu.</p>
+<p>Zrejme, neskôr si budete túto verziu rôzne prispôsobovať:</p>
+<ul class="simple">
+<li><p>budete kresliť strom na iný rozmer plochy</p></li>
+<li><p>niektoré farebné krúžky môžete prefarbiť podľa obsahu, resp. polohy vrcholu</p></li>
+<li><p>hrany sa môžu kresliť ako šípky a nie ako úsečky</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="generovanie-nahodneho-stromu">
+<h3><a class="toc-backref" href="03.html#id6" role="doc-backlink">Generovanie náhodného stromu</a><a class="headerlink" href="03.html#generovanie-nahodneho-stromu" title="Link to this heading">¶</a></h3>
+<p>Využijeme náhodný generátor <code class="docutils literal notranslate"><span class="pre">random.randrange</span></code>. Princíp tejto funkcie je nasledovný:</p>
+<ul class="simple">
+<li><p>pridávať budeme len do neprázdneho stromu (strom musí obsahovať aspoň koreň)</p></li>
+<li><p>funkcia sa najprv rozhodne, či bude pridávať do ľavého alebo do pravého podstromu (test <code class="docutils literal notranslate"><span class="pre">random.randrange(2)</span></code> testuje, či má náhodné číslo z množiny {0, 1} hodnotu 1, teda je to pravdepodobnosť 50%)</p></li>
+<li><p>ďalej zistí, či daný podstrom existuje (napríklad, <code class="docutils literal notranslate"><span class="pre">vrch.left</span> <span class="pre">is</span> <span class="pre">None</span></code> označuje, že neexistuje), ak nie, tak na jeho mieste vytvorí nový vrchol s danou hodnotou</p></li>
+<li><p>ak podstrom na tomto mieste už existuje, znamená to, že tu nemôžeme „zavesiť“ nový vrchol, ale musíme preň hľadať nové miesto, preto sa toto hľadanie opakuje už od nového vrcholu (nižšie uvidíme aj rekurzívnu verziu, pri ktorej sa pridávanie vrcholu do tohto podstromu zrealizuje rekurzívnym volaním)</p></li>
+</ul>
+<p>Najprv nerekurzívna verzia funkcie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+                <span class="k">return</span>
+<span class="hll">            <span class="n">vrch</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span>
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+                <span class="k">return</span>
+<span class="hll">            <span class="n">vrch</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span>
+</span></pre></div>
+</div>
+<p>Teraz rekurzívna verzia:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+<span class="hll">            <span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+<span class="hll">            <span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Môžeme otestovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">koren</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">koren</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>alebo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;rogramovanie&#39;</span><span class="p">:</span>
+    <span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tieto testy spustite viackrát a zakaždým strom vykreslite (pomocou funkcie <code class="docutils literal notranslate"><span class="pre">kresli</span></code>). Uvidíte rôzne usporiadania vrcholov v strome a tieto budú mať možno rôzne výšky.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="dalsie-rekurzivne-funkcie">
+<h3><a class="toc-backref" href="03.html#id7" role="doc-backlink">Ďalšie rekurzívne funkcie</a><a class="headerlink" href="03.html#dalsie-rekurzivne-funkcie" title="Link to this heading">¶</a></h3>
+<p>Tieto funkcie budú rekurzívne prechádzať všetky vrcholy v strome: najprv v ľavom podstrome a potom aj v pravom.</p>
+<p>Uvádzame dve verzie súčtu hodnôt vo vrcholoch. Prvá verzia, keď zistí, že je strom neprázdny, vypočíta súčet najprv v ľavom podstrome a potom aj v pravom. Výsledkom celej funkcie je potom súčet hodnoty v koreni stromu + súčet všetkých hodnôt v ľavom podstrome + súčet všetkých hodnôt v pravom podstrome:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="hll">    <span class="n">vlavo</span> <span class="o">=</span> <span class="n">sucet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">vpravo</span> <span class="o">=</span> <span class="n">sucet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="n">vrch</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="n">vlavo</span> <span class="o">+</span> <span class="n">vpravo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sucet =&#39;</span><span class="p">,</span> <span class="n">sucet</span><span class="p">(</span><span class="n">koren</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Skúsenejší programátori túto funkciu vedia zapísať aj takto „úspornejšie“:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="hll">    <span class="k">return</span> <span class="n">vrch</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="n">sucet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">sucet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Otestujte túto funkciu na náhodne generovaných stromoch, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sucet hodnot =&#39;</span><span class="p">,</span> <span class="n">sucet</span><span class="p">(</span><span class="n">strom</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Na veľmi podobnom princípe pracuje aj zisťovanie celkového počtu vrcholov v strome:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="hll">    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet vrcholov =&#39;</span><span class="p">,</span> <span class="n">pocet</span><span class="p">(</span><span class="n">strom</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Ďalej budeme zisťovať výšku stromu (opäť bude niekoľko verzií). Najprv verzia, ktorá ešte nie je tá správna:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="hll">    <span class="n">vyska_vlavo</span> <span class="o">=</span> <span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">vyska_vpravo</span> <span class="o">=</span> <span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span>    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">vyska_vlavo</span><span class="p">,</span> <span class="n">vyska_vpravo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funkcia najprv rieši situáciu, keď je strom prázdny: vtedy dáva výsledok <strong>0</strong>. Keď nie je strom prázdny, najprv sa vypočíta výška ľavého podstromu, potom aj výška pravého podstromu. Na záver sa z týchto dvoch výšok vyberie tá väčšia a k tomu sa ešte pripočíta <strong>1</strong>, lebo celkový strom okrem dvoch podstromov obsahuje aj koreň, ktorý je o úroveň vyššie.</p>
+<p>Táto funkcia ale nedáva správne výsledky. Keď ju otestujete, zistíte, že dostávate o <strong>1</strong> väčšiu hodnotu, ako je skutočná výška. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vyska</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span>
+<span class="hll"><span class="go">    1</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vyska</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span>
+<span class="hll"><span class="go">    2</span>
+</span></pre></div>
+</div>
+<p>Pripomíname, že výška je počet hrán na ceste od koreňa k najnižšiemu vrcholu (k nejakému listu). Strom, ktorý obsahuje len koreň, by mal mať výšku 0 a strom, ktorý má koreň a dvoch jeho potomkov, má dve takéto cesty (od koreňa k listom) a obe majú dĺžku 1 (len 1 hranu). Problémom v tomto riešení je výška prázdneho stromu: tá nemôže by <strong>0</strong>, lebo <strong>0</strong> je pre strom s 1 vrcholom. Dohodneme sa, že výškou prázdneho stromu bude <strong>-1</strong> a potom to už bude celé fungovať správne:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span>    <span class="n">vyska_vlavo</span> <span class="o">=</span> <span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="n">vyska_vpravo</span> <span class="o">=</span> <span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">vyska_vlavo</span><span class="p">,</span> <span class="n">vyska_vpravo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>alebo druhá verzia, ktorá si výšky jednotlivých podstromov nepočíta do pomocných premenných, ale priamo ich pošle do štandardnej funkcie <code class="docutils literal notranslate"><span class="pre">max()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>             <span class="c1"># pre prázdny strom</span>
+</span>    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vyska =&#39;</span><span class="p">,</span> <span class="n">vyska</span><span class="p">(</span><span class="n">strom</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Výpis hodnôt vo vrcholoch v nejakom poradí:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span><span class="w"> </span><span class="nf">vypis</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+</span>    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="hll">    <span class="n">vypis</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">vypis</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span>
+<span class="n">vypis</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vo výpise sa objavia hodnoty vo všetkých vrcholoch v nejakom poradí.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="metoda-repr">
+<h3><a class="toc-backref" href="03.html#id8" role="doc-backlink">Metóda __repr__</a><a class="headerlink" href="03.html#metoda-repr" title="Link to this heading">¶</a></h3>
+<p>Veľmi zaujímavo sa správa metóda <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>, ktorú zapíšeme priamo v triede <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Vrchol(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">!r}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="si">}</span><span class="s1">)&#39;</span>
+</span></pre></div>
+</div>
+<p>Otestujeme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span>
+<span class="hll"><span class="go">    Vrchol(1, Vrchol(2, Vrchol(4, None, None), None), Vrchol(3, None, None))</span>
+</span></pre></div>
+</div>
+<p>Vidíte, že táto metóda je rekurzívna, pričom Python tu správne zvláda aj triviálny prípad.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="03.html#id9" role="doc-backlink">Cvičenie</a><a class="headerlink" href="03.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na úlohový server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong> okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 3.3.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>V úlohách predpokladáme tieto definície z prednášky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">sir</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">kresli</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">kresli</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">vrch</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;consolas 12&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">pocet</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">pocet</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>             <span class="c1"># pre prázdny strom</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">vyska</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Do premennej <code class="docutils literal notranslate"><span class="pre">strom</span></code> sme priradili binárny strom. Nakresli ho na papier (bez počítača):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">8</span><span class="p">))),</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">19</span><span class="p">)),</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Skontroluj svoju kresbu s vykreslením pomocou <code class="docutils literal notranslate"><span class="pre">kresli()</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<a class="reference internal image-reference" href="../_images/203_c01.png"><img alt="../_images/203_c01.png" height="86" src="../_images/203_c01.png" width="224" />
+</a>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Do premennej <code class="docutils literal notranslate"><span class="pre">strom</span></code> priraď binárny strom, ktorý po vykreslení vyzerá takto:</p>
+<a class="reference internal image-reference" href="../_images/203_c02.png"><img alt="../_images/203_c02.png" height="108" src="../_images/203_c02.png" width="216" />
+</a>
+<p>Najprv bez počítača odpovedz, aká je výška tohto stromu? Potom to skontroluj pomocou funkcie <code class="docutils literal notranslate"><span class="pre">vyska()</span></code>.</p>
+<p>Pre daný strom odpovedz na tieto otázky:</p>
+<ul class="simple">
+<li><p>koľko má vnútorných vrcholov a koľko listov?</p></li>
+<li><p>koľko vrcholov má ľavý podstrom s koreňom <code class="docutils literal notranslate"><span class="pre">F</span></code> a koľko pravý podstrom s koreńom <code class="docutils literal notranslate"><span class="pre">B</span></code>?</p></li>
+<li><p>aká je výška ľavého aj pravého podstromu (skontroluj to aj pomocou funkcie <code class="docutils literal notranslate"><span class="pre">vyska()</span></code>)?</p></li>
+<li><p>ktoré vrcholy sa nachádzajú v 0. úrovni, ktoré v 1. úrovni, ktoré v 2. a v 3. úrovniach?</p></li>
+<li><p>aká je šírka tohto stromu?</p></li>
+<li><p>vymenuj všetky cesty z vrcholu <code class="docutils literal notranslate"><span class="pre">F</span></code> do listov stromu</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">),</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">))),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+                             <span class="kc">None</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span>
+                                    <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+<p>Tento strom:</p>
+<ul>
+<li><p>výška je <strong>4</strong></p></li>
+<li><p>má <strong>6</strong> vnútorných vrcholov a <strong>4</strong> listy</p></li>
+<li><p>ľavý podstrom s koreňom <code class="docutils literal notranslate"><span class="pre">F</span></code> má <strong>5</strong> vrcholov, pravý podstrom s koreńom <code class="docutils literal notranslate"><span class="pre">B</span></code> má <strong>4</strong> vrcholy</p></li>
+<li><p>výška ľavého podstromu je <strong>2</strong> a pravého podstromu je <strong>3</strong>; kontrola, napríklad, pomocou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lava vyska =&#39;</span><span class="p">,</span> <span class="n">vyska</span><span class="p">(</span><span class="n">strom</span><span class="o">.</span><span class="n">left</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;prava vyska =&#39;</span><span class="p">,</span> <span class="n">vyska</span><span class="p">(</span><span class="n">strom</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>vrcholy:</p>
+<ul class="simple">
+<li><p>v 0. úrovni: <code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
+<li><p>v 1. úrovni: <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code></p></li>
+<li><p>v 2. úrovni: <code class="docutils literal notranslate"><span class="pre">J</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code></p></li>
+<li><p>v 3. úrovni: <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code></p></li>
+<li><p>v 4. úrovni: <code class="docutils literal notranslate"><span class="pre">E</span></code></p></li>
+</ul>
+</li>
+<li><p>šírka stromu je <strong>3</strong></p></li>
+<li><p>všetky cesty z vrcholu <code class="docutils literal notranslate"><span class="pre">F</span></code> do listov stromu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FJ</span>
+<span class="n">FGH</span>
+<span class="n">FGI</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Nakresli aj tento strom a zisti, aká je jeho výška:</p>
+<a class="reference internal image-reference" href="../_images/203_c03.png"><img alt="../_images/203_c03.png" height="85" src="../_images/203_c03.png" width="290" />
+</a>
+<ul class="simple">
+<li><p>zrejme najprv priradíš tento strom do premennej a potom zavoláš <code class="docutils literal notranslate"><span class="pre">kresli()</span></code></p></li>
+<li><p>výšku skontroluj pomocou funkcie <code class="docutils literal notranslate"><span class="pre">vyska()</span></code></p></li>
+<li><p>aká je šírka tohto stromu (zatiaľ bez funkcie)?</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="mi">6</span><span class="p">))),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span>
+                      <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span>
+                             <span class="kc">None</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="mi">7</span><span class="p">))))</span>
+</pre></div>
+</div>
+<p>Platí:</p>
+<ul class="simple">
+<li><p>výška stromu <strong>3</strong></p></li>
+<li><p>šírka stromu je <strong>2</strong></p></li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Uprav funkciu <code class="docutils literal notranslate"><span class="pre">kresli()</span></code> tak, aby sa listy stromu kreslili <code class="docutils literal notranslate"><span class="pre">'lightgreen'</span></code> farbou a vnútorné vrcholy <code class="docutils literal notranslate"><span class="pre">'lightblue'</span></code>. Napríklad, takto:</p>
+<a class="reference internal image-reference" href="../_images/203_c13.png"><img alt="../_images/203_c13.png" height="100" src="../_images/203_c13.png" width="246" />
+</a>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">sir</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">kresli</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">sir</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">40</span><span class="p">)</span>
+<span class="hll">    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">v</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">farba</span> <span class="o">=</span> <span class="s1">&#39;lightgreen&#39;</span>
+</span><span class="hll">    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">farba</span> <span class="o">=</span> <span class="s1">&#39;lightblue&#39;</span>
+</span><span class="hll">    <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">farba</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span>    <span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;consolas 12&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vyrob_strom(postupnost)</span></code>, ktorá vytvorí náhodný binárny strom z prvkov zadanej nejakej postupnosti. Koreňom stromu bude prvý prvok postupnosti. Funkcia vráti referenciu na koreň stromu. Využi ideu nerekurzívnej funkcie z prednášky.</p>
+<p>Napríklad, volanie <code class="docutils literal notranslate"><span class="pre">vyrob_strom('Python')</span></code> vytvorí náhodný strom so 6 vrcholmi - tento strom vykresli a vypíš výšku stromu aj počet vrcholov.</p>
+<p>Skontroluj aj volanie <code class="docutils literal notranslate"><span class="pre">vyrob_strom(range(1000))</span></code> a vypíš výšku tohto stromu aj počet jeho vrcholov.</p>
+<p>Funkcia by mala fungovať aj pre prázdnu postupnosť, napríklad <code class="docutils literal notranslate"><span class="pre">vyrob_strom(())</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">vyrob_strom</span><span class="p">(</span><span class="n">postupnost</span><span class="p">):</span>
+    <span class="n">koren</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="n">postupnost</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">koren</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">koren</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">vrch</span> <span class="o">=</span> <span class="n">koren</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+                        <span class="k">break</span>
+                    <span class="n">vrch</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span>
+                        <span class="k">break</span>
+                    <span class="n">vrch</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span>
+    <span class="k">return</span> <span class="n">koren</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">vyrob_strom</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="n">strom1</span> <span class="o">=</span> <span class="n">vyrob_strom</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">strom2</span> <span class="o">=</span> <span class="n">vyrob_strom</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Nakresli taký binárny strom, ktorý má práve <strong>6 listov</strong> a v týchto listoch sú postupne zľava doprava písmená zo slova <code class="docutils literal notranslate"><span class="pre">'Python'</span></code>, zvyšné vnútorné vrcholy stromu obsahujú znak bodku <code class="docutils literal notranslate"><span class="pre">'.'</span></code>. Tento strom priraď do premennej a skontroluj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Navrhni taký strom (opäť s písmenami <code class="docutils literal notranslate"><span class="pre">'Python'</span></code>), ktorého všetky listy majú rovnakú vzdialenosť od koreňa (tzv. <strong>hĺbka</strong> vrcholu). Priraď tento strom do premennej a nakresli.</p></li>
+<li><p>Navrhni taký strom, ktorého všetky listy majú navzájom rôznu vzdialenosť od koreňa: vrchol <code class="docutils literal notranslate"><span class="pre">'P'</span></code> bude mať vzdialenosť 1, vrchol <code class="docutils literal notranslate"><span class="pre">'y'</span></code> vzdialenosť 2, vrchol <code class="docutils literal notranslate"><span class="pre">'t'</span></code> vzdialenosť 3, … Priraď tento strom do premennej a nakresli.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<p>Napríklad:</p>
+<a class="reference internal image-reference" href="../_images/203_c04.png"><img alt="../_images/203_c04.png" height="85" src="../_images/203_c04.png" width="268" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)),</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)),</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)))</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ak majú mať všetky listy rovnakú hĺbku, môžeme zadať, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/203_c05.png"><img alt="../_images/203_c05.png" height="90" src="../_images/203_c05.png" width="240" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)),</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">))),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">))))</span>
+</pre></div>
+</div>
+<p>Ak majú mať všetky listy rôznu hĺbku (od 1 do 6), môžeme zadať, napríklad:</p>
+<a class="reference internal image-reference" href="../_images/203_c06.png"><img alt="../_images/203_c06.png" height="146" src="../_images/203_c06.png" width="284" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">),</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">),</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                                    <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">),</span>
+                                    <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                                           <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">),</span>
+                                           <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                                                  <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)))))))</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Navrhni také binárne stromy, ktoré majú presne <strong>6 vrcholov</strong> (hodnoty vo vrcholoch nás teraz nezaujímajú, môžu to byť prázdne reťazce), ale</p>
+<ol class="loweralpha simple">
+<li><p>má len <strong>1</strong> list</p></li>
+<li><p>má <strong>2</strong> listy, ale maximálnu možnú výšku</p></li>
+<li><p>má <strong>2</strong> listy, ale minimálnu možnú výšku</p></li>
+<li><p>má maximálny možný počet listov</p></li>
+</ol>
+<p>Tieto štyri stromy zadefinuj ako pythonovskú štruktúru <code class="docutils literal notranslate"><span class="pre">strom</span></code> a vykresliť pomocou <code class="docutils literal notranslate"><span class="pre">kresli()</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<p>Napríklad (každá podúloha má veľa rôznych riešení):</p>
+<ol class="loweralpha">
+<li><p>má len 1 list:</p>
+<a class="reference internal image-reference" href="../_images/203_c07.png"><img alt="../_images/203_c07.png" height="127" src="../_images/203_c07.png" width="102" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                    <span class="kc">None</span><span class="p">,</span>
+                                    <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                           <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))))))</span>
+</pre></div>
+</div>
+</li>
+<li><p>má 2 listy, ale maximálnu možnú výšku:</p>
+<a class="reference internal image-reference" href="../_images/203_c08.png"><img alt="../_images/203_c08.png" height="106" src="../_images/203_c08.png" width="166" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                    <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">),</span>
+                                    <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</li>
+<li><p>má 2 listy, ale minimálnu možnú výšku:</p>
+<a class="reference internal image-reference" href="../_images/203_c09.png"><img alt="../_images/203_c09.png" height="85" src="../_images/203_c09.png" width="178" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                             <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</li>
+<li><p>má maximálny možný počet listov:</p>
+<a class="reference internal image-reference" href="../_images/203_c10.png"><img alt="../_images/203_c10.png" height="64" src="../_images/203_c10.png" width="251" />
+</a>
+<p>Priradenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)),</span>
+               <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">),</span>
+                      <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Nakresli <strong>všetky rôzne</strong> binárne stromy, ktoré sa skladajú z <strong>3 vrcholov</strong> s hodnotami <code class="docutils literal notranslate"><span class="pre">'x'</span></code>. Týchto stromov by malo byť <strong>5</strong>. Nakresli ich všetky vedľa seba (pomocou <code class="docutils literal notranslate"><span class="pre">kresli()</span></code>) do jednej grafickej plochy (do jedného <code class="docutils literal notranslate"><span class="pre">canvas</span></code> príde 5 volaní <code class="docutils literal notranslate"><span class="pre">kresli</span></code>), napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Pokús sa odhadnúť, koľko existuje rôznych binárnych stromov, ktoré sú zložené <strong>zo štyroch vrcholov</strong>.</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))),</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>dostaneme:</p>
+<a class="reference internal image-reference" href="../_images/203_c11.png"><img alt="../_images/203_c11.png" height="66" src="../_images/203_c11.png" width="226" />
+</a>
+<p>Počet rôznych binárnych stromov, ktoré sú zložené zo štyroch vrcholov je <strong>14</strong>:</p>
+<a class="reference internal image-reference" href="../_images/203_c12.png"><img alt="../_images/203_c12.png" height="168" src="../_images/203_c12.png" width="342" />
+</a>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pocet_listov(vrch)</span></code>, ktorá pre daný binárny strom zistí počet listov. Funkcia sa bude podobať funkcii <code class="docutils literal notranslate"><span class="pre">pocet(vrch)</span></code>. Funkcia bude zrejme rekurzívna a bude riešiť tieto prípady:</p>
+<ul class="simple">
+<li><p>pre prázdny strom bude výsledkom <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>pre vrchol, ktorý je listom (ľavý aj pravý podstrom je <code class="docutils literal notranslate"><span class="pre">None</span></code>), bude výsledkom <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p>inak zistí počet listov v ľavom podstrome a aj počet listov v pravom podstrome, tieto dva výsledky spočíta a tento súčet je výsledným počtom listov v celom strome</p></li>
+</ul>
+<p>Funkciu skontroluj aj pre niektoré stromy z predchádzajúcich úloh. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">8</span><span class="p">))),</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">19</span><span class="p">)),</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span>
+<span class="hll"><span class="go">    8</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">pocet_listov</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span>
+<span class="hll"><span class="go">    3</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">strom</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">)))))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pocet_listov</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span>
+<span class="hll"><span class="go">    1</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_listov</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">pocet_listov</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">pocet_listov</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p>Pre triedu <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code> otestuj magickú metódu <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> z prednášky na niektorých stromoch z predchádzajúcich úloh. Trieda <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code> s metódou <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Vrchol(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">!r}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="si">}</span><span class="s1">)&#39;</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">7</span><span class="p">))),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="hll"><span class="go">    Vrchol(1, Vrchol(2, None, Vrchol(5, Vrchol(6, None, None), Vrchol(7, None, None))),</span>
+</span><span class="hll"><span class="go">    Vrchol(3, Vrchol(4, None, None), None))</span>
+</span></pre></div>
+</div>
+<p>Teraz uprav túto metódu tak, aby sa listy stromu nevypisovali v tvare <code class="docutils literal notranslate"><span class="pre">'Vrchol(hodnota,</span> <span class="pre">None,</span> <span class="pre">None)'</span></code>, ale ako <code class="docutils literal notranslate"><span class="pre">'Vrchol(hodnota)'</span></code> (bez dvoch zbytočných <code class="docutils literal notranslate"><span class="pre">None</span></code>) a tiež aj vrcholy, ktoré majú pravý podstrom <code class="docutils literal notranslate"><span class="pre">None</span></code> sa vypíšu bez tohto parametra. Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="hll"><span class="go">    Vrchol(&#39;a&#39;, Vrchol(&#39;b&#39;, None, Vrchol(&#39;c&#39;)), Vrchol(&#39;d&#39;, Vrchol(&#39;f&#39;), Vrchol(&#39;e&#39;)))</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+<span class="hll"><span class="go">    Vrchol(&#39;a&#39;, Vrchol(&#39;a&#39;, Vrchol(&#39;a&#39;)), Vrchol(&#39;a&#39;, Vrchol(&#39;a&#39;)))</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Vrchol(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">!r}</span><span class="s1">)&#39;</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Vrchol(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">!r}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="si">}</span><span class="s1">)&#39;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Vrchol(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">!r}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="si">}</span><span class="s1">)&#39;</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pocet2(vrch)</span></code>, ktorá vráti počet vrcholov v strome, ktoré majú <strong>práve 2 potomkov</strong>. Funkciu otestuj aj na väčšom strome, ktorý vygeneruješ náhodne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet2</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">vyrob_strom</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pocet2</span><span class="p">(</span><span class="n">strom</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet2</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">p</span> <span class="o">+</span> <span class="n">pocet2</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">pocet2</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="12">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Napíš funkciu <code class="docutils literal notranslate"><span class="pre">nachadza_sa(vrch,</span> <span class="pre">hodnota)</span></code>, ktorá zistí (vráti <code class="docutils literal notranslate"><span class="pre">True</span></code> alebo <code class="docutils literal notranslate"><span class="pre">False</span></code>), či sa v strome nachádza daná hodnota. Funkcia bude zrejme rekurzívna:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nachadza_sa</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">vyrob_strom</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;sa nachadza&#39;</span><span class="p">,</span> <span class="n">nachadza_sa</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nachadza_sa</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">nachadza_sa</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span> <span class="ow">or</span> <span class="n">nachadza_sa</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="13">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">pocet_vyskytov(vrch,</span> <span class="pre">hodnota)</span></code>, ktorá zistí počet výskytov danej hodnoty v strome. Budeš to riešiť zrejme rekurzívne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_vyskytov</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">vyrob_strom</span><span class="p">(</span><span class="s1">&#39;abcabcababcabacaba&#39;</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;abcd&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;pocet vyskytov&#39;</span><span class="p">,</span> <span class="n">pocet_vyskytov</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pocet_vyskytov</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">hodnota</span>
+    <span class="k">return</span> <span class="n">p</span> <span class="o">+</span> <span class="n">pocet_vyskytov</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span> <span class="o">+</span> <span class="n">pocet_vyskytov</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="14">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">min_max(vrch)</span></code>, ktorá vráti dvojicu (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) s minimálnou a maximálnou hodnotou v strome:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">min_max</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Napríklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">min_max</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
+<span class="hll"><span class="go">    (2, 7)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">min_max</span><span class="p">(</span><span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="n">Vrchol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)))</span>
+<span class="hll"><span class="go">    (&#39;a&#39;, &#39;c&#39;)</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">min_max</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="hll"><span class="go">    (None, None)</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">min_max</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="n">mn</span><span class="p">,</span> <span class="n">mx</span> <span class="o">=</span> <span class="n">vrch</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">vrch</span><span class="o">.</span><span class="n">data</span>
+    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mn1</span><span class="p">,</span> <span class="n">mx1</span> <span class="o">=</span> <span class="n">min_max</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">mn</span><span class="p">,</span> <span class="n">mx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="n">mn1</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span> <span class="n">mx1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vrch</span><span class="o">.</span><span class="n">right</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mn1</span><span class="p">,</span> <span class="n">mx1</span> <span class="o">=</span> <span class="n">min_max</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="n">mn</span><span class="p">,</span> <span class="n">mx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="n">mn1</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span> <span class="n">mx1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mn</span><span class="p">,</span> <span class="n">mx</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="15">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">vytvor_uplny(n)</span></code>, ktorá vráti vygenerovaný <strong>úplný strom</strong>: jeho najvyššia úroveň je <code class="docutils literal notranslate"><span class="pre">n</span></code> a hodnoty vo všetkých vrcholoch nech sú <code class="docutils literal notranslate"><span class="pre">0</span></code>. Zrejme použiješ rekurziu: úplný strom úrovne <code class="docutils literal notranslate"><span class="pre">n</span></code> sa skladá z ľavého úplného stromu úrovne <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, z pravého úplného stromu tiež úrovne <code class="docutils literal notranslate"><span class="pre">n-1</span></code> a z koreňa, ktorý má tieto dva podstromy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vytvor_uplny</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Otestuj pre rôzne <code class="docutils literal notranslate"><span class="pre">n</span></code>, napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="n">vytvor_uplny</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">kresli</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vytvor_uplny</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Vrchol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vytvor_uplny</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">vytvor_uplny</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="16">
+<li><p>Napíš funkciu <code class="docutils literal notranslate"><span class="pre">mapuj(vrch,</span> <span class="pre">funkcia)</span></code>, ktorá zmení hodnoty vo všetkých vrcholoch stromu aplikovaním danej funkcie, t.j. pre každý vrchol zoberie hodnotu, zavolá s ňou danú funkciu a túto novú vypočítanú hodnotu priradí do vrcholu. Funkcia nič nevracia, ale zmení hodnoty vo vrcholoch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mapuj</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">):</span>
+      <span class="o">...</span>
+</pre></div>
+</div>
+<p>Otestuj, čo urobí so stromom takáto funkcia?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">poc</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">poc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">poc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mapuj</span><span class="p">(</span><span class="n">vrch</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vrch</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">funkcia</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">mapuj</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">)</span>
+        <span class="n">mapuj</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">funkcia</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Takéto volanie funkcie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">poc</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">poc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">poc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">strom</span> <span class="o">=</span> <span class="n">vytvor_uplny</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">mapuj</span><span class="p">(</span><span class="n">strom</span><span class="p">,</span> <span class="n">fun</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>očísluje všetky vrcholy stromu:</p>
+<a class="reference internal image-reference" href="../_images/203_c14.png"><img alt="../_images/203_c14.png" height="108" src="../_images/203_c14.png" width="309" />
+</a>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="17">
+<li><p>Napíš funkcie <code class="docutils literal notranslate"><span class="pre">daj_zoznam(vrch)</span></code> a <code class="docutils literal notranslate"><span class="pre">daj_mnozinu(vrch)</span></code>, ktoré vrátia buď zoznam, alebo množinu všetkých hodnôt v strome. Tieto dve funkcie by sa mohli podobať na funkciu <code class="docutils literal notranslate"><span class="pre">sucet()</span></code> z prednášky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">daj_zoznam</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">daj_mnozinu</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">daj_zoznam</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">vrch</span><span class="o">.</span><span class="n">data</span><span class="p">]</span> <span class="o">+</span> <span class="n">daj_zoznam</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">daj_zoznam</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">daj_mnozinu</span><span class="p">(</span><span class="n">vrch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">vrch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">vrch</span><span class="o">.</span><span class="n">data</span><span class="p">}</span> <span class="o">|</span> <span class="n">daj_mnozinu</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">|</span> <span class="n">daj_mnozinu</span><span class="p">(</span><span class="n">vrch</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="03.html#id10" role="doc-backlink">3. Týždenný projekt</a><a class="headerlink" href="03.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 8.3.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>definíciu triedy <code class="docutils literal notranslate"><span class="pre">Node</span></code> nemodifikuj, nedefinuj žiadne ďalšie triedy, funkcie ani globálne premenné:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Z prednášky vieme, že binárny strom vieme reprezentovať ako spájanú štruktúru, v ktorej v každom vrchole je referencia na ľavý a pravý podstrom - tie sú buď inštanciami triedy <code class="docutils literal notranslate"><span class="pre">Node</span></code> alebo <code class="docutils literal notranslate"><span class="pre">None</span></code>.  Tejto reprezentácii budeme hovoriť <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">0</span></code>.</p>
+<p>Binárny strom môžeme reprezentovať aj inými spôsobmi. Napríklad, v jednorozmernom zozname (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>), ktorého prvkami sú dátové časti vrcholov (atribúty <code class="docutils literal notranslate"><span class="pre">data</span></code>), prípadne <code class="docutils literal notranslate"><span class="pre">None</span></code>. V nultom prvku tohto zoznamu je koreň stromu, v prvom a druhom prvku sú potomkovia koreňa (ľavý a pravá), pričom platí, že pre <code class="docutils literal notranslate"><span class="pre">i</span></code>-ty prvok jeho ľavý potomok je na indexe <code class="docutils literal notranslate"><span class="pre">i*2+1</span></code> a pravý na indexe <code class="docutils literal notranslate"><span class="pre">i*2+2</span></code>. Tejto reprezentácii budeme hovoriť <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
+<p>Binárny strom by sme vedeli reprezentovať aj vnorenými zoznamami: každý vrchol je reprezentovaný trojprvkovým zoznamom <code class="docutils literal notranslate"><span class="pre">[data,</span> <span class="pre">ľavý,</span> <span class="pre">pravý]</span></code>. Pritom <code class="docutils literal notranslate"><span class="pre">ľavý</span></code> a <code class="docutils literal notranslate"><span class="pre">pravý</span></code> je opäť buď trojprvový zoznam, alebo <code class="docutils literal notranslate"><span class="pre">None</span></code>. Tejto reprezentácii budeme hovoriť <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">2</span></code>.</p>
+<p>Napríklad, ten istý binárny strom môžeme zapísať ( <code class="docutils literal notranslate"><span class="pre">model=0</span></code> ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)),</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>alebo jednorozmerným zoznamom ( <code class="docutils literal notranslate"><span class="pre">model=1</span></code> ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>teda:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7.1%" />
+<col style="width: 7.1%" />
+<col style="width: 7.1%" />
+<col style="width: 7.1%" />
+<col style="width: 7.1%" />
+<col style="width: 7.1%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><sup>0</sup></p></th>
+<th class="head"><p><sup>1</sup></p></th>
+<th class="head"><p><sup>2</sup></p></th>
+<th class="head"><p><sup>3</sup></p></th>
+<th class="head"><p><sup>4</sup></p></th>
+<th class="head"><p><sup>5</sup></p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'a'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'b'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'d'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'c'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'e'</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>vidíme, že 0-tý prvok má potomkov v 1. a 2., 1. má potomkov v 3. a 4., 2. má ľavého potomka v 5.</p></li>
+</ul>
+<p>alebo zoznamom zoznamov, kde sú všetky podzoznamy trojprvkové ( <code class="docutils literal notranslate"><span class="pre">model=2</span></code> ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]],</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Ak by sme pre tento tretí typ mali pravidlo, že v každom podzozname zrušíme <code class="docutils literal notranslate"><span class="pre">None</span></code> ako posledné prvky, dostávame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strom</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]],</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]]]</span>
+</pre></div>
+</div>
+<p>Tieto tri reprezentácie budeme používať v nasledovných funkciách.</p>
+<p>Úlohou je vytvoriť pythonovský program, ktorý implementuje funkcie <code class="docutils literal notranslate"><span class="pre">add_node()</span></code>, <code class="docutils literal notranslate"><span class="pre">create_tree()</span></code>, <code class="docutils literal notranslate"><span class="pre">write_tree_to_file</span></code>, <code class="docutils literal notranslate"><span class="pre">most_frequent</span></code>, <code class="docutils literal notranslate"><span class="pre">count()</span></code> a <code class="docutils literal notranslate"><span class="pre">representation()</span></code>. Všetky tieto funkcie majú prvý parameter <code class="docutils literal notranslate"><span class="pre">root</span></code>, ktorý je referenciou na koreň stromu (inštancia triedy <code class="docutils literal notranslate"><span class="pre">Node</span></code>, alebo <code class="docutils literal notranslate"><span class="pre">None</span></code> pre prázdny strom).</p>
+<p class="h3 rubric">Funkcie</p>
+<p class="h4 rubric">add_node(root, string)</p>
+<p>Táto funkcia dostane ako vstup koreň stromu a reťazec, kde <code class="docutils literal notranslate"><span class="pre">string</span></code> je ľubovoľný reťazec vo formáte <code class="docutils literal notranslate"><span class="pre">'meno:cesta'</span></code>.</p>
+<p>Funkcia má rozšíriť binárny strom zadaný koreňom o nový vrchol a potom vrátiť tento strom ako výsledok funkcie.
+Hodnotou nového vrcholu, teda jeho atribút <code class="docutils literal notranslate"><span class="pre">data</span></code>, je prvé slovo daného reťazca.
+Miesto, kde sa má nový vrchol pripojiť, je definované postupnosťou (reťazcom <code class="docutils literal notranslate"><span class="pre">cesta</span></code>), z ktorej nás budú zaujímať len písmená <code class="docutils literal notranslate"><span class="pre">'l'</span></code> a <code class="docutils literal notranslate"><span class="pre">'r'</span></code> (môžu byť aj veľké <code class="docutils literal notranslate"><span class="pre">'L'</span></code> a <code class="docutils literal notranslate"><span class="pre">'R'</span></code>).
+Začína sa od koreňa stromu. Pri písmene <code class="docutils literal notranslate"><span class="pre">'l'</span></code> sa pokračuje doľava a pri písmene <code class="docutils literal notranslate"><span class="pre">'r'</span></code> sa pokračuje doprava. Iné znaky ako písmená <code class="docutils literal notranslate"><span class="pre">'l'</span></code> a <code class="docutils literal notranslate"><span class="pre">'r'</span></code> sa ignorujú. Napríklad, reťazec <code class="docutils literal notranslate"><span class="pre">'meno:</span> <span class="pre">vpravo</span> <span class="pre">a</span>&#160; <span class="pre">VLAVO'</span></code> označuje meno vrcholu <code class="docutils literal notranslate"><span class="pre">'meno'</span></code> a z cesty sa použijú len znaky najprv <code class="docutils literal notranslate"><span class="pre">'r'</span></code> a potom <code class="docutils literal notranslate"><span class="pre">'L'</span></code>, ostatné sa odignorujú.</p>
+<p>Cesta teda vedie</p>
+<ul class="simple">
+<li><p>buď k už existujúcemu vrcholu - vtedy sa hodnota tohto existujúceho vrcholu nahradí novým menom, nič iné v strome sa nezmení</p></li>
+<li><p>alebo k novému vrcholu, ktorý sa vytvorí aj s novou hodnotou vo vrchole; ak na ceste k tomuto vrcholu nejaký vrchol ešte neexistoval, tak sa vytvorí s hodnotou <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+<p>Ak cesta neexistuje (parameter <code class="docutils literal notranslate"><span class="pre">string</span></code> neobsahuje <code class="docutils literal notranslate"><span class="pre">':'</span></code> alebo znak <code class="docutils literal notranslate"><span class="pre">':'</span></code> je posledným znakom reťazca), nastavuje sa nová hodnota do koreňa stromu.</p>
+<p>Funkcia vždy vráti referenciu na koreň stromu (ak parameter <code class="docutils literal notranslate"><span class="pre">root</span></code> nebol pri volaní funkcie <code class="docutils literal notranslate"><span class="pre">None</span></code>, návratovou hodnotou bude tento pôvodný koreň stromu).</p>
+<p>Zrejme pomocou tejto funkcie pracujeme priamo s prvou reprezentáciou.</p>
+<p><strong>Príklad:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">add_node</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;KING&#39;</span><span class="p">)</span>                     <span class="c1"># Node(&#39;KING&#39;)</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">add_node</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;QUEEN:L&#39;</span><span class="p">)</span>                  <span class="c1"># Node(&#39;KING&#39;, Node(&#39;QUEEN&#39;))</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">add_node</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;PRINCE: L L L&#39;</span><span class="p">)</span>            <span class="c1"># Node(&#39;KING&#39;, Node(&#39;QUEEN&#39;, Node(None, Node(&#39;PRINCE&#39;))))</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">add_node</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;FROG:w h y a m i f r o g&#39;</span><span class="p">)</span> <span class="c1"># Node(&#39;KING&#39;, Node(&#39;QUEEN&#39;, Node(None, Node(&#39;PRINCE&#39;))), Node(&#39;FROG&#39;))</span>
+</pre></div>
+</div>
+<p class="h4 rubric">create_tree(file_name)</p>
+<p>Táto funkcia dostane ako vstup <code class="docutils literal notranslate"><span class="pre">file_name</span></code>, teda meno textového súboru, ktorý je v jednom z troch formátov:</p>
+<ul>
+<li><p>buď má riadky vo formáte ako bol reťazec <code class="docutils literal notranslate"><span class="pre">string</span></code> z funkcie <code class="docutils literal notranslate"><span class="pre">add_node()</span></code> (teda <code class="docutils literal notranslate"><span class="pre">model=0</span></code>), napríklad (riadky môžu byť v ľubovoľnom poradí):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KING</span>
+<span class="n">QUEEN</span><span class="p">:</span><span class="n">l</span>
+<span class="n">PRINCE</span><span class="p">:</span><span class="n">lll</span>
+<span class="n">FROG</span><span class="p">:</span><span class="n">r</span>
+</pre></div>
+</div>
+</li>
+<li><p>alebo má v jednotlivých riadkoch informácie o prvkoch jednorozmerného zoznamu, ktoré nie sú <code class="docutils literal notranslate"><span class="pre">None</span></code> (teda <code class="docutils literal notranslate"><span class="pre">model=1</span></code>)</p>
+<ul class="simple">
+<li><p>každý riadok má formát <code class="docutils literal notranslate"><span class="pre">meno:index</span></code>, kde <code class="docutils literal notranslate"><span class="pre">index</span></code> je indexom do jednorozmerného zoznamu, napríklad (riadky môžu byť v ľubovoľnom poradí):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KING</span><span class="p">:</span><span class="mi">0</span>
+<span class="n">QUEEN</span><span class="p">:</span><span class="mi">1</span>
+<span class="n">FROG</span><span class="p">:</span><span class="mi">2</span>
+<span class="n">PRINCE</span><span class="p">:</span><span class="mi">7</span>
+</pre></div>
+</div>
+</li>
+<li><p>alebo ako zoznam zoznamov (teda <code class="docutils literal notranslate"><span class="pre">model=2</span></code>), keďže sa táto reprezentácia bude čítať aj zapisovať pomocou <code class="docutils literal notranslate"><span class="pre">json</span></code>, všetky reťazce budú uzavreté v úvodzovkách a namiesto <code class="docutils literal notranslate"><span class="pre">None</span></code> tam bude <code class="docutils literal notranslate"><span class="pre">null</span></code>, napríklad (v súbore to môže byť vo viacerých riadkoch):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;KING&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;QUEEN&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">null</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;PRINCE&quot;</span><span class="p">]]],</span> <span class="p">[</span><span class="s2">&quot;FROG&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Tvojou úlohou je tento súbor spracovať a podľa jeho obsahu rozpoznať <code class="docutils literal notranslate"><span class="pre">model</span></code> a vytvoriť a tiež vrátiť nový strom (teda vráti koreň takto vytvoreného binárneho stromu, teda inšatnciu triedy <code class="docutils literal notranslate"><span class="pre">Node</span></code>).</p>
+<p class="h4 rubric">write_tree_to_file(root, file_name, model=0)</p>
+<p>Táto funkcia robí presný opak oproti funkcii <code class="docutils literal notranslate"><span class="pre">create_tree()</span></code>. Na vstupe dostane <code class="docutils literal notranslate"><span class="pre">root</span></code> (inštancia triedy <code class="docutils literal notranslate"><span class="pre">Node</span></code>) a <code class="docutils literal notranslate"><span class="pre">file_name</span></code> (reťazec s cestou k súboru). Úlohou funkcie je vytvoriť textový súbor, ktorý reprezentuje daný strom zadaný referenciou na koreň. Podľa parametra <code class="docutils literal notranslate"><span class="pre">model</span></code> do súboru zapíše strom v požadovanej reprezentácii (pre <code class="docutils literal notranslate"><span class="pre">model=2</span></code> môžeš použiť modul <code class="docutils literal notranslate"><span class="pre">json</span></code>). Funkcia vráti počet zapísaných vrcholov do súboru (napríklad, pre modely <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">1</span></code> to bude počet riadkov).</p>
+<p>Pomocou takto zapísaného súboru by sa mal dať vytvoriť identický strom volaním funkcie <code class="docutils literal notranslate"><span class="pre">create_tree()</span></code>.</p>
+<p class="h4 rubric">most_frequent(root)</p>
+<p>Táto funkcia dostane ako parameter <code class="docutils literal notranslate"><span class="pre">root</span></code> referenciu na koreň stromu. Funkcia vráti znakový reťazec, ktorý sa v strome vyskytol najviackrát ako hodnota vo vrchole (meno vrcholu). Ak je takých reťazcov viac, funkcia vráti množinu všetkých takýchto reťazcov. Pre prázdny strom vráti <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p class="h4 rubric">count(root)</p>
+<p>Funkcia vráti dvojicu čísel (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>): počet vrcholov stromu, ktoré <strong>nemajú</strong> v atribúte <code class="docutils literal notranslate"><span class="pre">data</span></code> hodnotu <code class="docutils literal notranslate"><span class="pre">None</span></code> a počet všetkých vrcholov stromu.</p>
+<p class="h4 rubric">representation(root, model=0)</p>
+<p>Táto funkcia vráti momentálny stav binárneho stromu s koreňom <code class="docutils literal notranslate"><span class="pre">root</span></code> v jednej z troch reprezentácií:</p>
+<ul class="simple">
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">0</span></code> funkcia vráti <code class="docutils literal notranslate"><span class="pre">root</span></code></p></li>
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">1</span></code> funkcia vráti jednorozmerný zoznam (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>) znakových reťazcov a prípadne hodnôt <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<ul>
+<li><p>tento zoznam by nemal mať posledné prvky <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</li>
+<li><p>pre <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">2</span></code> funkcia vráti zoznam zoznamov (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>)</p>
+<ul>
+<li><p>v tomto zozname by si mal zo všetkých podzoznamov odstrániť posledné prvky, ak sú <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="03.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 05. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

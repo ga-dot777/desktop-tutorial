@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Skúška 9.6.2026 &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Hľadať" href="../../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../../copyright.html" />
+    <link rel="next" title="2. Skúška 10.6.2026" href="sk2026b.html" />
+    <link rel="prev" title="Záverečný test - variant B" href="testb.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.html">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.html">9. Backtracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.html">10. Backtracking na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.html">11. Ďalšie algoritmy na grafoch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tp12.html">12. Týždenný projekt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="testb.html" title="Previous Chapter: Záverečný test - variant B"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Záverečný tes...</span>
+    </a>
+  </li>
+  <li>
+    <a href="sk2026b.html" title="Next Chapter: 2. Skúška 10.6.2026"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">2. Skúška 10.6.2026 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="skuska-9-6-2026">
+<h1>1. Skúška 9.6.2026<a class="headerlink" href="sk2026a.html#skuska-9-6-2026" title="Link to this heading">¶</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># skuska variant A</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 9.6.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code> ani <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
+<li><p>môžeš definovať ďalšie pomocné metódy, okrem <code class="docutils literal notranslate"><span class="pre">vertices</span></code> nedefinuj ďalšie atribúty</p></li>
+<li><p>môžeš si stiahnuť <a class="reference external" href="../../_static/file/2sk_1.zip">2sk_1.zip</a> s kostrou programu a testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré používa testovač.</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Dopíš metódy triedy <code class="docutils literal notranslate"><span class="pre">Graph</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inf</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graph</span><span class="p">:</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vertex</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Vertex</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[]</span>                         <span class="c1"># jednorozmerné pole vrcholov typu Vertex</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>                    <span class="c1"># vráti príslušný Vertex</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex1</span><span class="p">,</span> <span class="n">vertex2</span><span class="p">):</span>        <span class="c1"># vráti váhu hrany</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex1</span><span class="p">,</span> <span class="n">vertex2</span><span class="p">):</span>      <span class="c1"># vráti najkratšiu vzdialenosť (súčet váh)</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertex1</span><span class="p">,</span> <span class="n">vertex2</span><span class="p">):</span>          <span class="c1"># vráti postupnosť vrcholov z vertex1 do vertex2</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Pomocou metód triedy <code class="docutils literal notranslate"><span class="pre">Graph</span></code> vieme nájsť najkratšie cesty (súčet váh) v ohodnotenom neorientovanom grafe pomocou Dijkstrovho algoritmu. Tento graf reprezentuje vrcholy, ktoré sú bodmi v rovine, pričom hranami môžu byť spojené ľubovoľné dva vrcholy. Váhou hrany je potom <strong>druhá mocnina</strong> geometrickej vzdialenosti dvoch bodov v rovine. Súradnice bodov, ktoré reprezentujú vrcholy grafu sú zadané v textovom súbore: v každom riadku sú dve celé čísla (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>).</p>
+<p>Inicializácia triedy <code class="docutils literal notranslate"><span class="pre">Graph</span></code> dostáva meno textového súboru s popisom vrcholov grafu a vytvorí z neho zoznam vrcholov (do atribútu <code class="docutils literal notranslate"><span class="pre">vertices</span></code>). Metódy <code class="docutils literal notranslate"><span class="pre">get_distance</span></code> a <code class="docutils literal notranslate"><span class="pre">get_path</span></code> využijú výsledok Dijkstrovho algoritmu - snažte sa tento algoritmus nevolať zbytočne, ak sa dá výsledok zistiť z posledného volania algoritmu. Tento algoritmus namiesto poľa <code class="docutils literal notranslate"><span class="pre">D</span></code> (s vypočítanými najkratšími dĺžkami) využije atribút <code class="docutils literal notranslate"><span class="pre">d</span></code> v každom vrchole. Metóda <code class="docutils literal notranslate"><span class="pre">get_path</span></code> vráti postupnosť vrcholov (zoznam <code class="docutils literal notranslate"><span class="pre">list</span></code> s prvkami typy <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>) pričom prvým prvkom postupnosti je <code class="docutils literal notranslate"><span class="pre">vertex1</span></code> a posledným <code class="docutils literal notranslate"><span class="pre">vertex2</span></code>. Volanie <code class="docutils literal notranslate"><span class="pre">get_path(vertex1,</span> <span class="pre">vertex1)</span></code> vráti postupnosť dĺžky 1. Metóda <code class="docutils literal notranslate"><span class="pre">get_weight</span></code> vráti váhu hrany, t.j. <strong>druhú mocninu</strong> vdialenosti dvoch bodov v rovine.</p>
+<p>Podtriedu <code class="docutils literal notranslate"><span class="pre">Vertex</span></code> nemá zmysel meniť, lebo testovač použije pôvodnú verziu.</p>
+<p>Testovať program môžeš, napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">93</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">get_weight</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">7748</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">get_distance</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">5256</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">[Vertex(66, 5), Vertex(99, 43), Vertex(99, 52), Vertex(68, 93)]</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="sk2026a.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 10. jún. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

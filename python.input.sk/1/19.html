@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>19. Úvod do analýzy algoritmov &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="20. Práca s obrázkami" href="20.html" />
+    <link rel="prev" title="18. Triedenia I." href="18.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../2/pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/07.html">7. Grafy</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="19.html#">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="18.html" title="Previous Chapter: 18. Triedenia I."><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 18. Triedenia I.</span>
+    </a>
+  </li>
+  <li>
+    <a href="20.html" title="Next Chapter: 20. Práca s obrázkami"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">20. Práca s obrázkami &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="uvod-do-analyzy-algoritmov">
+<h1>19. Úvod do analýzy algoritmov<a class="headerlink" href="19.html#uvod-do-analyzy-algoritmov" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="19.html#triedy-funkcii-velke-o" id="id2">Triedy funkcií veľké O( )</a></p>
+<ul>
+<li><p><a class="reference internal" href="19.html#zakladne-skupiny-funkcii-casovej-zlozitosti" id="id3">Základné skupiny funkcií časovej zložitosti</a></p></li>
+<li><p><a class="reference internal" href="19.html#porovnanie" id="id4">Porovnanie</a></p></li>
+<li><p><a class="reference internal" href="19.html#ako-si-zjednodusit-zistovanie-casovej-zlozitosti" id="id5">Ako si zjednodušiť zisťovanie časovej zložitosti</a></p></li>
+<li><p><a class="reference internal" href="19.html#tabulka-v-ktorej-sa-porovnava-rychlost" id="id6">Tabuľka, v ktorej sa porovnáva rýchlosť</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="19.html#cvicenie" id="id7">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="19.html#tyzdenny-projekt" id="id8">11. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Časová zložitosť</p>
+<p>Budeme skúmať rôzne algoritmy z pohľadu ich rýchlosti behu pre rôzne veľké vstupné údaje. Už z programovania v tomto semestri máme nejaké skúsenosti, že niektoré programy sú pre veľké vstupy veľmi pomalé, niekedy sa dokonca ani nedočkáme výsledkov. Zatiaľ boli naše úvahy skôr intuitívne. Teraz sa zoznámime so základmi posudzovania časovej zložitosti rôznych skupín algoritmov.</p>
+<p>Ukážeme to na riešení takejto úlohy: v danom číselnom zozname potrebujeme zistiť počet všetkých dvojíc rovnakých hodnôt. Pozrime si takéto jednoduché riešenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+<span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pocet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Aký bude výsledok pre zoznam rovnakých hodnôt, napríklad pre <code class="docutils literal notranslate"><span class="pre">zoz</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>?</p>
+<p>Poďme teraz odmerať, ako dlho bežal tento program. Urobíme to tak, ako sme to robili v predchádzajúcich témach. Jednou z možností je merať čas pre rôzne veľké náhodné zoznamy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10001</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">tim</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">tim</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tim</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tim</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Z nameraných hodnôt môžeme nakresliť napríklad takýto graf:</p>
+<a class="reference internal image-reference" href="../_images/119_1.png"><img alt="graf závislosti času od veľkosti vstupných údajov" height="162" src="../_images/119_1.png" width="252" />
+</a>
+<p>Zrejme si uvedomujete, že takéto merania nie sú presné, ale za to aspoň vidíme, ako tento odmeraný čas rastie. Možno by sme z týchto meraní vedeli nejako odhadnúť, ako sa bude tento program správať pre väčšie hodnoty premennej <code class="docutils literal notranslate"><span class="pre">n</span></code>, keďže si nemôžeme dovoliť niektoré algoritmy spúšťať pre väčšie vstupy.</p>
+<p>Skúsme to preto urobiť inak. Program nebudeme spúšťať, len budeme počítať. Budeme počítať počet <strong>elementárnych inštrukcií</strong>, ktoré sa vykonajú pre zoznam veľkosti <code class="docutils literal notranslate"><span class="pre">n</span></code>. Mohli by sme nejako odhadnúť čas pre rôzne operácie, napríklad:</p>
+<ul class="simple">
+<li><p>priradenie</p></li>
+<li><p>aritmetická operácia</p></li>
+<li><p>porovnávanie hodnôt</p></li>
+<li><p>zaindexovanie prvku poľa</p></li>
+<li><p>volanie funkcie</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Pre pochopenie idey bude v našich príkladoch stačiť, keď budeme sledovať len priraďovacie príkazy, teda budeme počítať, koľko krát sa takéto priradenia vykonajú v závislosti od veľkosti vstupu (veľkosti zoznamu):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+</span><span class="hll"><span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+<span class="hll">            <span class="n">pocet</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></pre></div>
+</div>
+<p>Vnútorný for-cyklus sa bude vykonávať najprv. pre <code class="docutils literal notranslate"><span class="pre">i=0</span></code>, potom pre <code class="docutils literal notranslate"><span class="pre">i=1</span></code>, potom pre <code class="docutils literal notranslate"><span class="pre">i=2</span></code>, atď. až naposledy pre <code class="docutils literal notranslate"><span class="pre">i=n-1</span></code>, teda prvýkrát pôjde <code class="docutils literal notranslate"><span class="pre">n-2</span></code> krát, potom <code class="docutils literal notranslate"><span class="pre">n-3</span></code> krát, … až 1-krát. Spolu je to súčet: 1 + 2 + 3 + … + <code class="docutils literal notranslate"><span class="pre">n-2</span></code>, teda <code class="docutils literal notranslate"><span class="pre">(n-1)*(n-2)/2</span></code>. Budeme predpokladať najhorší prípad (časovo najnáročnejší), teda že priradenie sa vykoná pri každom prechode cyklu.</p>
+<p>Celkový čas potom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Takúto funkciu, ktorá vyjadruje časový odhad trvania nejakého konkrétneho algoritmu, budeme nazývať <strong>časová zložitosť</strong>. Pravdepodobne, keby sme nakreslili priebeh tejto funkcie, dostali by sme veľmi podobné výsledky ako graf v našich prvých meraniach.</p>
+<p>V skutočnosti nás nebude zaujímať až taký presný vzorec (s nepresnými predpokladmi o trvaní jednotlivých inštrukcií), ale dôležitý bude charakter takejto funkcie, teda či rastie rýchlo, či rastie rovnako ako funkcia iného algoritmu, alebo či rastie pomalšie ako iná funkcia.</p>
+<p>V prvom rade budeme zanedbávať všetky „nepodstatné“ konštanty. Na priebeh funkcie to nemá skoro žiaden vplyv. Tiež, ak sa nejaká funkcia skladá z viacerých členov, pričom jeden rastie rýchlejšie a iný pomalšie, tak ten pomalší tiež „zanedbáme“. Teda pre náš algoritmus je dôležité, že jeho časová zložitosť je kvadratická funkcia (rastie tak rýchlo, ako <strong>n**2</strong>).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="triedy-funkcii-velke-o">
+<h2><a class="toc-backref" href="19.html#id2" role="doc-backlink">Triedy funkcií veľké O( )</a><a class="headerlink" href="19.html#triedy-funkcii-velke-o" title="Link to this heading">¶</a></h2>
+<p>Funkcie časovej zložitosti budeme zaraďovať do tried. Každá z tried bude charakteristická nejakou funkciou, ktorá ju <strong>ohraničuje zhora</strong>.</p>
+<p>Formálnejšie musí platiť:</p>
+<ul class="simple">
+<li><p>funkcia <code class="docutils literal notranslate"><span class="pre">f(n)</span></code> patrí do tej istej triedy ako <code class="docutils literal notranslate"><span class="pre">g(n)</span></code>, ak existuje číselná konštanta <code class="docutils literal notranslate"><span class="pre">c</span></code>, že pre dosť veľké <code class="docutils literal notranslate"><span class="pre">n</span></code> platí <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">*</span> <span class="pre">g(n)</span> <span class="pre">&gt;=</span> <span class="pre">f(n)</span></code></p></li>
+<li><p>takúto triedu funkcií potom označujeme <strong>O(g(n))</strong> (hovoríme trieda veľké O)</p></li>
+<li><p>budeme hovoriť, že <code class="docutils literal notranslate"><span class="pre">f(n)</span></code> patrí do <strong>O(g(n))</strong>, alebo aj <code class="docutils literal notranslate"><span class="pre">f(n)</span></code> je <strong>O(g(n))</strong></p></li>
+</ul>
+<p>Funkcii <code class="docutils literal notranslate"><span class="pre">g(n)</span></code> sa hovorí <strong>horný asymptotický odhad</strong> funkcie <code class="docutils literal notranslate"><span class="pre">f(n)</span></code>.</p>
+<p>Napríklad časová zložitosť nášho skúmaného programu je <strong>O(n**2)</strong>.</p>
+<div class="info admonition">
+<p class="admonition-title">Formálne</p>
+<p>Pre dané dve funkcie <code class="docutils literal notranslate"><span class="pre">f(n)</span></code> (odhad počtu elementárnych inštrukcií algoritmu) a <code class="docutils literal notranslate"><span class="pre">g(n)</span></code> hovoríme, že <code class="docutils literal notranslate"><span class="pre">f(n)</span></code> je triedy <strong>O(g(n))</strong>, ak existujú také dve kladné konštanty <code class="docutils literal notranslate"><span class="pre">c</span></code> a <code class="docutils literal notranslate"><span class="pre">n0</span></code>, že pre každé <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">n0</span></code> platí:</p>
+<p><strong>c * g(n) &gt;= f(n)</strong></p>
+</div>
+<p>Môžete si predstaviť, napríklad takto:</p>
+<a class="reference internal image-reference" href="../_images/119_2.png"><img alt="grafy funkcií g(n) a f(n)" height="164" src="../_images/119_2.png" width="248" />
+</a>
+<section id="zakladne-skupiny-funkcii-casovej-zlozitosti">
+<h3><a class="toc-backref" href="19.html#id3" role="doc-backlink">Základné skupiny funkcií časovej zložitosti</a><a class="headerlink" href="19.html#zakladne-skupiny-funkcii-casovej-zlozitosti" title="Link to this heading">¶</a></h3>
+<p>V tomto kurze sa budeme stretávať len s týmito skupinami funkcií:</p>
+<div class="warning admonition">
+<p class="admonition-title">O(1) konštantná zložitosť</p>
+<p></p>
+</div>
+<p>Algoritmus, ktorý nezávisí od veľkosti vstupu. Napríklad, ak chceme zistiť súčet radu čísel od 1 do <code class="docutils literal notranslate"><span class="pre">n</span></code> a poznáme na to vzorec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">O(log n) logaritmická zložitosť</p>
+<p></p>
+</div>
+<p>Časová zložitosť je logaritmická funkcia, napríklad hľadanie prvku v utriedenom zozname algoritmom binárne vyhľadávanie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hladaj</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+    <span class="n">od</span><span class="p">,</span> <span class="n">do</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">od</span> <span class="o">&lt;=</span> <span class="n">do</span><span class="p">:</span>
+        <span class="n">stred</span> <span class="o">=</span> <span class="p">(</span><span class="n">od</span> <span class="o">+</span> <span class="n">do</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">stred</span><span class="p">]</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">stred</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="n">od</span> <span class="o">=</span> <span class="n">stred</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">do</span> <span class="o">=</span> <span class="n">stred</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Uvedomte si, že pri logaritmickej funkcii nemusíme špecifikovať základ logaritmov, nakoľko platí</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logA</span> <span class="n">n</span> <span class="o">=</span> <span class="n">logB</span> <span class="n">n</span> <span class="o">/</span> <span class="n">logB</span> <span class="n">A</span>
+</pre></div>
+</div>
+<p>pre ľubovoľné základy <code class="docutils literal notranslate"><span class="pre">A</span></code> a <code class="docutils literal notranslate"><span class="pre">B</span></code> (keďže hodnota <code class="docutils literal notranslate"><span class="pre">logB</span> <span class="pre">A</span></code> je konštanta).</p>
+<div class="warning admonition">
+<p class="admonition-title">O(n) lineárna zložitosť</p>
+<p></p>
+</div>
+<p>Algoritmus, ktorého zložitosť rastie lineárne s veľkosťou vstupu. Napríklad, ak chceme zistiť súčet radu čísel od 1 do <code class="docutils literal notranslate"><span class="pre">n</span></code> a počítame to pomocou cyklu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+<p>Ale tiež hľadanie hodnoty v neutriedenom zozname:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hladaj</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">prvok</span> <span class="ow">in</span> <span class="n">zoz</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prvok</span> <span class="o">==</span> <span class="n">hodnota</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">O(n log n) zložitosť n * log n</p>
+<p></p>
+</div>
+<p>Neskôr budeme vidieť, že najrýchlejšie algoritmy triedenia poľa s prvkami ľubovoľných typov má práve túto zložitosť. Dokonca ukážeme, že ani nemôže existovať algoritmus s lepšou zložitosťou.</p>
+<div class="warning admonition">
+<p class="admonition-title">O(n**2) kvadratická zložitosť</p>
+<p></p>
+</div>
+<p>Časová zložitosť je kvadratická funkcia, napríklad bublinkové triedenie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">tried</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">O(n**3) kubická zložitosť</p>
+<p></p>
+</div>
+<p>Algoritmy s touto zložitosťou sú zriedkavejšie ako kvadratické, ale uvidíme ich, napíklad pri riešení grafových úloh.</p>
+<div class="warning admonition">
+<p class="admonition-title">O(2**n) exponenciálna zložitosť</p>
+<p></p>
+</div>
+<p>Veľmi často sú to algoritmy prehľadávania s návratom (backtracking), v ktorých prechádzame všetky vygenerované možnosti a vyberáme niektoré podľa nejakých kritérií. Najčastejšie sú to rekurzívne algoritmy.</p>
+<p>Podobne ako pri logaritmických zložitostiach aj do tejto triedy patria funkcie s ľubovoľným základom.</p>
+<div class="warning admonition">
+<p class="admonition-title">O(n!) faktoriálová zložitosť</p>
+<p></p>
+</div>
+<p>Napríklad rekurzívne vygenerovanie všetkých permutácií (naučime sa to v ďalšom semestri):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generuj</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">bolo</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">bolo</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">zoz</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">generuj</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">bolo</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">zoz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+<span class="n">bolo</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+<span class="n">generuj</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="porovnanie">
+<h3><a class="toc-backref" href="19.html#id4" role="doc-backlink">Porovnanie</a><a class="headerlink" href="19.html#porovnanie" title="Link to this heading">¶</a></h3>
+<p>Zrejme medzi týmito triedami zložitosti platí takýto vzťah:</p>
+<div class="line-block">
+<div class="line"><strong>O(1)</strong> &lt; <strong>O(log n)</strong> &lt; <strong>O(n)</strong> &lt; <strong>O(n log n)</strong> &lt; <strong>O(n**2)</strong> &lt; <strong>O(n**3)</strong> &lt; <strong>O(2**n)</strong> &lt;  <strong>O(n!)</strong></div>
+</div>
+</section>
+<section id="ako-si-zjednodusit-zistovanie-casovej-zlozitosti">
+<h3><a class="toc-backref" href="19.html#id5" role="doc-backlink">Ako si zjednodušiť zisťovanie časovej zložitosti</a><a class="headerlink" href="19.html#ako-si-zjednodusit-zistovanie-casovej-zlozitosti" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>postupnosť príkazov, v ktorej je každý <strong>O(1)</strong>, má zložitosť <strong>O(1)</strong></p></li>
+<li><p>for-cyklus s n-prechodmi, ktorý vykonáva len <strong>O(1)</strong>, má zložitosť <strong>O(n)</strong></p></li>
+<li><p>všeobecnejšie for-cyklus s n-prechodmi, ktorý vykonáva telo cyklu <strong>O(f)</strong>, má zložitosť <strong>O(n * f)</strong></p></li>
+<li><p>while cyklus, ktorý znižuje (zvyšuje) nejakú testovanú premennú o konštantu, má zložitosť <strong>O(n * f)</strong>, kde <strong>O(f)</strong> je telo cyklu, <strong>n</strong> je testovaná hodnota</p></li>
+<li><p>while cyklus, ktorý delí nejakú testovanú premennú o konštantu (napríklad na polovicu), má zložitosť <strong>O(log n * f)</strong>, kde <strong>O(f)</strong> je telo cyklu, <strong>n</strong> je testovaná hodnota</p></li>
+<li><p>ak máme spolu dva algoritmy, pri ktorých sa druhý vykoná po skončení prvého, potom majú celkovú zložitosť <strong>O(f1 + f2)</strong></p></li>
+<li><p>rekurzívne funkcie majú často zložitosť rádovo porovnateľnú s počtom vygenerovaných výsledkov</p></li>
+</ol>
+<p>Ukážme to na tomto príklade: pripomeňme si upravený <strong>insert-sort</strong> z minulej prednášky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_sort</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>                   <span class="c1"># O(n**2)</span>
+        <span class="n">prvok</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>                       <span class="c1"># O(1)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>                              <span class="c1"># O(1)</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">prvok</span><span class="p">:</span>           <span class="c1"># O(n)</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>                <span class="c1"># O(1)</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>                           <span class="c1"># O(1)</span>
+        <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">prvok</span>                     <span class="c1"># O(1)</span>
+</pre></div>
+</div>
+<p>Všetky príkazy okrem cyklov sú zložitosti <strong>O(1)</strong>. Keďže premenná while-cyklu <code class="docutils literal notranslate"><span class="pre">j</span></code> sa znižuje o 1 a jej rozsah je priamo úmerný <strong>n</strong>, zložitosť tohto while cyklu je <strong>O(n)</strong>, čo je vlastne telo for-cyklu. For-cyklus je potom <strong>n</strong> krát telo <strong>O(n)</strong>, t.j. tento algoritmus je <strong>O(n**2)</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="tabulka-v-ktorej-sa-porovnava-rychlost">
+<h3><a class="toc-backref" href="19.html#id6" role="doc-backlink">Tabuľka, v ktorej sa porovnáva rýchlosť</a><a class="headerlink" href="19.html#tabulka-v-ktorej-sa-porovnava-rychlost" title="Link to this heading">¶</a></h3>
+<p>Teraz, keď už pre naše algoritmy vieme zistiť ich časovú zložitosť, lepšie si budeme vedieť predstaviť časové obmedzenia, ktoré prichádzajú s rôzne zložitými algoritmami. Predpokladajme, že máme k dispozícii počítač, ktorý zvláda, napríklad 5000000 elementárnych operácií za sekundu (súčasné počítače sú výrazne rýchlejšie). Zaujíma nás, aký veľký problém by sme vedeli vyriešiť za nejaký konkrétny čas. Napríklad z tabuľky nižšie je vidieť, že za jednu sekundu algoritmus zložitosti <strong>O(n log n)</strong> zvládne rozsah 280000, ale pre zložitosť <strong>O(n**3)</strong> už len rozsah 170. Podobne z tejto tabuľky môžeme vidieť, že ak nejaké pomalé triedenie (napríklad bubble-sort) 17000-prvkový zoznam triedilo minútu, 660000-prvkový zoznam sa bude triediť celý deň.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                   n     nlogn      n**2      n**3      2**n
+------------------------------------------------------------
+mili            5000       550        71        17        12
+sek          5000000    280000      2200       170        22
+min        300000000  13000000     17000       670        28
+hod                ∞ 620000000    130000      2600        34
+den                ∞         ∞    660000      7600        39
+mesiac             ∞         ∞   2300000     17000        42
+rok                ∞         ∞  13000000     54000        47
+1000               ∞         ∞ 400000000    540000        57
+</pre></div>
+</div>
+<p>Môže nám to potvrdiť aj takýto spôsob výpočtu:</p>
+<p>Predpokladajme, že nejaký náš program bežal pre vstup veľkosti, napríklad n=17000 6 sekúnd. Ak vieme, že jeho zložitosť je <strong>O(n**2)</strong>, mohli by sme dosť presne odhadnúť, ako dlho bude bežať dvojnásobne väčší vstup:</p>
+<ul class="simple">
+<li><p>teda <code class="docutils literal notranslate"><span class="pre">f(17000)</span> <span class="pre">=</span> <span class="pre">6</span></code> sekúnd</p></li>
+<li><p>potrebujeme zistiť <code class="docutils literal notranslate"><span class="pre">f(2*17000)</span></code>, pričom vieme, že <code class="docutils literal notranslate"><span class="pre">f()</span></code> je kvadratická funkcia</p></li>
+<li><p>preto <code class="docutils literal notranslate"><span class="pre">f(2*17000)</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">f(17000)</span> <span class="pre">=</span> <span class="pre">24</span></code> sekúnd</p></li>
+</ul>
+<p>Porozmýšľajte, ako by sa zmenil výsledok, keby bol náš program inej zložitosti, napríklad <strong>O(1)</strong>, <strong>O(n)</strong>, <strong>O(n log n)</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="h3 rubric">Príklad</p>
+<p>Pre ilustráciu vyriešime jeden príklad z testu, ktorý bol pred niekoľkými rokmi.</p>
+<aside class="sidebar">
+<p class="sidebar-title">možnosti</p>
+<ol class="upperalpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">O(log</span> <span class="pre">n)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O(n)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O(n</span> <span class="pre">log</span> <span class="pre">n)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O(n**2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O(2**n)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O(n!)</span></code></p></li>
+</ol>
+</aside>
+<ul>
+<li><p>Pre všetky nasledujúce funkcie odhadnite časovú zložitosť: ku každej pripíšte jedno z písmen <strong>A</strong> až <strong>F</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fun1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun3</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">fun3</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun4</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">fun4</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fun1</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">fun4</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun5</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">fun1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">//=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun6</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fun6</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fun6</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun7</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">fun7</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p class="h4 rubric">Riešenie</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun1</span></code> - for-cyklus <code class="docutils literal notranslate"><span class="pre">n</span></code>-krát telo, ktoré je <strong>O(1)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun2</span></code> - vnútorný for-cyklus je <strong>O(n)</strong>, vonkajší krát <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun3</span></code> - komplikované počítanie <code class="docutils literal notranslate"><span class="pre">n!</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>==&gt; O(n!)
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun4</span></code> - <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">n</span></code> vnorení, súčet všetkých <code class="docutils literal notranslate"><span class="pre">fun1(...)</span></code> v každej úrovni vnorenia je maximálne <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span> <span class="n">log</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun5</span></code> - v cykle je postupné volanie <code class="docutils literal notranslate"><span class="pre">fun1(n)</span></code>,  <code class="docutils literal notranslate"><span class="pre">fun1(n//2)</span></code>,  <code class="docutils literal notranslate"><span class="pre">fun1(n//4)</span></code>,  <code class="docutils literal notranslate"><span class="pre">fun1(n//8)</span></code>, … <code class="docutils literal notranslate"><span class="pre">fun1(1)</span></code> - každé z nich je <strong>O(n)</strong>, <strong>O(n//2)</strong>, <strong>O(n//4)</strong>, <strong>O(n//8)</strong>, … <strong>O(1)</strong>, keď to sčítame tak je to maximálne <strong>O(2*n)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun6</span></code> - ak by sme nakreslili strom volaní (z <code class="docutils literal notranslate"><span class="pre">fun6(n)</span></code> dve volania <code class="docutils literal notranslate"><span class="pre">fun6(n-1)</span></code>, z každého z nich sú dve volania <code class="docutils literal notranslate"><span class="pre">fun6(n-2)</span></code>, atď. až na koniec by bolo <code class="docutils literal notranslate"><span class="pre">2**n</span></code> volaní <code class="docutils literal notranslate"><span class="pre">fun6(0)</span></code>) - dostávame úplný binárny strom výšky <code class="docutils literal notranslate"><span class="pre">n</span></code> s <code class="docutils literal notranslate"><span class="pre">2**n</span></code> listami</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">O</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fun7</span></code> - je to zamaskovaný <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1:</span> <span class="pre">n</span> <span class="pre">//=</span> <span class="pre">2;</span> <span class="pre">...</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">O</span><span class="p">(</span><span class="n">log</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="19.html#id7" role="doc-backlink">Cvičenie</a><a class="headerlink" href="19.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 19. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 4.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+<li><p>v odovzdaných riešeniach nepoužívaj <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic">
+<li><p>Zisti, akú časovú zložitosť má tento algoritmus triedenia <strong>bubble sort</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Ako sa zmení časová zložitosť tohto algoritmu, ak predpokladáme, že vstupný zoznam je utriedený vzostupne?</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Nasledovný program využíva bublinkové triedenie z predchádzajúcej úlohy. Aká je jeho časová zložitosť? V premennej <code class="docutils literal notranslate"><span class="pre">p</span></code> je nejaký neutriedený zoznam (napríklad zoznam čísel):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)):</span>
+    <span class="n">bubble_sort</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Zisti časovú zložitosť týchto dvoch funkcií. Hoci sa líšia len v jednom znaku, majú veľmi rôznu zložitosť:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">j</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">j</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Odmeraj čas behu oboch algoritmov z (3). Použi <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> a postupne meraj pre <code class="docutils literal notranslate"><span class="pre">n</span></code>: <code class="docutils literal notranslate"><span class="pre">10000</span></code>, <code class="docutils literal notranslate"><span class="pre">20000</span></code>, <code class="docutils literal notranslate"><span class="pre">40000</span></code>, <code class="docutils literal notranslate"><span class="pre">80000</span></code>, <code class="docutils literal notranslate"><span class="pre">160000</span></code>, …, <code class="docutils literal notranslate"><span class="pre">5120000</span></code>. Asi bude vhodné pri meraní každé volanie vykonať viackrát, napríklad <code class="docutils literal notranslate"><span class="pre">test1</span></code> zavolaj 100 krát a <code class="docutils literal notranslate"><span class="pre">test2</span></code> 10000 krát. Vypisované časy meraní by mali potvrdiť tvoj odhad zložitosti týchto funkcií. Môžeš využiť takúto schému merania času pomocou triedy <code class="docutils literal notranslate"><span class="pre">Odmeraj</span></code> a pythonovského príkazu <code class="docutils literal notranslate"><span class="pre">with</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Odmeraj</span><span class="p">():</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">):</span>
+</span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;odmerany cas&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sucet</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">10000001</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pre n =&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;***&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="hll">    <span class="k">with</span> <span class="n">Odmeraj</span><span class="p">():</span>
+</span>        <span class="n">sucet</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Odmeraj čas štandardnej funkcie <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> pre rôzne veľké vstupy (napríklad <code class="docutils literal notranslate"><span class="pre">10000</span></code>, <code class="docutils literal notranslate"><span class="pre">20000</span></code>, <code class="docutils literal notranslate"><span class="pre">30000</span></code>, <code class="docutils literal notranslate"><span class="pre">40000</span></code>, …). Ak predpokladáme, že zložitosť tejto funkcie je <strong>O(n log n)</strong>, odmerané časy by to mali nejako preukázať. Použi náhodne vygenerované zoznamy.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>Triedenie <strong>insert sort</strong> môže byť zapísaný aj takto bez funkcie <code class="docutils literal notranslate"><span class="pre">vymen</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort1</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">zoz</span><span class="p">)):</span>
+        <span class="n">t</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">:</span>
+            <span class="n">zoz</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">zoz</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">zoz</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+</pre></div>
+</div>
+<p>Zisti, pre aký najväčší n-prvkový zoznam triedenie na tvojom počítači beží 1 sekundu, 2 sekundy a 3 sekundy. Zoznamy generuj s náhodnými hodnotami. Hľadanie takýchto <code class="docutils literal notranslate"><span class="pre">n</span></code> skús nejako zautomatizovať.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Napíš druhú verziu tohto triedenia, v ktorom sa zaraďovanie prvku na správne miesto utriedenej časti zoznamu použije metóda <code class="docutils literal notranslate"><span class="pre">list.insert()</span></code> a vyhodenie prvku pomocou <code class="docutils literal notranslate"><span class="pre">del</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort2</span><span class="p">(</span><span class="n">zoz</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Zisti, aký najväčší n-prvkový zoznam sa dá teraz utriediť za 1 sekundu, za 2 sekundy, za 3 sekundy.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Zisti, akú časovú zložitosť majú tieto dva algoritmy. V premennej <code class="docutils literal notranslate"><span class="pre">p</span></code> je nejaký zoznam čísel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test3</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">p</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test4</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">p</span>
+</pre></div>
+</div>
+<p>Svoj predpoklad o časovej zložitosti prekontroluj s rôzne veľkými náhodnými zoznamami.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Zisti, aká je časová zložitosť týchto algoritmov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># zisťuje akýsi súčet</span>
+
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+
+<span class="c1"># rekurzívny výpočet</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># rekurzívny výpočet - to isté ako predchádzajúci príklad, ale máličko inak</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># ešte jeden cyklus</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">f</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># rozklad čísla na prvočinitele</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rozklad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="19.html#id8" role="doc-backlink">11. Týždenný projekt</a><a class="headerlink" href="19.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-zima/programovanie-1/">https://vektor.fmph.uniba.sk/</a> najneskôr 21.decembra do 18:00.</p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 11. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 7.12.2025</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code> ani <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<h3 class="rubric">Skákajúci robot</h3>
+<p>Vysokoškoláci na predmete Úvod do robotiky chceli vyrobiť skákajúci robot, ktorý sa v testovacej miestnosti pohybuje podľa zadaných povelov, pričom sa na prekážke alebo okraji miestnosti zastaví a spracováva ďalší povel. Okrem obyčajného presúvania sa na susedné políčko miestnosti, robot dokáže preskočiť nejaký zadaný počet políčok, na ktorých môžu byť aj prekážky. Dôležité je, aby políčko, na ktoré má takto doskočiť, bolo bez prekážky a samozrejme nie mimo rozmer miestnosti. Študenti potrebujú zistiť, ktoré políčka v testovanej miestnosti robot pri svojej prechádzke navštívil, prípadne koľkokrát cez ne prešiel (na ne doskočil).</p>
+<p>Aby mohli robota čo najlepšie otestovať, do testovanej miestnosti (sieť štvorcových políčok) postavili niekoľko radov prekážok (kartónových škatúľ). Pri kladení škatúľ postupovali takto:</p>
+<ul class="simple">
+<li><p>buď kládli škatule na zadané políčka (zadali riadok a stĺpec políčka miestnosti)</p></li>
+<li><p>alebo položili niekoľko radov s rovnakým počtom škatúľ (vyplnili obdĺžnik políčok) - teraz zadali riadky a stĺpce takéhoto obdĺžnika</p></li>
+</ul>
+<p>Plán testovacej miestnosti aj s prekážkami môže v súbore vyzerať, napríklad takto <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 3
+2 3 5 7
+0 6
+5 10
+</pre></div>
+</div>
+<p>kde</p>
+<ul class="simple">
+<li><p>v poslednom riadku je rozmer štvorcovej siete miestnosti: počet riadkov a stĺpcov (teda 5 x 10)</p></li>
+<li><p>v každom riadku okrem posledného je buď dvojica čísel pre polohu (riadok, stĺpec) jednej škatule alebo štvorica čísel, ktorá popisuje obdĺžnikovú oblasť (riadok1, riadok2, stĺpec1, stĺpec2)</p>
+<ul>
+<li><p>napríklad štvorica <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">5</span> <span class="pre">7</span></code> označuje oblasť od 2. do 3. riadku a v každom je to 5. až 7. stĺpec</p></li>
+</ul>
+</li>
+</ul>
+<p>Napíš metódy triedy <code class="docutils literal notranslate"><span class="pre">Robot</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Robot</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_robot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">zmen_robot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">poloha</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="n">robot</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">daj_robot</span><span class="p">,</span> <span class="n">zmen_robot</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">poloz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">poloha</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pohyb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prikazy</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>kde metódy:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">init(meno_suboru)</span></code> - prečíta súbor s plánom miestnosti; pozícia robota je zatiaľ <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> - vráti znakový reťazec, ktorý reprezentuje stav miestnosti aj so zaznačenými počtami navštívených políčok</p>
+<ul>
+<li><p>ešte nenavštívené políčka zobrazí ako <code class="docutils literal notranslate"><span class="pre">'.'</span></code> a prekážky ako <code class="docutils literal notranslate"><span class="pre">'#'</span></code></p></li>
+<li><p>každé políčko plochy zobrazuje na šírku 2 znakov, pričom, ak by navštívené počty presiahli 99, tak zobrazuje len posledné cifry tohto čísla (teda modulo 100)</p></li>
+<li><p>pozícia robota sa zobrazí znakom <code class="docutils literal notranslate"><span class="pre">'R'</span></code></p></li>
+</ul>
+</li>
+<li><p>atribút <code class="docutils literal notranslate"><span class="pre">robot</span></code> realizuj ako <code class="docutils literal notranslate"><span class="pre">property</span></code> s pomocnými metódami <code class="docutils literal notranslate"><span class="pre">daj_robot</span></code> a <code class="docutils literal notranslate"><span class="pre">zmen_robot</span></code></p>
+<ul>
+<li><p>parameter <code class="docutils literal notranslate"><span class="pre">poloha</span></code> je dvojica čísel <code class="docutils literal notranslate"><span class="pre">(riadok,</span> <span class="pre">stĺpec)</span></code> a určuje pozíciu robota v ploche</p></li>
+<li><p>pri každom položení robota do plochy sa zvýši o <code class="docutils literal notranslate"><span class="pre">1</span></code> počítadlo navštíveného políčka</p></li>
+<li><p>zrejme robota budeme klásť len na políčko bez prekážky</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poloz(*poloha)</span></code> na zadanú pozíciu v miestnosti položí prekážku</p>
+<ul>
+<li><p>poloha sú buď dve čísla <code class="docutils literal notranslate"><span class="pre">riadok,</span> <span class="pre">stĺpec</span></code>, alebo štyri <code class="docutils literal notranslate"><span class="pre">riadok1,</span> <span class="pre">riadok2,</span> <span class="pre">stĺpec1,</span> <span class="pre">stĺpec2</span></code>, ktorá popisuje obdĺžnikovú oblasť s prekážkami</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pohyb(prikazy)</span></code> - dostane postupnosť príkazov pre skákajúci robot, ktoré sú jedným z <code class="docutils literal notranslate"><span class="pre">'p'</span></code> (ide vpravo), <code class="docutils literal notranslate"><span class="pre">'d'</span></code> (ide dolu), <code class="docutils literal notranslate"><span class="pre">'l'</span></code> (ide vľavo), <code class="docutils literal notranslate"><span class="pre">'h'</span></code> (ide hore)</p>
+<ul>
+<li><p>robot sa v zadanom smere pohne o jedno políčko (ak tam nie je prekážka ani okraj miestnosti)</p></li>
+<li><p>ak je pred príkazom celé číslo (môže byť aj viacciferné), toto vyjadruje, koľko políčok pri svojom pohybe robot preskočí</p></li>
+<li><p>napríklad <code class="docutils literal notranslate"><span class="pre">2p</span></code> označuje, že robot má preskočiť <code class="docutils literal notranslate"><span class="pre">2</span></code> políčka vpravo a skočiť na prázdne políčko, ktoré je tretie od momentálnej polohy</p></li>
+<li><p>zrejme tento skákací príkaz môže vykonať len vtedy, keď nevypadne z miestnosti a na cieľovom políčku nie je prekážka</p></li>
+<li><p>funkcia vráti počet naozaj prejdených krokov, resp. políčok, na ktoré sa skočilo (nie tie, nad ktorými sa letelo pri skoku)</p></li>
+<li><p>metóda ignoruje znaky, ktoré nie sú jedným zo štyroch príkazov ani číslice</p></li>
+</ul>
+</li>
+</ul>
+<p>Napríklad, takýto test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="s1">&#39;subor1.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">robot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">pohyb</span><span class="p">(</span><span class="s1">&#39;3p2dl3h1p&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pozicia robota =&#39;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">robot</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">pohyb</span><span class="p">(</span><span class="s1">&#39;dl2dp2hhp&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">poloz</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">poloz</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">pohyb</span><span class="p">(</span><span class="s1">&#39;1d3l3l&#39;</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vypíše:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> . . . . . . # . . .
+ . . . # . . . . . .
+ . . . . . # # # . .
+ . . . . . # # # . .
+ . . . . . . . . . .
+r.pohyb(&#39;3p2dl3h1p&#39;) = 5
+ . . . . . 1 # R . .
+ . . 1 # . . 1 . . .
+ . . . . . # # # . .
+ . . . . . # # # . .
+ . . . . . 1 1 . . .
+pozicia robota = (0, 7)
+r.pohyb(&#39;dl2dp2hhp&#39;) = 7
+ . . . . . 1 # 2 R .
+ . . 1 # . . 2 2 . .
+ . . . . . # # # . .
+ . . . . . # # # . .
+ . . . . . 1 2 1 . .
+r.poloz(1, 4, 1, 3) = None
+r.poloz(0, 5) = None
+ . . . . . # # 2 R .
+ . # # # . . 2 2 . .
+ . # # # . # # # . .
+ . # # # . # # # . .
+ . # # # . 1 2 1 . .
+r.pohyb(&#39;1d3l3l&#39;) = 3
+ . . . . . # # 2 1 .
+ . # # # . . 2 2 . .
+ R # # # 1 # # # 1 .
+ . # # # . # # # . .
+ . # # # . 1 2 1 . .
+</pre></div>
+</div>
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/1tp11.zip">1tp11.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="19.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 02. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

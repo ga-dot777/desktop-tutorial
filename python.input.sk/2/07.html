@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+
+<html lang="sk" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7. Grafy &#8212; Dokumentácia Programovanie v Pythone </title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css@v=03e43079.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css@v=56584217.css" />
+    <script src="../_static/documentation_options.js@v=4bff82a8"></script>
+    <script src="../_static/doctools.js@v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js@v=6ffebe34"></script>
+    <script src="../_static/translations.js@v=f84e2aaf"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Hľadať" href="../search.html" />
+    <link rel="copyright" title="Autorské právo" href="../copyright.html" />
+    <link rel="next" title="8. Algoritmy prehľadávania grafu" href="08.html" />
+    <link rel="prev" title="6. Triedenia II." href="06.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Programovanie v Pythone</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pravidla.html">Priebeh letného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. Spájané štruktúry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. Spájané zoznamy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. Binárne stromy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Trieda BinarnyStrom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. Použitie stromov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. Triedenia II.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="07.html#">7. Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. Algoritmy prehľadávania grafu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. Backtracking</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1/pravidla.html">Priebeh zimného semestra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/01.html">1. Úvod do Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/02.html">2. Podprogramy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/03.html">3. Grafický režim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/04.html">4. Podmienené príkazy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/05.html">5. Zoznamy a n-tice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/06.html">6. Znakové reťazce a súbory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/07.html">7. Udalosti v grafickej aplikácii</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/08.html">8. Korytnačky (turtle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/09.html">9. Rekurzia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/10.html">10. Dvojrozmerné tabuľky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/11.html">11. Slovníky a množiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/12.html">12. Moduly, triedy a metódy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/13.html">13. Triedy a dedičnosť</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/14.html">14. Polymorfizmus, výnimky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/15.html">15. Zásobníky a rady</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/16.html">16. Funkcie, Iterátory, generátory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/17.html">17. Vyhľadávanie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/18.html">18. Triedenia I.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/19.html">19. Úvod do analýzy algoritmov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/20.html">20. Práca s obrázkami</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/21.html">21. Animované obrázky</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="06.html" title="Previous Chapter: 6. Triedenia II."><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 6. Triedenia II.</span>
+    </a>
+  </li>
+  <li>
+    <a href="08.html" title="Next Chapter: 8. Algoritmy prehľadávania grafu"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">8. Algoritmy ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="grafy">
+<h1>7. Grafy<a class="headerlink" href="07.html#grafy" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<aside class="warning sidebar">
+<nav class="contents local" id="obsah">
+<p class="topic-title">Obsah:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="07.html#reprezentacie" id="id10">Reprezentácie</a></p>
+<ul>
+<li><p><a class="reference internal" href="07.html#mnozina-hran" id="id11">Množina hrán</a></p></li>
+<li><p><a class="reference internal" href="07.html#zoznam-mnozin-susednosti" id="id12">Zoznam množín susedností</a></p></li>
+<li><p><a class="reference internal" href="07.html#asociativne-pole-mnozin-susednosti" id="id13">Asociatívne pole množín susedností</a></p></li>
+<li><p><a class="reference internal" href="07.html#zoznam-asociativnych-poli-susednosti" id="id14">Zoznam asociatívnych polí susedností</a></p></li>
+<li><p><a class="reference internal" href="07.html#matica-susednosti" id="id15">Matica susedností</a></p></li>
+<li><p><a class="reference internal" href="07.html#matica-susednosti-s-vahami" id="id16">Matica susedností s váhami</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="07.html#cvicenie" id="id17">Cvičenie</a></p></li>
+<li><p><a class="reference internal" href="07.html#tyzdenny-projekt" id="id18">7. Týždenný projekt</a></p></li>
+</ul>
+</nav>
+</aside>
+<p class="rubric">Terminológia</p>
+<p>Graf je dátová štruktúra na reprezentovanie vzťahov medzi dvojicami objektov. Preto sa skladá</p>
+<ul class="simple">
+<li><p>z množiny takýchto objektov - hovoríme im <strong>vrcholy</strong>: <strong>V</strong> = {V1, V2, …}</p></li>
+<li><p>z množiny takýchto spojení (vzťahov medzi dvojicami), ktorým hovoríme <strong>hrany</strong>; množinu budeme označovať <strong>H</strong>, pričom každá hrana je dvojica (v, w), kde v, w <code class="docutils literal notranslate"><span class="pre">in</span></code> <strong>V</strong></p>
+<ul>
+<li><p>ak sú to neusporiadané dvojice, hovoríme tomu <strong>neorientovaný</strong> graf</p></li>
+<li><p>ak sú to usporiadané dvojice, hovoríme tomu <strong>orientovaný</strong> graf</p></li>
+</ul>
+</li>
+</ul>
+<p>Graf budeme znázorňovať takto:</p>
+<ul class="simple">
+<li><p>vrcholy sú krúžky (podobne ako pri dátovej štruktúre strom)</p></li>
+<li><p>hrany sú spojovníky medzi vrcholmi, pričom, ak je graf orientovaný, tak spojovníkmi sú šípky</p></li>
+</ul>
+<p>Graf najčastejšie používame, keď potrebujeme vyjadriť takéto situácie:</p>
+<ul class="simple">
+<li><p>mestá spojené cestami (najčastejšie je to neorientovaný graf: mestá sú vrcholy, hrany označujú cesty medzi mestami)</p></li>
+<li><p>križovatky a ulice v meste (križovatky sú vrcholy, hrany sú ulice medzi križovatkami)</p></li>
+<li><p>susediace štáty alebo nejaké oblasti (štáty sú vrcholy, hrany označujú, že nejaké štáty susedia)</p></li>
+<li><p>mestská verejná doprava (zastávky sú vrcholy, hrany označujú, že existuje linka, ktorá má tieto dve susediace zastávky)</p></li>
+<li><p>skupina ľudí, ktorí sa navzájom poznajú (ľudia sú vrcholy, hrany označujú, že nejaké konkrétne dve osoby sa poznajú)</p></li>
+</ul>
+<p>Rôzne príklady využitia typu graf:</p>
+<figure class="align-center" id="id2" style="width: 500px">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg"><img alt="../_images/207_01.png" src="../_images/207_01.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Problém siedmich mostov: medzi jednotlivými brehmi a ostrovmi mesta vedie sedem mostov. Otázkou je, či sa dá prejsť cez všetky mosty takým spôsobom, že sa dostaneme opäť do pôvodného miesta, bez toho aby sme nejaký most prešli viackrát. Leonhard <strong>Euler</strong> vyriešil tento problém v roku 1736.</span><a class="headerlink" href="07.html#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3" style="width: 500px">
+<a class="reference external image-reference" href="http://www.cdb.sk/sk/Vystupy-CDB/Mapy-cestnej-siete-SR/SR/Zakladne-mapy-SR.alej"><img alt="../_images/207_02.png" src="../_images/207_02.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Cestná sieť SR (graf) obsahuje väčšie mestá (vrcholy grafu) a cesty rôznych farieb medzi nimi (hrany). Na hranách grafu sú zapísané vzdialenosti v kilometroch (váhy hrán).</span><a class="headerlink" href="07.html#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4" style="width: 500px">
+<a class="reference external image-reference" href="http://imhd.sk/ba/mapy-schemy"><img alt="../_images/207_03.png" src="../_images/207_03.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Mapa (graf) liniek MHD Bratislavy. V tejto mape sú vrcholmi grafu zastávky a farby hrán vyjadrujú rôzne dopravné prostriedky. Na hranách sú zapísané čísla liniek (sú to váhy hrán).</span><a class="headerlink" href="07.html#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5" style="width: 500px">
+<a class="reference external image-reference" href="https://www.mapsofworld.com/world-airroutes-map.htm"><img alt="../_images/207_04.png" src="../_images/207_04.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Mapa (graf) zobrazuje letecké trasy (hrany) medzi niektorými dôležitými mestami sveta (vrcholy).</span><a class="headerlink" href="07.html#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6" style="width: 500px">
+<a class="reference external image-reference" href="http://cdn2.hubspot.net/hub/116436/file-1911014872-jpg"><img alt="../_images/207_05.png" src="../_images/207_05.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Obrázok (graf) zobrazuje vzťahy (hrany) medzi členmi (vrcholmi) nejakej skupiny.</span><a class="headerlink" href="07.html#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id7" style="width: 500px">
+<a class="reference external image-reference" href="https://www.informationtamers.com/Find-best-visual-form-for-information-management.html"><img alt="../_images/207_06.png" src="../_images/207_06.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Toto je tzv. <strong>pojmová mapa</strong>. V tomto obrázku (grafe) sú v krúžkoch (vrcholoch) nejaké informatické pojmy. Niektoré z nich sú spojené šípkami (orientované hrany), ktoré vyjadrujú nejaký vzťah (váha hrany).</span><a class="headerlink" href="07.html#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8" style="width: 500px">
+<a class="reference external image-reference" href="http://cdn.oreillystatic.com/news/graphics/prog_lang_poster.pdf"><img alt="../_images/207_07.png" src="../_images/207_07.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">V tejto schéme sú mená najznámejších programovacích jazykov aj s rokmi, kedy vznikli (vrcholy grafu). Spojené sú šípkami (hrany grafu), ktoré vyjadrujú vzťah, ako ktorý jazyk ovplyvnil nejaký iný.</span><a class="headerlink" href="07.html#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9" style="width: 500px">
+<a class="reference external image-reference" href="https://sk.wikipedia.org/wiki/Mlyn_(hra)"><img alt="../_images/207_08.png" src="../_images/207_08.png" />
+</a>
+<figcaption>
+<p><span class="caption-text">Mnohé doskové hry majú hraciu plochu v tvare nejakého grafu.</span><a class="headerlink" href="07.html#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p class="rubric">Dôležité pojmy</p>
+<ul class="simple">
+<li><p>ak existuje hrana (v, w) - tak hovoríme, že <strong>v</strong> a <strong>w</strong> sú susediace vrcholy</p></li>
+<li><p>v grafe môžeme mať uchované rôzne informácie:</p>
+<ul>
+<li><p>v každom vrchole (podobne ako v strome), napríklad meno, súradnice v ploche (na mape), …</p></li>
+<li><p>každá hrana môže mať nejakú hodnotu (tzv. <strong>váha</strong>), vtedy tomu hovoríme <strong>ohodnotený</strong> graf, napríklad vzdialenosť dvoch miest, cena cestovného lístka, linky, ktoré spájajú dve zastávky, vzťahy medzi pojmami, …</p></li>
+</ul>
+</li>
+<li><p><strong>cesta</strong> je postupnosť vrcholov, ktoré sú spojené hranami</p>
+<ul>
+<li><p><strong>dĺžka cesty</strong> pre neohodnotený graf počet hrán na ceste, t.j. počet vrcholov cesty - 1</p></li>
+<li><p><strong>dĺžka cesty</strong> v ohodnotenom grafe je často súčet váh na hranách cesty (alebo iná operácia s váhami)</p></li>
+</ul>
+</li>
+<li><p><strong>cyklus</strong> je taká cesta, pre ktorú prvý a posledný vrchol sú rovnaké</p>
+<ul>
+<li><p>ak graf neobsahuje ani jeden cyklus, hovoríme že je <strong>acyklický</strong></p></li>
+</ul>
+</li>
+<li><p>hovoríme, že graf je <strong>súvislý</strong> (spojitý), ak pre každé dva vrcholy <strong>v</strong>, <strong>w</strong> <code class="docutils literal notranslate"><span class="pre">in</span></code> <strong>V</strong>, existuje cesta z <strong>v</strong> do <strong>w</strong>, inak je graf <strong>nesúvislý</strong></p>
+<ul>
+<li><p>niekedy bude pre nás dôležité, keď nejaký graf bude <strong>súvislý/nesúvislý</strong> bez cyklov, ale aj <strong>súvislý/nesúvislý</strong> s cyklom</p></li>
+</ul>
+</li>
+<li><p>hrane (v, v) hovoríme <strong>slučka</strong> (toto bude veľmi zriedkavé, ak sa to niekedy objaví, upozorníme na to)</p></li>
+<li><p>pojem <strong>komponent</strong> označuje súvislý podgraf, ktorý je disjunktný so zvyškom grafu (neexistuje hrana ku vrcholom vo zvyšku grafu)</p></li>
+</ul>
+<p>Ďalej ukážeme najčastejšie spôsoby reprezentácie grafov. Konkrétna reprezentácia sa potom zvolí väčšinou podľa problémovej oblasti a rôznych obmedzení v zadaní.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="reprezentacie">
+<h2><a class="toc-backref" href="07.html#id10" role="doc-backlink">Reprezentácie</a><a class="headerlink" href="07.html#reprezentacie" title="Link to this heading">¶</a></h2>
+<p>Tento konkrétny graf postupne ukážeme v rôznych reprezentáciách</p>
+<img alt="../_images/207_09.png" class="align-center" src="../_images/207_09.png" />
+<p>Na rozdiel od dátových štruktúr <strong>spájaný zoznam</strong> a <strong>binárny strom</strong>, pri ktorých sme si ukázali jednu reprezentáciu pomocou smerníkov (neskôr sme videli aj ďalšie), pri dátovej štruktúre <strong>graf</strong> si väčšinou zvolíte tú reprezentáciu, s ktorou sa vám pri tej ktorej konkrétnej úlohe najlepšie pracuje. Nižšie uvedieme niekoľko bežných reprezentácií, v ktorých sa využívajú pythonovské typy <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Neskôr uvidíte aj iné spôsoby reprezentácie grafov.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="mnozina-hran">
+<h3><a class="toc-backref" href="07.html#id11" role="doc-backlink">Množina hrán</a><a class="headerlink" href="07.html#mnozina-hran" title="Link to this heading">¶</a></h3>
+<p>V tejto najjednoduchšej reprezentácii graf definujeme ako množina (mohol byť aj zoznam) hrán, t.j. dvojíc susediacich vrcholov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;abcdefgh&#39;</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="p">{(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">g</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>Všimnite si, že neorientované hrany sú tu zastúpené dvoma dvojicami, napríklad <code class="docutils literal notranslate"><span class="pre">(g,</span> <span class="pre">h)</span></code> a <code class="docutils literal notranslate"><span class="pre">(h,</span> <span class="pre">g)</span></code>.</p>
+<p>Pre túto štruktúru vieme zistiť, počet vrcholov, počet všetkých hrán, stupeň konkrétneho vrcholu a či medzi dvoma konkrétnymi vrcholmi je hrana:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;počet hrán:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="p">))</span>
+<span class="hll"><span class="go">    počet hrán: 17</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;susedia vrcholu &quot;a&quot;:&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s1">&#39;abcdefgh&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">})</span>
+<span class="hll"><span class="go">    susedia vrcholu &#39;a&#39;: {&#39;f&#39;, &#39;d&#39;, &#39;b&#39;, &#39;e&#39;, &#39;c&#39;}</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupeň vrcholu f:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">({</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s1">&#39;abcdefgh&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">}))</span>
+<span class="hll"><span class="go">    stupeň vrcholu f: 3</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi b, e:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">)</span>
+<span class="hll"><span class="go">    hrana medzi b, e: True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi c, a:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">)</span>
+<span class="hll"><span class="go">    hrana medzi c, a: False</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zoznam-mnozin-susednosti">
+<h3><a class="toc-backref" href="07.html#id12" role="doc-backlink">Zoznam množín susedností</a><a class="headerlink" href="07.html#zoznam-mnozin-susednosti" title="Link to this heading">¶</a></h3>
+<p>Aby sme nemuseli pracovať s jednoznakovými reťazcami <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, …, očíslujeme vrcholy číslami 0, 1, 2, …</p>
+<p>Pre čitateľnosť zápisu najprv vytvoríme 8 konštánt <code class="docutils literal notranslate"><span class="pre">a=0</span></code>, <code class="docutils literal notranslate"><span class="pre">b=1</span></code>, <code class="docutils literal notranslate"><span class="pre">c=2</span></code>, … a pomocou nich zadefinujeme celý graf ako zoznam množín, kde i-ta množina reprezentuje všetkých susedov i-teho vrcholu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">graf</span> <span class="o">=</span> <span class="p">[{</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">},</span>  <span class="c1">#a</span>
+        <span class="p">{</span><span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">},</span>           <span class="c1">#b</span>
+        <span class="p">{</span><span class="n">d</span><span class="p">},</span>              <span class="c1">#c</span>
+        <span class="p">{</span><span class="n">e</span><span class="p">},</span>              <span class="c1">#d</span>
+        <span class="p">{</span><span class="n">f</span><span class="p">},</span>              <span class="c1">#e</span>
+        <span class="p">{</span><span class="n">c</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">},</span>        <span class="c1">#f</span>
+        <span class="p">{</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">},</span>           <span class="c1">#g</span>
+        <span class="p">{</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">},</span>           <span class="c1">#h</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<p>Pre túto štruktúru vieme zistiť, počet vrcholov, počet všetkých hrán, stupeň konkrétneho vrcholu a či medzi dvoma konkrétnymi vrcholmi je hrana:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet vrcholov:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="p">))</span>
+<span class="hll"><span class="go">    pocet vrcholov: 8</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet hran:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">graf</span><span class="p">)))</span>
+<span class="hll"><span class="go">    pocet hran: 17</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu f:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="p">[</span><span class="n">f</span><span class="p">]))</span>
+<span class="hll"><span class="go">    stupen vrcholu f: 3</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi b, e:&#39;</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+<span class="hll"><span class="go">    hrana medzi b, e: True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi c, a:&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+<span class="hll"><span class="go">    hrana medzi c, a: False</span>
+</span></pre></div>
+</div>
+<p>Túto reprezentáciu môžeme „zabaliť“ do triedy napríklad takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoz</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">zoz</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="n">zoz</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">v2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_vrcholy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_hrany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">for</span> <span class="n">v1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span> <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v1</span><span class="p">]]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stupen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;vrcholy: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">hrany: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Graf(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="si">}</span><span class="s1">)&#39;</span>
+</pre></div>
+</div>
+<p>a graf môžeme teraz vytvoriť napríklad takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span>
+<span class="hll"><span class="go">    Graf([{1}, {4}, set(), set(), set(), {7}, {5}, set()])</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">graf</span><span class="p">)</span>
+<span class="hll"><span class="go">    vrcholy: [0, 1, 2, 3, 4, 5, 6, 7]</span>
+</span><span class="hll"><span class="go">    hrany: [(0, 1), (1, 4), (5, 7), (6, 5)]</span>
+</span></pre></div>
+</div>
+<p>Všimnite si, že sme vyrobili dve rôzne metódy <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> a <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>. Metóda <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> sa zavolá, napríklad keď v dialógovom režime zapíšeme <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">graf</span></code>. Metóda <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> sa zavolá, napríklad keď budeme graf vypisovať príkazom <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Metóda <code class="docutils literal notranslate"><span class="pre">daj_hrany()</span></code> využíva generátorovú notáciu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">[(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">for</span> <span class="n">v1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">))</span> <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v1</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Metóda generuje všetky dvojice vrcholov, ktoré tvoria hrany. To isté môžeme zapísať aj takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">[(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">sus</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span> <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">sus</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Pre takto definovanú triedu <code class="docutils literal notranslate"><span class="pre">Graf</span></code> je trochu komplikované vytvoriť <strong>izolovaný vrchol</strong>, t.j. taký, z ktorého nevychádza (ani doň nevchádza) žiadna hrana (asi by pomohla metóda <code class="docutils literal notranslate"><span class="pre">pridaj_vrchol()</span></code>).</p>
+<p>Ak máme pripravenú štruktúru grafu ako zoznam množín susedov, vieme z nej priamo vytvoriť inštanciu triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gg</span> <span class="o">=</span> <span class="p">[{</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">},</span> <span class="p">{</span><span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">},</span> <span class="p">{</span><span class="n">d</span><span class="p">},</span> <span class="p">{</span><span class="n">e</span><span class="p">},</span> <span class="p">{</span><span class="n">f</span><span class="p">},</span> <span class="p">{</span><span class="n">c</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">},</span> <span class="p">{</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">},</span> <span class="p">{</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="n">gg</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">graf</span><span class="p">)</span>
+<span class="hll"><span class="go">    vrcholy: [0, 1, 2, 3, 4, 5, 6, 7]</span>
+</span><span class="hll"><span class="go">    hrany: [(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 2), (1, 4), (2, 3),</span>
+</span><span class="hll"><span class="go">    (3, 4), (4, 5), (5, 2), (5, 6), (5, 7), (6, 5), (6, 7), (7, 5), (7, 6)]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="hll"><span class="go">    True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="hll"><span class="go">    False</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu f:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">stupen</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="hll"><span class="go">    stupen vrcholu f: 3</span>
+</span></pre></div>
+</div>
+<p>V tejto reprezentácii grafu triedou <code class="docutils literal notranslate"><span class="pre">Graf</span></code> o samotnom vrchole nemáme žiadnu špeciálnu informáciu okrem jeho poradového čísla a prislúchajúcej množiny susedov.</p>
+<p>Zadefinujeme novú triedu <code class="docutils literal notranslate"><span class="pre">Graf</span></code>, ktorá bude uchovávať zoznam vrcholov, t.j. zoznam objektov typu <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meno</span> <span class="o">=</span> <span class="n">meno</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="c1">#-------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>      <span class="c1"># vráti inštanciu Vrchol</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">meno</span> <span class="o">==</span> <span class="n">meno</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">v</span>                <span class="c1"># už existuje</span>
+        <span class="n">novy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="p">(</span><span class="n">meno</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">novy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">novy</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">hladaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>      <span class="c1"># vráti inštanciu Vrchol</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">meno</span> <span class="o">==</span> <span class="n">meno</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">v2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hladaj_vrchol</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span><span class="o">.</span><span class="n">sus</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_vrcholy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">meno</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_hrany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">v1</span><span class="o">.</span><span class="n">meno</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">for</span> <span class="n">v1</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">v1</span><span class="o">.</span><span class="n">sus</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stupen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hladaj_vrchol</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">sus</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">sus</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;vrcholy: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">hrany: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>S vrcholmi teraz musíme pracovať prostredníctvom ich mien. V nasledovnom príklade to budú jednoznakové reťazce, teda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="s1">&#39;ab ac ad ae af bc be cd de ef fc fg fh gf gh hf hg&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+<span class="go">        graf.pridaj_hranu(v1, v2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">graf</span><span class="p">)</span>
+<span class="hll"><span class="go">    vrcholy: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;]</span>
+</span><span class="hll"><span class="go">    hrany: [(&#39;a&#39;, &#39;c&#39;), (&#39;a&#39;, &#39;b&#39;), (&#39;a&#39;, &#39;e&#39;), (&#39;a&#39;, &#39;d&#39;), (&#39;a&#39;, &#39;f&#39;), (&#39;b&#39;, &#39;c&#39;),</span>
+</span><span class="hll"><span class="go">    (&#39;b&#39;, &#39;e&#39;), (&#39;c&#39;, &#39;d&#39;), (&#39;d&#39;, &#39;e&#39;), (&#39;e&#39;, &#39;f&#39;), (&#39;f&#39;, &#39;g&#39;), (&#39;f&#39;, &#39;c&#39;), (&#39;f&#39;, &#39;h&#39;),</span>
+</span><span class="hll"><span class="go">    (&#39;g&#39;, &#39;h&#39;), (&#39;g&#39;, &#39;f&#39;), (&#39;h&#39;, &#39;g&#39;), (&#39;h&#39;, &#39;f&#39;)]</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu f:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">stupen</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">))</span>
+<span class="hll"><span class="go">    stupen vrcholu f: 3</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen grafu:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">stupen</span><span class="p">())</span>
+<span class="hll"><span class="go">    stupen grafu: 5</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi b, e:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">))</span>    <span class="c1"># alebo graf.je_hrana(*&#39;be&#39;)</span>
+<span class="hll"><span class="go">    hrana medzi b, e: True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi c, a:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="hll"><span class="go">    hrana medzi c, a: False</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet hran:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()))</span>
+<span class="hll"><span class="go">    pocet hran: 17</span>
+</span></pre></div>
+</div>
+<p>Zrejme efektívnejšie by sa táto definícia realizovala nie zoznamom vrcholov (typ <code class="docutils literal notranslate"><span class="pre">list</span></code>), ale asociatívnym poľom (typ <code class="docutils literal notranslate"><span class="pre">dict</span></code>) vrcholov, v ktorom kľúčom by bol identifikátor vrcholu.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="asociativne-pole-mnozin-susednosti">
+<h3><a class="toc-backref" href="07.html#id13" role="doc-backlink">Asociatívne pole množín susedností</a><a class="headerlink" href="07.html#asociativne-pole-mnozin-susednosti" title="Link to this heading">¶</a></h3>
+<p>Pri realizácii reprezentácie <strong>množiny susedností</strong> pomocou tried <code class="docutils literal notranslate"><span class="pre">Graf</span></code> a <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code> sa ukázalo nešikovné, keď sme mali všetky vrcholy (inštancie triedy <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>) uložené v zozname. Pri práci s takýmito vrcholmi sme museli veľakrát preliezať celý zoznam a hľadať vrchol s daným identifikátorom. Ak by sme namiesto toho použili asociatívne pole, výrazne by sa to zjednodušilo, napríklad</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;bcdef&#39;</span><span class="p">),</span>   <span class="c1"># {&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;,&#39;f&#39;}</span>
+        <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;ce&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;cgh&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;fh&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;fg&#39;</span><span class="p">),</span>
+       <span class="p">}</span>
+</pre></div>
+</div>
+<p>Zapíšeme to pomocou tried <code class="docutils literal notranslate"><span class="pre">Graf</span></code> a <code class="docutils literal notranslate"><span class="pre">Vrchol</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meno</span> <span class="o">=</span> <span class="n">meno</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">v2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sus</span>
+
+    <span class="c1">#-------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">meno</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">meno</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="p">(</span><span class="n">meno</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">v2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v1</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_vrcholy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_hrany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">sus</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stupen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">sus</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoz</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;vrcholy: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">hrany: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Otestovať to môžeme rovnako ako sme testovali zoznam množín susedností:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="s1">&#39;ab ac ad ae af bc be cd de ef fc fg fh gf gh hf hg&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">graf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu f:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">stupen</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen grafu:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">stupen</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi b, e:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi c, a:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet hran:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p>a dostávame úplne rovnaké výsledky:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vrcholy</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
+<span class="n">hrany</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)]</span>
+<span class="n">stupen</span> <span class="n">vrcholu</span> <span class="n">f</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">stupen</span> <span class="n">grafu</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">hrana</span> <span class="n">medzi</span> <span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">hrana</span> <span class="n">medzi</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span>
+<span class="n">pocet</span> <span class="n">hran</span><span class="p">:</span> <span class="mi">17</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="zoznam-asociativnych-poli-susednosti">
+<h3><a class="toc-backref" href="07.html#id14" role="doc-backlink">Zoznam asociatívnych polí susedností</a><a class="headerlink" href="07.html#zoznam-asociativnych-poli-susednosti" title="Link to this heading">¶</a></h3>
+<p>Ak máme, napríklad takýto <strong>ohodnotený graf</strong>:</p>
+<img alt="../_images/207_10.png" class="align-center" src="../_images/207_10.png" />
+<p>tak namiesto množiny susedností (prvá reprezentácia grafu) použijeme asociatívne pole (typ <code class="docutils literal notranslate"><span class="pre">dict</span></code>), v ktorom si pri každom susedovi budeme pamätať aj číslo na hrane, t.j. váhu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="p">[{</span><span class="n">b</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span>     <span class="c1">#a</span>
+        <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span>                    <span class="c1">#b</span>
+        <span class="p">{</span><span class="n">d</span><span class="p">:</span><span class="mi">8</span><span class="p">},</span>                         <span class="c1">#c</span>
+        <span class="p">{</span><span class="n">e</span><span class="p">:</span><span class="mi">7</span><span class="p">},</span>                         <span class="c1">#d</span>
+        <span class="p">{</span><span class="n">f</span><span class="p">:</span><span class="mi">5</span><span class="p">},</span>                         <span class="c1">#e</span>
+        <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span><span class="mi">9</span><span class="p">},</span>               <span class="c1">#f</span>
+        <span class="p">{</span><span class="n">f</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span>                    <span class="c1">#g</span>
+        <span class="p">{</span><span class="n">f</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span>                    <span class="c1">#h</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<p>Mohli by sme tu využiť aj reprezentáciu <strong>asociatívne pole množín susedností</strong>, v ktorej by sme množiny opäť nahradili asociatívnymi poľami, napríklad</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="p">{</span><span class="n">b</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span>
+        <span class="n">b</span><span class="p">:</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span>
+        <span class="n">c</span><span class="p">:</span> <span class="p">{</span><span class="n">d</span><span class="p">:</span><span class="mi">8</span><span class="p">},</span>
+        <span class="n">d</span><span class="p">:</span> <span class="p">{</span><span class="n">e</span><span class="p">:</span><span class="mi">7</span><span class="p">},</span>
+        <span class="n">e</span><span class="p">:</span> <span class="p">{</span><span class="n">f</span><span class="p">:</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">f</span><span class="p">:</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span><span class="mi">9</span><span class="p">},</span>
+        <span class="n">g</span><span class="p">:</span> <span class="p">{</span><span class="n">f</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span>
+        <span class="n">h</span><span class="p">:</span> <span class="p">{</span><span class="n">f</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>Zrejme túto reprezentáciu by sme mali volať <strong>asociatívne pole asociatívnych polí susedností</strong>. Aj tu môžeme čísla vrcholov nahradiť reťazcami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span>
+        <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span>
+        <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;d&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">},</span>
+        <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="mi">7</span><span class="p">},</span>
+        <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;f&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">},</span>
+        <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">},</span>
+        <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;f&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span>
+        <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;f&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="matica-susednosti">
+<h3><a class="toc-backref" href="07.html#id15" role="doc-backlink">Matica susedností</a><a class="headerlink" href="07.html#matica-susednosti" title="Link to this heading">¶</a></h3>
+<p>Graf zapíšeme do dvojrozmernej tabuľky (zoznam zoznamov) veľkosti <code class="docutils literal notranslate"><span class="pre">n</span></code> x <code class="docutils literal notranslate"><span class="pre">n</span></code>, kde <code class="docutils literal notranslate"><span class="pre">n</span></code> je počet vrcholov:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<p>Často sa namiesto <strong>0</strong> a <strong>1</strong> píšu <code class="docutils literal notranslate"><span class="pre">False</span></code> a <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Ukážme, ako sa zapisuje práca s takouto reprezentáciou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet vrcholov:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="p">))</span>
+<span class="hll"><span class="go">    pocet vrcholov: 8</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet hran:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span><span class="n">graf</span><span class="p">)))</span>
+<span class="hll"><span class="go">    pocet hran: 17</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu f:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">graf</span><span class="p">[</span><span class="n">f</span><span class="p">]))</span>
+<span class="hll"><span class="go">    stupen vrcholu f: 3</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi b, e:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">e</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="hll"><span class="go">    hrana medzi b, e: True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi c, a:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">a</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="hll"><span class="go">    hrana medzi c, a: False</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="matica-susednosti-s-vahami">
+<h3><a class="toc-backref" href="07.html#id16" role="doc-backlink">Matica susedností s váhami</a><a class="headerlink" href="07.html#matica-susednosti-s-vahami" title="Link to this heading">¶</a></h3>
+<p>Namiesto <strong>0</strong> a <strong>1</strong> v dvojrozmernej tabuľke zapisujeme priamo váhy na príslušných hranách, pričom treba nejako označiť hodnotu, ktorá reprezentuje, že tu nie je hrana, napríklad</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>       <span class="c1"># označuje, že tu nie je hrana, mohla tu byť aj hocijaká iná hodnota, napríklad None</span>
+
+<span class="n">graf</span> <span class="o">=</span> <span class="p">[[</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">_</span><span class="p">],</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<p>Ukážme, ako sa zapisuje práca s takouto reprezentáciou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet vrcholov:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">graf</span><span class="p">))</span>
+<span class="hll"><span class="go">    pocet vrcholov: 8</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pocet hran:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">!=</span><span class="n">_</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">graf</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">r</span><span class="p">))</span>
+<span class="hll"><span class="go">    pocet hran: 17</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu f:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">!=</span><span class="n">_</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">graf</span><span class="p">[</span><span class="n">f</span><span class="p">]))</span>
+<span class="hll"><span class="go">    stupen vrcholu f: 3</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi b,e:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">e</span><span class="p">]</span><span class="o">!=</span><span class="n">_</span><span class="p">)</span>
+<span class="hll"><span class="go">    hrana medzi b,e: True</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hrana medzi c,a:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">a</span><span class="p">]</span><span class="o">!=</span><span class="n">_</span><span class="p">)</span>
+<span class="hll"><span class="go">    hrana medzi c,a: False</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vaha na hrane medzi b,e:&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">e</span><span class="p">])</span>
+<span class="hll"><span class="go">    vaha na hrane medzi b,e: 3</span>
+</span></pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+</section>
+<section id="cvicenie">
+<h2><a class="toc-backref" href="07.html#id17" role="doc-backlink">Cvičenie</a><a class="headerlink" href="07.html#cvicenie" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenia úloh ulož do jedného súboru a odovzdaj na úlohový server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>testovací server tieto ulohy nebude testovať, vyrieš a odovzdaj ich <strong>všetky</strong> okrem tých, ktoré sú označené znakom <kbd class="kbd docutils literal notranslate">-</kbd></p></li>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7. cvicenie</span>
+<span class="c1"># student: Janko Hrasko</span>
+<span class="c1"># datum: 31.3.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Nakresli graf (na papieri), ktorý zodpovedá reprezentácii <strong>tabuľka susedností</strong>:</p>
+<table class="table-bordered docutils align-default">
+<colgroup>
+<col style="width: 4.2%" />
+<col style="width: 4.2%" />
+<col style="width: 4.2%" />
+<col style="width: 4.2%" />
+<col style="width: 4.2%" />
+<col style="width: 4.2%" />
+<col style="width: 4.2%" />
+<col style="width: 70.4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>F</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>A</strong></p></td>
+<td></td>
+<td><p>7</p></td>
+<td><p>5</p></td>
+<td></td>
+<td></td>
+<td><p>1</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>B</strong></p></td>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td><p>7</p></td>
+<td><p>3</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>C</strong></p></td>
+<td></td>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>8</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>D</strong></p></td>
+<td><p>1</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>E</strong></p></td>
+<td><p>6</p></td>
+<td></td>
+<td></td>
+<td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>F</strong></p></td>
+<td></td>
+<td><p>1</p></td>
+<td></td>
+<td></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Koľko vrcholov a koľko hrán má tento graf?</p>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<a class="reference internal image-reference" href="../_images/207_c11.png"><img alt="../_images/207_c11.png" height="248" src="../_images/207_c11.png" width="282" />
+</a>
+<ul class="simple">
+<li><p>graf je orientovaný, má 6 vrcholov a 15 hrán</p></li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p><kbd class="kbd docutils literal notranslate">-</kbd> Zapíš čísla vrcholov grafu na obrázku, ak poznáš jeho reprezentáciu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">[{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">}]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/207_c10.png"><img alt="../_images/207_c10.png" class="align-center" height="109" src="../_images/207_c10.png" width="132" />
+</a>
+<p>Potom odpovedz áno/nie:</p>
+<ul class="simple">
+<li><p>je tento graf orientovaný?</p></li>
+<li><p>je tento graf súvislý?</p></li>
+<li><p>je tento graf ohodnotený?</p></li>
+<li><p>je tento graf acyklický?</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<p>jedno z dvoch možných riešení:</p>
+<a class="reference internal image-reference" href="../_images/207_c12.png"><img alt="../_images/207_c12.png" height="110" src="../_images/207_c12.png" width="126" />
+</a>
+<ul class="simple">
+<li><p>graf je neorientovaný, súvislý, neohodnotený, cyklický</p></li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Pre tento daný graf (ručne) zapíš množinu hrán:</p>
+<a class="reference internal image-reference" href="../_images/207_c9.png"><img alt="../_images/207_c9.png" height="136" src="../_images/207_c9.png" width="138" />
+</a>
+<p>Odpovedz áno/nie:</p>
+<ul class="simple">
+<li><p>je tento graf orientovaný?</p></li>
+<li><p>je tento graf súvislý?</p></li>
+<li><p>je tento graf ohodnotený?</p></li>
+<li><p>je tento graf acyklický?</p></li>
+</ul>
+<p>Potom</p>
+<ul class="simple">
+<li><p>zapíš nejakú cestu (postupnosť vrcholov) z vrcholu <strong>0</strong> do vrcholu <strong>3</strong></p></li>
+<li><p>nájdi všetky cykly, ktoré majú dĺžku aspoň 3 (hrany) a v ktorých sú všetky vrcholy rôzne (okrem prvého a posledného)</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<ul class="simple">
+<li><p>graf je orientovaný, súvislý, neohodnotený, cyklický</p></li>
+<li><p>cesta z 0 do 3: <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">5,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">3]</span></code></p></li>
+<li><p>cykly: <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">4,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">5]</span></code>, <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">4,</span> <span class="pre">7,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">5]</span></code>, <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">1,</span> <span class="pre">5,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">3]</span></code></p></li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Zapíš graf z úlohy (3) v reprezentácii <strong>zoznam množín susedností</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Potom aj v reprezentácii <strong>asociatívne pole množín susedností</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># zoznam množín susedností</span>
+<span class="n">graf</span> <span class="o">=</span> <span class="p">[{</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">},</span> <span class="p">{</span><span class="mi">5</span><span class="p">}]</span>
+<span class="c1"># asociatívne pole množín susedností</span>
+<span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">},</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">},</span> <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">},</span> <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">},</span> <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span> <span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">},</span> <span class="mi">8</span><span class="p">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p>Zapíš daný graf v reprezentácii <strong>asociatívne pole asociatívnych polí susedností</strong>:</p>
+<a class="reference internal image-reference" href="../_images/207_c11.png"><img alt="../_images/207_c11.png" height="148" src="../_images/207_c11.png" width="169" />
+</a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+        <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">},</span>
+        <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p>Prepíš daný graf do reprezentácie <strong>matica susedností</strong>:</p>
+<a class="reference internal image-reference" href="../_images/207_c12.png"><img alt="../_images/207_c12.png" height="110" src="../_images/207_c12.png" width="126" />
+</a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">[[</span><span class="o">...</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>Podľa vzoru triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code> pre reprezentáciu <strong>zoznam množín susedností</strong> zapíš metódy pre reprezentáciu <strong>matica susedností</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>              <span class="c1"># n je počet vrcholov, t.j. veľkosť matice</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matica</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>             <span class="c1"># zadefinuje prázdny graf (v matici sú samé 0)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_vrcholy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="c1"># vráti množinu čísel vrcholov</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_hrany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                <span class="c1"># vráti množinu usporiadaných dvojíc</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stupen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>          <span class="c1"># zistí stupeň vrcholu alebo celého grafu</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">...</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;vrcholy: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">hrany: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>                          <span class="c1"># n je počet vrcholov, t.j. veľkosť matice</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matica</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>   <span class="c1"># zadefinuje prázdny graf (v matici sú samé 0)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matica</span><span class="p">[</span><span class="n">v1</span><span class="p">][</span><span class="n">v2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">matica</span><span class="p">[</span><span class="n">v1</span><span class="p">][</span><span class="n">v2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_vrcholy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>              <span class="c1"># vráti množinu čísel vrcholov</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matica</span><span class="p">)))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">daj_hrany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                <span class="c1"># vráti množinu usporiadaných dvojíc</span>
+        <span class="k">return</span> <span class="p">{(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">()</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">je_hrana</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stupen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v1</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>          <span class="c1"># zistí stupeň vrcholu alebo celého grafu</span>
+        <span class="k">if</span> <span class="n">v1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matica</span><span class="p">[</span><span class="n">v1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">sum</span><span class="p">(</span><span class="n">riadok</span><span class="p">)</span> <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">matica</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;vrcholy: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">hrany: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="8">
+<li><p>Zadefinuj inštanciu triedy z úlohy (7) tak, aby zodpovedala grafu z úlohy (6). Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graf</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stupen vrcholu&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;je&#39;</span><span class="p">,</span> <span class="n">graf</span><span class="o">.</span><span class="n">stupen</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">hrany</span> <span class="o">=</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">hrany</span><span class="p">:</span>
+    <span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p>Do triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code> z úlohy (7) dopíš tieto dve metódy a otestuj ich na grafe z úlohy (6):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">je_orientovany()</span></code> zistí, či je graf orientovaný (vtedy vráti <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trojuholniky()</span></code> vypíše všetky také trojice vrcholov, ktoré sú navzájom spojené hranami oboma smermi každý s každým</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_orientovany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">trojuholniky</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_orientovany</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hrany</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">hrany</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">hrany</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">trojuholniky</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hrany</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">daj_hrany</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">hrany</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">hrany</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">daj_vrcholy</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="ow">and</span> <span class="p">{(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">)}</span> <span class="o">&lt;=</span> <span class="n">hrany</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p>Do triedy <code class="docutils literal notranslate"><span class="pre">Graf</span></code> z prednášky, ktorá definuje reprezentáciu <strong>asociatívne pole množín susedností</strong> dodefinuj metódy na vykreslenie grafu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meno</span> <span class="o">=</span> <span class="n">meno</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>           <span class="c1"># vykreslí vrchol ako kruh s textom self.meno</span>
+            <span class="o">...</span>
+
+    <span class="c1">#-------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>             <span class="c1"># inicializácia triedy Graf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graf</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">):</span>     <span class="c1"># vykreslí hranu z meno1 do meno2</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>               <span class="c1"># vykreslí celý graf</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Kreslenie otestuj na grafe z úlohy (6).</p>
+<p>Napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">g</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">g</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="n">canvas</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meno</span> <span class="o">=</span> <span class="n">meno</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meno</span><span class="p">)</span>
+
+    <span class="c1">#----------------------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_vrchol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="p">(</span><span class="n">meno</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pridaj_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">meno2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno2</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">meno1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_hrana</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">meno2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno1</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">):</span>
+        <span class="n">xy1</span><span class="p">,</span> <span class="n">xy2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno1</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno2</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">xy1</span><span class="p">,</span> <span class="n">xy2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">meno2</span> <span class="ow">in</span> <span class="n">vrchol</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kresli_hranu</span><span class="p">(</span><span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">vrchol</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Otestujeme s grafom z (6) úlohy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">()</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">160</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">pridaj_vrchol</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+             <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+    <span class="n">graf</span><span class="o">.</span><span class="n">pridaj_hranu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p>Do triedy z úlohy (10) doprogramuj inicializáciu <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> tak, aby sa popis grafu mohol prečítať z textového súboru:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+    <span class="o">...</span>
+
+    <span class="c1">#-------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graf</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Textový súbor by mohol mať napríklad takýto formát - každý riadok popisuje jeden vrchol:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">meno</span> <span class="n">x</span> <span class="n">y</span> <span class="n">zoznam_mien_susedov</span>
+</pre></div>
+</div>
+<p>Zadefinuj 2 súbory pre grafy z úloh (3) a (6) tak, aby sa výsledné obrázky čo najviac podobali, napríklad súbor pre graf z úlohy (6) môže začínať týmito dvoma riadkami:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">130</span> <span class="mi">130</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">1</span> <span class="mi">50</span> <span class="mi">50</span> <span class="mi">3</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Riešenie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Vrchol</span><span class="p">:</span>
+        <span class="o">...</span>
+
+    <span class="c1">#----------------------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno_suboru</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">meno_suboru</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">meno_suboru</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">txt</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">riadok</span> <span class="ow">in</span> <span class="n">txt</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+                    <span class="n">meno</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">sus</span> <span class="o">=</span> <span class="n">riadok</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="p">(</span><span class="n">meno</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno</span><span class="p">]</span><span class="o">.</span><span class="n">sus</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">sus</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Vrchol</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span>
+</pre></div>
+</div>
+<p>Pre graf z úlohy (6) vytvoríme, napríklad takýto textový súbor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">130</span> <span class="mi">130</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">1</span> <span class="mi">50</span> <span class="mi">50</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">2</span> <span class="mi">200</span> <span class="mi">200</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">3</span> <span class="mi">40</span> <span class="mi">160</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span>
+<span class="mi">4</span> <span class="mi">140</span> <span class="mi">50</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">5</span>
+<span class="mi">5</span> <span class="mi">220</span> <span class="mi">50</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>a spustíme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="s1">&#39;graf5.txt&#39;</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ak by sme chceli pre graf z úlohy (3) kresliť aj šípky, môžeme opraviť metódy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graf</span><span class="p">:</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli_hranu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">,</span> <span class="n">sipka</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">sipka</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mi">20</span>
+            <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno1</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno2</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">.5</span>
+            <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="n">d</span><span class="p">,</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="n">d</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="n">x1</span><span class="o">+</span><span class="n">xx</span><span class="p">,</span> <span class="n">y1</span><span class="o">+</span><span class="n">yy</span><span class="p">,</span> <span class="n">x2</span><span class="o">-</span><span class="n">xx</span><span class="p">,</span> <span class="n">y2</span><span class="o">-</span><span class="n">yy</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
+                                    <span class="n">arrow</span><span class="o">=</span><span class="s1">&#39;last&#39;</span><span class="p">,</span> <span class="n">arrowshape</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno1</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="p">[</span><span class="n">meno2</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span>
+                                    <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kresli</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sipka</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">meno1</span><span class="p">,</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">meno2</span> <span class="ow">in</span> <span class="n">vrchol</span><span class="o">.</span><span class="n">sus</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kresli_hranu</span><span class="p">(</span><span class="n">meno1</span><span class="p">,</span> <span class="n">meno2</span><span class="p">,</span> <span class="n">sipka</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">vrchol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrcholy</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">vrchol</span><span class="o">.</span><span class="n">kresli</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teraz môžeme vytvoriť, napríklad takýto textový súbor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">50</span> <span class="mi">50</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">130</span> <span class="mi">50</span> <span class="mi">5</span>
+<span class="mi">2</span> <span class="mi">210</span> <span class="mi">50</span> <span class="mi">5</span>
+<span class="mi">3</span> <span class="mi">50</span> <span class="mi">130</span> <span class="mi">1</span>
+<span class="mi">4</span> <span class="mi">130</span> <span class="mi">130</span> <span class="mi">6</span> <span class="mi">7</span>
+<span class="mi">5</span> <span class="mi">210</span> <span class="mi">130</span> <span class="mi">4</span> <span class="mi">2</span>
+<span class="mi">6</span> <span class="mi">50</span> <span class="mi">210</span> <span class="mi">3</span>
+<span class="mi">7</span> <span class="mi">130</span> <span class="mi">210</span> <span class="mi">0</span> <span class="mi">8</span>
+<span class="mi">8</span> <span class="mi">210</span> <span class="mi">210</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>a po otestovaní:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">Graf</span><span class="p">(</span><span class="s1">&#39;graf1.txt&#39;</span><span class="p">)</span>
+<span class="n">graf</span><span class="o">.</span><span class="n">kresli</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>dostaneme obrázok:</p>
+<a class="reference internal image-reference" href="../_images/207_c13.png"><img alt="../_images/207_c13.png" height="116" src="../_images/207_c13.png" width="120" />
+</a>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="progress">
+<div class="progress-bar progress-bar" role="progressbar" style="width: 100%"></div>
+</div></section>
+<section id="tyzdenny-projekt">
+<h2><a class="toc-backref" href="07.html#id18" role="doc-backlink">7. Týždenný projekt</a><a class="headerlink" href="07.html#tyzdenny-projekt" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Poznámka</p>
+<ul>
+<li><p>riešenie úlohy ulož do textového súboru s príponou <code class="docutils literal notranslate"><span class="pre">.py</span></code> a odovzdaj na testovací server <a class="reference external" href="https://vektor.fmph.uniba.sk/courses/2025-2026-leto/programovanie-2/">https://vektor.fmph.uniba.sk/</a></p>
+<ul>
+<li><p>prvé tri riadky súboru s riešením musia obsahovať:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7. tyzdenny projekt</span>
+<span class="c1"># student: Janko Hraško</span>
+<span class="c1"># datum: 19.4.2026</span>
+</pre></div>
+</div>
+<p>zrejme ako študenta uvedieš svoje meno, dátum uprav podľa dátumu odovzdania</p>
+</li>
+</ul>
+</li>
+<li><p>nepoužívaj <code class="docutils literal notranslate"><span class="pre">import</span></code>, <code class="docutils literal notranslate"><span class="pre">global</span></code> ani štandardné triediace funkcie</p></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Vytvor dátovú štruktúru <code class="docutils literal notranslate"><span class="pre">Graph</span></code>, ktorá bude implementovať <strong>ohodnotený</strong> graf reprezentovaný ako <strong>množina hrán</strong>. Trieda <code class="docutils literal notranslate"><span class="pre">Graph</span></code> bude pracovať s jediným atribútom <code class="docutils literal notranslate"><span class="pre">graph</span></code>, ktorý bude typu množina <strong>trojíc</strong>, v ktorej je dvojica mien vrcholov a celočíselná váha. Keďže graf môže byť orientovaný, niektoré hrany môžu byť v tejto množine len jedným smerom. Ak je tam neorientovaná hrana, potom váha jedným aj opačným smerom je rovnaká. Keďže graf reprezentujeme iba množinou hrán, zrejme sa v takomto grafe objavia len vrcholy, ktoré majú aspoň jedného suseda, alebo majú aspoň jedného predchodcu (teda sú aspoň v jednej hrane).</p>
+<p>V triede definuj ešte tieto metódy:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> s jedným parametrom - meno textového súboru; prečíta tento súbor a vytvorí z neho graf v reprezentácii <strong>množina hrán</strong> (do jediného atribútu <code class="docutils literal notranslate"><span class="pre">graph</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_edge</span></code> s tromi parametrami (dve mená vrcholov a váha) pridá do grafu (do množiny hrán) ďalšiu hranu</p>
+<ul>
+<li><p>ak má metóda viac parametrov ako tri, predpokladáme, že ich počet je násobkom troch a potom každá trojica (prvý, druhý a tretí; a štvrtý, piaty a šiesty, …) tvorí jednu hranu</p></li>
+<li><p>napríklad, volanie <code class="docutils literal notranslate"><span class="pre">add_edge('a',</span> <span class="pre">'b',</span> <span class="pre">7,</span> <span class="pre">'c',</span> <span class="pre">'d',</span> <span class="pre">0,</span> <span class="pre">'e',</span> <span class="pre">'f',</span> <span class="pre">-1)</span></code> vytvorí tri hrany <code class="docutils literal notranslate"><span class="pre">('a',</span> <span class="pre">'b',</span> <span class="pre">7),</span> <span class="pre">('c',</span> <span class="pre">'d',</span> <span class="pre">0),</span> <span class="pre">('e',</span> <span class="pre">'f',</span> <span class="pre">-1)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adjacent</span></code> s dvomi parametrami (mená vrcholov) zisti, či je medzi nimi hrana (vráti príslušnú váhu alebo <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<ul>
+<li><p>ak má metóda ešte ďalší parameter (typu <code class="docutils literal notranslate"><span class="pre">bool</span></code>), tak hodnota <code class="docutils literal notranslate"><span class="pre">True</span></code> tohto parametra bude označovať, že metóda zisťuje, či by medzi nimi bola hrana, keby bol graf <strong>neorientovaný</strong></p></li>
+<li><p>napríklad, ak je v grafe orientovaná hrana <code class="docutils literal notranslate"><span class="pre">('a',</span> <span class="pre">'b',</span> <span class="pre">7)</span></code>, tak <code class="docutils literal notranslate"><span class="pre">adjacent('b',</span> <span class="pre">'a')</span></code> vráti <code class="docutils literal notranslate"><span class="pre">None</span></code>, ale <code class="docutils literal notranslate"><span class="pre">adjacent('b',</span> <span class="pre">'a',</span> <span class="pre">True)</span></code> vráti <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vertices</span></code> vráti množinu mien vrcholov</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edges</span></code> vráti množinu trojíc mien vrcholov s váhami</p>
+<ul>
+<li><p>ak má metóda ešte aj jeden parameter (typu <code class="docutils literal notranslate"><span class="pre">bool</span></code>), tak hodnota <code class="docutils literal notranslate"><span class="pre">True</span></code> tohto parametra bude označovať, že metóda vráti množinu hrán, ako keby bol graf <strong>neorientovaný</strong> (pre neorientovanú hranu si domyslí aj opačnú hranu)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_undirected</span></code> zisti, či je graf neorientovaný (vráti logickú hodnotu)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save</span></code> ukladá celý graf do zadaného textového súboru, metóda má dva alebo tri parametre</p>
+<ul>
+<li><p>prvý parameter je celé číslo (od <strong>1</strong> do <strong>3</strong>), ktoré vyjadruje typ formátu súboru</p></li>
+<li><p>druhým parametrom je meno textového súboru</p></li>
+<li><p>nepovinný tretí parameter je typu <code class="docutils literal notranslate"><span class="pre">bool</span></code> a jeho hodnota <code class="docutils literal notranslate"><span class="pre">True</span></code> označuje, že zapíše tento graf akoby bol <strong>neorientovaný</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>V triede môžeš dodefinovať ďalšie pomocné metódy, ale nie ďalšie atribúty s hodnotami. Trieda dokáže pracovať s týmito tromi typmi súborov:</p>
+<ul>
+<li><p><strong>typ=1</strong> označuje takýto tvar súboru:</p>
+<ul>
+<li><p>súbor začína riadkom: <code class="docutils literal notranslate"><span class="pre">#1</span></code></p></li>
+<li><p>každý ďalší riadok popisuje jeden vrchol: meno vrcholu a zoznam mien jeho susedov aj s príslušnými váhami</p>
+<ul class="simple">
+<li><p>každý riadok popisuje aspoň jednu dvojicu vrcholov aj s príslušnou váhou</p></li>
+<li><p>každý vrchol, ktorému popisujeme zoznam susedov, sa v súbore vyskytne na prvom mieste len raz</p></li>
+</ul>
+</li>
+<li><p>riadky môžu nasledovať v ľubovoľnom poradí a aj zoznam mien susedov môže byť v ľubovoľnom poradí</p></li>
+<li><p>meno vrcholu je ľubovoľný reťazec, ktorý neobsahuje medzeru, váha je celé číslo</p></li>
+<li><p>napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#1</span>
+<span class="n">a</span> <span class="n">b</span> <span class="mi">7</span> <span class="n">c</span> <span class="mi">5</span> <span class="n">d</span> <span class="mi">4</span> <span class="n">e</span> <span class="mi">6</span> <span class="n">f</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="n">c</span> <span class="mi">2</span> <span class="n">e</span> <span class="mi">1</span>
+<span class="n">c</span> <span class="n">d</span> <span class="mi">0</span>
+<span class="n">d</span> <span class="n">e</span> <span class="mi">6</span>
+<span class="n">e</span> <span class="n">f</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">f</span> <span class="n">c</span> <span class="mi">5</span> <span class="n">g</span> <span class="mi">4</span> <span class="n">h</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="n">f</span> <span class="mi">4</span> <span class="n">h</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="n">f</span> <span class="mi">1</span> <span class="n">g</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>typ=2</strong> označuje takýto tvar súboru:</p>
+<ul>
+<li><p>súbor začína riadkom: <code class="docutils literal notranslate"><span class="pre">#2</span></code></p></li>
+<li><p>každý ďalší riadok popisuje jednu hranu ako trojicu mien vrcholov oddelených medzerou spolu s celočíselnou váhou</p></li>
+<li><p>riadky môžu nasledovať v ľubovoľnom poradí</p></li>
+<li><p>meno vrcholu je ľubovoľný reťazec, ktorý neobsahuje medzeru</p></li>
+<li><p>napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#2</span>
+<span class="n">a</span> <span class="n">c</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="n">b</span> <span class="mi">7</span>
+<span class="n">a</span> <span class="n">e</span> <span class="mi">6</span>
+<span class="n">a</span> <span class="n">d</span> <span class="mi">4</span>
+<span class="n">a</span> <span class="n">f</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="n">c</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="n">e</span> <span class="mi">1</span>
+<span class="n">c</span> <span class="n">d</span> <span class="mi">0</span>
+<span class="n">d</span> <span class="n">e</span> <span class="mi">6</span>
+<span class="n">e</span> <span class="n">f</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">f</span> <span class="n">g</span> <span class="mi">4</span>
+<span class="n">f</span> <span class="n">c</span> <span class="mi">5</span>
+<span class="n">f</span> <span class="n">h</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="n">h</span> <span class="mi">2</span>
+<span class="n">g</span> <span class="n">f</span> <span class="mi">4</span>
+<span class="n">h</span> <span class="n">g</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="n">f</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>typ=3</strong> označuje takýto tvar súboru:</p>
+<ul>
+<li><p>súbor začína riadkom: <code class="docutils literal notranslate"><span class="pre">#3</span></code></p></li>
+<li><p>ďalší riadok obsahuje zoznam mien všetkých vrcholov v nejakom poradí</p></li>
+<li><p>všetky ďalšie riadky popisujú maticu susedností s váhami, pričom poradie vrcholov je dané prvým riadkom súboru</p></li>
+<li><p>meno vrcholu je ľubovoľný reťazec, ktorý neobsahuje medzeru</p></li>
+<li><p>ak dvojica vrcholov nie je spojená hranou, v matici je znak <code class="docutils literal notranslate"><span class="pre">'_'</span></code></p></li>
+<li><p>napríklad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#3</span>
+<span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="n">e</span> <span class="n">f</span> <span class="n">g</span> <span class="n">h</span>
+<span class="n">_</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">2</span> <span class="n">_</span> <span class="n">_</span>
+<span class="n">_</span> <span class="n">_</span> <span class="mi">2</span> <span class="n">_</span> <span class="mi">1</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+<span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="mi">0</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+<span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="mi">6</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span>
+<span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="o">-</span><span class="mi">1</span> <span class="n">_</span> <span class="n">_</span>
+<span class="n">_</span> <span class="n">_</span> <span class="mi">5</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="mi">4</span> <span class="mi">1</span>
+<span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="mi">4</span> <span class="n">_</span> <span class="mi">2</span>
+<span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span> <span class="mi">1</span> <span class="mi">2</span> <span class="n">_</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p>Graf sa inicializuje ľubovoľným z týchto formátov (rozpozná sa z prvého riadku súboru). Graf sa dokáže zapísať do súboru ľubovoľným z týchto formátov (metódou <code class="docutils literal notranslate"><span class="pre">save</span></code>). Všetky 3 ukážkové súbory vytvoria rovnaký graf.</p>
+<p class="rubric">Obmedzenia</p>
+<ul class="simple">
+<li><p>riešenie odovzdaj v súbore, napríklad <code class="docutils literal notranslate"><span class="pre">riesenie.py</span></code>, pričom sa v ňom bude nachádzať <strong>len jedna definícia triedy</strong> <code class="docutils literal notranslate"><span class="pre">Graph</span></code></p></li>
+<li><p>atribút <code class="docutils literal notranslate"><span class="pre">graph</span></code> v triede <code class="docutils literal notranslate"><span class="pre">Graph</span></code> musí obsahovať reprezentáciu grafu množinou hrán (typu <code class="docutils literal notranslate"><span class="pre">set</span></code>, pričom hrany sú trojice mien vrcholov s celočíselnou váhou, t.j. <code class="docutils literal notranslate"><span class="pre">tuple</span></code>); v triede nedefinuj žiadne ďalšie atribúty</p></li>
+<li><p>program by nemal počas testovania testovačom nič vypisovať (žiadne testovacie <code class="docutils literal notranslate"><span class="pre">print()</span></code>)</p></li>
+<li><p>testovač bude spúšťať definíciu triedy s rôznymi textovými súbormi</p></li>
+</ul>
+<p>Môžeš si stiahnuť <a class="reference external" href="../_static/file/2tp07.zip">2tp07.zip</a> s testovacími súbormi <code class="docutils literal notranslate"><span class="pre">'subor1.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor2.txt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'subor3.txt'</span></code>, …, ktoré bude používať testovač.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="07.html#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2025-2026, Andrej Blaho.<br/>
+      Naposledy aktualizované 21. apr. 2026.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
